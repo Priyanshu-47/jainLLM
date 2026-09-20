@@ -16,17 +16,39 @@
     },
     "category": {
       "type": "string",
-      "enum": ["AGAMA", "PRACTICE", "PHILOSOPHY", "HISTORY", "BIOGRAPHY", "LEXICON", "CROSS_TRADITION", "MODERN", "LANGUAGE"],
+      "enum": [
+        "AGAMA",
+        "PRACTICE",
+        "PHILOSOPHY",
+        "HISTORY",
+        "BIOGRAPHY",
+        "LEXICON",
+        "CROSS_TRADITION",
+        "MODERN",
+        "LANGUAGE"
+      ],
       "description": "High-level category"
     },
     "tradition_relevance": {
       "type": "string",
-      "enum": ["STHANAKAVASI_ONLY", "SVETAMBARA_WIDE", "ALL_JAIN", "UNKNOWN"],
+      "enum": [
+        "STHANAKAVASI_ONLY",
+        "SVETAMBARA_WIDE",
+        "ALL_JAIN",
+        "UNKNOWN"
+      ],
       "description": "Which traditions this topic is relevant to"
     },
     "coverage_status": {
       "type": "string",
-      "enum": ["STRONG", "PARTIAL", "WEAK", "MISSING", "RIGHTS_BLOCKED", "NEEDS_RESEARCH"],
+      "enum": [
+        "STRONG",
+        "PARTIAL",
+        "WEAK",
+        "MISSING",
+        "RIGHTS_BLOCKED",
+        "NEEDS_RESEARCH"
+      ],
       "description": "Current coverage status in the corpus"
     },
     "retrieval_ready": {
@@ -52,7 +74,10 @@
       "description": "Number of external source candidates for this topic"
     },
     "notes": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "description": "Free-text notes on coverage"
     }
   },
@@ -94,111 +119,111 @@
       "evaluation_ready": false,
       "source_count": 4,
       "external_source_count": 0,
-      "notes": "SVK-1001 (Acaranga + Sutrakrtanga), SVK-1002/1003 (Kalpasutra), SVK-0016 (Uttaradhyayana). Most Agams not yet in corpus. JainQQ is primary discovery platform."
+      "notes": "15 of 34 Agams have some representation. Uttaradhyayana Sutra (581 units) and Avashyak Sutra (79 units) are strongest. No Sthanakavasi-specific editions marked."
     },
     {
       "topic_id": "TOPIC-004",
       "topic_name": "Avashyaka (six obligatory duties)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Avashyaka source in current corpus. Practice material is a critical gap."
+      "notes": "223 units across 15 sources. SVK-2022 (Avashyak Sutra Sthanakvasi) is primary source. 0 Sthanakavasi-specific practice evidence."
     },
     {
       "topic_id": "TOPIC-005",
       "topic_name": "Samayik (equanimity practice)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Samayik practice source in current corpus."
+      "notes": "147 units across 9 sources. 0 Sthanakavasi-specific practice evidence."
     },
     {
       "topic_id": "TOPIC-006",
       "topic_name": "Pratikraman (repentance ritual)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Pratikraman source in current corpus."
+      "notes": "3,243 units across 20 sources. Strongest practice coverage. 0 Sthanakavasi-specific practice evidence."
     },
     {
       "topic_id": "TOPIC-007",
       "topic_name": "Kayotsarga (body-abandonment meditation)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Kayotsarga source in current corpus."
+      "notes": "74 units across 10 sources. 0 Sthanakavasi-specific practice evidence."
     },
     {
       "topic_id": "TOPIC-008",
       "topic_name": "Vandana (veneration/praise)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Vandana source in current corpus."
+      "notes": "107 units across 15 sources. 0 Sthanakavasi-specific practice evidence."
     },
     {
       "topic_id": "TOPIC-009",
       "topic_name": "Pratyakhyan/Pachchhakhan (vows/renunciation)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Pratyakhyan source in current corpus."
+      "notes": "158 units across 16 sources. 0 Sthanakavasi-specific practice evidence."
     },
     {
       "topic_id": "TOPIC-010",
       "topic_name": "Chauvisantho (二十四层 glorification)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "WEAK",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Chauvisantho source in current corpus."
+      "notes": "3 units from 1 source. Very limited."
     },
     {
       "topic_id": "TOPIC-011",
       "topic_name": "Paryushan (annual festival)",
       "category": "PRACTICE",
       "tradition_relevance": "ALL_JAIN",
-      "coverage_status": "MISSING",
+      "coverage_status": "WEAK",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Paryushan source in current corpus."
+      "notes": "16 units across 9 sources. Limited."
     },
     {
       "topic_id": "TOPIC-012",
@@ -224,7 +249,7 @@
       "evaluation_ready": false,
       "source_count": 1,
       "external_source_count": 0,
-      "notes": "SVK-2010 (Jain Sathan Kavasi, 1928) is the only CORE_STHANAKAVASI doctrinal source in training. 516 units. Severely insufficient."
+      "notes": "Only 6 units directly mention Sthanakavasi. No doctrinal explanations found."
     },
     {
       "topic_id": "TOPIC-014",
@@ -237,20 +262,20 @@
       "evaluation_ready": false,
       "source_count": 2,
       "external_source_count": 0,
-      "notes": "SVK-0038 (Notes on Modern Jainism, 1910) and SVK-1010 (Conference Herald, 1917) discuss Sthanakavasi history. Both are external observations, not the tradition's own voice."
+      "notes": "SVK-2027 (Sthanakvasi Jain Itihas) provides 313 units. Limited historical content."
     },
     {
       "topic_id": "TOPIC-015",
       "topic_name": "Sthanakavasi Acharyas",
       "category": "BIOGRAPHY",
       "tradition_relevance": "STHANAKAVASI_ONLY",
-      "coverage_status": "MISSING",
+      "coverage_status": "PARTIAL",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No Sthanakavasi Acharya biography or commentary in training corpus."
+      "notes": "Amarmuni (5 sources, 24 mentions), Namramuni (1 source, 6 mentions), Kesrichand Bhandari (1 source, 1 mention). Teacher attribution present but not rich."
     },
     {
       "topic_id": "TOPIC-016",
@@ -283,13 +308,13 @@
       "topic_name": "Modern Sthanakavasi teachers",
       "category": "BIOGRAPHY",
       "tradition_relevance": "STHANAKAVASI_ONLY",
-      "coverage_status": "MISSING",
+      "coverage_status": "WEAK",
       "retrieval_ready": false,
       "sft_ready": false,
       "evaluation_ready": false,
       "source_count": 0,
       "external_source_count": 0,
-      "notes": "No modern Sthanakavasi teacher material in training corpus."
+      "notes": "Pravin K Shah (1 source, 1 mention). Very limited modern teacher content."
     },
     {
       "topic_id": "TOPIC-019",

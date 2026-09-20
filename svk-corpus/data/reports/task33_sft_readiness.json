@@ -1,0 +1,80 @@
+{
+  "task": 33,
+  "date": "2026-09-20",
+  "status": "NOT_READY",
+  "summary": "Corpus has grown but remains insufficient for Sthanakavasi-specific SFT. The released JainQQ sources are SHWETAMBAR texts with Sthanakavasi lineage, not Sthanakavasi-exclusive doctrinal material.",
+  "corpus_size": {
+    "total_training_units": 97918,
+    "total_rag_units": 165016
+  },
+  "sft_candidate_quality": {
+    "HIGH_CONFIDENCE": 80,
+    "REVIEW_REQUIRED": 36166,
+    "LOW_QUALITY": 61672
+  },
+  "category_readiness": {
+    "CANONICAL": {
+      "available": 12427,
+      "sufficient": true,
+      "note": "Good volume of verse/sutra content"
+    },
+    "COMMENTARY": {
+      "available": 192,
+      "sufficient": false,
+      "note": "Insufficient for SFT"
+    },
+    "TEACHING": {
+      "available": 2693,
+      "sufficient": "partial",
+      "note": "Some material available"
+    },
+    "PRACTICE": {
+      "available": 2237,
+      "sufficient": "partial",
+      "note": "Some material available"
+    },
+    "BIOGRAPHY_HISTORY": {
+      "available": 669,
+      "sufficient": false,
+      "note": "Insufficient"
+    },
+    "LEXICON": {
+      "available": 303,
+      "sufficient": false,
+      "note": "Insufficient"
+    },
+    "STH_DOCTRINE": {
+      "available": 0,
+      "sufficient": false,
+      "note": "ABSENT - critical gap"
+    },
+    "STH_PRACTICE": {
+      "available": 0,
+      "sufficient": false,
+      "note": "ABSENT - critical gap"
+    },
+    "STH_TEACHER": {
+      "available": 0,
+      "sufficient": false,
+      "note": "ABSENT - critical gap"
+    }
+  },
+  "largest_bottleneck": "Sthanakavasi-specific doctrinal content. The corpus has 0 Sthanakavasi doctrine explanations, 0 practice manuals, 0 teacher teachings, and 0 interpretation of cross-traditional practices.",
+  "can_start_verified_sft": false,
+  "categories_with_enough_material": [
+    "CANONICAL"
+  ],
+  "categories_unsupported": [
+    "STH_DOCTRINE",
+    "STH_PRACTICE",
+    "STH_TEACHER",
+    "COMMENTARY",
+    "LEXICON"
+  ],
+  "next_steps": [
+    "Acquire Sthanakavasi-specific doctrinal sources",
+    "Find Sthanakavasi practice manuals",
+    "Collect Sthanakavasi teacher teachings",
+    "Identify Sthanakavasi interpretation content"
+  ]
+}

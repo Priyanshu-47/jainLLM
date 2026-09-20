@@ -1,0 +1,158 @@
+{
+  "task": 34,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "scope": "validation_only",
+  "sthana_explanation_candidates": {
+    "total": 6,
+    "classification": {
+      "A_genuine": 0,
+      "B_lineage_generic": 2,
+      "C_metadata_leakage": 4,
+      "D_ambiguous": 0
+    },
+    "corrected_count": 0,
+    "candidates": [
+      {
+        "unit_id": "N/A",
+        "source_id": "SVK-0037",
+        "classification": "C",
+        "reason": "Bibliographic metadata: organization name in dictionary preface"
+      },
+      {
+        "unit_id": "N/A",
+        "source_id": "SVK-0037",
+        "classification": "C",
+        "reason": "Bibliographic metadata: organizational acknowledgment in preface"
+      },
+      {
+        "unit_id": "N/A",
+        "source_id": "SVK-0037",
+        "classification": "C",
+        "reason": "Bibliographic metadata: lists sects as beneficiaries"
+      },
+      {
+        "unit_id": "N/A",
+        "source_id": "SVK-2020",
+        "classification": "C",
+        "reason": "Bibliographic metadata: publishing credit for typesetting"
+      },
+      {
+        "unit_id": "SVK-2025:u02965",
+        "source_id": "SVK-2025",
+        "classification": "B",
+        "reason": "Organizational reference: identifies teacher's affiliation, not doctrine"
+      },
+      {
+        "unit_id": "SVK-2029:u01790",
+        "source_id": "SVK-2029",
+        "classification": "B",
+        "reason": "Organizational reference: identifies teacher's affiliation, not doctrine"
+      }
+    ]
+  },
+  "direct_mentions": {
+    "total": 6,
+    "by_type": {
+      "bibliographic_metadata": 4,
+      "organizational_reference": 2,
+      "doctrinal": 0,
+      "historical": 0
+    },
+    "useful_for_training": 0
+  },
+  "source_count_reconciliation": {
+    "task32_reported": 40,
+    "task33_reported": 41,
+    "actual_authoritative": 41,
+    "discrepancy_source": "SVK-2021",
+    "discrepancy_reason": "SVK-2021 has TRAINING_ALLOWED in license manifest but 0 units_released in release manifest (never ingested/processed)",
+    "license_manifest_count": 41,
+    "release_manifest_count": 40,
+    "excluded_count": 36,
+    "released_excluded_overlap": 0,
+    "duplicate_source_ids": 0
+  },
+  "corpus_count_reconciliation": {
+    "rag": {
+      "manifest_count": 165016,
+      "actual_jsonl_count": 165016,
+      "match": true,
+      "sources": 40,
+      "missing_from_released": [
+        "SVK-2021"
+      ]
+    },
+    "training": {
+      "manifest_count": 97918,
+      "actual_jsonl_count": 97918,
+      "match": true,
+      "sources": 39,
+      "missing_from_released": [
+        "SVK-0027",
+        "SVK-2021"
+      ]
+    },
+    "duplicate_ids_rag": 0,
+    "duplicate_ids_training": 0,
+    "ids_in_both": 88896
+  },
+  "sft_candidate_sanity": {
+    "high_confidence_count": 80,
+    "by_source": {
+      "SVK-2025": 26,
+      "SVK-2020": 18,
+      "SVK-2029": 16,
+      "SVK-2006": 8,
+      "SVK-0016": 4,
+      "SVK-2019": 4,
+      "SVK-2016": 3,
+      "SVK-0037": 1
+    },
+    "quality_checks": {
+      "empty_short_text": 0,
+      "ocr_artifacts": 0,
+      "metadata_leakage": 0
+    },
+    "category_breakdown": {
+      "AGAM_GROUNDED": 4329,
+      "TEACHER_ATTRIBUTION": 3592,
+      "PRACTICE": 1565,
+      "STHANAKAVASI_EXPLANATION_corrected": 0,
+      "HIGH_CONFIDENCE": 80
+    }
+  },
+  "integrity_findings": {
+    "duplicate_ids": 0,
+    "metadata_leakage": 0,
+    "ocr_corruption": 0,
+    "missing_provenance": 0,
+    "missing_rights_evidence": 0,
+    "released_excluded_overlap": 0
+  },
+  "corrections_required": [
+    {
+      "type": "reclassify",
+      "description": "Reclassify 6 STHANAKAVASI_EXPLANATION candidates to non-STH categories",
+      "old_count": 6,
+      "new_count": 0
+    },
+    {
+      "type": "update_report",
+      "description": "Update Task 33 report to correct STHANAKAVASI_EXPLANATION count from 6 to 0"
+    }
+  ],
+  "tests": {
+    "total": 377,
+    "passed": 375,
+    "failed": 0,
+    "errors": 2,
+    "skipped": 1,
+    "status": "no_regressions"
+  },
+  "readiness_for_next_phase": {
+    "status": "READY",
+    "note": "Corpus is ready for targeted Sthanakavasi-specific source acquisition. Current 0% STH doctrinal coverage must be addressed before SFT.",
+    "next_step": "Acquire explicit Sthanakavasi doctrinal sources"
+  }
+}

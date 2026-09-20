@@ -1,0 +1,113 @@
+{
+  "task": 35,
+  "date": "2026-09-20",
+  "description": "Practice coverage gap analysis",
+  "practices": [
+    {
+      "practice": "Samayik",
+      "existing_evidence": 147,
+      "existing_sources": 9,
+      "new_candidate_count": 1,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "PARTIAL"
+    },
+    {
+      "practice": "Pratikraman",
+      "existing_evidence": 3243,
+      "existing_sources": 20,
+      "new_candidate_count": 2,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [
+        "T35-010"
+      ],
+      "sthana_specific_evidence": 0,
+      "gap_status": "STRONG_VOLUME_WEAK_SPECIFICITY"
+    },
+    {
+      "practice": "Avashyaka",
+      "existing_evidence": 223,
+      "existing_sources": 15,
+      "new_candidate_count": 1,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "PARTIAL"
+    },
+    {
+      "practice": "Kayotsarga",
+      "existing_evidence": 74,
+      "existing_sources": 10,
+      "new_candidate_count": 1,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "WEAK"
+    },
+    {
+      "practice": "Vandana",
+      "existing_evidence": 107,
+      "existing_sources": 15,
+      "new_candidate_count": 1,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "PARTIAL"
+    },
+    {
+      "practice": "Pratyakhyan/Pachchhakhan",
+      "existing_evidence": 158,
+      "existing_sources": 16,
+      "new_candidate_count": 1,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "PARTIAL"
+    },
+    {
+      "practice": "Chauvisantho",
+      "existing_evidence": 3,
+      "existing_sources": 1,
+      "new_candidate_count": 1,
+      "p0_candidates": [
+        "T35-006"
+      ],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "CRITICAL"
+    },
+    {
+      "practice": "Paryushan",
+      "existing_evidence": 16,
+      "existing_sources": 9,
+      "new_candidate_count": 0,
+      "p0_candidates": [],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "WEAK"
+    },
+    {
+      "practice": "Paushadh",
+      "existing_evidence": 38,
+      "existing_sources": 9,
+      "new_candidate_count": 0,
+      "p0_candidates": [],
+      "p1_candidates": [],
+      "sthana_specific_evidence": 0,
+      "gap_status": "WEAK"
+    }
+  ]
+}

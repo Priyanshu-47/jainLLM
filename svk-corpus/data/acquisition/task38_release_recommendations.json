@@ -1,0 +1,79 @@
+{
+  "task": 38,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "recommendations": [
+    {
+      "svk_id": "SVK-2030",
+      "title": "Acharanga Sutra Part 01",
+      "decision": "RELEASE",
+      "units": 5037,
+      "reason": "High-quality Agam commentary with Hindi/English bilingual text. Generic Jain content. No STH-specific material beyond metadata.",
+      "conditions": ["Amarmuni commentary attribution requires review for SFT"]
+    },
+    {
+      "svk_id": "SVK-2031",
+      "title": "Acharanga Sutra Part 02",
+      "decision": "RELEASE",
+      "units": 5093,
+      "reason": "High-quality Agam commentary with Hindi/English bilingual text. Generic Jain content. No STH-specific material beyond metadata.",
+      "conditions": ["Amarmuni commentary attribution requires review for SFT"]
+    },
+    {
+      "svk_id": "SVK-2032",
+      "title": "Samvayang Sutra",
+      "decision": "RELEASE",
+      "units": 4748,
+      "reason": "High-quality Agam commentary with Hindi/English bilingual text. Generic Jain content. No STH-specific material beyond metadata.",
+      "conditions": ["Amarmuni commentary attribution requires review for SFT"]
+    },
+    {
+      "svk_id": "SVK-2033",
+      "title": "Bhagvati Sutra Part 01",
+      "decision": "RELEASE",
+      "units": 9582,
+      "reason": "High-quality Agam commentary with Hindi/English bilingual text. Generic Jain content. No STH-specific material beyond metadata.",
+      "conditions": ["Amarmuni commentary attribution requires review for SFT"]
+    },
+    {
+      "svk_id": "SVK-2034",
+      "title": "Bhagvati Sutra Part 03",
+      "decision": "RELEASE",
+      "units": 9500,
+      "reason": "High-quality Agam commentary with Hindi/English bilingual text. Contains 14 Pratikraman explanations and 1 Samayik explanation (generic Jain, not STH-specific).",
+      "conditions": ["Amarmuni commentary attribution requires review for SFT"]
+    },
+    {
+      "svk_id": "SVK-2035",
+      "title": "English Pratikraman",
+      "decision": "RELEASE",
+      "units": 965,
+      "reason": "Complete English Pratikraman ritual text. Contains practice explanations. No STH-specific content.",
+      "conditions": ["Pravin K Shah attribution verified"]
+    },
+    {
+      "svk_id": "SVK-2036",
+      "title": "Sthanang Sutra Part 02",
+      "decision": "RELEASE",
+      "units": 8663,
+      "reason": "High-quality Agam commentary with Hindi/English bilingual text. Generic Jain content. No STH-specific material beyond metadata.",
+      "conditions": ["Amarmuni commentary attribution requires review for SFT"]
+    },
+    {
+      "svk_id": "SVK-2037",
+      "title": "Jinvani Pratikraman Special Issue",
+      "decision": "RELEASE",
+      "units": 2965,
+      "reason": "Only source with genuine STH content (13 passages). Multi-tradition Pratikraman comparison. STH lineage and practice references.",
+      "conditions": ["Dharmchand Jain attribution verified", "STH passages classified as F_AMBIGUOUS (mixed content)"]
+    }
+  ],
+  "summary": {
+    "total_release": 8,
+    "total_quarantine": 0,
+    "total_units_released": 46553,
+    "total_units_quarantined": 0,
+    "sth_sources": 1,
+    "generic_jain_sources": 7
+  }
+}

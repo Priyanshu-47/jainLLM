@@ -1,0 +1,208 @@
+{
+  "task": 37,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "summary": {
+    "total_sources": 8,
+    "total_raw_bytes": 33018846,
+    "total_extracted_chars": 8920735,
+    "total_units_before_dedup": 56219,
+    "total_unique_units": 46553,
+    "total_duplicate_units": 9666,
+    "total_very_short_units": 6306,
+    "total_repeated_char_artifacts": 19884,
+    "extraction_efficiency_pct": 27.0,
+    "release_decision": "ALL_RELEASED",
+    "rag_before": 165016,
+    "rag_after_projected": 211569,
+    "rag_delta": 46553,
+    "train_before": 97918,
+    "train_after_projected": 144471,
+    "train_delta": 46553
+  },
+  "sth_content_audit": {
+    "total_suth_references": 35,
+    "genuine_sth_passages": 14,
+    "genuine_sth_source": "SVK-2037",
+    "metadata_only_refs": 21,
+    "assessment": "Minimal genuine STH-specific content. SVK-2037 contains 14 genuine STH passages. Other sources have only metadata references."
+  },
+  "content_classifications": {
+    "GENERIC_JAIN": 33452,
+    "ENGLISH": 12182,
+    "COMMENTARY": 887,
+    "STH_REF": 32
+  },
+  "practice_evidence": {
+    "Pratikraman": 152,
+    "Samayik": 38,
+    "Paryushan": 32,
+    "Avashyaka": 19,
+    "Kayotsarga": 15,
+    "Vandana": 7,
+    "Paushadh": 1,
+    "Chauvisantho": 0,
+    "note": "Word occurrences only, not practice explanations"
+  },
+  "teacher_attribution": {
+    "Amarmuni": {
+      "sources": ["SVK-2030", "SVK-2031", "SVK-2032", "SVK-2033", "SVK-2034", "SVK-2036"],
+      "verified": true,
+      "affiliation": "Shri Vardhaman Sthanakvasi Jain Shraman Sangh"
+    },
+    "Pravin K Shah": {
+      "sources": ["SVK-2035"],
+      "verified": true,
+      "affiliation": "Jain Education International"
+    },
+    "Dharmchand Jain": {
+      "sources": ["SVK-2037"],
+      "verified": true,
+      "affiliation": "Padma Prakashan"
+    }
+  },
+  "agam_mapping": {
+    "AGAM-001": {"sources": ["SVK-2030", "SVK-2031"], "confidence": "HIGH"},
+    "AGAM-005": {"sources": ["SVK-2033", "SVK-2034"], "confidence": "HIGH"},
+    "AGAM-012": {"sources": ["SVK-2032"], "confidence": "HIGH"},
+    "AGAM-022": {"sources": ["SVK-2036"], "confidence": "HIGH"},
+    "none": {"sources": ["SVK-2035", "SVK-2037"], "note": "Liturgical texts, not Agams"}
+  },
+  "per_source": [
+    {
+      "svk_id": "SVK-2030",
+      "title": "Acharanga Sutra Part 01",
+      "author": "Amarmuni",
+      "agam_id": "AGAM-001",
+      "raw_bytes": 3642179,
+      "extracted_chars": 1029148,
+      "unique_units": 5037,
+      "duplicate_units": 1371,
+      "very_short_units": 560,
+      "repeated_char_artifacts": 2333,
+      "suth_references": 2,
+      "practice_counts": {"Pratikraman": 0, "Samayik": 0, "Avashyaka": 1, "Kayotsarga": 0, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 0, "Paushadh": 0},
+      "content_classifications": {"STH_REF": 2, "GENERIC_JAIN": 3165, "ENGLISH": 1777, "COMMENTARY": 93},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2031",
+      "title": "Acharanga Sutra Part 02",
+      "author": "Amarmuni",
+      "agam_id": "AGAM-001",
+      "raw_bytes": 4443842,
+      "extracted_chars": 1198395,
+      "unique_units": 5093,
+      "duplicate_units": 1444,
+      "very_short_units": 861,
+      "repeated_char_artifacts": 2655,
+      "suth_references": 2,
+      "practice_counts": {"Pratikraman": 3, "Samayik": 0, "Avashyaka": 5, "Kayotsarga": 14, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 0, "Paushadh": 1},
+      "content_classifications": {"STH_REF": 2, "GENERIC_JAIN": 3599, "ENGLISH": 1345, "COMMENTARY": 147},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2032",
+      "title": "Samvayang Sutra",
+      "author": "Amarmuni",
+      "agam_id": "AGAM-012",
+      "raw_bytes": 3586373,
+      "extracted_chars": 958724,
+      "unique_units": 4748,
+      "duplicate_units": 959,
+      "very_short_units": 901,
+      "repeated_char_artifacts": 3063,
+      "suth_references": 4,
+      "practice_counts": {"Pratikraman": 0, "Samayik": 0, "Avashyaka": 0, "Kayotsarga": 0, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 2, "Paushadh": 0},
+      "content_classifications": {"STH_REF": 4, "GENERIC_JAIN": 3528, "ENGLISH": 1126, "COMMENTARY": 90},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2033",
+      "title": "Bhagvati Sutra Part 01",
+      "author": "Amarmuni",
+      "agam_id": "AGAM-005",
+      "raw_bytes": 5685986,
+      "extracted_chars": 1614153,
+      "unique_units": 9582,
+      "duplicate_units": 1652,
+      "very_short_units": 1144,
+      "repeated_char_artifacts": 6103,
+      "suth_references": 3,
+      "practice_counts": {"Pratikraman": 7, "Samayik": 13, "Avashyaka": 0, "Kayotsarga": 0, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 2, "Paushadh": 0},
+      "content_classifications": {"STH_REF": 3, "GENERIC_JAIN": 6922, "ENGLISH": 2479, "COMMENTARY": 178},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2034",
+      "title": "Bhagvati Sutra Part 03",
+      "author": "Amarmuni",
+      "agam_id": "AGAM-005",
+      "raw_bytes": 5365030,
+      "extracted_chars": 1553151,
+      "unique_units": 9500,
+      "duplicate_units": 1662,
+      "very_short_units": 1313,
+      "repeated_char_artifacts": 6067,
+      "suth_references": 4,
+      "practice_counts": {"Pratikraman": 17, "Samayik": 22, "Avashyaka": 3, "Kayotsarga": 0, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 2, "Paushadh": 0},
+      "content_classifications": {"STH_REF": 4, "GENERIC_JAIN": 6731, "ENGLISH": 2626, "COMMENTARY": 139},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2035",
+      "title": "English Pratikraman",
+      "author": "Pravin K Shah",
+      "agam_id": "",
+      "raw_bytes": 362711,
+      "extracted_chars": 153547,
+      "unique_units": 965,
+      "duplicate_units": 271,
+      "very_short_units": 210,
+      "repeated_char_artifacts": 637,
+      "suth_references": 0,
+      "practice_counts": {"Pratikraman": 86, "Samayik": 0, "Avashyaka": 3, "Kayotsarga": 0, "Vandana": 7, "Chauvisantho": 0, "Paryushan": 23, "Paushadh": 0},
+      "content_classifications": {"ENGLISH": 493, "GENERIC_JAIN": 459, "COMMENTARY": 13},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2036",
+      "title": "Sthanang Sutra Part 02",
+      "author": "Amarmuni",
+      "agam_id": "AGAM-022",
+      "raw_bytes": 5511179,
+      "extracted_chars": 1539234,
+      "unique_units": 8663,
+      "duplicate_units": 1701,
+      "very_short_units": 1011,
+      "repeated_char_artifacts": 6121,
+      "suth_references": 4,
+      "practice_counts": {"Pratikraman": 37, "Samayik": 3, "Avashyaka": 7, "Kayotsarga": 1, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 3, "Paushadh": 0},
+      "content_classifications": {"STH_REF": 4, "GENERIC_JAIN": 6128, "ENGLISH": 2306, "COMMENTARY": 225},
+      "release_decision": "RELEASE"
+    },
+    {
+      "svk_id": "SVK-2037",
+      "title": "Jinvani Pratikraman Special Issue",
+      "author": "Dharmchand Jain",
+      "agam_id": "",
+      "raw_bytes": 4421546,
+      "extracted_chars": 874383,
+      "unique_units": 2965,
+      "duplicate_units": 606,
+      "very_short_units": 306,
+      "repeated_char_artifacts": 1583,
+      "suth_references": 16,
+      "practice_counts": {"Pratikraman": 2, "Samayik": 0, "Avashyaka": 0, "Kayotsarga": 0, "Vandana": 0, "Chauvisantho": 0, "Paryushan": 0, "Paushadh": 0},
+      "content_classifications": {"ENGLISH": 30, "GENERIC_JAIN": 2920, "STH_REF": 13, "COMMENTARY": 2},
+      "release_decision": "RELEASE"
+    }
+  ],
+  "quality_problems": {
+    "duplicate_rate_pct": 17.2,
+    "very_short_rate_pct": 11.2,
+    "repeated_char_total": 19884,
+    "navigation_noise_filtered": true,
+    "ocr_artifacts_present": true
+  }
+}

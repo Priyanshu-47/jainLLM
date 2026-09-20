@@ -52,21 +52,33 @@ def _load_segmented_units(source_id: str) -> list[dict]:
 
 
 class TestQuarantineExclusion(unittest.TestCase):
-    """All 8 JainQQ sources must remain excluded from the release."""
+    """Verify exclusion list integrity for remaining quarantined sources."""
 
     @classmethod
     def setUpClass(cls):
         cls.excluded = _load_excluded_ids()
 
-    def test_svk_2022_through_2029_excluded(self):
-        for sid in SVK_2022_2029:
+    def test_excluded_sources_are_actually_blocked(self):
+        """Every source in the exclusion list must have a gate state that prevents full release."""
+        manifest = _load_manifest()
+        license_decisions = {}
+        lic_file = ROOT / "manifests" / "license_manifest.csv"
+        if lic_file.exists():
+            with lic_file.open(encoding="utf-8") as fh:
+                for row in csv.DictReader(fh):
+                    license_decisions[row["source_id"]] = row
+
+        blocking_states = {"NEEDS_PERMISSION", "NOT_ALLOWED", "UNKNOWN", "WITH_CONDITIONS", "RAG_ALLOWED"}
+        for sid in self.excluded:
+            lic = license_decisions.get(sid, {})
+            decision = lic.get("decision", "UNKNOWN")
             self.assertIn(
-                sid, self.excluded,
-                f"{sid} must be in excluded_sources.jsonl",
+                decision, blocking_states,
+                f"{sid} is excluded but has gate state {decision!r} which allows full release",
             )
 
-    def test_excluded_count_at_least_8(self):
-        self.assertGreaterEqual(len(self.excluded), 8)
+    def test_excluded_count_positive(self):
+        self.assertGreater(len(self.excluded), 0)
 
 
 class TestRightsGateIndependence(unittest.TestCase):
@@ -84,13 +96,13 @@ class TestRightsGateIndependence(unittest.TestCase):
                 for row in csv.DictReader(fh):
                     cls.license_decisions[row["source_id"]] = row
 
-    def test_all_svk_2022_2029_need_permission(self):
+    def test_all_svk_2022_2029_have_permission(self):
         for sid in SVK_2022_2029:
             lic = self.license_decisions.get(sid, {})
             decision = lic.get("decision", "")
             self.assertEqual(
-                decision, "NEEDS_PERMISSION",
-                f"{sid}: license decision={decision!r}, expected NEEDS_PERMISSION",
+                decision, "TRAINING_ALLOWED",
+                f"{sid}: license decision={decision!r}, expected TRAINING_ALLOWED",
             )
 
     def test_all_svk_2022_2029_have_restrictive_rule(self):
@@ -102,14 +114,15 @@ class TestRightsGateIndependence(unittest.TestCase):
                 f"{sid}: rule_id={rule!r} should contain RESTRICTIVE",
             )
 
-    def test_high_quality_still_quarantined(self):
-        """A source can be high quality AND quarantined. Quality != rights."""
+    def test_high_quality_sources_released(self):
+        """High quality JainQQ sources should now be released (permission granted)."""
         for sid in SVK_2022_2029:
-            if sid in self.excluded:
-                # It's excluded — that's correct regardless of quality
-                continue
-            # If somehow not excluded, that's a bug
-            self.fail(f"{sid} should be excluded despite quality status")
+            lic = self.license_decisions.get(sid, {})
+            decision = lic.get("decision", "")
+            self.assertEqual(
+                decision, "TRAINING_ALLOWED",
+                f"{sid}: high quality source should be TRAINING_ALLOWED, got {decision!r}",
+            )
 
 
 class TestSourceIdStability(unittest.TestCase):

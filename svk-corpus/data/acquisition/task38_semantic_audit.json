@@ -1,0 +1,1166 @@
+{
+  "SVK-2030": {
+    "label": "Acharanga Part 01",
+    "author": "Amarmuni",
+    "agam_id": "AGAM-001",
+    "total_units": 6437,
+    "sth_passages": [
+      {
+        "unit_index": 0,
+        "text": "Agam 01 Ang 01 Acharanga Sutra Part 01 Sthanakvasi - Jain Quantum",
+        "full_length": 65,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 1,
+        "text": "Book Title: Agam 01 Ang 01 Acharanga Sutra Part 01 Sthanakvasi",
+        "full_length": 62,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 2,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Samayik": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Avashyaka": {
+        "total_occurrences": 1,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 8843,
+            "text": "Elaboration—The purpose of wanderings in the Laadh country--- At the time of getting initiated on Margsheersh Krishna (dark half of the month) tenth, Bhagavan took this vow-During the period of my spi",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Kayotsarga": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 72,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 1864,
+      "devanagari_units": 2900,
+      "mixed_units": 1673
+    }
+  },
+  "SVK-2031": {
+    "label": "Acharanga Part 02",
+    "author": "Amarmuni",
+    "agam_id": "AGAM-001",
+    "total_units": 6555,
+    "sth_passages": [
+      {
+        "unit_index": 0,
+        "text": "Agam 01 Ang 02 Acharanga Sutra Part 02 Sthanakvasi - Jain Quantum",
+        "full_length": 65,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 1,
+        "text": "Book Title: Agam 01 Ang 02 Acharanga Sutra Part 02 Sthanakvasi",
+        "full_length": 62,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 2,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 3,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 1,
+          "B_CONTEXTUAL": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 5465,
+            "text": "In this context Acharya Shri Atmaramji M. clarifies that there is no mention of any iryapathik pratikraman (procedure of atonement after movement on a path) in the Agam. Therefore there is no fault or",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 5474,
+            "text": "It is evident from these references that violence and ahimsa are related to feelings. The ascetic who follows the ascetic conduct with prudence, care and code laid down in Agam avoids faults or sin. H",
+            "classification": "B_CONTEXTUAL"
+          },
+          {
+            "unit_index": 5528,
+            "text": "If the ascetic finds it difficult to cross carrying his equipment, he should abandon the same. In brief, six procedures have been detailed in these aphorisms-(1) First he should clean his body and the",
+            "classification": "B_CONTEXTUAL"
+          }
+        ]
+      },
+      "Samayik": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Avashyaka": {
+        "total_occurrences": 4,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 3,
+          "C_EXPLANATION": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 9550,
+            "text": "पिछले सूत्र में बताया है, भगवान महावीर देवलोक से च्यवन होने से पहले और च्यवन होने के बाद के समय को जानते थे, परन्तु च्यवन के समय को नहीं जानते थे, क्योंकि वह काल अत्यन्त सूक्ष्म होता है। इस सूत्र में ",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 10387,
+            "text": "The mention in Avashyak Churni is also almost the same. But in Tattvartha Sutra there are some differences-The five bhaavanas of the vow of abstaining from taking what is not given are (1) To live in ",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 10643,
+            "text": "The five great vows have been mentioned in the same order in the fourth chapter of Dashavaikalika Sutra. This detailed discussion about the twenty fives bhaavanas, five each of the five great vows, is",
+            "classification": "C_EXPLANATION"
+          }
+        ]
+      },
+      "Kayotsarga": {
+        "total_occurrences": 11,
+        "classifications": {
+          "B_CONTEXTUAL": 5,
+          "A_WORD_OCCURRENCE": 6
+        },
+        "sample_passages": [
+          {
+            "unit_index": 4076,
+            "text": "householder take bath, cook, do make-up or quarrel. (aphorism 88) An ascetic should not use for his meditation, studies, kayotsarga or stay such upashraya where women and animal are living.",
+            "classification": "B_CONTEXTUAL"
+          },
+          {
+            "unit_index": 5437,
+            "text": "reason or some disaster strikes, the ascetic should tie his possessions to his body and enter the water dissociating his mind from his body and freeing himself of any thoughts of life and death. When ",
+            "classification": "B_CONTEXTUAL"
+          },
+          {
+            "unit_index": 8047,
+            "text": "dravya sthan are places suitable for stay of ascetics in a village, city, capital city etc. To be steadfast in the Aupashamik attitude (feelings that help suppression of karmas) and other such spiritu",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paushadh": {
+        "total_occurrences": 1,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 1361,
+            "text": "If that food has been prepared on the occasion of some specific austerity like fasting on eighth of the fortnight or paushadh-vrat (partial ascetic vow); or some fortnightly, monthly, bimonthly, quart",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 2,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 1444,
+      "devanagari_units": 3036,
+      "mixed_units": 2075
+    }
+  },
+  "SVK-2032": {
+    "label": "Samvayang",
+    "author": "Amarmuni",
+    "agam_id": "AGAM-012",
+    "total_units": 5707,
+    "sth_passages": [
+      {
+        "unit_index": 0,
+        "text": "Agam 04 Ang 04 Samvayang Sutra Sthanakvasi - Jain Quantum",
+        "full_length": 57,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 1,
+        "text": "Book Title: Agam 04 Ang 04 Samvayang Sutra Sthanakvasi",
+        "full_length": 54,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 10267,
+        "text": "प्रस्तुत सूत्र के सम्पादक श्रुताचार्य प्रवर्तक श्री अमरमुनि जी, श्री वर्द्धमान स्थानकवासी जैन श्रमणसंघ के एक तेजस्वी संत थे।",
+        "full_length": 124,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 10280,
+        "text": "The editor-in-chief of this Sutra, was a brilliant ascetic affliated with Shri Vardhaman Sthanakvasi Jain Shraman Sangh.",
+        "full_length": 120,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 4,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Samayik": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Avashyaka": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Kayotsarga": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 2,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 10208,
+            "text": "This eighth Anga contains the inspiring stories of the spiritual pursuits of ninety great men destined to be liberated. This Sutra is specially read during the Paryushan period. The illustrations rela",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 10226,
+            "text": "Kalpa Sutra is widely read and recited during the Paryushan festival. It contains stories of life of 24 Tirthankars with more details about Bhagavan Mahavir's life. It also contains the disciple linea",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 0,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 1214,
+      "devanagari_units": 2939,
+      "mixed_units": 1554
+    }
+  },
+  "SVK-2033": {
+    "label": "Bhagvati Part 01",
+    "author": "Amarmuni",
+    "agam_id": "AGAM-005",
+    "total_units": 11234,
+    "sth_passages": [
+      {
+        "unit_index": 0,
+        "text": "Agam 05 Ang 05 Bhagvati Vyakhyaprajnapti Sutra Part 01 Sthanakvasi - Jain Quantum",
+        "full_length": 81,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 1,
+        "text": "Book Title: Agam 05 Ang 05 Bhagvati Vyakhyaprajnapti Sutra Part 01 Sthanakvasi",
+        "full_length": 78,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 18494,
+        "text": "प्रस्तुत सूत्र के सम्पादक श्री अमर मुनि जी, श्री वर्द्धमान स्थानकवासी जैन श्रमणसंघ के एक तेजस्वी संत हैं।",
+        "full_length": 105,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 3,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 7,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 5,
+          "B_CONTEXTUAL": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 6509,
+            "text": "'Bhante! Earlier I got initiated in the four dimensional religion (of Bhagavan Parshva Naath), now I wish to accept the religion of five great vows and pratikraman (critical review or self-appraisal) ",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 6513,
+            "text": "[2] After that Kaalasyaveshiputra paid homage and obeisance and instead of the four dimensional religion accepted the religion of five great vows and pratikraman and commenced adhering to the codes.",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 8378,
+            "text": "sixty meals and doing self-appraisal (pratikraman) and critical review",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Samayik": {
+        "total_occurrences": 12,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 12
+        },
+        "sample_passages": [
+          {
+            "unit_index": 3822,
+            "text": "common perception is through sense organs and mind, then why two y categories-visual perception and non-visual perception? When such doubts are not removed suspicion is born. Chaaritrantar (diverse co",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 6425,
+            "text": "Samayik (equanimity) nor its meaning; you neither know Pratyakhyan 41 (renunciation) nor its meaning; you neither know Samyam (ascetic",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 6444,
+            "text": "[2] At this those Sthavir Bhagavans replied to KaalasyaveshiputraO Arya ! We know Samayik (equanimity) as well as its meaning... and so on up to... we know Vyutsarg (dissociation from the body) as wel",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Avashyaka": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Kayotsarga": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 2,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 18412,
+            "text": "This eighth Anga contains the inspiring stories of the spiritual pursuits of ninety great men destined to be liberated. This Sutra is specially read during the Paryushan period. The illustrations rela",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 18430,
+            "text": "Kalpa Sutra is widely read and recited during the Paryushan festival. It contains stories of life of 24 Tirthankars with more details about Bhagavan Mahavir's life. It also contains the disciple linea",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 8,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 2629,
+      "devanagari_units": 4683,
+      "mixed_units": 3922
+    }
+  },
+  "SVK-2034": {
+    "label": "Bhagvati Part 03",
+    "author": "Amarmuni",
+    "agam_id": "AGAM-005",
+    "total_units": 11163,
+    "sth_passages": [
+      {
+        "unit_index": 0,
+        "text": "Agam 05 Ang 05 Bhagvati Vyakhyaprajnapti Sutra Part 03 Sthanakvasi - Jain Quantum",
+        "full_length": 81,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 1,
+        "text": "Book Title: Agam 05 Ang 05 Bhagvati Vyakhyaprajnapti Sutra Part 03 Sthanakvasi",
+        "full_length": 78,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 18435,
+        "text": "प्रस्तुत सूत्र के सम्पादक श्री अमर मुनि जी म. श्री वर्द्धमान स्थानकवासी जैन श्रमणसंघ के एक तेजस्वी संत हैं।",
+        "full_length": 107,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 18440,
+        "text": "The editor-in-chief of this Sutra, Pravartak Shri Amar Muni Ji M. is a brilliant ascetic affliated with Shri Vardhaman Sthanakvasi Jain Shraman Sangh.",
+        "full_length": 150,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 4,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 17,
+        "classifications": {
+          "C_EXPLANATION": 14,
+          "B_CONTEXTUAL": 2,
+          "A_WORD_OCCURRENCE": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 4177,
+            "text": "5. IQ. 2] Bhante ! While doing critical review and atonement 4 6 (pratikraman) for sinful activities, including killing, committed in the F past, does a shravak do so - (1) three ways (by karans or me",
+            "classification": "C_EXPLANATION"
+          },
+          {
+            "unit_index": 4179,
+            "text": "and two means), (6) two ways and one way (by two methods and one A means), (7) one way and three ways (by one method and three means), \" (8) one way and two ways (by one method and two means), or (9) ",
+            "classification": "C_EXPLANATION"
+          },
+          {
+            "unit_index": 4181,
+            "text": "means ... and so on up to ... or by one method and one means. 5 1. When he does pratikraman three ways (by three methods) and",
+            "classification": "C_EXPLANATION"
+          }
+        ]
+      },
+      "Samayik": {
+        "total_occurrences": 19,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 16,
+          "B_CONTEXTUAL": 2,
+          "C_EXPLANATION": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 2365,
+            "text": "93. [Q. 1] Bhante ! Are samayik chaaritra-labdhi jivas (living beings having attained the ability of equanimous conduct) jnani (endowed with right knowledge) or ajnani (ignorant or with wrong knowledg",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 2367,
+            "text": "[2] Living beings without samayik chaaritra-labdhi (not having attained the ability of equanimous conduct) have different alternative combinations of five jnanas and three ajnanas.",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 2370,
+            "text": "94. In the same way what has been stated about samayik chaaritralabdhi jivas (living beings having attained the ability of equanimous 卐 conduct) should be extended up to yathakhyat-chaaritra-labdhi ji",
+            "classification": "B_CONTEXTUAL"
+          }
+        ]
+      },
+      "Avashyaka": {
+        "total_occurrences": 3,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 3
+        },
+        "sample_passages": [
+          {
+            "unit_index": 13888,
+            "text": "Kundapur was the son of Sudarshana, the elder sister of Bhagavan Mahavir. He got married to Bhagavan's daughter Priyadarshana. (Malayagiri Commentary of Avashyak Sutra, leaf 405) दर्शन-वन्दनादि के लिए",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 15311,
+            "text": "Sadhvi Priyadarshana (Jamali's wife) supported Jamali's doctrine out of her past attachment as a householder. Then Potter Dhank, her host, explained her the uselessness and worthlessness of the false ",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 16240,
+            "text": "time (8/9/48) Avadhi-Jnana = extrasensory Avashyak Sutra (9/33/22, 103) perception of the physical",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Kayotsarga": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 2,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 18324,
+            "text": "Price Rs. 500/This eighth Anga contains the inspiring stories of the spiritual pursuits of ninety great men destined to be liberated. This Sutra is specially read during the Paryushan period. The illu",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 18346,
+            "text": "Price Rs. 600/Kalpa Sutra is widely read and recited during the Paryushan festival. It contains stories of life of 24 Tirthankars with more details about Bhagavan Mahavir's life. It also contains the ",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 6,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 2763,
+      "devanagari_units": 4497,
+      "mixed_units": 3903
+    }
+  },
+  "SVK-2035": {
+    "label": "English Pratikraman",
+    "author": "Pravin K Shah",
+    "agam_id": "",
+    "total_units": 1236,
+    "sth_passages": [],
+    "sth_count": 0,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 212,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 198,
+          "B_CONTEXTUAL": 12,
+          "C_EXPLANATION": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 0,
+            "text": "English Pratikraman Introduction and Ritual together for English Speaking Jains - Jain Quantum",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 1,
+            "text": "Book Title: English Pratikraman Introduction and Ritual together for English Speaking Jains",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 9,
+            "text": "English Pratikraman Observance of Self-Reflection",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Samayik": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Avashyaka": {
+        "total_occurrences": 3,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 1,
+          "B_CONTEXTUAL": 1,
+          "C_EXPLANATION": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 150,
+            "text": "Preface Mithyatva (false knowledge about the attributes of our soul and worldly reality) and Kashayas which are anger, ego, deceit, and greed are the soul's impurities. We need to remove such impuriti",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 387,
+            "text": "Many Jain lay people do not practice the 12 vows. Therefore, after understanding the purpose and meaning of our great ritual, every Jain should strive to adopt the 12 vows of lay people according to t",
+            "classification": "B_CONTEXTUAL"
+          },
+          {
+            "unit_index": 453,
+            "text": "The complete Pratikraman is observed in the following steps known as six Essentials (Avashyaka).",
+            "classification": "C_EXPLANATION"
+          }
+        ]
+      },
+      "Kayotsarga": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Vandana": {
+        "total_occurrences": 5,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 4,
+          "B_CONTEXTUAL": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 77,
+            "text": "2.3 Prayer to Lord Tirthankar - Jaya Viyaraya Sutra .............. 3.0 3rd Essential: Vandana - Respecting Ascetics ................",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 346,
+            "text": "C3. - Vandana - Respecting Ascetics Vandana means paying respect to all ascetics including Achäryas, Upadhyayas, and all other Sädhus and Sadhvis. Types of Vandanä: There are three types of Vandanä de",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 357,
+            "text": "Sutras Recited During 3rd Vandana Ävashyak",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 18,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 14,
+          "B_CONTEXTUAL": 3,
+          "C_EXPLANATION": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 70,
+            "text": "A2. - Jnäna Yoga .. B. - Paryushan and Das Lakshana Parva...... C. - English Pratikraman - Observance of Self-Reflection........ 15",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 165,
+            "text": "The annual Pratikraman that all Jains should strive to participate in is called Samvatsari Pratikraman, which is performed on the last day of Paryushan.",
+            "classification": "B_CONTEXTUAL"
+          },
+          {
+            "unit_index": 188,
+            "text": "A. - Importance of Proper Performance of a Ritual B. - Paryushan and Das Lakshana Parva C. - English Pratikraman - Observance of Self-Reflection",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": false,
+      "lang_transitions_approx": 1,
+      "assessment": "UNRELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 506,
+      "devanagari_units": 89,
+      "mixed_units": 641
+    }
+  },
+  "SVK-2036": {
+    "label": "Sthanang Part 02",
+    "author": "Amarmuni",
+    "agam_id": "AGAM-022",
+    "total_units": 10366,
+    "sth_passages": [
+      {
+        "unit_index": 0,
+        "text": "Agam 03 Ang 03 Sthanang Sutra Part 02 Sthanakvasi - Jain Quantum",
+        "full_length": 64,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 1,
+        "text": "Book Title: Agam 03 Ang 03 Sthanang Sutra Part 02 Sthanakvasi",
+        "full_length": 61,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 17520,
+        "text": "प्रस्तुत सूत्र के सम्पादक श्री अमर मुनि जी, श्री वर्द्धमान स्थानकवासी जैन श्रमणसंघ के एक तेजस्वी संत हैं। आपकी वाणी में जादू है। श्रोता जब आपश्री के मुख से जिनवाणी का रसास्वाद करते हैं तो झूमने लग जाते हैं।",
+        "full_length": 206,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 17524,
+        "text": "The editor-in-chief of this Sutra, is a brilliant ascetic affliated with Shri Vardhaman Sthanakvasi Jain Shraman Sangh. He is endowed with a maganetic style of oration. When masses listen to the tenets of Jina they are spellbound.",
+        "full_length": 230,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 4,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 21,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 20,
+          "B_CONTEXTUAL": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 1070,
+            "text": "209 Paap Karma-Pad (Segment of Pratikraman-Pad (Segment of",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 1147,
+            "text": "Pratikraman-Pad (Segment of great rivers)",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 5251,
+            "text": "of 70 days from Samvatsarik pratikraman to Kartik Purnima. 41 । (2) Madhyam varshavas (medium monsoon-stay)-It is of 120 days from ! Shravan Krishna Pratipada to Kartik Purnima. (3) Utkrisht varshavas",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Samayik": {
+        "total_occurrences": 3,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 3
+        },
+        "sample_passages": [
+          {
+            "unit_index": 2785,
+            "text": "In the same way pravrajya ( ascetic initiation) is of four kinds - फ्र (1) Vapita pravrajya — to initiate in Samayik Charitra (chhoti diksha or फ्र the primary initiation). (2) Parivapita pravrajya-to",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 5831,
+            "text": "139. Samyam (ascetic-discipline or conduct) is of five kinds(1) Samayik-samyam--abstaining from all kinds of sinful acts. (2) Chhedopasthaniya-samyam-to accept five great vows one by one. (3) Parihara",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 8676,
+            "text": "____103. Kalpasthiti (praxis observation) is of six kinds-(1) Samayik 4 kalpasthiti, (2) Chhedopasthapaniya kalpasthiti and (3) Nirvishamaan Si kalpasthiti, (4) Nirvisht kalpasthiti, (5) Jinakalpasthi",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Avashyaka": {
+        "total_occurrences": 7,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 7
+        },
+        "sample_passages": [
+          {
+            "unit_index": 2457,
+            "text": "Elaboration—There is minimum attachment for a pine mattress because it is very cheap. Therefore a person having least attachment for wealth or family is said to be like shumb-cut. As compared to a pin",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 9900,
+            "text": "During the time of the first kulakar Vimalavahan three out of the ten kalpavrikshas had become extinct-(1) Trutitang, (2) Dipang and (3) Jyotirang. Detailed description of kulakars is available in Ava",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 9944,
+            "text": "tendencies Bharat Chakravarti introduced Charak and Chhavichchhed codes. (Avashyak Churni)",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Kayotsarga": {
+        "total_occurrences": 1,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 1
+        },
+        "sample_passages": [
+          {
+            "unit_index": 10714,
+            "text": "135. Prashast kaaya-vinaya (noble physical modesty) is of seven kinds (1) Aayukt gaman-to move carefully. (2) Aayukt sthaan-to stand carefully, to perform kaayotsarg. (3) Aayukt nishidan-to sit carefu",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 3,
+        "classifications": {
+          "B_CONTEXTUAL": 1,
+          "A_WORD_OCCURRENCE": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 5252,
+            "text": "The first of these two aphorism proscibes movement during pratham pravrit (first part of monsoon season) and the second during monsoonstay. This confirms that pratham pravrit is the part of monsoon se",
+            "classification": "B_CONTEXTUAL"
+          },
+          {
+            "unit_index": 17489,
+            "text": "Price Rs. 500/This eighth Anga contains the inspiring stories of the spiritual pursuits of ninety great men destined to be liberated. This Sutra is specially read during the Paryushan period: The illu",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 17507,
+            "text": "Price Rs. 500/Kalpa Sutra is widely read and recited during the Paryushan festival. It contains stories of life of 24 Tirthankars with more details about Bhagavan Mahavir's life. It also contains the ",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 2,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 2508,
+      "devanagari_units": 4445,
+      "mixed_units": 3413
+    }
+  },
+  "SVK-2037": {
+    "label": "Jinvani Pratikraman",
+    "author": "Dharmchand Jain",
+    "agam_id": "",
+    "total_units": 3571,
+    "sth_passages": [
+      {
+        "unit_index": 175,
+        "text": "__प्रतिक्रमण सीखने-सिखाने पर स्थानकवासी परम्परा में विशेष बल दिया जाता है। शिक्षण बोर्ड, धार्मिक पाठशाला, स्वाध्याय शिविर आदि के माध्यम से स्थानकवासी समाज धार्मिक ज्ञान-वृद्धि के क्षेत्र में निरन्तर आगे बढ़ रहा है। समाज में सामायिक और स्वाध्याय की सतत प्रेरणा का ही यह सुफल है कि अनेक युवक-युवतियाँ, किशोर-किशोरियाँ, बालक-बालिकाएँ सामायिक, प्रतिक्रमण, २५ बोल आदि सीख रहे हैं। समाज में अनेक धार्मिक प्रतियोगी परीक्षाएँ भी ज्ञान-वृद्धि में सहायक हुई हैं। यह ज्ञान कहीं भार न बन जाये इसके लिए आवश्यक है ",
+        "full_length": 845,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 211,
+        "text": "उल्लेखनीय है कि श्वेताम्बर स्थानकवासी, मूर्तिपूजक और तेरांपथ के प्रतिक्रमण में करेमि भंते, इच्छामि खमासमणो, तस्सउत्तरी, लोगस्स, नमोत्थुणं आदि अनेक पाठ समान हैं। प्रतिक्रमण को उपयोगी एवं रोचक बनाने की दृष्टि से समय-समय पर प्रयास होते रहे हैं। स्थानकवासी प्रतिक्रमण में भाव वन्दना और उसके तिलोकऋषि जी के सवैया इसी के उदाहरण हैं । तेरापंथ सम्प्रदाय के प्रतिक्रमण पर दृष्टिपात करें तो ज्ञात होता है कि इस परम्परा के श्रावक प्रतिक्रमण में व्रतों के अतिचारों के पाठ आचार्य श्री तुलसी जी के द्वारा रचित गेय ",
+        "full_length": 569,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 219,
+        "text": "||15,17 नवम्बर 2006 बिन्दुओं पर विवाद उठते रहते हैं। स्थानकवासी परम्परा में प्रतिक्रमण संबंधी विवाद को दूर कर एक श्रावक प्रतिक्रमण तय करने हेतु प्रतिक्रमण निर्णय समिति' का गठन किया गया। पूज्य (आचार्य) श्री हस्तीमल जी म.सा. के संयोजन में श्रावक प्रतिक्रमण ‘सार्थ सामायिक प्रतिक्रमण सूत्र' प्रकाशित हुआ। सम्मेलन में यह भी निर्णय हुआ कि दैवसिय प्रतिक्रमण में ४, पक्खी को ८, चातुर्मासिक को १२ एवं सांवत्सरिक प्रतिक्रमण में २० लोगस्स का ध्यान किया जाएगा। किन्तु अभी भी इसके सहित कुछ बिन्दुओं पर मतभेद है, ",
+        "full_length": 1259,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 222,
+        "text": "इस विशेषाङ्क में सभी जैन सम्प्रदायों का प्रतिनिधित्व है। स्थानकवासी परम्परा में आचार्यप्रवर श्री हीराचन्द्र जी म.सा., (स्व.) आचार्य श्री नानेश, (स्व.) आचार्य श्री देवेन्द्रमुनि जी आदि का प्रतिनिधित्व है तो तेरापंथ सम्प्रदाय में आचार्य श्री महाप्रज्ञ एवं दिगम्बर परम्परा में आचार्य श्री कनकनन्दी जी के लेख भी सन्निविष्ट हैं। खरतरगच्छ, तपागच्छ के प्रतिक्रमण से सम्बन्धित लेख भी इस विशेषाङ्क को व्यापक बना रहे",
+        "full_length": 406,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 231,
+        "text": "प्रतिक्रमण की साधना आत्म-विशुद्धि की अमोघ साधना है। आज व्यक्ति बाह्यशुद्धि के प्रति जितना सजग है उतना ही आन्तरिक शुद्धि के प्रति असजग । स्थानकवासी रत्नसंघ के अष्टम पट्टधर आचार्यप्रवर पूज्य श्री हीराचन्द्र जी म.सा. ने प्रतिक्रमण विषयक अपने इस प्रवचन में व्यक्ति को आन्तरिक शुद्धि के प्रति सजग बनने की महती प्रेरणा की है। १७ सितम्बर २००६ को बंगारपेट में फरमाये गए इस प्रवचन में प्रतिक्रमण का सर्वांग विवेचन हुआ है । प्रवचन का संकलन श्रावकरत्न श्री जगदीश जी जैन के द्वारा किया गया है। -सम्पादक",
+        "full_length": 490,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 2450,
+        "text": "वीतराग वाणी समग्रता लिए हुए है। उसी वीतराग वाणी को स्थानकवासी जैन परम्परा ३२ आगम प्रमाणरूप मानती है। चरम आगम आवश्यक सूत्र त्रिकाल साधना का परिचायक है। इसमें अतीत की आलोचना, वर्तमान में समभाव की साधना व अनागत के प्रत्याख्यान द्वारा कर्मों की निर्जरा की जाती है।",
+        "full_length": 260,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 3363,
+        "text": "प्रतिक्रमण के पाठों में व विधि में अलग-अलग सम्प्रदायों व फिरकों में काफी मतभेद है। मात्र स्थानकवासी परम्परा में भी पाठों व विधि के बारे में एकरूपता नहीं है।",
+        "full_length": 156,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 3581,
+        "text": "सामायिक एवं प्रतिक्रमण पर जैन रत्न पुस्तकालय, सिंहपोल, जोधपुर से सन् १९३५ (संवत् १९९२) में पूज्य श्री हस्तीमल जी म.सा. के सहयोग से सम्पादित एवं सन् १९३३ के अजमेर साधु सम्मेलन द्वारा निर्धारित प्रतिक्रमण समिति के सदस्य मुनियों द्वारा बहुमत से स्वीकृत ‘सार्थ सामायिक-प्रतिक्रमण सूत्र' पुस्तक प्रकाशित हुई थी। इस पुस्तक में स्थानकवासी साधुमार्गीय संघ के लिए सर्वमान्य एक प्रतिक्रमण प्रस्तुत करने का अभिनन्दनीय प्रयास किया गया था। अजमेर सम्मेलन में प्रतिक्रमण के संबंध में कुछ निर्णय हुए थे, वे इस प्रकार",
+        "full_length": 593,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 3612,
+        "text": "“कालक्रम से अथवा रुचि के वैचित्रय से या देशभेद से जो इस आवश्यक सूत्र में पाठ भेदादि यत्रतत्र उपलब्ध हैं उस भेद को मिटाने के लिये अजमेर के मुनि सम्मेलन में यह प्रश्न उपस्थित हुआ कि आवश्यक सूत्र के मूल पाठ एक होना चाहिये। जैसे श्वेताम्बर मूर्तिपूजक समाज में आवश्यक के बहुत पाठ ढ़ गये हैं, इसी प्रकार श्वेताम्बर साधुमार्गीय शाखा में भी कतिपय गुजराती, मारवाड़ी आदि भाषा में भी पाठ देखने में आते हैं। जिससे आवश्यक एक मिश्रित भाषा में हो गया है, अतः मौलिक अर्द्धमागधी भाषा में आवश्यक सूत्र हो तो स्थानकवासी",
+        "full_length": 536,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 3676,
+        "text": "प्रश्न स्थानकवासी परम्परा में ऐसे कौनसे महान् तेजस्वी आचार्य हुए हैं, जिन्होंने केवल एक प्रहर से भी कम समय में खड़े-खड़े प्रतिक्रमण के सारे पाठों को कंठस्थ कर लिया था ?",
+        "full_length": 168,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 4261,
+        "text": "श्रावक प्रतिक्रमण में श्रमणसूत्र के शय्यासूत्र आदि पाँच पाठों को बोलने को लेकर स्थानकवासी सम्प्रदाय में मतभेद है । मन्दिरमार्गी एवं तेरापंथ सम्प्रदाय तो श्रावक प्रतिक्रमण में इन पाठों को नहीं बोलते हैं, किन्तु स्थानकवासियों में जो श्रावक बोलते हैं, तथा इसका जो हेतु देते हैं, उस हेतु का निराकरण इन प्रश्नोत्तरों में भलीभाँति हुआ है। -सम्पादक",
+        "full_length": 341,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 4887,
+        "text": "समाधान- श्वेताम्बर परम्परा पूर्वधरों की रचना को आगम स्वीकार करती है। स्थानकवासी व तेरापंथी",
+        "full_length": 90,
+        "category": "E_METADATA",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      },
+      {
+        "unit_index": 4920,
+        "text": "तीर्थंकर भगवन्त आदि दीक्षा का प्रत्याख्यान करते समय ‘वोसिरामि' नहीं बोल सकते। स्वयं की दीक्षा में 'वोसिरामि' बोलते हैं। जब दीक्षा प्रदाता तीर्थंकर भगवन्त सैकड़ों-हजारों मुमुक्षुओं को दीक्षा प्रदान कर सकते हैं तो पच्चक्खाण में वोसिरे' बोलने में क्या आपत्ति? जिज्ञासा- स्थानकवासी परम्परा में दो प्रतिक्रमण के सम्बन्ध में क्या धारणा है? समाधान- प्रमुखतया तीन प्रकार की परिपाटी चल रही है- १. तीन चौमासी और एक संवत्सरी- इन चार दिवसों में दो प्रतिक्रमण करना। २. केवल कार्तिक चौमासी को दो प्रतिक्रमण करना। ३",
+        "full_length": 530,
+        "category": "F_AMBIGUOUS",
+        "has_practice": false,
+        "has_history": false,
+        "has_doctrine": false
+      }
+    ],
+    "sth_count": 13,
+    "practice_audit": {
+      "Pratikraman": {
+        "total_occurrences": 2,
+        "classifications": {
+          "A_WORD_OCCURRENCE": 2
+        },
+        "sample_passages": [
+          {
+            "unit_index": 0,
+            "text": "Jinvani Special issue on Pratikraman November 2006 - Jain Quantum",
+            "classification": "A_WORD_OCCURRENCE"
+          },
+          {
+            "unit_index": 1,
+            "text": "Book Title: Jinvani Special issue on Pratikraman November 2006",
+            "classification": "A_WORD_OCCURRENCE"
+          }
+        ]
+      },
+      "Samayik": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Avashyaka": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Kayotsarga": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Vandana": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Chauvisantho": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paryushan": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      },
+      "Paushadh": {
+        "total_occurrences": 0,
+        "classifications": {},
+        "sample_passages": []
+      }
+    },
+    "commentary_separation": {
+      "has_headings": true,
+      "has_labels": true,
+      "lang_transitions_approx": 4,
+      "assessment": "RELIABLE"
+    },
+    "content_distribution": {
+      "english_units": 32,
+      "devanagari_units": 3099,
+      "mixed_units": 440
+    }
+  }
+}

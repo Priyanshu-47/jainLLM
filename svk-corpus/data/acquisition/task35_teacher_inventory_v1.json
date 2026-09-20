@@ -1,0 +1,119 @@
+{
+  "task": 35,
+  "date": "2026-09-20",
+  "description": "Sthanakavasi teacher/commentator inventory",
+  "teachers": [
+    {
+      "teacher": "Amarmuni",
+      "source_count_in_corpus": 5,
+      "confirmed_sthana_evidence": "CONFIRMED",
+      "content_type": "Agam commentary (Acharanga, Sthananga, Samvayang, Bhagavati, Avashyak, Uttaradhyayana, Dasvaikalik, Aupapatik)",
+      "practice_agam_relevance": "AGAM: AGAM-001, AGAM-003, AGAM-004, AGAM-005, AGAM-028, AGAM-029, AGAM-030, AGAM-032",
+      "availability": "JainQQ (accessible, permission covered)",
+      "permission": "COVERED_BY_JAINQQ_PERMISSION",
+      "priority": "P0",
+      "new_candidates": [
+        "T35-001",
+        "T35-002",
+        "T35-003",
+        "T35-004",
+        "T35-005",
+        "T35-009"
+      ],
+      "notes": "Primary Sthanakvasi Agam commentator. All works published by Padma Prakashan."
+    },
+    {
+      "teacher": "Shreechand Surana",
+      "source_count_in_corpus": 3,
+      "confirmed_sthana_evidence": "CONFIRMED",
+      "content_type": "Co-commentator with Amarmuni",
+      "practice_agam_relevance": "AGAM: AGAM-003, AGAM-005, AGAM-011, AGAM-032",
+      "availability": "JainQQ (accessible, permission covered)",
+      "permission": "COVERED_BY_JAINQQ_PERMISSION",
+      "priority": "P0",
+      "new_candidates": [
+        "T35-001",
+        "T35-002",
+        "T35-004",
+        "T35-005"
+      ],
+      "notes": "Co-commentator with Amarmuni on multiple Agams."
+    },
+    {
+      "teacher": "Kesrichand Bhandari",
+      "source_count_in_corpus": 1,
+      "confirmed_sthana_evidence": "CONFIRMED",
+      "content_type": "History (Sthanakvasi Jain Itihas)",
+      "practice_agam_relevance": "HISTORY: Sthanakvasi lineage history",
+      "availability": "JainQQ (accessible, permission covered)",
+      "permission": "COVERED_BY_JAINQQ_PERMISSION",
+      "priority": "P1",
+      "new_candidates": [],
+      "notes": "Author of Sthanakvasi Jain Itihas. Already in corpus as SVK-2027."
+    },
+    {
+      "teacher": "Namramuni",
+      "source_count_in_corpus": 1,
+      "confirmed_sthana_evidence": "CONFIRMED",
+      "content_type": "Teaching (Inner Journey Part 01)",
+      "practice_agam_relevance": "TEACHING: Modern Sthanakvasi muni teachings",
+      "availability": "JainQQ (accessible, permission covered)",
+      "permission": "COVERED_BY_JAINQQ_PERMISSION",
+      "priority": "P1",
+      "new_candidates": [],
+      "notes": "Author of Inner Journey Part 01. Already in corpus as SVK-2028."
+    },
+    {
+      "teacher": "Pravin K Shah",
+      "source_count_in_corpus": 1,
+      "confirmed_sthana_evidence": "CONFIRMED",
+      "content_type": "Practice explanation (English Pratikraman)",
+      "practice_agam_relevance": "PRACTICE: Pratikraman, all 6 Avashyakas",
+      "availability": "JainQQ (accessible, permission covered)",
+      "permission": "COVERED_BY_JAINQQ_PERMISSION",
+      "priority": "P0",
+      "new_candidates": [
+        "T35-006"
+      ],
+      "notes": "Translator of English Pratikraman. Explicitly mentions Sthanakvasi practice tradition."
+    },
+    {
+      "teacher": "Anand Rishi",
+      "source_count_in_corpus": 0,
+      "confirmed_sthana_evidence": "UNCONFIRMED",
+      "content_type": "Mentioned only",
+      "practice_agam_relevance": "UNKNOWN",
+      "availability": "UNKNOWN",
+      "permission": "UNKNOWN",
+      "priority": "P2",
+      "new_candidates": [],
+      "notes": "Mentioned in corpus but no source found. Needs verification."
+    },
+    {
+      "teacher": "Praveen Rishi / Pravin Rishi",
+      "source_count_in_corpus": 0,
+      "confirmed_sthana_evidence": "UNCONFIRMED",
+      "content_type": "Not found",
+      "practice_agam_relevance": "UNKNOWN",
+      "availability": "UNKNOWN",
+      "permission": "UNKNOWN",
+      "priority": "P2",
+      "new_candidates": [],
+      "notes": "Not found in corpus. Needs verification."
+    },
+    {
+      "teacher": "Sagarmal Jain",
+      "source_count_in_corpus": 0,
+      "confirmed_sthana_evidence": "PROBABLE",
+      "content_type": "History (Sthanakvasi Jain Parampara ka Itihas)",
+      "practice_agam_relevance": "HISTORY: Sthanakvasi lineage history",
+      "availability": "Jainebooks (blocked, requires account)",
+      "permission": "UNKNOWN",
+      "priority": "P1",
+      "new_candidates": [
+        "T35-007"
+      ],
+      "notes": "Author of Sthanakvasi Jain Parampara ka Itihas. 616 pages. Requires Jainebooks account."
+    }
+  ]
+}

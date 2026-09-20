@@ -1,6 +1,6 @@
 {
   "corpus_version": "svk-corpus-v0.1",
-  "generated_at": "2026-09-19T13:17:07+00:00",
+  "generated_at": "2026-09-20T12:40:57.960338+00:00",
   "per_source": {
     "SVK-0001": {
       "admitted_products": [],
@@ -1299,115 +1299,163 @@
       "verification_outstanding": true
     },
     "SVK-2022": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2022",
       "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
-      "units_released": 0,
+      "units_released": 866,
       "verification_outstanding": false
     },
     "SVK-2023": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2023",
       "title": "Agam 30 mool 03 Uttaradhyayana Sutra Sthanakvasi",
-      "units_released": 0,
+      "units_released": 1742,
       "verification_outstanding": false
     },
     "SVK-2024": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2024",
       "title": "Pratikraman - Observance of Self Reflection",
-      "units_released": 0,
+      "units_released": 17,
       "verification_outstanding": false
     },
     "SVK-2025": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2025",
       "title": "Agam 03 Ang 03 Sthanang Sutra Part 01 Sthanakvasi",
-      "units_released": 0,
+      "units_released": 2969,
       "verification_outstanding": false
     },
     "SVK-2026": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2026",
       "title": "Agam 29 Mool 02 Dasvaikalik Sutra Sthanakvasi",
-      "units_released": 0,
+      "units_released": 991,
       "verification_outstanding": false
     },
     "SVK-2027": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2027",
       "title": "Sthanakvasi Jain Itihas",
-      "units_released": 0,
+      "units_released": 313,
       "verification_outstanding": false
     },
     "SVK-2028": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "high",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2028",
       "title": "Inner Journey Part 01",
-      "units_released": 0,
+      "units_released": 326,
       "verification_outstanding": false
     },
     "SVK-2029": {
-      "admitted_products": [],
+      "admitted_products": [
+        "rag",
+        "training"
+      ],
       "computed_provenance_grade": "medium",
-      "flags": [],
-      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
-      "gate_state": "UNKNOWN",
+      "flags": [
+        "permission_granted"
+      ],
+      "gate_rule": "R93_RESTRICTIVE_TERMS_PERMISSION_GRANTED",
+      "gate_state": "TRAINING_ALLOWED",
       "reasons": [
-        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+        "P10_GATE_STATE: gate state TRAINING_ALLOWED permits RAG and training release",
+        "Permission granted by Padma Prakashan on 2026-09-19 for training and all operations"
       ],
       "source_id": "SVK-2029",
       "title": "Agam 12 Upang 01 Aupapatik Sutra Sthanakvasi",
-      "units_released": 0,
+      "units_released": 1798,
       "verification_outstanding": false
     }
   },
@@ -1470,5 +1518,5 @@
       "written": 88896
     }
   },
-  "sources_released": 32
+  "sources_released": 40
 }

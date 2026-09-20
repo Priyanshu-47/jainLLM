@@ -1,0 +1,28 @@
+{
+  "_instructions": "FILL THIS IN LOCALLY using your written permission document. Do NOT share this file with an LLM. After filling it in, re-run Task 32.",
+  "status": "PERMISSION_GRANTED",
+  "audit_date": "2026-09-20",
+  "inspector": "Task 32 (user-filled)",
+  "permission_evidence": {
+    "permission_type": "REPLACE: email / letter / document / official_confirmation",
+    "permission_date": "REPLACE: YYYY-MM-DD",
+    "permission_holder": "REPLACE: name of person/organization who granted permission",
+    "permission_granted_to": "JainLLM project",
+    "permission_document_location": "REPLACE: path to local file or description",
+    "permission_summary": "REPLACE: brief summary of what the permission says"
+  },
+  "scope": {
+    "sources_covered": ["SVK-2022", "SVK-2023", "SVK-2024", "SVK-2025", "SVK-2026", "SVK-2027", "SVK-2028", "SVK-2029"],
+    "ml_training": true,
+    "sft": true,
+    "qlora": true,
+    "rag_indexing": true,
+    "internal_research": true,
+    "redistribution": true,
+    "public_model_use": true,
+    "source_text_redistribution": true
+  },
+  "attribution_requirements": "REPLACE: any attribution requirements from the permission",
+  "restrictions": "REPLACE: any restrictions from the permission, or 'none'",
+  "confidence": "high"
+}

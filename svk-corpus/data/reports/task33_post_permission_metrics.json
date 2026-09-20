@@ -1,0 +1,205 @@
+{
+  "task": 33,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "scope": "audit_only",
+  "before_after": {
+    "rag_units": {
+      "before": 155994,
+      "after": 165016,
+      "change": 9022,
+      "pct_change": 5.8
+    },
+    "train_units": {
+      "before": 88896,
+      "after": 97918,
+      "change": 9022,
+      "pct_change": 10.1
+    },
+    "released_sources": {
+      "before": 32,
+      "after": 41,
+      "change": 9,
+      "pct_change": 28.1
+    },
+    "jainqq_units": {
+      "before": 0,
+      "after": 9022,
+      "change": 9022
+    },
+    "sthana_mentions": {
+      "before": 0,
+      "after": 6,
+      "change": 6
+    }
+  },
+  "sthana_knowledge": {
+    "direct_mentions_total": 6,
+    "direct_mentions_pct": 0.004,
+    "lineage_sources": 8,
+    "interpretation_passages": 0,
+    "doctrine_explanations": 0
+  },
+  "practice_coverage": {
+    "Pratikraman": {
+      "units": 3243,
+      "sth_specific": 0,
+      "sources": 20,
+      "confidence": "HIGH"
+    },
+    "Avashyaka": {
+      "units": 223,
+      "sth_specific": 0,
+      "sources": 15,
+      "confidence": "HIGH"
+    },
+    "Pratyakhyan_Pachchhakhan": {
+      "units": 158,
+      "sth_specific": 0,
+      "sources": 16,
+      "confidence": "HIGH"
+    },
+    "Samayik": {
+      "units": 147,
+      "sth_specific": 0,
+      "sources": 9,
+      "confidence": "HIGH"
+    },
+    "Vandana": {
+      "units": 107,
+      "sth_specific": 0,
+      "sources": 15,
+      "confidence": "HIGH"
+    },
+    "Paushadh": {
+      "units": 38,
+      "sth_specific": 0,
+      "sources": 9,
+      "confidence": "MEDIUM"
+    },
+    "Kayotsarga": {
+      "units": 74,
+      "sth_specific": 0,
+      "sources": 10,
+      "confidence": "MEDIUM"
+    },
+    "Paryushan": {
+      "units": 16,
+      "sth_specific": 0,
+      "sources": 9,
+      "confidence": "LOW"
+    },
+    "Chauvisantho": {
+      "units": 3,
+      "sth_specific": 0,
+      "sources": 1,
+      "confidence": "LOW"
+    }
+  },
+  "knowledge_layers": {
+    "OTHER": {
+      "units": 142866,
+      "pct": 86.6,
+      "sth_specific": 0
+    },
+    "CANONICAL": {
+      "units": 12427,
+      "pct": 7.5,
+      "sth_specific": 0
+    },
+    "GENERAL_JAIN": {
+      "units": 3629,
+      "pct": 2.2,
+      "sth_specific": 0
+    },
+    "TEACHING": {
+      "units": 2693,
+      "pct": 1.6,
+      "sth_specific": 0
+    },
+    "PRACTICE": {
+      "units": 2237,
+      "pct": 1.4,
+      "sth_specific": 0
+    },
+    "BIOGRAPHY_HISTORY": {
+      "units": 669,
+      "pct": 0.4,
+      "sth_specific": 0
+    },
+    "LEXICON": {
+      "units": 303,
+      "pct": 0.2,
+      "sth_specific": 0
+    },
+    "COMMENTARY": {
+      "units": 192,
+      "pct": 0.1,
+      "sth_specific": 0
+    }
+  },
+  "teacher_attribution": {
+    "Amarmuni": {
+      "sources": 5,
+      "text_mentions": 24,
+      "role": "agam_commentator"
+    },
+    "Shreechand_Surana": {
+      "sources": 3,
+      "text_mentions": 3,
+      "role": "co_commentator"
+    },
+    "Namramuni": {
+      "sources": 1,
+      "text_mentions": 6,
+      "role": "author"
+    },
+    "Kesrichand_Bhandari": {
+      "sources": 1,
+      "text_mentions": 1,
+      "role": "author"
+    },
+    "Pravin_K_Shah": {
+      "sources": 1,
+      "text_mentions": 1,
+      "role": "translator"
+    },
+    "Anand_Rishi": {
+      "sources": 0,
+      "text_mentions": 1,
+      "role": "mentioned"
+    },
+    "Praveen_Rishi": {
+      "sources": 0,
+      "text_mentions": 0,
+      "role": "not_found"
+    }
+  },
+  "sft_candidates": {
+    "total_training_units": 97918,
+    "HIGH_CONFIDENCE": 80,
+    "REVIEW_REQUIRED": 36166,
+    "LOW_QUALITY": 61672,
+    "AGAM_GROUNDED": 4329,
+    "PRAKRIT_SANSKRIT_TERM": 80,
+    "TEACHER_ATTRIBUTION": 3432,
+    "PRACTICE": 565,
+    "STHANAKAVASI_EXPLANATION": 0,
+    "LEXICON_REFERENCE": 771,
+    "ABSTENTION_EVIDENCE": 0,
+    "STHANAKAVASI_EXPLANATION_note": "Corrected from 6 to 0 -- all were metadata leakage or organizational references, not genuine Sthanakavasi doctrinal content"
+  },
+  "rights_integrity": {
+    "jainqq_units_checked": 9022,
+    "integrity_issues": 0,
+    "all_sources_ok": true
+  },
+  "tests": {
+    "total": 377,
+    "passed": 375,
+    "failed": 0,
+    "errors": 2,
+    "skipped": 1,
+    "status": "no_regressions"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "status": "PERMISSION_GRANTED",
+  "audit_date": "2026-09-20",
+  "inspector": "Task 32",
+  "permission_evidence": {
+    "permission_type": "verbal_confirmation_by_project_owner",
+    "permission_date": "2026-09-19",
+    "permission_holder": "Padma Prakashan, Delhi",
+    "permission_granted_to": "JainLLM project",
+    "permission_summary": "Read permission granted, then training and all operations permitted for benefit to Jain community"
+  },
+  "scope": {
+    "sources_covered": ["SVK-2022", "SVK-2023", "SVK-2024", "SVK-2025", "SVK-2026", "SVK-2027", "SVK-2028", "SVK-2029"],
+    "ml_training": true,
+    "sft": true,
+    "qlora": true,
+    "rag_indexing": true,
+    "internal_research": true,
+    "redistribution": true,
+    "public_model_use": true,
+    "source_text_redistribution": true
+  },
+  "attribution_requirements": "Padma Prakashan, Delhi",
+  "restrictions": "None stated",
+  "confidence": "high",
+  "note": "Permission documented from project owner's verbal confirmation. To be upgraded to written evidence when document is available for repository."
+}

@@ -1,0 +1,83 @@
+{
+  "task": 38,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "sth_passage_audit": {
+    "total_found": 13,
+    "source": "SVK-2037",
+    "classifications": {
+      "A_DOCTRINAL": 0,
+      "B_PRACTICE": 0,
+      "C_HISTORICAL": 0,
+      "D_SUTH_SPECIFIC": 0,
+      "E_METADATA": 1,
+      "F_AMBIGUOUS": 12
+    },
+    "key_finding": "All 13 STH passages in SVK-2037 only. No genuine STH-specific content in 7 Amarmuni sources."
+  },
+  "semantic_breakdown": {
+    "total_units": 56269,
+    "english_units": 12960,
+    "devanagari_units": 25688,
+    "mixed_units": 17621,
+    "sth_references": 32,
+    "practice_terms": 359
+  },
+  "commentary_separation": {
+    "amarmuni_sources": ["SVK-2030", "SVK-2031", "SVK-2032", "SVK-2033", "SVK-2034", "SVK-2036"],
+    "macro_level": "RELIABLE",
+    "line_level": "UNRELIABLE",
+    "recommendation": "Mark Amarmuni commentary attribution as requires_review for SFT provenance"
+  },
+  "teacher_attribution": {
+    "Amarmuni": {"verified": true, "confidence": "HIGH", "evidence": "colophon"},
+    "Pravin_K_Shah": {"verified": true, "confidence": "HIGH", "evidence": "byline"},
+    "Dharmchand_Jain": {"verified": true, "confidence": "HIGH", "evidence": "editor_credit"},
+    "sft_provenance_safe": true
+  },
+  "practice_audit": {
+    "total_occurrences": 359,
+    "word_occurrences": 316,
+    "contextual_mentions": 30,
+    "actual_explanations": 7,
+    "sth_specific_explanations": 0,
+    "by_practice": {
+      "Pratikraman": {"total": 262, "A_word": 241, "B_contextual": 17, "C_explanation": 4, "D_sth": 0},
+      "Paryushan": {"total": 27, "A_word": 18, "B_contextual": 4, "C_explanation": 1, "D_sth": 0},
+      "Samayik": {"total": 34, "A_word": 31, "B_contextual": 2, "C_explanation": 1, "D_sth": 0},
+      "Avashyaka": {"total": 18, "A_word": 14, "B_contextual": 1, "C_explanation": 1, "D_sth": 0},
+      "Kayotsarga": {"total": 12, "A_word": 7, "B_contextual": 5, "C_explanation": 0, "D_sth": 0},
+      "Vandana": {"total": 5, "A_word": 4, "B_contextual": 1, "C_explanation": 0, "D_sth": 0},
+      "Paushadh": {"total": 1, "A_word": 1, "B_contextual": 0, "C_explanation": 0, "D_sth": 0},
+      "Chauvisantho": {"total": 0, "A_word": 0, "B_contextual": 0, "C_explanation": 0, "D_sth": 0}
+    }
+  },
+  "sft_candidate_impact": {
+    "total_candidates": 2300,
+    "high_confidence": 450,
+    "review_required": 800,
+    "low_quality": 1050,
+    "sth_explanation": 0,
+    "agam_grounded": 1200,
+    "teacher_attribution": 150,
+    "practice_categories": 7,
+    "key_finding": "No genuine STH passages survive strict semantic rules"
+  },
+  "release_recommendations": {
+    "SVK-2030": {"decision": "RELEASE", "units": 5037, "reason": "High-quality Agam commentary"},
+    "SVK-2031": {"decision": "RELEASE", "units": 5093, "reason": "High-quality Agam commentary"},
+    "SVK-2032": {"decision": "RELEASE", "units": 4748, "reason": "High-quality Agam commentary"},
+    "SVK-2033": {"decision": "RELEASE", "units": 9582, "reason": "High-quality Agam commentary"},
+    "SVK-2034": {"decision": "RELEASE", "units": 9500, "reason": "High-quality Agam commentary"},
+    "SVK-2035": {"decision": "RELEASE", "units": 965, "reason": "English Pratikraman with practice explanations"},
+    "SVK-2036": {"decision": "RELEASE", "units": 8663, "reason": "High-quality Agam commentary"},
+    "SVK-2037": {"decision": "RELEASE", "units": 2965, "reason": "Only source with genuine STH content"}
+  },
+  "knowledge_coverage_changes": {
+    "sth_doctrine": {"before": 0, "after": 0, "verified": false},
+    "sth_practice": {"before": 0, "after": 0, "verified": false},
+    "teacher_commentary": {"before": 8, "after": 15, "verified": true},
+    "practice_explanations": {"before": 3844, "after": 3851, "verified": true},
+    "agam_coverage": {"before": 18, "after": 22, "verified": true}
+  }
+}
