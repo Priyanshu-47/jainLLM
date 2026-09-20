@@ -1,0 +1,291 @@
+# =============================================================================
+# svk-corpus v0.1 policy configuration
+#
+# WHY TOML AND NOT YAML:
+#   This pipeline is deliberately stdlib-only (see pyproject.toml). Python 3.11+
+#   ships `tomllib`, but ships no YAML parser, and adding PyYAML would break the
+#   zero-install reproducibility guarantee. The requested `configs/sources.yaml`
+#   is therefore implemented as two TOML/CSV files:
+#     - configs/policy.toml        -> configuration + rules (this file)
+#     - configs/new_sources.csv    -> newly discovered sources, parent schema
+#     - configs/curated_fields.csv -> curated extension fields per source_id
+#   This deviation is documented in README.md ("Deviations from the requested
+#   layout") and in docs/REPRODUCIBILITY.md.
+# =============================================================================
+
+[project]
+name             = "svk-corpus"
+version          = "0.1.0"
+corpus_version   = "svk-corpus-v0.1"
+generated_by     = "svk-corpus pipeline"
+
+[paths]
+manifests   = "manifests"
+raw         = "data/raw"
+quarantine  = "data/quarantine"
+extracted   = "data/extracted"
+normalized  = "data/normalized"
+deduplicated = "data/deduplicated"
+release     = "data/release"
+reports     = "data/reports"
+cache       = "data/cache"
+
+# Path to the parent research-phase manifest (read-only input, never written).
+parent_manifest = "../jain_svk_corpus_manifest.csv"
+
+# -----------------------------------------------------------------------------
+# RELEASE POLICY
+# -----------------------------------------------------------------------------
+[release]
+# Gate states admitted into the *training* corpus.
+training_states = ["TRAINING_ALLOWED"]
+# Gate states admitted into the *RAG* corpus.
+rag_states = ["TRAINING_ALLOWED", "RAG_ALLOWED"]
+# WITH_CONDITIONS sources are admitted only when requirements_met == true.
+include_with_conditions        = true
+min_license_confidence         = "medium"   # high | medium | low
+include_noncommercial_in_rag   = false      # v0.1 keeps NC material OUT
+include_sharealike_in_training = false      # CC-BY-SA never enters training
+require_human_verified_for_gold = true
+
+# Round 2: TRANSLATION text_role units (e.g. the Deshika Maharashtri-English
+# parallel layer) are admitted to the RAG corpus - a scholar searching in
+# English must be able to retrieve the Prakrit verse - but are EXCLUDED from
+# the training corpus. The English layer is a derived text whose volume must
+# not dilute the original-text conditioning pool; set true only with an
+# explicit recorded decision.
+include_translation_units_in_training = false
+
+# A licence decision is necessary but not sufficient. Distribution is gated too:
+# a source with a thin rights record (e.g. a DLI scan with no rights metadata at
+# all) is excluded even where its publication date would permit use. This is what
+# keeps a date-based public-domain argument from smuggling in unattributable text.
+min_provenance_quality_for_release = "medium"   # high | medium | low
+min_source_quality_for_release     = "low"      # high | medium | low
+
+# -----------------------------------------------------------------------------
+# RELEASE QUALITY ROUTING
+#
+# Units are not all equally usable. A unit carrying any of the flags below is
+# DIVERTED out of both products into data/release/low_quality_units.jsonl with its
+# flag recorded, rather than being silently dropped or silently trained on.
+#
+# Why this exists, concretely: 41% of segmented units in this corpus are shorter
+# than 40 characters, and the two largest Devanagari items are Internet Archive
+# OCR output in which a GUJARATI book was read as Devanagari, producing text such
+# as '01191708, 1008.7148.10108 €{6 विवा'. Releasing that as training text would
+# teach a model to emit unreadable fragments labelled as Prakrit scripture.
+# -----------------------------------------------------------------------------
+min_unit_chars_for_release = 24
+# Task 29 additions:
+#   LOW_VALUE_LAYOUT — page rules/separators ('----', '____') with no letters;
+#     layout furniture, not corrupted language. Flagged for review, kept.
+#   WEB_BOILERPLATE — JainQQ HTML head (dataLayer/gtag/@font-face) leaked into
+#     extraction; an extraction fault, distinct from script questions.
+# SCRIPT_MISMATCH policy note: SVK-2025/2029 are legitimately mixed-script
+# editions (Romanized Prakrit mool + Devanagari Hindi). After the Task 29
+# changes the mismatch flag only fires on units that are neither boilerplate
+# nor plausibly mixed-language; it remains on the training floor.
+training_floor_flags = [
+  "EMPTY",
+  "VERY_SHORT",
+  "SCRIPT_CONFUSION",
+  "SCRIPT_MISMATCH",
+  "MIXED_SCRIPT_DOCUMENT",
+  "OCR_NOISE_HIGH",
+  "HIGH_SYMBOL_RATIO",
+  "WEB_BOILERPLATE",
+]
+# RAG keeps more than training: a noisy unit is still a legitimate retrieval hit
+# when a scholar is auditing the corpus, but it is never conditioning data.
+# LOW_VALUE_LAYOUT stays RAG-eligible: a '----' page rule inside a unit does
+# not stop a scholar from reading the unit. WEB_BOILERPLATE is RAG-excluded:
+# CSS in a retrieval hit is never useful.
+rag_floor_flags = [
+  "EMPTY",
+  "SCRIPT_CONFUSION",
+  "OCR_NOISE_HIGH",
+  "WEB_BOILERPLATE",
+]
+diverted_units_filename = "low_quality_units.jsonl"
+# Sources that pass the gate but are not acquired in this milestone are listed
+# explicitly so that "absent" is never mistaken for "rejected".
+report_not_acquired = true
+
+# -----------------------------------------------------------------------------
+# CPT DECISION THRESHOLD  (a project policy choice, not a scientific constant)
+# -----------------------------------------------------------------------------
+[cpt]
+token_threshold = 50000000
+# If the corpus is below threshold, the pipeline reports CPT_ELIGIBLE = NO and
+# explains why. See data/reports/corpus_statistics.md.
+
+# -----------------------------------------------------------------------------
+# ACQUISITION
+# -----------------------------------------------------------------------------
+[acquisition]
+user_agent              = "svk-corpus/0.1 (open Jain corpus research; contact: project maintainers)"
+timeout_seconds         = 90
+retries                 = 3
+retry_backoff_seconds   = 2.0
+rate_limit_seconds      = 1.0
+max_bytes_per_artifact  = 300000000
+verify_sha256_from_source = true
+# Internet Archive derivative preference, best first. IA `format` values.
+ia_derivative_preference = [
+  "DjVuTXT",           # plain OCR/text layer, cheapest and usually present
+  "Text PDF",          # born-digital or text-layer PDF
+  "EPUB",
+  "hOCR",              # word-position OCR, needed for OCR quality analysis
+  "Djvu XML",          # page-level OCR XML
+  "Image Container PDF",
+  "JP2",               # images only: last resort, requires an OCR backend
+]
+# Formats we deliberately never fetch for v0.1 (size / no added value here).
+ia_derivative_denylist = ["JP2 ZIP", "Archive BitTorrent", "Metadata", "JSON", "Item Tile", "Djvu", "PDF"]
+
+huggingface_endpoint = "https://huggingface.co"
+ia_endpoint          = "https://archive.org"
+
+# -----------------------------------------------------------------------------
+# TOKENIZER MEASUREMENT
+# -----------------------------------------------------------------------------
+[tokenizers]
+# The tokenizer that decides the CPT verdict. Recorded so the decision names its
+# instrument rather than implying a general truth about "tokens".
+primary   = "sarvam-30b"
+cache_dir = "data/cache/tokenizers"
+# A pure-stdlib Byte-BPE / byte-fallback encoder reads the real tokenizer.json
+# each model ships (src/svk_corpus/tokenization/bpe.py). It is NOT an
+# approximation: the Qwen pre-tokenisation regex, which uses \p{...} property
+# escapes stdlib `re` cannot parse, is reimplemented as a leftmost-first scanner
+# with the same semantics, and every tokenizer is self-checked by requiring
+# decode(encode(x)) == x before its counts may be quoted.
+allow_approximate_bpe = false
+require_roundtrip_check = true
+
+# Candidates are measured, not assumed. tokenizer.json files were verified as
+# publicly downloadable on 2026-09-17; every attempt, including failures, is
+# recorded in data/reports/tokenizer_measurements.json.
+[[tokenizers.candidate]]
+name  = "qwen3-0.6b"
+model = "Qwen/Qwen3-0.6B"
+url   = "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/main/tokenizer.json"
+role  = "The Qwen+QLoRA default carried over from the research phase. Measured in order to TEST that assumption."
+
+[[tokenizers.candidate]]
+name  = "qwen3-embed-0.6b"
+model = "Qwen/Qwen3-Embedding-0.6B"
+url   = "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/main/tokenizer.json"
+role  = "Retrieval-tower candidate. Also the BGE-M3/Qwen embedding shortlist from the architecture phase."
+
+[[tokenizers.candidate]]
+name  = "sarvam-30b"
+model = "sarvamai/sarvam-30b"
+url   = "https://huggingface.co/sarvamai/sarvam-30b/resolve/main/tokenizer.json"
+role  = "The only open model found in the research phase declaring both gu and sa."
+
+[[tokenizers.candidate]]
+name  = "gemma-3-4b-it-unsloth"
+model = "unsloth/gemma-3-4b-it (mirror of google/gemma-3-4b-it)"
+url   = "https://huggingface.co/unsloth/gemma-3-4b-it/resolve/main/tokenizer.json"
+role  = "Permissive-family hedge. NOTE: this is a third-party MIRROR, because the google/gemma-3-4b-it repo is gated (HTTP 401). Provenance of the tokenizer file is therefore weaker and is recorded as such."
+
+[[tokenizers.candidate]]
+name  = "gemma-4-E4B-it"
+model = "google/gemma-4-E4B-it"
+url   = "https://huggingface.co/google/gemma-4-E4B-it/resolve/main/tokenizer.json"
+role  = "Expected to FAIL: gated repo. Included so the failure is recorded rather than omitted."
+
+[[tokenizers.candidate]]
+name  = "qwen3.5-4b"
+model = "Qwen/Qwen3.5-4B"
+url   = "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/main/tokenizer.json"
+role  = "Architecture-phase candidate. Attempted so that its availability is evidence, not memory."
+
+# -----------------------------------------------------------------------------
+# DEDUPLICATION
+# -----------------------------------------------------------------------------
+[dedup]
+exact_hash          = "sha256"
+near_duplicate      = true
+minhash_num_perm    = 128
+minhash_shingle     = 5
+near_dup_threshold  = 0.85
+document_threshold  = 0.75
+# Semantic dedup requires embeddings that do not reliably support Prakrit.
+# It is therefore an INTERFACE ONLY in v0.1 and is disabled.
+semantic_enabled    = false
+# Guard-rails: never treat a translation as a duplicate of its original, and
+# never treat a commentary as a duplicate of the text it comments on.
+compare_within_same_text_role_only = true
+compare_within_same_language_only  = true
+
+# -----------------------------------------------------------------------------
+# QUALITY THRESHOLDS  (all are reported individually; no single opaque score)
+# -----------------------------------------------------------------------------
+[quality]
+min_unit_chars              = 20
+max_replacement_char_ratio   = 0.02
+max_symbol_ratio             = 0.30
+max_digit_ratio              = 0.45
+max_single_char_run          = 12
+header_footer_min_repeats    = 5
+header_footer_max_chars      = 120
+low_script_purity            = 0.75
+min_metadata_completeness    = 0.80
+
+# -----------------------------------------------------------------------------
+# NORMALISATION
+# -----------------------------------------------------------------------------
+[normalization]
+unicode_form            = "NFC"
+# ZWNJ/ZWJ are MEANINGFUL in Indic scripts and are preserved by default.
+strip_zero_width_spaces = true
+strip_soft_hyphen       = true
+collapse_whitespace     = true
+normalize_newlines      = true
+normalize_punctuation   = true
+# Replacement characters are counted and reported, never silently repaired.
+repair_replacement_chars = false
+
+# -----------------------------------------------------------------------------
+# SEGMENTATION
+# -----------------------------------------------------------------------------
+[segmentation]
+max_unit_chars       = 1500
+max_sentence_chars   = 400
+min_paragraph_chars  = 40
+# A unit longer than max_unit_chars must carry an internal locator, otherwise it
+# is split. Verse/section markers are only ever READ from the text, never
+# fabricated.
+detect_devanagari_numerals = true
+verse_markers = ["॥", "||", "।", "|"]
+
+# -----------------------------------------------------------------------------
+# OCR
+# -----------------------------------------------------------------------------
+[ocr]
+# No OCR engine is installed in this environment and none is required for v0.1.
+# The strategy for v0.1 is: use the source repository's own text layer when it
+# exists, MEASURE its quality, and refuse to treat it as ground truth.
+enabled_for_v01            = false
+prefer_source_text_layer   = true
+record_quality_metrics     = true
+# Script detection from the OCR layer is recorded but never trusted
+# (archive.org reported "Bengali" at 0.4658 confidence for a Gujarati book).
+trust_ocr_script_detection = false
+human_review_required_by_default = true
+candidate_engines_v01 = ["source_text_layer"]           # what actually ran
+candidate_engines_future = ["tesseract", "paddleocr_pp_ocrv5_devanagari", "vlm_document_ocr"]
+
+# -----------------------------------------------------------------------------
+# ROUND 2 NOTES
+# -----------------------------------------------------------------------------
+# Transliteration: a deterministic Gujarati<->Devanagari->IAST layer is NOT
+# emitted in Round 2. gujarati_to_devanagari()/devanagari_to_iast() exist and
+# are tested, but generating a TRANSLITERATION text_role layer would add a
+# derived duplicate of every Indic unit into the near-duplicate detector's
+# population and inflate token counts without adding information. The layer
+# is deferred to the RAG-index build, where transliterated forms belong as
+# search keys rather than as corpus records.

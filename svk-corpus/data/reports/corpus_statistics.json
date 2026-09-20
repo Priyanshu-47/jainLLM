@@ -1,0 +1,2379 @@
+{
+  "acquired_rag": 50325,
+  "acquired_training": 30361,
+  "artifact_rows": 60,
+  "dedup": {
+    "EXACT_DUPLICATE": 4821,
+    "EXACT_DUPLICATE_LOW_SIGNAL": 52686,
+    "NEAR_DUPLICATE": 31,
+    "UNIQUE": 16290,
+    "clusters": [
+      {
+        "key": "ORIGINAL|en|(3869161035848092, 27583368014700382, 81709644235366327, 443634320245875656)",
+        "sample_units": [
+          "SVK-1003:u00005:a50c79a64356e08c",
+          "SVK-1005:u00010:7884308805b49179",
+          "SVK-1007:u00005:f60ae0ea6806b204"
+        ],
+        "unit_count": 3
+      },
+      {
+        "key": "ORIGINAL|hi|(300492767078903251, 1054369455810275576, 439576223319998320, 694608092884948600)",
+        "sample_units": [
+          "SVK-0016:u01720:29f884051ca638ac",
+          "SVK-0016:u01747:25abb79f2cfba806"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(610985247942497459, 41727624319881831, 275546324525584018, 147494975786138708)",
+        "sample_units": [
+          "SVK-1001:u00758:b447dce17b69b4ce",
+          "SVK-1001:u01774:1d036ca7a5bd1c0e"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(16174835288006067, 12912194891492159, 14764220481374637, 11267747912489821)",
+        "sample_units": [
+          "SVK-1002:u00055:d6830945d9defed7",
+          "SVK-1003:u00096:16200f518a39f034"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(97389586203531204, 33002118362645397, 887221772303837514, 108199293638433529)",
+        "sample_units": [
+          "SVK-1002:u00093:2dba6bfb92d037b8",
+          "SVK-1003:u00170:9f7c5a20f72f4640"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(16174835288006067, 39842142182240849, 200048665620557946, 16833365498096594)",
+        "sample_units": [
+          "SVK-1002:u00107:f16738332619acf9",
+          "SVK-1003:u00187:db5d18bb64cd2e4b"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(113534137269590364, 39880297878197698, 10826457408873088, 225325735117964422)",
+        "sample_units": [
+          "SVK-1002:u00108:0c8f34d766c0c22e",
+          "SVK-1003:u00188:772c9660f69fda09"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(134255035355977171, 69174163045770297, 252477543959136275, 156496929732748152)",
+        "sample_units": [
+          "SVK-1002:u00113:0ddf5a5e2b25bc0f",
+          "SVK-1003:u00193:d38ac88efabf73bb"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(211268949054306313, 364946865151092651, 275546324525584018, 324793001390693936)",
+        "sample_units": [
+          "SVK-1002:u00184:29c9ab9bf5f6bf2e",
+          "SVK-1003:u00257:72a9767e9f710045"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(49255960645519230, 286054457250583048, 275546324525584018, 669780652513862836)",
+        "sample_units": [
+          "SVK-1002:u00214:7955516fae64227f",
+          "SVK-1003:u00285:61549d24e688d70e"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(587447881829161646, 172960730459093834, 172408649259921761, 230965628090269414)",
+        "sample_units": [
+          "SVK-1002:u00215:f02bb55e77302552",
+          "SVK-1003:u00286:cd7a010c6e4c9068"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(184359384528569754, 41727624319881831, 674606914046280669, 405632800578475686)",
+        "sample_units": [
+          "SVK-1002:u00221:143eafa34c1637de",
+          "SVK-1003:u00291:c1db68cb63d945fe"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(87351159680071681, 198700069654139920, 32732320257012838, 156496929732748152)",
+        "sample_units": [
+          "SVK-1002:u00464:710a6298d39d4ef3",
+          "SVK-1003:u00482:6aef040db0a193f4"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(97389586203531204, 57694330235445852, 2296682688019162, 544225861973312555)",
+        "sample_units": [
+          "SVK-1002:u00471:3302d35ce49ea851",
+          "SVK-1003:u00489:c85cdf6260bb82a2"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(85722104858220388, 1777593893469093231, 275546324525584018, 962392622367435753)",
+        "sample_units": [
+          "SVK-1002:u00532:f7689a71b08ec271",
+          "SVK-1003:u00574:f1bd4735177d3aed"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(25411052420923133, 285401564942063921, 14764220481374637, 1128683234129922)",
+        "sample_units": [
+          "SVK-1002:u00543:dea9dfd760f03bc3",
+          "SVK-1003:u00586:eea920d82c4a7bf2"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(201980481505994964, 25887105182309796, 260640147083787967, 2486327977476722)",
+        "sample_units": [
+          "SVK-1002:u00570:a8b701012affd45f",
+          "SVK-1003:u00602:92d1536b122ed281"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(16174835288006067, 23363696079272905, 30594632355787883, 1146707038482626)",
+        "sample_units": [
+          "SVK-1002:u00599:d773295021df77d6",
+          "SVK-1003:u00625:936a4fb011c09284"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(106899131092185538, 33002118362645397, 200048665620557946, 47524793013267487)",
+        "sample_units": [
+          "SVK-1002:u00639:79cc160aafcda65a",
+          "SVK-1003:u00657:8dd4f123601ce228"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(73652552000452078, 726966838270230114, 1189651165979469218, 147494975786138708)",
+        "sample_units": [
+          "SVK-1002:u00648:cd8050c5914f5bf5",
+          "SVK-1003:u00664:b1269c2b727db6c4"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(16174835288006067, 301290038945929485, 57800587189881233, 753456474573363900)",
+        "sample_units": [
+          "SVK-1002:u00842:eaca12363b2ba808",
+          "SVK-1003:u00845:b1a650ecd2472ef5"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(104463185570113944, 234394244880562083, 540889302095440354, 111157293024396311)",
+        "sample_units": [
+          "SVK-1002:u00843:35eb3cc2309f1596",
+          "SVK-1003:u00846:ac57cc062c0ae0f1"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(189573140598486374, 198700069654139920, 121905617772967357, 347093202135851815)",
+        "sample_units": [
+          "SVK-1002:u00844:ef96e702ddc24a02",
+          "SVK-1003:u00847:19507408ce6a33eb"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(51420810073575385, 732868138285159344, 6261914654499956, 143774089692494993)",
+        "sample_units": [
+          "SVK-1002:u00853:1b428c6d4300c3e2",
+          "SVK-1003:u00854:0267eba44c5f253b"
+        ],
+        "unit_count": 2
+      },
+      {
+        "key": "ORIGINAL|en|(16174835288006067, 224113614155438483, 275546324525584018, 51624257055050183)",
+        "sample_units": [
+          "SVK-1002:u00880:3b7588b6fd18ca34",
+          "SVK-1003:u00876:c3c4594f5da0e6ec"
+        ],
+        "unit_count": 2
+      }
+    ],
+    "duplicate_rate": 0.06572,
+    "generated_at": "2026-09-17T14:00:10+00:00",
+    "min_signal_chars": 120,
+    "near_threshold": 0.85,
+    "num_hashes": 128,
+    "semantic": {
+      "enabled": false,
+      "reason": "semantic dedup is disabled for v0.1: no embedding model in the research set has credible Prakrit/Ardhamagadhi coverage, and a wrongly merged sutra is undetectable downstream. Safe only for ['English', 'Gujarati', 'Hindi'].",
+      "safe_languages": [
+        "English",
+        "Gujarati",
+        "Hindi"
+      ]
+    },
+    "shingle_size": 5,
+    "units_evaluated": 73828
+  },
+  "documents": 13,
+  "excluded": [
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R20_PERMISSIVE_LICENCE_UNVERIFIED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0001",
+      "title": "CC0 Jain text library (patron-library-collection / ganeshvarnilibrary)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R30_CC0_ASSERTED_PRE_1966",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0002",
+      "title": "Jain Dharma (1958)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R30_CC0_ASSERTED_PRE_1966",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0003",
+      "title": "An Illustrated Ardha Magadhi Dictionary Vol 1 (1923)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R30_CC0_ASSERTED_PRE_1966",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0004",
+      "title": "An Illustrated Ardha Magadhi Dictionary Vol 3 (1930)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R30_CC0_ASSERTED_PRE_1966",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0005",
+      "title": "Ardha Magadhi Dictionary Vol 3 (1930) Lahore Jangamwadi Math copy",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R30_CC0_ASSERTED_PRE_1966",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0006",
+      "title": "An Illustrated Ardha Magadhi Dictionary Vol 4 (1932)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0008",
+      "title": "Sthanakvasi Jainonum Dharamkartavya (1960)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0009",
+      "title": "A.B. Shree Swetambar Sthanakvasi Jain Conference no Chadati Padatino Itihas (1941)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0010",
+      "title": "A.B. Swetambar Sthanakvasi Jain Conference history (duplicate scan)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R90_MODERN_IN_COPYRIGHT",
+      "gate_state": "NEEDS_PERMISSION",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state NEEDS_PERMISSION permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state NEEDS_PERMISSION permits no release product"
+      ],
+      "source_id": "SVK-0011",
+      "title": "Shri Acharrang Sutra (Hindi Chaya Anuwad) (1966)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0012",
+      "title": "Shri Dashvaikalik Sutra Ka Hindi Anuvad (1936)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0013",
+      "title": "Shri Uttradhyayan Sutra Ka Hindi Anuvaad (1934)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0014",
+      "title": "Shri Uttradhyayan Sutra Ka Hindi Anuvaad (1962)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0015",
+      "title": "Shri Sutrakratang Sutra (1938)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0017",
+      "title": "Shrimada Gyatadharmkathank Sutra (1964)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0018",
+      "title": "Adhyatmik Pravachno Part-1 (1960)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0019",
+      "title": "Stavanavali (1960)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0020",
+      "title": "Subodh Jain Pathshala Part I (1964)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0021",
+      "title": "Jain Svetambara Agama Canon in English (with Hindi)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0022",
+      "title": "GRETIL - E-texts in Prakrit (bulk corpus)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0023",
+      "title": "GRETIL - Jaina texts in Sanskrit",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0024",
+      "title": "dataspoof/Jains - Sastravarttasamuccaya",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0025",
+      "title": "shethjenil/JainBooks",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R20_PERMISSIVE_LICENCE",
+      "gate_state": "TRAINING_ALLOWED",
+      "reason_detail": [
+        "P40_NOT_ACQUIRED: passed the gate but no artifact was acquired in this milestone (reported explicitly so that 'absent' is not read as 'rejected')"
+      ],
+      "reasons": [
+        "P40_NOT_ACQUIRED: passed the gate but no artifact was acquired in this milestone (reported explicitly so that 'absent' is not read as 'rejected')"
+      ],
+      "source_id": "SVK-0026",
+      "title": "Atma3.1-ShareGPT (Atma Siddhi Shastra)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R20_PERMISSIVE_LICENCE",
+      "gate_state": "TRAINING_ALLOWED",
+      "reason_detail": [
+        "P40_NOT_ACQUIRED: passed the gate but no artifact was acquired in this milestone (reported explicitly so that 'absent' is not read as 'rejected')"
+      ],
+      "reasons": [
+        "P40_NOT_ACQUIRED: passed the gate but no artifact was acquired in this milestone (reported explicitly so that 'absent' is not read as 'rejected')"
+      ],
+      "source_id": "SVK-0027",
+      "title": "Deshika - Maharashtri Prakrit to English Parallel Corpus",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0028",
+      "title": "Jain Literature Open Repository (JLOR)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0029",
+      "title": "Jainaagam - all 45 Jain Aagam",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0030",
+      "title": "Jain eLibrary",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R20_PERMISSIVE_LICENCE_UNVERIFIED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-0031",
+      "title": "OPenn Jain manuscript collections (Ms. Indic 20, 25, 9, 15)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R40_SHAREALIKE",
+      "gate_state": "RAG_ALLOWED",
+      "reason_detail": [
+        "P30_ARTIFACT_PROVENANCE: only 3/6 artifact provenance components are present (grade 'low'), below the release minimum 'medium'"
+      ],
+      "reasons": [
+        "P30_ARTIFACT_PROVENANCE: only 3/6 artifact provenance components are present (grade 'low'), below the release minimum 'medium'"
+      ],
+      "source_id": "SVK-0032",
+      "title": "Wikipedia Jain-topic articles",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R10_NODERIVATIVES",
+      "gate_state": "NOT_ALLOWED",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state NOT_ALLOWED permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state NOT_ALLOWED permits no release product"
+      ],
+      "source_id": "SVK-0033",
+      "title": "Jain Dharm Aur Darshan (2018)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0034",
+      "title": "chaturmas-suchi - Shri Vardhaman Sthanakvasi Jain Shraman Sangh",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "low",
+      "flags": [],
+      "gate_rule": "R99_INSUFFICIENT_EVIDENCE",
+      "gate_state": "UNKNOWN",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state UNKNOWN permits no release product"
+      ],
+      "source_id": "SVK-0035",
+      "title": "JainGPT / JainQQ / AI-Yashvi",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R30_CC0_ASSERTED_TOO_RECENT",
+      "gate_state": "NEEDS_PERMISSION",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state NEEDS_PERMISSION permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state NEEDS_PERMISSION permits no release product"
+      ],
+      "source_id": "SVK-0036",
+      "title": "Jainendra Siddhanta Kosa Part 1 (1990)",
+      "units_released": 0,
+      "verification_outstanding": false
+    },
+    {
+      "admitted_products": [],
+      "computed_provenance_grade": "medium",
+      "flags": [],
+      "gate_rule": "R95_CHRONOLOGY_UNRESOLVED",
+      "gate_state": "WITH_CONDITIONS",
+      "reason_detail": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "reasons": [
+        "P10_GATE_STATE: gate state WITH_CONDITIONS permits no release product"
+      ],
+      "source_id": "SVK-1004",
+      "title": "The Story of Kalaka (1933)",
+      "units_released": 0,
+      "verification_outstanding": false
+    }
+  ],
+  "extraction": [
+    {
+      "characters": 2337506,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0007",
+      "status": "OK"
+    },
+    {
+      "characters": 191859,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0016",
+      "status": "OK"
+    },
+    {
+      "characters": 1389139,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0037",
+      "status": "OK"
+    },
+    {
+      "characters": 215971,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0038",
+      "status": "OK"
+    },
+    {
+      "characters": 809932,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1001",
+      "status": "OK"
+    },
+    {
+      "characters": 248360,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1002",
+      "status": "OK"
+    },
+    {
+      "characters": 227212,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1003",
+      "status": "OK"
+    },
+    {
+      "characters": 1048689,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1005",
+      "status": "OK"
+    },
+    {
+      "characters": 90592,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1006",
+      "status": "OK"
+    },
+    {
+      "characters": 1012373,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1007",
+      "status": "OK"
+    },
+    {
+      "characters": 49272,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1008",
+      "status": "OK"
+    },
+    {
+      "characters": 258838,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1009",
+      "status": "OK"
+    },
+    {
+      "characters": 404003,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1010",
+      "status": "OK"
+    }
+  ],
+  "failures": [
+    {
+      "error": "huggingface acquisition not implemented in v0.1",
+      "kind": "not_implemented",
+      "source_id": "SVK-0026",
+      "url": "https://huggingface.co/datasets/HappyAIUser/Atma3.1-ShareGPT"
+    },
+    {
+      "error": "huggingface acquisition not implemented in v0.1",
+      "kind": "not_implemented",
+      "source_id": "SVK-0027",
+      "url": "https://huggingface.co/datasets/VIITPune/Deshika-Maharashtri_Prakrit_to_English_Parallel_Corpus"
+    }
+  ],
+  "gate_counts": {
+    "NEEDS_PERMISSION": 2,
+    "NOT_ALLOWED": 1,
+    "RAG_ALLOWED": 1,
+    "TRAINING_ALLOWED": 15,
+    "UNKNOWN": 10,
+    "WITH_CONDITIONS": 19
+  },
+  "generated_at": "2026-09-17T14:14:48+00:00",
+  "groups": {
+    "language": [
+      [
+        "en",
+        36164
+      ],
+      [
+        "unknown",
+        12177
+      ],
+      [
+        "hi",
+        1984
+      ]
+    ],
+    "script": [
+      [
+        "Latin",
+        36164
+      ],
+      [
+        "Devanagari",
+        14161
+      ]
+    ],
+    "sect": [
+      [
+        "unknown",
+        22188
+      ],
+      [
+        "STHANAKAVASI",
+        12177
+      ],
+      [
+        "MULTI_TRADITION",
+        7422
+      ],
+      [
+        "SVETAMBARA",
+        6916
+      ],
+      [
+        "MULTI_TRADITION (describes Sthanakavasi)",
+        1622
+      ]
+    ],
+    "source": [
+      [
+        "SVK-1007",
+        13894
+      ],
+      [
+        "SVK-0007",
+        8067
+      ],
+      [
+        "SVK-1005",
+        7023
+      ],
+      [
+        "SVK-1010",
+        4963
+      ],
+      [
+        "SVK-1001",
+        4868
+      ],
+      [
+        "SVK-0037",
+        4110
+      ],
+      [
+        "SVK-0016",
+        1984
+      ],
+      [
+        "SVK-0038",
+        1622
+      ],
+      [
+        "SVK-1002",
+        1116
+      ],
+      [
+        "SVK-1009",
+        1074
+      ],
+      [
+        "SVK-1003",
+        932
+      ],
+      [
+        "SVK-1008",
+        399
+      ],
+      [
+        "SVK-1006",
+        273
+      ]
+    ],
+    "text_role": [
+      [
+        "ORIGINAL",
+        50325
+      ]
+    ],
+    "tradition": [
+      [
+        "SVETAMBARA",
+        17140
+      ],
+      [
+        "JAIN;BIBLIOGRAPHY",
+        13894
+      ],
+      [
+        "JAIN",
+        8662
+      ],
+      [
+        "JAIN plus other traditions",
+        7023
+      ],
+      [
+        "MULTI_TRADITION",
+        1984
+      ],
+      [
+        "JAIN;WESTERN SCHOLARSHIP",
+        1622
+      ]
+    ],
+    "unit_type": [
+      [
+        "paragraph",
+        37199
+      ],
+      [
+        "section",
+        12292
+      ],
+      [
+        "verse",
+        708
+      ],
+      [
+        "chunk",
+        126
+      ]
+    ],
+    "year": [
+      [
+        "1906",
+        13894
+      ],
+      [
+        "1920",
+        9007
+      ],
+      [
+        "1927",
+        8067
+      ],
+      [
+        "1917",
+        4963
+      ],
+      [
+        "1884",
+        4868
+      ],
+      [
+        "1923",
+        4110
+      ],
+      [
+        "1848",
+        2048
+      ],
+      [
+        "1910",
+        1622
+      ],
+      [
+        "1929",
+        1347
+      ],
+      [
+        "1911",
+        399
+      ]
+    ]
+  },
+  "measurements": {
+    "cpt": {
+      "CPT_ELIGIBLE": "NO",
+      "caveats": [
+        "the 50M figure is this project's adopted heuristic, not a scientific constant; it is a floor for a domain-adaptation pass to have any chance of moving the model, not a guarantee that it will",
+        "token count alone cannot justify CPT: duplication rate, provenance quality, language balance and script coverage all have to hold too",
+        "a corpus dominated by one language cannot teach the others, however large it is",
+        "below the threshold the correct move is RAG plus a small, verified SFT set, which is also cheaper and easier to audit"
+      ],
+      "clean_training_tokens": 1455295,
+      "project_threshold": 50000000,
+      "ratio_of_threshold": 0.0291,
+      "tokenizer": "sarvam-30b"
+    },
+    "generated_at": "2026-09-17T14:06:26+00:00",
+    "primary_tokenizer": "sarvam-30b",
+    "primary_tokenizer_verified": true,
+    "products": {
+      "rag": {
+        "by_group": {
+          "language": {
+            "en": {
+              "characters": 22986804,
+              "gemma-3-4b-it-unsloth": 1325506,
+              "gemma-4-E4B-it": 1325514,
+              "qwen3-0.6b": 1362159,
+              "qwen3-embed-0.6b": 1362159,
+              "qwen3.5-4b": 1354081,
+              "sarvam-30b": 1325532,
+              "words": 3963696
+            },
+            "hi": {
+              "characters": 907128,
+              "gemma-3-4b-it-unsloth": 50136,
+              "gemma-4-E4B-it": 50136,
+              "qwen3-0.6b": 137062,
+              "qwen3-embed-0.6b": 137062,
+              "qwen3.5-4b": 103572,
+              "sarvam-30b": 50136,
+              "words": 181056
+            },
+            "unknown": {
+              "characters": 2523060,
+              "gemma-3-4b-it-unsloth": 228716,
+              "gemma-4-E4B-it": 228716,
+              "qwen3-0.6b": 407253,
+              "qwen3-embed-0.6b": 407253,
+              "qwen3.5-4b": 350981,
+              "sarvam-30b": 228717,
+              "words": 517950
+            }
+          },
+          "script": {
+            "Devanagari": {
+              "characters": 3430188,
+              "gemma-3-4b-it-unsloth": 278852,
+              "gemma-4-E4B-it": 278852,
+              "qwen3-0.6b": 544315,
+              "qwen3-embed-0.6b": 544315,
+              "qwen3.5-4b": 454553,
+              "sarvam-30b": 278853,
+              "words": 699006
+            },
+            "Latin": {
+              "characters": 22986804,
+              "gemma-3-4b-it-unsloth": 1325506,
+              "gemma-4-E4B-it": 1325514,
+              "qwen3-0.6b": 1362159,
+              "qwen3-embed-0.6b": 1362159,
+              "qwen3.5-4b": 1354081,
+              "sarvam-30b": 1325532,
+              "words": 3963696
+            }
+          },
+          "sect": {
+            "MULTI_TRADITION": {
+              "characters": 6312936,
+              "gemma-3-4b-it-unsloth": 344001,
+              "gemma-4-E4B-it": 344002,
+              "qwen3-0.6b": 353472,
+              "qwen3-embed-0.6b": 353472,
+              "qwen3.5-4b": 355031,
+              "sarvam-30b": 344001,
+              "words": 1080270
+            },
+            "MULTI_TRADITION (describes Sthanakavasi)": {
+              "characters": 1068840,
+              "gemma-3-4b-it-unsloth": 52858,
+              "gemma-4-E4B-it": 52860,
+              "qwen3-0.6b": 53751,
+              "qwen3-embed-0.6b": 53751,
+              "qwen3.5-4b": 54084,
+              "sarvam-30b": 52868,
+              "words": 191880
+            },
+            "STHANAKAVASI": {
+              "characters": 2523060,
+              "gemma-3-4b-it-unsloth": 228716,
+              "gemma-4-E4B-it": 228716,
+              "qwen3-0.6b": 407253,
+              "qwen3-embed-0.6b": 407253,
+              "qwen3.5-4b": 350981,
+              "sarvam-30b": 228717,
+              "words": 517950
+            },
+            "SVETAMBARA": {
+              "characters": 6444042,
+              "gemma-3-4b-it-unsloth": 302937,
+              "gemma-4-E4B-it": 302937,
+              "qwen3-0.6b": 307268,
+              "qwen3-embed-0.6b": 307268,
+              "qwen3.5-4b": 310565,
+              "sarvam-30b": 302938,
+              "words": 1142202
+            },
+            "unknown": {
+              "characters": 10068114,
+              "gemma-3-4b-it-unsloth": 675846,
+              "gemma-4-E4B-it": 675851,
+              "qwen3-0.6b": 784730,
+              "qwen3-embed-0.6b": 784730,
+              "qwen3.5-4b": 737973,
+              "sarvam-30b": 675861,
+              "words": 1730400
+            }
+          },
+          "source_id": {
+            "SVK-0007": {
+              "characters": 1480614,
+              "gemma-3-4b-it-unsloth": 136889,
+              "gemma-4-E4B-it": 136889,
+              "qwen3-0.6b": 237887,
+              "qwen3-embed-0.6b": 237887,
+              "qwen3.5-4b": 206742,
+              "sarvam-30b": 136889,
+              "words": 319608
+            },
+            "SVK-0016": {
+              "characters": 907128,
+              "gemma-3-4b-it-unsloth": 50136,
+              "gemma-4-E4B-it": 50136,
+              "qwen3-0.6b": 137062,
+              "qwen3-embed-0.6b": 137062,
+              "qwen3.5-4b": 103572,
+              "sarvam-30b": 50136,
+              "words": 181056
+            },
+            "SVK-0037": {
+              "characters": 1042446,
+              "gemma-3-4b-it-unsloth": 91827,
+              "gemma-4-E4B-it": 91827,
+              "qwen3-0.6b": 169366,
+              "qwen3-embed-0.6b": 169366,
+              "qwen3.5-4b": 144239,
+              "sarvam-30b": 91828,
+              "words": 198342
+            },
+            "SVK-0038": {
+              "characters": 1068840,
+              "gemma-3-4b-it-unsloth": 52858,
+              "gemma-4-E4B-it": 52860,
+              "qwen3-0.6b": 53751,
+              "qwen3-embed-0.6b": 53751,
+              "qwen3.5-4b": 54084,
+              "sarvam-30b": 52868,
+              "words": 191880
+            },
+            "SVK-1001": {
+              "characters": 3992454,
+              "gemma-3-4b-it-unsloth": 194116,
+              "gemma-4-E4B-it": 194116,
+              "qwen3-0.6b": 196203,
+              "qwen3-embed-0.6b": 196203,
+              "qwen3.5-4b": 198254,
+              "sarvam-30b": 194116,
+              "words": 713124
+            },
+            "SVK-1002": {
+              "characters": 1242306,
+              "gemma-3-4b-it-unsloth": 54964,
+              "gemma-4-E4B-it": 54964,
+              "qwen3-0.6b": 56135,
+              "qwen3-embed-0.6b": 56135,
+              "qwen3.5-4b": 56741,
+              "sarvam-30b": 54964,
+              "words": 218280
+            },
+            "SVK-1003": {
+              "characters": 1209282,
+              "gemma-3-4b-it-unsloth": 53857,
+              "gemma-4-E4B-it": 53857,
+              "qwen3-0.6b": 54930,
+              "qwen3-embed-0.6b": 54930,
+              "qwen3.5-4b": 55570,
+              "sarvam-30b": 53858,
+              "words": 210798
+            },
+            "SVK-1005": {
+              "characters": 6031314,
+              "gemma-3-4b-it-unsloth": 324845,
+              "gemma-4-E4B-it": 324846,
+              "qwen3-0.6b": 334032,
+              "qwen3-embed-0.6b": 334032,
+              "qwen3.5-4b": 335704,
+              "sarvam-30b": 324845,
+              "words": 1030080
+            },
+            "SVK-1006": {
+              "characters": 527766,
+              "gemma-3-4b-it-unsloth": 20076,
+              "gemma-4-E4B-it": 20076,
+              "qwen3-0.6b": 20410,
+              "qwen3-embed-0.6b": 20410,
+              "qwen3.5-4b": 20535,
+              "sarvam-30b": 20076,
+              "words": 90696
+            },
+            "SVK-1007": {
+              "characters": 4837074,
+              "gemma-3-4b-it-unsloth": 310191,
+              "gemma-4-E4B-it": 310191,
+              "qwen3-0.6b": 329838,
+              "qwen3-embed-0.6b": 329838,
+              "qwen3.5-4b": 318482,
+              "sarvam-30b": 310191,
+              "words": 746280
+            },
+            "SVK-1008": {
+              "characters": 281622,
+              "gemma-3-4b-it-unsloth": 19156,
+              "gemma-4-E4B-it": 19156,
+              "qwen3-0.6b": 19440,
+              "qwen3-embed-0.6b": 19440,
+              "qwen3.5-4b": 19327,
+              "sarvam-30b": 19156,
+              "words": 50190
+            },
+            "SVK-1009": {
+              "characters": 1490760,
+              "gemma-3-4b-it-unsloth": 68816,
+              "gemma-4-E4B-it": 68816,
+              "qwen3-0.6b": 70319,
+              "qwen3-embed-0.6b": 70319,
+              "qwen3.5-4b": 70328,
+              "sarvam-30b": 68822,
+              "words": 263922
+            },
+            "SVK-1010": {
+              "characters": 2305386,
+              "gemma-3-4b-it-unsloth": 226627,
+              "gemma-4-E4B-it": 226632,
+              "qwen3-0.6b": 227101,
+              "qwen3-embed-0.6b": 227101,
+              "qwen3.5-4b": 225056,
+              "sarvam-30b": 226636,
+              "words": 448446
+            }
+          },
+          "text_role": {
+            "ORIGINAL": {
+              "characters": 26416992,
+              "gemma-3-4b-it-unsloth": 1604358,
+              "gemma-4-E4B-it": 1604366,
+              "qwen3-0.6b": 1906474,
+              "qwen3-embed-0.6b": 1906474,
+              "qwen3.5-4b": 1808634,
+              "sarvam-30b": 1604385,
+              "words": 4662702
+            }
+          }
+        },
+        "characters": 4402832,
+        "records": 50325,
+        "tokens": {
+          "gemma-3-4b-it-unsloth": 1604358,
+          "gemma-4-E4B-it": 1604366,
+          "qwen3-0.6b": 1906474,
+          "qwen3-embed-0.6b": 1906474,
+          "qwen3.5-4b": 1808634,
+          "sarvam-30b": 1604385
+        },
+        "tokens_per_character": {
+          "gemma-3-4b-it-unsloth": 0.3644,
+          "gemma-4-E4B-it": 0.3644,
+          "qwen3-0.6b": 0.433,
+          "qwen3-embed-0.6b": 0.433,
+          "qwen3.5-4b": 0.4108,
+          "sarvam-30b": 0.3644
+        },
+        "tokens_per_word": {
+          "gemma-3-4b-it-unsloth": 2.0645,
+          "gemma-4-E4B-it": 2.0645,
+          "qwen3-0.6b": 2.4533,
+          "qwen3-embed-0.6b": 2.4533,
+          "qwen3.5-4b": 2.3274,
+          "sarvam-30b": 2.0645
+        },
+        "words": 777117
+      },
+      "training": {
+        "by_group": {
+          "language": {
+            "en": {
+              "characters": 22050564,
+              "gemma-3-4b-it-unsloth": 1237864,
+              "gemma-4-E4B-it": 1237872,
+              "qwen3-0.6b": 1269940,
+              "qwen3-embed-0.6b": 1269940,
+              "qwen3.5-4b": 1263496,
+              "sarvam-30b": 1237885,
+              "words": 3796344
+            },
+            "hi": {
+              "characters": 876666,
+              "gemma-3-4b-it-unsloth": 47854,
+              "gemma-4-E4B-it": 47854,
+              "qwen3-0.6b": 132401,
+              "qwen3-embed-0.6b": 132401,
+              "qwen3.5-4b": 99742,
+              "sarvam-30b": 47854,
+              "words": 173970
+            },
+            "unknown": {
+              "characters": 1976340,
+              "gemma-3-4b-it-unsloth": 169555,
+              "gemma-4-E4B-it": 169555,
+              "qwen3-0.6b": 320231,
+              "qwen3-embed-0.6b": 320231,
+              "qwen3.5-4b": 269405,
+              "sarvam-30b": 169556,
+              "words": 380196
+            }
+          },
+          "script": {
+            "Devanagari": {
+              "characters": 2853006,
+              "gemma-3-4b-it-unsloth": 217409,
+              "gemma-4-E4B-it": 217409,
+              "qwen3-0.6b": 452632,
+              "qwen3-embed-0.6b": 452632,
+              "qwen3.5-4b": 369147,
+              "sarvam-30b": 217410,
+              "words": 554166
+            },
+            "Latin": {
+              "characters": 22050564,
+              "gemma-3-4b-it-unsloth": 1237864,
+              "gemma-4-E4B-it": 1237872,
+              "qwen3-0.6b": 1269940,
+              "qwen3-embed-0.6b": 1269940,
+              "qwen3.5-4b": 1263496,
+              "sarvam-30b": 1237885,
+              "words": 3796344
+            }
+          },
+          "sect": {
+            "MULTI_TRADITION": {
+              "characters": 6115530,
+              "gemma-3-4b-it-unsloth": 325823,
+              "gemma-4-E4B-it": 325824,
+              "qwen3-0.6b": 334224,
+              "qwen3-embed-0.6b": 334224,
+              "qwen3.5-4b": 336034,
+              "sarvam-30b": 325823,
+              "words": 1045422
+            },
+            "MULTI_TRADITION (describes Sthanakavasi)": {
+              "characters": 1029606,
+              "gemma-3-4b-it-unsloth": 49465,
+              "gemma-4-E4B-it": 49467,
+              "qwen3-0.6b": 50163,
+              "qwen3-embed-0.6b": 50163,
+              "qwen3.5-4b": 50537,
+              "sarvam-30b": 49475,
+              "words": 184776
+            },
+            "STHANAKAVASI": {
+              "characters": 1976340,
+              "gemma-3-4b-it-unsloth": 169555,
+              "gemma-4-E4B-it": 169555,
+              "qwen3-0.6b": 320231,
+              "qwen3-embed-0.6b": 320231,
+              "qwen3.5-4b": 269405,
+              "sarvam-30b": 169556,
+              "words": 380196
+            },
+            "SVETAMBARA": {
+              "characters": 6304896,
+              "gemma-3-4b-it-unsloth": 291100,
+              "gemma-4-E4B-it": 291100,
+              "qwen3-0.6b": 294725,
+              "qwen3-embed-0.6b": 294725,
+              "qwen3.5-4b": 298183,
+              "sarvam-30b": 291101,
+              "words": 1113156
+            },
+            "unknown": {
+              "characters": 9477198,
+              "gemma-3-4b-it-unsloth": 619330,
+              "gemma-4-E4B-it": 619335,
+              "qwen3-0.6b": 723229,
+              "qwen3-embed-0.6b": 723229,
+              "qwen3.5-4b": 678484,
+              "sarvam-30b": 619340,
+              "words": 1626960
+            }
+          },
+          "source_id": {
+            "SVK-0007": {
+              "characters": 1128312,
+              "gemma-3-4b-it-unsloth": 100348,
+              "gemma-4-E4B-it": 100348,
+              "qwen3-0.6b": 183594,
+              "qwen3-embed-0.6b": 183594,
+              "qwen3.5-4b": 155938,
+              "sarvam-30b": 100348,
+              "words": 227640
+            },
+            "SVK-0016": {
+              "characters": 876666,
+              "gemma-3-4b-it-unsloth": 47854,
+              "gemma-4-E4B-it": 47854,
+              "qwen3-0.6b": 132401,
+              "qwen3-embed-0.6b": 132401,
+              "qwen3.5-4b": 99742,
+              "sarvam-30b": 47854,
+              "words": 173970
+            },
+            "SVK-0037": {
+              "characters": 848028,
+              "gemma-3-4b-it-unsloth": 69207,
+              "gemma-4-E4B-it": 69207,
+              "qwen3-0.6b": 136637,
+              "qwen3-embed-0.6b": 136637,
+              "qwen3.5-4b": 113467,
+              "sarvam-30b": 69208,
+              "words": 152556
+            },
+            "SVK-0038": {
+              "characters": 1029606,
+              "gemma-3-4b-it-unsloth": 49465,
+              "gemma-4-E4B-it": 49467,
+              "qwen3-0.6b": 50163,
+              "qwen3-embed-0.6b": 50163,
+              "qwen3.5-4b": 50537,
+              "sarvam-30b": 49475,
+              "words": 184776
+            },
+            "SVK-1001": {
+              "characters": 3914856,
+              "gemma-3-4b-it-unsloth": 187228,
+              "gemma-4-E4B-it": 187228,
+              "qwen3-0.6b": 189045,
+              "qwen3-embed-0.6b": 189045,
+              "qwen3.5-4b": 191192,
+              "sarvam-30b": 187228,
+              "words": 695646
+            },
+            "SVK-1002": {
+              "characters": 1212300,
+              "gemma-3-4b-it-unsloth": 52609,
+              "gemma-4-E4B-it": 52609,
+              "qwen3-0.6b": 53560,
+              "qwen3-embed-0.6b": 53560,
+              "qwen3.5-4b": 54202,
+              "sarvam-30b": 52609,
+              "words": 212484
+            },
+            "SVK-1003": {
+              "characters": 1177740,
+              "gemma-3-4b-it-unsloth": 51263,
+              "gemma-4-E4B-it": 51263,
+              "qwen3-0.6b": 52120,
+              "qwen3-embed-0.6b": 52120,
+              "qwen3.5-4b": 52789,
+              "sarvam-30b": 51264,
+              "words": 205026
+            },
+            "SVK-1005": {
+              "characters": 5844138,
+              "gemma-3-4b-it-unsloth": 307702,
+              "gemma-4-E4B-it": 307703,
+              "qwen3-0.6b": 315833,
+              "qwen3-embed-0.6b": 315833,
+              "qwen3.5-4b": 317751,
+              "sarvam-30b": 307702,
+              "words": 998046
+            },
+            "SVK-1006": {
+              "characters": 524880,
+              "gemma-3-4b-it-unsloth": 19882,
+              "gemma-4-E4B-it": 19882,
+              "qwen3-0.6b": 20205,
+              "qwen3-embed-0.6b": 20205,
+              "qwen3.5-4b": 20331,
+              "sarvam-30b": 19882,
+              "words": 90234
+            },
+            "SVK-1007": {
+              "characters": 4393812,
+              "gemma-3-4b-it-unsloth": 267759,
+              "gemma-4-E4B-it": 267759,
+              "qwen3-0.6b": 284880,
+              "qwen3-embed-0.6b": 284880,
+              "qwen3.5-4b": 274597,
+              "sarvam-30b": 267759,
+              "words": 676440
+            },
+            "SVK-1008": {
+              "characters": 271392,
+              "gemma-3-4b-it-unsloth": 18121,
+              "gemma-4-E4B-it": 18121,
+              "qwen3-0.6b": 18391,
+              "qwen3-embed-0.6b": 18391,
+              "qwen3.5-4b": 18283,
+              "sarvam-30b": 18121,
+              "words": 47376
+            },
+            "SVK-1009": {
+              "characters": 1472160,
+              "gemma-3-4b-it-unsloth": 67350,
+              "gemma-4-E4B-it": 67350,
+              "qwen3-0.6b": 68760,
+              "qwen3-embed-0.6b": 68760,
+              "qwen3.5-4b": 68789,
+              "sarvam-30b": 67353,
+              "words": 260454
+            },
+            "SVK-1010": {
+              "characters": 2209680,
+              "gemma-3-4b-it-unsloth": 216485,
+              "gemma-4-E4B-it": 216490,
+              "qwen3-0.6b": 216983,
+              "qwen3-embed-0.6b": 216983,
+              "qwen3.5-4b": 215025,
+              "sarvam-30b": 216492,
+              "words": 425862
+            }
+          },
+          "text_role": {
+            "ORIGINAL": {
+              "characters": 24903570,
+              "gemma-3-4b-it-unsloth": 1455273,
+              "gemma-4-E4B-it": 1455281,
+              "qwen3-0.6b": 1722572,
+              "qwen3-embed-0.6b": 1722572,
+              "qwen3.5-4b": 1632643,
+              "sarvam-30b": 1455295,
+              "words": 4350510
+            }
+          }
+        },
+        "characters": 4150595,
+        "records": 30361,
+        "tokens": {
+          "gemma-3-4b-it-unsloth": 1455273,
+          "gemma-4-E4B-it": 1455281,
+          "qwen3-0.6b": 1722572,
+          "qwen3-embed-0.6b": 1722572,
+          "qwen3.5-4b": 1632643,
+          "sarvam-30b": 1455295
+        },
+        "tokens_per_character": {
+          "gemma-3-4b-it-unsloth": 0.3506,
+          "gemma-4-E4B-it": 0.3506,
+          "qwen3-0.6b": 0.415,
+          "qwen3-embed-0.6b": 0.415,
+          "qwen3.5-4b": 0.3934,
+          "sarvam-30b": 0.3506
+        },
+        "tokens_per_word": {
+          "gemma-3-4b-it-unsloth": 2.007,
+          "gemma-4-E4B-it": 2.007,
+          "qwen3-0.6b": 2.3757,
+          "qwen3-embed-0.6b": 2.3757,
+          "qwen3.5-4b": 2.2517,
+          "sarvam-30b": 2.0071
+        },
+        "words": 725085
+      }
+    },
+    "tokenizer_fetch": [
+      {
+        "bytes": "11422654",
+        "error": "reused existing artifact",
+        "http_status": "",
+        "model": "Qwen/Qwen3-0.6B",
+        "name": "qwen3-0.6b",
+        "role": "The Qwen+QLoRA default carried over from the research phase. Measured in order to TEST that assumption.",
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "status": "OK",
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/main/tokenizer.json"
+      },
+      {
+        "bytes": "11423705",
+        "error": "reused existing artifact",
+        "http_status": "",
+        "model": "Qwen/Qwen3-Embedding-0.6B",
+        "name": "qwen3-embed-0.6b",
+        "role": "Retrieval-tower candidate. Also the BGE-M3/Qwen embedding shortlist from the architecture phase.",
+        "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a",
+        "status": "OK",
+        "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/main/tokenizer.json"
+      },
+      {
+        "bytes": "33627251",
+        "error": "reused existing artifact",
+        "http_status": "",
+        "model": "sarvamai/sarvam-30b",
+        "name": "sarvam-30b",
+        "role": "The only open model found in the research phase declaring both gu and sa.",
+        "sha256": "a574ceaaff7c7a8f091179c53fd17ae33567089c099d4ff37d4cb3bc1a87e80e",
+        "status": "OK",
+        "url": "https://huggingface.co/sarvamai/sarvam-30b/resolve/main/tokenizer.json"
+      },
+      {
+        "bytes": "33384568",
+        "error": "reused existing artifact",
+        "http_status": "",
+        "model": "unsloth/gemma-3-4b-it (mirror of google/gemma-3-4b-it)",
+        "name": "gemma-3-4b-it-unsloth",
+        "role": "Permissive-family hedge. NOTE: this is a third-party MIRROR, because the google/gemma-3-4b-it repo is gated (HTTP 401). Provenance of the tokenizer file is therefore weaker and is recorded as such.",
+        "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+        "status": "OK",
+        "url": "https://huggingface.co/unsloth/gemma-3-4b-it/resolve/main/tokenizer.json"
+      },
+      {
+        "bytes": "32169626",
+        "error": "reused existing artifact",
+        "http_status": "",
+        "model": "google/gemma-4-E4B-it",
+        "name": "gemma-4-E4B-it",
+        "role": "Expected to FAIL: gated repo. Included so the failure is recorded rather than omitted.",
+        "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+        "status": "OK",
+        "url": "https://huggingface.co/google/gemma-4-E4B-it/resolve/main/tokenizer.json"
+      },
+      {
+        "bytes": "12807982",
+        "error": "reused existing artifact",
+        "http_status": "",
+        "model": "Qwen/Qwen3.5-4B",
+        "name": "qwen3.5-4b",
+        "role": "Architecture-phase candidate. Attempted so that its availability is evidence, not memory.",
+        "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+        "status": "OK",
+        "url": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/main/tokenizer.json"
+      }
+    ],
+    "tokenizers": [
+      {
+        "byte_fallback": true,
+        "byte_level": false,
+        "merges": 514906,
+        "metaspace": true,
+        "name": "gemma-3-4b-it-unsloth",
+        "normalizer_supported": true,
+        "notes": [],
+        "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\gemma-3-4b-it-unsloth.tokenizer.json",
+        "pretokenizer_kind": "split-space",
+        "primary": false,
+        "role": "Permissive-family hedge. NOTE: this is a third-party MIRROR, because the google/gemma-3-4b-it repo is gated (HTTP 401). Provenance of the tokenizer file is therefore weaker and is recorded as such.",
+        "roundtrip_verified": true,
+        "url": "https://huggingface.co/unsloth/gemma-3-4b-it/resolve/main/tokenizer.json",
+        "vocab_size": 262144
+      },
+      {
+        "byte_fallback": true,
+        "byte_level": false,
+        "merges": 514906,
+        "metaspace": true,
+        "name": "gemma-4-E4B-it",
+        "normalizer_supported": true,
+        "notes": [],
+        "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\gemma-4-E4B-it.tokenizer.json",
+        "pretokenizer_kind": "split-space",
+        "primary": false,
+        "role": "Expected to FAIL: gated repo. Included so the failure is recorded rather than omitted.",
+        "roundtrip_verified": true,
+        "url": "https://huggingface.co/google/gemma-4-E4B-it/resolve/main/tokenizer.json",
+        "vocab_size": 262144
+      },
+      {
+        "byte_fallback": false,
+        "byte_level": true,
+        "merges": 151387,
+        "metaspace": false,
+        "name": "qwen3-0.6b",
+        "normalizer_supported": true,
+        "notes": [],
+        "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\qwen3-0.6b.tokenizer.json",
+        "pretokenizer_kind": "cl100k",
+        "primary": false,
+        "role": "The Qwen+QLoRA default carried over from the research phase. Measured in order to TEST that assumption.",
+        "roundtrip_verified": true,
+        "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/main/tokenizer.json",
+        "vocab_size": 151643
+      },
+      {
+        "byte_fallback": false,
+        "byte_level": true,
+        "merges": 151387,
+        "metaspace": false,
+        "name": "qwen3-embed-0.6b",
+        "normalizer_supported": true,
+        "notes": [],
+        "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\qwen3-embed-0.6b.tokenizer.json",
+        "pretokenizer_kind": "cl100k",
+        "primary": false,
+        "role": "Retrieval-tower candidate. Also the BGE-M3/Qwen embedding shortlist from the architecture phase.",
+        "roundtrip_verified": true,
+        "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/main/tokenizer.json",
+        "vocab_size": 151643
+      },
+      {
+        "byte_fallback": false,
+        "byte_level": true,
+        "merges": 247587,
+        "metaspace": false,
+        "name": "qwen3.5-4b",
+        "normalizer_supported": true,
+        "notes": [],
+        "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\qwen3.5-4b.tokenizer.json",
+        "pretokenizer_kind": "cl100k",
+        "primary": false,
+        "role": "Architecture-phase candidate. Attempted so that its availability is evidence, not memory.",
+        "roundtrip_verified": true,
+        "url": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/main/tokenizer.json",
+        "vocab_size": 248044
+      },
+      {
+        "byte_fallback": true,
+        "byte_level": false,
+        "merges": 513738,
+        "metaspace": true,
+        "name": "sarvam-30b",
+        "normalizer_supported": true,
+        "notes": [],
+        "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\sarvam-30b.tokenizer.json",
+        "pretokenizer_kind": "split-space",
+        "primary": true,
+        "role": "The only open model found in the research phase declaring both gu and sa.",
+        "roundtrip_verified": true,
+        "url": "https://huggingface.co/sarvamai/sarvam-30b/resolve/main/tokenizer.json",
+        "vocab_size": 262144
+      }
+    ],
+    "tokenizers_roundtrip_verified": [
+      "gemma-3-4b-it-unsloth",
+      "gemma-4-E4B-it",
+      "qwen3-0.6b",
+      "qwen3-embed-0.6b",
+      "qwen3.5-4b",
+      "sarvam-30b"
+    ]
+  },
+  "ocr": {
+    "engine_availability": "no OCR engine is installed in this environment, so OCR was NOT performed and no OCR quality claim is made. The pipeline's OCR stage is exercised only on text the Internet Archive already OCR'd, whose quality is measured below against independent script evidence.",
+    "engines": [
+      {
+        "available": false,
+        "description": "Tesseract (tesseract-ocr), installed if the binary is on PATH",
+        "engine": "tesseract"
+      },
+      {
+        "available": false,
+        "description": "PaddleOCR — not installed in this environment",
+        "engine": "paddleocr"
+      },
+      {
+        "available": false,
+        "description": "Multimodal/document OCR model — no local weights, requires a GPU and a separate evaluation budget",
+        "engine": "vlm"
+      },
+      {
+        "available": false,
+        "description": "Specialised Indic OCR — no maintained, openly licensed checkpoint was verified in the research phase",
+        "engine": "indic-ocr"
+      }
+    ],
+    "manual_review_required": 3,
+    "reports": [
+      {
+        "character_count": 2242289,
+        "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+        "detected_script": "Devanagari",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.015,
+        "findings": [
+          "OCR engine reported language 'san'; independent script evidence says 'Devanagari' (96.2% purity)",
+          "declared script 'Devanagari;Latin' but measured script is 'Devanagari'"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": true,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "[कक वक 9 ययिं \n\n\n\n\n\n727९4 द 260150८ € 2/८ 7071. 6८८7८ #‰› च \n6.02 5८९42८० 92622 वव 7 27229 ८55 \n\n\n25724267, 727८042) 24026. \n\n\n~ ----~------------------------------------- \nियििकककिकिक क । पिकं \n\n\n0740 4 ८71८5 \n7009101 & ¢. \n\n\n067 53001.5९17८5 \n41 © एण्य अष्ट, णद, एए © 4 \n\n\n1 श्रीः॥ \n\n\n~= नमोऽस्तु महावीरौ = \nसाकि्चः \nअरदं-मागधी कोष. \n\n\n-- “ए शरु ञ-------- \n\n\nसम्पादक \nपूज्यपाद्‌ श्री गुलावचन्द्जी स..."
+        ],
+        "script_distribution": {
+          "Common": 887440,
+          "Devanagari": 1304009,
+          "Latin": 36702,
+          "Other": 14138
+        },
+        "script_purity": 0.9625,
+        "source_id": "SVK-0007",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 185784,
+        "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+        "detected_script": "Devanagari",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0023,
+        "findings": [
+          "OCR engine reported language 'hin'; independent script evidence says 'Devanagari' (99.4% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "आगम सेवा के अन्तर्गत पहली सेवा \n\n\nभगवान महावीर की अंतिम अमृतवाणी का अनूठा संग्रह \n\n\n\n\n\n(अध्ययन एक से अठारह तक) \nप्रथम भाग प्रथम संस्करण \n\n\nप्रश्न उत्तर के माध्यम से जैन आगम शास्त्र में निहित भगवान महावीर \nकी वाणी को हिन्दी भाषा में सरल रुप मे जाने का सर्वश्रेष्ठ माध्यम \n९ \nसंकलक - संपादक \nसंदीप जैन मित्र \nदुर्ग (छत्तीसगढ़) \n९ \n-; प्रकाशक :- \nसोश्यल एनर्जेटिक वालिंटियर्स एसोसिएशन, दुर्ग \n\n\n) #चत522..."
+        ],
+        "script_distribution": {
+          "Common": 48300,
+          "Devanagari": 136680,
+          "Latin": 802,
+          "Other": 2
+        },
+        "script_purity": 0.9942,
+        "source_id": "SVK-0016",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 1339809,
+        "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+        "detected_script": "Devanagari",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0154,
+        "findings": [
+          "OCR engine reported language 'Sanskrit'; independent script evidence says 'Devanagari' (96.1% purity)",
+          "declared script 'Devanagari;Latin' but measured script is 'Devanagari'"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": true,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "व, \n\n\n3 \n\n\n~~ =< \n\n\nस >= = \n\n\n४५६३ \nस \n\n\nद \n\n\nन <= 8 > \n\n\nप्र 1\"... 5{ \n\n\nट \n< \n६3; \n\n\n[ स९ | \n[, \n\n\nक अक सूः \n\n\n, \n| $ ^ \nक \n\n\n1.६) `, ` \n\n\n+++ (47 लातत \n\n\n~> ४ \n11४6181, 20110800716 शात 8 लाधर \n\n\n84118, तपुवि, पातां वातं हाट \n| 0॥1॥ धऽ पिता 10 पाह प्ा$ & (00003 0040॥8 = \n१॥ \n819.४8.४ 0172111 106 48.118, प्रता] 8711 8.8.718.620811018471; \n018.18.18.] \n[लाय 0 फिफ ^ा जप्ता तणा. ए८प्त^प्एह47ा ( 1पात..."
+        ],
+        "script_distribution": {
+          "Common": 573015,
+          "Devanagari": 737175,
+          "Latin": 21533,
+          "Other": 8086
+        },
+        "script_purity": 0.9614,
+        "source_id": "SVK-0037",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 181581,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0002,
+        "findings": [
+          "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "'J  U«N11  JUI \n\n\nc? \n\n\nIEUNIVER%. \n\n\nfHONVSOV \n\n\n.•UBRARYQr \n\n\n|     I \n\n!  1 \n\nI  i \n\n\nr^      5, \n\n3       ? \n\n\n\\E-UNIVER. \n\n\n<~>       **- \n\n1    S \n\n\n'OUJMVJ'iU  ' \n\n\nil \n\n\nI    s \n\n\ng  i \n\ni \n\n\ni   § \n\n\nfc     £ \n\n\ni< \n\n^ \n\n\n\"  - \n\n\nvvlOS-ANCELfX^ \n^     <tx-N__^ \n\n\n# \n\n\n=  =3 \n\n\n1( \n\n^ \n\n\nA«f-UNIVfl% \n\n\nI   § \nfe \n\n\nil \n\n\n^' \n^ \n\n\n^  ^*-~-    ^§ \n\n\nt     $ \n\n\n^ \n\n\nNOTES    ON \n\nMODERN  JAIN..."
+        ],
+        "script_distribution": {
+          "Common": 46320,
+          "Latin": 135210,
+          "Other": 51
+        },
+        "script_purity": 0.9996,
+        "source_id": "SVK-0038",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 679813,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0002,
+        "findings": [
+          "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "WMWptu   <niin \n\n\n:\"BW§8 \n\n\n»taW \n\n\nIK \n\n\nmm \n\n;■-.-■'■ \n..■■-•....• \n\n•\":    ■ \nTBI \n\n\n■■\".■•••'•■': \n\n:.'•'•''.-■ \n\n\n1 \n\n\n828  Broadway \n\n\nSbSs \n\n,   ■  ^H      ^H    'y  I '    *    I \n\n\nISBi     ^H I \n\n\n■  <--^*i3; \n\n\nPRINCETON,  N.  J. \n\n\nS^.. \n\n\n^L \n\n\nBL  1010  .S3   v.22 \nSiddh  anta. \nGaina  s  utras \n\n\n■ \n\nB \n\n1 \n\n\nI   /^v? \n\n\n■ \n\n\nI  K  : \n\n\nmjt?mc-s- \n\n\n',v^*-  I \n\n\n■^^H \n^■^ \n\n\n*wf  **..."
+        ],
+        "script_distribution": {
+          "Common": 173963,
+          "Latin": 505609,
+          "Other": 241
+        },
+        "script_purity": 0.9995,
+        "source_id": "SVK-1001",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 209585,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0001,
+        "findings": [
+          "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "HHHHI \n\n\nTHE    RALPA    SUTRA, \n\nANH \n\n\\  A  V  A     T  A  T  V  A  : \n\nTWO  WORKS  ILLUSTRATIVE  OF  THE  JAIN  RELIGION \n\nAND  PHILOSOPHY. \n\nTRANSLATED    PROM    THE    KAGADHI. \n\n\nwith \n\nAN    APPENDIX, \n\nCONTAINING \n\nREMARKS  ON  THE  LANGUAGE  OF  THE  ORIGINAL. \n\n\nBY \n\nTHE    REV.    J.    STEVENSON,    D.D., \n\nvim:  a>.    BOMBAY. \n\n\nLONDON: \n\nPRINTED  FOB  THE  ORIENTAL  TB  LNSLATION  ..."
+        ],
+        "script_distribution": {
+          "Common": 47533,
+          "Latin": 162007,
+          "Other": 45
+        },
+        "script_purity": 0.9997,
+        "source_id": "SVK-1002",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 221170,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0001,
+        "findings": [
+          "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "\nThis is a digital copy of a book that was preserved for generations on library shelves before it was carefully scanned by Google as part of a project \nto make the world's books discoverable online. \n\nIt has survived long enough for the copyright to expire and the book to enter the public domain. A public domain book is one that was never subject \nto copyright or whose legal copyright term has exp..."
+        ],
+        "script_distribution": {
+          "Common": 49092,
+          "Latin": 172038,
+          "Other": 40
+        },
+        "script_purity": 0.9998,
+        "source_id": "SVK-1003",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 1024494,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0,
+        "findings": [
+          "OCR engine reported language 'English'; independent script evidence says 'Latin' (100.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "Google \n\n\n\nThis is a digital copy of a book that was preserved for generations on library shelves before it was carefully scanned by Google as part of a project \n\nto make the world's books discoverable online. \n\nIt has survived long enough for the copyright to expire and the book to enter the public domain. A public domain book is one that was never subject \n\nto copyright or whose legal copyright ..."
+        ],
+        "script_distribution": {
+          "Common": 274158,
+          "Latin": 750231,
+          "Other": 105
+        },
+        "script_purity": 0.9999,
+        "source_id": "SVK-1005",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 88516,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0,
+        "findings": [
+          "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "JAINA \nPSYCHOLOGY \n\n\nBY \nC.R. JAIN \n\n\nVidya Varidhi, Barrister-at-Law \n\n\nPublished by: \nMrinaal jain \n\n\nOriginally Printed by: \nK. Mitra, at The Indian Press, Ltd., \nAllahabad \n\n\nCONTENTS \n\n\nPreface \n\n1—The Soul \n\n2—The Nature of Knowledge \n3—Omnniscience \n\n4— Soul an Intelligent Substance \n5—The Jnanavaraniya Cover \n6—The Will \n\n7—Passions \n\n8— Intellect \n\n9—Attention \n\n10— Instincts \n\n11—The Sub..."
+        ],
+        "script_distribution": {
+          "Common": 17659,
+          "Latin": 70857
+        },
+        "script_purity": 1.0,
+        "source_id": "SVK-1006",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 874166,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0161,
+        "findings": [
+          "OCR engine reported language 'fre'; independent script evidence says 'Latin' (96.0% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "This  is  a  digital  copy  of  a  book  that  was  preserved  for  générations  on  library  shelves  before  it  was  carefully  scanned  by  Google  as  part  of  a  project \nto  make  the  world's  books  discoverable  online. \n\nIt  has  survived  long  enough  for  the  copyright  to  expire  and  the  book  to  enter  the  public  domain.  A  public  domain  book  is  one  that  was  never  ..."
+        ],
+        "script_distribution": {
+          "Common": 254554,
+          "Latin": 594718,
+          "Latin Extended": 24768,
+          "Other": 126
+        },
+        "script_purity": 0.9598,
+        "source_id": "SVK-1007",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 47850,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0005,
+        "findings": [
+          "OCR engine reported language 'eng'; independent script evidence says 'Latin' (99.9% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "GOVliRNMKN'l' OF INDIA \n\n\nDEPARTMENT OF ARCHAEOLOGY \n\nCENTRAL ^RCH/£OLOG/CAL \nL/BRARr \n\n\nCaul. No. \n\n■Ace. No. \n\nD.G.A. 79. \n\nGipN—S4—iD, G. .\\rch. N. D./57_2'* Q 36—l.DO,OnO. \n\n\n\n\n\n\n\n\n\n\n\n\n\nNOTES \n\n\n\n\n\n\n\n\nJB94y \n\n\n\nIn Jafoa teniploa the isporfwinod Lbricp \ndaily} in tlie monuog, Jibont noon, and in tlio \nevening. The fli’at or motnrnit boiTicc naunlly \nb^insaoon aftor liaU*past sis, when thf» Pu]A..."
+        ],
+        "script_distribution": {
+          "Common": 12296,
+          "Latin": 35507,
+          "Other": 47
+        },
+        "script_purity": 0.9987,
+        "source_id": "SVK-1008",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 251990,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0009,
+        "findings": [
+          "OCR engine reported language 'English'; independent script evidence says 'Latin' (99.8% purity)"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": false,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "\nGOVERNMENT OT INDIA. \nABCmEOLOGICAL SUBVE? OF IKDU \n\nCENTRAL \n\nARCHAEOLOGICAL \n\nLIBRARY \n\n\nAO^SION NO. \n\n\nGALL No. \n\n\nIXOJL 79, \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n■%* \n\n\n\n\n\n\n\n\n\n\n\n\n\ni*'. \n\n\nCoi.OSSCK 01^ BifOMU }<KVa at JUhwa.si \n\n(^ui’cii inuAOKh iiv A<iK) \n\n\n\n\n\n\n\n\n'Ceisabha beta \n\nTHE j \n\nFOUNBER OF JAINISM \n\n\n\n\n15558 \n\n\nBY \n\n\nCHAiEPAT m JAiy \n\nVrSTATAftDBZ, BASXIBTU-At'LAV. \n\n\n\n\n2324i± \n\nRiA j ..."
+        ],
+        "script_distribution": {
+          "Common": 54305,
+          "Latin": 197238,
+          "Other": 447
+        },
+        "script_purity": 0.9977,
+        "source_id": "SVK-1009",
+        "unicode_error_count": 0
+      },
+      {
+        "character_count": 394727,
+        "detected_language": "unknown (Latin script)",
+        "detected_script": "Latin",
+        "engine": "PLAIN_TEXT",
+        "engines_evaluated": [],
+        "estimated_ocr_noise": 0.0024,
+        "findings": [
+          "OCR engine reported language 'Unknown'; independent script evidence says 'Latin' (99.4% purity)",
+          "declared script 'Mixed' but measured script is 'Latin'"
+        ],
+        "language_confidence": "medium",
+        "manual_review_required": true,
+        "notes": [],
+        "page_count": 1,
+        "replacement_character_count": 0,
+        "sample_pages": [
+          "?(l 'V'l *•^0 Sio ^?«4- \n\n\n> ^ w ^• \n\n( <11. V-\\-to Ifl ni. n'^ltl Kija-tl'^W ys HT ■Hkl \n\nw \\a ?. 33V-«-. ^- \n\nami ’flu 5'ii''i='ii “11^ MciH-i-” \n\n(\\) S'fi?15 HlflaiCH yisdiai's— §fl^ a^^w- \n\ns, *fla'H \\3, SiqiE V, s'4iy v, \n\n?lt ^Ws ». S'^' aa-o-o \n\n(^) 3ll. 3H'^(lHlCH a?rt wsiil. \n\nuflrflilRl \\«U, 'iswii ia y. 3a-<:-\" \n\n(?) 3q>!inK n't. 5311313 Ti3sai5?i Cni \n\n5^i^i3R 5. ^ ^lii, ^Tmt Ui, 3)??r..."
+        ],
+        "script_distribution": {
+          "Common": 159951,
+          "Cyrillic": 2,
+          "Latin": 233367,
+          "Other": 1407
+        },
+        "script_purity": 0.994,
+        "source_id": "SVK-1010",
+        "unicode_error_count": 0
+      }
+    ],
+    "sources": 13
+  },
+  "pages": 13,
+  "quality": {
+    "flags": {
+      "counts": {
+        "HIGH_DIGIT_RATIO": 10319,
+        "HIGH_SYMBOL_RATIO": 2539,
+        "OCR_NOISE_HIGH": 490,
+        "ORPHAN_COMBINING_MARKS": 809,
+        "REPEATED_CHARACTER_RUN": 68,
+        "REPEATED_LINES": 30,
+        "SCRIPT_CONFUSION": 18305,
+        "SCRIPT_MISMATCH": 4386,
+        "VERY_SHORT": 25091
+      },
+      "units_with_flags": 44462
+    },
+    "generated_at": "2026-09-17T14:00:37+00:00",
+    "means": {
+      "ocr_noise_estimate": 0.152417,
+      "structural_quality": 0.6,
+      "symbol_ratio": 0.056182,
+      "unicode_quality": 0.995787
+    },
+    "ocr": {
+      "engine_availability": "no OCR engine is installed in this environment, so OCR was NOT performed and no OCR quality claim is made. The pipeline's OCR stage is exercised only on text the Internet Archive already OCR'd, whose quality is measured below against independent script evidence.",
+      "manual_review_required": 3,
+      "sources": 13
+    },
+    "unit_lengths": {
+      "max": 1499,
+      "mean": 102.7,
+      "min": 1,
+      "note": "very short units are usually verse refrains or OCR line fragments; they are kept but are weak retrieval targets",
+      "p25": 16,
+      "p50": 39,
+      "p75": 105,
+      "p99": 1002,
+      "under_40_chars": 37150
+    },
+    "units": 73828
+  },
+  "release_bytes": {
+    "rag": 129835414,
+    "training": 81855870
+  },
+  "sources_acquired": 13,
+  "sources_excluded": 35,
+  "sources_released": 13,
+  "sources_total": 48,
+  "training_groups": {
+    "language": [
+      [
+        "en",
+        24724
+      ],
+      [
+        "unknown",
+        4067
+      ],
+      [
+        "hi",
+        1570
+      ]
+    ],
+    "script": [
+      [
+        "Latin",
+        24724
+      ],
+      [
+        "Devanagari",
+        5637
+      ]
+    ]
+  },
+  "validation": {
+    "generated_at": "2026-09-17T14:11:13+00:00",
+    "problems": [],
+    "records_checked": 80686
+  },
+  "version": {
+    "corpus": "svk-corpus-v0.1",
+    "package": "0.1.0",
+    "pipeline": "v0.1.0"
+  }
+}

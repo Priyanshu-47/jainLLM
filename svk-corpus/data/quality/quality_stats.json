@@ -1,0 +1,41 @@
+{
+  "flags": {
+    "counts": {
+      "HIGH_DIGIT_RATIO": 45876,
+      "HIGH_SYMBOL_RATIO": 10557,
+      "OCR_NOISE_HIGH": 2553,
+      "ORPHAN_COMBINING_MARKS": 3445,
+      "REPEATED_CHARACTER_RUN": 7295,
+      "REPEATED_LINES": 344,
+      "SCRIPT_CONFUSION": 129519,
+      "SCRIPT_MISMATCH": 24832,
+      "SUSPICIOUS_LONG_TOKENS": 200,
+      "VERY_SHORT": 87566
+    },
+    "units_with_flags": 226976
+  },
+  "generated_at": "2026-09-19T13:16:02+00:00",
+  "means": {
+    "ocr_noise_estimate": 0.19523,
+    "structural_quality": 0.588096,
+    "symbol_ratio": 0.065075,
+    "unicode_quality": 0.995702
+  },
+  "ocr": {
+    "engine_availability": "no OCR engine is installed in this environment, so OCR was NOT performed and no OCR quality claim is made. The pipeline's OCR stage is exercised only on text the Internet Archive already OCR'd, whose quality is measured below against independent script evidence.",
+    "manual_review_required": 13,
+    "sources": 41
+  },
+  "unit_lengths": {
+    "max": 1500,
+    "mean": 141.06,
+    "min": 1,
+    "note": "very short units are usually verse refrains or OCR line fragments; they are kept but are weak retrieval targets",
+    "p25": 20,
+    "p50": 48,
+    "p75": 105,
+    "p99": 1441,
+    "under_40_chars": 135945
+  },
+  "units": 320698
+}

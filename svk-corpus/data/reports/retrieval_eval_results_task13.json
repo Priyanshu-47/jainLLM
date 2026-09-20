@@ -1,0 +1,1226 @@
+{
+  "generated_at": "2026-09-18T15:53:57",
+  "label": "task13",
+  "corpus_units": 145147,
+  "index_build_s": 51.67,
+  "source_index_build_s": 0.0221,
+  "corpus_load_s": 5.96,
+  "sources_indexed": 62,
+  "modes": {
+    "A_unit_diversify": {
+      "metrics": {
+        "recall@5": 0.777,
+        "recall@10": 0.836,
+        "mrr": 0.905,
+        "queries_with_zero_relevant_results": 0,
+        "mean_latency_s": 0.0458
+      },
+      "sect_context": {
+        "CORE_STHANAKAVASI": 32,
+        "CONTEXTUAL_JAIN": 23,
+        "HIGH_STHANAKAVASI_RELEVANCE": 11,
+        "UNKNOWN": 8,
+        "COMPARATIVE_OTHER_TRADITION": 3,
+        "CANONICAL_FOUNDATION": 3
+      },
+      "per_query": [
+        {
+          "id": "q01",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q02",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.25
+        },
+        {
+          "id": "q03",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q04",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q05",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.0,
+          "recall@10": 1.0,
+          "mrr": 0.143
+        },
+        {
+          "id": "q06",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.25,
+          "recall@10": 0.25,
+          "mrr": 1.0
+        },
+        {
+          "id": "q07",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.5,
+          "recall@10": 0.5,
+          "mrr": 1.0
+        },
+        {
+          "id": "q08",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q09",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0
+        },
+        {
+          "id": "q10",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0
+        },
+        {
+          "id": "q11",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q12",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q13",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q14",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q15",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q16",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q17",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.8,
+          "recall@10": 0.8,
+          "mrr": 1.0
+        },
+        {
+          "id": "q18",
+          "relevance": "exploratory",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ]
+        },
+        {
+          "id": "q19",
+          "relevance": "corpus-gap",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ]
+        },
+        {
+          "id": "q20",
+          "relevance": "exploratory",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ]
+        }
+      ]
+    },
+    "B_source_only": {
+      "metrics": {
+        "recall@5": 0.811,
+        "recall@10": 0.819,
+        "mrr": 0.882,
+        "queries_with_zero_relevant_results": 2,
+        "mean_latency_s": 0.0072
+      },
+      "sect_context": {
+        "CORE_STHANAKAVASI": 15,
+        "CONTEXTUAL_JAIN": 4,
+        "UNKNOWN": 3,
+        "HIGH_STHANAKAVASI_RELEVANCE": 1
+      },
+      "per_query": [
+        {
+          "id": "q01",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q02",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q03",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q04",
+          "relevance": "source-level",
+          "channels": [],
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr": 0.0
+        },
+        {
+          "id": "q05",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q06",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 0.625,
+          "recall@10": 0.75,
+          "mrr": 1.0
+        },
+        {
+          "id": "q07",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q08",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q09",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 0.833,
+          "recall@10": 0.833,
+          "mrr": 1.0
+        },
+        {
+          "id": "q10",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0
+        },
+        {
+          "id": "q11",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q12",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q13",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q14",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q15",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q16",
+          "relevance": "source-level",
+          "channels": [
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q17",
+          "relevance": "source-level",
+          "channels": [],
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr": 0.0
+        },
+        {
+          "id": "q18",
+          "relevance": "exploratory",
+          "channels": []
+        },
+        {
+          "id": "q19",
+          "relevance": "corpus-gap",
+          "channels": []
+        },
+        {
+          "id": "q20",
+          "relevance": "exploratory",
+          "channels": [
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ]
+        }
+      ]
+    },
+    "C_combined": {
+      "metrics": {
+        "recall@5": 0.777,
+        "recall@10": 0.895,
+        "mrr": 0.905,
+        "queries_with_zero_relevant_results": 0,
+        "mean_latency_s": 0.053
+      },
+      "sect_context": {
+        "CORE_STHANAKAVASI": 33,
+        "CONTEXTUAL_JAIN": 21,
+        "HIGH_STHANAKAVASI_RELEVANCE": 11,
+        "UNKNOWN": 9,
+        "COMPARATIVE_OTHER_TRADITION": 3,
+        "CANONICAL_FOUNDATION": 3
+      },
+      "per_query": [
+        {
+          "id": "q01",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q02",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.25
+        },
+        {
+          "id": "q03",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q04",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q05",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.0,
+          "recall@10": 1.0,
+          "mrr": 0.143
+        },
+        {
+          "id": "q06",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.25,
+          "recall@10": 0.25,
+          "mrr": 1.0
+        },
+        {
+          "id": "q07",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "source_metadata",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 0.5,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q08",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q09",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "source_metadata"
+          ],
+          "recall@5": 0.333,
+          "recall@10": 0.5,
+          "mrr": 1.0
+        },
+        {
+          "id": "q10",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "source_metadata"
+          ],
+          "recall@5": 0.333,
+          "recall@10": 0.667,
+          "mrr": 1.0
+        },
+        {
+          "id": "q11",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q12",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q13",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "source_metadata",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q14",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q15",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q16",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "source_metadata"
+          ],
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0
+        },
+        {
+          "id": "q17",
+          "relevance": "source-level",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ],
+          "recall@5": 0.8,
+          "recall@10": 0.8,
+          "mrr": 1.0
+        },
+        {
+          "id": "q18",
+          "relevance": "exploratory",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ]
+        },
+        {
+          "id": "q19",
+          "relevance": "corpus-gap",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ]
+        },
+        {
+          "id": "q20",
+          "relevance": "exploratory",
+          "channels": [
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25",
+            "unit_bm25"
+          ]
+        }
+      ]
+    }
+  },
+  "q09_detail": {
+    "query": "Ratnachandra",
+    "expected": [
+      "SVK-0007",
+      "SVK-0037",
+      "SVK-2002",
+      "SVK-2003",
+      "SVK-2004",
+      "SVK-2005"
+    ],
+    "A_unit_diversify": {
+      "SVK-0007": {
+        "rank": 1,
+        "channel": "unit_bm25",
+        "matched_field": null
+      },
+      "SVK-0037": {
+        "rank": 4,
+        "channel": "unit_bm25",
+        "matched_field": null
+      },
+      "SVK-2002": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2003": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2004": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2005": {
+        "rank": null,
+        "channel": null
+      }
+    },
+    "B_source_only": {
+      "SVK-0007": {
+        "rank": 1,
+        "channel": "source_metadata",
+        "matched_field": "author"
+      },
+      "SVK-0037": {
+        "rank": 2,
+        "channel": "source_metadata",
+        "matched_field": "author"
+      },
+      "SVK-2002": {
+        "rank": 4,
+        "channel": "source_metadata",
+        "matched_field": "author"
+      },
+      "SVK-2003": {
+        "rank": 5,
+        "channel": "source_metadata",
+        "matched_field": "author"
+      },
+      "SVK-2004": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2005": {
+        "rank": 3,
+        "channel": "source_metadata",
+        "matched_field": "author"
+      }
+    },
+    "C_combined": {
+      "SVK-0007": {
+        "rank": 1,
+        "channel": "unit_bm25",
+        "matched_field": null
+      },
+      "SVK-0037": {
+        "rank": 4,
+        "channel": "unit_bm25",
+        "matched_field": null
+      },
+      "SVK-2002": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2003": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2004": {
+        "rank": null,
+        "channel": null
+      },
+      "SVK-2005": {
+        "rank": 10,
+        "channel": "source_metadata",
+        "matched_field": "author"
+      }
+    }
+  },
+  "q17_q19": {
+    "q17": {
+      "query": "જૈન ધર્મ",
+      "expected": [
+        "SVK-2010",
+        "SVK-2011",
+        "SVK-2012",
+        "SVK-2013",
+        "SVK-2014"
+      ],
+      "A_unit_diversify": {
+        "SVK-2010": {
+          "rank": null,
+          "channel": null
+        },
+        "SVK-2011": {
+          "rank": 2,
+          "channel": "unit_bm25",
+          "matched_field": null
+        },
+        "SVK-2012": {
+          "rank": 4,
+          "channel": "unit_bm25",
+          "matched_field": null
+        },
+        "SVK-2013": {
+          "rank": 1,
+          "channel": "unit_bm25",
+          "matched_field": null
+        },
+        "SVK-2014": {
+          "rank": 3,
+          "channel": "unit_bm25",
+          "matched_field": null
+        }
+      },
+      "B_source_only": {
+        "SVK-2010": {
+          "rank": null,
+          "channel": null
+        },
+        "SVK-2011": {
+          "rank": null,
+          "channel": null
+        },
+        "SVK-2012": {
+          "rank": null,
+          "channel": null
+        },
+        "SVK-2013": {
+          "rank": null,
+          "channel": null
+        },
+        "SVK-2014": {
+          "rank": null,
+          "channel": null
+        }
+      },
+      "C_combined": {
+        "SVK-2010": {
+          "rank": null,
+          "channel": null
+        },
+        "SVK-2011": {
+          "rank": 2,
+          "channel": "unit_bm25",
+          "matched_field": null
+        },
+        "SVK-2012": {
+          "rank": 4,
+          "channel": "unit_bm25",
+          "matched_field": null
+        },
+        "SVK-2013": {
+          "rank": 1,
+          "channel": "unit_bm25",
+          "matched_field": null
+        },
+        "SVK-2014": {
+          "rank": 3,
+          "channel": "unit_bm25",
+          "matched_field": null
+        }
+      }
+    },
+    "q19": {
+      "query": "Acharya Anand Rishi",
+      "expected": [],
+      "A_unit_diversify": {},
+      "B_source_only": {},
+      "C_combined": {}
+    }
+  }
+}

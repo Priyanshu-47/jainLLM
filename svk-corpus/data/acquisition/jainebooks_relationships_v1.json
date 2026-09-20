@@ -1,0 +1,346 @@
+{
+  "generated_at": "2026-09-19",
+  "version": "1",
+  "description": "Relationship graph data from broad Jainebooks discovery. Only relationships with evidence are included.",
+  "total_relationships": 45,
+  "relationship_types": {
+    "SOURCE_WRITTEN_BY": 18,
+    "TEACHER_ASSOCIATED_WITH_TRADITION": 8,
+    "SOURCE_EXPLAINS_PRACTICE": 12,
+    "SOURCE_COMMENTS_ON_AGAM": 4,
+    "SOURCE_TRANSLATES_AGAM": 3,
+    "SOURCE_HAS_LANGUAGE": 28,
+    "PRACTICE_BELONGS_TO_DOMAIN": 8
+  },
+  "relationships": [
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-001",
+      "target": "Namramuni Maharaj",
+      "evidence": "Jainebooks author page confirms authorship",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-002",
+      "target": "Nathmal",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-003",
+      "target": "Chandrashekhar Vijayji",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-004",
+      "target": "Amarmuni",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-010",
+      "target": "Bhaktiyogacharya Yashovijay Suriji",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-015",
+      "target": "Ramchandrasuri",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-020",
+      "target": "Kundkund Acharya",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_WRITTEN_BY",
+      "source": "JB-BROAD-013",
+      "target": "Hemchandrasuri Acharya",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Namramuni Maharaj",
+      "tradition": "SHWETAMBAR_STHANAKAVASI",
+      "evidence": "Jainebooks author bio: Sthanakvasi Muni. JainQQ confirms Sthanakvasi tradition.",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Amarmuni",
+      "tradition": "SHWETAMBAR_STHANAKAVASI",
+      "evidence": "JainQQ confirms Amarmuni wrote Sthanakvasi Agam commentaries. Jainebooks lists as Digambar (metadata inconsistency).",
+      "confidence": "MEDIUM"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Bhaktiyogacharya Yashovijay Suriji",
+      "tradition": "SHWETAMBAR",
+      "evidence": "Suriji lineage is Svetambara",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Chandrashekhar Vijayji",
+      "tradition": "SHWETAMBAR",
+      "evidence": "Svetambara author",
+      "confidence": "MEDIUM"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Ramchandrasuri",
+      "tradition": "SHWETAMBAR",
+      "evidence": "Suri lineage is Svetambara",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Kundkund Acharya",
+      "tradition": "DIGAMBAR",
+      "evidence": "Jainebooks and general Jain scholarship confirm Digambar tradition",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Hemchandrasuri Acharya",
+      "tradition": "SHWETAMBAR",
+      "evidence": "Suri lineage is Svetambara",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "TEACHER_ASSOCIATED_WITH_TRADITION",
+      "teacher": "Bhaktiyogacharya Yashovijay Suriji",
+      "tradition": "SHWETAMBAR",
+      "evidence": "Suriji lineage",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-001",
+      "practice": "SAMAYIK",
+      "evidence": "Book title and content: Look-N-Learn Samayik",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-002",
+      "practice": "PRATIKRAMAN",
+      "evidence": "Book title: Shravak Pratikraman",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-003",
+      "practice": "PARYUSHAN",
+      "evidence": "Book title: Chalo Paryushan karva jaiye",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-004",
+      "practice": "PARYUSHAN",
+      "evidence": "Book title: Paryushan Pravachan",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-005",
+      "practice": "SAMAYIK",
+      "evidence": "Book title: Samayik",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-006",
+      "practice": "SAMAYIK",
+      "evidence": "Book title: Samayik",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-007",
+      "practice": "PRATIKRAMAN",
+      "evidence": "Book title: Pratikraman",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-008",
+      "practice": "PRATIKRAMAN",
+      "evidence": "Book title: Shravak Pratikraman",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-009",
+      "practice": "PRATIKRAMAN",
+      "evidence": "Book title: Panch Pratikraman",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-010",
+      "practice": "KAYOTSARGA",
+      "evidence": "Book title: Dhyan ane Kayotsarga",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-011",
+      "practice": "KAYOTSARGA",
+      "evidence": "Book title: Kayotsarga",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-012",
+      "practice": "KAYOTSARGA",
+      "evidence": "Book title: Kayotsarg (Swasth Jeevan Ka Rahashya)",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-013",
+      "practice": "VANDANA",
+      "evidence": "Book title: Trilok Vandana",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-014",
+      "practice": "VANDANA",
+      "evidence": "Book title: Jinendra Vandana - Barah Bhavana",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_EXPLAINS_PRACTICE",
+      "source": "JB-BROAD-028",
+      "practice": "SAMAYIK",
+      "evidence": "Book title: Samayik Path",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_COMMENTS_ON_AGAM",
+      "source": "JB-BROAD-015",
+      "agam": "AGAM-011",
+      "evidence": "Book title: Agam 01 Ang 01 Acharanga Sutra Part 06",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_COMMENTS_ON_AGAM",
+      "source": "JB-BROAD-019",
+      "agam": "AGAM-013",
+      "evidence": "Book title: Uttaradhyayana Sutra Chitravali",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_TRANSLATES_AGAM",
+      "source": "JB-BROAD-016",
+      "agam": "AGAM-013;AGAM-002",
+      "evidence": "Book title: Jaina Sutras vol. 2 - Uttaradhyayana + Sutrakritanga",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_TRANSLATES_AGAM",
+      "source": "JB-BROAD-017",
+      "agam": "AGAM-015",
+      "evidence": "Book title: The Kalpa Sutra and Nava Tatva",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_TRANSLATES_AGAM",
+      "source": "JB-BROAD-018",
+      "agam": "AGAM-011;AGAM-015",
+      "evidence": "Book title: Jaina Sutras vol. 1 - Acharanga + Kalpa",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_HAS_LANGUAGE",
+      "source": "JB-BROAD-001",
+      "language": "English",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_HAS_LANGUAGE",
+      "source": "JB-BROAD-003",
+      "language": "Gujarati",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_HAS_LANGUAGE",
+      "source": "JB-BROAD-004",
+      "language": "Hindi",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_HAS_LANGUAGE",
+      "source": "JB-BROAD-010",
+      "language": "Gujarati",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_HAS_LANGUAGE",
+      "source": "JB-BROAD-013",
+      "language": "Gujarati",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "SOURCE_HAS_LANGUAGE",
+      "source": "JB-BROAD-015",
+      "language": "Gujarati",
+      "evidence": "Jainebooks metadata",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "PRACTICE_BELONGS_TO_DOMAIN",
+      "practice": "SAMAYIK",
+      "domain": "SHRAVAK_DAILY_PRACTICE",
+      "evidence": "Standard Jain classification",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "PRACTICE_BELONGS_TO_DOMAIN",
+      "practice": "PRATIKRAMAN",
+      "domain": "SHRAVAK_DAILY_PRACTICE",
+      "evidence": "Standard Jain classification",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "PRACTICE_BELONGS_TO_DOMAIN",
+      "practice": "KAYOTSARGA",
+      "domain": "MEDITATION_PRACTICE",
+      "evidence": "Standard Jain classification",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "PRACTICE_BELONGS_TO_DOMAIN",
+      "practice": "VANDANA",
+      "domain": "DEVOTIONAL_PRACTICE",
+      "evidence": "Standard Jain classification",
+      "confidence": "HIGH"
+    },
+    {
+      "type": "PRACTICE_BELONGS_TO_DOMAIN",
+      "practice": "PARYUSHAN",
+      "domain": "FESTIVAL_PRACTICE",
+      "evidence": "Standard Jain classification",
+      "confidence": "HIGH"
+    }
+  ]
+}

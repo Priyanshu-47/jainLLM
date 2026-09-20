@@ -1,0 +1,1096 @@
+{
+  "generated_at": "2026-09-18T05:14:28+00:00",
+  "tokenizer_fetch": [
+    {
+      "name": "qwen3-0.6b",
+      "model": "Qwen/Qwen3-0.6B",
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/main/tokenizer.json",
+      "role": "The Qwen+QLoRA default carried over from the research phase. Measured in order to TEST that assumption.",
+      "status": "OK",
+      "http_status": "",
+      "bytes": "11422654",
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "error": "reused existing artifact"
+    },
+    {
+      "name": "qwen3-embed-0.6b",
+      "model": "Qwen/Qwen3-Embedding-0.6B",
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/main/tokenizer.json",
+      "role": "Retrieval-tower candidate. Also the BGE-M3/Qwen embedding shortlist from the architecture phase.",
+      "status": "OK",
+      "http_status": "",
+      "bytes": "11423705",
+      "sha256": "def76fb086971c7867b829c23a26261e38d9d74e02139253b38aeb9df8b4b50a",
+      "error": "reused existing artifact"
+    },
+    {
+      "name": "sarvam-30b",
+      "model": "sarvamai/sarvam-30b",
+      "url": "https://huggingface.co/sarvamai/sarvam-30b/resolve/main/tokenizer.json",
+      "role": "The only open model found in the research phase declaring both gu and sa.",
+      "status": "OK",
+      "http_status": "",
+      "bytes": "33627251",
+      "sha256": "a574ceaaff7c7a8f091179c53fd17ae33567089c099d4ff37d4cb3bc1a87e80e",
+      "error": "reused existing artifact"
+    },
+    {
+      "name": "gemma-3-4b-it-unsloth",
+      "model": "unsloth/gemma-3-4b-it (mirror of google/gemma-3-4b-it)",
+      "url": "https://huggingface.co/unsloth/gemma-3-4b-it/resolve/main/tokenizer.json",
+      "role": "Permissive-family hedge. NOTE: this is a third-party MIRROR, because the google/gemma-3-4b-it repo is gated (HTTP 401). Provenance of the tokenizer file is therefore weaker and is recorded as such.",
+      "status": "OK",
+      "http_status": "",
+      "bytes": "33384568",
+      "sha256": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "error": "reused existing artifact"
+    },
+    {
+      "name": "gemma-4-E4B-it",
+      "model": "google/gemma-4-E4B-it",
+      "url": "https://huggingface.co/google/gemma-4-E4B-it/resolve/main/tokenizer.json",
+      "role": "Expected to FAIL: gated repo. Included so the failure is recorded rather than omitted.",
+      "status": "OK",
+      "http_status": "",
+      "bytes": "32169626",
+      "sha256": "cc8d3a0ce36466ccc1278bf987df5f71db1719b9ca6b4118264f45cb627bfe0f",
+      "error": "reused existing artifact"
+    },
+    {
+      "name": "qwen3.5-4b",
+      "model": "Qwen/Qwen3.5-4B",
+      "url": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/main/tokenizer.json",
+      "role": "Architecture-phase candidate. Attempted so that its availability is evidence, not memory.",
+      "status": "OK",
+      "http_status": "",
+      "bytes": "12807982",
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42",
+      "error": "reused existing artifact"
+    }
+  ],
+  "products": {
+    "rag": {
+      "records": 145147,
+      "characters": 14520043,
+      "words": 2522200,
+      "tokens": {
+        "gemma-3-4b-it-unsloth": 5159251,
+        "gemma-4-E4B-it": 5159259,
+        "qwen3-0.6b": 8182054,
+        "qwen3-embed-0.6b": 8182054,
+        "qwen3.5-4b": 6754902,
+        "sarvam-30b": 5082699
+      },
+      "tokens_per_character": {
+        "gemma-3-4b-it-unsloth": 0.3553,
+        "gemma-4-E4B-it": 0.3553,
+        "qwen3-0.6b": 0.5635,
+        "qwen3-embed-0.6b": 0.5635,
+        "qwen3.5-4b": 0.4652,
+        "sarvam-30b": 0.35
+      },
+      "tokens_per_word": {
+        "gemma-3-4b-it-unsloth": 2.0455,
+        "gemma-4-E4B-it": 2.0455,
+        "qwen3-0.6b": 3.244,
+        "qwen3-embed-0.6b": 3.244,
+        "qwen3.5-4b": 2.6782,
+        "sarvam-30b": 2.0152
+      },
+      "by_group": {
+        "language": {
+          "unknown": {
+            "characters": 2818229,
+            "words": 615935,
+            "gemma-3-4b-it-unsloth": 1279991,
+            "gemma-4-E4B-it": 1279991,
+            "qwen3-0.6b": 2567786,
+            "qwen3-embed-0.6b": 2567786,
+            "qwen3.5-4b": 2128962,
+            "sarvam-30b": 1280006
+          },
+          "hi": {
+            "characters": 459887,
+            "words": 91841,
+            "gemma-3-4b-it-unsloth": 239038,
+            "gemma-4-E4B-it": 239038,
+            "qwen3-0.6b": 452692,
+            "qwen3-embed-0.6b": 452692,
+            "qwen3.5-4b": 388541,
+            "sarvam-30b": 239038
+          },
+          "en": {
+            "characters": 9514950,
+            "words": 1488399,
+            "gemma-3-4b-it-unsloth": 2647037,
+            "gemma-4-E4B-it": 2647045,
+            "qwen3-0.6b": 2747728,
+            "qwen3-embed-0.6b": 2747728,
+            "qwen3.5-4b": 2733639,
+            "sarvam-30b": 2647197
+          },
+          "gu": {
+            "characters": 1726977,
+            "words": 326025,
+            "gemma-3-4b-it-unsloth": 993185,
+            "gemma-4-E4B-it": 993185,
+            "qwen3-0.6b": 2413848,
+            "qwen3-embed-0.6b": 2413848,
+            "qwen3.5-4b": 1503760,
+            "sarvam-30b": 916458
+          }
+        },
+        "script": {
+          "Devanagari": {
+            "characters": 3278116,
+            "words": 707776,
+            "gemma-3-4b-it-unsloth": 1519029,
+            "gemma-4-E4B-it": 1519029,
+            "qwen3-0.6b": 3020478,
+            "qwen3-embed-0.6b": 3020478,
+            "qwen3.5-4b": 2517503,
+            "sarvam-30b": 1519044
+          },
+          "Latin": {
+            "characters": 9514950,
+            "words": 1488399,
+            "gemma-3-4b-it-unsloth": 2647037,
+            "gemma-4-E4B-it": 2647045,
+            "qwen3-0.6b": 2747728,
+            "qwen3-embed-0.6b": 2747728,
+            "qwen3.5-4b": 2733639,
+            "sarvam-30b": 2647197
+          },
+          "Gujarati": {
+            "characters": 1726977,
+            "words": 326025,
+            "gemma-3-4b-it-unsloth": 993185,
+            "gemma-4-E4B-it": 993185,
+            "qwen3-0.6b": 2413848,
+            "qwen3-embed-0.6b": 2413848,
+            "qwen3.5-4b": 1503760,
+            "sarvam-30b": 916458
+          }
+        },
+        "sect": {
+          "STHANAKAVASI": {
+            "characters": 1740754,
+            "words": 346125,
+            "gemma-3-4b-it-unsloth": 1053367,
+            "gemma-4-E4B-it": 1053367,
+            "qwen3-0.6b": 2110304,
+            "qwen3-embed-0.6b": 2110304,
+            "qwen3.5-4b": 1548752,
+            "sarvam-30b": 1013394
+          },
+          "unknown": {
+            "characters": 5982184,
+            "words": 1146870,
+            "gemma-3-4b-it-unsloth": 2503374,
+            "gemma-4-E4B-it": 2503381,
+            "qwen3-0.6b": 4429651,
+            "qwen3-embed-0.6b": 4429651,
+            "qwen3.5-4b": 3553403,
+            "sarvam-30b": 2466690
+          },
+          "GENERIC_JAIN": {
+            "characters": 4670942,
+            "words": 658793,
+            "gemma-3-4b-it-unsloth": 955572,
+            "gemma-4-E4B-it": 955572,
+            "qwen3-0.6b": 981359,
+            "qwen3-embed-0.6b": 981359,
+            "qwen3.5-4b": 987151,
+            "sarvam-30b": 955676
+          },
+          "SVETAMBARA": {
+            "characters": 1074007,
+            "words": 190367,
+            "gemma-3-4b-it-unsloth": 302937,
+            "gemma-4-E4B-it": 302937,
+            "qwen3-0.6b": 307268,
+            "qwen3-embed-0.6b": 307268,
+            "qwen3.5-4b": 310565,
+            "sarvam-30b": 302938
+          },
+          "MULTI_TRADITION": {
+            "characters": 1052156,
+            "words": 180045,
+            "gemma-3-4b-it-unsloth": 344001,
+            "gemma-4-E4B-it": 344002,
+            "qwen3-0.6b": 353472,
+            "qwen3-embed-0.6b": 353472,
+            "qwen3.5-4b": 355031,
+            "sarvam-30b": 344001
+          }
+        },
+        "text_role": {
+          "ORIGINAL": {
+            "characters": 14395678,
+            "words": 2499341,
+            "gemma-3-4b-it-unsloth": 5130799,
+            "gemma-4-E4B-it": 5130807,
+            "qwen3-0.6b": 8153535,
+            "qwen3-embed-0.6b": 8153535,
+            "qwen3.5-4b": 6726384,
+            "sarvam-30b": 5054223
+          },
+          "TRANSLATION": {
+            "characters": 124365,
+            "words": 22859,
+            "gemma-3-4b-it-unsloth": 28452,
+            "gemma-4-E4B-it": 28452,
+            "qwen3-0.6b": 28519,
+            "qwen3-embed-0.6b": 28519,
+            "qwen3.5-4b": 28518,
+            "sarvam-30b": 28476
+          }
+        },
+        "source_id": {
+          "SVK-0007": {
+            "characters": 246769,
+            "words": 53268,
+            "gemma-3-4b-it-unsloth": 136889,
+            "gemma-4-E4B-it": 136889,
+            "qwen3-0.6b": 237887,
+            "qwen3-embed-0.6b": 237887,
+            "qwen3.5-4b": 206742,
+            "sarvam-30b": 136889
+          },
+          "SVK-0016": {
+            "characters": 151188,
+            "words": 30176,
+            "gemma-3-4b-it-unsloth": 50136,
+            "gemma-4-E4B-it": 50136,
+            "qwen3-0.6b": 137062,
+            "qwen3-embed-0.6b": 137062,
+            "qwen3.5-4b": 103572,
+            "sarvam-30b": 50136
+          },
+          "SVK-0026": {
+            "characters": 4670942,
+            "words": 658793,
+            "gemma-3-4b-it-unsloth": 955572,
+            "gemma-4-E4B-it": 955572,
+            "qwen3-0.6b": 981359,
+            "qwen3-embed-0.6b": 981359,
+            "qwen3.5-4b": 987151,
+            "sarvam-30b": 955676
+          },
+          "SVK-0027": {
+            "characters": 193454,
+            "words": 32314,
+            "gemma-3-4b-it-unsloth": 65028,
+            "gemma-4-E4B-it": 65028,
+            "qwen3-0.6b": 94472,
+            "qwen3-embed-0.6b": 94472,
+            "qwen3.5-4b": 83511,
+            "sarvam-30b": 65056
+          },
+          "SVK-0037": {
+            "characters": 173741,
+            "words": 33057,
+            "gemma-3-4b-it-unsloth": 91827,
+            "gemma-4-E4B-it": 91827,
+            "qwen3-0.6b": 169366,
+            "qwen3-embed-0.6b": 169366,
+            "qwen3.5-4b": 144239,
+            "sarvam-30b": 91828
+          },
+          "SVK-0038": {
+            "characters": 178140,
+            "words": 31980,
+            "gemma-3-4b-it-unsloth": 52858,
+            "gemma-4-E4B-it": 52860,
+            "qwen3-0.6b": 53751,
+            "qwen3-embed-0.6b": 53751,
+            "qwen3.5-4b": 54084,
+            "sarvam-30b": 52868
+          },
+          "SVK-1001": {
+            "characters": 665409,
+            "words": 118854,
+            "gemma-3-4b-it-unsloth": 194116,
+            "gemma-4-E4B-it": 194116,
+            "qwen3-0.6b": 196203,
+            "qwen3-embed-0.6b": 196203,
+            "qwen3.5-4b": 198254,
+            "sarvam-30b": 194116
+          },
+          "SVK-1002": {
+            "characters": 207051,
+            "words": 36380,
+            "gemma-3-4b-it-unsloth": 54964,
+            "gemma-4-E4B-it": 54964,
+            "qwen3-0.6b": 56135,
+            "qwen3-embed-0.6b": 56135,
+            "qwen3.5-4b": 56741,
+            "sarvam-30b": 54964
+          },
+          "SVK-1003": {
+            "characters": 201547,
+            "words": 35133,
+            "gemma-3-4b-it-unsloth": 53857,
+            "gemma-4-E4B-it": 53857,
+            "qwen3-0.6b": 54930,
+            "qwen3-embed-0.6b": 54930,
+            "qwen3.5-4b": 55570,
+            "sarvam-30b": 53858
+          },
+          "SVK-1005": {
+            "characters": 1005219,
+            "words": 171680,
+            "gemma-3-4b-it-unsloth": 324845,
+            "gemma-4-E4B-it": 324846,
+            "qwen3-0.6b": 334032,
+            "qwen3-embed-0.6b": 334032,
+            "qwen3.5-4b": 335704,
+            "sarvam-30b": 324845
+          },
+          "SVK-1006": {
+            "characters": 87961,
+            "words": 15116,
+            "gemma-3-4b-it-unsloth": 20076,
+            "gemma-4-E4B-it": 20076,
+            "qwen3-0.6b": 20410,
+            "qwen3-embed-0.6b": 20410,
+            "qwen3.5-4b": 20535,
+            "sarvam-30b": 20076
+          },
+          "SVK-1007": {
+            "characters": 806179,
+            "words": 124380,
+            "gemma-3-4b-it-unsloth": 310191,
+            "gemma-4-E4B-it": 310191,
+            "qwen3-0.6b": 329838,
+            "qwen3-embed-0.6b": 329838,
+            "qwen3.5-4b": 318482,
+            "sarvam-30b": 310191
+          },
+          "SVK-1008": {
+            "characters": 46937,
+            "words": 8365,
+            "gemma-3-4b-it-unsloth": 19156,
+            "gemma-4-E4B-it": 19156,
+            "qwen3-0.6b": 19440,
+            "qwen3-embed-0.6b": 19440,
+            "qwen3.5-4b": 19327,
+            "sarvam-30b": 19156
+          },
+          "SVK-1009": {
+            "characters": 248460,
+            "words": 43987,
+            "gemma-3-4b-it-unsloth": 68816,
+            "gemma-4-E4B-it": 68816,
+            "qwen3-0.6b": 70319,
+            "qwen3-embed-0.6b": 70319,
+            "qwen3.5-4b": 70328,
+            "sarvam-30b": 68822
+          },
+          "SVK-1010": {
+            "characters": 384231,
+            "words": 74741,
+            "gemma-3-4b-it-unsloth": 226627,
+            "gemma-4-E4B-it": 226632,
+            "qwen3-0.6b": 227101,
+            "qwen3-embed-0.6b": 227101,
+            "qwen3.5-4b": 225056,
+            "sarvam-30b": 226636
+          },
+          "SVK-2002": {
+            "characters": 428485,
+            "words": 87131,
+            "gemma-3-4b-it-unsloth": 271006,
+            "gemma-4-E4B-it": 271006,
+            "qwen3-0.6b": 594668,
+            "qwen3-embed-0.6b": 594668,
+            "qwen3.5-4b": 389404,
+            "sarvam-30b": 253421
+          },
+          "SVK-2003": {
+            "characters": 218384,
+            "words": 41175,
+            "gemma-3-4b-it-unsloth": 138027,
+            "gemma-4-E4B-it": 138027,
+            "qwen3-0.6b": 300772,
+            "qwen3-embed-0.6b": 300772,
+            "qwen3.5-4b": 198153,
+            "sarvam-30b": 129035
+          },
+          "SVK-2004": {
+            "characters": 289785,
+            "words": 56419,
+            "gemma-3-4b-it-unsloth": 186774,
+            "gemma-4-E4B-it": 186774,
+            "qwen3-0.6b": 384848,
+            "qwen3-embed-0.6b": 384848,
+            "qwen3.5-4b": 260935,
+            "sarvam-30b": 176142
+          },
+          "SVK-2005": {
+            "characters": 308699,
+            "words": 61665,
+            "gemma-3-4b-it-unsloth": 188902,
+            "gemma-4-E4B-it": 188902,
+            "qwen3-0.6b": 315630,
+            "qwen3-embed-0.6b": 315630,
+            "qwen3.5-4b": 284969,
+            "sarvam-30b": 188902
+          },
+          "SVK-2006": {
+            "characters": 1803636,
+            "words": 416376,
+            "gemma-3-4b-it-unsloth": 792553,
+            "gemma-4-E4B-it": 792553,
+            "qwen3-0.6b": 1595813,
+            "qwen3-embed-0.6b": 1595813,
+            "qwen3.5-4b": 1322654,
+            "sarvam-30b": 792567
+          },
+          "SVK-2007": {
+            "characters": 594083,
+            "words": 113234,
+            "gemma-3-4b-it-unsloth": 258722,
+            "gemma-4-E4B-it": 258722,
+            "qwen3-0.6b": 564720,
+            "qwen3-embed-0.6b": 564720,
+            "qwen3.5-4b": 455327,
+            "sarvam-30b": 258722
+          },
+          "SVK-2008": {
+            "characters": 400095,
+            "words": 67615,
+            "gemma-3-4b-it-unsloth": 144769,
+            "gemma-4-E4B-it": 144769,
+            "qwen3-0.6b": 149644,
+            "qwen3-embed-0.6b": 149644,
+            "qwen3.5-4b": 149031,
+            "sarvam-30b": 144769
+          },
+          "SVK-2009": {
+            "characters": 419325,
+            "words": 69061,
+            "gemma-3-4b-it-unsloth": 156162,
+            "gemma-4-E4B-it": 156162,
+            "qwen3-0.6b": 160094,
+            "qwen3-embed-0.6b": 160094,
+            "qwen3.5-4b": 159865,
+            "sarvam-30b": 156164
+          },
+          "SVK-2010": {
+            "characters": 74891,
+            "words": 13410,
+            "gemma-3-4b-it-unsloth": 39942,
+            "gemma-4-E4B-it": 39942,
+            "qwen3-0.6b": 107133,
+            "qwen3-embed-0.6b": 107133,
+            "qwen3.5-4b": 64310,
+            "sarvam-30b": 37177
+          },
+          "SVK-2011": {
+            "characters": 141029,
+            "words": 25052,
+            "gemma-3-4b-it-unsloth": 72900,
+            "gemma-4-E4B-it": 72900,
+            "qwen3-0.6b": 202574,
+            "qwen3-embed-0.6b": 202574,
+            "qwen3.5-4b": 118071,
+            "sarvam-30b": 66167
+          },
+          "SVK-2012": {
+            "characters": 410014,
+            "words": 71399,
+            "gemma-3-4b-it-unsloth": 197189,
+            "gemma-4-E4B-it": 197189,
+            "qwen3-0.6b": 591002,
+            "qwen3-embed-0.6b": 591002,
+            "qwen3.5-4b": 335888,
+            "sarvam-30b": 174927
+          },
+          "SVK-2013": {
+            "characters": 14757,
+            "words": 2880,
+            "gemma-3-4b-it-unsloth": 7508,
+            "gemma-4-E4B-it": 7508,
+            "qwen3-0.6b": 20914,
+            "qwen3-embed-0.6b": 20914,
+            "qwen3.5-4b": 12244,
+            "sarvam-30b": 6783
+          },
+          "SVK-2014": {
+            "characters": 149632,
+            "words": 28559,
+            "gemma-3-4b-it-unsloth": 79839,
+            "gemma-4-E4B-it": 79839,
+            "qwen3-0.6b": 211937,
+            "qwen3-embed-0.6b": 211937,
+            "qwen3.5-4b": 124755,
+            "sarvam-30b": 72806
+          }
+        }
+      }
+    },
+    "training": {
+      "records": 82470,
+      "characters": 13589439,
+      "words": 2326455,
+      "tokens": {
+        "gemma-3-4b-it-unsloth": 4631872,
+        "gemma-4-E4B-it": 4631880,
+        "qwen3-0.6b": 7392115,
+        "qwen3-embed-0.6b": 7392115,
+        "qwen3.5-4b": 6062098,
+        "sarvam-30b": 4560988
+      },
+      "tokens_per_character": {
+        "gemma-3-4b-it-unsloth": 0.3408,
+        "gemma-4-E4B-it": 0.3408,
+        "qwen3-0.6b": 0.544,
+        "qwen3-embed-0.6b": 0.544,
+        "qwen3.5-4b": 0.4461,
+        "sarvam-30b": 0.3356
+      },
+      "tokens_per_word": {
+        "gemma-3-4b-it-unsloth": 1.991,
+        "gemma-4-E4B-it": 1.991,
+        "qwen3-0.6b": 3.1774,
+        "qwen3-embed-0.6b": 3.1774,
+        "qwen3.5-4b": 2.6057,
+        "sarvam-30b": 1.9605
+      },
+      "by_group": {
+        "language": {
+          "unknown": {
+            "characters": 2564597,
+            "words": 555954,
+            "gemma-3-4b-it-unsloth": 1139058,
+            "gemma-4-E4B-it": 1139058,
+            "qwen3-0.6b": 2349172,
+            "qwen3-embed-0.6b": 2349172,
+            "qwen3.5-4b": 1928496,
+            "sarvam-30b": 1139062
+          },
+          "hi": {
+            "characters": 341570,
+            "words": 64646,
+            "gemma-3-4b-it-unsloth": 151217,
+            "gemma-4-E4B-it": 151217,
+            "qwen3-0.6b": 324161,
+            "qwen3-embed-0.6b": 324161,
+            "qwen3.5-4b": 263918,
+            "sarvam-30b": 151217
+          },
+          "en": {
+            "characters": 9143876,
+            "words": 1423896,
+            "gemma-3-4b-it-unsloth": 2484081,
+            "gemma-4-E4B-it": 2484089,
+            "qwen3-0.6b": 2550219,
+            "qwen3-embed-0.6b": 2550219,
+            "qwen3.5-4b": 2548932,
+            "sarvam-30b": 2484208
+          },
+          "gu": {
+            "characters": 1539396,
+            "words": 281959,
+            "gemma-3-4b-it-unsloth": 857516,
+            "gemma-4-E4B-it": 857516,
+            "qwen3-0.6b": 2168563,
+            "qwen3-embed-0.6b": 2168563,
+            "qwen3.5-4b": 1320752,
+            "sarvam-30b": 786501
+          }
+        },
+        "script": {
+          "Devanagari": {
+            "characters": 2906167,
+            "words": 620600,
+            "gemma-3-4b-it-unsloth": 1290275,
+            "gemma-4-E4B-it": 1290275,
+            "qwen3-0.6b": 2673333,
+            "qwen3-embed-0.6b": 2673333,
+            "qwen3.5-4b": 2192414,
+            "sarvam-30b": 1290279
+          },
+          "Latin": {
+            "characters": 9143876,
+            "words": 1423896,
+            "gemma-3-4b-it-unsloth": 2484081,
+            "gemma-4-E4B-it": 2484089,
+            "qwen3-0.6b": 2550219,
+            "qwen3-embed-0.6b": 2550219,
+            "qwen3.5-4b": 2548932,
+            "sarvam-30b": 2484208
+          },
+          "Gujarati": {
+            "characters": 1539396,
+            "words": 281959,
+            "gemma-3-4b-it-unsloth": 857516,
+            "gemma-4-E4B-it": 857516,
+            "qwen3-0.6b": 2168563,
+            "qwen3-embed-0.6b": 2168563,
+            "qwen3.5-4b": 1320752,
+            "sarvam-30b": 786501
+          }
+        },
+        "sect": {
+          "STHANAKAVASI": {
+            "characters": 1366569,
+            "words": 256548,
+            "gemma-3-4b-it-unsloth": 784258,
+            "gemma-4-E4B-it": 784258,
+            "qwen3-0.6b": 1679186,
+            "qwen3-embed-0.6b": 1679186,
+            "qwen3.5-4b": 1180313,
+            "sarvam-30b": 749281
+          },
+          "unknown": {
+            "characters": 5481857,
+            "words": 1051351,
+            "gemma-3-4b-it-unsloth": 2275119,
+            "gemma-4-E4B-it": 2275126,
+            "qwen3-0.6b": 4102621,
+            "qwen3-embed-0.6b": 4102621,
+            "qwen3.5-4b": 3260417,
+            "sarvam-30b": 2239107
+          },
+          "GENERIC_JAIN": {
+            "characters": 4670942,
+            "words": 658793,
+            "gemma-3-4b-it-unsloth": 955572,
+            "gemma-4-E4B-it": 955572,
+            "qwen3-0.6b": 981359,
+            "qwen3-embed-0.6b": 981359,
+            "qwen3.5-4b": 987151,
+            "sarvam-30b": 955676
+          },
+          "SVETAMBARA": {
+            "characters": 1050816,
+            "words": 185526,
+            "gemma-3-4b-it-unsloth": 291100,
+            "gemma-4-E4B-it": 291100,
+            "qwen3-0.6b": 294725,
+            "qwen3-embed-0.6b": 294725,
+            "qwen3.5-4b": 298183,
+            "sarvam-30b": 291101
+          },
+          "MULTI_TRADITION": {
+            "characters": 1019255,
+            "words": 174237,
+            "gemma-3-4b-it-unsloth": 325823,
+            "gemma-4-E4B-it": 325824,
+            "qwen3-0.6b": 334224,
+            "qwen3-embed-0.6b": 334224,
+            "qwen3.5-4b": 336034,
+            "sarvam-30b": 325823
+          }
+        },
+        "text_role": {
+          "ORIGINAL": {
+            "characters": 13589439,
+            "words": 2326455,
+            "gemma-3-4b-it-unsloth": 4631872,
+            "gemma-4-E4B-it": 4631880,
+            "qwen3-0.6b": 7392115,
+            "qwen3-embed-0.6b": 7392115,
+            "qwen3.5-4b": 6062098,
+            "sarvam-30b": 4560988
+          }
+        },
+        "source_id": {
+          "SVK-0007": {
+            "characters": 188052,
+            "words": 37940,
+            "gemma-3-4b-it-unsloth": 100348,
+            "gemma-4-E4B-it": 100348,
+            "qwen3-0.6b": 183594,
+            "qwen3-embed-0.6b": 183594,
+            "qwen3.5-4b": 155938,
+            "sarvam-30b": 100348
+          },
+          "SVK-0016": {
+            "characters": 146111,
+            "words": 28995,
+            "gemma-3-4b-it-unsloth": 47854,
+            "gemma-4-E4B-it": 47854,
+            "qwen3-0.6b": 132401,
+            "qwen3-embed-0.6b": 132401,
+            "qwen3.5-4b": 99742,
+            "sarvam-30b": 47854
+          },
+          "SVK-0026": {
+            "characters": 4670942,
+            "words": 658793,
+            "gemma-3-4b-it-unsloth": 955572,
+            "gemma-4-E4B-it": 955572,
+            "qwen3-0.6b": 981359,
+            "qwen3-embed-0.6b": 981359,
+            "qwen3.5-4b": 987151,
+            "sarvam-30b": 955676
+          },
+          "SVK-0037": {
+            "characters": 141338,
+            "words": 25426,
+            "gemma-3-4b-it-unsloth": 69207,
+            "gemma-4-E4B-it": 69207,
+            "qwen3-0.6b": 136637,
+            "qwen3-embed-0.6b": 136637,
+            "qwen3.5-4b": 113467,
+            "sarvam-30b": 69208
+          },
+          "SVK-0038": {
+            "characters": 171601,
+            "words": 30796,
+            "gemma-3-4b-it-unsloth": 49465,
+            "gemma-4-E4B-it": 49467,
+            "qwen3-0.6b": 50163,
+            "qwen3-embed-0.6b": 50163,
+            "qwen3.5-4b": 50537,
+            "sarvam-30b": 49475
+          },
+          "SVK-1001": {
+            "characters": 652476,
+            "words": 115941,
+            "gemma-3-4b-it-unsloth": 187228,
+            "gemma-4-E4B-it": 187228,
+            "qwen3-0.6b": 189045,
+            "qwen3-embed-0.6b": 189045,
+            "qwen3.5-4b": 191192,
+            "sarvam-30b": 187228
+          },
+          "SVK-1002": {
+            "characters": 202050,
+            "words": 35414,
+            "gemma-3-4b-it-unsloth": 52609,
+            "gemma-4-E4B-it": 52609,
+            "qwen3-0.6b": 53560,
+            "qwen3-embed-0.6b": 53560,
+            "qwen3.5-4b": 54202,
+            "sarvam-30b": 52609
+          },
+          "SVK-1003": {
+            "characters": 196290,
+            "words": 34171,
+            "gemma-3-4b-it-unsloth": 51263,
+            "gemma-4-E4B-it": 51263,
+            "qwen3-0.6b": 52120,
+            "qwen3-embed-0.6b": 52120,
+            "qwen3.5-4b": 52789,
+            "sarvam-30b": 51264
+          },
+          "SVK-1005": {
+            "characters": 974023,
+            "words": 166341,
+            "gemma-3-4b-it-unsloth": 307702,
+            "gemma-4-E4B-it": 307703,
+            "qwen3-0.6b": 315833,
+            "qwen3-embed-0.6b": 315833,
+            "qwen3.5-4b": 317751,
+            "sarvam-30b": 307702
+          },
+          "SVK-1006": {
+            "characters": 87480,
+            "words": 15039,
+            "gemma-3-4b-it-unsloth": 19882,
+            "gemma-4-E4B-it": 19882,
+            "qwen3-0.6b": 20205,
+            "qwen3-embed-0.6b": 20205,
+            "qwen3.5-4b": 20331,
+            "sarvam-30b": 19882
+          },
+          "SVK-1007": {
+            "characters": 732302,
+            "words": 112740,
+            "gemma-3-4b-it-unsloth": 267759,
+            "gemma-4-E4B-it": 267759,
+            "qwen3-0.6b": 284880,
+            "qwen3-embed-0.6b": 284880,
+            "qwen3.5-4b": 274597,
+            "sarvam-30b": 267759
+          },
+          "SVK-1008": {
+            "characters": 45232,
+            "words": 7896,
+            "gemma-3-4b-it-unsloth": 18121,
+            "gemma-4-E4B-it": 18121,
+            "qwen3-0.6b": 18391,
+            "qwen3-embed-0.6b": 18391,
+            "qwen3.5-4b": 18283,
+            "sarvam-30b": 18121
+          },
+          "SVK-1009": {
+            "characters": 245360,
+            "words": 43409,
+            "gemma-3-4b-it-unsloth": 67350,
+            "gemma-4-E4B-it": 67350,
+            "qwen3-0.6b": 68760,
+            "qwen3-embed-0.6b": 68760,
+            "qwen3.5-4b": 68789,
+            "sarvam-30b": 67353
+          },
+          "SVK-1010": {
+            "characters": 368280,
+            "words": 70977,
+            "gemma-3-4b-it-unsloth": 216485,
+            "gemma-4-E4B-it": 216490,
+            "qwen3-0.6b": 216983,
+            "qwen3-embed-0.6b": 216983,
+            "qwen3.5-4b": 215025,
+            "sarvam-30b": 216492
+          },
+          "SVK-2002": {
+            "characters": 354522,
+            "words": 68671,
+            "gemma-3-4b-it-unsloth": 216342,
+            "gemma-4-E4B-it": 216342,
+            "qwen3-0.6b": 493646,
+            "qwen3-embed-0.6b": 493646,
+            "qwen3.5-4b": 315733,
+            "sarvam-30b": 201223
+          },
+          "SVK-2003": {
+            "characters": 185905,
+            "words": 33580,
+            "gemma-3-4b-it-unsloth": 114750,
+            "gemma-4-E4B-it": 114750,
+            "qwen3-0.6b": 258772,
+            "qwen3-embed-0.6b": 258772,
+            "qwen3.5-4b": 166515,
+            "sarvam-30b": 106757
+          },
+          "SVK-2004": {
+            "characters": 232618,
+            "words": 43288,
+            "gemma-3-4b-it-unsloth": 144394,
+            "gemma-4-E4B-it": 144394,
+            "qwen3-0.6b": 316358,
+            "qwen3-embed-0.6b": 316358,
+            "qwen3.5-4b": 206187,
+            "sarvam-30b": 135058
+          },
+          "SVK-2005": {
+            "characters": 195459,
+            "words": 35651,
+            "gemma-3-4b-it-unsloth": 103363,
+            "gemma-4-E4B-it": 103363,
+            "qwen3-0.6b": 191760,
+            "qwen3-embed-0.6b": 191760,
+            "qwen3.5-4b": 164176,
+            "sarvam-30b": 103363
+          },
+          "SVK-2006": {
+            "characters": 1686996,
+            "words": 388672,
+            "gemma-3-4b-it-unsloth": 737047,
+            "gemma-4-E4B-it": 737047,
+            "qwen3-0.6b": 1510987,
+            "qwen3-embed-0.6b": 1510987,
+            "qwen3.5-4b": 1245424,
+            "sarvam-30b": 737050
+          },
+          "SVK-2007": {
+            "characters": 548211,
+            "words": 103916,
+            "gemma-3-4b-it-unsloth": 232456,
+            "gemma-4-E4B-it": 232456,
+            "qwen3-0.6b": 517954,
+            "qwen3-embed-0.6b": 517954,
+            "qwen3.5-4b": 413667,
+            "sarvam-30b": 232456
+          },
+          "SVK-2008": {
+            "characters": 388205,
+            "words": 65196,
+            "gemma-3-4b-it-unsloth": 139160,
+            "gemma-4-E4B-it": 139160,
+            "qwen3-0.6b": 143762,
+            "qwen3-embed-0.6b": 143762,
+            "qwen3.5-4b": 143258,
+            "sarvam-30b": 139160
+          },
+          "SVK-2009": {
+            "characters": 409635,
+            "words": 67183,
+            "gemma-3-4b-it-unsloth": 151485,
+            "gemma-4-E4B-it": 151485,
+            "qwen3-0.6b": 155158,
+            "qwen3-embed-0.6b": 155158,
+            "qwen3.5-4b": 155027,
+            "sarvam-30b": 151487
+          },
+          "SVK-2010": {
+            "characters": 68675,
+            "words": 11992,
+            "gemma-3-4b-it-unsloth": 35854,
+            "gemma-4-E4B-it": 35854,
+            "qwen3-0.6b": 98419,
+            "qwen3-embed-0.6b": 98419,
+            "qwen3.5-4b": 58297,
+            "sarvam-30b": 33324
+          },
+          "SVK-2011": {
+            "characters": 137372,
+            "words": 24291,
+            "gemma-3-4b-it-unsloth": 70687,
+            "gemma-4-E4B-it": 70687,
+            "qwen3-0.6b": 197263,
+            "qwen3-embed-0.6b": 197263,
+            "qwen3.5-4b": 114576,
+            "sarvam-30b": 64111
+          },
+          "SVK-2012": {
+            "characters": 401102,
+            "words": 69805,
+            "gemma-3-4b-it-unsloth": 191560,
+            "gemma-4-E4B-it": 191560,
+            "qwen3-0.6b": 578555,
+            "qwen3-embed-0.6b": 578555,
+            "qwen3.5-4b": 327459,
+            "sarvam-30b": 169666
+          },
+          "SVK-2013": {
+            "characters": 13598,
+            "words": 2629,
+            "gemma-3-4b-it-unsloth": 6791,
+            "gemma-4-E4B-it": 6791,
+            "qwen3-0.6b": 19290,
+            "qwen3-embed-0.6b": 19290,
+            "qwen3.5-4b": 11181,
+            "sarvam-30b": 6108
+          },
+          "SVK-2014": {
+            "characters": 145604,
+            "words": 27703,
+            "gemma-3-4b-it-unsloth": 77138,
+            "gemma-4-E4B-it": 77138,
+            "qwen3-0.6b": 206260,
+            "qwen3-embed-0.6b": 206260,
+            "qwen3.5-4b": 120804,
+            "sarvam-30b": 70254
+          }
+        }
+      }
+    }
+  },
+  "primary_tokenizer": "sarvam-30b",
+  "tokenizers": [
+    {
+      "name": "gemma-3-4b-it-unsloth",
+      "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\gemma-3-4b-it-unsloth.tokenizer.json",
+      "vocab_size": 262144,
+      "merges": 514906,
+      "byte_level": false,
+      "byte_fallback": true,
+      "metaspace": true,
+      "pretokenizer_kind": "split-space",
+      "normalizer_supported": true,
+      "roundtrip_verified": true,
+      "notes": [],
+      "url": "https://huggingface.co/unsloth/gemma-3-4b-it/resolve/main/tokenizer.json",
+      "role": "Permissive-family hedge. NOTE: this is a third-party MIRROR, because the google/gemma-3-4b-it repo is gated (HTTP 401). Provenance of the tokenizer file is therefore weaker and is recorded as such.",
+      "primary": false
+    },
+    {
+      "name": "gemma-4-E4B-it",
+      "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\gemma-4-E4B-it.tokenizer.json",
+      "vocab_size": 262144,
+      "merges": 514906,
+      "byte_level": false,
+      "byte_fallback": true,
+      "metaspace": true,
+      "pretokenizer_kind": "split-space",
+      "normalizer_supported": true,
+      "roundtrip_verified": true,
+      "notes": [],
+      "url": "https://huggingface.co/google/gemma-4-E4B-it/resolve/main/tokenizer.json",
+      "role": "Expected to FAIL: gated repo. Included so the failure is recorded rather than omitted.",
+      "primary": false
+    },
+    {
+      "name": "qwen3-0.6b",
+      "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\qwen3-0.6b.tokenizer.json",
+      "vocab_size": 151643,
+      "merges": 151387,
+      "byte_level": true,
+      "byte_fallback": false,
+      "metaspace": false,
+      "pretokenizer_kind": "cl100k",
+      "normalizer_supported": true,
+      "roundtrip_verified": true,
+      "notes": [],
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/main/tokenizer.json",
+      "role": "The Qwen+QLoRA default carried over from the research phase. Measured in order to TEST that assumption.",
+      "primary": false
+    },
+    {
+      "name": "qwen3-embed-0.6b",
+      "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\qwen3-embed-0.6b.tokenizer.json",
+      "vocab_size": 151643,
+      "merges": 151387,
+      "byte_level": true,
+      "byte_fallback": false,
+      "metaspace": false,
+      "pretokenizer_kind": "cl100k",
+      "normalizer_supported": true,
+      "roundtrip_verified": true,
+      "notes": [],
+      "url": "https://huggingface.co/Qwen/Qwen3-Embedding-0.6B/resolve/main/tokenizer.json",
+      "role": "Retrieval-tower candidate. Also the BGE-M3/Qwen embedding shortlist from the architecture phase.",
+      "primary": false
+    },
+    {
+      "name": "qwen3.5-4b",
+      "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\qwen3.5-4b.tokenizer.json",
+      "vocab_size": 248044,
+      "merges": 247587,
+      "byte_level": true,
+      "byte_fallback": false,
+      "metaspace": false,
+      "pretokenizer_kind": "cl100k",
+      "normalizer_supported": true,
+      "roundtrip_verified": true,
+      "notes": [],
+      "url": "https://huggingface.co/Qwen/Qwen3.5-4B/resolve/main/tokenizer.json",
+      "role": "Architecture-phase candidate. Attempted so that its availability is evidence, not memory.",
+      "primary": false
+    },
+    {
+      "name": "sarvam-30b",
+      "path": "E:\\JainLLM\\svk-corpus\\data\\cache\\tokenizers\\sarvam-30b.tokenizer.json",
+      "vocab_size": 262144,
+      "merges": 513738,
+      "byte_level": false,
+      "byte_fallback": true,
+      "metaspace": true,
+      "pretokenizer_kind": "split-space",
+      "normalizer_supported": true,
+      "roundtrip_verified": true,
+      "notes": [],
+      "url": "https://huggingface.co/sarvamai/sarvam-30b/resolve/main/tokenizer.json",
+      "role": "The only open model found in the research phase declaring both gu and sa.",
+      "primary": true
+    }
+  ],
+  "tokenizers_roundtrip_verified": [
+    "gemma-3-4b-it-unsloth",
+    "gemma-4-E4B-it",
+    "qwen3-0.6b",
+    "qwen3-embed-0.6b",
+    "qwen3.5-4b",
+    "sarvam-30b"
+  ],
+  "primary_tokenizer_verified": true,
+  "cpt": {
+    "clean_training_tokens": 4560988,
+    "project_threshold": 50000000,
+    "ratio_of_threshold": 0.0912,
+    "CPT_ELIGIBLE": "NO",
+    "caveats": [
+      "the 50M figure is this project's adopted heuristic, not a scientific constant; it is a floor for a domain-adaptation pass to have any chance of moving the model, not a guarantee that it will",
+      "token count alone cannot justify CPT: duplication rate, provenance quality, language balance and script coverage all have to hold too",
+      "a corpus dominated by one language cannot teach the others, however large it is",
+      "below the threshold the correct move is RAG plus a small, verified SFT set, which is also cheaper and easier to audit"
+    ],
+    "tokenizer": "sarvam-30b"
+  }
+}

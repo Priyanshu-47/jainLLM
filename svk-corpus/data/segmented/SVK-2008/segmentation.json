@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-09-19T12:55:33+00:00",
+  "source_id": "SVK-2008",
+  "stats": {
+    "chars_in": 413972,
+    "chars_out": 388858,
+    "chunks": 10,
+    "page_boundaries": 1,
+    "paragraphs": 3774,
+    "sections": 681,
+    "size_split_units": 10,
+    "structure_confidence": "medium",
+    "units": 4465,
+    "verses": 0,
+    "warnings": []
+  },
+  "text_role": "ORIGINAL"
+}

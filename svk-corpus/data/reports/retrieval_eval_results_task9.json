@@ -1,0 +1,415 @@
+{
+  "generated_at": "2026-09-18T13:58:24",
+  "label": "task9",
+  "corpus_units": 145147,
+  "index_build_s": 53.53,
+  "corpus_load_s": 6.48,
+  "retrieval_mode": "BM25 only (dense unavailable in this environment)",
+  "queries_total": 20,
+  "metrics": {
+    "note": "Averaged over source-level queries only; corpus-gap queries excluded by design; exploratory queries unlabelled.",
+    "recall@5": 0.756,
+    "recall@10": 0.838,
+    "mrr": 0.871,
+    "queries_with_zero_relevant_results": 0,
+    "mean_latency_s": 0.046,
+    "max_latency_s": 0.2014,
+    "n_source_level_queries": 17
+  },
+  "sect_context": {
+    "note": "Distribution of religious_scope across top-10 results of the svk_specific queries. A generic-Jain hit is not 'wrong' unless the query definition excludes it; q12 and q17 are defined loosely.",
+    "svk_specific_slot_distribution": {
+      "CORE_STHANAKAVASI": 34,
+      "CONTEXTUAL_JAIN": 26,
+      "HIGH_STHANAKAVASI_RELEVANCE": 12,
+      "UNKNOWN": 6,
+      "COMPARATIVE_OTHER_TRADITION": 2
+    },
+    "svk_specific_first_result_scope": {
+      "CORE_STHANAKAVASI": 4,
+      "CONTEXTUAL_JAIN": 2,
+      "HIGH_STHANAKAVASI_RELEVANCE": 2
+    },
+    "svk_share_of_slots": 0.575,
+    "generic_query_q20_distribution": {
+      "CONTEXTUAL_JAIN": 11,
+      "HIGH_STHANAKAVASI_RELEVANCE": 8,
+      "UNKNOWN": 1
+    }
+  },
+  "per_query": [
+    {
+      "id": "q01",
+      "category": "canonical_translation",
+      "relevance": "source-level",
+      "latency_s": 0.008,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-1002",
+        "SVK-1003"
+      ]
+    },
+    {
+      "id": "q02",
+      "category": "canonical_translation",
+      "relevance": "source-level",
+      "latency_s": 0.0233,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 0.333,
+      "hit_sources_in_top10": [
+        "SVK-1001"
+      ]
+    },
+    {
+      "id": "q03",
+      "category": "canonical_translation",
+      "relevance": "source-level",
+      "latency_s": 0.0074,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-1001"
+      ]
+    },
+    {
+      "id": "q04",
+      "category": "canonical_devanagari",
+      "relevance": "source-level",
+      "latency_s": 0.1262,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-0016"
+      ]
+    },
+    {
+      "id": "q05",
+      "category": "canonical_translation",
+      "relevance": "source-level",
+      "latency_s": 0.0056,
+      "recall@5": 0.0,
+      "recall@10": 1.0,
+      "mrr": 0.143,
+      "hit_sources_in_top10": [
+        "SVK-0016"
+      ]
+    },
+    {
+      "id": "q06",
+      "category": "svk_terminology",
+      "relevance": "source-level",
+      "latency_s": 0.1661,
+      "recall@5": 0.25,
+      "recall@10": 0.25,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-2002",
+        "SVK-2004"
+      ]
+    },
+    {
+      "id": "q07",
+      "category": "svk_terminology",
+      "relevance": "source-level",
+      "latency_s": 0.2014,
+      "recall@5": 0.5,
+      "recall@10": 0.5,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-2006"
+      ]
+    },
+    {
+      "id": "q08",
+      "category": "prakrit_scholarship",
+      "relevance": "source-level",
+      "latency_s": 0.1184,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-2008",
+        "SVK-2009"
+      ]
+    },
+    {
+      "id": "q09",
+      "category": "teacher_editor",
+      "relevance": "source-level",
+      "latency_s": 0.044,
+      "recall@5": 0.167,
+      "recall@10": 0.167,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-0007"
+      ]
+    },
+    {
+      "id": "q10",
+      "category": "svk_history",
+      "relevance": "source-level",
+      "latency_s": 0.0136,
+      "recall@5": 0.333,
+      "recall@10": 0.333,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-0038"
+      ]
+    },
+    {
+      "id": "q11",
+      "category": "svk_history",
+      "relevance": "source-level",
+      "latency_s": 0.0014,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-2010"
+      ]
+    },
+    {
+      "id": "q12",
+      "category": "svk_history",
+      "relevance": "source-level",
+      "latency_s": 0.0156,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-1010"
+      ]
+    },
+    {
+      "id": "q13",
+      "category": "historical",
+      "relevance": "source-level",
+      "latency_s": 0.0341,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-1009"
+      ]
+    },
+    {
+      "id": "q14",
+      "category": "doctrine_english",
+      "relevance": "source-level",
+      "latency_s": 0.0162,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-1006"
+      ]
+    },
+    {
+      "id": "q15",
+      "category": "doctrine_english",
+      "relevance": "source-level",
+      "latency_s": 0.0062,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-0026"
+      ]
+    },
+    {
+      "id": "q16",
+      "category": "reference_french",
+      "relevance": "source-level",
+      "latency_s": 0.0259,
+      "recall@5": 1.0,
+      "recall@10": 1.0,
+      "mrr": 1.0,
+      "hit_sources_in_top10": [
+        "SVK-1007"
+      ]
+    },
+    {
+      "id": "q17",
+      "category": "gujarati",
+      "relevance": "source-level",
+      "latency_s": 0.0509,
+      "recall@5": 0.6,
+      "recall@10": 1.0,
+      "mrr": 0.333,
+      "hit_sources_in_top10": [
+        "SVK-2010",
+        "SVK-2011",
+        "SVK-2012",
+        "SVK-2013",
+        "SVK-2014"
+      ]
+    },
+    {
+      "id": "q18",
+      "category": "doctrine_devanagari",
+      "relevance": "exploratory",
+      "latency_s": 0.0399,
+      "top_sources": [
+        "SVK-2006",
+        "SVK-2006",
+        "SVK-2006",
+        "SVK-2006",
+        "SVK-2006"
+      ]
+    },
+    {
+      "id": "q19",
+      "category": "teacher_gap",
+      "relevance": "corpus-gap",
+      "latency_s": 0.0001,
+      "expected": "NO relevant material in corpus (documented gap)",
+      "top_sources": [
+        "SVK-1005",
+        "SVK-1005",
+        "SVK-1005",
+        "SVK-1005",
+        "SVK-1005"
+      ]
+    },
+    {
+      "id": "q20",
+      "category": "generic_multi_tradition",
+      "relevance": "exploratory",
+      "latency_s": 0.0147,
+      "top_sources": [
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "query": "Sthanakvasi Jain sect",
+      "id": "q10",
+      "top3": [
+        {
+          "source_id": "SVK-0038",
+          "title": "Notes on Modern Jainism (1910)",
+          "scope": "HIGH_STHANAKAVASI_RELEVANCE",
+          "sect": "unknown",
+          "citation": "Notes on Modern Jainism (1910) (1910) [SVK-0038], section: JAIN A WORSHIP. 105",
+          "text_head": "list of the differences between the two Sect Msu'lis"
+        },
+        {
+          "source_id": "SVK-1005",
+          "title": "Notes on the Religious Literature of India (1920)",
+          "scope": "CONTEXTUAL_JAIN",
+          "sect": "MULTI_TRADITION",
+          "citation": "Notes on the Religious Literature of India (1920) (1920) [SVK-1005], section: Sect. ^",
+          "text_head": "Sect. ^"
+        },
+        {
+          "source_id": "SVK-1005",
+          "title": "Notes on the Religious Literature of India (1920)",
+          "scope": "CONTEXTUAL_JAIN",
+          "sect": "MULTI_TRADITION",
+          "citation": "Notes on the Religious Literature of India (1920) (1920) [SVK-1005], section: Svaml-Narayana, 318 ; his Siishd",
+          "text_head": "^vetambara, a Jain sect, 75, 119, 162."
+        }
+      ]
+    },
+    {
+      "query": "જૈન ધર્મ",
+      "id": "q17",
+      "top3": [
+        {
+          "source_id": "SVK-2004",
+          "title": "Ardha Magadhi Quadrilingual Dictionary Vol-2 (1927)",
+          "scope": "CORE_STHANAKAVASI",
+          "sect": "STHANAKAVASI",
+          "citation": "Ardha Magadhi Quadrilingual Dictionary Vol-2 (1927) (1927) [SVK-2004], section: યનનુ નામ જાતા ધર્જ જથા સૂત્ર જ",
+          "text_head": "યનનુ નામ જાતા ધર્જ જથા સૂત્ર જે પહલે"
+        },
+        {
+          "source_id": "SVK-2002",
+          "title": "An Illustrated Ardha Magadhi Dictionary Gujarati (1932)",
+          "scope": "CORE_STHANAKAVASI",
+          "sect": "STHANAKAVASI",
+          "citation": "An Illustrated Ardha Magadhi Dictionary Gujarati (1932) (1932) [SVK-2002], section: વિમાવતી સૌન ( જૃળાઘતી ) કો",
+          "text_head": "ના રાન્તની પટમણીનુ નામ જૌશામ્થી મમરો જે રગ જી ૧રરતી જા મસ પહલ ૦: ધર લૌ&॥"
+        },
+        {
+          "source_id": "SVK-2014",
+          "title": "Jain Sajjhaimala Bhag-4 (1927)",
+          "scope": "UNKNOWN",
+          "sect": "unknown",
+          "citation": "Jain Sajjhaimala Bhag-4 (1927) (1927) [SVK-2014], section: ધર ધર્મ ઝ'ડા ભમે ખ'ડા કર્મ ચડા લોપતુ",
+          "text_head": "નીચામાં ગન્મમી જે મરતાં છમળ ૧૯? જાજા [તિવાય વોટ ૫ળ ચીઝ ૧1૫ સાવતી નથી"
+        }
+      ]
+    },
+    {
+      "query": "अहिंसा",
+      "id": "q18",
+      "top3": [
+        {
+          "source_id": "SVK-2006",
+          "title": "Paia-sadda-mahannavo: a comprehensive Prakrit-Hindi dictiona",
+          "scope": "CONTEXTUAL_JAIN",
+          "sect": "unknown",
+          "citation": "Paia-sadda-mahannavo: a comprehensive Prakrit-Hindi dictionary (1923) (1923) [SVK-2006], section: अहित्ता देखो",
+          "text_head": "जाना | वकृ--अहिधावंत ; (से १३, २६ )। अहिनाण अहिन्नाण अहिनिवेस देखो अहिणिवेस ; ( स १२४ ) । "
+        },
+        {
+          "source_id": "SVK-2006",
+          "title": "Paia-sadda-mahannavo: a comprehensive Prakrit-Hindi dictiona",
+          "scope": "CONTEXTUAL_JAIN",
+          "sect": "unknown",
+          "citation": "Paia-sadda-mahannavo: a comprehensive Prakrit-Hindi dictionary (1923) (1923) [SVK-2006], section: [ अहिंसा--अह",
+          "text_head": "[ अहिंसा--अहिगरी"
+        },
+        {
+          "source_id": "SVK-2006",
+          "title": "Paia-sadda-mahannavo: a comprehensive Prakrit-Hindi dictiona",
+          "scope": "CONTEXTUAL_JAIN",
+          "sect": "unknown",
+          "citation": "Paia-sadda-mahannavo: a comprehensive Prakrit-Hindi dictionary (1923) (1923) [SVK-2006], section: अहिहाण-अहो ]",
+          "text_head": "अही स्त्री अही ] नागिन, स्वी-्सोप ; ( जीव २ ) |"
+        }
+      ]
+    },
+    {
+      "query": "karma doctrine Jain",
+      "id": "q20",
+      "top3": [
+        {
+          "source_id": "SVK-0038",
+          "title": "Notes on Modern Jainism (1910)",
+          "scope": "HIGH_STHANAKAVASI_RELEVANCE",
+          "sect": "unknown",
+          "citation": "Notes on Modern Jainism (1910) (1910) [SVK-0038], section: JAINA DOCTRINE. 55",
+          "text_head": "KARMA."
+        },
+        {
+          "source_id": "SVK-0038",
+          "title": "Notes on Modern Jainism (1910)",
+          "scope": "HIGH_STHANAKAVASI_RELEVANCE",
+          "sect": "unknown",
+          "citation": "Notes on Modern Jainism (1910) (1910) [SVK-0038], section: JAINA DOCTRINE. 53",
+          "text_head": "The Jaina have preserved the Hindu doctrine of Transmigration, though they subdivide the E"
+        },
+        {
+          "source_id": "SVK-0038",
+          "title": "Notes on Modern Jainism (1910)",
+          "scope": "HIGH_STHANAKAVASI_RELEVANCE",
+          "sect": "unknown",
+          "citation": "Notes on Modern Jainism (1910) (1910) [SVK-0038], section: JAINA DOCTRINE. 55",
+          "text_head": "It is interesting to note that of all the Tirthankara Mahavira had the greatest accumulati"
+        }
+      ]
+    }
+  ]
+}

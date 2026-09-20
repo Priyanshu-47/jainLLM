@@ -1,0 +1,1183 @@
+{
+  "engines": [
+    {
+      "engine": "tesseract",
+      "available": false,
+      "description": "Tesseract (tesseract-ocr), installed if the binary is on PATH"
+    },
+    {
+      "engine": "paddleocr",
+      "available": false,
+      "description": "PaddleOCR — not installed in this environment"
+    },
+    {
+      "engine": "vlm",
+      "available": false,
+      "description": "Multimodal/document OCR model — no local weights, requires a GPU and a separate evaluation budget"
+    },
+    {
+      "engine": "indic-ocr",
+      "available": false,
+      "description": "Specialised Indic OCR — no maintained, openly licensed checkpoint was verified in the research phase"
+    }
+  ],
+  "engine_availability": "no OCR engine is installed in this environment, so OCR was NOT performed and no OCR quality claim is made. The pipeline's OCR stage is exercised only on text the Internet Archive already OCR'd, whose quality is measured below against independent script evidence.",
+  "reports": [
+    {
+      "source_id": "SVK-0007",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.9625,
+      "character_count": 2242289,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.015,
+      "script_distribution": {
+        "Devanagari": 1304009,
+        "Common": 887440,
+        "Latin": 36702,
+        "Other": 14138
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "[कक वक 9 ययिं \n\n\n\n\n\n727९4 द 260150८ € 2/८ 7071. 6८८7८ #‰› च \n6.02 5८९42८० 92622 वव 7 27229 ८55 \n\n\n25724267, 727८042) 24026. \n\n\n~ ----~------------------------------------- \nियििकककिकिक क । पिकं \n\n\n0740 4 ८71८5 \n7009101 & ¢. \n\n\n067 53001.5९17८5 \n41 © एण्य अष्ट, णद, एए © 4 \n\n\n1 श्रीः॥ \n\n\n~= नमोऽस्तु महावीरौ = \nसाकि्चः \nअरदं-मागधी कोष. \n\n\n-- “ए शरु ञ-------- \n\n\nसम्पादक \nपूज्यपाद्‌ श्री गुलावचन्द्जी स..."
+      ],
+      "findings": [
+        "OCR engine reported language 'san'; independent script evidence says 'Devanagari' (96.2% purity)",
+        "declared script 'Devanagari;Latin' but measured script is 'Devanagari'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-0016",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.9942,
+      "character_count": 185784,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0023,
+      "script_distribution": {
+        "Devanagari": 136680,
+        "Common": 48300,
+        "Latin": 802,
+        "Other": 2
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "आगम सेवा के अन्तर्गत पहली सेवा \n\n\nभगवान महावीर की अंतिम अमृतवाणी का अनूठा संग्रह \n\n\n\n\n\n(अध्ययन एक से अठारह तक) \nप्रथम भाग प्रथम संस्करण \n\n\nप्रश्न उत्तर के माध्यम से जैन आगम शास्त्र में निहित भगवान महावीर \nकी वाणी को हिन्दी भाषा में सरल रुप मे जाने का सर्वश्रेष्ठ माध्यम \n९ \nसंकलक - संपादक \nसंदीप जैन मित्र \nदुर्ग (छत्तीसगढ़) \n९ \n-; प्रकाशक :- \nसोश्यल एनर्जेटिक वालिंटियर्स एसोसिएशन, दुर्ग \n\n\n) #चत522..."
+      ],
+      "findings": [
+        "OCR engine reported language 'hin'; independent script evidence says 'Devanagari' (99.4% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-0026",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 1.0,
+      "character_count": 4710495,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 3742448,
+        "Common": 967993,
+        "Latin Extended": 54
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "{\"conversations\": [{\"from\": \"human\", \"value\": \"Explain the relationship between ignorance and desire\"}, {\"from\": \"gpt\", \"value\": \"The content highlights that ignorance, a lack of understanding about the true nature of reality, fuels desires. These desires, stemming from our limited perception, create disturbances and lead to a fluctuating emotional state characterized by hope and despair. This con..."
+      ],
+      "findings": [],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-0027",
+      "engine": "STRUCTURED_TABLE",
+      "page_count": 2948,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.6235,
+      "character_count": 215471,
+      "replacement_character_count": 0,
+      "unicode_error_count": 2947,
+      "estimated_ocr_noise": 0.3506,
+      "script_distribution": {
+        "Latin": 107193,
+        "Devanagari": 64714,
+        "Common": 43536,
+        "Latin Extended": 17,
+        "Latin Extended Additional": 10,
+        "Other": 1
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\"पसुवइणो रोसारुणपडिमासंकंतगोरिमुहअंदम्,गहिअग्घपंकअं मिअ संझासलिलंजलिं णमह\"",
+        "\"भोइणिदिण्णपहेणअचक्खिअदुस्सिक्खिओ हलिअउत्तो,एत्ताहे अण्णपहेणआण छीवोल्लअं देइ\"",
+        "जीवं पंचव्रतं जाणइ लोके।"
+      ],
+      "findings": [
+        "declared script 'Mixed' but measured script is 'Latin'",
+        "script purity 62.4% is below 85%, which in an OCR text layer usually means either mixed-language content or character confusion in the OCR",
+        "estimated OCR noise 0.35 exceeds the 0.35 triage threshold"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-0037",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.9614,
+      "character_count": 1339809,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0154,
+      "script_distribution": {
+        "Devanagari": 737175,
+        "Common": 573015,
+        "Latin": 21533,
+        "Other": 8086
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "व, \n\n\n3 \n\n\n~~ =< \n\n\nस >= = \n\n\n४५६३ \nस \n\n\nद \n\n\nन <= 8 > \n\n\nप्र 1\"... 5{ \n\n\nट \n< \n६3; \n\n\n[ स९ | \n[, \n\n\nक अक सूः \n\n\n, \n| $ ^ \nक \n\n\n1.६) `, ` \n\n\n+++ (47 लातत \n\n\n~> ४ \n11४6181, 20110800716 शात 8 लाधर \n\n\n84118, तपुवि, पातां वातं हाट \n| 0॥1॥ धऽ पिता 10 पाह प्ा$ & (00003 0040॥8 = \n१॥ \n819.४8.४ 0172111 106 48.118, प्रता] 8711 8.8.718.620811018471; \n018.18.18.] \n[लाय 0 फिफ ^ा जप्ता तणा. ए८प्त^प्एह47ा ( 1पात..."
+      ],
+      "findings": [
+        "OCR engine reported language 'Sanskrit'; independent script evidence says 'Devanagari' (96.1% purity)",
+        "declared script 'Devanagari;Latin' but measured script is 'Devanagari'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-0038",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9996,
+      "character_count": 181581,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0002,
+      "script_distribution": {
+        "Latin": 135210,
+        "Common": 46320,
+        "Other": 51
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "'J  U«N11  JUI \n\n\nc? \n\n\nIEUNIVER%. \n\n\nfHONVSOV \n\n\n.•UBRARYQr \n\n\n|     I \n\n!  1 \n\nI  i \n\n\nr^      5, \n\n3       ? \n\n\n\\E-UNIVER. \n\n\n<~>       **- \n\n1    S \n\n\n'OUJMVJ'iU  ' \n\n\nil \n\n\nI    s \n\n\ng  i \n\ni \n\n\ni   § \n\n\nfc     £ \n\n\ni< \n\n^ \n\n\n\"  - \n\n\nvvlOS-ANCELfX^ \n^     <tx-N__^ \n\n\n# \n\n\n=  =3 \n\n\n1( \n\n^ \n\n\nA«f-UNIVfl% \n\n\nI   § \nfe \n\n\nil \n\n\n^' \n^ \n\n\n^  ^*-~-    ^§ \n\n\nt     $ \n\n\n^ \n\n\nNOTES    ON \n\nMODERN  JAIN..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1001",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9995,
+      "character_count": 679813,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0002,
+      "script_distribution": {
+        "Latin": 505609,
+        "Common": 173963,
+        "Other": 241
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "WMWptu   <niin \n\n\n:\"BW§8 \n\n\n»taW \n\n\nIK \n\n\nmm \n\n;■-.-■'■ \n..■■-•....• \n\n•\":    ■ \nTBI \n\n\n■■\".■•••'•■': \n\n:.'•'•''.-■ \n\n\n1 \n\n\n828  Broadway \n\n\nSbSs \n\n,   ■  ^H      ^H    'y  I '    *    I \n\n\nISBi     ^H I \n\n\n■  <--^*i3; \n\n\nPRINCETON,  N.  J. \n\n\nS^.. \n\n\n^L \n\n\nBL  1010  .S3   v.22 \nSiddh  anta. \nGaina  s  utras \n\n\n■ \n\nB \n\n1 \n\n\nI   /^v? \n\n\n■ \n\n\nI  K  : \n\n\nmjt?mc-s- \n\n\n',v^*-  I \n\n\n■^^H \n^■^ \n\n\n*wf  **..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1002",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9997,
+      "character_count": 209585,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0001,
+      "script_distribution": {
+        "Latin": 162007,
+        "Common": 47533,
+        "Other": 45
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "HHHHI \n\n\nTHE    RALPA    SUTRA, \n\nANH \n\n\\  A  V  A     T  A  T  V  A  : \n\nTWO  WORKS  ILLUSTRATIVE  OF  THE  JAIN  RELIGION \n\nAND  PHILOSOPHY. \n\nTRANSLATED    PROM    THE    KAGADHI. \n\n\nwith \n\nAN    APPENDIX, \n\nCONTAINING \n\nREMARKS  ON  THE  LANGUAGE  OF  THE  ORIGINAL. \n\n\nBY \n\nTHE    REV.    J.    STEVENSON,    D.D., \n\nvim:  a>.    BOMBAY. \n\n\nLONDON: \n\nPRINTED  FOB  THE  ORIENTAL  TB  LNSLATION  ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1003",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9998,
+      "character_count": 221170,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0001,
+      "script_distribution": {
+        "Latin": 172038,
+        "Common": 49092,
+        "Other": 40
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\nThis is a digital copy of a book that was preserved for generations on library shelves before it was carefully scanned by Google as part of a project \nto make the world's books discoverable online. \n\nIt has survived long enough for the copyright to expire and the book to enter the public domain. A public domain book is one that was never subject \nto copyright or whose legal copyright term has exp..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1005",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9999,
+      "character_count": 1024494,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 750231,
+        "Common": 274158,
+        "Other": 105
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "Google \n\n\n\nThis is a digital copy of a book that was preserved for generations on library shelves before it was carefully scanned by Google as part of a project \n\nto make the world's books discoverable online. \n\nIt has survived long enough for the copyright to expire and the book to enter the public domain. A public domain book is one that was never subject \n\nto copyright or whose legal copyright ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'English'; independent script evidence says 'Latin' (100.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1006",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 1.0,
+      "character_count": 88516,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 70857,
+        "Common": 17659
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "JAINA \nPSYCHOLOGY \n\n\nBY \nC.R. JAIN \n\n\nVidya Varidhi, Barrister-at-Law \n\n\nPublished by: \nMrinaal jain \n\n\nOriginally Printed by: \nK. Mitra, at The Indian Press, Ltd., \nAllahabad \n\n\nCONTENTS \n\n\nPreface \n\n1—The Soul \n\n2—The Nature of Knowledge \n3—Omnniscience \n\n4— Soul an Intelligent Substance \n5—The Jnanavaraniya Cover \n6—The Will \n\n7—Passions \n\n8— Intellect \n\n9—Attention \n\n10— Instincts \n\n11—The Sub..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (100.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1007",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9598,
+      "character_count": 874166,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0161,
+      "script_distribution": {
+        "Latin": 594718,
+        "Common": 254554,
+        "Latin Extended": 24768,
+        "Other": 126
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "This  is  a  digital  copy  of  a  book  that  was  preserved  for  générations  on  library  shelves  before  it  was  carefully  scanned  by  Google  as  part  of  a  project \nto  make  the  world's  books  discoverable  online. \n\nIt  has  survived  long  enough  for  the  copyright  to  expire  and  the  book  to  enter  the  public  domain.  A  public  domain  book  is  one  that  was  never  ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'fre'; independent script evidence says 'Latin' (96.0% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1008",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9987,
+      "character_count": 47850,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0005,
+      "script_distribution": {
+        "Latin": 35507,
+        "Common": 12296,
+        "Other": 47
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "GOVliRNMKN'l' OF INDIA \n\n\nDEPARTMENT OF ARCHAEOLOGY \n\nCENTRAL ^RCH/£OLOG/CAL \nL/BRARr \n\n\nCaul. No. \n\n■Ace. No. \n\nD.G.A. 79. \n\nGipN—S4—iD, G. .\\rch. N. D./57_2'* Q 36—l.DO,OnO. \n\n\n\n\n\n\n\n\n\n\n\n\n\nNOTES \n\n\n\n\n\n\n\n\nJB94y \n\n\n\nIn Jafoa teniploa the isporfwinod Lbricp \ndaily} in tlie monuog, Jibont noon, and in tlio \nevening. The fli’at or motnrnit boiTicc naunlly \nb^insaoon aftor liaU*past sis, when thf» Pu]A..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (99.9% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1009",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9977,
+      "character_count": 251990,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0009,
+      "script_distribution": {
+        "Latin": 197238,
+        "Common": 54305,
+        "Other": 447
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\nGOVERNMENT OT INDIA. \nABCmEOLOGICAL SUBVE? OF IKDU \n\nCENTRAL \n\nARCHAEOLOGICAL \n\nLIBRARY \n\n\nAO^SION NO. \n\n\nGALL No. \n\n\nIXOJL 79, \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n■%* \n\n\n\n\n\n\n\n\n\n\n\n\n\ni*'. \n\n\nCoi.OSSCK 01^ BifOMU }<KVa at JUhwa.si \n\n(^ui’cii inuAOKh iiv A<iK) \n\n\n\n\n\n\n\n\n'Ceisabha beta \n\nTHE j \n\nFOUNBER OF JAINISM \n\n\n\n\n15558 \n\n\nBY \n\n\nCHAiEPAT m JAiy \n\nVrSTATAftDBZ, BASXIBTU-At'LAV. \n\n\n\n\n2324i± \n\nRiA j ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'English'; independent script evidence says 'Latin' (99.8% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-1010",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.994,
+      "character_count": 394727,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0024,
+      "script_distribution": {
+        "Latin": 233367,
+        "Common": 159951,
+        "Other": 1407,
+        "Cyrillic": 2
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "?(l 'V'l *•^0 Sio ^?«4- \n\n\n> ^ w ^• \n\n( <11. V-\\-to Ifl ni. n'^ltl Kija-tl'^W ys HT ■Hkl \n\nw \\a ?. 33V-«-. ^- \n\nami ’flu 5'ii''i='ii “11^ MciH-i-” \n\n(\\) S'fi?15 HlflaiCH yisdiai's— §fl^ a^^w- \n\ns, *fla'H \\3, SiqiE V, s'4iy v, \n\n?lt ^Ws ». S'^' aa-o-o \n\n(^) 3ll. 3H'^(lHlCH a?rt wsiil. \n\nuflrflilRl \\«U, 'iswii ia y. 3a-<:-\" \n\n(?) 3q>!inK n't. 5311313 Ti3sai5?i Cni \n\n5^i^i3R 5. ^ ^lii, ^Tmt Ui, 3)??r..."
+      ],
+      "findings": [
+        "OCR engine reported language 'Unknown'; independent script evidence says 'Latin' (99.4% purity)",
+        "declared script 'Mixed' but measured script is 'Latin'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2002",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9876,
+      "character_count": 2658194,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.005,
+      "script_distribution": {
+        "Gujarati": 1644250,
+        "Common": 993313,
+        "Latin": 9410,
+        "Other": 9042,
+        "Devanagari": 2179
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "& પં \n11.,૫3104110 \n\n\nક કશક 08 1 111 1/4 9. \n\n\n1110401, છ॥1.0300॥1૬ & ડઇપ॥યદ \n31 \n54301, 0101310111, 11૫0 & 101.85 \n000 ા.8૫15, રદ? ઇરતદડ 10 18 ૧૧78 હ ૮021005 00074710૫5. \n૩૪ \n\n\n31/1/1014 341૫4 110૫ $11॥1 141૫68 015૫01/)॥ 3161548413. \n015૯13. 01 30411 38૨1 00 48ત॥14૫004ડ-(1111801.) \n\n\n“૧11 \nકડ 18811૨012007102₹ \n૩૪ \n\n\n& € ૫00૫08 3ડ૧ ૩ &. (0401) \nઇદાળ॥ર્તા, 0૪ા૯॥1રઞ ૪01%, 1.810૬€ \n\n\n101. 11. \n\n\nઈવ ઠ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (98.8% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2003",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9864,
+      "character_count": 1960351,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0054,
+      "script_distribution": {
+        "Gujarati": 1183283,
+        "Common": 760749,
+        "Latin": 8460,
+        "Other": 5526,
+        "Devanagari": 2333
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "4 [પં \n1.1.03184110 \n\n\n& ક 404 1 10110૫4 ?. \n\n\n_શગ્તાનલાણાાઇ બાસ 0 €------::ઝમૂણ મશાન \n\n\n1100413, ?॥1.0500॥1€ & 5૯18૫1116 \n૪11 \n3/1૫81111, 01010411, ॥1૫01 & 0.5 \n૨001૫041.815, 88#*દ81૫૬૬5 10 110 10૫15 & €00100૬ 00014010૫5 \nર૪ \n3141410161 241૫64 1101 3ણ 41૫4014૫014) 11&1&047. \n0501.03 01 317411 ૨॥81 ઉ॥.08014100/42-( 1.11100] * \nજાળ \n\n\nકસ 1૩118010011033 \n\n\nજ \n\n\n૩૪ \n& € 10010૫08 ડવ ૩% & (0401 ) \n\n\n23..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (98.6% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2004",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9799,
+      "character_count": 2189012,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.008,
+      "script_distribution": {
+        "Gujarati": 1222221,
+        "Common": 941735,
+        "Latin": 14472,
+        "Other": 6996,
+        "Devanagari": 3588
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "કળ \n1115111૯ \n\n\nઊ011--1101011 9101101111, \n\n\n----સપ્ય્લ્ઝ્ઝ્ત----- \n\n\n1.1£01*81*9, 1[11105010211ત૮ & ડતાંઢા1 દ 1ત \n711૫1 \nડત કાદા, ઉપાંભતં, ઊળતા & રાણકી \n૬0111116 1 010£$ 10 111 15015 & 0001003 0001411016 \n81 \nક॥તધતમ્તા॥તાળાં 110 ડાળ ંિપાાં 31 રિત્રદા18૮1ઢાતંઇત]1 \n\nપિતા1વટ]. \n\nછેડ૦ા01૯ 01 39/31 311 ઉપાત0તવતતત્ત1 ( 1.વાઈતીં )* \n૪11 \n\n\n4.૨ 12100000110) \n\n\n8 \n૭2. ઉ. (૪૩૦૦ હીંડર”. 7. ૭7. ( 6૦) \n\n\nગિવા..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (98.0% purity)",
+        "declared script 'Devanagari;Gujarati' but measured script is 'Gujarati'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2005",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.9893,
+      "character_count": 2006521,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0043,
+      "script_distribution": {
+        "Devanagari": 1120052,
+        "Common": 874375,
+        "Latin": 11884,
+        "Other": 210
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "र्सार \n\n\nअधे-मागधी कोष \n\n\nसंस्कृत, गुजराती, हिन्दी एव इंगलिश पर्यायों, सन्दर्भो तथा \nउद्धरणों सहित \n\n\n\n\n\nभाग ४ \n\n\nशतावधानी जेनम॒नि श्री रत्नचन्द्रजों महाराज \nपूज्यपाद श्री स्वामी गुलाबचन्द्रजी महाराज \n(लीम्बडी सम्प्रदाय) के शिष्य * \n5 भूमिकाकार \nए० सी० वल्तर \n\n\nमोतीलाल बनारसीदास \n\n\nदिल्ली वाराणसी पंठता \nबंगलौर मद्रास \n\n\n/) ७ ॥.,577 867 82 \n\n\n#२0]0-/80470 पता फाटाा07२४४४ \n\n\n॥ॉए वत्ाा्रगा, ठ/व्रावां..."
+      ],
+      "findings": [
+        "OCR engine reported language 'hin'; independent script evidence says 'Devanagari' (98.9% purity)",
+        "declared script 'Devanagari;Latin' but measured script is 'Devanagari'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2006",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.8968,
+      "character_count": 4137820,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0413,
+      "script_distribution": {
+        "Devanagari": 2455568,
+        "Common": 1399704,
+        "Latin": 280365,
+        "Other": 2159,
+        "Latin Extended": 24
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "we \nहै 5 \n\n\n> \n\n\n__ PAIA-SADDA-MAHANNAVO \nae । COMPRENENSIVE पा प्रि ताण \n\n\n‘ae with Sanskrit equivalents, quotations \n\n\n* ^ AND \n\n\ncomplete references. \n\n\nन \n\n\n00 प्र HARGOVIND DAS 1. SHETH, ॥ ean as, \n\n\nLecturer in Prakrit, Calcutta University. \n\n\n| qe \n| | CALCUTTA. \nर mh ge mae \nFIRST EDITION. \n\n\n55:20: ० \n:0 : \n\n\n[ All rights reserved.|] \n\n\n| \n॥ ५ \n3 | \nकः 1923 | \n# ६ है \n\n\n—_ 5 +++_++++ \"सफ्..."
+      ],
+      "findings": [
+        "OCR engine reported language 'hin'; independent script evidence says 'Devanagari' (89.7% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2007",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.9629,
+      "character_count": 3976548,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0148,
+      "script_distribution": {
+        "Devanagari": 2749988,
+        "Common": 1120518,
+        "Latin": 105550,
+        "Other": 492
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "ए&७-8५02-86 त& १७५०० \n\n\n& (00५शरएप्नष्रर्ा५छ एर66हाराप-ताणा ए90770936२५४ \nज़ावी धद्याशंत्गा 6दुप्राएक्रंथा।3, तुए0६्व0॥5 \n#गप० \n००797066 4रस्‍ध/७७085 \n\n\nछर \n?8च)' ज़७२०००)र) 7058 7. फ्लाशफर \n\n\n0० 7॥,80], 367] ७ २5]7) 6५९५ \nखिषका. श्रावण वाद जवध्रध्ाव \n\n\nपाइअ-सद्द-महण्णाशों \n\n\n(प्राकृत-शब्द-पहाणंवः ) \n\n\nश्र्थात्‌ \n\n\nविविध प्राकृत भाषाओं के शब्दो का संस्कृत प्रतिशव्दो से युक्त, हिन्दी श्रथों से अलक्..."
+      ],
+      "findings": [
+        "OCR engine reported language 'hin'; independent script evidence says 'Devanagari' (96.3% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2008",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9989,
+      "character_count": 413972,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0004,
+      "script_distribution": {
+        "Latin": 292198,
+        "Common": 121438,
+        "Other": 332,
+        "Cyrillic": 4
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n► \n\n\n\n\nI \n\n\nV \n\n\nI, \n\n\n1 \n\n/ \n\nt \n\ni \n\n\n\n\n\n\n\n\n\n\nPRAKRIT \n\n\n\nBY \n\nALFRED C. WOOLNER. \n\nM.A. (OXON), \n\nPRINCIPAL OF THE ORIENTAL COLLEGE, \n\nLAHORE. \n\n\nPUBLISHED \nBY THE \n\nUNIVERSITY OF THE PANJAB, \nLAHORE. \n\n\nCALCUTTA : \n\nPRINTED AT THE BAPTIST MISSION PRESS. \n\n\n1917. \n\n\n\n\n\n\n\n\n\n\n\n( \n\n\nGanthaarena niaguruno Siri- \n\nArthur. Anthony. Macdonell. \n\n-acarianarindassa Bai'llatitthatt..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (99.9% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2009",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9987,
+      "character_count": 437831,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0005,
+      "script_distribution": {
+        "Latin": 309461,
+        "Common": 127961,
+        "Other": 405,
+        "Cyrillic": 4
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\nINTRODUCTION TO PRAKRIT \n\n\n\n\nINTRODUCTION TO PRAKRIT \n\n\nALFRED C. WOOLNER \nM.A. (0*an), 'C.I.E.jF.A.S.B., \n\n\nMOT I LA L BANARSIDASS \nDelhi Patna Varanasi \n\n\n\n© MOTILaL BANARSIDASS \nIndological Publishers & Booksellers \nHead Office : bungalow road, jawahar nagar, dBLhi-7 \nBranches: 1 . CHOWK, VARANASI- 1 (U,P.) \n\n2. ASHOK RAJPATH, PaTNA-4 (BIHAR^ \n\n\nSecond Edition ; Lahore, 1928 \nReprint Edition :..."
+      ],
+      "findings": [
+        "OCR engine reported language 'eng'; independent script evidence says 'Latin' (99.9% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2010",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9978,
+      "character_count": 154682,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0009,
+      "script_distribution": {
+        "Gujarati": 109851,
+        "Common": 44588,
+        "Latin": 150,
+        "Other": 52,
+        "Devanagari": 41
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\n\n\n\n\n\n1 \n1 \n\n\n\n\n\nજ 5 મસ્તાવતા. ન \n. , ભા મુક્તદ ઉખવાનો જટ્રીવાત અને કારૂળાત વિષે મ્ડારા \nમતમાં આવેલ વિચારે જઝુવરા આભે 9થિત ભ.નુ' છુ. આજકાલ \n: બત્રા સુધરલા ઇમાતામાં દરેક વગનો ડોરકટરી યા નષ્તિપતક જેવાર્માં \nઆતે છે, ત્યાર અ'પણુદ ચ્પાનકરાકી વઝમ્ણં તેની ખામી હતી, તે \nખામોં ટુર કરવો સ્તેઇએ દિતઝમ્ઝર અને *1તીંઞ? અન્તે ફરકાર્માં \nગીશ્ટરીએઃ તૈયાર થય છે. ડીશકરરી શ સમ:જનુ' પેક પ્રકારનુ” ૬પ \nછે, તેનાથી બાપળા ઝ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (99.8% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2011",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9951,
+      "character_count": 165818,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.002,
+      "script_distribution": {
+        "Gujarati": 125473,
+        "Common": 39722,
+        "Devanagari": 346,
+        "Latin": 214,
+        "Other": 63
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "અર્પણપ/ડ#. \n-કક્્ન્સ્ડ્ \n\n\nસ્વર્ગવાસી રે; વૌશનછી ટાર \n\n\nસ્મ્તટૃત ધર્મબ'છુ, \n\n\nમારૂ\" જવન રૃ \"વપ્લ્ડઉર થત. ફુક:૪ઝયુ રૃ \nરૃપ સુગપની ઝર જપત્ર કઝર હ \nઅપિ રટી ઝપેડી ષે \n\n* મમહ્િ્ડટ, રે. \n\n\n“હે પેન સિ: સડ \n\n\n\n\n\n૮ \nધ્યાત્મ્‌ વિવાની પૂજ ઉપાસન! ટરી હોપ તેઇ એ સરકારે શ્ર \nસેમુતિરૂપે થઇ જય છે. ક \nઅધ્યાત્મ વિધાના પ્રભાવથી સત્યસુખની ચાપ કરવાની દ \n'ઠા જાગવ થાય છે. ચિત્તની વૃત્તિ ચંચળ હોવાધી એ સ્થિતિ \nડી શક્તી નથી..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (99.5% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2012",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9988,
+      "character_count": 433153,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0005,
+      "script_distribution": {
+        "Gujarati": 338113,
+        "Common": 94650,
+        "Devanagari": 210,
+        "Latin": 116,
+        "Other": 64
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "અમારાં લોડાપ્રિય પ્રકાશનો \n\n\nબાળગ્રથાવલી ૧૨૦ પુસ્તકે \n\nપાકુ પૂડું \n\nહિ'દી બાળગ્રંથાવલી ૧લી શ્રેણી \n\nવિઘાર્થી' વાંચનમાળા શ્રેણી ૧ થી ૪ \nદરેકને \n\n\n9? ?? \n\n\n94 75 \n77 7? ?? \nકુદરત અને કળાધાસમાં વીસ દિવસ \nઇલ્ઞરાનાં ગુફામ'દિરે \nઅજ'તાનો ચાત્રી (સચિત્ર કાવ્ય) \nજળમ'દિર પાવાષુરી કાવ્ય \nકૃલ્ષવાડી ડ્યારો ૧-૨ \nસોરઠી ર્‌રવીરે \nસિકીમની વીરાંગના \nનેષ્ીીનો રાણ \nપાવાગઢનો પ્રવાસ \nઅચલ્રાજ આળબ્યુ \nહિમાલયને। સરઃપ્રરેશ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (99.9% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2013",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9961,
+      "character_count": 22071,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0016,
+      "script_distribution": {
+        "Gujarati": 16210,
+        "Common": 5798,
+        "Devanagari": 38,
+        "Latin": 16,
+        "Other": 9
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "કિ \n\n\nરે ક” ક \n\n\nકેર જેન ધર્મ પ્રવેશ મશપોથી. ! \n\n\nજ \n\n\nરઃ \nક \n\n\nહે ગ ૨ લે. \nબ ભાગર લા \n\n\nર --૦નાનનાનળાત€€૬૪-૬€€૯*મ૯ઝાન----4--ત ૯ \n\nજ \n\nક છપાવી પ્રસિદ્ધ ડર્તાર; \n\nહ જડ હ ખુ \nશ્રીજેત ધમ વિઘા પસારફક વગ, \n\n\nપાલીતાણૂ1ર \n\n\n-“-લજ#જઝસ્‍્ઝ્ઝ--- \nનન \n\n\nક્ક્્લ્ડુ \nકુ પચમાૃત્તિ ગ્રત ર૦૦૦ \n\n\nસ સવત્‌ ૧૯૬૫ સને ૬૦૮ \n\n\nજી દ \n\n\nમ. \n\n\nન રે \nન કાઈક \n\n\nન્ન \n\nજ આત ડીત્ટીરા પ્રેસ--ભાવનરાર્‌, \nજહુ \n\nજ ડિસતર્‌ ૦-૧-૦ \n\nજે ..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (99.6% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2014",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.9987,
+      "character_count": 248376,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0005,
+      "script_distribution": {
+        "Gujarati": 182008,
+        "Common": 66134,
+        "Latin": 123,
+        "Devanagari": 71,
+        "Other": 40
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\n\n\nગેન સસ્સાયમાણા, \nમામ થો \n\n\n\n\n\nજ. આપુસ્તકમાં અતેક મહાન પંડિતની બતાવેલી \nપદા અને અનેક વેરાગી વિષધાથી ભરપૂર* \n\n\nન--મ--- \n\n\nછષાવી પ્રસિદ્ધ £રતાર, \n\n\n૦૯ભઈ' છગઝનલ,લ ૨/૪. \nજૈન ખુક્સેલગ કં, કીકાભટતી પોળ? \nઅસદાવાદ. \n\n\nન---#---- \n\n\nઆજૃત્તિ પહેલી --નકલ ૧૧૦૦ \n\n\n\n\n\nન્--ન્ન્--- \n\n\nઅસદાવાદ--ધી “ ડાયમડ ન્યુબિલી ” પ્રીન્ટીંગ મેસથા \nપરીખ દેવીદાસ છગતલાલે દ્ાપ્યે!, \n\n\nન--૦--- \n\n\nમવત ૧૪૭૭ --સતે ૧૯૨૧ \n\n\n\n\n\nકિમ્મત બે..."
+      ],
+      "findings": [
+        "OCR engine reported language 'guj'; independent script evidence says 'Gujarati' (99.9% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2015",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.945,
+      "character_count": 337018,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.022,
+      "script_distribution": {
+        "Common": 183314,
+        "Devanagari": 145246,
+        "Latin": 7043,
+        "Other": 1415
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\n\n\n0-0~5 “ध्म ] \n००६४४ ४४ \n\n\n\n\n\n©०-0-~- 9.“ \n\n\n\n\n\n\nॐ ४६ ५ [ ०५६४ ५४ \n\n\n1 1 \"8५8६ शुः \n। प नु 1१९४६ यध \n€ € 2४४४ 1.1 पय ५१०५।०यब्‌६्‌ ८ कठि 2 \n\n\n४ ८ 2५ थानु ; धनम \n\n\n~ ( (न) ४. \n। य \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n*प्वृप्पणत धष \n\n\nत ०५४७ 011 -1 \"णुर्‌ एन्‌ प्वपभ्नणऽण्त्‌ णप एष्पुपूण्यू \nएप्णा०५०त्‌ पषण ३० ण्णू्० णय ए पप 4णृण्यण्ठद् ००8 स्मृ ¶०५०॥ एवपण्पूरभृण्ड एप्णाग्यप्थुवद व्णपकरत्‌ \n~ \n\n\nदध्पृपयणतु णयत्‌ ¶'पाणन्..."
+      ],
+      "findings": [
+        "OCR engine reported language 'san'; independent script evidence says 'Devanagari' (94.5% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2016",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.995,
+      "character_count": 444263,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.002,
+      "script_distribution": {
+        "Devanagari": 341872,
+        "Common": 100657,
+        "Latin": 1711,
+        "Other": 23
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥॥७७॥॥॥॥॥॥॥ \nश्रीयमयदेवसूरि जैन ग्रन्यमाला अन्धाडु १५ \n\n\nश्रीवृहत्खरतर गच्छीय-- \n\n\nप्ञ्च-प्रातेकमण \n\n\nजौ शब्ट्रेडं224६६:459# ६९7 \n\n\n+छ \n\n\nहिन्दी अछुवाढ और टिप्पनी आदिके कर्ता-- \nव्याख्यान-वाचस्पति \nजगम युगप्रधान भद्दारक जैनाचार्य श्रीपुल्य-- \n\n\nश्रीजिनचारित्रसूरीश्वरजी महाराज । \n\n\n\n\n\n8॥॥॥8॥॥॥॥॥॥॥॥॥॥॥॥ 0॥॥॥॥8॥॥॥॥॥॥॥/४/2 \n\n\nसपादक-- \nपणिडत काशीनाथजी जेन । \n\n\n२०१३, हरिप्तन रोड, \n..."
+      ],
+      "findings": [
+        "OCR engine reported language 'hin'; independent script evidence says 'Devanagari' (99.5% purity)"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2019",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.997,
+      "character_count": 336415,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0012,
+      "script_distribution": {
+        "Devanagari": 262966,
+        "Common": 72648,
+        "Latin": 667,
+        "Other": 134
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "। दल्पसूतच्र का प्रस्तावना ॥ \n\n\n(~ \n\n\n~~ \n\n\n~~~ ~~~ \n\n\n\n\n\n---- \n\n\n\n\n\nकृरयुमूत्रकवाग ग्रन्थ क्र पट उसका कुद वरन क्र द्विया \\ 11 \nश्री जननम्‌ बरा जनमूत्र क गः इच्छं से अपरिचिन जेना क लियं श्रथवा सम्- \nदाधिक गड वादा के दिनाथं योदा त्तिखना याग \n\nभरनो मे नीरयकरर णक स्वेत पृण्यवरान पत्य को माना जाना हं पपे २४ \nपुम्प उस जयान मं दृष ई उन नीथकगो क उपदशा म अन्य जीवं धमरे पानद \nधरमै.दे जस्य वत दया मे नतिं न्..."
+      ],
+      "findings": [],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2020",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.998,
+      "character_count": 597549,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0008,
+      "script_distribution": {
+        "Devanagari": 458510,
+        "Common": 138128,
+        "Latin": 846,
+        "Other": 65
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "(प्रथम खण्ड) \n(प्श्य्‌य्‌नः १ रः १० तष्ट) \n(मूल-संसकरत एाया-पयानुयाद-अन्वयार्ध-वियेचन-कया-परिशिष्ट युक्त} \n\n\nॐ \nश्र तत्वावधान \nआचार्य श्रीहस्तीमलजी महाराज \n\n\nहिन्दी पद्यानुवाद १ \nपठ श्री शशिकान्त शा \n\n\nप्रठ्ष्डष् \nसम्यम्ज्ञान प्रचारक मण्डल, जयपुर \n\n\nउत्तराध्ययनसूत्र \n(९ से १० अध्ययन) \n\n\nप्रकाशक \n\nसम्यग््ञान प्रचारक मण्डल \nबापू बाजार, जयपुर-३०२००३ \nफोन : ०१४१-५६५९९७ \n\n\nतृतीयावृत्ति \n\nविक्रम सम्वत्‌..."
+      ],
+      "findings": [],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2021",
+      "engine": "PLAIN_TEXT",
+      "page_count": 1,
+      "detected_language": "unknown (Hindi/Sanskrit/Prakrit share this script)",
+      "detected_script": "Devanagari",
+      "language_confidence": "medium",
+      "script_purity": 0.9942,
+      "character_count": 185784,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0023,
+      "script_distribution": {
+        "Devanagari": 136680,
+        "Common": 48300,
+        "Latin": 802,
+        "Other": 2
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "आगम सेवा के अन्तर्गत पहली सेवा \n\n\nभगवान महावीर की अंतिम अमृतवाणी का अनूठा संग्रह \n\n\n\n\n\n(अध्ययन एक से अठारह तक) \nप्रथम भाग प्रथम संस्करण \n\n\nप्रश्न उत्तर के माध्यम से जैन आगम शास्त्र में निहित भगवान महावीर \nकी वाणी को हिन्दी भाषा में सरल रुप मे जाने का सर्वश्रेष्ठ माध्यम \n९ \nसंकलक - संपादक \nसंदीप जैन मित्र \nदुर्ग (छत्तीसगढ़) \n९ \n-; प्रकाशक :- \nसोश्यल एनर्जेटिक वालिंटियर्स एसोसिएशन, दुर्ग \n\n\n) #चत522..."
+      ],
+      "findings": [],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2022",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 1.0,
+      "character_count": 1546401,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 1197562,
+        "Common": 348812,
+        "Devanagari": 27
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.c..."
+      ],
+      "findings": [
+        "declared script 'Devanagari' but measured script is 'Latin'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2023",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 1.0,
+      "character_count": 3084770,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 2333470,
+        "Common": 751268,
+        "Devanagari": 32
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Agam 30 mool 03 Uttaradhyayana Sutra Sthanakvasi - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gsta..."
+      ],
+      "findings": [
+        "declared script 'Devanagari' but measured script is 'Latin'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2024",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.9961,
+      "character_count": 26889,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0016,
+      "script_distribution": {
+        "Latin": 20787,
+        "Common": 6020,
+        "Latin Extended": 82
+      },
+      "engines_evaluated": [],
+      "manual_review_required": false,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Pratikraman - Observance of Self Reflection - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.c..."
+      ],
+      "findings": [],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2025",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.5173,
+      "character_count": 3410605,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.1931,
+      "script_distribution": {
+        "Latin": 1292112,
+        "Devanagari": 1182078,
+        "Common": 912789,
+        "Other": 16988,
+        "Tamil": 5078,
+        "Hebrew": 1444,
+        "Oriya": 48,
+        "Cyrillic": 38
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Agam 03 Ang 03 Sthanang Sutra Part 01 Sthanakvasi - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gst..."
+      ],
+      "findings": [
+        "declared script 'Devanagari' but measured script is 'Latin'",
+        "script purity 51.7% is below 85%, which in an OCR text layer usually means either mixed-language content or character confusion in the OCR"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2026",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 1.0,
+      "character_count": 1719267,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 1298145,
+        "Common": 421092,
+        "Devanagari": 30
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Agam 29 Mool 02 Dasvaikalik Sutra Sthanakvasi - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic..."
+      ],
+      "findings": [
+        "declared script 'Devanagari' but measured script is 'Latin'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2027",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "Gujarati",
+      "detected_script": "Gujarati",
+      "language_confidence": "medium",
+      "script_purity": 0.8084,
+      "character_count": 322931,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0766,
+      "script_distribution": {
+        "Gujarati": 196981,
+        "Common": 79258,
+        "Latin": 46138,
+        "Devanagari": 546,
+        "Latin Extended": 6,
+        "Other": 2
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Sthanakvasi Jain Itihas - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23..."
+      ],
+      "findings": [
+        "script purity 80.8% is below 85%, which in an OCR text layer usually means either mixed-language content or character confusion in the OCR"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2028",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 1.0,
+      "character_count": 473822,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.0,
+      "script_distribution": {
+        "Latin": 349269,
+        "Common": 124553
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Inner Journey Part 01 - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic.com/s/ibmplexsans/v23/z..."
+      ],
+      "findings": [
+        "declared script 'Devanagari;Latin' but measured script is 'Latin'"
+      ],
+      "notes": []
+    },
+    {
+      "source_id": "SVK-2029",
+      "engine": "HOCR",
+      "page_count": 1,
+      "detected_language": "unknown (Latin script)",
+      "detected_script": "Latin",
+      "language_confidence": "medium",
+      "script_purity": 0.5565,
+      "character_count": 1881167,
+      "replacement_character_count": 0,
+      "unicode_error_count": 0,
+      "estimated_ocr_noise": 0.1774,
+      "script_distribution": {
+        "Latin": 793916,
+        "Devanagari": 632340,
+        "Common": 454501,
+        "Other": 130,
+        "Greek": 92,
+        "Kannada": 78,
+        "Oriya": 68,
+        "Latin Extended": 20
+      },
+      "engines_evaluated": [],
+      "manual_review_required": true,
+      "sample_pages": [
+        "\n            window.dataLayer = window.dataLayer || [];\n            function gtag(){dataLayer.push(arguments);}\n            gtag('js', new Date());\n            gtag('config', 'G-JCR2873B75');\n        Agam 12 Upang 01 Aupapatik Sutra Sthanakvasi - Jain Quantum@font-face{font-family:'IBM Plex Sans';font-style:normal;font-weight:300;font-stretch:normal;font-display:swap;src:url(https://fonts.gstatic...."
+      ],
+      "findings": [
+        "declared script 'Devanagari' but measured script is 'Latin'",
+        "script purity 55.6% is below 85%, which in an OCR text layer usually means either mixed-language content or character confusion in the OCR"
+      ],
+      "notes": []
+    }
+  ],
+  "manual_review_required": 13,
+  "sources": 41
+}

@@ -1,0 +1,60 @@
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# pytest caches
+.pytest_cache/
+
+# Distribution / packaging
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+
+# Interpreter / runtime files
+.python-version
+
+# Editor / IDE temporary files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS temporary files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# svk-corpus Python tooling (large, regenerable)
+svk-corpus/tools/python.zip
+svk-corpus/tools/python/
+
+# Large data files (exceed GitHub 100MB limit)
+svk-corpus/data/quality/units_quality.jsonl
+svk-corpus/data/release/low_quality_units.jsonl
+svk-corpus/data/release/rag_corpus.jsonl
+svk-corpus/data/release/training_corpus.jsonl
+svk-corpus/data/segmented/SVK-2006/units.jsonl
+svk-corpus/data/segmented/SVK-2007/units.jsonl
+svk-corpus/data/training/sft_candidate_passages_v1.jsonl
+svk-corpus/data/training/sft_candidate_passages_v2.jsonl
+
+# Audit temp files
+svk-corpus/tools/run_tests.py
+svk-corpus/tools/run_task30_tests.py
+svk-corpus/data/reports/task30_audit_output.txt
+svk-corpus/data/reports/task30_removal_analysis.txt
+svk-corpus/data/reports/task30_new_test_results.txt
+svk-corpus/data/reports/task30_test_results.txt

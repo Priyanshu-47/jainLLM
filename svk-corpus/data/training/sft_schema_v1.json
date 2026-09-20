@@ -1,0 +1,253 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jainllm-sft-example-v1",
+  "title": "JainLLM SFT Example Schema v1",
+  "description": "Schema for supervised fine-tuning examples in the JainLLM project. Every example must be traceable to source material. Designed for Sthanakavasi sect-aware, source-grounded training.",
+  "type": "object",
+  "required": ["example_id", "version", "task_category", "messages", "provenance", "origin", "split"],
+  "properties": {
+    "example_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_-]+:[a-z0-9_-]+:[a-f0-9]{8}$",
+      "description": "Unique identifier: <source_id>:<unit_type>:<hash8>. Example: SVK-0007:qa:a1b2c3d4"
+    },
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Schema version for forward compatibility"
+    },
+    "task_category": {
+      "type": "string",
+      "enum": [
+        "sthanaqa",
+        "source_citation",
+        "prakrit_explanation",
+        "multilingual_mapping",
+        "teacher_attribution",
+        "canonical_commentary_distinction",
+        "cross_tradition_distinction",
+        "abstention",
+        "general_qa"
+      ],
+      "description": "Training category. sthanaqa=Sthanakavasi-aware Q&A; source_citation=answer with citation; prakrit_explanation=Prakrit term to explanation; multilingual_mapping=language transfer; teacher_attribution=acarya/teacher attribution; canonical_commentary_distinction=canonical vs commentary vs interpretation; cross_tradition_distinction=Sthanakavasi vs Digambara vs other; abstention=insufficient evidence response"
+    },
+    "messages": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "description": "Conversation turns. Always [user, assistant]. Optional [system, user, assistant] or [user, assistant, user, assistant].",
+      "items": {
+        "type": "object",
+        "required": ["role", "content"],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": ["system", "user", "assistant"]
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8192
+          }
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["source_id", "text_id", "knowledge_layer", "religious_scope"],
+      "description": "Traceability to source material. Every factual SFT example MUST carry full provenance.",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^SVK-[0-9]+$",
+          "description": "Source identifier from source_manifest.csv"
+        },
+        "text_id": {
+          "type": "string",
+          "description": "Unit identifier from the RAG/training corpus"
+        },
+        "title": {
+          "type": "string",
+          "description": "Source title"
+        },
+        "author": {
+          "type": "string",
+          "description": "Source author"
+        },
+        "publication_year": {
+          "type": "string",
+          "description": "Publication year"
+        },
+        "language": {
+          "type": "string",
+          "description": "Primary language of source material"
+        },
+        "knowledge_layer": {
+          "type": "string",
+          "enum": [
+            "CANONICAL_SCRIPTURE",
+            "COMMENTARY",
+            "TEACHER_INTERPRETATION",
+            "LEXICON",
+            "SECONDARY_SCHOLARSHIP",
+            "REFERENCE",
+            "INS饷TRUCTION_DATA",
+            "MIXED"
+          ],
+          "description": "Knowledge layer classification from source manifest"
+        },
+        "religious_scope": {
+          "type": "string",
+          "enum": [
+            "CORE_STHANAKAVASI",
+            "HIGH_STHANAKAVASI_RELEVANCE",
+            "COMPARATIVE_OTHER_TRADITION",
+            "CONTEXTUAL_JAIN",
+            "UNKNOWN"
+          ],
+          "description": "Religious scope classification from source manifest"
+        },
+        "sect": {
+          "type": "string",
+          "description": "Sect attribution (e.g. STHANAKAVASI, DIGAMBARA, MULTI_TRADITION)"
+        },
+        "sect_confidence": {
+          "type": "string",
+          "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"],
+          "description": "Confidence in sect classification"
+        },
+        "teacher_or_author": {
+          "type": "string",
+          "description": "Named teacher/author if applicable"
+        },
+        "lineage": {
+          "type": "string",
+          "description": "Lineage attribution"
+        },
+        "source_quality": {
+          "type": "string",
+          "enum": ["HIGH", "MEDIUM", "LOW", "UNKNOWN"],
+          "description": "Artifact/OCR fidelity from manifest"
+        },
+        "locator": {
+          "type": "object",
+          "description": "Page/section locator within source",
+          "properties": {
+            "page": {"type": ["integer", "null"]},
+            "section": {"type": ["string", "null"]}
+          }
+        },
+        "license_status": {
+          "type": "string",
+          "description": "License decision from license_manifest.csv"
+        },
+        "citation_text": {
+          "type": "string",
+          "description": "Human-readable citation string"
+        }
+      }
+    },
+    "origin": {
+      "type": "object",
+      "required": ["synthetic", "method"],
+      "description": "How this example was created",
+      "properties": {
+        "synthetic": {
+          "type": "boolean",
+          "description": "true=generated, false=human-authored from source text"
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "human_authored",
+            "source_paraphrase",
+            "extraction",
+            "translation",
+            "synthetic_qa_generation",
+            "synthetic_abstention",
+            "expert_reviewed"
+          ],
+          "description": "Creation method"
+        },
+        "reviewer": {
+          "type": "string",
+          "description": "Human reviewer if expert_reviewed"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"],
+          "description": "Confidence in example quality"
+        }
+      }
+    },
+    "answer_metadata": {
+      "type": "object",
+      "description": "Additional metadata about the answer",
+      "properties": {
+        "answer_type": {
+          "type": "string",
+          "enum": [
+            "factual",
+            "definitional",
+            "explanatory",
+            "comparative",
+            "citation_only",
+            "abstention",
+            "multilingual_bridge"
+          ],
+          "description": "Type of answer"
+        },
+        "sect_relevant": {
+          "type": "boolean",
+          "description": "Whether the answer depends on Sthanakavasi-specific context"
+        },
+        "cross_tradition": {
+          "type": "boolean",
+          "description": "Whether the answer involves cross-tradition comparison"
+        },
+        "conflicting_sources": {
+          "type": "boolean",
+          "description": "Whether the answer addresses conflicting source material"
+        },
+        "language_pairs": {
+          "type": "array",
+          "items": {"type": "string"},
+          "description": "For multilingual_mapping: language pairs involved (e.g. ['sa-en', 'pra-en'])"
+        },
+        "prakrit_term": {
+          "type": "string",
+          "description": "For prakrit_explanation: the Prakrit term being explained"
+        },
+        "canonical_reference": {
+          "type": "string",
+          "description": "For canonical_commentary_distinction: the canonical text referenced"
+        }
+      }
+    },
+    "split": {
+      "type": "string",
+      "enum": ["train", "validation", "test"],
+      "description": "Data split. Must follow leakage prevention rules."
+    },
+    "tags": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Free-form tags for filtering (e.g. ['prakrit', 'dictionary', 'ardha-magadhi'])"
+    },
+    "quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "needs_review",
+          "low_confidence",
+          "conflicting_info",
+          "ocr_noisy",
+          "translation_uncertain",
+          "synthetic_unverified"
+        ]
+      },
+      "description": "Quality warnings. Empty array = no issues."
+    }
+  }
+}

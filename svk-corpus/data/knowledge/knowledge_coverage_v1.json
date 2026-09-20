@@ -1,0 +1,360 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jainllm-knowledge-coverage-v1",
+  "title": "JainLLM Knowledge Coverage Matrix v1",
+  "description": "Maps the Jain knowledge landscape to assess coverage for retrieval, SFT, and evaluation. Each topic area is assessed against the current corpus and external source candidates. Counts are NOT populated from assumptions; UNKNOWN/0 is used where we have not audited.",
+  "version": "1.0",
+  "schema": {
+    "topic_id": {
+      "type": "string",
+      "pattern": "^TOPIC-[0-9]{3}$",
+      "description": "Unique topic identifier: TOPIC-NNN"
+    },
+    "topic_name": {
+      "type": "string",
+      "description": "Name of the knowledge area"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["AGAMA", "PRACTICE", "PHILOSOPHY", "HISTORY", "BIOGRAPHY", "LEXICON", "CROSS_TRADITION", "MODERN", "LANGUAGE"],
+      "description": "High-level category"
+    },
+    "tradition_relevance": {
+      "type": "string",
+      "enum": ["STHANAKAVASI_ONLY", "SVETAMBARA_WIDE", "ALL_JAIN", "UNKNOWN"],
+      "description": "Which traditions this topic is relevant to"
+    },
+    "coverage_status": {
+      "type": "string",
+      "enum": ["STRONG", "PARTIAL", "WEAK", "MISSING", "RIGHTS_BLOCKED", "NEEDS_RESEARCH"],
+      "description": "Current coverage status in the corpus"
+    },
+    "retrieval_ready": {
+      "type": "boolean",
+      "description": "Whether retrieval-ready content exists for this topic"
+    },
+    "sft_ready": {
+      "type": "boolean",
+      "description": "Whether SFT-trainable content exists for this topic"
+    },
+    "evaluation_ready": {
+      "type": "boolean",
+      "description": "Whether evaluation questions can be generated for this topic"
+    },
+    "source_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of sources covering this topic (0 = not audited or none)"
+    },
+    "external_source_count": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of external source candidates for this topic"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-text notes on coverage"
+    }
+  },
+  "entries": [
+    {
+      "topic_id": "TOPIC-001",
+      "topic_name": "24 Tirthankaras",
+      "category": "AGAMA",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 2,
+      "external_source_count": 0,
+      "notes": "SVK-1001 (Acaranga) and SVK-1005 mention Tirthankaras. No dedicated Tirthankara biography source in training. External sources not yet audited."
+    },
+    {
+      "topic_id": "TOPIC-002",
+      "topic_name": "Mahavira",
+      "category": "AGAMA",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 3,
+      "external_source_count": 0,
+      "notes": "Referenced in SVK-1001, SVK-1009, SVK-1005. No dedicated Mahavira biography in training."
+    },
+    {
+      "topic_id": "TOPIC-003",
+      "topic_name": "Agamas (canonical texts)",
+      "category": "AGAMA",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 4,
+      "external_source_count": 0,
+      "notes": "SVK-1001 (Acaranga + Sutrakrtanga), SVK-1002/1003 (Kalpasutra), SVK-0016 (Uttaradhyayana). Most Agams not yet in corpus. JainQQ is primary discovery platform."
+    },
+    {
+      "topic_id": "TOPIC-004",
+      "topic_name": "Avashyaka (six obligatory duties)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Avashyaka source in current corpus. Practice material is a critical gap."
+    },
+    {
+      "topic_id": "TOPIC-005",
+      "topic_name": "Samayik (equanimity practice)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Samayik practice source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-006",
+      "topic_name": "Pratikraman (repentance ritual)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Pratikraman source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-007",
+      "topic_name": "Kayotsarga (body-abandonment meditation)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Kayotsarga source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-008",
+      "topic_name": "Vandana (veneration/praise)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Vandana source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-009",
+      "topic_name": "Pratyakhyan/Pachchhakhan (vows/renunciation)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Pratyakhyan source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-010",
+      "topic_name": "Chauvisantho (二十四层 glorification)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Chauvisantho source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-011",
+      "topic_name": "Paryushan (annual festival)",
+      "category": "PRACTICE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Paryushan source in current corpus."
+    },
+    {
+      "topic_id": "TOPIC-012",
+      "topic_name": "Jain foundational philosophy (anekantavada, syadvada, aparigraha, etc.)",
+      "category": "PHILOSOPHY",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 3,
+      "external_source_count": 0,
+      "notes": "SVK-2006 (Paia-sadda-mahannavo) has philosophical terminology. SVK-2011 (Aadhyatm Saar) has Gujarati philosophy. SVK-1006 (Jaina Psychology). No systematic philosophy text in training."
+    },
+    {
+      "topic_id": "TOPIC-013",
+      "topic_name": "Sthanakavasi doctrine",
+      "category": "PHILOSOPHY",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "WEAK",
+      "retrieval_ready": true,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 1,
+      "external_source_count": 0,
+      "notes": "SVK-2010 (Jain Sathan Kavasi, 1928) is the only CORE_STHANAKAVASI doctrinal source in training. 516 units. Severely insufficient."
+    },
+    {
+      "topic_id": "TOPIC-014",
+      "topic_name": "Sthanakavasi history",
+      "category": "HISTORY",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "WEAK",
+      "retrieval_ready": true,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 2,
+      "external_source_count": 0,
+      "notes": "SVK-0038 (Notes on Modern Jainism, 1910) and SVK-1010 (Conference Herald, 1917) discuss Sthanakavasi history. Both are external observations, not the tradition's own voice."
+    },
+    {
+      "topic_id": "TOPIC-015",
+      "topic_name": "Sthanakavasi Acharyas",
+      "category": "BIOGRAPHY",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Sthanakavasi Acharya biography or commentary in training corpus."
+    },
+    {
+      "topic_id": "TOPIC-016",
+      "topic_name": "Sthanakavasi Munis",
+      "category": "BIOGRAPHY",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Sthanakavasi Muni biography in training corpus."
+    },
+    {
+      "topic_id": "TOPIC-017",
+      "topic_name": "Sthanakavasi Sadhvis",
+      "category": "BIOGRAPHY",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No Sthanakavasi Sadhvi biography in training corpus."
+    },
+    {
+      "topic_id": "TOPIC-018",
+      "topic_name": "Modern Sthanakavasi teachers",
+      "category": "BIOGRAPHY",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No modern Sthanakavasi teacher material in training corpus."
+    },
+    {
+      "topic_id": "TOPIC-019",
+      "topic_name": "Cross-tradition distinctions (Sthanakavasi vs Digambara vs others)",
+      "category": "CROSS_TRADITION",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "MISSING",
+      "retrieval_ready": false,
+      "sft_ready": false,
+      "evaluation_ready": false,
+      "source_count": 0,
+      "external_source_count": 0,
+      "notes": "No comparative source in training corpus. Critical gap for cross_tradition_distinction SFT task."
+    },
+    {
+      "topic_id": "TOPIC-020",
+      "topic_name": "Prakrit terminology",
+      "category": "LANGUAGE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "STRONG",
+      "retrieval_ready": true,
+      "sft_ready": true,
+      "evaluation_ready": true,
+      "source_count": 10,
+      "external_source_count": 0,
+      "notes": "Extensive Prakrit lexicon coverage: SVK-0007, SVK-0037, SVK-2002-2005 (Ardha Magadhi dictionaries), SVK-2006/2007 (Paia-sadda-mahannavo), SVK-2008/2009 (Woolner grammar). Strong for prakrit_explanation and multilingual_mapping tasks."
+    },
+    {
+      "topic_id": "TOPIC-021",
+      "topic_name": "Gujarati explanations",
+      "category": "LANGUAGE",
+      "tradition_relevance": "STHANAKAVASI_ONLY",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": true,
+      "evaluation_ready": false,
+      "source_count": 5,
+      "external_source_count": 0,
+      "notes": "Gujarati sources in training: SVK-2002-2004 (dictionary entries), SVK-2010-2014 (discursive). Limited Gujarati SFT material."
+    },
+    {
+      "topic_id": "TOPIC-022",
+      "topic_name": "Hindi explanations",
+      "category": "LANGUAGE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": true,
+      "evaluation_ready": false,
+      "source_count": 6,
+      "external_source_count": 0,
+      "notes": "Hindi sources: SVK-0016 (Uttaradhyayana), SVK-2005 (dictionary). Limited Hindi SFT material."
+    },
+    {
+      "topic_id": "TOPIC-023",
+      "topic_name": "English explanations",
+      "category": "LANGUAGE",
+      "tradition_relevance": "ALL_JAIN",
+      "coverage_status": "PARTIAL",
+      "retrieval_ready": true,
+      "sft_ready": true,
+      "evaluation_ready": true,
+      "source_count": 12,
+      "external_source_count": 0,
+      "notes": "English sources dominate non-lexicon training: SVK-1001-1009, SVK-2008-2009. Good for source_citation and canonical_commentary_distinction."
+    }
+  ]
+}

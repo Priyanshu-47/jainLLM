@@ -1,0 +1,28 @@
+# --- svk-corpus: repository skeleton -------------------------------------
+# Raw acquired artifacts are NOT committed: they are large, and they must be
+# reproducible from the source manifest (URL + sha256) instead.
+data/raw/
+data/cache/
+data/quarantine/
+data/ocr_pages/
+
+# Intermediate pipeline layers are regenerable; only release/ and manifests/
+# are committed so that a release is auditable without re-downloading.
+data/extracted/
+data/normalized/
+data/deduplicated/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

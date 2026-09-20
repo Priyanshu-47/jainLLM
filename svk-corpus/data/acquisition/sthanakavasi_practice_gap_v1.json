@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-09-19",
+  "version": "1.0",
+  "description": "Practice coverage gap matrix. For each of the six Avashyakas plus Paryushan, records current corpus state and discovered acquisition candidates.",
+  "practices": [
+    {
+      "practice": "SAMAYIK",
+      "definition": "Equanimity practice —48-minute meditation in equanimous state",
+      "candidate_source_count": 1,
+      "explicit_sthanakavasi_count": 1,
+      "teacher_explanation_count": 0,
+      "commentary_count": 0,
+      "original_text_count": 0,
+      "translation_count": 1,
+      "best_candidates": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_28_Mool_01_Aavashyak_Sutra_Sthanakvasi_Romanized/002489",
+          "platform": "JAINQQ",
+          "content": "Chapter 1: Samayik — mool Prakrit + Hindi explanation",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        }
+      ],
+      "remaining_gap": "No standalone Samayik pravachan or teacher commentary found"
+    },
+    {
+      "practice": "PRATIKRAMAN",
+      "definition": "Repentance and confession — critical review of vows and expiation of sins",
+      "candidate_source_count": 3,
+      "explicit_sthanakavasi_count": 2,
+      "teacher_explanation_count": 0,
+      "commentary_count": 1,
+      "original_text_count": 1,
+      "translation_count": 2,
+      "best_candidates": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_28_Mool_01_Aavashyak_Sutra_Sthanakvasi_Romanized/002489",
+          "platform": "JAINQQ",
+          "content": "Chapter 4: Pratikraman — mool Prakrit + Hindi explanation",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        },
+        {
+          "source_id": "JAINQQ-037218",
+          "title": "Sthanakvasi Shravak Samayik Pratikraman Sutra",
+          "url": "https://jainqq.org/explore/037218/2",
+          "platform": "JAINQQ",
+          "content": "Complete Pratikraman Sutra for Sthanakvasi householders",
+          "availability": "FOUND",
+          "sft_candidate": true
+        },
+        {
+          "source_id": "JAINQQ-200026",
+          "title": "Pratikraman - Observance of Self Reflection",
+          "url": "https://jainqq.org/booktext/Pratikraman_-_Observance_of_Self_Reflection/200026",
+          "platform": "JAINQQ",
+          "content": "English explanation of Pratikraman practice",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        }
+      ],
+      "remaining_gap": "No Sthanakvasi-specific Pratikraman pravachan or teacher commentary"
+    },
+    {
+      "practice": "KAYOTSARGA",
+      "definition": "Body-abandonment meditation — standing meditation dissociating mind from body",
+      "candidate_source_count": 2,
+      "explicit_sthanakavasi_count": 1,
+      "teacher_explanation_count": 0,
+      "commentary_count": 0,
+      "original_text_count": 1,
+      "translation_count": 1,
+      "best_candidates": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_28_Mool_01_Aavashyak_Sutra_Sthanakvasi_Romanized/002489",
+          "platform": "JAINQQ",
+          "content": "Chapter 5: Kayotsarg — mool Prakrit + Hindi explanation",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        },
+        {
+          "source_id": "JAINQQ-001218",
+          "title": "Kayotsarga",
+          "url": "https://jainqq.org/catalog",
+          "platform": "JAINQQ",
+          "content": "Hindi text on Kayotsarg practice",
+          "availability": "FOUND",
+          "sft_candidate": true
+        }
+      ],
+      "remaining_gap": "No Sthanakvasi-specific Kayotsarg pravachan or meditation guide"
+    },
+    {
+      "practice": "VANDANA",
+      "definition": "Veneration and praise — salutation to ascetics, guru, and Tirthankaras",
+      "candidate_source_count": 2,
+      "explicit_sthanakavasi_count": 1,
+      "teacher_explanation_count": 0,
+      "commentary_count": 0,
+      "original_text_count": 1,
+      "translation_count": 1,
+      "best_candidates": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/explore/002489/334",
+          "platform": "JAINQQ",
+          "content": "Chapter 3: Vandana — mool Prakrit + Hindi explanation",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        }
+      ],
+      "remaining_gap": "No standalone Vandana pravachan or teacher explanation"
+    },
+    {
+      "practice": "PRATYAKHYAN",
+      "definition": "Vows and renunciation — formal vows of asceticism",
+      "candidate_source_count": 2,
+      "explicit_sthanakavasi_count": 1,
+      "teacher_explanation_count": 0,
+      "commentary_count": 0,
+      "original_text_count": 1,
+      "translation_count": 1,
+      "best_candidates": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_28_Mool_01_Aavashyak_Sutra_Sthanakvasi_Romanized/002489",
+          "platform": "JAINQQ",
+          "content": "Chapter 6: Pratyakhyan — mool Prakrit + Hindi explanation",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        },
+        {
+          "source_id": "JAINQQ-002500",
+          "title": "Agam 25 Prakirnak 02 Atur Pratyakhyan Sutra",
+          "url": "https://jainqq.org/catalog?page=2",
+          "platform": "JAINQQ",
+          "content": "Atur Pratyakhyan — death-bed renunciation vows",
+          "availability": "FOUND",
+          "sft_candidate": true
+        }
+      ],
+      "remaining_gap": "No Sthanakvasi-specific Pratyakhyan pravachan"
+    },
+    {
+      "practice": "CHAUVISANTHO",
+      "definition": "Chaturvimshati-stava — glorification of 24 Tirthankaras, recited during Paryushan",
+      "candidate_source_count": 1,
+      "explicit_sthanakavasi_count": 0,
+      "teacher_explanation_count": 0,
+      "commentary_count": 0,
+      "original_text_count": 0,
+      "translation_count": 0,
+      "best_candidates": [],
+      "remaining_gap": "NO CANDIDATES FOUND — critical gap. Need Chauvisantho text + explanation"
+    },
+    {
+      "practice": "AVASHYAKA",
+      "definition": "Six obligatory duties — umbrella term for all six practices above",
+      "candidate_source_count": 2,
+      "explicit_sthanakavasi_count": 2,
+      "teacher_explanation_count": 0,
+      "commentary_count": 1,
+      "original_text_count": 1,
+      "translation_count": 1,
+      "best_candidates": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_28_Mool_01_Aavashyak_Sutra_Sthanakvasi_Romanized/002489",
+          "platform": "JAINQQ",
+          "content": "Complete Avashyak Sutra — all six practices with mool + Hindi",
+          "availability": "TEXT_AVAILABLE",
+          "sft_candidate": true
+        },
+        {
+          "source_id": "SVK-2015",
+          "title": "Sri Avasyaka Sutra Part-i (1928)",
+          "url": "https://archive.org/details/in.ernet.dli.2015.406853",
+          "platform": "INTERNET_ARCHIVE",
+          "content": "Already acquired — Avashyaka Sutra Part 1",
+          "availability": "ACQUIRED",
+          "sft_candidate": true
+        }
+      ],
+      "remaining_gap": "Part 2 of Avashyak Sutra may exist on JainQQ"
+    },
+    {
+      "practice": "PARYUSHAN",
+      "definition": "Annual festival of confession and forgiveness — most important Jain observance",
+      "candidate_source_count": 0,
+      "explicit_sthanakavasi_count": 0,
+      "teacher_explanation_count": 0,
+      "commentary_count": 0,
+      "original_text_count": 0,
+      "translation_count": 0,
+      "best_candidates": [],
+      "remaining_gap": "NO CANDIDATES FOUND — need Sthanakvasi Paryushan liturgy and practice guide"
+    }
+  ]
+}

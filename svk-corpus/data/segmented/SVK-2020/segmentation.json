@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-09-19T12:55:34+00:00",
+  "source_id": "SVK-2020",
+  "stats": {
+    "chars_in": 597549,
+    "chars_out": 588400,
+    "chunks": 28,
+    "page_boundaries": 1,
+    "paragraphs": 1640,
+    "sections": 143,
+    "size_split_units": 28,
+    "structure_confidence": "medium",
+    "units": 4164,
+    "verses": 2353,
+    "warnings": []
+  },
+  "text_role": "ORIGINAL"
+}

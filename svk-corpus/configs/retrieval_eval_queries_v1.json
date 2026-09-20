@@ -1,0 +1,208 @@
+{
+  "label": "prototype retrieval evaluation set",
+  "version": "v1 (2026-09-18)",
+  "warning": "NOT a scientifically validated benchmark. Twenty hand-written queries composed for engineering evaluation of the retrieval prototype over the current release (v0.1+Round 2, 145,147 RAG units). Expected values are grounded ONLY in what the current corpus verifiably contains (source titles/authors from manifests/source_manifest.csv); they assert nothing beyond that. relevance=source-level means a retrieved unit counts as relevant iff its source_id is in expected_source_ids. relevance=corpus-gap queries have no relevant material in the corpus by design (documented gap) and are excluded from Recall/MRR. relevance=exploratory queries have no reliable relevance labels and are excluded from metrics; their top hits are reported descriptively only.",
+  "metrics_note": "Recall@k is source-level: fraction of expected_source_ids whose source appears in the top-k. MRR uses the first result whose source_id is in expected_source_ids.",
+  "queries": [
+    {
+      "id": "q01",
+      "query": "Kalpa Sutra translation",
+      "category": "canonical_translation",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1002", "SVK-1003"],
+      "expected_source_scope": "The two released English translations of the Kalpa Sutra (Stevenson 1848).",
+      "notes": "Both releases are translations OF the Kalpa Sutra; the title string should match lexically."
+    },
+    {
+      "id": "q02",
+      "query": "Acaranga Sutra English translation",
+      "category": "canonical_translation",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1001"],
+      "expected_source_scope": "Gaina Sutras (SBE 1884), the released Acaranga + Sutrakrtanga translation.",
+      "notes": "Jacobi's translation of the Acaranga is the only released Acaranga material."
+    },
+    {
+      "id": "q03",
+      "query": "Sutrakritanga",
+      "category": "canonical_translation",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1001"],
+      "expected_source_scope": "SVK-1001 (also contains Sutrakrtanga).",
+      "notes": "Spelling variants (Sutrakritanga/Sutrakrtanga) test lexical robustness."
+    },
+    {
+      "id": "q04",
+      "query": "उत्तराध्ययन सूत्र",
+      "category": "canonical_devanagari",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-0016"],
+      "expected_source_scope": "Shri Utradhyayan Sutar (Agam Seva) 1920 — Devanagari/Hindi release.",
+      "notes": "Devanagari query; the only released Uttaradhyayana text."
+    },
+    {
+      "id": "q05",
+      "query": "Uttaradhyayana Sutra",
+      "category": "canonical_translation",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-0016"],
+      "expected_source_scope": "SVK-0016 (transliterated form).",
+      "notes": "Latin transliteration of the same canonical text."
+    },
+    {
+      "id": "q06",
+      "query": "Ardha Magadhi dictionary",
+      "category": "svk_terminology",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-0007", "SVK-0037", "SVK-2002", "SVK-2003", "SVK-2004", "SVK-2005", "SVK-2006", "SVK-2007"],
+      "expected_source_scope": "All released Ardha-Magadhi/Paia-sadda dictionary sources (Conference imprints + Sheth).",
+      "notes": "The corpus's dominant layer; tests whether the lexicon is retrievable by name."
+    },
+    {
+      "id": "q07",
+      "query": "Paia Sadda Mahannavo Prakrit dictionary",
+      "category": "svk_terminology",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-2006", "SVK-2007"],
+      "expected_source_scope": "Sheth's Paia-sadda-mahannavo (1923 + 1928 MLB edition).",
+      "notes": "Title-specific; both editions expected."
+    },
+    {
+      "id": "q08",
+      "query": "Woolner Introduction to Prakrit grammar",
+      "category": "prakrit_scholarship",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-2008", "SVK-2009"],
+      "expected_source_scope": "Woolner's grammar (1917 + 1928 editions).",
+      "notes": "Author-name + title query."
+    },
+    {
+      "id": "q09",
+      "query": "Ratnachandra",
+      "category": "teacher_editor",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-0007", "SVK-0037", "SVK-2002", "SVK-2003", "SVK-2004", "SVK-2005"],
+      "expected_source_scope": "The Conference-imprint dictionary sources edited by Muni Ratnachandra.",
+      "notes": "The only Sthanakvasi-linked person name with released material (as lexicographer). Author-string appears in records."
+    },
+    {
+      "id": "q10",
+      "query": "Sthanakvasi Jain sect",
+      "category": "svk_history",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-0038", "SVK-1010", "SVK-2010"],
+      "expected_source_scope": "The sect-naming sources: Stevenson 1910 (discusses the sect), Conference Herald 1917, Jain Sathan Kavasi 1928.",
+      "notes": "Core sect-context query; also used for the leakage analysis."
+    },
+    {
+      "id": "q11",
+      "query": "Sathan Kavasi",
+      "category": "svk_history",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-2010"],
+      "expected_source_scope": "Jain Sathan Kavasi (1928) — period transliteration.",
+      "notes": "Period spelling variant; tests exact-match value of BM25."
+    },
+    {
+      "id": "q12",
+      "query": "Jain Conference history",
+      "category": "svk_history",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1010"],
+      "expected_source_scope": "Jain Shvetambar Conference Herald (1917).",
+      "notes": "Loose expectation: the Herald is the only released Conference-institution source; generic Jain histories may legitimately also appear."
+    },
+    {
+      "id": "q13",
+      "query": "Risabha Deva founder of Jainism",
+      "category": "historical",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1009"],
+      "expected_source_scope": "Risabha Deva, the Founder of Jainism (1929).",
+      "notes": "Title-match query on a Tirthankara biography."
+    },
+    {
+      "id": "q14",
+      "query": "Jaina psychology",
+      "category": "doctrine_english",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1006"],
+      "expected_source_scope": "Jaina Psychology (1929).",
+      "notes": "Title-match doctrinal query."
+    },
+    {
+      "id": "q15",
+      "query": "Atma Siddhi",
+      "category": "doctrine_english",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-0026"],
+      "expected_source_scope": "Atma3.1-ShareGPT (Atma Siddhi Shastra instruction data).",
+      "notes": "The released Atma-Siddhi material is the Rajchandra instruction dataset (COMPARATIVE_OTHER_TRADITION scope)."
+    },
+    {
+      "id": "q16",
+      "query": "bibliographie jaina",
+      "category": "reference_french",
+      "svk_specific": false,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-1007"],
+      "expected_source_scope": "Guerinot's Essai de bibliographie jaina (1906).",
+      "notes": "French-language query against the only French source."
+    },
+    {
+      "id": "q17",
+      "query": "જૈન ધર્મ",
+      "category": "gujarati",
+      "svk_specific": true,
+      "relevance": "source-level",
+      "expected_source_ids": ["SVK-2010", "SVK-2011", "SVK-2012", "SVK-2013", "SVK-2014"],
+      "expected_source_scope": "Any of the released Gujarati-script Jain sources (loose: any hit from this set counts).",
+      "notes": "Gujarati query for 'Jain dharma'; the corpus now contains Gujarati-script material (Round 2)."
+    },
+    {
+      "id": "q18",
+      "query": "अहिंसा",
+      "category": "doctrine_devanagari",
+      "svk_specific": false,
+      "relevance": "exploratory",
+      "expected_source_ids": [],
+      "expected_source_scope": "UNKNOWN — ahimsa could legitimately appear in canon translations, dictionaries or scholarship; no reliable label without reading units.",
+      "notes": "Reported descriptively (top hits listed), excluded from metrics."
+    },
+    {
+      "id": "q19",
+      "query": "Acharya Anand Rishi",
+      "category": "teacher_gap",
+      "svk_specific": true,
+      "relevance": "corpus-gap",
+      "expected_source_ids": [],
+      "expected_source_scope": "NONE — the source audit (Task 3) found zero representation of Anand Rishi in the 62 sources.",
+      "notes": "Deliberate gap probe: measures behaviour when the corpus cannot answer; excluded from Recall/MRR by design."
+    },
+    {
+      "id": "q20",
+      "query": "karma doctrine Jain",
+      "category": "generic_multi_tradition",
+      "svk_specific": false,
+      "relevance": "exploratory",
+      "expected_source_ids": [],
+      "expected_source_scope": "UNKNOWN — generic doctrinal term across many traditions and sources.",
+      "notes": "Multi-tradition query for the sect-context analysis; reported descriptively."
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+{
+ "sources": {
+  "SVK-2022": {
+   "units": 1293,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 43,
+    "REPEATED_CHARACTER_RUN": 736,
+    "HIGH_SYMBOL_RATIO": 8
+   },
+   "doc_script": "Latin",
+   "doc_purity": 1.0,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "medium",
+   "unit_langs_sample": {
+    "en": 1293
+   }
+  },
+  "SVK-2023": {
+   "units": 2606,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 19,
+    "HIGH_SYMBOL_RATIO": 63,
+    "REPEATED_CHARACTER_RUN": 1393,
+    "HIGH_DIGIT_RATIO": 3
+   },
+   "doc_script": "Latin",
+   "doc_purity": 1.0,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "medium",
+   "unit_langs_sample": {
+    "en": 2606
+   }
+  },
+  "SVK-2024": {
+   "units": 26,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 4,
+    "HIGH_SYMBOL_RATIO": 4,
+    "REPEATED_CHARACTER_RUN": 8
+   },
+   "doc_script": "Latin",
+   "doc_purity": 0.9961,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "medium",
+   "unit_langs_sample": {
+    "en": 26
+   }
+  },
+  "SVK-2025": {
+   "units": 4068,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 102,
+    "HIGH_SYMBOL_RATIO": 730,
+    "REPEATED_CHARACTER_RUN": 2141,
+    "VERY_SHORT": 229,
+    "SCRIPT_MISMATCH": 730,
+    "REPEATED_LINES": 239,
+    "HIGH_DIGIT_RATIO": 153
+   },
+   "doc_script": "Latin",
+   "doc_purity": 0.5173,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "low",
+   "unit_langs_sample": {
+    "en": 4068
+   }
+  },
+  "SVK-2026": {
+   "units": 1584,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 5,
+    "REPEATED_CHARACTER_RUN": 964,
+    "HIGH_DIGIT_RATIO": 1,
+    "HIGH_SYMBOL_RATIO": 26
+   },
+   "doc_script": "Latin",
+   "doc_purity": 1.0,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "medium",
+   "unit_langs_sample": {
+    "en": 1584
+   }
+  },
+  "SVK-2027": {
+   "units": 376,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 5,
+    "SCRIPT_MISMATCH": 133,
+    "HIGH_SYMBOL_RATIO": 122,
+    "REPEATED_CHARACTER_RUN": 240,
+    "SCRIPT_CONFUSION": 11,
+    "OCR_NOISE_HIGH": 1
+   },
+   "doc_script": "Gujarati",
+   "doc_purity": 0.8084,
+   "doc_lang_hint": "gu",
+   "doc_lang_conf": "medium",
+   "unit_langs_sample": {
+    "gu": 376
+   }
+  },
+  "SVK-2028": {
+   "units": 372,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 4,
+    "HIGH_SYMBOL_RATIO": 10,
+    "REPEATED_CHARACTER_RUN": 355
+   },
+   "doc_script": "Latin",
+   "doc_purity": 1.0,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "medium",
+   "unit_langs_sample": {
+    "en": 372
+   }
+  },
+  "SVK-2029": {
+   "units": 2454,
+   "flags": {
+    "SUSPICIOUS_LONG_TOKENS": 18,
+    "HIGH_SYMBOL_RATIO": 589,
+    "REPEATED_CHARACTER_RUN": 864,
+    "SCRIPT_MISMATCH": 539,
+    "REPEATED_LINES": 9,
+    "VERY_SHORT": 322,
+    "HIGH_DIGIT_RATIO": 221
+   },
+   "doc_script": "Latin",
+   "doc_purity": 0.5565,
+   "doc_lang_hint": "en",
+   "doc_lang_conf": "low",
+   "unit_langs_sample": {
+    "en": 2454
+   }
+  }
+ },
+ "historical_hints": {
+  "SVK-0007": {
+   "script": "Devanagari",
+   "purity": 0.9625,
+   "lang": "unknown",
+   "method": "ambiguous-devanagari"
+  },
+  "SVK-0016": {
+   "script": "Devanagari",
+   "purity": 0.9942,
+   "lang": "hi",
+   "method": "markers"
+  },
+  "SVK-0026": {
+   "script": "Latin",
+   "purity": 1.0,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-0027": {
+   "script": "Latin",
+   "purity": 0.6235,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-0037": {
+   "script": "Devanagari",
+   "purity": 0.9614,
+   "lang": "unknown",
+   "method": "ambiguous-devanagari"
+  },
+  "SVK-0038": {
+   "script": "Latin",
+   "purity": 0.9996,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1001": {
+   "script": "Latin",
+   "purity": 0.9995,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1002": {
+   "script": "Latin",
+   "purity": 0.9997,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1003": {
+   "script": "Latin",
+   "purity": 0.9998,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1005": {
+   "script": "Latin",
+   "purity": 0.9999,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1006": {
+   "script": "Latin",
+   "purity": 1.0,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1007": {
+   "script": "Latin",
+   "purity": 0.9598,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1008": {
+   "script": "Latin",
+   "purity": 0.9987,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1009": {
+   "script": "Latin",
+   "purity": 0.9977,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-1010": {
+   "script": "Latin",
+   "purity": 0.994,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-2002": {
+   "script": "Gujarati",
+   "purity": 0.9876,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2003": {
+   "script": "Gujarati",
+   "purity": 0.9864,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2004": {
+   "script": "Gujarati",
+   "purity": 0.9799,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2005": {
+   "script": "Devanagari",
+   "purity": 0.9893,
+   "lang": "hi",
+   "method": "markers"
+  },
+  "SVK-2006": {
+   "script": "Devanagari",
+   "purity": 0.8968,
+   "lang": "unknown",
+   "method": "ambiguous-devanagari"
+  },
+  "SVK-2007": {
+   "script": "Devanagari",
+   "purity": 0.9629,
+   "lang": "unknown",
+   "method": "ambiguous-devanagari"
+  },
+  "SVK-2008": {
+   "script": "Latin",
+   "purity": 0.9989,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-2009": {
+   "script": "Latin",
+   "purity": 0.9987,
+   "lang": "en",
+   "method": "markers"
+  },
+  "SVK-2010": {
+   "script": "Gujarati",
+   "purity": 0.9978,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2011": {
+   "script": "Gujarati",
+   "purity": 0.9951,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2012": {
+   "script": "Gujarati",
+   "purity": 0.9988,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2013": {
+   "script": "Gujarati",
+   "purity": 0.9961,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2014": {
+   "script": "Gujarati",
+   "purity": 0.9987,
+   "lang": "gu",
+   "method": "script+markers"
+  },
+  "SVK-2015": {
+   "script": "Devanagari",
+   "purity": 0.945,
+   "lang": "unknown",
+   "method": "ambiguous-devanagari"
+  },
+  "SVK-2016": {
+   "script": "Devanagari",
+   "purity": 0.995,
+   "lang": "hi",
+   "method": "markers"
+  },
+  "SVK-2019": {
+   "script": "Devanagari",
+   "purity": 0.997,
+   "lang": "unknown",
+   "method": "ambiguous-devanagari"
+  },
+  "SVK-2020": {
+   "script": "Devanagari",
+   "purity": 0.998,
+   "lang": "hi",
+   "method": "markers"
+  },
+  "SVK-2021": {
+   "script": "Devanagari",
+   "purity": 0.9942,
+   "lang": "hi",
+   "method": "markers"
+  }
+ }
+}

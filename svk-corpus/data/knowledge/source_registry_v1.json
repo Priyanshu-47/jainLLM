@@ -1,0 +1,260 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jainllm-source-registry-v1",
+  "title": "JainLLM Source Registry v1",
+  "description": "Metadata registry for all external Jain sources. Every source that enters the JainLLM knowledge system must be registered here before acquisition, ingestion, or training. Availability on JainQQ or Jainebooks MUST NOT automatically imply permission to train.",
+  "version": "1.0",
+  "schema": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^EXT-[0-9]{4}$",
+      "description": "Unique external source identifier: EXT-NNNN"
+    },
+    "title": {
+      "type": "string",
+      "description": "Primary title of the source"
+    },
+    "alternate_titles": {
+      "type": "array",
+      "items": {"type": "string"},
+      "description": "Alternative titles or transliterations"
+    },
+    "platform": {
+      "type": "string",
+      "enum": ["JAINQQ", "JAINEBOOKS", "INTERNET_ARCHIVE", "GITHUB", "GRETIL", "MANUAL_ACQUISITION", "OTHER"],
+      "description": "Platform where the source is hosted or acquired from"
+    },
+    "source_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "URL to the source"
+    },
+    "tradition": {
+      "type": "string",
+      "enum": ["STHANAKAVASI", "SVETAMBARA_GENERIC", "SVETAMBARA_MURTIPUJAKA", "TERAPANTHI", "DIGAMBARA", "MULTI_TRADITION", "UNKNOWN"],
+      "description": "Tradition the source belongs to"
+    },
+    "religious_scope": {
+      "type": "string",
+      "enum": ["CORE_STHANAKAVASI", "HIGH_STHANAKAVASI_RELEVANCE", "COMPARATIVE_OTHER_TRADITION", "CONTEXTUAL_JAIN", "UNKNOWN"],
+      "description": "Religious scope for Sthanakavasi relevance"
+    },
+    "knowledge_layer": {
+      "type": "string",
+      "enum": ["CANONICAL", "SUTRA", "COMMENTARY", "TEACHER_INTERPRETATION", "PRACTICE", "PHILOSOPHY", "HISTORY", "BIOGRAPHY", "PRAVACHAN", "LEXICON", "TRANSLATION", "EDUCATIONAL", "COMPARATIVE", "OTHER"],
+      "description": "Knowledge layer classification"
+    },
+    "content_role": {
+      "type": "string",
+      "enum": ["PRIMARY_SCRIPTURE", "SCRIPTURE_TRANSLATION", "SCRIPTURE_EXPLANATION", "COMMENTARY", "TEACHING", "PRACTICE_GUIDANCE", "BIOGRAPHICAL", "HISTORICAL", "REFERENCE", "LEXICON", "COMPARATIVE", "OTHER"],
+      "description": "Functional role of the content"
+    },
+    "canonical_status": {
+      "type": "string",
+      "enum": ["CANONICAL", "CANONICAL_TRANSLATION", "COMMENTARY_ON_CANON", "TRADITIONAL_TEXT", "NON_CANONICAL", "UNKNOWN"],
+      "description": "Canonical status"
+    },
+    "author": {
+      "type": ["string", "null"],
+      "description": "Author of the source"
+    },
+    "commentator": {
+      "type": ["string", "null"],
+      "description": "Commentator if the source is a commentary"
+    },
+    "editor": {
+      "type": ["string", "null"],
+      "description": "Editor of the edition"
+    },
+    "translator": {
+      "type": ["string", "null"],
+      "description": "Translator if the source is a translation"
+    },
+    "teacher_or_author": {
+      "type": ["string", "null"],
+      "description": "Named teacher or author"
+    },
+    "lineage": {
+      "type": ["string", "null"],
+      "description": "Lineage attribution"
+    },
+    "language": {
+      "type": "string",
+      "description": "Primary language(s)"
+    },
+    "script": {
+      "type": "string",
+      "description": "Primary script(s)"
+    },
+    "publication_year": {
+      "type": ["string", "null"],
+      "description": "Publication year"
+    },
+    "publisher": {
+      "type": ["string", "null"],
+      "description": "Publisher"
+    },
+    "edition": {
+      "type": ["string", "null"],
+      "description": "Edition information"
+    },
+    "format": {
+      "type": "string",
+      "description": "Source format (PDF, HTML, EPUB, etc.)"
+    },
+    "page_count": {
+      "type": ["integer", "null"],
+      "description": "Number of pages if known"
+    },
+    "text_available": {
+      "type": "boolean",
+      "description": "Whether machine-readable text is available"
+    },
+    "ocr_available": {
+      "type": "boolean",
+      "description": "Whether OCR text is available"
+    },
+    "download_available": {
+      "type": "boolean",
+      "description": "Whether the source can be downloaded"
+    },
+    "rights_status": {
+      "type": "string",
+      "enum": ["CLEAR", "PERMISSION_REQUIRED", "UNCLEAR", "RESTRICTED", "UNKNOWN"],
+      "description": "Rights clearance status"
+    },
+    "license": {
+      "type": ["string", "null"],
+      "description": "License if declared"
+    },
+    "license_evidence_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "URL to license evidence"
+    },
+    "provenance_notes": {
+      "type": ["string", "null"],
+      "description": "Free-text provenance notes"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": ["VERIFIED", "PROVISIONAL", "CONTESTED", "UNKNOWN"],
+      "description": "Verification status of metadata"
+    },
+    "retrieval_candidate": {
+      "type": "boolean",
+      "description": "Whether this source is a candidate for the retrieval corpus"
+    },
+    "sft_candidate": {
+      "type": "boolean",
+      "description": "Whether this source is a candidate for SFT training (requires CLEAR rights)"
+    },
+    "notes": {
+      "type": ["string", "null"],
+      "description": "Free-text notes"
+    }
+  },
+  "rights_model": {
+    "description": "Rights clearance model for external sources",
+    "rules": [
+      "Availability on JainQQ or Jainebooks does NOT imply training permission",
+      "download_available=true does NOT imply rights_status=CLEAR",
+      "rights_status=CLEAR requires an explicit license or verified public domain status",
+      "sft_candidate=true requires rights_status=CLEAR and a verified license/publication date",
+      "retrieval_candidate may be true even if rights_status is not CLEAR (RAG-only path)"
+    ],
+    "rights_statuses": {
+      "CLEAR": "Rights verified as permitting training use (explicit license, or verified public domain by age)",
+      "PERMISSION_REQUIRED": "Rights holder must grant permission before training use",
+      "UNCLEAR": "Rights status cannot be determined from available evidence",
+      "RESTRICTED": "Rights explicitly prohibit training use (e.g. NoDerivatives, NC without NC lane)",
+      "UNKNOWN": "No rights information available"
+    }
+  },
+  "platform_notes": {
+    "JAINQQ": {
+      "role": "Agam/canonical source discovery; Sthanakavasi editions; multilingual textual editions; source text acquisition",
+      "acquisition_method": "Catalogue discovery via web interface; text acquisition requires manual or API-based download",
+      "training_implication": "Source discovery only. Texts acquired from JainQQ must still pass rights gate before training."
+    },
+    "JAINEBOOKS": {
+      "role": "Broad Jain literature discovery; books, magazines, pravachan, teacher material, practice material, biographies, secondary literature",
+      "acquisition_method": "MCP-based catalogue discovery. Jainebooks MCP is an ACQUISITION/RESEARCH interface, NOT an inference backend.",
+      "training_implication": "Catalogue discovery only. Jainebooks MCP must NOT be part of model inference pipeline. Texts require rights clearance."
+    }
+  },
+  "initial_entries": [
+    {
+      "source_id": "EXT-0001",
+      "title": "Jain Sthanakvasi Agam texts (JainQQ)",
+      "alternate_titles": [],
+      "platform": "JAINQQ",
+      "source_url": null,
+      "tradition": "STHANAKAVASI",
+      "religious_scope": "CORE_STHANAKAVASI",
+      "knowledge_layer": "CANONICAL",
+      "content_role": "PRIMARY_SCRIPTURE",
+      "canonical_status": "CANONICAL",
+      "author": null,
+      "commentator": null,
+      "editor": null,
+      "translator": null,
+      "teacher_or_author": null,
+      "lineage": "Sthanakavasi",
+      "language": "Prakrit",
+      "script": "Devanagari",
+      "publication_year": null,
+      "publisher": null,
+      "edition": null,
+      "format": "unknown",
+      "page_count": null,
+      "text_available": false,
+      "ocr_available": false,
+      "download_available": false,
+      "rights_status": "UNKNOWN",
+      "license": null,
+      "license_evidence_url": null,
+      "provenance_notes": "JainQQ identified as primary platform for Sthanakavasi Agam discovery. To be explored during acquisition phase.",
+      "verification_status": "PROVISIONAL",
+      "retrieval_candidate": true,
+      "sft_candidate": false,
+      "notes": "Platform identified but not yet explored. Discovery phase pending."
+    },
+    {
+      "source_id": "EXT-0002",
+      "title": "Jain eLibrary catalogue (Jainebooks MCP)",
+      "alternate_titles": [],
+      "platform": "JAINEBOOKS",
+      "source_url": null,
+      "tradition": "MULTI_TRADITION",
+      "religious_scope": "UNKNOWN",
+      "knowledge_layer": "OTHER",
+      "content_role": "OTHER",
+      "canonical_status": "UNKNOWN",
+      "author": null,
+      "commentator": null,
+      "editor": null,
+      "translator": null,
+      "teacher_or_author": null,
+      "lineage": null,
+      "language": "unknown",
+      "script": "unknown",
+      "publication_year": null,
+      "publisher": null,
+      "edition": null,
+      "format": "unknown",
+      "page_count": null,
+      "text_available": false,
+      "ocr_available": false,
+      "download_available": false,
+      "rights_status": "UNKNOWN",
+      "license": null,
+      "license_evidence_url": null,
+      "provenance_notes": "Jainebooks MCP identified as broad literature discovery platform. Must NOT be used as inference backend.",
+      "verification_status": "PROVISIONAL",
+      "retrieval_candidate": true,
+      "sft_candidate": false,
+      "notes": "MCP interface is for catalogue discovery only. Per-task instruction: treat as acquisition/research interface."
+    }
+  ]
+}

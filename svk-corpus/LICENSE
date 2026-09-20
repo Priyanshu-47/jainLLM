@@ -1,0 +1,28 @@
+svk-corpus — code and pipeline
+Copyright 2026 The svk-corpus contributors
+
+This project is licensed under the Apache License, Version 2.0 (the "License");
+you may not use these files except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+--------------------------------------------------------------------------
+IMPORTANT: THIS LICENSE COVERS CODE ONLY.
+
+It does NOT cover any text ingested by this pipeline. Source texts keep their
+own copyright status and licence, which are recorded per source in
+manifests/source_manifest.csv and per record in the release JSONL
+(`license` block). Derived datasets produced by this pipeline are released
+under the licence stated in docs/DATA_CARD.md, together with a per-source
+NOTICE list.
+
+No source text may be redistributed by this project unless its gate decision
+in manifests/license_manifest.csv is TRAINING_ALLOWED or RAG_ALLOWED (or
+WITH_CONDITIONS with requirements_met=true).
+--------------------------------------------------------------------------

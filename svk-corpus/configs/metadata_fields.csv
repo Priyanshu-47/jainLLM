@@ -1,0 +1,22 @@
+source_id,language_family,language,language_variant,language_confidence,classification_basis,transliteration_system,sect,sect_confidence,sect_basis,relation_type,parent_source_id
+SVK-0007,Old and Middle Indo-Aryan,Prakrit;Sanskrit,Ardhamagadhi (dictionary entries),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,
+SVK-0037,Old and Middle Indo-Aryan,Prakrit;Sanskrit,Ardhamagadhi (dictionary entries),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,
+SVK-0038,,English,,high,bibliographic_record,,UNKNOWN,high,bibliographic_record,discusses,
+SVK-1001,,English,,high,bibliographic_record,IAST,SVETAMBARA,low,translation_tradition,translation_of,
+SVK-1002,,English,,high,bibliographic_record,IAST,SVETAMBARA,low,translation_tradition,translation_of,
+SVK-1003,,English,,high,bibliographic_record,IAST,SVETAMBARA,low,translation_tradition,translation_of,
+SVK-2001,Middle Indo-Aryan,Prakrit;Hindi,Ardhamagadhi (headwords); Maharashtri (desya section),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,SVK-0007
+SVK-2002,Middle Indo-Aryan,Prakrit;Gujarati,Ardhamagadhi (headwords),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,SVK-2004
+SVK-2003,Middle Indo-Aryan,Prakrit;Gujarati,Ardhamagadhi (headwords),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,SVK-2004
+SVK-2004,Middle Indo-Aryan,Prakrit;Sanskrit;Gujarati;Hindi,Ardhamagadhi (headwords),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,SVK-0007
+SVK-2005,Middle Indo-Aryan,Prakrit;Hindi;Sanskrit,Ardhamagadhi (headwords),medium,bibliographic_record,IAST,STHANAKAVASI,medium,publisher_imprint,edition_of,SVK-0007
+SVK-2006,Middle Indo-Aryan,Prakrit;Hindi;Sanskrit,unknown,medium,bibliographic_record,IAST,UNKNOWN,unknown,insufficient_evidence,,
+SVK-2007,Middle Indo-Aryan,Prakrit;Hindi,unknown,medium,bibliographic_record,IAST,UNKNOWN,unknown,insufficient_evidence,edition_of,SVK-2006
+SVK-2008,,English,,high,bibliographic_record,IAST,UNKNOWN,unknown,insufficient_evidence,,
+SVK-2009,,English,,high,bibliographic_record,IAST,UNKNOWN,unknown,insufficient_evidence,edition_of,SVK-2008
+SVK-2010,Indo-Aryan (Modern),Gujarati,,medium,bibliographic_record,,STHANAKAVASI,medium,title_and_bibliographic_record,,
+SVK-2011,Indo-Aryan (Modern),Gujarati,,medium,bibliographic_record,,UNKNOWN,unknown,insufficient_evidence,,
+SVK-2012,Indo-Aryan (Modern),Gujarati,,medium,bibliographic_record,,UNKNOWN,unknown,insufficient_evidence,,
+SVK-2013,Indo-Aryan (Modern),Gujarati,,medium,bibliographic_record,,UNKNOWN,unknown,insufficient_evidence,,
+SVK-2014,Indo-Aryan (Modern),Gujarati,,medium,bibliographic_record,,UNKNOWN,unknown,insufficient_evidence,,
+SVK-0027,Middle Indo-Aryan,Maharashtri Prakrit;English,Maharashtri,high,dataset_card,IAST,UNKNOWN,unknown,insufficient_evidence,translation_of,

@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "jainllm-knowledge-ontology-v1",
+  "title": "JainLLM Knowledge Ontology v1",
+  "description": "Controlled vocabularies for the Jain knowledge architecture. Defines tradition, knowledge layer, content role, practice, canonical status, entity types, and relationship types used across the source registry, agam inventory, and coverage matrix.",
+  "version": "1.0",
+  "traditions": {
+    "description": "Sectarian and tradition identifiers. STHANAKAVASI is the primary target tradition.",
+    "values": [
+      "STHANAKAVASI",
+      "SVETAMBARA_GENERIC",
+      "SVETAMBARA_MURTIPUJAKA",
+      "TERAPANTHI",
+      "DIGAMBARA",
+      "MULTI_TRADITION",
+      "UNKNOWN"
+    ],
+    "notes": [
+      "STHANAKAVASI: the primary target tradition for JainLLM",
+      "SVETAMBARA_GENERIC: Svetambara material not assignable to a specific sub-sect",
+      "SVETAMBARA_MURTIPUJAKA: Murtipujaka (idol-worshipping) Svetambara tradition",
+      "TERAPANTHI: Terapanthi Svetambara tradition",
+      "DIGAMBARA: Digambara (sky-clad) tradition",
+      "MULTI_TRADITION: material spanning multiple traditions",
+      "UNKNOWN: tradition not determined from available evidence"
+    ]
+  },
+  "knowledge_layers": {
+    "description": "Classification of the knowledge type in a source or passage.",
+    "values": [
+      "CANONICAL",
+      "SUTRA",
+      "COMMENTARY",
+      "TEACHER_INTERPRETATION",
+      "PRACTICE",
+      "PHILOSOPHY",
+      "HISTORY",
+      "BIOGRAPHY",
+      "PRAVACHAN",
+      "LEXICON",
+      "TRANSLATION",
+      "EDUCATIONAL",
+      "COMPARATIVE",
+      "OTHER"
+    ],
+    "notes": [
+      "CANONICAL: canonical scripture (agam text itself)",
+      "SUTRA: a specific sutra passage",
+      "COMMENTARY: traditional commentary on a canonical text",
+      "TEACHER_INTERPRETATION: interpretation by a named teacher/acharya",
+      "PRACTICE: practice guidance (samayik, pratikraman, etc.)",
+      "PHILOSOPHY: philosophical exposition",
+      "HISTORY: historical account",
+      "BIOGRAPHY: biographical account of a teacher or figure",
+      "PRAVACHAN: recorded discourse/sermon",
+      "LEXICON: dictionary or glossary",
+      "TRANSLATION: translation of a source text",
+      "EDUCATIONAL: pedagogical material (pathshala, primer)",
+      "COMPARATIVE: cross-tradition comparison",
+      "OTHER: does not fit above categories"
+    ]
+  },
+  "content_roles": {
+    "description": "Functional role of the content in the knowledge system.",
+    "values": [
+      "PRIMARY_SCRIPTURE",
+      "SCRIPTURE_TRANSLATION",
+      "SCRIPTURE_EXPLANATION",
+      "COMMENTARY",
+      "TEACHING",
+      "PRACTICE_GUIDANCE",
+      "BIOGRAPHICAL",
+      "HISTORICAL",
+      "REFERENCE",
+      "LEXICON",
+      "COMPARATIVE",
+      "OTHER"
+    ]
+  },
+  "practices": {
+    "description": "Jain practice types referenced in training and evaluation.",
+    "values": [
+      "SAMAYIK",
+      "PRATIKRAMAN",
+      "KAYOTSARGA",
+      "VANDANA",
+      "PRATYAKHYAN",
+      "CHAUVISANTHO",
+      "AVASHYAKA",
+      "PARYUSHAN",
+      "OTHER"
+    ],
+    "notes": [
+      "SAMAYIK: equanimity practice",
+      "PRATIKRAMAN: repentance/confession ritual",
+      "KAYOTSARGA: body-abandonment meditation",
+      "VANDANA: veneration/praise",
+      "PRATYAKHYAN: vows/renunciation (also pachchhakhan)",
+      "CHAUVISANTHO:二十四층 glorification of the Tirthankaras",
+      "AVASHYAKA: six obligatory duties",
+      "PARYUSHAN: annual festival of confession and forgiveness",
+      "OTHER: practice not listed above"
+    ]
+  },
+  "canonical_statuses": {
+    "description": "Whether a text is canonical, commentary, or non-canonical.",
+    "values": [
+      "CANONICAL",
+      "CANONICAL_TRANSLATION",
+      "COMMENTARY_ON_CANON",
+      "TRADITIONAL_TEXT",
+      "NON_CANONICAL",
+      "UNKNOWN"
+    ]
+  },
+  "entity_types": {
+    "description": "Types of entities that can be linked in the knowledge graph.",
+    "values": [
+      "AGAM",
+      "SUTRA",
+      "PRACTICE",
+      "TEACHER",
+      "ACHARYA",
+      "MUNI",
+      "SADHVI",
+      "AUTHOR",
+      "COMMENTATOR",
+      "TRANSLATOR",
+      "BOOK",
+      "MAGAZINE",
+      "PRAVACHAN",
+      "CONCEPT",
+      "TIRTHANKARA",
+      "PLACE",
+      "HISTORICAL_EVENT",
+      "LINEAGE"
+    ]
+  },
+  "relationship_types": {
+    "description": "Relationship types between entities in the knowledge graph.",
+    "values": [
+      "SOURCE_CONTAINS",
+      "SOURCE_TRANSLATES",
+      "SOURCE_COMMENTARY_ON",
+      "SOURCE_EXPLAINS",
+      "TEACHER_AUTHORED",
+      "TEACHER_COMMENTED",
+      "TEACHER_TAUGHT",
+      "PRACTICE_REFERENCED_BY",
+      "AGAM_PART_OF_INVENTORY",
+      "CONCEPT_EXPLAINED_BY",
+      "SOURCE_BELONGS_TO_TRADITION"
+    ]
+  },
+  "rights_statuses": {
+    "description": "Rights clearance status for a source.",
+    "values": [
+      "CLEAR",
+      "PERMISSION_REQUIRED",
+      "UNCLEAR",
+      "RESTRICTED",
+      "UNKNOWN"
+    ],
+    "notes": [
+      "CLEAR: rights verified as permitting training use",
+      "PERMISSION_REQUIRED: rights holder must grant permission",
+      "UNCLEAR: rights status cannot be determined from available evidence",
+      "RESTRICTED: rights explicitly prohibit training use (e.g. NoDerivatives)",
+      "UNKNOWN: no rights information available"
+    ]
+  },
+  "verification_statuses": {
+    "description": "How thoroughly a claim has been verified.",
+    "values": [
+      "VERIFIED",
+      "PROVISIONAL",
+      "CONTESTED",
+      "UNKNOWN"
+    ]
+  }
+}

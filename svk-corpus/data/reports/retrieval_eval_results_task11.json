@@ -1,0 +1,1135 @@
+{
+  "generated_at": "2026-09-18T15:10:11",
+  "label": "task11",
+  "corpus_units": 145147,
+  "index_build_s": 54.75,
+  "corpus_load_s": 6.51,
+  "pool_size": 2000,
+  "max_per_source": 3,
+  "strategies": {
+    "bm25": {
+      "metrics": {
+        "recall@5": 0.76,
+        "recall@10": 0.819,
+        "mrr": 0.905,
+        "queries_with_zero_relevant_results": 0,
+        "mean_latency_s": 0.0396,
+        "n_source_level_queries": 17
+      },
+      "sect_context": {
+        "svk_share_of_slots": 0.55,
+        "slot_distribution": {
+          "CORE_STHANAKAVASI": 32,
+          "CONTEXTUAL_JAIN": 26,
+          "HIGH_STHANAKAVASI_RELEVANCE": 12,
+          "UNKNOWN": 8,
+          "COMPARATIVE_OTHER_TRADITION": 2
+        },
+        "first_result_scope": {
+          "CORE_STHANAKAVASI": 3,
+          "CONTEXTUAL_JAIN": 2,
+          "HIGH_STHANAKAVASI_RELEVANCE": 2,
+          "UNKNOWN": 1
+        }
+      },
+      "per_query": [
+        {
+          "id": "q01",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1002",
+            "SVK-1003"
+          ]
+        },
+        {
+          "id": "q02",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.25,
+          "hit_sources_in_top10": [
+            "SVK-1001",
+            "SVK-1002",
+            "SVK-1003"
+          ]
+        },
+        {
+          "id": "q03",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1001"
+          ]
+        },
+        {
+          "id": "q04",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0016"
+          ]
+        },
+        {
+          "id": "q05",
+          "relevance": "source-level",
+          "recall@5": 0.0,
+          "recall@10": 1.0,
+          "mrr": 0.143,
+          "hit_sources_in_top10": [
+            "SVK-0016",
+            "SVK-0038",
+            "SVK-1001",
+            "SVK-1005",
+            "SVK-1007"
+          ]
+        },
+        {
+          "id": "q06",
+          "relevance": "source-level",
+          "recall@5": 0.125,
+          "recall@10": 0.125,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2002"
+          ]
+        },
+        {
+          "id": "q07",
+          "relevance": "source-level",
+          "recall@5": 0.5,
+          "recall@10": 0.5,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2006"
+          ]
+        },
+        {
+          "id": "q08",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2008",
+            "SVK-2009"
+          ]
+        },
+        {
+          "id": "q09",
+          "relevance": "source-level",
+          "recall@5": 0.167,
+          "recall@10": 0.167,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0007"
+          ]
+        },
+        {
+          "id": "q10",
+          "relevance": "source-level",
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0038",
+            "SVK-1005"
+          ]
+        },
+        {
+          "id": "q11",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2010"
+          ]
+        },
+        {
+          "id": "q12",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1010"
+          ]
+        },
+        {
+          "id": "q13",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1009"
+          ]
+        },
+        {
+          "id": "q14",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1006"
+          ]
+        },
+        {
+          "id": "q15",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0026"
+          ]
+        },
+        {
+          "id": "q16",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1007"
+          ]
+        },
+        {
+          "id": "q17",
+          "relevance": "source-level",
+          "recall@5": 0.8,
+          "recall@10": 0.8,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2002",
+            "SVK-2003",
+            "SVK-2011",
+            "SVK-2012",
+            "SVK-2013",
+            "SVK-2014"
+          ]
+        },
+        {
+          "id": "q18",
+          "relevance": "exploratory",
+          "top_sources": [
+            "SVK-0027",
+            "SVK-2006",
+            "SVK-0027",
+            "SVK-2006",
+            "SVK-2006"
+          ]
+        },
+        {
+          "id": "q19",
+          "relevance": "corpus-gap",
+          "top_sources": [
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005"
+          ]
+        },
+        {
+          "id": "q20",
+          "relevance": "exploratory",
+          "top_sources": [
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038"
+          ]
+        }
+      ]
+    },
+    "tiebreak": {
+      "metrics": {
+        "recall@5": 0.76,
+        "recall@10": 0.819,
+        "mrr": 0.905,
+        "queries_with_zero_relevant_results": 0,
+        "mean_latency_s": 0.0451,
+        "n_source_level_queries": 17
+      },
+      "sect_context": {
+        "svk_share_of_slots": 0.55,
+        "slot_distribution": {
+          "CORE_STHANAKAVASI": 32,
+          "CONTEXTUAL_JAIN": 26,
+          "HIGH_STHANAKAVASI_RELEVANCE": 12,
+          "UNKNOWN": 8,
+          "COMPARATIVE_OTHER_TRADITION": 2
+        },
+        "first_result_scope": {
+          "CORE_STHANAKAVASI": 3,
+          "CONTEXTUAL_JAIN": 2,
+          "HIGH_STHANAKAVASI_RELEVANCE": 2,
+          "UNKNOWN": 1
+        }
+      },
+      "per_query": [
+        {
+          "id": "q01",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1002",
+            "SVK-1003"
+          ]
+        },
+        {
+          "id": "q02",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.25,
+          "hit_sources_in_top10": [
+            "SVK-1001",
+            "SVK-1002",
+            "SVK-1003"
+          ]
+        },
+        {
+          "id": "q03",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1001"
+          ]
+        },
+        {
+          "id": "q04",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0016"
+          ]
+        },
+        {
+          "id": "q05",
+          "relevance": "source-level",
+          "recall@5": 0.0,
+          "recall@10": 1.0,
+          "mrr": 0.143,
+          "hit_sources_in_top10": [
+            "SVK-0016",
+            "SVK-0038",
+            "SVK-1001",
+            "SVK-1005",
+            "SVK-1007"
+          ]
+        },
+        {
+          "id": "q06",
+          "relevance": "source-level",
+          "recall@5": 0.125,
+          "recall@10": 0.125,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2004"
+          ]
+        },
+        {
+          "id": "q07",
+          "relevance": "source-level",
+          "recall@5": 0.5,
+          "recall@10": 0.5,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2006"
+          ]
+        },
+        {
+          "id": "q08",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2008",
+            "SVK-2009"
+          ]
+        },
+        {
+          "id": "q09",
+          "relevance": "source-level",
+          "recall@5": 0.167,
+          "recall@10": 0.167,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0007"
+          ]
+        },
+        {
+          "id": "q10",
+          "relevance": "source-level",
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0038",
+            "SVK-1005"
+          ]
+        },
+        {
+          "id": "q11",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2010"
+          ]
+        },
+        {
+          "id": "q12",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1010"
+          ]
+        },
+        {
+          "id": "q13",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1009"
+          ]
+        },
+        {
+          "id": "q14",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1006"
+          ]
+        },
+        {
+          "id": "q15",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0026"
+          ]
+        },
+        {
+          "id": "q16",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1007"
+          ]
+        },
+        {
+          "id": "q17",
+          "relevance": "source-level",
+          "recall@5": 0.8,
+          "recall@10": 0.8,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2002",
+            "SVK-2003",
+            "SVK-2011",
+            "SVK-2012",
+            "SVK-2013",
+            "SVK-2014"
+          ]
+        },
+        {
+          "id": "q18",
+          "relevance": "exploratory",
+          "top_sources": [
+            "SVK-2006",
+            "SVK-0027",
+            "SVK-0027",
+            "SVK-2006",
+            "SVK-2006"
+          ]
+        },
+        {
+          "id": "q19",
+          "relevance": "corpus-gap",
+          "top_sources": [
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005"
+          ]
+        },
+        {
+          "id": "q20",
+          "relevance": "exploratory",
+          "top_sources": [
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038"
+          ]
+        }
+      ]
+    },
+    "diversify": {
+      "metrics": {
+        "recall@5": 0.777,
+        "recall@10": 0.836,
+        "mrr": 0.905,
+        "queries_with_zero_relevant_results": 0,
+        "mean_latency_s": 0.0453,
+        "n_source_level_queries": 17
+      },
+      "sect_context": {
+        "svk_share_of_slots": 0.537,
+        "slot_distribution": {
+          "CORE_STHANAKAVASI": 32,
+          "CONTEXTUAL_JAIN": 23,
+          "HIGH_STHANAKAVASI_RELEVANCE": 11,
+          "UNKNOWN": 8,
+          "COMPARATIVE_OTHER_TRADITION": 3,
+          "CANONICAL_FOUNDATION": 3
+        },
+        "first_result_scope": {
+          "CORE_STHANAKAVASI": 3,
+          "CONTEXTUAL_JAIN": 2,
+          "HIGH_STHANAKAVASI_RELEVANCE": 2,
+          "UNKNOWN": 1
+        }
+      },
+      "per_query": [
+        {
+          "id": "q01",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1001",
+            "SVK-1002",
+            "SVK-1003",
+            "SVK-2009"
+          ]
+        },
+        {
+          "id": "q02",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 0.25,
+          "hit_sources_in_top10": [
+            "SVK-1001",
+            "SVK-1002",
+            "SVK-1003",
+            "SVK-1005"
+          ]
+        },
+        {
+          "id": "q03",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1001"
+          ]
+        },
+        {
+          "id": "q04",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0007",
+            "SVK-0016",
+            "SVK-2006",
+            "SVK-2007"
+          ]
+        },
+        {
+          "id": "q05",
+          "relevance": "source-level",
+          "recall@5": 0.0,
+          "recall@10": 1.0,
+          "mrr": 0.143,
+          "hit_sources_in_top10": [
+            "SVK-0016",
+            "SVK-0038",
+            "SVK-1001",
+            "SVK-1005",
+            "SVK-1007"
+          ]
+        },
+        {
+          "id": "q06",
+          "relevance": "source-level",
+          "recall@5": 0.25,
+          "recall@10": 0.25,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2002",
+            "SVK-2004"
+          ]
+        },
+        {
+          "id": "q07",
+          "relevance": "source-level",
+          "recall@5": 0.5,
+          "recall@10": 0.5,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2006"
+          ]
+        },
+        {
+          "id": "q08",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2008",
+            "SVK-2009"
+          ]
+        },
+        {
+          "id": "q09",
+          "relevance": "source-level",
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0007",
+            "SVK-0037"
+          ]
+        },
+        {
+          "id": "q10",
+          "relevance": "source-level",
+          "recall@5": 0.333,
+          "recall@10": 0.333,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0038",
+            "SVK-1005",
+            "SVK-1007",
+            "SVK-2009"
+          ]
+        },
+        {
+          "id": "q11",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2010"
+          ]
+        },
+        {
+          "id": "q12",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1007",
+            "SVK-1010"
+          ]
+        },
+        {
+          "id": "q13",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0038",
+            "SVK-1001",
+            "SVK-1005",
+            "SVK-1006",
+            "SVK-1009"
+          ]
+        },
+        {
+          "id": "q14",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1001",
+            "SVK-1005",
+            "SVK-1006",
+            "SVK-1007",
+            "SVK-1010"
+          ]
+        },
+        {
+          "id": "q15",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-0026",
+            "SVK-1006"
+          ]
+        },
+        {
+          "id": "q16",
+          "relevance": "source-level",
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-1007"
+          ]
+        },
+        {
+          "id": "q17",
+          "relevance": "source-level",
+          "recall@5": 0.8,
+          "recall@10": 0.8,
+          "mrr": 1.0,
+          "hit_sources_in_top10": [
+            "SVK-2002",
+            "SVK-2003",
+            "SVK-2011",
+            "SVK-2012",
+            "SVK-2013",
+            "SVK-2014"
+          ]
+        },
+        {
+          "id": "q18",
+          "relevance": "exploratory",
+          "top_sources": [
+            "SVK-2006",
+            "SVK-0027",
+            "SVK-0027",
+            "SVK-2006",
+            "SVK-2006"
+          ]
+        },
+        {
+          "id": "q19",
+          "relevance": "corpus-gap",
+          "top_sources": [
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-1005",
+            "SVK-0026",
+            "SVK-0026"
+          ]
+        },
+        {
+          "id": "q20",
+          "relevance": "exploratory",
+          "top_sources": [
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-0038",
+            "SVK-1005",
+            "SVK-1005"
+          ]
+        }
+      ]
+    }
+  },
+  "q09_detail": {
+    "bm25": [
+      {
+        "rank": 1,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 1,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "^"
+      },
+      {
+        "rank": 2,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 2,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "("
+      },
+      {
+        "rank": 3,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 3,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~~ ~~ -- ~ ~~ ~~"
+      },
+      {
+        "rank": 4,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 4,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "----~---~ --\"~-- ~~ ~ ~"
+      },
+      {
+        "rank": 5,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 5,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~ ----------------------~---------~-------~--~----"
+      },
+      {
+        "rank": 6,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 6,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "= ~"
+      },
+      {
+        "rank": 7,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 7,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~ ^+"
+      },
+      {
+        "rank": 8,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 8,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "{ £"
+      },
+      {
+        "rank": 9,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 9,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": ">>."
+      },
+      {
+        "rank": 10,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 10,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": ">"
+      }
+    ],
+    "tiebreak": [
+      {
+        "rank": 1,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 1,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "^"
+      },
+      {
+        "rank": 2,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 2,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "("
+      },
+      {
+        "rank": 3,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 3,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~~ ~~ -- ~ ~~ ~~"
+      },
+      {
+        "rank": 4,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 4,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "----~---~ --\"~-- ~~ ~ ~"
+      },
+      {
+        "rank": 5,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 5,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~ ----------------------~---------~-------~--~----"
+      },
+      {
+        "rank": 6,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 6,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "= ~"
+      },
+      {
+        "rank": 7,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 7,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~ ^+"
+      },
+      {
+        "rank": 8,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 8,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "{ £"
+      },
+      {
+        "rank": 9,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 9,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": ">>."
+      },
+      {
+        "rank": 10,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 10,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": ">"
+      }
+    ],
+    "diversify": [
+      {
+        "rank": 1,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 1,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "^"
+      },
+      {
+        "rank": 2,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 2,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "("
+      },
+      {
+        "rank": 3,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 3,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~~ ~~ -- ~ ~~ ~~"
+      },
+      {
+        "rank": 4,
+        "source_id": "SVK-0037",
+        "title": "An Illustrated Ardha-Magadhi Dictionary Vol 1",
+        "bm25_rank_before": 1742,
+        "bm25_score": 4.1054,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "HIGH",
+        "year": "1923",
+        "text_head": "~~ =<"
+      },
+      {
+        "rank": 5,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 4,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "----~---~ --\"~-- ~~ ~ ~"
+      },
+      {
+        "rank": 6,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 5,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~ ----------------------~---------~-------~--~----"
+      },
+      {
+        "rank": 7,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 6,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "= ~"
+      },
+      {
+        "rank": 8,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 7,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "~ ^+"
+      },
+      {
+        "rank": 9,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 8,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": "{ £"
+      },
+      {
+        "rank": 10,
+        "source_id": "SVK-0007",
+        "title": "Ardha Magadhi Dictionary Vols 2 and 5 (1927; ",
+        "bm25_rank_before": 9,
+        "bm25_score": 4.1981,
+        "scope": "CORE_STHANAKAVASI",
+        "confidence": "MEDIUM",
+        "source_quality": "MEDIUM",
+        "year": "1927",
+        "text_head": ">>."
+      }
+    ]
+  }
+}

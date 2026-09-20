@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-09-19",
+  "version": "2.0",
+  "description": "Practice coverage gap matrix v2. Combines Task 25 JainQQ candidates with Task 26 Jainebooks candidates.",
+  "practices": [
+    {
+      "practice": "SAMAYIK",
+      "existing_candidates": ["JAINQQ-002489"],
+      "new_jainebooks_candidates": ["JB-001", "JB-009", "JB-013"],
+      "strongest_source": "JB-001 (Look-N-Learn Samayik by Namramuni Maharaj — confirmed Sthanakvasi Muni)",
+      "teacher_or_lineage": "Namramuni Maharaj (Sthanakvasi Muni)",
+      "knowledge_layer": "PRACTICE",
+      "evidence": "Author confirmed as Sthanakvasi Muni on Jainebooks. English practice guide.",
+      "remaining_gap": "No standalone Samayik pravachan or meditation guide. JB-001 is educational, not discourse."
+    },
+    {
+      "practice": "PRATIKRAMAN",
+      "existing_candidates": ["JAINQQ-002489", "JAINQQ-037218", "JAINQQ-200026"],
+      "new_jainebooks_candidates": ["JB-002", "JB-003", "JB-007", "JB-008", "JB-010", "JB-011"],
+      "strongest_source": "JB-002 (Shravak Pratikraman — English) + JAINQQ-002489 (Prakrit mool + Hindi)",
+      "teacher_or_lineage": "Multiple sources, tradition unverified for Jainebooks entries",
+      "knowledge_layer": "PRACTICE",
+      "evidence": "6 Jainebooks candidates + 3 JainQQ candidates. Practice coverage is now STRONG.",
+      "remaining_gap": "Sthanakvasi-specific Pratikraman pravachan. Most Jainebooks entries have unverified tradition."
+    },
+    {
+      "practice": "KAYOTSARGA",
+      "existing_candidates": ["JAINQQ-002489", "JAINQQ-001218"],
+      "new_jainebooks_candidates": [],
+      "strongest_source": "JAINQQ-002489 (Avashyak Sutra Chapter 5)",
+      "teacher_or_lineage": "Amarmuni commentary (Sthanakvasi)",
+      "knowledge_layer": "CANONICAL",
+      "evidence": "No new Jainebooks candidates found for Kayotsarga.",
+      "remaining_gap": "No standalone Kayotsarg meditation guide. No teacher commentary. Only canonical text reference."
+    },
+    {
+      "practice": "VANDANA",
+      "existing_candidates": ["JAINQQ-002489"],
+      "new_jainebooks_candidates": ["JB-008"],
+      "strongest_source": "JAINQQ-002489 (Avashyak Sutra Chapter 3)",
+      "teacher_or_lineage": "Amarmuni commentary (Sthanakvasi)",
+      "knowledge_layer": "CANONICAL",
+      "evidence": "JB-008 is Vandittu Pratikraman (not Vandana-specific). Still limited.",
+      "remaining_gap": "No standalone Vandana explanation or teacher commentary."
+    },
+    {
+      "practice": "PRATYAKHYAN",
+      "existing_candidates": ["JAINQQ-002489", "JAINQQ-002500"],
+      "new_jainebooks_candidates": [],
+      "strongest_source": "JAINQQ-002489 (Avashyak Sutra Chapter 6)",
+      "teacher_or_lineage": "Amarmuni commentary (Sthanakvasi)",
+      "knowledge_layer": "CANONICAL",
+      "evidence": "No new Jainebooks candidates for Pratyakhyan.",
+      "remaining_gap": "No standalone Pratyakhyan explanation or teacher commentary."
+    },
+    {
+      "practice": "CHAUVISANTHO",
+      "existing_candidates": ["JAINQQ-002489"],
+      "new_jainebooks_candidates": [],
+      "strongest_source": "JAINQQ-002489 (Avashyak Sutra Chapter 2)",
+      "teacher_or_lineage": "Amarmuni commentary (Sthanakvasi)",
+      "knowledge_layer": "CANONICAL",
+      "evidence": "Chauvisantho is covered in the Avashyak Sutra but no standalone text found.",
+      "remaining_gap": "NO STANDALONE CHAUVISANTHO TEXT. Need Chauvisantho + explanation."
+    },
+    {
+      "practice": "AVASHYAKA",
+      "existing_candidates": ["JAINQQ-002489", "SVK-2015"],
+      "new_jainebooks_candidates": ["JB-003", "JB-010", "JB-011", "JB-012"],
+      "strongest_source": "JAINQQ-002489 (complete Avashyak Sutra) + JB-003/010/011 (trilingual Pratikraman Avashyak)",
+      "teacher_or_lineage": "Amarmuni (JainQQ) + Sankalit (Jainebooks)",
+      "knowledge_layer": "CANONICAL;PRACTICE",
+      "evidence": "Strongest practice coverage. 4 new Jainebooks candidates. Trilingual (Eng+Hin+Guj).",
+      "remaining_gap": "Part 2 of Avashyak Sutra may exist. Teacher commentary beyond Amarmuni."
+    },
+    {
+      "practice": "PARYUSHAN",
+      "existing_candidates": [],
+      "new_jainebooks_candidates": [],
+      "strongest_source": null,
+      "teacher_or_lineage": null,
+      "knowledge_layer": null,
+      "evidence": "NO CANDIDATES FOUND on either platform.",
+      "remaining_gap": "CRITICAL: No Sthanakvasi Paryushan liturgy, practice guide, or pravachan found anywhere."
+    }
+  ]
+}

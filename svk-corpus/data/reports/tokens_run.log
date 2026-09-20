@@ -1,0 +1,15 @@
+tokenizer measurements (released corpora):
+  rag: 145147 records, 14520043 chars
+    gemma-3-4b-it-unsloth      5159251 tokens  0.3553 tok/char  [verified]
+    gemma-4-E4B-it             5159259 tokens  0.3553 tok/char  [verified]
+    qwen3-0.6b                 8182054 tokens  0.5635 tok/char  [verified]
+    qwen3-embed-0.6b           8182054 tokens  0.5635 tok/char  [verified]
+    qwen3.5-4b                 6754902 tokens  0.4652 tok/char  [verified]
+    sarvam-30b                 5082699 tokens    0.35 tok/char  [verified]
+  training: 82470 records, 13589439 chars
+    gemma-3-4b-it-unsloth      4631872 tokens  0.3408 tok/char  [verified]
+    gemma-4-E4B-it             4631880 tokens  0.3408 tok/char  [verified]
+    qwen3-0.6b                 7392115 tokens   0.544 tok/char  [verified]
+    qwen3-embed-0.6b           7392115 tokens   0.544 tok/char  [verified]
+    qwen3.5-4b                 6062098 tokens  0.4461 tok/char  [verified]
+    sarvam-30b                 4560988 tokens  0.3356 tok/char  [verified]

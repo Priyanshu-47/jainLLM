@@ -1,0 +1,159 @@
+{
+  "generated_at": "2026-09-19",
+  "version": "1.0",
+  "description": "Sthanakavasi teacher source inventory. Only teachers with explicit Sthanakavasi association evidence are included.",
+  "teachers": [
+    {
+      "teacher_id": "TCH-001",
+      "name": "Amarmuni",
+      "role": "Muni/Commentator",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: commentator on Sthanakvasi Agam editions on JainQQ",
+      "source_count": 3,
+      "pravachan_count": 0,
+      "commentary_count": 3,
+      "biography_count": 0,
+      "language": "Hindi;Prakrit",
+      "best_sources": [
+        {
+          "source_id": "JAINQQ-002489",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_28_Mool_01_Aavashyak_Sutra_Sthanakvasi_Romanized/002489",
+          "role": "Commentator"
+        },
+        {
+          "source_id": "JAINQQ-002905",
+          "title": "Agam 03 Ang 03 Sthanang Sutra Part 01 Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_03_Ang_03_Sthanang_Sutra_Part_01_Sthanakvasi/002905",
+          "role": "Commentator"
+        },
+        {
+          "source_id": "JAINQQ-001828",
+          "title": "Agam 24 Chhed 01 Nishith Sutra Part 01 Sthanakvasi",
+          "url": "https://jainqq.org/booktext/Agam_24_Chhed_01_Nishith_Sutra_Part_01_Sthanakvasi_Romanized/001828",
+          "role": "Commentator"
+        }
+      ],
+      "evidence_urls": ["https://jainqq.org/explore/002489"],
+      "verification_status": "PROVISIONAL"
+    },
+    {
+      "teacher_id": "TCH-002",
+      "name": "Acharya Ghanshilalji Maharaj",
+      "role": "Acharya/Commentator",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: 'Priydarshini' commentary on Uttaradhyayana, published by Sthanakvasi institution",
+      "source_count": 2,
+      "pravachan_count": 0,
+      "commentary_count": 2,
+      "biography_count": 0,
+      "language": "Gujarati;Hindi",
+      "best_sources": [
+        {
+          "source_id": "JAINQQ-006372",
+          "title": "Agam 30 Mool 03 Uttaradhyayana Sutra Part 04 Sthanakvasi",
+          "url": "https://jaingpt.org/knowledge/agam_30_mool_03_uttaradhyayana_sutra_part_04_sthanakvasi_006372_006372",
+          "role": "Commentator (Priydarshini)"
+        },
+        {
+          "source_id": "JAINQQ-006381",
+          "title": "Kalpsutra Part 01 Sthanakvasi",
+          "url": "https://jaingpt.org/knowledge/kalpsutra_part_01_sthanakvasi_006381_006381",
+          "role": "Editor/Publisher"
+        }
+      ],
+      "evidence_urls": ["https://jaingpt.org/knowledge/agam_30_mool_03_uttaradhyayana_sutra_part_04_sthanakvasi_006372_006372"],
+      "verification_status": "PROVISIONAL"
+    },
+    {
+      "teacher_id": "TCH-003",
+      "name": "Muni Shri Kanhaiyalalji Maharaj",
+      "role": "Muni/Commentator",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: Sanskrit/Prakrit commentary on Kalpa Sutra, Sthanakvasi edition",
+      "source_count": 1,
+      "pravachan_count": 0,
+      "commentary_count": 1,
+      "biography_count": 0,
+      "language": "Sanskrit;Prakrit;Hindi",
+      "best_sources": [
+        {
+          "source_id": "JAINQQ-006381",
+          "title": "Kalpsutra Part 01 Sthanakvasi",
+          "url": "https://jaingpt.org/knowledge/kalpsutra_part_01_sthanakvasi_006381_006381",
+          "role": "Commentator"
+        }
+      ],
+      "evidence_urls": ["https://jaingpt.org/knowledge/kalpsutra_part_01_sthanakvasi_006381_006381"],
+      "verification_status": "PROVISIONAL"
+    },
+    {
+      "teacher_id": "TCH-004",
+      "name": "Pravin Rishi Upadhyay",
+      "role": "Upadhyay/Teacher",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: listed in Jain eLibrary master list as Sthanakvasi author",
+      "source_count": 1,
+      "pravachan_count": 0,
+      "commentary_count": 0,
+      "biography_count": 0,
+      "language": "Hindi;Gujarati",
+      "best_sources": [
+        {
+          "source_id": "JAINQQ-ELIBRARY",
+          "title": "Jain eLibrary Available All Literature Master List",
+          "url": "https://jainqq.org/booktext/Jain_eLibrary_Available_All_Literature_Master_List_till_to_the_17th_November_2018_Romanized/000020",
+          "role": "Author"
+        }
+      ],
+      "evidence_urls": ["https://jainqq.org/booktext/Jain_eLibrary_Available_All_Literature_Master_List_till_to_the_17th_November_2018_Romanized/000020"],
+      "verification_status": "UNKNOWN"
+    },
+    {
+      "teacher_id": "TCH-005",
+      "name": "Acharya Ratna Rishiji Maharaj",
+      "role": "Acharya (guru of Anand Rishi)",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: guru of Anand Rishi, mentioned in Grokipedia biography",
+      "source_count": 0,
+      "pravachan_count": 0,
+      "commentary_count": 0,
+      "biography_count": 1,
+      "language": "Hindi",
+      "best_sources": [],
+      "evidence_urls": ["https://grokipedia.com/page/anand_rishiji"],
+      "verification_status": "UNKNOWN"
+    },
+    {
+      "teacher_id": "TCH-006",
+      "name": "Acharya Anand Rishi",
+      "role": "Acharya",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: Sthanakvasi Acharya, guru was Ratna Rishiji",
+      "source_count": 0,
+      "pravachan_count": 0,
+      "commentary_count": 0,
+      "biography_count": 1,
+      "language": "Hindi",
+      "best_sources": [],
+      "evidence_urls": ["https://grokipedia.com/page/anand_rishiji"],
+      "verification_status": "UNKNOWN",
+      "note": "No texts found on JainQQ/Jainebooks. Biography exists but no digital pravachan/commentary material located."
+    },
+    {
+      "teacher_id": "TCH-007",
+      "name": "Acharya Shri Shiv Muniji Maharaj",
+      "role": "Acharya",
+      "tradition": "STHANAKAVASI",
+      "lineage": "evidence: mentioned as Sthanakvasi Acharya in Jain Digest 2011",
+      "source_count": 0,
+      "pravachan_count": 0,
+      "commentary_count": 0,
+      "biography_count": 0,
+      "language": "Hindi",
+      "best_sources": [],
+      "evidence_urls": ["https://jainqq.org/booktext/Jain_Digest_2011_04/527119"],
+      "verification_status": "UNKNOWN"
+    }
+  ]
+}

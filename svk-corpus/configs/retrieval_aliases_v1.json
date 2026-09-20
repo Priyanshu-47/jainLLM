@@ -1,0 +1,105 @@
+{
+  "version": "v1",
+  "created": "2026-09-18",
+  "task": "Task 9 — deterministic romanization folding + aliases for retrieval ONLY",
+  "policy": {
+    "retrieval_only": "Applied to the BM25 index text and to queries. Never applied to corpus files; returned results always expose the original released text and full provenance.",
+    "no_stemming": "Stemming would merge distinct religious/philosophical terms (e.g. 'sutra'/'sutrakritanga').",
+    "no_fuzzy_matching": "Soundex/metaphone-style matching would merge distinct Prakrit/Sanskrit/Indic words.",
+    "orthographic_only": "Mapping two spellings is an ORTHOGRAPHIC equivalence for search. It never asserts religious, textual, or canonical equivalence between works, recensions, or traditions.",
+    "evidence_bar": "Every entry must be justified by existing corpus text, Task 8 evaluation queries, or manifest/source metadata. Variants without such evidence are listed under rejected_variants."
+  },
+  "folding": {
+    "description": "Deterministic one-directional Latin diacritic folding for Latin-script tokens. Unconditional (script-verified by construction), reversible: no, idempotent: yes. Kept minimal: vowel/retroflex/nasal/honorific letters as observed in corpus titles ('Sthānakavāsī' vs 'Sthanakvasi', 'Tattvārtha' vs 'Tattvartha').",
+    "map": {
+      "ā": "a", "ī": "i", "ū": "u", "ē": "e", "ō": "o",
+      "ṛ": "ri", "ṝ": "ri", "ḷ": "l", "ḹ": "l",
+      "ṅ": "n", "ñ": "n", "ṇ": "n",
+      "ṭ": "t", "ḍ": "d",
+      "ś": "sh", "ṣ": "sh", "ẖ": "h",
+      "ṃ": "n", "ḥ": ""
+    },
+    "applied_to": "Latin-script tokens only. Indic-script (Devanagari/Gujarati) tokens are passed through untouched; no cross-script transliteration is attempted (no evidence base for it in this task)."
+  },
+  "alias_groups": [
+    {
+      "canonical_key": "જૈનધર્મ",
+      "expansions": ["જૈન ધર્મ", "જેનધરમ", "જેન ધર્મ"],
+      "parts_as_search_terms": true,
+      "direction": "phrase_rule + single_token",
+      "reason": "Gujarati 'Jain dharma'. Corpus uses the compound જૈનધર્મ (5 units) and the spaced જૈન ધર્મ (2 units) in the same sources; 'જેનધરમ' is the no-virama spelling of the compound, attested once inside the phrase 'જેનધરમનું' (SVK-2012, sect-critical sentence). Mapped in BOTH directions: a compound query reaches spaced docs and a spaced query reaches compound docs. Phrase mechanism guarantees fragments ('જૈન', 'ધર્મ' alone) never become alias keys.",
+      "basis": "corpus_text (release JSONL grep + context inspection, 2026-09-18)",
+      "corpus_occurrences": "જૈનધર્મ 5 units; જૈન ધર્મ 2 units; જેનધરમ 1 unit (SVK-2012); જેન ધર્મ 0 — added for query-side coverage of the no-virama system",
+      "confidence": "MEDIUM"
+    },
+    {
+      "canonical_key": "ધર્મ",
+      "expansions": ["ધરમ"],
+      "single_token_only": true,
+      "reason": "Historical/OCR spelling WITHOUT virama: 'ધરમ' occurs 29 units, concentrated in SVK-2012 (12) and SVK-2014 (11) where contexts are unambiguous 'dharma' prose ('ધરમની વ્યાખ્યામાં', 'વીર પરમાત્માનું નામ એ ધરમ બનાવી દેશે'); the isolated ધરમ token cannot be a substring false-positive (it contains no combining signs). In OCR-heavy dictionary sources (SVK-2002/2003/2004) ધરમ appears only INSIDE garbled longer strings (ઉંધરમા, મધરમ, શકેરધરમાં) — different tokens, unaffected by an exact-token alias. Full context list preserved in task10 report.",
+      "basis": "corpus_text (context inspection of all 31 occurrences, 2026-09-18)",
+      "corpus_occurrences": "ધરમ 29 units (SVK-2012 12, SVK-2014 11, dictionaries 6) vs ધર્મ 242 units",
+      "confidence": "MEDIUM"
+    },
+    {
+      "canonical_key": "sutrakrtanga",
+      "expansions": ["sutrakritanga"],
+      "direction": "query_expansion",
+      "reason": "Standard Sanskrit transliteration 'Sūtrakṛtāṅga' → folded 'sutrakrtanga'; the older/looser romanization 'Sutrakritanga' occurs in user queries (Task 8 q3 'Sutrakritanga' failed against a corpus using 'Sutrakrtanga').",
+      "basis": "corpus_text + task8_eval_queries",
+      "corpus_occurrences": "Sutrakrtanga 4868 units; Sutrakritanga 1 unit (release JSONL grep, 2026-09-18)",
+      "confidence": "HIGH"
+    },
+    {
+      "canonical_key": "uttaradhyayana",
+      "expansions": ["utradhyayan"],
+      "direction": "query_expansion",
+      "reason": "Historical romanization 'Utradhyayan' (colonial-era orthography, vowel deletion) vs standard 'Uttaradhyayana'. Task 8 q5 'Uttaradhyayana Sutra' under-recalled against corpus text using 'Utradhyayan'.",
+      "basis": "corpus_text + task8_eval_queries",
+      "corpus_occurrences": "Utradhyayan 1984 units; Uttaradhyayana 5 units (release JSONL grep, 2026-09-18)",
+      "confidence": "HIGH"
+    },
+    {
+      "canonical_key": "uttaradhyayana",
+      "expansions": ["uttarajjhayana"],
+      "direction": "query_expansion",
+      "reason": "Prakrit title form 'Uttarajjhayana' vs Sanskritized 'Uttarādhyayana'. Both spellings occur in the corpus (Prakrit-grammar/dictionary contexts), so a query using either form should reach units using the other. Same canonical text title, different script-era romanization — orthographic mapping only.",
+      "basis": "corpus_text",
+      "corpus_occurrences": "Uttarajjhayana 2 units (release JSONL grep, 2026-09-18)",
+      "confidence": "MEDIUM"
+    },
+    {
+      "canonical_key": "ratnachandraji",
+      "expansions": ["ratnachandra"],
+      "direction": "query_expansion",
+      "reason": "Muni Ratnachandra (lexicographer, Task 8 q9) is named in the corpus overwhelmingly as 'Ratnachandraji' (honorific fused into one token). A query 'Ratnachandra' must reach those units.",
+      "basis": "corpus_text + task8_eval_queries",
+      "corpus_occurrences": "Ratnachandraji 12177 units (release JSONL grep, 2026-09-18)",
+      "confidence": "HIGH"
+    },
+    {
+      "canonical_key": "ratnachandraji",
+      "expansions": ["ratna chandra ji"],
+      "direction": "multi_token_expansion",
+      "reason": "Task 8's documented failure mode 'Ratnachandra vs Ratna Chandra Ji': the fully spaced form with honorific tokenizes as three tokens ('ratna','chandra','ji') and matches nothing, because the corpus fuses 'Ratnachandraji' into one token. Phrase rule: the contiguous sequence injects the fused term; the parts themselves never become keys or index terms.",
+      "basis": "task8_eval_queries",
+      "corpus_occurrences": "spaced 'Ratna Chandra' occurs 0 times in the release (grep, 2026-09-18) — the expansion covers the spaced+honorific query form only",
+      "confidence": "MEDIUM"
+    }
+  ],
+  "rejected_variants": [
+    {"form": "જયન ↔ જૈન", "reason": "DIFFERENT LEXEMES. All 24 corpus occurrences of 'જયન' are inside 'વિજયની' (victory; city names like Vijayapuri) or OCR numerics (SVK-2002/2003, context-inspected 2026-09-18). Merging would summon victory/city passages for 'Jain' queries."},
+    {"form": "જિન ↔ જૈન", "reason": "Distinct words ('જિન' = Jina/conqueror, 'જૈન' = Jain) — never merged. The Task 10 tokenizer fix REMOVED the pre-existing accidental collision (both collapsed to identical fragments ['જ','ન'] under the old combining-mark-dropping tokenizer); they are now correctly distinct tokens."},
+    {"form": "ધરમ inside dictionary sources (SVK-2002/2003/2004)", "reason": "There ધરમ appears only as a substring of OCR-garbled longer strings (ઉંધરમા, મધરમ, શકેરધરમાં) — different tokens unaffected by an exact-token alias; no standalone dharma usage found there."},
+    {"form": "જૈની / જૈન્ય", "reason": "0 occurrences in the corpus — no evidence; the derivational morphology of Gujarati is NOT aliased (would be unbounded stemming)."},
+    {"form": "sthankavasi / sathan kavasi ↔ sthanakvasi", "reason": "Different romanization systems (English catalog vs Gujarati transliteration) naming DIFFERENT works/editions; no corpus evidence they refer to the same text string, and merging them risks conflating distinct sources (SVK-2010 vs sect references). Not evidenced as an orthographic equivalence."},
+    {"form": "aa → a vowel-length folding", "reason": "No Task 8 failure demonstrates it; would risk merging unrelated terms."},
+    {"form": "generic 'ji' honorific stripping", "reason": "Handled only inside the evidenced ratnachandraji groups; a global rule could merge unrelated personal names."},
+    {"form": "cross-script transliteration (Devanagari→Latin)", "reason": "No evidence base compiled in this task; explicitly out of scope."}
+  ],
+  "apply_at": {
+    "index": "BM25Index builds its token map over folded tokens and adds alias expansions of every folded term in the document.",
+    "query": "BM25Index.search folds the query and expands each folded query token through the alias map before scoring.",
+    "results": "Returned documents are the ORIGINAL RetrievalDocument objects — text, locator, provenance and religious_scope are untouched."
+  }
+}

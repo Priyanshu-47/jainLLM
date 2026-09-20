@@ -1,0 +1,63 @@
+source_id,religious_scope
+SVK-0001,UNKNOWN | UNKNOWN | Mixed patron-library collection that per manifest notes skews Digambara and generic-Jain, NOT Sthanakvasi; per-item sect audit required before any Sthanakvasi claim | MULTIPLE | various | mixed (per-item audit required)
+SVK-0002,CORE_STHANAKAVASI | HIGH | Dual evidence: author Muni Sushil Kumar is a documented Sthanakvasi teacher/monk/Acharya (Wikipedia biographic record, 15 June 1926 - 22 April 1994), and the publisher is explicitly the A.B.S. Sthanakvasi Jain Conference Bhavan, New Delhi | EXPOSITION; CATECHISM | Muni Sushil Kumar (Acharya, 1926-1994) | Akhil Bharatiya Svetambar Sthanakvasi Jain Conference
+SVK-0003,CORE_STHANAKAVASI | HIGH | Publisher imprint explicitly S S Jain Conference (Sthanakvasi), Indore 1923 | LEXICON | Muni Ratnachandra | S S Jain Conference (Sthanakvasi)
+SVK-0004,CORE_STHANAKAVASI | HIGH | Publisher imprint explicitly S S Jain Conference (Sthanakvasi), Bombay 1930 | LEXICON | Muni Ratnachandra | S S Jain Conference (Sthanakvasi)
+SVK-0005,CORE_STHANAKAVASI | HIGH | Publisher imprint explicitly S S Jain Conference (Sthanakvasi); same work as SVK-0004 | LEXICON | Shri Ratna Chandra Ji Maharaj | S S Jain Conference (Sthanakvasi)
+SVK-0006,CORE_STHANAKAVASI | HIGH | Title itself names the S Sthanakwasi Jaina Conference as publisher | LEXICON | Muni Ratnachandra Maharaj | S Sthanakwasi Jaina Conference
+SVK-0007,CORE_STHANAKAVASI | MEDIUM | Publisher imprint (SS Jain Conference) per bibliographic record; DLI scan carries no explicit statement | LEXICON | Muni Ratnachandra | S S Jain Conference (Sthanakvasi)
+SVK-0008,CORE_STHANAKAVASI | LOW | Title names the sect (Sthanakvasi Jainonum Dharmakartavya); no publisher/author metadata to corroborate | CONDUCT MANUAL | unknown | unknown
+SVK-0009,CORE_STHANAKAVASI | HIGH | Institutional history of the A.B. Svetambar Sthanakvasi Jain Conference itself | INSTITUTIONAL HISTORY | unknown | Akhil Bharatiya Svetambar Sthanakvasi Jain Conference
+SVK-0010,CORE_STHANAKAVASI | LOW | Duplicate scan of SVK-0009; inherits subject but has weaker provenance and no independent verification | INSTITUTIONAL HISTORY | unknown | Akhil Bharatiya Svetambar Sthanakvasi Jain Conference
+SVK-0011,UNKNOWN | UNKNOWN | Only incidental mention of Sthanakvasi inside the text; translator and publisher unidentified | PRIMARY CANON (Anga, Acaranga) | unknown | none recorded
+SVK-0012,UNKNOWN | UNKNOWN | Canonical mula-sutra translation, but translator and publisher unknown; no Sthanakvasi evidence | PRIMARY CANON (Mulasutra, Dasavaikalika) | unknown | none recorded
+SVK-0013,UNKNOWN | UNKNOWN | Canonical text; provenance of the 1934 translation unpublished | PRIMARY CANON (Mulasutra, Uttaradhyayana) | unknown | none recorded
+SVK-0014,UNKNOWN | UNKNOWN | Distinct 1962 edition; provenance unpublished | PRIMARY CANON (Mulasutra, Uttaradhyayana) | unknown | none recorded
+SVK-0015,UNKNOWN | UNKNOWN | Canonical Anga translation; publisher unidentified | PRIMARY CANON (Anga, Sutrakrtanga) | unknown | none recorded
+SVK-0016,UNKNOWN | UNKNOWN | Agam Seva series suggests an institutional publisher but the institution is unidentified | PRIMARY CANON (Mulasutra, Uttaradhyayana) | unknown | unknown (Agam Seva series, publisher unidentified)
+SVK-0017,UNKNOWN | UNKNOWN | Canonical Anga; provenance unpublished | PRIMARY CANON (Anga, Jnatadharmakatha) | unknown | none recorded
+SVK-0018,UNKNOWN | UNKNOWN | Pravachan genre is central to the tradition but the speaker is unnamed; no sect evidence | PRAVACHAN (discourse) | unknown (pravachan speaker unnamed in metadata) | unknown
+SVK-0019,UNKNOWN | UNKNOWN | Stavan repertoire is shared across Jain traditions; no sect evidence | DEVOTIONAL | unknown | none recorded
+SVK-0020,UNKNOWN | UNKNOWN | Pathshala textbook; publisher unverified | EDUCATIONAL | unknown | unknown
+SVK-0021,COMPARATIVE_OTHER_TRADITION | MEDIUM | Manifest notes state Svetambara-wide scope, not Sthanakvasi; underlying edition unidentified | CANON (Svetambara-wide, English) | unknown | Svetambara (tradition unspecified)
+SVK-0022,UNKNOWN | UNKNOWN | Typed Prakrit texts with per-contribution rights; sect must be tagged per text, never collection-level | PRIMARY CANON; COMMENTARY; POETRY | multiple GRETIL contributors | none recorded (per-text)
+SVK-0023,UNKNOWN | UNKNOWN | Sanskrit Jain philosophy from both Svetambara and Digambara authors; per-text tagging required | PHILOSOPHY (Sanskrit) | multiple authors | mixed (per-text)
+SVK-0024,UNKNOWN | UNKNOWN | Unlicensed derivative layer over a Svetambara philosophical text | PHILOSOPHY | Haribhadrasuri | Svetambara (author-era)
+SVK-0025,UNKNOWN | UNKNOWN | Dataset carries no attribution or licence; content provenance unknown | MULTIPLE | unknown | none recorded
+SVK-0026,COMPARATIVE_OTHER_TRADITION | HIGH | Manifest notes: Shrimad Rajchandra work is generic/non-sectarian Jain instruction data, never Sthanakvasi | INSTRUCTION (modern commentary on Atma Siddhi) | Shrimad Rajchandra | Rajchandra tradition (non-sectarian)
+SVK-0027,UNKNOWN | UNKNOWN | Academic parallel corpus; sect attribution not established (insufficient_evidence per manifest) | PARALLEL CORPUS (Maharashtri Prakrit-English) | VIIT Pune (academic project) | none recorded
+SVK-0028,UNKNOWN | UNKNOWN | Unlicensed repository with AI-generated translations | MULTIPLE | unknown | none recorded
+SVK-0029,COMPARATIVE_OTHER_TRADITION | HIGH | Own description: 45 Agamas = Murtipujaka canon; manifest mandates MURTIPUJAKA tag | CANON (Murtipujaka 45-Agama set) | unknown | Murtipujaka
+SVK-0030,UNKNOWN | UNKNOWN | No server-side licence or terms; content scope unverifiable | MULTIPLE | unknown | none recorded
+SVK-0031,UNKNOWN | UNKNOWN | Manuscript images not yet studied for text or provenance | MANUSCRIPT (image) | unknown | unknown
+SVK-0032,UNKNOWN | UNKNOWN | Encyclopedic coverage; sect scope varies per article | SECONDARY SCHOLARSHIP (encyclopedic) | Wikimedia contributors | none recorded
+SVK-0033,UNKNOWN | UNKNOWN | Modern exposition under ND licence; scope not assessed | EXPOSITION | unknown | none recorded
+SVK-0034,CORE_STHANAKAVASI | MEDIUM | Repository self-identifies as a Sthanakvasi monastic order's chaturmas directory | DIRECTORY (monastic placement) | Shri Vardhaman Sthanakvasi Jain Sangh | Shri Vardhaman Sthanakvasi Jain Sangh
+SVK-0035,UNKNOWN | UNKNOWN | AI systems, not sources | n/a | n/a | n/a
+SVK-0036,UNKNOWN | UNKNOWN | Authoritative Jain encyclopaedia but uploader CC0 tag untrustworthy; sect scope not assessed | LEXICON; ENCYCLOPEDIA | K. Jinendra Varni | none recorded
+SVK-0037,CORE_STHANAKAVASI | MEDIUM | Publisher imprint (SS Jain Conference) per bibliographic record; third digitisation of the same volume | LEXICON | Muni Ratnachandra | S S Jain Conference (Sthanakvasi)
+SVK-0038,HIGH_STHANAKAVASI_RELEVANCE | HIGH | 1910 account explicitly treats the Sthanakvasi sect; colonial-era Western scholarship, not the tradition's voice | MODERN SCHOLARSHIP (colonial-era) | Mrs. Sinclair Stevenson | none (external observer)
+SVK-1001,CANONICAL_FOUNDATION | HIGH | Canonical Acaranga and Sutrakrtanga in a published English translation; canon underlies the target tradition but the work is not Sthanakvasi-specific | PRIMARY CANON (Anga, English translation) | Hermann Jacobi (translator) | Svetambara canon
+SVK-1002,CANONICAL_FOUNDATION | HIGH | Kalpa Sutra and Nava Tatva in a published English translation; canonical foundation, not sect-specific | PRIMARY CANON (Kalpasutra, English translation) | Rev. J. Stevenson (translator) | Svetambara canon
+SVK-1003,CANONICAL_FOUNDATION | HIGH | Second digitisation of the same 1848 canonical translation | PRIMARY CANON (Kalpasutra, English translation) | Rev. J. Stevenson (translator) | Svetambara canon
+SVK-1004,CONTEXTUAL_JAIN | MEDIUM | Svetambara hagiography (Kalaka cycle); useful background, not Sthanakvasi-specific | HAGIOGRAPHY | W. Norman Brown | Svetambara (Kalaka cycle)
+SVK-1005,CONTEXTUAL_JAIN | MEDIUM | Colonial-era survey of Indian religious literature with a Jain section; Western scholarship | SECONDARY SCHOLARSHIP (survey) | J. N. Farquhar | none (Western scholarship)
+SVK-1006,CONTEXTUAL_JAIN | LOW | 1929 Jain psychology study; author unconfirmed | SECONDARY SCHOLARSHIP | unknown | none recorded
+SVK-1007,CONTEXTUAL_JAIN | MEDIUM | French Jain bibliography; metadata/reference value | REFERENCE (bibliography) | A. Guerinot | none (Western scholarship)
+SVK-1008,CONTEXTUAL_JAIN | LOW | 1911 notes on the Jainas; provenance quality low | SECONDARY SCHOLARSHIP | unknown | none recorded
+SVK-1009,CONTEXTUAL_JAIN | LOW | Study of Rishabha Deva (first Tirthankara); a Tirthankara subject alone is not a sect marker | SECONDARY SCHOLARSHIP | unknown | none recorded
+SVK-1010,HIGH_STHANAKAVASI_RELEVANCE | MEDIUM | Periodical of the Svetambar Conference milieu, institutionally close to the Sthanakvasi lineage; sect identity of content unverified | PERIODICAL | unknown | Svetambar Conference (Sthanakvasi-linked)
+SVK-2001,CORE_STHANAKAVASI | MEDIUM | Publisher imprint: Shri Shvetambar Sthanak Vasi Jain Conference | LEXICON | Muni Ratnachandra | Shri Shvetambar Sthanakvasi Jain Conference
+SVK-2002,CORE_STHANAKAVASI | MEDIUM | Publisher imprint (SS Jain Conference) on Woolner-edited Gujarati-script edition | LEXICON | A. C. Woolner (ed.) | S S Jain Conference (Sthanakvasi)
+SVK-2003,CORE_STHANAKAVASI | MEDIUM | Publisher imprint (SS Jain Conference) on Woolner-edited edition | LEXICON | A. C. Woolner (ed.) | S S Jain Conference (Sthanakvasi)
+SVK-2004,CORE_STHANAKAVASI | MEDIUM | Publisher imprint (SS Jain Conference) on quadrilingual edition | LEXICON | A. C. Woolner (ed.) | S S Jain Conference (Sthanakvasi)
+SVK-2005,CORE_STHANAKAVASI | MEDIUM | Publisher imprint (SS Jain Conference) per bibliographic record; DLI scan | LEXICON | Muni Ratnachandra Ji Maharaj | S S Jain Conference (Sthanakvasi)
+SVK-2006,CONTEXTUAL_JAIN | MEDIUM | Canonical Prakrit lexicon of Svetambara-wide scholarship; sect attribution unknown per manifest | LEXICON | Hargovind Das T. Sheth | Svetambara scholarship (sect unknown)
+SVK-2007,CONTEXTUAL_JAIN | MEDIUM | Motilal Banarsidass edition of SVK-2006; same scope basis | LEXICON | Hargovind Das T. Sheth | Svetambara scholarship (sect unknown)
+SVK-2008,CONTEXTUAL_JAIN | MEDIUM | Standard Prakrit grammar; sect-neutral linguistic scholarship | GRAMMAR (Prakrit, English) | Alfred C. Woolner | none (academic)
+SVK-2009,CONTEXTUAL_JAIN | MEDIUM | Revised edition of SVK-2008; same basis | GRAMMAR (Prakrit, English) | Alfred C. Woolner | none (academic)
+SVK-2010,CORE_STHANAKAVASI | MEDIUM | Title names the sect directly in period transliteration (Sathan Kavasi); bibliographic corroboration | SECT LITERATURE | Swami Jitmal | unknown
+SVK-2011,UNKNOWN | UNKNOWN | Early modern Gujarati Jain prose; sect deliberately not labelled without evidence | PHILOSOPHY (Gujarati) | Yashovijay Upadhyay | unknown
+SVK-2012,UNKNOWN | UNKNOWN | Generic modern-era Jain Gujarati; retrieval/background value only | SECONDARY SCHOLARSHIP | Tapadiya Girdarlal | unknown
+SVK-2013,UNKNOWN | UNKNOWN | Introductory dharma primer; publisher unknown | EDUCATIONAL | unknown | unknown
+SVK-2014,UNKNOWN | UNKNOWN | Sajjhaya practice literature is Sthanakvasi-adjacent but this edition's sectarian identity is unverified | PRACTICE LITERATURE (sajjhaya) | Chaganlal Shah | unknown

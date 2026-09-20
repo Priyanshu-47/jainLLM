@@ -1,0 +1,333 @@
+{
+  "generated_at": "2026-09-19T12:52:21+00:00",
+  "results": [
+    {
+      "characters": 2337506,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0007",
+      "status": "OK"
+    },
+    {
+      "characters": 191859,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0016",
+      "status": "OK"
+    },
+    {
+      "characters": 4714554,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0026",
+      "status": "OK"
+    },
+    {
+      "characters": 215833,
+      "error": "",
+      "method": "STRUCTURED_TABLE",
+      "pages": 2948,
+      "source_id": "SVK-0027",
+      "status": "OK"
+    },
+    {
+      "characters": 1389139,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0037",
+      "status": "OK"
+    },
+    {
+      "characters": 215971,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-0038",
+      "status": "OK"
+    },
+    {
+      "characters": 809932,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1001",
+      "status": "OK"
+    },
+    {
+      "characters": 248360,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1002",
+      "status": "OK"
+    },
+    {
+      "characters": 227212,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1003",
+      "status": "OK"
+    },
+    {
+      "characters": 1048689,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1005",
+      "status": "OK"
+    },
+    {
+      "characters": 90592,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1006",
+      "status": "OK"
+    },
+    {
+      "characters": 1012373,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1007",
+      "status": "OK"
+    },
+    {
+      "characters": 49272,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1008",
+      "status": "OK"
+    },
+    {
+      "characters": 258838,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1009",
+      "status": "OK"
+    },
+    {
+      "characters": 404003,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-1010",
+      "status": "OK"
+    },
+    {
+      "characters": 2785900,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2002",
+      "status": "OK"
+    },
+    {
+      "characters": 2036472,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2003",
+      "status": "OK"
+    },
+    {
+      "characters": 2276457,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2004",
+      "status": "OK"
+    },
+    {
+      "characters": 2083688,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2005",
+      "status": "OK"
+    },
+    {
+      "characters": 4267206,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2006",
+      "status": "OK"
+    },
+    {
+      "characters": 4121898,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2007",
+      "status": "OK"
+    },
+    {
+      "characters": 425797,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2008",
+      "status": "OK"
+    },
+    {
+      "characters": 449776,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2009",
+      "status": "OK"
+    },
+    {
+      "characters": 163654,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2010",
+      "status": "OK"
+    },
+    {
+      "characters": 171300,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2011",
+      "status": "OK"
+    },
+    {
+      "characters": 447110,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2012",
+      "status": "OK"
+    },
+    {
+      "characters": 22989,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2013",
+      "status": "OK"
+    },
+    {
+      "characters": 257821,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2014",
+      "status": "OK"
+    },
+    {
+      "characters": 360327,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2015",
+      "status": "OK"
+    },
+    {
+      "characters": 456277,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2016",
+      "status": "OK"
+    },
+    {
+      "characters": 344438,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2019",
+      "status": "OK"
+    },
+    {
+      "characters": 608211,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2020",
+      "status": "OK"
+    },
+    {
+      "characters": 191859,
+      "error": "",
+      "method": "PLAIN_TEXT",
+      "pages": 1,
+      "source_id": "SVK-2021",
+      "status": "OK"
+    },
+    {
+      "characters": 1547916,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2022",
+      "status": "OK"
+    },
+    {
+      "characters": 3100529,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2023",
+      "status": "OK"
+    },
+    {
+      "characters": 26952,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2024",
+      "status": "OK"
+    },
+    {
+      "characters": 3413690,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2025",
+      "status": "OK"
+    },
+    {
+      "characters": 1721881,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2026",
+      "status": "OK"
+    },
+    {
+      "characters": 323232,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2027",
+      "status": "OK"
+    },
+    {
+      "characters": 473879,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2028",
+      "status": "OK"
+    },
+    {
+      "characters": 1883062,
+      "error": "",
+      "method": "HOCR",
+      "pages": 1,
+      "source_id": "SVK-2029",
+      "status": "OK"
+    }
+  ]
+}

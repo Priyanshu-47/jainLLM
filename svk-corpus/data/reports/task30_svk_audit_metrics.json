@@ -1,0 +1,93 @@
+{
+  "task": 30,
+  "title": "Corpus Integrity + Sthanakavasi Knowledge Audit",
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "processing_integrity": {
+    "total_before": 12779,
+    "total_after": 9022,
+    "units_retained_pct": 70.6,
+    "chars_before": 12449164,
+    "chars_after": 6068234,
+    "chars_retained_pct": 48.7,
+    "primary_cause": "HTML_JS_ARTIFACT_REMOVAL",
+    "html_js_remaining": 0,
+    "per_source": {
+      "SVK-2022": {"before": 1293, "after": 866, "units_pct": 67.0, "chars_before": 1544765, "chars_after": 757864, "chars_pct": 49.1},
+      "SVK-2023": {"before": 2606, "after": 1742, "units_pct": 66.8, "chars_before": 3081510, "chars_after": 1519669, "chars_pct": 49.3},
+      "SVK-2024": {"before": 26, "after": 17, "units_pct": 65.4, "chars_before": 26856, "chars_after": 11194, "chars_pct": 41.7},
+      "SVK-2025": {"before": 4068, "after": 2969, "units_pct": 73.0, "chars_before": 3405441, "chars_after": 1649578, "chars_pct": 48.4},
+      "SVK-2026": {"before": 1584, "after": 991, "units_pct": 62.6, "chars_before": 1717208, "chars_after": 839282, "chars_pct": 48.9},
+      "SVK-2027": {"before": 376, "after": 313, "units_pct": 83.2, "chars_before": 322312, "chars_after": 152913, "chars_pct": 47.4},
+      "SVK-2028": {"before": 372, "after": 326, "units_pct": 87.6, "chars_before": 473265, "chars_after": 227363, "chars_pct": 48.0},
+      "SVK-2029": {"before": 2454, "after": 1798, "units_pct": 73.3, "chars_before": 1877807, "chars_after": 910371, "chars_pct": 48.5}
+    }
+  },
+  "quality_flags_after": {
+    "SVK-2022": {"total": 866, "RCR": 137, "LOW_VALUE": 3, "SHORT": 1, "HTML_JS": 0},
+    "SVK-2023": {"total": 1742, "RCR": 81, "LOW_VALUE": 37, "SHORT": 2, "HTML_JS": 0},
+    "SVK-2024": {"total": 17, "RCR": 0, "LOW_VALUE": 4, "SHORT": 1, "HTML_JS": 0},
+    "SVK-2025": {"total": 2969, "RCR": 404, "LOW_VALUE": 695, "SHORT": 181, "HTML_JS": 0},
+    "SVK-2026": {"total": 991, "RCR": 100, "LOW_VALUE": 24, "SHORT": 1, "HTML_JS": 0},
+    "SVK-2027": {"total": 313, "RCR": 1, "LOW_VALUE": 122, "SHORT": 1, "HTML_JS": 0},
+    "SVK-2028": {"total": 326, "RCR": 0, "LOW_VALUE": 0, "SHORT": 1, "HTML_JS": 0},
+    "SVK-2029": {"total": 1798, "RCR": 20, "LOW_VALUE": 439, "SHORT": 293, "HTML_JS": 0}
+  },
+  "rcr_reduction": {
+    "before_total": 6701,
+    "after_total": 743,
+    "reduction_pct": 88.9
+  },
+  "religious_content_preservation": {
+    "SVK-2022": {"name": "Avashyak Sutra", "content_units": 833, "religious_terms": 741, "pct": 89},
+    "SVK-2023": {"name": "Uttaradhyayana Sutra", "content_units": 1635, "religious_terms": 1094, "pct": 67},
+    "SVK-2025": {"name": "Sthanang Sutra", "content_units": 1760, "religious_terms": 534, "pct": 30},
+    "SVK-2026": {"name": "Dasvaikalik Sutra", "content_units": 945, "religious_terms": 700, "pct": 74},
+    "SVK-2028": {"name": "Inner Journey", "content_units": 250, "religious_terms": 173, "pct": 69},
+    "SVK-2029": {"name": "Aupapatik Sutra", "content_units": 946, "religious_terms": 354, "pct": 37}
+  },
+  "practice_coverage": {
+    "Samayik": {"sources": 12, "units": 422, "released": 5, "quarantined": 7},
+    "Pratikraman": {"sources": 10, "units": 342, "released": 3, "quarantined": 7},
+    "Avashyaka": {"sources": 4, "units": 298, "released": 0, "quarantined": 4},
+    "Pratyakhyan": {"sources": 9, "units": 165, "released": 3, "quarantined": 6},
+    "Vandana": {"sources": 13, "units": 156, "released": 6, "quarantined": 7},
+    "Kayotsarga": {"sources": 7, "units": 82, "released": 2, "quarantined": 5},
+    "Paushadh": {"sources": 6, "units": 28, "released": 1, "quarantined": 5},
+    "Chauvisantho": {"sources": 6, "units": 45, "released": 1, "quarantined": 5},
+    "Paryushan": {"sources": 10, "units": 22, "released": 5, "quarantined": 5}
+  },
+  "agam_coverage": {
+    "AGAM-003": {"sutra": "Sthanang Sutra", "source": "SVK-2025", "units": 2969, "script": "Devanagari", "language": "unknown"},
+    "AGAM-012": {"sutra": "Aupapatik Sutra", "source": "SVK-2029", "units": 1798, "script": "Latin", "language": "en"},
+    "AGAM-028": {"sutra": "Avashyak Sutra", "source": "SVK-2022", "units": 866, "script": "Latin", "language": "en"},
+    "AGAM-029": {"sutra": "Dasvaikalik Sutra", "source": "SVK-2026", "units": 991, "script": "Latin", "language": "en"},
+    "AGAM-030": {"sutra": "Uttaradhyayana Sutra", "source": "SVK-2023", "units": 1742, "script": "Latin", "language": "en"}
+  },
+  "teacher_attribution": {
+    "Amarmuni": {"sources": 5, "text_units": 72, "confidence": "HIGH", "tradition": "Sthanakavasi pravartaka"},
+    "Namramuni": {"sources": 1, "text_units": 6, "confidence": "HIGH", "tradition": "Sthanakavasi guru"},
+    "Shreechand Surana": {"sources": 7, "text_units": 38, "confidence": "MODERATE", "tradition": "Sthanakavasi scholar"},
+    "Pravin K Shah": {"sources": 2, "text_units": 5, "confidence": "MODERATE", "tradition": "Jain scholar (unspecified)"},
+    "Kesrichand Bhandari": {"sources": 7, "text_units": 39, "confidence": "HIGH", "tradition": "Sthanakavasi (Padma Prakashan lineage)"}
+  },
+  "corpus_balance": {
+    "released_sources": 33,
+    "excluded_sources": 44,
+    "stanakavasi_released": 7,
+    "stanakavasi_quarantined": 17,
+    "lexicon_sources_released": 8,
+    "english_dominant_released": 11
+  },
+  "rights_status": {
+    "SVK-2022": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2023": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2024": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2025": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2026": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2027": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2028": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS",
+    "SVK-2029": "UNKNOWN/NEEDS_PERMISSION/R93_RESTRICTIVE_TERMS"
+  },
+  "recommendation": "Rights resolution for JainQQ sources is the single highest-impact action. Releasing SVK-2022..2029 would nearly double Sthanakavasi source count, add 5 Agam commentaries, and fill the Avashyaka practice gap entirely."
+}

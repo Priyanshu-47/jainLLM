@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "svk-corpus"
+version = "0.1.0"
+description = "Licence-gated, provenance-complete corpus pipeline for Sthanakavasi/Svetambara Jain texts"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "svk-corpus contributors" }]
+keywords = ["jain", "prakrit", "corpus", "provenance", "licensing", "rag"]
+
+# ---------------------------------------------------------------------------
+# DEPENDENCIES: deliberately EMPTY.
+#
+# This pipeline is stdlib-only so that a corpus release can be reproduced on any
+# machine with no package installation, no network to PyPI, and no risk that a
+# dependency changes its output between runs. See docs/REPRODUCIBILITY.md.
+#
+# Optional accelerators are detected at runtime and used if present:
+#   - `tokenizers` / `transformers`  -> exact tokenizer counts (best)
+#   - `pdftotext` (poppler, external binary) -> PDF text extraction
+#   - `pymupdf` / `pdfminer.six`     -> alternative PDF text extraction
+# None of them are required, and the pipeline records which backend it used.
+# ---------------------------------------------------------------------------
+dependencies = []
+
+[project.scripts]
+svk-corpus = "svk_corpus.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

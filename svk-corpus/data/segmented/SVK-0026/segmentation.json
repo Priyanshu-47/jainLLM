@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-09-19T12:55:23+00:00",
+  "source_id": "SVK-0026",
+  "stats": {
+    "chars_in": 4710495,
+    "chars_out": 4706832,
+    "chunks": 3663,
+    "page_boundaries": 1,
+    "paragraphs": 0,
+    "sections": 0,
+    "size_split_units": 3663,
+    "structure_confidence": "unknown",
+    "units": 3663,
+    "verses": 0,
+    "warnings": [
+      "no verse terminators and no headings detected; units are page/paragraph based and must not be cited as numbered scripture"
+    ]
+  },
+  "text_role": "ORIGINAL"
+}
