@@ -1,0 +1,15 @@
+{
+  "status": "NOT_READY",
+  "reasons": [
+    "Insufficient source-grounded material"
+  ],
+  "criteria": {
+    "source_grounded": false,
+    "distinct_categories": true,
+    "teacher_attribution": true,
+    "practice_explanations": true,
+    "sth_evidence": true,
+    "provenance": true,
+    "human_curatable": true
+  }
+}

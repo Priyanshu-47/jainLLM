@@ -1,0 +1,92 @@
+{
+  "task": 42,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "total_examples": 56,
+  "category_distribution": {
+    "TEACHING": 8,
+    "COMMENTARY": 20,
+    "PRACTICE_EXPLANATION": 20,
+    "GENERAL_JAIN": 8
+  },
+  "source_distribution": {
+    "SVK-2022": 5,
+    "SVK-2023": 5,
+    "SVK-2025": 5,
+    "SVK-2026": 2,
+    "SVK-2029": 5,
+    "SVK-2020": 1,
+    "SVK-2024": 5,
+    "SVK-0026": 5,
+    "SVK-1001": 2,
+    "SVK-0007": 5,
+    "SVK-0016": 5,
+    "SVK-0037": 5,
+    "SVK-2027": 1,
+    "SVK-0038": 5
+  },
+  "teacher_distribution": {
+    "Amarmuni": 12,
+    "Pravin K Shah": 2
+  },
+  "practice_distribution": {
+    "Avashyaka": 2,
+    "Pratikraman": 9,
+    "Samayik": 3,
+    "Kayotsarga": 1,
+    "Vandana": 2,
+    "Paushadh": 1,
+    "Pratyakhyan": 2
+  },
+  "language_distribution": {
+    "English": 38,
+    "Hindi": 18
+  },
+  "sth_status_distribution": {
+    "STHANAKAVASI": 12,
+    "GENERIC": 44
+  },
+  "schema_failures": 0,
+  "source_failures": 0,
+  "citation_failures": 0,
+  "answer_grades": {
+    "A": 23,
+    "C": 33
+  },
+  "question_issues": 0,
+  "sth_classification": {
+    "VERIFIED_STHANAKAVASI": 11,
+    "PROBABLE_STHANAKAVASI": 1,
+    "GENERIC": 44
+  },
+  "practice_issues": 11,
+  "agam_issues": 20,
+  "teacher_issues": 3,
+  "duplicate_issues": 44,
+  "provenance_issues": 0,
+  "quality_gates": {
+    "total_pass": 460,
+    "total_fail": 156,
+    "by_gate": {
+      "schema_valid": 56,
+      "source_valid": 56,
+      "citation_valid": 56,
+      "provenance_valid": 56,
+      "answer_supported": 23,
+      "question_supported": 56,
+      "teacher_supported": 53,
+      "agam_supported": 36,
+      "practice_supported": 45,
+      "sthanakavasi_claim_supported": 11,
+      "duplicate_free": 12
+    }
+  },
+  "classification": {
+    "KEEP": 2,
+    "REJECT": 33,
+    "REVISE": 21
+  },
+  "keep_candidates": 2,
+  "revise_candidates": 21,
+  "reject_candidates": 33
+}

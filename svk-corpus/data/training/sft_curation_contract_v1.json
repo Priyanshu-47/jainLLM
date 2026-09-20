@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "date": "2026-09-20",
+  "description": "Strict contract for human-curated SFT examples",
+  "required_fields": {
+    "example_id": "Unique identifier: EX-NNNNNN",
+    "messages": [
+      {
+        "role": "system",
+        "content": "System prompt (if applicable)"
+      },
+      {
+        "role": "user",
+        "content": "Human question"
+      },
+      {
+        "role": "assistant",
+        "content": "Model answer (human-written)"
+      }
+    ],
+    "question_type": "ONE OF: factual, explanatory, comparative, applied, abstention",
+    "source_ids": ["List of source IDs used"],
+    "source_units": ["List of unit IDs used"],
+    "citations": [
+      {
+        "source_id": "Source ID",
+        "unit_id": "Unit ID",
+        "text_excerpt": "Relevant text excerpt",
+        "page_or_section": "Page or section reference"
+      }
+    ],
+    "tradition": "ONE OF: SVETAMBARA, DIGAMBARA, MULTI_TRADITION, CROSS_TRADITION",
+    "lineage": "ONE OF: STHANAKAVASI, MURTIPOJAK, TERAPANTH, GENERIC, UNKNOWN",
+    "knowledge_layer": "ONE OF: CANONICAL, COMMENTARY, TEACHING, PRACTICE, TERMINOLOGY, HISTORY, CROSS_TRADITION, UNKNOWN",
+    "content_role": "ONE OF: ORIGINAL_TEXT, TRANSLATION, COMMENTARY, TEACHING, PRACTICE_EXPLANATION, HISTORY, UNKNOWN",
+    "teacher": "Teacher name if attributed, empty otherwise",
+    "agam_id": "Agam ID if applicable, empty otherwise",
+    "practice": "Practice name if applicable, empty otherwise",
+    "language": "Language of the source text",
+    "verification_status": "ONE OF: SOURCE_GROUNDED, SOURCE_GROUNDED_MULTI_SOURCE, ABSTENTION_REQUIRED, REVIEW_REQUIRED, REJECTED",
+    "reviewer_status": "ONE OF: PENDING, APPROVED, REJECTED, REVISION_REQUIRED"
+  },
+  "verification_status_definitions": {
+    "SOURCE_GROUNDED": "All factual claims traceable to a single source",
+    "SOURCE_GROUNDED_MULTI_SOURCE": "All factual claims traceable to multiple sources",
+    "ABSTENTION_REQUIRED": "Source does not contain answer, model should abstain",
+    "REVIEW_REQUIRED": "Requires human review before use",
+    "REJECTED": "Does not meet quality standards"
+  },
+  "quality_requirements": [
+    "Every factual claim must be traceable to one or more source units",
+    "No facts added from model memory",
+    "No silent tradition merging",
+    "Source disagreements must be represented and attributed",
+    "Evidence-based abstention when source does not answer",
+    "Teacher attribution must be supported by provenance",
+    "Sthanakavasi classification must require evidence",
+    "Generic Jain material cannot become Sthanakavasi through wording",
+    "Every example must have citation/provenance",
+    "Questions must not contain answer-trivializing information",
+    "Avoid repetitive templates",
+    "Preserve original terminology"
+  ]
+}

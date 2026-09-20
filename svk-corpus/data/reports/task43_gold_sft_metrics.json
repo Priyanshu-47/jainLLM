@@ -1,0 +1,55 @@
+{
+  "task": 43,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "starting_examples": 56,
+  "unique_questions": 25,
+  "after_dedup": 25,
+  "rejected": 13,
+  "final_gold_count": 12,
+  "category_distribution": {
+    "TEACHING": 5,
+    "PRACTICE_EXPLANATION": 3,
+    "GENERAL_JAIN": 4
+  },
+  "source_distribution": {
+    "SVK-2022": 1,
+    "SVK-2023": 1,
+    "SVK-2025": 1,
+    "SVK-2026": 2,
+    "SVK-2029": 1,
+    "SVK-2024": 1,
+    "SVK-0026": 1,
+    "SVK-1001": 2,
+    "SVK-2027": 1,
+    "SVK-0038": 1
+  },
+  "teacher_distribution": {
+    "Amarmuni": 5,
+    "Pravin K Shah": 1
+  },
+  "practice_distribution": {
+    "Pratikraman": 2,
+    "Kayotsarga": 1
+  },
+  "agam_distribution": {},
+  "language_distribution": {
+    "English": 12
+  },
+  "sth_status_distribution": {
+    "STHANAKAVASI": 7,
+    "GENERIC": 5
+  },
+  "review_status": {
+    "HUMAN_REVIEW_REQUIRED": 12,
+    "HUMAN_VERIFIED": 0
+  },
+  "provenance_quality": "HIGH - all examples have source citations",
+  "remaining_weaknesses": [
+    "All examples marked HUMAN_REVIEW_REQUIRED (not HUMAN_VERIFIED)",
+    "Answer grounding needs human verification",
+    "Practice classification needs human verification",
+    "Agam mapping needs human verification",
+    "Teacher attribution needs human verification"
+  ]
+}

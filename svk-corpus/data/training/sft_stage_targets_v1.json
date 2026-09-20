@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "date": "2026-09-20",
+  "description": "Staged SFT curation targets based on available evidence",
+  "stages": {
+    "stage_a": {
+      "name": "Initial Validation",
+      "target_examples": "50-100",
+      "category_coverage": {
+        "STHANAKAVASI_DOCTRINE": "0-5 (limited evidence)",
+        "AGAM_EXPLANATION": "10-20 (strong evidence)",
+        "PRACTICE_EXPLANATION": "15-25 (strong evidence)",
+        "TEACHER_ATTRIBUTION": "10-15 (strong evidence)",
+        "PRAKRIT_TERM_EXPLANATION": "5-10 (moderate evidence)",
+        "TRADITION_DISTINCTION": "0-5 (limited evidence)",
+        "HISTORY_LINEAGE": "5-10 (moderate evidence)",
+        "SOURCE_CITATION": "5-10 (strong evidence)",
+        "ABSTENTION": "5-10 (strong evidence)",
+        "GENERAL_JAIN": "10-15 (strong evidence)"
+      },
+      "source_diversity": "Minimum 5 distinct sources",
+      "teacher_diversity": "Minimum 3 distinct teachers",
+      "practice_diversity": "Minimum 4 distinct practices",
+      "agam_diversity": "Minimum 3 distinct Agams",
+      "language_diversity": "Hindi and English",
+      "provenance_requirements": "All examples must have complete provenance",
+      "estimated_timeline": "2-4 weeks of human curation"
+    },
+    "stage_b": {
+      "name": "Expanded Coverage",
+      "target_examples": "250-500",
+      "category_coverage": {
+        "STHANAKAVASI_DOCTRINE": "10-20 (if sources acquired)",
+        "AGAM_EXPLANATION": "50-100",
+        "PRACTICE_EXPLANATION": "50-100",
+        "TEACHER_ATTRIBUTION": "30-50",
+        "PRAKRIT_TERM_EXPLANATION": "20-30",
+        "TRADITION_DISTINCTION": "10-20",
+        "HISTORY_LINEAGE": "20-30",
+        "SOURCE_CITATION": "20-30",
+        "ABSTENTION": "20-30",
+        "GENERAL_JAIN": "30-50"
+      },
+      "source_diversity": "Minimum 10 distinct sources",
+      "teacher_diversity": "Minimum 5 distinct teachers",
+      "practice_diversity": "Minimum 6 distinct practices",
+      "agam_diversity": "Minimum 5 distinct Agams",
+      "language_diversity": "Hindi, English, and Prakrit terms",
+      "provenance_requirements": "Complete provenance with page references",
+      "estimated_timeline": "6-8 weeks of human curation"
+    },
+    "stage_c": {
+      "name": "Comprehensive Dataset",
+      "target_examples": "1000+",
+      "category_coverage": {
+        "STHANAKAVASI_DOCTRINE": "50-100",
+        "AGAM_EXPLANATION": "150-250",
+        "PRACTICE_EXPLANATION": "100-200",
+        "TEACHER_ATTRIBUTION": "50-100",
+        "PRAKRIT_TERM_EXPLANATION": "50-100",
+        "TRADITION_DISTINCTION": "30-50",
+        "HISTORY_LINEAGE": "50-100",
+        "SOURCE_CITATION": "50-100",
+        "ABSTENTION": "50-100",
+        "GENERAL_JAIN": "100-200"
+      },
+      "source_diversity": "Minimum 20 distinct sources",
+      "teacher_diversity": "Minimum 8 distinct teachers",
+      "practice_diversity": "All 9 practices",
+      "agam_diversity": "All available Agams",
+      "language_diversity": "Hindi, English, Prakrit, and regional variants",
+      "provenance_requirements": "Complete provenance with cross-references",
+      "estimated_timeline": "3-6 months of human curation"
+    }
+  },
+  "current_corpus_capability": {
+    "stage_a": "PARTIALLY_CAPABLE",
+    "stage_b": "LIMITED",
+    "stage_c": "INSUFFICIENT",
+    "reasoning": "Stage A is partially capable because we have strong Agam and practice evidence but lack STH-specific doctrinal content. Stage B requires additional STH-specific sources. Stage C requires significant source acquisition."
+  }
+}

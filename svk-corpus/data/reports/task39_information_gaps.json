@@ -1,0 +1,42 @@
+[
+  {
+    "gap": "STH-specific doctrinal interpretation",
+    "evidence_missing": "0 verified STH doctrinal passages in corpus",
+    "current_corpus_can_solve": false,
+    "new_source_required": true,
+    "human_curation_can_solve": false,
+    "priority": "P0"
+  },
+  {
+    "gap": "STH-specific practice explanation",
+    "evidence_missing": "0 verified STH practice explanations",
+    "current_corpus_can_solve": false,
+    "new_source_required": true,
+    "human_curation_can_solve": false,
+    "priority": "P0"
+  },
+  {
+    "gap": "STH/Terapanth distinction material",
+    "evidence_missing": "Minimal cross-tradition comparison",
+    "current_corpus_can_solve": true,
+    "new_source_required": false,
+    "human_curation_can_solve": true,
+    "priority": "P1"
+  },
+  {
+    "gap": "STH lineage/history detailed",
+    "evidence_missing": "13 ambiguous STH passages, mostly metadata",
+    "current_corpus_can_solve": true,
+    "new_source_required": false,
+    "human_curation_can_solve": true,
+    "priority": "P1"
+  },
+  {
+    "gap": "More practice explanations",
+    "evidence_missing": "Only 1123 practice explanation passages",
+    "current_corpus_can_solve": true,
+    "new_source_required": false,
+    "human_curation_can_solve": true,
+    "priority": "P2"
+  }
+]

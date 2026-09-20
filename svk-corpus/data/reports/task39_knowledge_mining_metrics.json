@@ -1,0 +1,216 @@
+{
+  "task": 39,
+  "date": "2026-09-20T16:39:15.514717",
+  "status": "COMPLETE",
+  "release_result": {
+    "rag_before": 211576,
+    "rag_after": 258136,
+    "train_before": 144478,
+    "train_after": 191038,
+    "new_units": 46560
+  },
+  "corpus_stats": {
+    "total_units": 191038,
+    "evidence_types": {
+      "CANONICAL_TEXT": 78773,
+      "COMMENTARY": 15070,
+      "TRANSLATION": 75256,
+      "PRACTICE_EXPLANATION": 1123,
+      "GENERAL_JAIN": 20600,
+      "TEACHING": 216
+    },
+    "sth_statuses": {
+      "GENERIC_SVETAMBARA": 105720,
+      "VERIFIED_STHANAKAVASI": 91,
+      "CROSS_TRADITION": 5,
+      "PROBABLE_STHANAKAVASI": 85222
+    },
+    "practices": {
+      "Pratikraman": 379,
+      "Samayik": 191,
+      "Pratyakhyan": 150,
+      "Paryushan": 48,
+      "Kayotsarga": 65,
+      "Avashyaka": 193,
+      "Vandana": 84,
+      "Paushadh": 11,
+      "Chauvisantho": 2
+    },
+    "teachers": {
+      "Amarmuni": 174,
+      "Shreechand_Surana": 34,
+      "Anand_Rishi": 4,
+      "Pravin_K_Shah": 6,
+      "Kesrichand_Bhandari": 1,
+      "Namramuni": 6,
+      "Dharmchand_Jain": 2
+    }
+  },
+  "practice_matrix": {
+    "Pratikraman": {
+      "word_occurrences": 608,
+      "contextual_passages": 379,
+      "practice_explanations": 379,
+      "sth_specific": 0,
+      "teacher_attributed": 2
+    },
+    "Samayik": {
+      "word_occurrences": 301,
+      "contextual_passages": 191,
+      "practice_explanations": 191,
+      "sth_specific": 0,
+      "teacher_attributed": 0
+    },
+    "Avashyaka": {
+      "word_occurrences": 12,
+      "contextual_passages": 193,
+      "practice_explanations": 193,
+      "sth_specific": 0,
+      "teacher_attributed": 3
+    },
+    "Kayotsarga": {
+      "word_occurrences": 83,
+      "contextual_passages": 65,
+      "practice_explanations": 65,
+      "sth_specific": 0,
+      "teacher_attributed": 1
+    },
+    "Vandana": {
+      "word_occurrences": 133,
+      "contextual_passages": 84,
+      "practice_explanations": 84,
+      "sth_specific": 0,
+      "teacher_attributed": 0
+    },
+    "Chauvisantho": {
+      "word_occurrences": 4,
+      "contextual_passages": 2,
+      "practice_explanations": 2,
+      "sth_specific": 0,
+      "teacher_attributed": 0
+    },
+    "Paryushan": {
+      "word_occurrences": 72,
+      "contextual_passages": 48,
+      "practice_explanations": 48,
+      "sth_specific": 0,
+      "teacher_attributed": 2
+    },
+    "Paushadh": {
+      "word_occurrences": 48,
+      "contextual_passages": 11,
+      "practice_explanations": 11,
+      "sth_specific": 0,
+      "teacher_attributed": 0
+    },
+    "Pratyakhyan": {
+      "word_occurrences": 318,
+      "contextual_passages": 150,
+      "practice_explanations": 150,
+      "sth_specific": 0,
+      "teacher_attributed": 0
+    }
+  },
+  "agam_matrix": {
+    "AGAM-001": {
+      "units": 20268,
+      "canonical": 8906,
+      "commentary": 2064,
+      "translation": 8974,
+      "teacher": 28,
+      "sth": 8
+    },
+    "AGAM-012": {
+      "units": 9496,
+      "canonical": 4526,
+      "commentary": 902,
+      "translation": 3280,
+      "teacher": 28,
+      "sth": 8
+    },
+    "AGAM-005": {
+      "units": 38166,
+      "canonical": 13176,
+      "commentary": 4798,
+      "translation": 15910,
+      "teacher": 60,
+      "sth": 14
+    },
+    "AGAM-022": {
+      "units": 17330,
+      "canonical": 6836,
+      "commentary": 1628,
+      "translation": 6818,
+      "teacher": 34,
+      "sth": 8
+    }
+  },
+  "review_queue": {
+    "total": 191038,
+    "p0": 99,
+    "p1": 16379,
+    "p2": 174560
+  },
+  "sft_pool": {
+    "total": 16409,
+    "verified": 11,
+    "review": 16398
+  },
+  "readiness": {
+    "status": "NOT_READY",
+    "reasons": [
+      "Insufficient source-grounded material"
+    ],
+    "criteria": {
+      "source_grounded": false,
+      "distinct_categories": true,
+      "teacher_attribution": true,
+      "practice_explanations": true,
+      "sth_evidence": true,
+      "provenance": true,
+      "human_curatable": true
+    }
+  },
+  "information_gaps": [
+    {
+      "gap": "STH-specific doctrinal interpretation",
+      "evidence_missing": "0 verified STH doctrinal passages in corpus",
+      "current_corpus_can_solve": false,
+      "new_source_required": true,
+      "human_curation_can_solve": false,
+      "priority": "P0"
+    },
+    {
+      "gap": "STH-specific practice explanation",
+      "evidence_missing": "0 verified STH practice explanations",
+      "current_corpus_can_solve": false,
+      "new_source_required": true,
+      "human_curation_can_solve": false,
+      "priority": "P0"
+    },
+    {
+      "gap": "STH/Terapanth distinction material",
+      "evidence_missing": "Minimal cross-tradition comparison",
+      "current_corpus_can_solve": true,
+      "new_source_required": false,
+      "human_curation_can_solve": true,
+      "priority": "P1"
+    },
+    {
+      "gap": "STH lineage/history detailed",
+      "evidence_missing": "13 ambiguous STH passages, mostly metadata",
+      "current_corpus_can_solve": true,
+      "new_source_required": false,
+      "human_curation_can_solve": true,
+      "priority": "P1"
+    },
+    {
+      "gap": "More practice explanations",
+      "evidence_missing": "Only 1123 practice explanation passages",
+      "current_corpus_can_solve": true,
+      "new_source_required": false,
+      "human_curation_can_solve": true,
+      "priority": "P2"
+    }
+  ]
+}

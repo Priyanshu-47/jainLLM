@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "description": "Human review schema for SFT examples",
+  "fields": {
+    "review_id": "string (REVIEW-NNNNNN)",
+    "example_id": "string (EX-NNNNNN)",
+    "reviewer": "string (name or UNKNOWN)",
+    "review_timestamp": "string (ISO 8601)",
+    "decision": "enum (APPROVE, REVISE, REJECT)",
+    "source_verified": "boolean",
+    "citation_verified": "boolean",
+    "answer_grounded": "boolean",
+    "question_valid": "boolean",
+    "teacher_verified": "boolean",
+    "agam_verified": "boolean",
+    "practice_verified": "boolean",
+    "sthanakavasi_claim_verified": "boolean",
+    "provenance_complete": "boolean",
+    "review_notes": "string",
+    "required_changes": "array of strings"
+  },
+  "decision_values": [
+    "APPROVE",
+    "REVISE",
+    "REJECT"
+  ],
+  "notes": "Only actual human review can produce HUMAN_VERIFIED status. OpenCode cannot mark HUMAN_VERIFIED."
+}

@@ -1,0 +1,60 @@
+{
+  "task": 40,
+  "date": "2026-09-20",
+  "status": "COMPLETE",
+  "eleven_example_analysis": {
+    "total_verified": 11,
+    "sources": {"SVK-2022": 4, "SVK-2024": 2, "SVK-2029": 3, "SVK-2036": 2},
+    "knowledge_layers": {"PRACTICE_EXPLANATION": 8, "COMMENTARY": 3},
+    "practices": {"Kayotsarga": 1, "Avashyaka": 3, "Pratikraman": 2, "Paryushan": 2},
+    "teachers": {"Amarmuni": 9, "Pravin_K_Shah": 2},
+    "lineages": {"": 9, "STHANAKAVASI": 2},
+    "validity_criteria": [
+      "HIGH quality score",
+      "Teacher attribution verified",
+      "Practice keyword match",
+      "Clear evidence type",
+      "Source diversity (4 sources)"
+    ],
+    "issues": [
+      "No language field",
+      "No unit_id",
+      "No provenance field",
+      "Raw text with OCR artifacts",
+      "No citations"
+    ]
+  },
+  "sft_categories": {
+    "A_STHANAKAVASI_DOCTRINE": "INSUFFICIENT",
+    "B_AGAM_EXPLANATION": "AVAILABLE",
+    "C_PRACTICE_EXPLANATION": "AVAILABLE",
+    "D_TEACHER_ATTRIBUTION": "AVAILABLE",
+    "E_PRAKRIT_TERM_EXPLANATION": "POSSIBLE",
+    "F_TRADITION_DISTINCTION": "LIMITED",
+    "G_HISTORY_LINEAGE": "POSSIBLE",
+    "H_SOURCE_CITATION": "AVAILABLE",
+    "I_ABSTENTION": "AVAILABLE",
+    "J_GENERAL_JAIN": "AVAILABLE"
+  },
+  "stage_targets": {
+    "stage_a": {"target": "50-100", "timeline": "2-4 weeks", "capability": "PARTIALLY_CAPABLE"},
+    "stage_b": {"target": "250-500", "timeline": "6-8 weeks", "capability": "LIMITED"},
+    "stage_c": {"target": "1000+", "timeline": "3-6 months", "capability": "INSUFFICIENT"}
+  },
+  "current_corpus_capability": {
+    "stage_a": "PARTIALLY_CAPABLE",
+    "stage_b": "LIMITED",
+    "stage_c": "INSUFFICIENT",
+    "reasoning": "Strong Agam and practice evidence but lack STH-specific doctrinal content"
+  },
+  "decision": "CURATION_WITH_LIMITED_SCOPE",
+  "curable_categories": ["B", "C", "D", "H", "I", "J"],
+  "blocked_categories": ["A", "F"],
+  "source_to_sft_map": {
+    "SVK-2022": {"categories": ["C", "D"], "potential": "HIGH"},
+    "SVK-2024": {"categories": ["C", "D"], "potential": "HIGH"},
+    "SVK-2029": {"categories": ["B", "D"], "potential": "HIGH"},
+    "SVK-2030-2036": {"categories": ["B", "C", "D"], "potential": "HIGH"},
+    "SVK-2037": {"categories": ["A", "F", "G"], "potential": "MEDIUM"}
+  }
+}
