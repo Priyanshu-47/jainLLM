@@ -1,0 +1,47 @@
+{
+  "task": 51,
+  "date": "2026-09-21",
+  "status": "COMPLETE",
+  "model_research": {
+    "models_evaluated": 12,
+    "shortlist": ["Qwen3.5-4B", "Qwen3.5-9B", "Qwen3.8-27B", "Sarvam-30B", "Gemma 4 12B", "Gemma 4 E4B"],
+    "primary_candidates": ["Qwen3.5-4B", "Qwen3.5-9B"],
+    "budget_candidates": ["Qwen3.5-4B", "Gemma 4 E4B"],
+    "strong_candidates": ["Qwen3.8-27B", "Gemma 4 12B"],
+    "status": "COMPLETE"
+  },
+  "sft_filtering": {
+    "input_candidates": 45,
+    "filtered_candidates": 17,
+    "removed_candidates": 28,
+    "removal_reasons": {
+      "MIXED_LANGUAGE_CORRUPTION": 10,
+      "OCR_GARBAGE": 1,
+      "DUPLICATE_QUESTION": 17
+    },
+    "status": "COMPLETE"
+  },
+  "review_queue": {
+    "total_for_review": 17,
+    "reviewed": 0,
+    "pending": 17,
+    "approve": 0,
+    "revise": 0,
+    "reject": 0,
+    "status": "READY_FOR_HUMAN_REVIEW"
+  },
+  "experiment_matrix": {
+    "experiments": 4,
+    "primary_experiment": "E1",
+    "data_mix_defined": true,
+    "status": "READY"
+  },
+  "gpu_required": true,
+  "next_steps": [
+    "Complete human review of 17 candidates",
+    "Select base model",
+    "Run E0 baseline",
+    "Prepare SFT dataset",
+    "Run E1"
+  ]
+}

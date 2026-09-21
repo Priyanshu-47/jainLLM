@@ -1,0 +1,47 @@
+{
+  "task": 48,
+  "date": "2026-09-21T05:31:11.448453Z",
+  "status": "COMPLETE",
+  "review_reconciliation": {
+    "total_raw_records": 13,
+    "unique_examples_reviewed": 12,
+    "approve": 2,
+    "revise": 7,
+    "reject": 3,
+    "pending": 0,
+    "malformed": 0
+  },
+  "feedback_categories": {
+    "OTHER": 11,
+    "LANGUAGE": 5,
+    "EXPLANATION_DEPTH": 5,
+    "QUESTION_ANSWER_ALIGNMENT": 6
+  },
+  "gold_v3": {
+    "human_verified": 2,
+    "target": "8+",
+    "status": "GOLD_INSUFFICIENT"
+  },
+  "remaining": {
+    "revision_required": 7,
+    "rejected": 3,
+    "pending": 0,
+    "blocked": 0,
+    "total": 10
+  },
+  "training_corpus": {
+    "total_chars": 20651126,
+    "estimated_tokens": 5162781,
+    "units": 97763,
+    "hindi_chars": 3752090,
+    "english_chars": 10324000
+  },
+  "rag_corpus": {
+    "total_chars": 21620890,
+    "estimated_tokens": 5405222,
+    "units": 164238,
+    "hindi_chars": 4012513,
+    "english_chars": 10554896
+  },
+  "training_strategy_status": "NEED_MORE_DATA_AUDIT"
+}

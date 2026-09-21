@@ -1,0 +1,39 @@
+{
+  "task": 49,
+  "date": "2026-09-21T05:47:19.595436Z",
+  "status": "COMPLETE",
+  "sft_failure_analysis": {
+    "gold_v3": 2,
+    "remaining_v3": 10,
+    "revision_candidates": 12,
+    "revise_count": 7,
+    "reject_count": 3
+  },
+  "candidate_factory": {
+    "total_generated": 127,
+    "tier_a": 45,
+    "tier_b": 82,
+    "quarantine": 0
+  },
+  "corpus_audit": {
+    "training": {
+      "units": 97763,
+      "tokens": 5162781,
+      "sources": 39
+    },
+    "rag": {
+      "units": 164238,
+      "tokens": 5405222,
+      "sources": 40
+    },
+    "combined_tokens": 10568003
+  },
+  "diversity": {
+    "sources": 20,
+    "concepts": 54,
+    "practices": 8,
+    "agams": 5
+  },
+  "task49_status": "READY_FOR_HUMAN_REVIEW",
+  "domain_adaptation_status": "PROMISING"
+}
