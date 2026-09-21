@@ -1,0 +1,100 @@
+# DAPT-01: Domain Adaptation Experiment Configuration
+# Base Model: Qwen/Qwen3-8B-Base
+# Method: QLoRA (parameter-efficient)
+# Target: Jain domain adaptation
+
+# Model Configuration
+model:
+  name: "Qwen/Qwen3-8B-Base"
+  revision: "main"
+  torch_dtype: "bfloat16"
+  attn_implementation: "flash_attention_2"
+  trust_remote_code: true
+
+# LoRA Configuration
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Training Configuration
+training:
+  output_dir: "./outputs/dapt-01"
+  num_train_epochs: 1
+  per_device_train_batch_size: 2
+  per_device_eval_batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 2e-4
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  max_grad_norm: 1.0
+  max_seq_length: 2048
+  logging_steps: 10
+  save_steps: 500
+  eval_steps: 500
+  save_total_limit: 3
+  fp16: false
+  bf16: true
+  dataloader_num_workers: 4
+  seed: 42
+  report_to: "tensorboard"
+  run_name: "dapt-01-qwen3-8b-jain-domain"
+
+# Dataset Configuration
+dataset:
+  train_file: "./data/domain_train/train.jsonl"
+  validation_file: "./data/domain_train/val.jsonl"
+  text_column: "text"
+  max_seq_length: 2048
+  preprocessing_num_workers: 4
+
+# Evaluation Configuration
+evaluation:
+  eval_strategy: "steps"
+  eval_steps: 500
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  load_best_model_at_end: true
+
+# Checkpoint Configuration
+checkpointing:
+  checkpoint_strategy: "steps"
+  checkpoint_steps: 500
+  total_checkpoints: 3
+  resume_from_checkpoint: null
+
+# Reproducibility
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false
+
+# Hardware Requirements (estimated)
+hardware:
+  gpu_type: "NVIDIA A100 80GB or similar"
+  min_vram: "24GB"
+  recommended_vram: "48GB"
+  estimated_training_time: "2-4 hours"
+  estimated_cost: "$5-15"
+
+# Experiment Metadata
+metadata:
+  experiment_id: "DAPT-01"
+  base_model: "Qwen/Qwen3-8B-Base"
+  method: "QLoRA"
+  domain: "Jain"
+  tradition: "Sthanakavasi"
+  corpus_version: "v1"
+  date: "2026-09-21"
+  description: "First domain adaptation experiment for Jain domain"
