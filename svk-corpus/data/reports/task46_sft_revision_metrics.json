@@ -1,0 +1,24 @@
+{
+  "task": 46,
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "input_count": 12,
+  "rewritten": 12,
+  "blocked": 0,
+  "teacher_centric_removed": 5,
+  "citation_only_fixed": 3,
+  "explanation_present": 12,
+  "source_grounded": 12,
+  "unsupported_claims": 0,
+  "mahavira_attribution_supported": 1,
+  "category_distribution": {
+    "JAIN_CONCEPT": 7,
+    "AGAM_EXPLANATION": 2,
+    "JAIN_PRACTICE": 3
+  },
+  "doctrinal_anchor_distribution": {
+    "CANONICAL_EXPLICIT": 4,
+    "MAHAVIRA_EXPLICIT": 1,
+    "GENERAL_JAIN": 5,
+    "COMMENTARY": 2
+  }
+}

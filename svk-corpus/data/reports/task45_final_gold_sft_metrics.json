@@ -1,0 +1,35 @@
+{
+  "task": 45,
+  "date": "2026-09-21T04:42:32.420235Z",
+  "status": "COMPLETE",
+  "review_reconciliation": {
+    "total_raw_records": 21,
+    "unique_examples_reviewed": 12,
+    "approve": 0,
+    "revise": 11,
+    "reject": 0,
+    "pending": 0,
+    "malformed": 1
+  },
+  "final_gold": {
+    "human_verified": 0,
+    "target": "8+",
+    "status": "INSUFFICIENT"
+  },
+  "rejected": {
+    "revision_required": 11,
+    "rejected": 0,
+    "pending_review": 0,
+    "malformed": 1,
+    "total": 12
+  },
+  "category_distribution": {},
+  "source_distribution": {},
+  "teacher_distribution": {},
+  "practice_distribution": {},
+  "sth_distribution": {},
+  "language_distribution": {},
+  "provenance_completeness": "N/A - no examples in final gold",
+  "leakage_check": "EVALUATION_DATASET_NOT_YET_CREATED",
+  "next_phase_gate": "GOLD_REVIEW_INCOMPLETE"
+}
