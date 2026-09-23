@@ -1,0 +1,41 @@
+# DAPT-01 Experiment Configuration
+# Copied from configs/dapt_qwen3_8b.yaml for reproducibility
+
+experiment_id: "DAPT-01"
+date: "2026-09-21"
+status: "CONFIGURED_NOT_STARTED"
+
+base_model:
+  name: "Qwen/Qwen3-8B-Base"
+  revision: "main"
+  dtype: "bfloat16"
+  trust_remote_code: true
+
+training:
+  method: "QLoRA"
+  lora_r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  learning_rate: 2e-4
+  epochs: 1
+  batch_size: 2
+  gradient_accumulation: 8
+  max_seq_length: 2048
+  seed: 42
+
+dataset:
+  domain_train: "data/domain_train/train.jsonl"
+  domain_val: "data/domain_train/val.jsonl"
+  domain_test: "data/domain_train/test.jsonl"
+  sft_seed: "data/training/sft_seed_v1.jsonl"
+  sft_excluded_from_dapt: true
+
+hardware:
+  required_gpu: true
+  min_vram_gb: 24
+  recommended_vram_gb: 48
+  current_vm: "Standard_B4as_v2"
+  current_gpu: "NONE"
+
+blocker: "GPU_NOT_AVAILABLE"
+next_action: "Provision Azure GPU VM with 24GB+ VRAM"

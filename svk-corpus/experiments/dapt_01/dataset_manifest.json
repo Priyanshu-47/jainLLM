@@ -1,0 +1,28 @@
+{
+  "total_documents": 40,
+  "train_documents": 32,
+  "val_documents": 4,
+  "test_documents": 4,
+  "train_records": 243957,
+  "val_records": 11188,
+  "test_records": 6856,
+  "split_method": "document_level",
+  "split_ratios": "80/10/10",
+  "token_estimates": {
+    "train": 5250270,
+    "val": 1197758,
+    "test": 663100,
+    "total": 7111128
+  },
+  "leakage_check": {
+    "method": "source_id_level",
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "status": "PASS"
+  },
+  "rights_check": {
+    "records_with_issues": 85535,
+    "recommendation": "Review before training"
+  }
+}

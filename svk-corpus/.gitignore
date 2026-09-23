@@ -26,3 +26,9 @@ venv/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Secrets / credentials
+.kaggle/
+kaggle.json
+.env
+*.env
