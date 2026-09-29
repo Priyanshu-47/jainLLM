@@ -1,0 +1,81 @@
+{
+  "ok": true,
+  "checks": {
+    "files_present": {
+      "pass": true,
+      "detail": "missing=[]"
+    },
+    "base_model": {
+      "pass": true,
+      "detail": "Qwen/Qwen3-8B-Base"
+    },
+    "lora_r": {
+      "pass": true,
+      "detail": "16"
+    },
+    "lora_alpha": {
+      "pass": true,
+      "detail": "32"
+    },
+    "lora_dropout": {
+      "pass": true,
+      "detail": "0.05"
+    },
+    "peft_type": {
+      "pass": true,
+      "detail": "LORA"
+    },
+    "target_modules": {
+      "pass": true,
+      "detail": "['down_proj', 'gate_proj', 'k_proj', 'o_proj', 'q_proj', 'up_proj', 'v_proj']"
+    },
+    "global_step_3893": {
+      "pass": true,
+      "detail": "3893"
+    },
+    "max_steps_15248": {
+      "pass": true,
+      "detail": "15248"
+    },
+    "cuda": {
+      "pass": true,
+      "detail": "Tesla T4"
+    },
+    "torch": {
+      "pass": true,
+      "detail": "2.11.0+cu130"
+    },
+    "transformers": {
+      "pass": true,
+      "detail": "5.17.0"
+    },
+    "peft": {
+      "pass": true,
+      "detail": "0.21.0"
+    },
+    "tokenizer_load": {
+      "pass": true,
+      "detail": "Qwen2Tokenizer"
+    },
+    "adapter_load": {
+      "pass": true,
+      "detail": "PeftModelForCausalLM"
+    },
+    "optimizer_state": {
+      "pass": true,
+      "detail": "dict"
+    },
+    "scheduler_state": {
+      "pass": true,
+      "detail": "dict"
+    },
+    "forward_smoke": {
+      "pass": true,
+      "detail": "shape=(1, 2, 151936)"
+    },
+    "full_load": {
+      "pass": true,
+      "detail": "BitsAndBytes 4bit + PeftModel loaded"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "task": 57,
+  "title": "colab_gpu_setup",
+  "status": "complete",
+  "training_started": false,
+  "checkpoint_3893_modified": false,
+  "checkpoint_md5": "18281ffefb6ad93b28d4770a571fd43d",
+  "colab_account": "priyanshulodha4747474747@gmail.com",
+  "kaggle_owner": "Priyanshu47",
+  "gpu_test": {
+    "pass": true,
+    "device": "Tesla T4",
+    "total_memory_gb": 14.56,
+    "torch": "2.11.0+cu130",
+    "cuda": "13.0"
+  },
+  "load_test": {
+    "ok": true,
+    "global_step": 3893,
+    "max_steps": 15248,
+    "transformers": "5.17.0",
+    "peft": "0.21.0",
+    "bitsandbytes": "0.50.2",
+    "forward_smoke": true
+  },
+  "resume_dry_run": {
+    "exit": 0,
+    "global_step": 3893,
+    "remaining": 11355
+  },
+  "datasets": {
+    "domain_train": "priyanshu47/jainllm-domain-train",
+    "domain_train_public": true,
+    "checkpoint": "priyanshu47/dapt01-checkpoint-3893",
+    "checkpoint_public": true
+  },
+  "session_stopped": true,
+  "secrets_in_repo": false
+}

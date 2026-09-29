@@ -1,0 +1,19 @@
+{
+  "id": "priyanshu47/dapt01-qlora-13781-to-15248",
+  "title": "DAPT01 QLoRA 13781 to 15248",
+  "code_file": "train.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "priyanshu47/jainllm-domain-train",
+    "priyanshu471/dapt01-checkpoint-13781"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
