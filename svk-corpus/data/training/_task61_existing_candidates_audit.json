@@ -1,0 +1,3750 @@
+{
+  "task": 61,
+  "stage": "existing_candidate_audit",
+  "candidate_artifacts": {
+    "stage_a_draft": {
+      "file": "sft_stage_a_draft_v1.jsonl",
+      "rows": 56,
+      "unique_subject_ids": 56,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 56
+      }
+    },
+    "stage_a_review_queue": {
+      "file": "sft_stage_a_review_queue_v1.jsonl",
+      "rows": 56,
+      "unique_subject_ids": 56,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 56
+      }
+    },
+    "gold_v1": {
+      "file": "sft_gold_v1.jsonl",
+      "rows": 12,
+      "unique_subject_ids": 12,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 12
+      }
+    },
+    "gold_v2": {
+      "file": "sft_gold_v2.jsonl",
+      "rows": 0,
+      "unique_subject_ids": 0,
+      "decision_fields": {}
+    },
+    "gold_rejected_v1": {
+      "file": "sft_gold_rejected_v1.jsonl",
+      "rows": 13,
+      "unique_subject_ids": 13,
+      "decision_fields": {
+        "": 13
+      }
+    },
+    "review_priority_v1": {
+      "file": "sft_review_priority_v1.jsonl",
+      "rows": 45,
+      "unique_subject_ids": 9,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 45
+      }
+    },
+    "revision_candidates_v1": {
+      "file": "sft_revision_candidates_v1.jsonl",
+      "rows": 12,
+      "unique_subject_ids": 24,
+      "decision_fields": {
+        "SOURCE_GROUNDED": 12
+      }
+    },
+    "review_remaining_v3": {
+      "file": "sft_review_remaining_v3.jsonl",
+      "rows": 10,
+      "unique_subject_ids": 10,
+      "decision_fields": {
+        "REVISION_REQUIRED": 7,
+        "REJECTED": 3
+      }
+    },
+    "gold_rejected_v2": {
+      "file": "sft_gold_rejected_v2.jsonl",
+      "rows": 12,
+      "unique_subject_ids": 12,
+      "decision_fields": {
+        "": 12
+      }
+    },
+    "candidate_pool_v1": {
+      "file": "sft_candidate_pool_v1.jsonl",
+      "rows": 127,
+      "unique_subject_ids": 20,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 127
+      }
+    },
+    "task51_review_priority_v1": {
+      "file": "sft_task51_review_priority_v1.jsonl",
+      "rows": 17,
+      "unique_subject_ids": 8,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 17
+      }
+    },
+    "stage_a_human_review_v1": {
+      "file": "sft_stage_a_human_review_v1.jsonl",
+      "rows": 56,
+      "unique_subject_ids": 112,
+      "decision_fields": {
+        "HUMAN_REVIEW_REQUIRED": 56
+      }
+    },
+    "revision_blocked_v1": {
+      "file": "sft_revision_blocked_v1.jsonl",
+      "rows": 0,
+      "unique_subject_ids": 0,
+      "decision_fields": {}
+    },
+    "candidate_quarantine_v1": {
+      "file": "sft_candidate_quarantine_v1.jsonl",
+      "rows": 0,
+      "unique_subject_ids": 0,
+      "decision_fields": {}
+    },
+    "seed_v1": {
+      "file": "sft_seed_v1.jsonl",
+      "rows": 6,
+      "unique_subject_ids": 6,
+      "decision_fields": {
+        "HUMAN_VERIFIED": 6
+      }
+    },
+    "gold_v3": {
+      "file": "sft_gold_v3.jsonl",
+      "rows": 2,
+      "unique_subject_ids": 4,
+      "decision_fields": {
+        "HUMAN_VERIFIED": 2
+      }
+    }
+  },
+  "human_decision_totals": {
+    "approval_subjects": [
+      "CAND-SVK-0038-unknown",
+      "CAND-SVK-2022-SVK-2022",
+      "CAND-SVK-2023-SVK-2023",
+      "CAND-SVK-2024-SVK-2024",
+      "CAND-SVK-2025-SVK-2025",
+      "CAND-SVK-2029-SVK-2029",
+      "EX-000001",
+      "EX-000003"
+    ],
+    "rejection_subjects": [
+      "CAND-SVK-0038-unknown",
+      "CAND-SVK-2027-SVK-2027",
+      "CAND-SVK-2029-SVK-2029",
+      "EX-000050",
+      "EX-000051",
+      "EX-000056"
+    ],
+    "revision_subjects": [
+      "CAND-SVK-2025-SVK-2025",
+      "CAND-SVK-2026-SVK-2026",
+      "EX-000001",
+      "EX-000003",
+      "EX-000005",
+      "EX-000007",
+      "EX-000008",
+      "EX-000011",
+      "EX-000017",
+      "EX-000022",
+      "EX-000049",
+      "EX-000050",
+      "EX-000051",
+      "EX-000056"
+    ],
+    "approval_records": 14,
+    "rejection_records": 8,
+    "revision_records": 29
+  },
+  "unique_candidates_audited": 172,
+  "class_counts": {
+    "HUMAN_REVISE_REQUIRED": 56,
+    "PROVENANCE_INCOMPLETE": 77,
+    "UNSUITABLE_FOR_SFT": 3,
+    "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW": 5,
+    "DUPLICATE": 7,
+    "HUMAN_REJECTED": 16,
+    "HUMAN_VERIFIED_APPROVED": 8,
+    "RIGHTS_BLOCKED": 0
+  },
+  "class_definitions": {
+    "HUMAN_VERIFIED_APPROVED": "human APPROVE recorded (present in or recoverable to the HUMAN_VERIFIED inventory)",
+    "HUMAN_REVISE_REQUIRED": "human REVISE recorded - not usable until re-reviewed",
+    "HUMAN_REJECTED": "human REJECT recorded",
+    "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW": "no human decision yet; rights cleared, provenance complete, not duplicate, passes hygiene checks",
+    "RIGHTS_BLOCKED": "source rights not cleared for SFT (manifest/audit/evidence)",
+    "PROVENANCE_INCOMPLETE": "provenance incomplete (missing source id or unit/text id)",
+    "DUPLICATE": "duplicate of an earlier candidate (same normalized question + sources)",
+    "UNSUITABLE_FOR_SFT": "structurally unsuitable for SFT (short/empty/boilerplate/OCR-noisy/citation-only)"
+  },
+  "records": [
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject EX-000001,EX-000002 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "Which teacher is associated with this explanation?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "EX-000001",
+        "EX-000002"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 6
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject EX-000003,EX-000004 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "Which teacher is associated with this explanation?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "EX-000003",
+        "EX-000004"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "Which teacher is associated with this explanation?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000005",
+        "EX-000006"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "Which teacher is associated with this explanation?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000007"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer not related answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "Which teacher is associated with this explanation?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000008"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about jiva?",
+      "source_ids": [
+        "SVK-2020"
+      ],
+      "subjects": [
+        "EX-000009"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "UNSUITABLE_FOR_SFT",
+      "reason": "ocr_noise=['blacklist_chars=15']",
+      "question": "What does this source explain about the practice of Avashyaka?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "EX-000010",
+        "EX-000023"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: here u r explaining avasyhyaka",
+      "question": "What does this source explain about the practice of Pratikraman?",
+      "source_ids": [
+        "SVK-2024"
+      ],
+      "subjects": [
+        "EX-000011",
+        "EX-000012",
+        "EX-000028",
+        "EX-000029",
+        "EX-000030"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 15,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW",
+      "reason": "no human decision yet; rights+provenance clean",
+      "question": "What does this source explain about tapas?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000013",
+        "EX-000015"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in stage_a_draft",
+      "question": "What does this source explain about jiva?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000014"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW",
+      "reason": "no human decision yet; rights+provenance clean",
+      "question": "What does this source explain about karma?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000016"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What does this source explain about the practice of Pratikraman?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "EX-000017",
+        "EX-000019",
+        "EX-000021"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 9,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about the practice of Samayik?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "EX-000018",
+        "EX-000020"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What does this source explain about the practice of Kayotsarga?",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000022"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 4
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in stage_a_draft",
+      "question": "What does this source explain about the practice of Pratikraman?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "EX-000024"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "UNSUITABLE_FOR_SFT",
+      "reason": "ocr_noise=['blacklist_chars=40']",
+      "question": "What does this source explain about the practice of Vandana?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "EX-000025",
+        "EX-000027"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "UNSUITABLE_FOR_SFT",
+      "reason": "ocr_noise=['blacklist_chars=9']",
+      "question": "What does this source explain about the practice of Paushadh?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "EX-000026"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW",
+      "reason": "no human decision yet; rights+provenance clean",
+      "question": "What does this source explain about the practice of Pratyakhyan?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000031",
+        "EX-000033"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in stage_a_draft",
+      "question": "What does this source explain about the practice of Samayik?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000032"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about karma?",
+      "source_ids": [
+        "SVK-0007"
+      ],
+      "subjects": [
+        "EX-000034"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about tapas?",
+      "source_ids": [
+        "SVK-0007"
+      ],
+      "subjects": [
+        "EX-000035",
+        "EX-000037"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about jiva?",
+      "source_ids": [
+        "SVK-0007"
+      ],
+      "subjects": [
+        "EX-000036",
+        "EX-000038"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 6,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about karma?",
+      "source_ids": [
+        "SVK-0016"
+      ],
+      "subjects": [
+        "EX-000039",
+        "EX-000040",
+        "EX-000042"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 9,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about jiva?",
+      "source_ids": [
+        "SVK-0016"
+      ],
+      "subjects": [
+        "EX-000041"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about tapas?",
+      "source_ids": [
+        "SVK-0016"
+      ],
+      "subjects": [
+        "EX-000043"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about jiva?",
+      "source_ids": [
+        "SVK-0037"
+      ],
+      "subjects": [
+        "EX-000044"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What does this source explain about tapas?",
+      "source_ids": [
+        "SVK-0037"
+      ],
+      "subjects": [
+        "EX-000045",
+        "EX-000046",
+        "EX-000047",
+        "EX-000048"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 12,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What does this text explain about this topic?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000049"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps langu",
+      "question": "What does this text explain about this topic?",
+      "source_ids": [
+        "SVK-2027"
+      ],
+      "subjects": [
+        "EX-000050"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: not nderstandable",
+      "question": "What does this text explain about this topic?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "EX-000051",
+        "EX-000052",
+        "EX-000053",
+        "EX-000054",
+        "EX-000055"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 15,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: needs revisit",
+      "question": "What does this text explain about this topic?",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000056"
+      ],
+      "files": [
+        "stage_a_draft",
+        "stage_a_human_review_v1",
+        "stage_a_review_queue"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject EX-000001 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does teacher Amarmuni explain in source SVK-2022?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "EX-000001"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 6
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject EX-000003 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does teacher Amarmuni explain in source SVK-2023?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "EX-000003"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "What does teacher Amarmuni explain in source SVK-2025?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000005"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "What does teacher Amarmuni explain in source SVK-2026?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000007"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer not related answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "What does teacher Amarmuni explain in source SVK-2029?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000008"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: here u r explaining avasyhyaka",
+      "question": "How does source SVK-2024 explain the practice of Pratikraman?",
+      "source_ids": [
+        "SVK-2024"
+      ],
+      "subjects": [
+        "EX-000011"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "How does source SVK-0026 explain the practice of Pratikraman?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "EX-000017"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "How does source SVK-1001 explain the practice of Kayotsarga?",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000022"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 4
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What does source SVK-2026 explain?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000049"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps langu",
+      "question": "What does source SVK-2027 explain?",
+      "source_ids": [
+        "SVK-2027"
+      ],
+      "subjects": [
+        "EX-000050"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: not nderstandable",
+      "question": "What does source SVK-0038 explain?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "EX-000051"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: needs revisit",
+      "question": "What does source SVK-1001 explain?",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000056"
+      ],
+      "files": [
+        "gold_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000009"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000010"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000013"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000016"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000018"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000024"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000025"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000026"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000031"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000032"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000034"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000039"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source_id on record",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000044"
+      ],
+      "files": [
+        "gold_rejected_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Samayik, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "CAND-SVK-0026-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1"
+      ],
+      "occurrences": 14,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Pratikraman, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "CAND-SVK-0026-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Jiva in Jain teaching?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "CAND-SVK-0026-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (seed_v1)",
+      "question": "What is Jain in Jain teaching?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "CAND-SVK-0038-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "seed_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 3,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-0038-unknown had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is It in Jain teaching?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "CAND-SVK-0038-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 3,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-0038-unknown had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is Jaina in Jain teaching?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "CAND-SVK-0038-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 3,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-0038-unknown had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is Monsieur in Jain teaching?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "CAND-SVK-0038-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 3,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-0038-unknown had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is This in Jain teaching?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "CAND-SVK-0038-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 3,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (seed_v1)",
+      "question": "What is Avashyaka, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "CAND-SVK-2022-SVK-2022"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "seed_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (seed_v1)",
+      "question": "What is Samayik, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "CAND-SVK-2023-SVK-2023"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "seed_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 3,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2023-SVK-2023 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Uttaradhyayana Sutra teach about Bhagavan?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "CAND-SVK-2023-SVK-2023"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 3,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (seed_v1)",
+      "question": "What is Pratikraman, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-2024"
+      ],
+      "subjects": [
+        "CAND-SVK-2024-SVK-2024"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "seed_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 22,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (seed_v1)",
+      "question": "What does the Sthanang Sutra teach about Allustrated?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "CAND-SVK-2025-SVK-2025"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "seed_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2025-SVK-2025 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Sthanang Sutra teach about With?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "CAND-SVK-2025-SVK-2025"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2025-SVK-2025 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Sthanang Sutra teach about Editor?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "CAND-SVK-2025-SVK-2025"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: language not understandable",
+      "question": "What does the Dasvaikalik Sutra teach about Apa?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "CAND-SVK-2026-SVK-2026"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: not needed",
+      "question": "What is Shri in Jain teaching?",
+      "source_ids": [
+        "SVK-2027"
+      ],
+      "subjects": [
+        "CAND-SVK-2027-SVK-2027"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 17,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2029-SVK-2029 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is Shri in Jain teaching?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "CAND-SVK-2029-SVK-2029"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (seed_v1)",
+      "question": "What is Karma in Jain teaching?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "CAND-SVK-2029-SVK-2029"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "seed_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2029-SVK-2029 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is Original in Jain teaching?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "CAND-SVK-2029-SVK-2029"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2029-SVK-2029 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What is The in Jain teaching?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "CAND-SVK-2029-SVK-2029"
+      ],
+      "files": [
+        "candidate_pool_v1",
+        "review_priority_v1",
+        "task51_review_priority_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 2,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (gold_v3)",
+      "question": "What is Avashyaka and how is it understood in Jain teachings?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "EX-000001",
+        "REV-EX-000001"
+      ],
+      "files": [
+        "gold_v3",
+        "revision_candidates_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 6
+    },
+    {
+      "class": "HUMAN_VERIFIED_APPROVED",
+      "reason": "human APPROVE present and this exact row is in the HUMAN_VERIFIED inventory (gold_v3)",
+      "question": "What is Samayik and how is it understood in Jain teachings?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "EX-000003",
+        "REV-EX-000003"
+      ],
+      "files": [
+        "gold_v3",
+        "revision_candidates_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "What does the Sthanang Sutra teach about Jain principles?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000005",
+        "REV-EX-000005"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What is Samayik and how is it understood in Jain teachings?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000007",
+        "REV-EX-000007",
+        "EX-000049",
+        "REV-EX-000049"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer not related answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "What is Karma and how is it understood in Jain teachings?",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000008",
+        "REV-EX-000008"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: here u r explaining avasyhyaka",
+      "question": "What is Pratikraman and how is it practiced in Jainism?",
+      "source_ids": [
+        "SVK-2024"
+      ],
+      "subjects": [
+        "EX-000011",
+        "REV-EX-000011"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What is Pratikraman and how is it practiced in Jainism?",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "EX-000017",
+        "REV-EX-000017"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "What is Kayotsarga and how is it practiced in Jainism?",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000022",
+        "REV-EX-000022"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 4
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps langu",
+      "question": "What is Sthanakvasi and how is it understood in Jain teachings?",
+      "source_ids": [
+        "SVK-2027"
+      ],
+      "subjects": [
+        "EX-000050",
+        "REV-EX-000050"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 3,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: not nderstandable",
+      "question": "What is Vandana and how is it understood in Jain teachings?",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "EX-000051",
+        "REV-EX-000051"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: needs revisit",
+      "question": "What does the History of Jain Sects teach about Jain principles?",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000056",
+        "REV-EX-000056"
+      ],
+      "files": [
+        "revision_candidates_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000005"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000007"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer not related answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000008"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: here u r explaining avasyhyaka",
+      "question": "",
+      "source_ids": [
+        "SVK-2024"
+      ],
+      "subjects": [
+        "EX-000011"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "EX-000017"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000022"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 4
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000049"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps langu",
+      "question": "",
+      "source_ids": [
+        "SVK-2027"
+      ],
+      "subjects": [
+        "EX-000050"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: not nderstandable",
+      "question": "",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "EX-000051"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: needs revisit",
+      "question": "",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000056"
+      ],
+      "files": [
+        "review_remaining_v3"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject EX-000001 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "EX-000001"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 6
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject EX-000003 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "EX-000003"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "EX-000005"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer not related answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "",
+      "source_ids": [
+        "SVK-2029"
+      ],
+      "subjects": [
+        "EX-000008"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: here u r explaining avasyhyaka",
+      "question": "",
+      "source_ids": [
+        "SVK-2024"
+      ],
+      "subjects": [
+        "EX-000011"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "",
+      "source_ids": [
+        "SVK-0026"
+      ],
+      "subjects": [
+        "EX-000017"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 3
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000022"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 4
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps",
+      "question": "",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "EX-000049"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 2
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: I think now the anseer are most of correct but misaligned with questions and need generation from model which we will do in next steps langu",
+      "question": "",
+      "source_ids": [
+        "SVK-2027"
+      ],
+      "subjects": [
+        "EX-000050"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: not nderstandable",
+      "question": "",
+      "source_ids": [
+        "SVK-0038"
+      ],
+      "subjects": [
+        "EX-000051"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REJECTED",
+      "reason": "human REJECT: needs revisit",
+      "question": "",
+      "source_ids": [
+        "SVK-1001"
+      ],
+      "subjects": [
+        "EX-000056"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 1,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: answer is acceptable but need explainatio general language and it will be increse based on further training",
+      "question": "",
+      "source_ids": [],
+      "subjects": [
+        "EX-000007"
+      ],
+      "files": [
+        "gold_rejected_v2"
+      ],
+      "occurrences": 1,
+      "rights_status": "UNKNOWN_NO_SOURCE",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is The in Jain teaching?",
+      "source_ids": [
+        "SVK-1002"
+      ],
+      "subjects": [
+        "CAND-SVK-1002-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Kalpa in Jain teaching?",
+      "source_ids": [
+        "SVK-1002"
+      ],
+      "subjects": [
+        "CAND-SVK-1002-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Ceylonese in Jain teaching?",
+      "source_ids": [
+        "SVK-1002"
+      ],
+      "subjects": [
+        "CAND-SVK-1002-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is This in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is It in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Marks in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Google in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Make in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Refrain in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Avashyaka, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Keep in Jain teaching?",
+      "source_ids": [
+        "SVK-1003"
+      ],
+      "subjects": [
+        "CAND-SVK-1003-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Whether in Jain teaching?",
+      "source_ids": [
+        "SVK-1005"
+      ],
+      "subjects": [
+        "CAND-SVK-1005-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Marks in Jain teaching?",
+      "source_ids": [
+        "SVK-1005"
+      ],
+      "subjects": [
+        "CAND-SVK-1005-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Avashyaka, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-1005"
+      ],
+      "subjects": [
+        "CAND-SVK-1005-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is The in Jain teaching?",
+      "source_ids": [
+        "SVK-1006"
+      ],
+      "subjects": [
+        "CAND-SVK-1006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Karma in Jain teaching?",
+      "source_ids": [
+        "SVK-1006"
+      ],
+      "subjects": [
+        "CAND-SVK-1006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Perception in Jain teaching?",
+      "source_ids": [
+        "SVK-1006"
+      ],
+      "subjects": [
+        "CAND-SVK-1006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is If in Jain teaching?",
+      "source_ids": [
+        "SVK-1006"
+      ],
+      "subjects": [
+        "CAND-SVK-1006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Satya in Jain teaching?",
+      "source_ids": [
+        "SVK-1006"
+      ],
+      "subjects": [
+        "CAND-SVK-1006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is For in Jain teaching?",
+      "source_ids": [
+        "SVK-1006"
+      ],
+      "subjects": [
+        "CAND-SVK-1006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is This in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Marks in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Keep in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Le in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Je in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Il in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is En in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Les in Jain teaching?",
+      "source_ids": [
+        "SVK-1007"
+      ],
+      "subjects": [
+        "CAND-SVK-1007-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is In in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Sass in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Fiis in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is After in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Dr in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Vowo in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Pujnii in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Brahoxaaa in Jain teaching?",
+      "source_ids": [
+        "SVK-1008"
+      ],
+      "subjects": [
+        "CAND-SVK-1008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Vi in Jain teaching?",
+      "source_ids": [
+        "SVK-1010"
+      ],
+      "subjects": [
+        "CAND-SVK-1010-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Tee in Jain teaching?",
+      "source_ids": [
+        "SVK-2006"
+      ],
+      "subjects": [
+        "CAND-SVK-2006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is We in Jain teaching?",
+      "source_ids": [
+        "SVK-2006"
+      ],
+      "subjects": [
+        "CAND-SVK-2006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Bete in Jain teaching?",
+      "source_ids": [
+        "SVK-2006"
+      ],
+      "subjects": [
+        "CAND-SVK-2006-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Degree in Jain teaching?",
+      "source_ids": [
+        "SVK-2008"
+      ],
+      "subjects": [
+        "CAND-SVK-2008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is The in Jain teaching?",
+      "source_ids": [
+        "SVK-2008"
+      ],
+      "subjects": [
+        "CAND-SVK-2008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 5,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Method in Jain teaching?",
+      "source_ids": [
+        "SVK-2008"
+      ],
+      "subjects": [
+        "CAND-SVK-2008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Particularly in Jain teaching?",
+      "source_ids": [
+        "SVK-2008"
+      ],
+      "subjects": [
+        "CAND-SVK-2008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Prakrits in Jain teaching?",
+      "source_ids": [
+        "SVK-2008"
+      ],
+      "subjects": [
+        "CAND-SVK-2008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Modern in Jain teaching?",
+      "source_ids": [
+        "SVK-2008"
+      ],
+      "subjects": [
+        "CAND-SVK-2008-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Indological in Jain teaching?",
+      "source_ids": [
+        "SVK-2009"
+      ],
+      "subjects": [
+        "CAND-SVK-2009-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Degree in Jain teaching?",
+      "source_ids": [
+        "SVK-2009"
+      ],
+      "subjects": [
+        "CAND-SVK-2009-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is The in Jain teaching?",
+      "source_ids": [
+        "SVK-2009"
+      ],
+      "subjects": [
+        "CAND-SVK-2009-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is In in Jain teaching?",
+      "source_ids": [
+        "SVK-2009"
+      ],
+      "subjects": [
+        "CAND-SVK-2009-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "PROVENANCE_INCOMPLETE",
+      "reason": "no source unit / text_id on record",
+      "question": "What is Particularly in Jain teaching?",
+      "source_ids": [
+        "SVK-2009"
+      ],
+      "subjects": [
+        "CAND-SVK-2009-unknown"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED",
+      "unit_ids": 0,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2022-SVK-2022 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Aavashyak Sutra teach about Page?",
+      "source_ids": [
+        "SVK-2022"
+      ],
+      "subjects": [
+        "CAND-SVK-2022-SVK-2022"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 1,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2023-SVK-2023 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Uttaradhyayana Sutra teach about Karma?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "CAND-SVK-2023-SVK-2023"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 3,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2023-SVK-2023 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Uttaradhyayana Sutra teach about Page?",
+      "source_ids": [
+        "SVK-2023"
+      ],
+      "subjects": [
+        "CAND-SVK-2023-SVK-2023"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 3,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "subject CAND-SVK-2025-SVK-2025 had a human APPROVE/REVISE, but this row is not the approved text; the human-approved successor lives in the HUMAN_VERIFIED inventory (see sft_reconciled_v1.jsonl)",
+      "question": "What does the Sthanang Sutra teach about Original?",
+      "source_ids": [
+        "SVK-2025"
+      ],
+      "subjects": [
+        "CAND-SVK-2025-SVK-2025"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 2,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "HUMAN_REVISE_REQUIRED",
+      "reason": "human REVISE: language not understandable",
+      "question": "What does the Dasvaikalik Sutra teach about Page?",
+      "source_ids": [
+        "SVK-2026"
+      ],
+      "subjects": [
+        "CAND-SVK-2026-SVK-2026"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 4,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 1
+    },
+    {
+      "class": "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW",
+      "reason": "no human decision yet; rights+provenance clean",
+      "question": "What is Page in Jain teaching?",
+      "source_ids": [
+        "SVK-2028"
+      ],
+      "subjects": [
+        "CAND-SVK-2028-SVK-2028"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW",
+      "reason": "no human decision yet; rights+provenance clean",
+      "question": "What is Moksha in Jain teaching?",
+      "source_ids": [
+        "SVK-2028"
+      ],
+      "subjects": [
+        "CAND-SVK-2028-SVK-2028"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 3,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in review_priority_v1",
+      "question": "What is Samayik, and what is its purpose in Jain practice?",
+      "source_ids": [
+        "SVK-2028"
+      ],
+      "subjects": [
+        "CAND-SVK-2028-SVK-2028"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in review_priority_v1",
+      "question": "What is Jiva in Jain teaching?",
+      "source_ids": [
+        "SVK-2028"
+      ],
+      "subjects": [
+        "CAND-SVK-2028-SVK-2028"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 2,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in review_priority_v1",
+      "question": "What is The in Jain teaching?",
+      "source_ids": [
+        "SVK-2028"
+      ],
+      "subjects": [
+        "CAND-SVK-2028-SVK-2028"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    },
+    {
+      "class": "DUPLICATE",
+      "reason": "duplicate of first occurrence in candidate_pool_v1",
+      "question": "What is We in Jain teaching?",
+      "source_ids": [
+        "SVK-2028"
+      ],
+      "subjects": [
+        "CAND-SVK-2028-SVK-2028"
+      ],
+      "files": [
+        "candidate_pool_v1"
+      ],
+      "occurrences": 1,
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "unit_ids": 1,
+      "human_approvals": 0,
+      "human_rejections": 0,
+      "human_revisions": 0
+    }
+  ],
+  "rights_blocked_sources": []
+}

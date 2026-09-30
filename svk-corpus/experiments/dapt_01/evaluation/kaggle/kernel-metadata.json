@@ -1,0 +1,18 @@
+{
+  "id": "priyanshu47/task60-dapt01-base-vs-dapt-evaluation",
+  "title": "TASK60 DAPT01 Base vs DAPT Evaluation",
+  "code_file": "task60_infer_kaggle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "priyanshu47/dapt01-checkpoint-15248"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

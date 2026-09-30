@@ -1,0 +1,190 @@
+{
+  "task": 59,
+  "title": "DAPT-01 final forensic audit",
+  "audit_date": "2026-09-29",
+  "mode": "read_verify_report_only",
+  "status": {
+    "DAPT01_AUDIT_STATUS": "PASS_WITH_WARNINGS",
+    "FINAL_CHECKPOINT": "VERIFIED",
+    "TRANSFER": "PARTIAL",
+    "CONFIG": "MATCHED",
+    "SCHEDULER": "RESUMED_WITH_CHANGE",
+    "DATASET": "VERIFIED",
+    "REPRODUCIBILITY": "PARTIAL",
+    "TRAINING_COMPLETION": "VERIFIED",
+    "LOAD_TEST": "PASS_STRUCTURAL_FULL_4BIT_NOT_VERIFIED"
+  },
+  "scheduler_finding": {
+    "answer": "B",
+    "statement": "Optimizer state never reset; LR scheduler lambda recreated each session from that session's TrainingArguments; hyperparameters changed at 3 resume boundaries (3893, 4500, 5500)",
+    "lr_regions": [
+      {"region": "A", "steps": [460, 3890], "T": 15248, "W": 458, "skips": 0, "exact_matches": "344/344"},
+      {"region": "B", "steps": [3900, 4500], "T": 5500, "W": 0, "skips": 0, "exact_matches": "61/61"},
+      {"region": "C", "steps": [4510, 5490], "T": 5500, "W": 165, "skips": 0, "exact_matches": "99/99"},
+      {"region": "D1", "steps": [5510, 8500], "T": 15248, "W": 458, "skips": 0, "exact": true},
+      {"region": "D2", "steps": [8510, 10130], "T": 15248, "W": 458, "skips": 1, "exact": true},
+      {"region": "D3", "steps": [10140, 12410], "T": 15248, "W": 458, "skips": 2, "exact": true},
+      {"region": "D4", "steps": [12420, 15240], "T": 15248, "W": 458, "skips": 3, "exact": true}
+    ],
+    "discontinuities": [
+      {"at": "3890->3900", "from": 1.745980755642162e-04, "to": 3.898045534624857e-05, "cause": "S2 max_steps=5500 warmup=0"},
+      {"at": "4500->4510", "from": 1.5905541770183096e-05, "to": 1.654962680082647e-05, "cause": "S3 warmup_ratio=0.03 (W=165)"},
+      {"at": "5500->5510", "from": 1.7338075497530526e-11, "to": 1.477578718737635e-04, "cause": "S4 max_steps restored to 15248 (the LR re-leap)"}
+    ],
+    "clean_resumes_no_lr_change": [7658, 9977, 12388, 13781],
+    "optimizer_state": "continuous (moments and step counter never reset: 3892 -> 15244)",
+    "step_skips": {
+      "count": 3,
+      "approx_steps": [8505, 10135, 12415],
+      "signature": "global_step advanced while optimizer step and scheduler last_epoch did not",
+      "best_explanation": "fp16 GradScaler overflow skip via transformers trainer.py:1874-1880 (optimizer_step_was_skipped gates lr_scheduler.step but not global_step += 1)",
+      "confidence": "mechanism strongly supported, not directly observed (loss_scale not logged; run transformers version unrecorded)",
+      "logged_grad_norm_inf_nan": "0 of 1524 (min 0.329 median 0.880 max 1.957)"
+    },
+    "final_counters": {"global_step": 15248, "optimizer_step": 15244, "scheduler_last_epoch": 15245, "successful_updates": 15245}
+  },
+  "sample_count": {
+    "DATASET_RECORDS": 243957,
+    "EFFECTIVE_SAMPLE_POSITIONS": 243968,
+    "DIFFERENCE": 11,
+    "EXPLANATION": "final incomplete gradient-accumulation window: max_steps = ceil(243957/16) = 15248; last step consumed 5 micro-batches, leaving 16-5 = 11 unfilled positions",
+    "CONFIDENCE": "HIGH (arithmetic); record-exactly-once inferred from HF sampler + exact epoch accounting (epoch field = min(1, step*16/243957) for all 1524 log entries, 0 mismatches)",
+    "ruled_out": ["padding", "repeated samples", "drop_last", "resume accounting", "dataloader error"]
+  },
+  "dataset": {
+    "train_records": 243957,
+    "val_records": 11188,
+    "test_records": 6856,
+    "train_sha256": "120eca4b671da4814f230493ac19eb7599ce846e999e2b2a5ec3894ec1a2cb7c",
+    "train_bytes": 757616666,
+    "manifest_sha256": "f38a91ef1850cce3934b8f6de2aedadcc6dbac321bbe97ae5c98c3e7a6313880",
+    "text_only_cache_sha256": "ae9d5f5c5b385ad732b671b22437487ef65c877434bf561d141e1795ff161b4d",
+    "split": "document_level 80/10/10 over 40 documents (32/4/4)",
+    "kaggle_slugs": ["priyanshu47/jainllm-domain-train (final sessions, lastUpdated 2026-09-23, single version)", "priyanshu47/jain-domain-train (original sessions)"],
+    "byte_identity": "repo == jain-domain-train (downloaded+hashed) == jainllm-domain-train copy used by final session == re-extracted text-only cache",
+    "records_changed_after_training": false
+  },
+  "final_checkpoint": {
+    "ref": "priyanshu471/dapt01-checkpoint-15248",
+    "uploaded": "2026-09-29T05:44:55",
+    "files": 11,
+    "sha256": {
+      "adapter_model.safetensors": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+      "adapter_config.json": "cbc419e464352259590dd01d09ec4cf8c8be7d0ea334754e7042c1684311e04c",
+      "trainer_state.json": "1d3f52ed96ae84683de45c6ea93c706953da832f8953df7b5e34d00f49e1b9e1",
+      "optimizer.pt": "19ae8830d9e47921c53d72036ca5a8b31b21660e686e126cdee4d9cd8bb611fa",
+      "scheduler.pt": "e628794aae2635192cd552e1e610bdf4f73b7f2d38344ff08386f1be1d3430e9",
+      "training_args.bin": "4325ad157abf9191424c128dc8a2dbb48b60c86f3b7678fadd43774f131ce573",
+      "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+      "tokenizer_config.json": "0fe2ab47b292d91fbbb57eda2c0f9528f7aba9e0f42c4dda9248ac3df5a28fb0",
+      "chat_template.jinja": "87a2728cb8dc9fe424d624542f6060ec05a1d285ebbec578bb078900e33396b5",
+      "scaler.pt": "5df72c3c29e4e218800e740eca4f7c3c41bac6b61fb869dbd648b19981939526",
+      "rng_state.pth": "aea761d156d026b508b2d181212baca01ddded1b869557c05b610b7d02907954"
+    },
+    "global_step": 15248,
+    "max_steps": 15248,
+    "epoch": 1.0,
+    "structural_load": "PASS (504/504 keys, 0 shape mismatches, tensors byte-equal)"
+  },
+  "transfer": {
+    "TRANSFER_STATUS": "PARTIAL",
+    "target_account": "priyanshu47",
+    "source_account": "priyanshu471",
+    "attempted": 53,
+    "completed": 52,
+    "per_dataset_verified": "52/52 (adapter_model 174655536 B + trainer_state + optimizer present in each)",
+    "checkpoint_15248": "COMPLETE: 11 files listed, 6 sha256-verified byte-identical to source",
+    "failed": {"step": 9600, "reason": "source dataset empty/corrupt: DownloadDataset 404 (both passes), no local copy; target absent", "impact": "immaterial: 9400 and 9800 present, later steps supersede"},
+    "note": "full-ZIP download of priyanshu47/dapt01-checkpoint-15248 currently 404 while single-file downloads succeed (Kaggle zip assembly issue)"
+  },
+  "config": {
+    "expected_source": "LOCKED dict (experiments/dapt_01/kaggle/train.py:19-33)",
+    "actual_source": "training_args.bin of checkpoint-15248 + train.py code",
+    "locked_mismatches": [],
+    "plan_yaml_deviations_known": ["bf16->fp16", "2x8->1x16", "save 500->200 (forced by callback)", "eval steps->NO", "flash_attn2->default", "workers 4->0", "report_to tensorboard->[]", "load_best_model_at_end true->false"],
+    "inert_args_note": "num_train_epochs=3.0 in final args is overridden by max_steps=15248 (effective 1 epoch)"
+  },
+  "loss": {
+    "first": {"step": 10, "loss": 2.778436470031738},
+    "final_logged": {"step": 15240, "loss": 1.5740135192871094},
+    "minimum": {"step": 10520, "loss": 1.5159},
+    "claims_all_verified": true,
+    "claim_table": {"10": 2.7784, "5500": 1.9919, "7650": 1.9987, "9970": 1.7785, "12380": 1.6851, "13780": 1.7495, "15240": 1.5740},
+    "uptick_13780": "plateau noise; means 13000-13780 = 1.7637 vs 13790-14570 = 1.7646; no LR change at resume 13781",
+    "entries": 1524,
+    "entry_gaps": 10,
+    "mean_first_100": 2.2197,
+    "mean_last_100": 1.7676
+  },
+  "parameters": {
+    "base_total": 8190735360,
+    "trainable_lora": 43646976,
+    "pct_trainable_of_base": 0.5329,
+    "adapter_bytes": 174655536,
+    "lora_modules": 252,
+    "lora_tensors": 504,
+    "only_lora_trained": true
+  },
+  "trainer_state": {
+    "total_flos": 8.085123272706048e+17,
+    "num_input_tokens_seen": 0,
+    "best_metric": 3.0743370056152344,
+    "best_global_step": 500,
+    "best_model_checkpoint": "/kaggle/working/dapt-01-output/checkpoint-500 (stale early pointer, rotated away)",
+    "eval_entries": [{"step": 500, "eval_loss": 3.0743370056152344}, {"step": 1000, "eval_loss": 3.1642653942108154}],
+    "trainer_version_metadata": "NOT_RECORDED",
+    "logging_steps": 10,
+    "save_steps": 200,
+    "eval_steps": 500
+  },
+  "reproducibility": {
+    "REPRODUCIBLE": "PARTIAL",
+    "present": ["locked config", "plan yaml", "executed training_args", "dataset bytes + cache sha", "base snapshot 49e3418fbbbca6ecbdf9608b4d22e5a407081db4", "seed 42", "train.py code", "complete final checkpoint with optimizer/scheduler/rng"],
+    "missing": ["run dependency versions (unpinned, unrecorded)", "Kaggle image/CUDA per session", "loss_scale series", "S1-S7 session logs", "bitwise determinism flags", "checkpoint-9600 (broken, immaterial)"]
+  },
+  "load_test": {
+    "LOAD_TEST": "PASS (structural)",
+    "scope": "meta-device Qwen3-8B-Base + peft wrapper + adapter materialization (504/504 byte-equal)",
+    "full_4bit_materialized_load": "NOT_VERIFIED (no bitsandbytes, no GPU, RAM 13GB < 16.4GB bf16)",
+    "environment": "torch 2.14.0+cpu, transformers 5.17.0, peft 0.21.0, accelerate 1.15.0"
+  },
+  "critical_findings": [
+    "training completed: global_step 15248 = max_steps, epoch 1.0, final ckpt complete and uploaded",
+    "scheduler recreated with changed args at 3 boundaries; confirmed LR re-leap at 5510 (1.73e-11 -> 1.48e-4)",
+    "3 global steps advanced without optimizer/scheduler update (~8505, ~10135, ~12415) -> 15245 successful updates",
+    "priyanshu471/dapt01-checkpoint-9600 broken (404) and unmirrored; immaterial"
+  ],
+  "warnings": [
+    "no evaluation after step 1000; best_model_checkpoint points at stale checkpoint-500; no evidence yet that step 15248 beats base",
+    "run dependency versions unpinned/unrecorded",
+    "full 4-bit runtime load NOT_VERIFIED",
+    "fp16 used (not bf16 as in plan yaml); 3 step-skips best explained by fp16 overflow (not directly proven)",
+    "full-ZIP download of priyanshu47/dapt01-checkpoint-15248 returns 404 though all files list and hash correctly",
+    "deprecated warmup_ratio warning and logging_steps 20 vs 10 mismatch (cosmetic)",
+    "num_train_epochs=3.0 stored in final args is inert but misleading"
+  ],
+  "non_issues": [
+    "11-sample difference = final partial accumulation window",
+    "13780 loss uptick = plateau noise",
+    "save_total_limit=4 rotation of 13800-14600 (all uploaded before rotation)",
+    "constant scheduler-vs-optimizer +1 bookkeeping offset"
+  ],
+  "missing_information": [
+    "run-time dependency versions",
+    "session logs S1-S7",
+    "loss_scale series / overflow warnings",
+    "kaggle per-version file hashes (file-level byte identity used)",
+    "full 4-bit load test"
+  ],
+  "compliance": {
+    "training_launched": false,
+    "checkpoint_or_dataset_modified": false,
+    "artifacts_deleted": false,
+    "fabricated_values": false
+  },
+  "files_created": [
+    "data/reports/task59_dapt01_final_forensic_audit.md",
+    "data/reports/task59_dapt01_final_forensic_audit.json"
+  ],
+  "next_recommended_step": "BASE_VS_DAPT_EVALUATION"
+}

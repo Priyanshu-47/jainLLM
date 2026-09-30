@@ -1,0 +1,842 @@
+{
+  "task": 61,
+  "stage": "sft_candidate_validation",
+  "generated_at": "2026-09-29T17:23:29.464705+00:00",
+  "pipeline": [
+    "reconciliation (stage 1)",
+    "existing-candidate audit (stage 2)",
+    "candidate build + 13 gates (stage 3)"
+  ],
+  "reconciliation_summary": {
+    "task": 61,
+    "stage": "reconciliation",
+    "review_artifacts_inspected": [
+      {
+        "task": "T41_stage_a_review_queue",
+        "file": "sft_stage_a_human_review_v1.jsonl",
+        "rows": 56,
+        "decision_breakdown": {
+          "HUMAN_REVIEW_REQUIRED": 56
+        }
+      },
+      {
+        "task": "T44_gold_review",
+        "file": "sft_human_review_results_v1.jsonl",
+        "rows": 21,
+        "decision_breakdown": {
+          "APPROVE": 1,
+          "REVISE": 19,
+          "": 1
+        }
+      },
+      {
+        "task": "T47_revision_review",
+        "file": "sft_revision_human_review_v1.jsonl",
+        "rows": 13,
+        "decision_breakdown": {
+          "APPROVE": 2,
+          "REVISE": 8,
+          "REJECT": 3
+        }
+      },
+      {
+        "task": "T50_review",
+        "file": "sft_task50_human_review_v1.jsonl",
+        "rows": 0,
+        "decision_breakdown": {}
+      },
+      {
+        "task": "T51_candidate_review",
+        "file": "sft_task51_human_review_v1.jsonl",
+        "rows": 18,
+        "decision_breakdown": {
+          "APPROVE": 11,
+          "REJECT": 5,
+          "REVISE": 2
+        }
+      },
+      {
+        "task": "stage_a_draft",
+        "file": "sft_stage_a_draft_v1.jsonl",
+        "rows": 56,
+        "decision_breakdown": {
+          "": 56
+        }
+      },
+      {
+        "task": "stage_a_review_queue",
+        "file": "sft_stage_a_review_queue_v1.jsonl",
+        "rows": 56,
+        "decision_breakdown": {
+          "": 56
+        }
+      },
+      {
+        "task": "gold_v1",
+        "file": "sft_gold_v1.jsonl",
+        "rows": 12,
+        "decision_breakdown": {
+          "HUMAN_REVIEW_REQUIRED": 12
+        }
+      },
+      {
+        "task": "gold_rejected_v1",
+        "file": "sft_gold_rejected_v1.jsonl",
+        "rows": 13,
+        "decision_breakdown": {
+          "": 13
+        }
+      },
+      {
+        "task": "review_priority_v1",
+        "file": "sft_review_priority_v1.jsonl",
+        "rows": 45,
+        "decision_breakdown": {
+          "HUMAN_REVIEW_REQUIRED": 45
+        }
+      },
+      {
+        "task": "revision_candidates_v1",
+        "file": "sft_revision_candidates_v1.jsonl",
+        "rows": 12,
+        "decision_breakdown": {
+          "SOURCE_GROUNDED": 12
+        }
+      },
+      {
+        "task": "review_remaining_v3",
+        "file": "sft_review_remaining_v3.jsonl",
+        "rows": 10,
+        "decision_breakdown": {
+          "REVISION_REQUIRED": 7,
+          "REJECTED": 3
+        }
+      },
+      {
+        "task": "gold_rejected_v2",
+        "file": "sft_gold_rejected_v2.jsonl",
+        "rows": 12,
+        "decision_breakdown": {
+          "": 12
+        }
+      },
+      {
+        "task": "candidate_pool_v1",
+        "file": "sft_candidate_pool_v1.jsonl",
+        "rows": 127,
+        "decision_breakdown": {
+          "HUMAN_REVIEW_REQUIRED": 127
+        }
+      },
+      {
+        "task": "task51_review_priority_v1",
+        "file": "sft_task51_review_priority_v1.jsonl",
+        "rows": 17,
+        "decision_breakdown": {
+          "HUMAN_REVIEW_REQUIRED": 17
+        }
+      },
+      {
+        "task": "seed_v1",
+        "file": "sft_seed_v1.jsonl",
+        "rows": 6,
+        "decision_breakdown": {
+          "HUMAN_VERIFIED": 6
+        }
+      },
+      {
+        "task": "gold_v3",
+        "file": "sft_gold_v3.jsonl",
+        "rows": 2,
+        "decision_breakdown": {
+          "APPROVE": 2
+        }
+      },
+      {
+        "task": "gold_v2",
+        "file": "sft_gold_v2.jsonl",
+        "rows": 0,
+        "decision_breakdown": {}
+      },
+      {
+        "task": "revision_blocked_v1",
+        "file": "sft_revision_blocked_v1.jsonl",
+        "rows": 0,
+        "decision_breakdown": {}
+      },
+      {
+        "task": "candidate_quarantine_v1",
+        "file": "sft_candidate_quarantine_v1.jsonl",
+        "rows": 0,
+        "decision_breakdown": {}
+      }
+    ],
+    "reconciliation_records_total": 108,
+    "state_counts_all_records": {
+      "NOT_VERIFIED": 57,
+      "PRESENT": 14,
+      "RECOVERABLE": 29,
+      "EXCLUDED_WITH_REASON": 8
+    },
+    "task51_approval_records": 11,
+    "task51_approval_states": {
+      "PRESENT": 11
+    },
+    "task51_approval_detail": [
+      {
+        "subject_id": "CAND-SVK-0038-unknown",
+        "decision_timestamp": "2026-09-21T07:34:56.666254Z",
+        "decision_group_size": 5,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-0038-unknown",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-0038-unknown; approval record 1 of 5 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED",
+        "provenance_status": "INCOMPLETE_NO_UNIT_ID",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-0038-unknown",
+        "decision_timestamp": "2026-09-21T07:39:06.504488Z",
+        "decision_group_size": 5,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-0038-unknown",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-0038-unknown; approval record 1 of 5 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED",
+        "provenance_status": "INCOMPLETE_NO_UNIT_ID",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-0038-unknown",
+        "decision_timestamp": "2026-09-21T07:39:40.327195Z",
+        "decision_group_size": 5,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-0038-unknown",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-0038-unknown; approval record 1 of 5 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED",
+        "provenance_status": "INCOMPLETE_NO_UNIT_ID",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2022-SVK-2022",
+        "decision_timestamp": "2026-09-21T07:40:49.827989Z",
+        "decision_group_size": 1,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2022-SVK-2022",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2022-SVK-2022",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2023-SVK-2023",
+        "decision_timestamp": "2026-09-21T07:41:18.680735Z",
+        "decision_group_size": 3,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2023-SVK-2023",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2023-SVK-2023; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2023-SVK-2023",
+        "decision_timestamp": "2026-09-21T07:42:18.462266Z",
+        "decision_group_size": 3,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2023-SVK-2023",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2023-SVK-2023; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2023-SVK-2023",
+        "decision_timestamp": "2026-09-21T07:42:46.152872Z",
+        "decision_group_size": 3,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2023-SVK-2023",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2023-SVK-2023; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2024-SVK-2024",
+        "decision_timestamp": "2026-09-21T07:43:13.999831Z",
+        "decision_group_size": 1,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2024-SVK-2024",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2024-SVK-2024",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2025-SVK-2025",
+        "decision_timestamp": "2026-09-21T07:44:07.878085Z",
+        "decision_group_size": 3,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2025-SVK-2025",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2025-SVK-2025; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2025-SVK-2025",
+        "decision_timestamp": "2026-09-21T07:44:34.033794Z",
+        "decision_group_size": 3,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2025-SVK-2025",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2025-SVK-2025; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      },
+      {
+        "subject_id": "CAND-SVK-2029-SVK-2029",
+        "decision_timestamp": "2026-09-21T07:45:56.567108Z",
+        "decision_group_size": 3,
+        "state": "PRESENT",
+        "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2029-SVK-2029",
+        "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2029-SVK-2029; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "classification": "HUMAN_VERIFIED_APPROVED"
+      }
+    ],
+    "task51_decision_counts": {
+      "APPROVE": 11,
+      "REJECT": 5,
+      "REVISE": 2
+    },
+    "task51_unique_candidates_reviewed": 8,
+    "task51_queue_rows": 17,
+    "existing_human_verified_inventory": [
+      {
+        "example_id": "SFT-SEED-CAND-SVK-2025-SVK-2025",
+        "origin_file": "sft_seed_v1.jsonl",
+        "source_id": "SVK-2025",
+        "review_ref": "CAND-SVK-2025-SVK-2025",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "SFT-SEED-CAND-SVK-2024-SVK-2024",
+        "origin_file": "sft_seed_v1.jsonl",
+        "source_id": "SVK-2024",
+        "review_ref": "CAND-SVK-2024-SVK-2024",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "SFT-SEED-CAND-SVK-2023-SVK-2023",
+        "origin_file": "sft_seed_v1.jsonl",
+        "source_id": "SVK-2023",
+        "review_ref": "CAND-SVK-2023-SVK-2023",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "SFT-SEED-CAND-SVK-2029-SVK-2029",
+        "origin_file": "sft_seed_v1.jsonl",
+        "source_id": "SVK-2029",
+        "review_ref": "CAND-SVK-2029-SVK-2029",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "CONFLICTING_HUMAN_DECISIONS: 1 APPROVE vs 2 REJECT on the same candidate; kept because >=1 human APPROVE exists (rule: any APPROVE keeps the example). Never silently dropped.",
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "SFT-SEED-CAND-SVK-0038-unknown",
+        "origin_file": "sft_seed_v1.jsonl",
+        "source_id": "SVK-0038",
+        "review_ref": "CAND-SVK-0038-unknown",
+        "rights_status": "TRAINING_ALLOWED",
+        "provenance_status": "RECOVERED_BY_TEXT_MATCH",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "CONFLICTING_HUMAN_DECISIONS: 3 APPROVE vs 2 REJECT on the same candidate; kept because >=1 human APPROVE exists (rule: any APPROVE keeps the example). Never silently dropped.",
+          "PROVENANCE_GAP: INCOMPLETE_NO_UNIT_ID",
+          "MANIFEST_KNOWLEDGE_LAYER_EMPTY -> mapped to MIXED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "SFT-SEED-CAND-SVK-2022-SVK-2022",
+        "origin_file": "sft_seed_v1.jsonl",
+        "source_id": "SVK-2022",
+        "review_ref": "CAND-SVK-2022-SVK-2022",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "REV-EX-000001",
+        "origin_file": "sft_gold_v3.jsonl",
+        "source_id": "SVK-2022",
+        "review_ref": "EX-000001",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "SOURCE_RECORD_FLAG_NEEDS_HUMAN_REVIEW=True left by the Task 47 builder; human APPROVE decision 2026-09-21T05:09:25.850921Z overrides it - flagged, not silently cleared",
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      },
+      {
+        "example_id": "REV-EX-000003",
+        "origin_file": "sft_gold_v3.jsonl",
+        "source_id": "SVK-2023",
+        "review_ref": "EX-000003",
+        "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+        "provenance_status": "COMPLETE",
+        "reconciliation_state": "PRESENT",
+        "audit_notes": [
+          "SOURCE_RECORD_FLAG_NEEDS_HUMAN_REVIEW=True left by the Task 47 builder; human APPROVE decision 2026-09-21T05:11:33.186749Z overrides it - flagged, not silently cleared",
+          "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+          "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+        ]
+      }
+    ],
+    "existing_human_verified_count": 8,
+    "seed_rows": 6,
+    "gold_v3_rows": 2,
+    "discrepancy_explained": {
+      "task51_approval_records": 11,
+      "unique_candidates_approved": 6,
+      "seed_rows": 6,
+      "explanation": "11 APPROVE review records collapse to 6 unique candidate_ids (Task 51 review queue contains duplicate rows: 17 queue rows for 8 unique candidates, 18 review records for 8 unique candidates). Seed builder rule was 'any APPROVE on a candidate keeps it', so 6 unique approved candidates -> 6 seed rows. No approved candidate was lost.",
+      "duplicate_approval_records_collapsed": 5
+    },
+    "conflicting_reviews": [
+      {
+        "candidate_id": "CAND-SVK-0038-unknown",
+        "decisions": [
+          "APPROVE",
+          "REJECT",
+          "REJECT",
+          "APPROVE",
+          "APPROVE"
+        ]
+      },
+      {
+        "candidate_id": "CAND-SVK-2025-SVK-2025",
+        "decisions": [
+          "APPROVE",
+          "APPROVE",
+          "REVISE"
+        ]
+      },
+      {
+        "candidate_id": "CAND-SVK-2029-SVK-2029",
+        "decisions": [
+          "APPROVE",
+          "REJECT",
+          "REJECT"
+        ]
+      }
+    ],
+    "unit_resolution": {
+      "unit_ids_referenced": 77,
+      "unit_ids_found_in_training_corpus": 76,
+      "unit_ids_missing": [
+        ""
+      ]
+    },
+    "outputs": {
+      "reconciled": "data/training/sft_reconciled_v1.jsonl",
+      "reconciliation_table": "data/training/sft_reconciliation_table.csv"
+    }
+  },
+  "existing_candidate_audit": {
+    "file": "data/training/_task61_existing_candidates_audit.json",
+    "unique_candidates_audited": 172,
+    "class_counts": {
+      "HUMAN_REVISE_REQUIRED": 56,
+      "PROVENANCE_INCOMPLETE": 77,
+      "UNSUITABLE_FOR_SFT": 3,
+      "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW": 5,
+      "DUPLICATE": 7,
+      "HUMAN_REJECTED": 16,
+      "HUMAN_VERIFIED_APPROVED": 8,
+      "RIGHTS_BLOCKED": 0
+    },
+    "class_definitions": {
+      "HUMAN_VERIFIED_APPROVED": "human APPROVE recorded (present in or recoverable to the HUMAN_VERIFIED inventory)",
+      "HUMAN_REVISE_REQUIRED": "human REVISE recorded - not usable until re-reviewed",
+      "HUMAN_REJECTED": "human REJECT recorded",
+      "NEW_CANDIDATE_REQUIRES_HUMAN_REVIEW": "no human decision yet; rights cleared, provenance complete, not duplicate, passes hygiene checks",
+      "RIGHTS_BLOCKED": "source rights not cleared for SFT (manifest/audit/evidence)",
+      "PROVENANCE_INCOMPLETE": "provenance incomplete (missing source id or unit/text id)",
+      "DUPLICATE": "duplicate of an earlier candidate (same normalized question + sources)",
+      "UNSUITABLE_FOR_SFT": "structurally unsuitable for SFT (short/empty/boilerplate/OCR-noisy/citation-only)"
+    }
+  },
+  "candidate_pool": {
+    "count": 249,
+    "by_category": {
+      "ABSTENTION/INSUFFICIENT_EVIDENCE": 22,
+      "AGAM_GROUNDED": 13,
+      "CANONICAL_VS_COMMENTARY": 12,
+      "GENERAL_JAIN_CONCEPT": 12,
+      "GUJARATI": 20,
+      "HINDI": 30,
+      "PRACTICE_EXPLANATION": 29,
+      "PRAKRIT": 25,
+      "SANSKRIT": 12,
+      "SOURCE_ATTRIBUTION": 39,
+      "STHANAKAVASI_DISTINCTION": 20,
+      "STHANAKAVASI_TERMINOLOGY": 15
+    },
+    "by_task_category": {
+      "abstention": 22,
+      "canonical_commentary_distinction": 12,
+      "cross_tradition_distinction": 20,
+      "general_qa": 54,
+      "multilingual_mapping": 62,
+      "prakrit_explanation": 25,
+      "source_citation": 39,
+      "sthanaqa": 15
+    },
+    "by_split": {
+      "test": 11,
+      "train": 226,
+      "validation": 12
+    },
+    "by_split_candidate": {
+      "test": 11,
+      "train": 225,
+      "unassigned_not_in_domain_train": 1,
+      "validation": 12
+    },
+    "by_language": {
+      "en": 165,
+      "fr": 1,
+      "gu": 27,
+      "hi": 33,
+      "pra": 21,
+      "sa": 2
+    },
+    "by_source": {
+      "SVK-0007": 2,
+      "SVK-0016": 22,
+      "SVK-0026": 1,
+      "SVK-0027": 2,
+      "SVK-0037": 2,
+      "SVK-0038": 60,
+      "SVK-1001": 26,
+      "SVK-1002": 6,
+      "SVK-1003": 4,
+      "SVK-1005": 15,
+      "SVK-1006": 2,
+      "SVK-1007": 1,
+      "SVK-1008": 1,
+      "SVK-1009": 6,
+      "SVK-1010": 2,
+      "SVK-2002": 2,
+      "SVK-2003": 11,
+      "SVK-2004": 2,
+      "SVK-2005": 2,
+      "SVK-2006": 1,
+      "SVK-2007": 2,
+      "SVK-2008": 13,
+      "SVK-2009": 11,
+      "SVK-2010": 1,
+      "SVK-2011": 1,
+      "SVK-2012": 12,
+      "SVK-2013": 1,
+      "SVK-2014": 1,
+      "SVK-2016": 11,
+      "SVK-2019": 1,
+      "SVK-2020": 1,
+      "SVK-2021": 1,
+      "SVK-2022": 3,
+      "SVK-2023": 3,
+      "SVK-2024": 3,
+      "SVK-2025": 3,
+      "SVK-2026": 4,
+      "SVK-2027": 4,
+      "SVK-2028": 1,
+      "SVK-2029": 2
+    },
+    "by_rights_status": {
+      "TRAINING_ALLOWED": 226,
+      "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE": 23
+    },
+    "by_knowledge_layer": {
+      "CANONICAL_SCRIPTURE": 70,
+      "LEXICON": 24,
+      "MIXED": 114,
+      "REFERENCE": 5,
+      "SECONDARY_SCHOLARSHIP": 36
+    },
+    "by_religious_scope": {
+      "COMPARATIVE_OTHER_TRADITION": 1,
+      "CONTEXTUAL_JAIN": 88,
+      "CORE_STHANAKAVASI": 22,
+      "HIGH_STHANAKAVASI_RELEVANCE": 62,
+      "UNKNOWN": 76
+    },
+    "by_human_review_status": {
+      "HUMAN_REVIEW_REQUIRED": 249
+    }
+  },
+  "gates": {
+    "gate_01_schema_validity": {
+      "description": "record validates against sft_schema_v1.json and carries every TASK 61 field",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_02_missing_text": {
+      "description": "question and answer text present",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_03_empty_answer": {
+      "description": "assistant answer non-empty and long enough to train on",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_04_missing_provenance": {
+      "description": "source_id, text_id, knowledge_layer and religious_scope present",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_05_missing_source": {
+      "description": "source_id resolves to a source_manifest.csv row",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_06_duplicate_question": {
+      "description": "normalized question not already used in the pool or approved inventory",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_07_near_duplicate_answer": {
+      "description": "answer not a near-duplicate (5-shingle Jaccard < 0.85) of an earlier record",
+      "passed": 249,
+      "failed": 5,
+      "failure_examples": [
+        {
+          "example_id": "svk-2029:source_attribution:64e4702b",
+          "review_id": "T61-CAND-0004",
+          "category": "SOURCE_ATTRIBUTION",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-2025:source_attribution:ecd78b11"
+        },
+        {
+          "example_id": "svk-1001:sanskrit:606996e8",
+          "review_id": "T61-CAND-0196",
+          "category": "SANSKRIT",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-1001:prakrit:97bb5360"
+        },
+        {
+          "example_id": "svk-1001:sanskrit:4f3dd6c8",
+          "review_id": "T61-CAND-0199",
+          "category": "SANSKRIT",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-1001:prakrit:8e797cf6"
+        },
+        {
+          "example_id": "svk-1001:sanskrit:bae4b900",
+          "review_id": "T61-CAND-0200",
+          "category": "SANSKRIT",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-1001:prakrit:e08b6db9"
+        },
+        {
+          "example_id": "svk-0038:abstention_insufficient_evidence:dfa146b4",
+          "review_id": "T61-CAND-0238",
+          "category": "ABSTENTION/INSUFFICIENT_EVIDENCE",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-0038:abstention_insufficient_evidence:bdf2e7dd"
+        }
+      ]
+    },
+    "gate_08_unsupported_source_citation": {
+      "description": "every quoted claim occurs in the cited unit / manifest row",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_09_teacher_attribution_mismatch": {
+      "description": "named teacher or author appears in the cited source's manifest record or unit",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_10_practice_not_in_source": {
+      "description": "practice named in the candidate appears in the cited unit",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_11_sect_mismatch": {
+      "description": "Sthanakavasi claim is backed by the unit or the manifest scope/sect",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_12_canonical_commentary_mismatch": {
+      "description": "canonical_status matches the manifest relation/layer derivation",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    },
+    "gate_13_rights_violation": {
+      "description": "source is rights-cleared for SFT training",
+      "passed": 254,
+      "failed": 0,
+      "failure_examples": []
+    }
+  },
+  "gate_totals": {
+    "records_evaluated": 254,
+    "records_passed_all_gates": 249,
+    "records_failed_at_least_one_gate": 5,
+    "total_gate_failures": 5
+  },
+  "failed_records": [
+    {
+      "example_id": "svk-2029:source_attribution:64e4702b",
+      "review_id": "T61-CAND-0004",
+      "category": "SOURCE_ATTRIBUTION",
+      "question": "According to the catalog header of \"Agam 12 Upang 01 Aupapatik Sutra Sthanakvasi\", who authored and published it?",
+      "failed_gates": [
+        {
+          "gate": "gate_07_near_duplicate_answer",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-2025:source_attribution:ecd78b11"
+        }
+      ]
+    },
+    {
+      "example_id": "svk-1001:sanskrit:606996e8",
+      "review_id": "T61-CAND-0196",
+      "category": "SANSKRIT",
+      "question": "How does Gaina Sutras (Sacred Books of the East): Acaranga and Sutrakrtanga (Hermann Jacobi (translator), 1884) explain the Sanskrit or Prakrit term 'ud-aha'?",
+      "failed_gates": [
+        {
+          "gate": "gate_07_near_duplicate_answer",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-1001:prakrit:97bb5360"
+        }
+      ]
+    },
+    {
+      "example_id": "svk-1001:sanskrit:4f3dd6c8",
+      "review_id": "T61-CAND-0199",
+      "category": "SANSKRIT",
+      "question": "How does Gaina Sutras (Sacred Books of the East): Acaranga and Sutrakrtanga (Hermann Jacobi (translator), 1884) explain the Sanskrit or Prakrit term 'Gama'?",
+      "failed_gates": [
+        {
+          "gate": "gate_07_near_duplicate_answer",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-1001:prakrit:8e797cf6"
+        }
+      ]
+    },
+    {
+      "example_id": "svk-1001:sanskrit:bae4b900",
+      "review_id": "T61-CAND-0200",
+      "category": "SANSKRIT",
+      "question": "What meaning does Gaina Sutras (Sacred Books of the East): Acaranga and Sutrakrtanga (Hermann Jacobi (translator), 1884) give for the term 'Sahammiya'?",
+      "failed_gates": [
+        {
+          "gate": "gate_07_near_duplicate_answer",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-1001:prakrit:e08b6db9"
+        }
+      ]
+    },
+    {
+      "example_id": "svk-0038:abstention_insufficient_evidence:dfa146b4",
+      "review_id": "T61-CAND-0238",
+      "category": "ABSTENTION/INSUFFICIENT_EVIDENCE",
+      "question": "How many Digambara monastic orders are there today?",
+      "failed_gates": [
+        {
+          "gate": "gate_07_near_duplicate_answer",
+          "reason": "5-shingle Jaccard >= 0.85 with svk-0038:abstention_insufficient_evidence:bdf2e7dd"
+        }
+      ]
+    }
+  ],
+  "excluded_drafts": {
+    "abstention_cases_dropped": [
+      {
+        "id": "ABST-04",
+        "reason": "absence scan matched 1 corpus units",
+        "pattern": "(acharya|Acharya)[^.\\n]{0,50}Terapanth|Terapanth[^.\\n]{0,60}(acharya|Acharya)"
+      },
+      {
+        "id": "ABST-05",
+        "reason": "absence scan matched 1 corpus units",
+        "pattern": "\\b\\d+(\\.\\d+)?\\s*(million|crore|lakh)[^.\\n]{0,40}(Jain|Jaina)"
+      },
+      {
+        "id": "ABST-07",
+        "reason": "absence scan matched 3 corpus units",
+        "pattern": "Samayik[^.\\n]{0,70}\\b\\d+\\s*(minute|hour|hour)"
+      },
+      {
+        "id": "ABST-25",
+        "reason": "no rights-cleared anchor source for the absence claim"
+      },
+      {
+        "id": "ABST-27",
+        "reason": "absence scan matched 17 corpus units",
+        "pattern": "Acharanga|Acaranga[^.\\n]{0,80}\\b\\d+\\s*manuscript"
+      }
+    ],
+    "reason": "abstention case kept only when its absence scan matches 0 corpus units and a rights-cleared anchor source exists"
+  },
+  "pool_within_required_range": true,
+  "required_range": [
+    150,
+    300
+  ],
+  "human_review_status_of_all_pool_records": "HUMAN_REVIEW_REQUIRED",
+  "known_limitations": [
+    "All pool records are synthetic drafts requiring human review; none carry HUMAN_VERIFIED.",
+    "SANSKRIT candidates are Sanskrit/Prakrit term glosses found in English sources plus Devanagari units from sources whose manifest language is not sa (see language_note).",
+    "Manifest-grounded candidates (source_attribution, canonical_vs_commentary) cite source_manifest.csv fields; provenance.text_id is manifest:<source_id> because these claims are source-level, not unit-level.",
+    "JainQQ sources (SVK-2022..2029) carry MANIFEST_RIGHTS_STALE: manifest still says NEEDS_PERMISSION while jainqq_permission_evidence_v1.json grants SFT scope.",
+    "SVK-2030..2037 rely on legacy manifest permission column + license=TRAINING_ALLOWED (flags LEGACY_PERMISSION_COLUMN, RIGHTS_AUDIT_NOT_COVERED).",
+    "Split leakage note: seed/gold candidates and several pool records come from domain_train val/test sources (SVK-2022..2029); split_candidate records this per record.",
+    "Abstention cases whose absence scan matched corpus units were dropped, not rewritten."
+  ],
+  "outputs": {
+    "candidates": "data/training/sft_candidates_v2.jsonl",
+    "abstention_set": "data/training/sft_abstention_candidates_v1.jsonl",
+    "sect_set": "data/training/sft_sect_distinction_candidates_v1.jsonl",
+    "attribution_set": "data/training/sft_source_attribution_candidates_v1.jsonl",
+    "reconciled": "data/training/sft_reconciled_v1.jsonl",
+    "reconciliation_table": "data/training/sft_reconciliation_table.csv",
+    "report": "data/reports/task61_sft_reconciliation.md"
+  },
+  "elapsed_seconds": 29.7
+}

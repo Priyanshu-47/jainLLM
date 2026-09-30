@@ -1,0 +1,466 @@
+{
+  "task": 61,
+  "stage": "reconciliation",
+  "review_artifacts_inspected": [
+    {
+      "task": "T41_stage_a_review_queue",
+      "file": "sft_stage_a_human_review_v1.jsonl",
+      "rows": 56,
+      "decision_breakdown": {
+        "HUMAN_REVIEW_REQUIRED": 56
+      }
+    },
+    {
+      "task": "T44_gold_review",
+      "file": "sft_human_review_results_v1.jsonl",
+      "rows": 21,
+      "decision_breakdown": {
+        "APPROVE": 1,
+        "REVISE": 19,
+        "": 1
+      }
+    },
+    {
+      "task": "T47_revision_review",
+      "file": "sft_revision_human_review_v1.jsonl",
+      "rows": 13,
+      "decision_breakdown": {
+        "APPROVE": 2,
+        "REVISE": 8,
+        "REJECT": 3
+      }
+    },
+    {
+      "task": "T50_review",
+      "file": "sft_task50_human_review_v1.jsonl",
+      "rows": 0,
+      "decision_breakdown": {}
+    },
+    {
+      "task": "T51_candidate_review",
+      "file": "sft_task51_human_review_v1.jsonl",
+      "rows": 18,
+      "decision_breakdown": {
+        "APPROVE": 11,
+        "REJECT": 5,
+        "REVISE": 2
+      }
+    },
+    {
+      "task": "stage_a_draft",
+      "file": "sft_stage_a_draft_v1.jsonl",
+      "rows": 56,
+      "decision_breakdown": {
+        "": 56
+      }
+    },
+    {
+      "task": "stage_a_review_queue",
+      "file": "sft_stage_a_review_queue_v1.jsonl",
+      "rows": 56,
+      "decision_breakdown": {
+        "": 56
+      }
+    },
+    {
+      "task": "gold_v1",
+      "file": "sft_gold_v1.jsonl",
+      "rows": 12,
+      "decision_breakdown": {
+        "HUMAN_REVIEW_REQUIRED": 12
+      }
+    },
+    {
+      "task": "gold_rejected_v1",
+      "file": "sft_gold_rejected_v1.jsonl",
+      "rows": 13,
+      "decision_breakdown": {
+        "": 13
+      }
+    },
+    {
+      "task": "review_priority_v1",
+      "file": "sft_review_priority_v1.jsonl",
+      "rows": 45,
+      "decision_breakdown": {
+        "HUMAN_REVIEW_REQUIRED": 45
+      }
+    },
+    {
+      "task": "revision_candidates_v1",
+      "file": "sft_revision_candidates_v1.jsonl",
+      "rows": 12,
+      "decision_breakdown": {
+        "SOURCE_GROUNDED": 12
+      }
+    },
+    {
+      "task": "review_remaining_v3",
+      "file": "sft_review_remaining_v3.jsonl",
+      "rows": 10,
+      "decision_breakdown": {
+        "REVISION_REQUIRED": 7,
+        "REJECTED": 3
+      }
+    },
+    {
+      "task": "gold_rejected_v2",
+      "file": "sft_gold_rejected_v2.jsonl",
+      "rows": 12,
+      "decision_breakdown": {
+        "": 12
+      }
+    },
+    {
+      "task": "candidate_pool_v1",
+      "file": "sft_candidate_pool_v1.jsonl",
+      "rows": 127,
+      "decision_breakdown": {
+        "HUMAN_REVIEW_REQUIRED": 127
+      }
+    },
+    {
+      "task": "task51_review_priority_v1",
+      "file": "sft_task51_review_priority_v1.jsonl",
+      "rows": 17,
+      "decision_breakdown": {
+        "HUMAN_REVIEW_REQUIRED": 17
+      }
+    },
+    {
+      "task": "seed_v1",
+      "file": "sft_seed_v1.jsonl",
+      "rows": 6,
+      "decision_breakdown": {
+        "HUMAN_VERIFIED": 6
+      }
+    },
+    {
+      "task": "gold_v3",
+      "file": "sft_gold_v3.jsonl",
+      "rows": 2,
+      "decision_breakdown": {
+        "APPROVE": 2
+      }
+    },
+    {
+      "task": "gold_v2",
+      "file": "sft_gold_v2.jsonl",
+      "rows": 0,
+      "decision_breakdown": {}
+    },
+    {
+      "task": "revision_blocked_v1",
+      "file": "sft_revision_blocked_v1.jsonl",
+      "rows": 0,
+      "decision_breakdown": {}
+    },
+    {
+      "task": "candidate_quarantine_v1",
+      "file": "sft_candidate_quarantine_v1.jsonl",
+      "rows": 0,
+      "decision_breakdown": {}
+    }
+  ],
+  "reconciliation_records_total": 108,
+  "state_counts_all_records": {
+    "NOT_VERIFIED": 57,
+    "PRESENT": 14,
+    "RECOVERABLE": 29,
+    "EXCLUDED_WITH_REASON": 8
+  },
+  "task51_approval_records": 11,
+  "task51_approval_states": {
+    "PRESENT": 11
+  },
+  "task51_approval_detail": [
+    {
+      "subject_id": "CAND-SVK-0038-unknown",
+      "decision_timestamp": "2026-09-21T07:34:56.666254Z",
+      "decision_group_size": 5,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-0038-unknown",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-0038-unknown; approval record 1 of 5 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED",
+      "provenance_status": "INCOMPLETE_NO_UNIT_ID",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-0038-unknown",
+      "decision_timestamp": "2026-09-21T07:39:06.504488Z",
+      "decision_group_size": 5,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-0038-unknown",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-0038-unknown; approval record 1 of 5 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED",
+      "provenance_status": "INCOMPLETE_NO_UNIT_ID",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-0038-unknown",
+      "decision_timestamp": "2026-09-21T07:39:40.327195Z",
+      "decision_group_size": 5,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-0038-unknown",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-0038-unknown; approval record 1 of 5 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED",
+      "provenance_status": "INCOMPLETE_NO_UNIT_ID",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2022-SVK-2022",
+      "decision_timestamp": "2026-09-21T07:40:49.827989Z",
+      "decision_group_size": 1,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2022-SVK-2022",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2022-SVK-2022",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2023-SVK-2023",
+      "decision_timestamp": "2026-09-21T07:41:18.680735Z",
+      "decision_group_size": 3,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2023-SVK-2023",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2023-SVK-2023; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2023-SVK-2023",
+      "decision_timestamp": "2026-09-21T07:42:18.462266Z",
+      "decision_group_size": 3,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2023-SVK-2023",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2023-SVK-2023; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2023-SVK-2023",
+      "decision_timestamp": "2026-09-21T07:42:46.152872Z",
+      "decision_group_size": 3,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2023-SVK-2023",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2023-SVK-2023; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2024-SVK-2024",
+      "decision_timestamp": "2026-09-21T07:43:13.999831Z",
+      "decision_group_size": 1,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2024-SVK-2024",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2024-SVK-2024",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2025-SVK-2025",
+      "decision_timestamp": "2026-09-21T07:44:07.878085Z",
+      "decision_group_size": 3,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2025-SVK-2025; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2025-SVK-2025",
+      "decision_timestamp": "2026-09-21T07:44:34.033794Z",
+      "decision_group_size": 3,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2025-SVK-2025; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    },
+    {
+      "subject_id": "CAND-SVK-2029-SVK-2029",
+      "decision_timestamp": "2026-09-21T07:45:56.567108Z",
+      "decision_group_size": 3,
+      "state": "PRESENT",
+      "final_disposition": "PRESENT_AS_SFT-SEED-CAND-SVK-2029-SVK-2029",
+      "reason": "candidate present in sft_seed_v1.jsonl as SFT-SEED-CAND-SVK-2029-SVK-2029; approval record 1 of 3 for the same candidate (deduplicated to 1 seed row)",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "classification": "HUMAN_VERIFIED_APPROVED"
+    }
+  ],
+  "task51_decision_counts": {
+    "APPROVE": 11,
+    "REJECT": 5,
+    "REVISE": 2
+  },
+  "task51_unique_candidates_reviewed": 8,
+  "task51_queue_rows": 17,
+  "existing_human_verified_inventory": [
+    {
+      "example_id": "SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "origin_file": "sft_seed_v1.jsonl",
+      "source_id": "SVK-2025",
+      "review_ref": "CAND-SVK-2025-SVK-2025",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "SFT-SEED-CAND-SVK-2024-SVK-2024",
+      "origin_file": "sft_seed_v1.jsonl",
+      "source_id": "SVK-2024",
+      "review_ref": "CAND-SVK-2024-SVK-2024",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "SFT-SEED-CAND-SVK-2023-SVK-2023",
+      "origin_file": "sft_seed_v1.jsonl",
+      "source_id": "SVK-2023",
+      "review_ref": "CAND-SVK-2023-SVK-2023",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "SFT-SEED-CAND-SVK-2029-SVK-2029",
+      "origin_file": "sft_seed_v1.jsonl",
+      "source_id": "SVK-2029",
+      "review_ref": "CAND-SVK-2029-SVK-2029",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "CONFLICTING_HUMAN_DECISIONS: 1 APPROVE vs 2 REJECT on the same candidate; kept because >=1 human APPROVE exists (rule: any APPROVE keeps the example). Never silently dropped.",
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "SFT-SEED-CAND-SVK-0038-unknown",
+      "origin_file": "sft_seed_v1.jsonl",
+      "source_id": "SVK-0038",
+      "review_ref": "CAND-SVK-0038-unknown",
+      "rights_status": "TRAINING_ALLOWED",
+      "provenance_status": "RECOVERED_BY_TEXT_MATCH",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "CONFLICTING_HUMAN_DECISIONS: 3 APPROVE vs 2 REJECT on the same candidate; kept because >=1 human APPROVE exists (rule: any APPROVE keeps the example). Never silently dropped.",
+        "PROVENANCE_GAP: INCOMPLETE_NO_UNIT_ID",
+        "MANIFEST_KNOWLEDGE_LAYER_EMPTY -> mapped to MIXED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "SFT-SEED-CAND-SVK-2022-SVK-2022",
+      "origin_file": "sft_seed_v1.jsonl",
+      "source_id": "SVK-2022",
+      "review_ref": "CAND-SVK-2022-SVK-2022",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "REV-EX-000001",
+      "origin_file": "sft_gold_v3.jsonl",
+      "source_id": "SVK-2022",
+      "review_ref": "EX-000001",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "SOURCE_RECORD_FLAG_NEEDS_HUMAN_REVIEW=True left by the Task 47 builder; human APPROVE decision 2026-09-21T05:09:25.850921Z overrides it - flagged, not silently cleared",
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    },
+    {
+      "example_id": "REV-EX-000003",
+      "origin_file": "sft_gold_v3.jsonl",
+      "source_id": "SVK-2023",
+      "review_ref": "EX-000003",
+      "rights_status": "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE",
+      "provenance_status": "COMPLETE",
+      "reconciliation_state": "PRESENT",
+      "audit_notes": [
+        "SOURCE_RECORD_FLAG_NEEDS_HUMAN_REVIEW=True left by the Task 47 builder; human APPROVE decision 2026-09-21T05:11:33.186749Z overrides it - flagged, not silently cleared",
+        "MANIFEST_RIGHTS_STALE: manifest training_permission='NEEDS_PERMISSION (R93_RESTRICTIVE_TERMS)' but permission evidence file reports PERMISSION_GRANTED",
+        "QUOTE_VERIFIED_IN_CORPUS_UNIT"
+      ]
+    }
+  ],
+  "existing_human_verified_count": 8,
+  "seed_rows": 6,
+  "gold_v3_rows": 2,
+  "discrepancy_explained": {
+    "task51_approval_records": 11,
+    "unique_candidates_approved": 6,
+    "seed_rows": 6,
+    "explanation": "11 APPROVE review records collapse to 6 unique candidate_ids (Task 51 review queue contains duplicate rows: 17 queue rows for 8 unique candidates, 18 review records for 8 unique candidates). Seed builder rule was 'any APPROVE on a candidate keeps it', so 6 unique approved candidates -> 6 seed rows. No approved candidate was lost.",
+    "duplicate_approval_records_collapsed": 5
+  },
+  "conflicting_reviews": [
+    {
+      "candidate_id": "CAND-SVK-0038-unknown",
+      "decisions": [
+        "APPROVE",
+        "REJECT",
+        "REJECT",
+        "APPROVE",
+        "APPROVE"
+      ]
+    },
+    {
+      "candidate_id": "CAND-SVK-2025-SVK-2025",
+      "decisions": [
+        "APPROVE",
+        "APPROVE",
+        "REVISE"
+      ]
+    },
+    {
+      "candidate_id": "CAND-SVK-2029-SVK-2029",
+      "decisions": [
+        "APPROVE",
+        "REJECT",
+        "REJECT"
+      ]
+    }
+  ],
+  "unit_resolution": {
+    "unit_ids_referenced": 77,
+    "unit_ids_found_in_training_corpus": 76,
+    "unit_ids_missing": [
+      ""
+    ]
+  },
+  "outputs": {
+    "reconciled": "data/training/sft_reconciled_v1.jsonl",
+    "reconciliation_table": "data/training/sft_reconciliation_table.csv"
+  }
+}

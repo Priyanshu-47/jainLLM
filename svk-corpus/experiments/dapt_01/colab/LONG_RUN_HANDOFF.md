@@ -52,3 +52,13 @@
 - Prior GPU session cancelled at ~12h wall after uploading 4000+4500; steps 4501–4724 lost intentionally.
 - New kernel: priyanshu471/dapt01-qlora-4500-to-5500 (T4, save_steps=200, save_total_limit=4, fp16, warmup_ratio=0.03, session cap 11.25h).
 - Locked config unchanged; no TPU.
+
+## 2026-09-29 TASK 59 — DAPT-01 final forensic audit (read-only)
+- Training COMPLETED: global_step 15248 = max_steps, epoch 1.0 (sessions 5500→7658→9977→12388→13781→15248).
+- Final checkpoint priyanshu471/dapt01-checkpoint-15248 VERIFIED (11 files, sha256 recorded; structural load PASS: 504/504 LoRA keys).
+- Mirror to priyanshu47: 52/53 complete (all hash/size-verified); checkpoint-9600 broken at source (404), immaterial.
+- Scheduler finding (answer B): optimizer state never reset; LR lambda rebuilt per session — arg changes at 3893/4500/5500 produced LR re-leap at 5510 (1.73e-11 → 1.48e-4, bit-exact fits). 3 fp16 step-skips (~8505, ~10135, ~12415) → 15,245 successful updates.
+- Dataset verified: 243,957 records, sha256 120eca4b…, both Kaggle slugs byte-identical, text-only cache reproduced exactly; 11-sample diff = final partial accumulation window.
+- Trainable params 43,646,976 (0.5329% of 8,190,735,360 base). REPRODUCIBILITY = PARTIAL (dependency versions unpinned).
+- Audit report: data/reports/task59_dapt01_final_forensic_audit.{md,json}
+- NEXT_RECOMMENDED_STEP = BASE_VS_DAPT_EVALUATION (not started in this task).
