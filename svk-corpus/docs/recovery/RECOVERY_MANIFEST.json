@@ -1,0 +1,362 @@
+{
+  "task": 86,
+  "title": "Azure expiry recovery manifest",
+  "generated_utc": "2026-10-15T06:42:30Z",
+  "generated_epoch": 1792046550,
+  "elapsed_s": 0.9,
+  "source_environment": {
+    "os": "Linux-7.0.0-1014-azure-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "git_branch": "main",
+    "git_head": "feb6ef29307724d6f4248700c987ac7d07c3c89d",
+    "git_remote_host_path": "github.com/Priyanshu-47/jainLLM.git",
+    "tracked_modifications": [
+      "M svk-corpus/configs/policy.toml"
+    ],
+    "untracked_count": 204
+  },
+  "classification_vocabulary": [
+    "SAFE_IN_GIT",
+    "LOCAL_ONLY",
+    "REPRODUCIBLE",
+    "EXTERNAL_DEPENDENCY",
+    "MISSING",
+    "UNKNOWN"
+  ],
+  "artifacts": [
+    {
+      "path": "(git-tracked tree, 428 files)",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "SAFE_IN_GIT",
+      "purpose": "source pipeline, frozen benchmark, manifests, 115 historical reports, core docs",
+      "sensitivity": "none",
+      "recovery_method": "git clone github.com/Priyanshu-47/jainLLM (push status: LOCAL ONLY until pushed)"
+    },
+    {
+      "path": "configs/policy.toml",
+      "exists": true,
+      "size_bytes": 15455,
+      "sha256": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+      "classification": "LOCAL_ONLY",
+      "purpose": "[retrieval] section added by Task 76 (+27 lines); production default mode=bm25",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive; content also reproduced in Task-76/84 docs and git diff"
+    },
+    {
+      "path": "src/svk_corpus/retrieval/service.py",
+      "exists": true,
+      "size_bytes": 29377,
+      "sha256": "6a8ab157a0a76f54c11e190a5fdde39668fe33ead931ddc30bb035df70323cd5",
+      "classification": "LOCAL_ONLY",
+      "purpose": "production RetrievalService (Task 76; untracked!)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (untracked \u2014 NOT in git clone)"
+    },
+    {
+      "path": "src/svk_corpus/retrieval/api.py",
+      "exists": true,
+      "size_bytes": 14250,
+      "sha256": "96f1f0107b2bbb41303166de8e439b5706ef4585dc0bb00f9d482fcaa268450e",
+      "classification": "LOCAL_ONLY",
+      "purpose": "retrieval-only FastAPI app (Task 85)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (untracked \u2014 NOT in git clone)"
+    },
+    {
+      "path": "src/svk_corpus/retrieval/schemas.py",
+      "exists": true,
+      "size_bytes": 4843,
+      "sha256": "8c0fe24e9ba11818baba2601c02fd7f954ab12b84ccfbcae3648b4146b2b84ee",
+      "classification": "LOCAL_ONLY",
+      "purpose": "pydantic request/response schemas (Task 85)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (untracked \u2014 NOT in git clone)"
+    },
+    {
+      "path": "tests/test_retrieval_service.py",
+      "exists": true,
+      "size_bytes": 29664,
+      "sha256": "be95dede079104215c71856d4effde5a901069dda587950d668396c49f2762ac",
+      "classification": "LOCAL_ONLY",
+      "purpose": "41 retrieval-service regression tests (Task 76)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (untracked \u2014 NOT in git clone)"
+    },
+    {
+      "path": "tests/test_retrieval_api.py",
+      "exists": true,
+      "size_bytes": 23459,
+      "sha256": "364c1b3c2df9aba81ab92370e1af9c1c91ce325baeb1f32f3214904e336c664c",
+      "classification": "LOCAL_ONLY",
+      "purpose": "39 API tests (Task 85)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (untracked \u2014 NOT in git clone)"
+    },
+    {
+      "path": "docs/retrieval_api.md",
+      "exists": true,
+      "size_bytes": 5243,
+      "sha256": "195d06253102be2a7007b5b38c25ab456b950b330fffbeb8049a4612a3c3b9c7",
+      "classification": "LOCAL_ONLY",
+      "purpose": "API usage documentation (Task 85)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (untracked \u2014 NOT in git clone)"
+    },
+    {
+      "path": "data/evaluation/dapt01_eval_cases.jsonl",
+      "exists": true,
+      "size_bytes": 35539,
+      "sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+      "classification": "SAFE_IN_GIT",
+      "purpose": "FROZEN 47-case benchmark (sha 06625f72...)",
+      "sensitivity": "none",
+      "recovery_method": "git clone + hash verification"
+    },
+    {
+      "path": "data/evaluation/dapt01_base_results.jsonl",
+      "exists": true,
+      "size_bytes": 39347,
+      "sha256": "c452ea99a0f3877a80fc423d8dad002ba0b91ca4b517156a3894b75b4bc50f74",
+      "classification": "SAFE_IN_GIT",
+      "purpose": "frozen Task-60 base arm results",
+      "sensitivity": "none",
+      "recovery_method": "git clone + hash verification"
+    },
+    {
+      "path": "data/evaluation/dapt01_dapt_results.jsonl",
+      "exists": true,
+      "size_bytes": 46917,
+      "sha256": "6e28f87a244dd9c34265a9e1f7f3278dbb883774f96e0f3e99959617d3c015cc",
+      "classification": "SAFE_IN_GIT",
+      "purpose": "frozen Task-60 DAPT arm results",
+      "sensitivity": "none",
+      "recovery_method": "git clone + hash verification"
+    },
+    {
+      "path": "data/release/rag_corpus.jsonl",
+      "exists": true,
+      "size_bytes": 495323989,
+      "sha256": "4db164bc70e68b4f89837a9f3d3f3bc7fc126d99c826776ba9bf832f070ff8cf",
+      "classification": "REPRODUCIBLE",
+      "purpose": "164,238-unit RAG corpus served by the API (gitignored, 472M)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive; or rebuild via make all (network+compute)"
+    },
+    {
+      "path": "data/release/training_corpus.jsonl",
+      "exists": true,
+      "size_bytes": 319255409,
+      "sha256": "9e9dcda8315e3e76a68d902dd9b588b55215f86da9be92dc4f9c23e64c43b698",
+      "classification": "REPRODUCIBLE",
+      "purpose": "training-release corpus (gitignored, 304M)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive; or rebuild via make all"
+    },
+    {
+      "path": "manifests/source_manifest.csv",
+      "exists": true,
+      "size_bytes": 119838,
+      "sha256": "b96e572f8d97891cc5b472bd21d4355b3b60b2afc74e48d70716ce95bf3293f2",
+      "classification": "SAFE_IN_GIT",
+      "purpose": "source registry / provenance + rights metadata",
+      "sensitivity": "none",
+      "recovery_method": "git clone"
+    },
+    {
+      "path": "data/raw",
+      "exists": true,
+      "size_bytes": 33018846,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "acquired raw sources needed for offline rebuild (untracked, 32M)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive"
+    },
+    {
+      "path": "experiments/task74/dense_index/corpus_emb.f16.npy",
+      "exists": true,
+      "size_bytes": 336359552,
+      "sha256": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+      "classification": "LOCAL_ONLY",
+      "purpose": "BGE-M3 dense index (rev 5617a9f..., untracked, 321M)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive; or re-embed with BGE-M3 (HF download + CPU compute)"
+    },
+    {
+      "path": "experiments/task74/dense_index/index_meta.json",
+      "exists": true,
+      "size_bytes": 1397,
+      "sha256": "ede7a4ead255a4165e1d28b7d3e6f3a4cc82b27935b7e0e5c426b738dcd3dd05",
+      "classification": "LOCAL_ONLY",
+      "purpose": "dense index metadata + alignment hashes",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive"
+    },
+    {
+      "path": "experiments/task69-85/ + experiments/sft_01/ + sft_02/ + sft_curation/ + dapt_01/",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "experiment scripts, scorers, evidence builders, SFT checkpoints (91 files, ~680M total)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (entirely untracked)"
+    },
+    {
+      "path": "data/evaluation/ (98 untracked files: task62-83 results)",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "recorded generation/retrieval results incl. Task 82/83 gates",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive"
+    },
+    {
+      "path": "data/reports/ (65 untracked of 180 total: task62-85 reports)",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "task reports + machine-readable summaries (Tasks 62-85)",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive"
+    },
+    {
+      "path": "/tmp/opencode/task75/adapter_model.safetensors (+ config/tokenizer, 678M dir)",
+      "exists": true,
+      "size_bytes": 710658485,
+      "sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+      "classification": "LOCAL_ONLY",
+      "purpose": "DAPT-01 QLoRA checkpoint (sha 9b4d2bdc...); referenced by Task 82/83 integrity checks",
+      "sensitivity": "none",
+      "recovery_method": "recovery archive (copied in); EXTERNAL copy: Kaggle dataset priyanshu471/dapt01-checkpoint-15248",
+      "notes": "AT RISK: lives in /tmp \u2014 may vanish on VM restart even before credit expiry"
+    },
+    {
+      "path": "svk-corpus/.hf_cache/ (Qwen3-8B-Base, 16G, gitignored)",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "EXTERNAL_DEPENDENCY",
+      "purpose": "Qwen3-8B-Base fp16 weights (rev 49e3418f...) \u2014 used only by historical Kaggle generation runs",
+      "sensitivity": "none",
+      "recovery_method": "huggingface-cli download Qwen/Qwen3-8B-Base (NOT included in archive)"
+    },
+    {
+      "path": "~/.cache/huggingface/ (BGE-M3 4.3G, PaddleOCR, faster-whisper, 20G total)",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "EXTERNAL_DEPENDENCY",
+      "purpose": "BGE-M3 encoder weights (rev 5617a9f...) + OCR/ASR models",
+      "sensitivity": "none",
+      "recovery_method": "huggingface-cli download BAAI/bge-m3 --revision 5617a9f61b028005a4858fdac845db406aefb181"
+    },
+    {
+      "path": "svk-corpus/.venv/",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "REPRODUCIBLE",
+      "purpose": "isolated Python envs (fastapi/pydantic/uvicorn/httpx/numpy/faiss-cpu; cpu-bench torch)",
+      "sensitivity": "none",
+      "recovery_method": "python3 -m venv + pip install (see runbook \u00a74); NOT archived"
+    },
+    {
+      "path": "svk-corpus/.venv-cpu-bench/",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "REPRODUCIBLE",
+      "purpose": "isolated Python envs (fastapi/pydantic/uvicorn/httpx/numpy/faiss-cpu; cpu-bench torch)",
+      "sensitivity": "none",
+      "recovery_method": "python3 -m venv + pip install (see runbook \u00a74); NOT archived"
+    },
+    {
+      "path": ".bench_ckpt/",
+      "exists": true,
+      "size_bytes": 535779080,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "CPU QLoRA micro-bench checkpoint (511M) \u2014 experimental, not the released DAPT-01 adapter",
+      "sensitivity": "none",
+      "recovery_method": "included in recovery archive except .bench_ckpt; can be regenerated by pipeline stages"
+    },
+    {
+      "path": "data/domain_train/train.jsonl",
+      "exists": true,
+      "size_bytes": 757616666,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "DAPT domain-training mix (723M, gitignored)",
+      "sensitivity": "none",
+      "recovery_method": "included in recovery archive except .bench_ckpt; can be regenerated by pipeline stages"
+    },
+    {
+      "path": "data/release/low_quality_units.jsonl",
+      "exists": true,
+      "size_bytes": 497025140,
+      "sha256": null,
+      "classification": "REPRODUCIBLE",
+      "purpose": "quality-stage byproduct (474M, gitignored, regenerable)",
+      "sensitivity": "none",
+      "recovery_method": "included in recovery archive except .bench_ckpt; can be regenerated by pipeline stages"
+    },
+    {
+      "path": "data/quality/units_quality.jsonl",
+      "exists": true,
+      "size_bytes": 191690126,
+      "sha256": null,
+      "classification": "REPRODUCIBLE",
+      "purpose": "quality scores (183M, gitignored, regenerable via make quality)",
+      "sensitivity": "none",
+      "recovery_method": "included in recovery archive except .bench_ckpt; can be regenerated by pipeline stages"
+    },
+    {
+      "path": "~/.kaggle/kaggle.json",
+      "exists": true,
+      "size_bytes": 76,
+      "sha256": null,
+      "classification": "LOCAL_ONLY",
+      "purpose": "Kaggle API credentials (name/size recorded only)",
+      "sensitivity": "SECRET \u2014 contents never read, never archived, never committed",
+      "recovery_method": "recreate from Kaggle account settings on the new machine"
+    },
+    {
+      "path": "(environment variables)",
+      "exists": true,
+      "size_bytes": null,
+      "sha256": null,
+      "classification": "SAFE_IN_GIT",
+      "purpose": "project-relevant env vars (names only): NONE SET (API requires none)",
+      "sensitivity": "names only; no values recorded",
+      "recovery_method": "SVK_RETRIEVAL_* are optional runtime flags; see runbook \u00a79"
+    },
+    {
+      "path": "docs/REPRODUCIBILITY.md",
+      "exists": true,
+      "size_bytes": 4737,
+      "sha256": "83e24ae8a70cb996d8bf4ae08e27c17cc7897271939dbf410f1229e905015d2c",
+      "classification": "SAFE_IN_GIT",
+      "purpose": "pipeline reproducibility doc",
+      "sensitivity": "none",
+      "recovery_method": "git clone",
+      "notes": "states 'Python 3.14' but the VM runs 3.12.3; doc drift \u2014 runbook \u00a72 records the tested version"
+    }
+  ],
+  "summary": {
+    "safe_in_git": 7,
+    "local_only": 17,
+    "reproducible": 6,
+    "external_dependency": 2,
+    "missing": 0
+  },
+  "backup_status": {
+    "local_archive_command": "tar -czf ~/svk-recovery-$(date +%Y%m%d).tar.gz --exclude='svk-corpus/.venv' --exclude='svk-corpus/.venv-cpu-bench' --exclude='svk-corpus/.hf_cache' --exclude='svk-corpus/.bench_ckpt' --exclude='__pycache__' --exclude='.pytest_cache' --exclude='*.pyc' -C ~ jainLLM/svk-corpus -C /tmp opencode/task75",
+    "external_backup_verified": false,
+    "external_backup_note": "GitHub remote exists (github.com/Priyanshu-47/jainLLM) but pushing requires explicit user authorization \u2014 NOT pushed by Task 86. A local archive on this VM is NOT an external backup."
+  }
+}
