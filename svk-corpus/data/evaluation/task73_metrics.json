@@ -1,0 +1,1780 @@
+{
+  "task": "TASK 73 — zero-shot query expansion retrieval experiment",
+  "inputs": {
+    "frozen_sha": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "expansions_sha256": "c5daf50449a39a7a6d173511854b555533647481db0d85b29c397860ee855f73",
+    "task72_metrics_sha256": "11859d3740480eff9c0aaa710b7a259a000cebfd056f09bf569659d97784e69c"
+  },
+  "phase1_gate": {
+    "expected": {
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "unit_mrr": 0.3333,
+      "evidence_ceiling_mean": 0.6318,
+      "evidence_ceiling_full": 26,
+      "ev0_count": 15
+    },
+    "actual": {
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "unit_mrr": 0.3333,
+      "evidence_ceiling_mean": 0.6318,
+      "evidence_ceiling_full": 26,
+      "ev0_count": 15
+    },
+    "byte_exact": 47,
+    "rank_crosscheck": 47,
+    "pass": true
+  },
+  "query_expansion": {
+    "total_slots": 141,
+    "valid": 127,
+    "invalid": 14,
+    "valid_fraction": 0.9007,
+    "invalid_by_reason": {
+      "truncated_at_cap": 10,
+      "empty_after_truncation": 4
+    },
+    "cases_with_invalid": {
+      "DAPT01EVAL-009": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-010": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-011": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-013": [
+        "v2:truncated_at_cap",
+        "v3:empty_after_truncation"
+      ],
+      "DAPT01EVAL-016": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-017": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-018": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-019": [
+        "v3:truncated_at_cap"
+      ],
+      "DAPT01EVAL-020": [
+        "v2:truncated_at_cap",
+        "v3:empty_after_truncation"
+      ],
+      "DAPT01EVAL-045": [
+        "v1:truncated_at_cap",
+        "v2:empty_after_truncation",
+        "v3:empty_after_truncation"
+      ]
+    },
+    "cases_zero_valid": [
+      "DAPT01EVAL-045"
+    ],
+    "manual_review": "all 141 variants reviewed against guard rules"
+  },
+  "aggregate": {
+    "R0": {
+      "config": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "global"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8696,
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.804,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3846,
+      "unit_recall_at_5": 0.3846,
+      "unit_recall_at_10": 0.4103,
+      "unit_mrr": 0.3333,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 23,
+      "evidence_ceiling_mean": 0.6318,
+      "evidence_ceiling_full": 26,
+      "ev0_count": 15,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-021"
+      ],
+      "n_metadata_only": 2,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 22,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 13,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 10,
+      "selection_width_miss_cases": [
+        "DAPT01EVAL-044"
+      ],
+      "n_selection_width_miss": 1,
+      "abstention_forbidden_hits": 4,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 4198,
+        "mean": 4348.7,
+        "max": 6083
+      },
+      "user_content_chars": {
+        "median": 4283,
+        "max": 6220
+      },
+      "n_results_median": 10
+    },
+    "M2ref": {
+      "config": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "score_order_merge",
+        "label": "M2ref"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8696,
+      "source_recall_at_5": 0.8913,
+      "source_recall_at_10": 0.913,
+      "source_mrr": 0.7944,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3846,
+      "unit_recall_at_5": 0.4359,
+      "unit_recall_at_10": 0.4359,
+      "unit_mrr": 0.3419,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 22,
+      "evidence_ceiling_mean": 0.655,
+      "evidence_ceiling_full": 27,
+      "ev0_count": 14,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [],
+      "n_metadata_only": 0,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 19,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 10,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 10,
+      "selection_width_miss_cases": [],
+      "n_selection_width_miss": 0,
+      "abstention_forbidden_hits": 3,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 3734,
+        "mean": 3937.0,
+        "max": 6083
+      },
+      "user_content_chars": {
+        "median": 3797,
+        "max": 6220
+      },
+      "n_results_median": 10
+    },
+    "R10": {
+      "config": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "union_score_order",
+        "label": "R10"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.6522,
+      "source_recall_at_3": 0.8043,
+      "source_recall_at_5": 0.8478,
+      "source_recall_at_10": 0.8913,
+      "source_mrr": 0.7413,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2308,
+      "unit_recall_at_3": 0.3077,
+      "unit_recall_at_5": 0.359,
+      "unit_recall_at_10": 0.4359,
+      "unit_mrr": 0.2908,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 22,
+      "evidence_ceiling_mean": 0.6202,
+      "evidence_ceiling_full": 26,
+      "ev0_count": 16,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [],
+      "n_metadata_only": 0,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 18,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 8,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 12,
+      "selection_width_miss_cases": [
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-044"
+      ],
+      "n_selection_width_miss": 3,
+      "abstention_forbidden_hits": 3,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 3877,
+        "mean": 4002.1,
+        "max": 6083
+      },
+      "user_content_chars": {
+        "median": 3973,
+        "max": 6220
+      },
+      "n_results_median": 10
+    }
+  },
+  "gates": {
+    "r0_byte_exact": "47/47",
+    "r0_rank_crosscheck": "47/47",
+    "r0_published_aggregates": "match",
+    "m2ref_integrity_keys": 19,
+    "m2ref_integrity": "match",
+    "contract_violations": 0
+  },
+  "deltas": {
+    "M2ref_minus_R0": {
+      "source_recall_at_1": 0.0,
+      "source_recall_at_3": 0.0,
+      "source_recall_at_5": -0.0217,
+      "source_recall_at_10": -0.0653,
+      "source_mrr": -0.0096,
+      "unit_recall_at_1": 0.0,
+      "unit_recall_at_3": 0.0,
+      "unit_recall_at_5": 0.0513,
+      "unit_recall_at_10": 0.0256,
+      "unit_mrr": 0.0086,
+      "evidence_ceiling_mean": 0.0232,
+      "evidence_ceiling_full": 1,
+      "ev0_count": -1,
+      "n_ranking_miss": -3,
+      "n_candidate_miss": 0,
+      "n_metadata_only": -2,
+      "n_source_hit_but_unit_miss": -3
+    },
+    "R10_minus_R0": {
+      "source_recall_at_1": -0.0652,
+      "source_recall_at_3": -0.0653,
+      "source_recall_at_5": -0.0652,
+      "source_recall_at_10": -0.087,
+      "source_mrr": -0.0627,
+      "unit_recall_at_1": -0.0513,
+      "unit_recall_at_3": -0.0769,
+      "unit_recall_at_5": -0.0256,
+      "unit_recall_at_10": 0.0256,
+      "unit_mrr": -0.0425,
+      "evidence_ceiling_mean": -0.0116,
+      "evidence_ceiling_full": 0,
+      "ev0_count": 1,
+      "n_ranking_miss": -5,
+      "n_candidate_miss": 2,
+      "n_metadata_only": -2,
+      "n_source_hit_but_unit_miss": -4
+    },
+    "R10_minus_M2ref": {
+      "source_recall_at_1": -0.0652,
+      "source_recall_at_3": -0.0653,
+      "source_recall_at_5": -0.0435,
+      "source_recall_at_10": -0.0217,
+      "source_mrr": -0.0531,
+      "unit_recall_at_1": -0.0513,
+      "unit_recall_at_3": -0.0769,
+      "unit_recall_at_5": -0.0769,
+      "unit_recall_at_10": 0.0,
+      "unit_mrr": -0.0511,
+      "evidence_ceiling_mean": -0.0348,
+      "evidence_ceiling_full": -1,
+      "ev0_count": 2,
+      "n_ranking_miss": -2,
+      "n_candidate_miss": 2,
+      "n_metadata_only": 0,
+      "n_source_hit_but_unit_miss": -1
+    }
+  },
+  "targets": {
+    "unit_recall_at_5": {
+      "target": 0.46,
+      "r0": 0.3846,
+      "m2ref": 0.4359,
+      "r10": 0.359,
+      "met": false
+    },
+    "ev0_count": {
+      "max": 12,
+      "r0": 15,
+      "m2ref": 14,
+      "r10": 16,
+      "met": false
+    },
+    "source_recall_at_5": {
+      "min": 0.9,
+      "r0": 0.913,
+      "m2ref": 0.8913,
+      "r10": 0.8478,
+      "met": false
+    },
+    "query_drift_low": {
+      "criterion": "valid >= 90% and <=1 case zero-valid",
+      "valid_fraction": 0.9007,
+      "zero_valid_cases": 1,
+      "met": true
+    }
+  },
+  "forensics": [
+    {
+      "example_id": "DAPT01EVAL-001",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-1005:u04715:97133ca3a76abfe6",
+        "q0_full_rank": 1,
+        "q0_score": 50.100283,
+        "union_full_rank": 4,
+        "union_score": 53.368489,
+        "best_query": "Q1",
+        "per_query_rank_score": {
+          "Q0": [
+            1,
+            50.100283
+          ],
+          "Q1": [
+            3,
+            53.368489
+          ],
+          "Q2": [
+            4,
+            50.100283
+          ],
+          "Q3": [
+            2,
+            53.368489
+          ]
+        }
+      },
+      "r10_hit_text_id": "SVK-1005:u04715:97133ca3a76abfe6",
+      "r10_hit_best_query": "Q1",
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": 1,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "M2ref": {
+        "unit_hit_rank": 1,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "R10": {
+        "unit_hit_rank": 4,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "unit_delta_r10_vs_r0": "regressed",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-002",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-0038:u00638:654336b26ef852d4",
+        "q0_full_rank": 196,
+        "q0_score": 37.876987,
+        "union_full_rank": 54,
+        "union_score": 45.27891,
+        "best_query": "Q1",
+        "per_query_rank_score": {
+          "Q0": [
+            196,
+            37.876987
+          ],
+          "Q1": [
+            50,
+            45.27891
+          ],
+          "Q2": [
+            17,
+            42.488303
+          ],
+          "Q3": [
+            44,
+            41.536669
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-003",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-0038:u00957:34a07cfc0cda2858",
+        "q0_full_rank": 1,
+        "q0_score": 38.100605,
+        "union_full_rank": 10,
+        "union_score": 40.970355,
+        "best_query": "Q1",
+        "per_query_rank_score": {
+          "Q0": [
+            1,
+            38.100605
+          ],
+          "Q1": [
+            3,
+            40.970355
+          ],
+          "Q2": [
+            1,
+            38.100605
+          ],
+          "Q3": [
+            15,
+            38.020712
+          ]
+        }
+      },
+      "r10_hit_text_id": "SVK-0038:u00957:34a07cfc0cda2858",
+      "r10_hit_best_query": "Q1",
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": 1,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "M2ref": {
+        "unit_hit_rank": 1,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "R10": {
+        "unit_hit_rank": 10,
+        "source_first_rank": 7,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": true
+      },
+      "unit_delta_r10_vs_r0": "regressed",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-007",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-0038:u00399:6c357e4a5f67eb30",
+        "q0_full_rank": 14,
+        "q0_score": 27.148448,
+        "union_full_rank": 14,
+        "union_score": 27.148448,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            14,
+            27.148448
+          ],
+          "Q1": [
+            1,
+            22.458567
+          ],
+          "Q2": [
+            1,
+            19.563238
+          ],
+          "Q3": [
+            1,
+            22.458567
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 8,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-010",
+      "n_queries": 3,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2007:u09904:c7c4acf0d34e629b",
+        "q0_full_rank": 2335,
+        "q0_score": 14.865386,
+        "union_full_rank": 2358,
+        "union_score": 14.865386,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            2335,
+            14.865386
+          ],
+          "Q1": [
+            294,
+            14.60762
+          ],
+          "Q2": [
+            227,
+            14.60762
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": false,
+      "pool_in_union": false,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-011",
+      "n_queries": 3,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2006:u39393:0afac3fde855aa8c",
+        "q0_full_rank": 1484,
+        "q0_score": 12.395829,
+        "union_full_rank": 2480,
+        "union_score": 12.395829,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            1484,
+            12.395829
+          ],
+          "Q1": [
+            1239,
+            12.395829
+          ],
+          "Q2": [
+            2386,
+            12.395829
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": false,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 3,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 3,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 4,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-013",
+      "n_queries": 2,
+      "queries_used": [
+        "Q0",
+        "Q1"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2020:u00021:675d40cd8b37750b",
+        "q0_full_rank": 986,
+        "q0_score": 13.367445,
+        "union_full_rank": 2119,
+        "union_score": 13.367445,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            986,
+            13.367445
+          ],
+          "Q1": [
+            6846,
+            5.041922
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": false,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 6,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-014",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2020:u00020:1627190f7deed175",
+        "q0_full_rank": 186,
+        "q0_score": 16.233463,
+        "union_full_rank": 186,
+        "union_score": 16.233463,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            186,
+            16.233463
+          ],
+          "Q1": [
+            98,
+            16.233463
+          ],
+          "Q2": [
+            98,
+            16.233463
+          ],
+          "Q3": [
+            70,
+            16.233463
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 5,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 8,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 8,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-015",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2020:u00168:937fe283483e5830",
+        "q0_full_rank": 3,
+        "q0_score": 28.758145,
+        "union_full_rank": 5,
+        "union_score": 28.758145,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            3,
+            28.758145
+          ],
+          "Q1": [
+            34,
+            15.981075
+          ],
+          "Q2": [
+            68,
+            19.837993
+          ],
+          "Q3": [
+            22,
+            18.805441
+          ]
+        }
+      },
+      "r10_hit_text_id": "SVK-2020:u00168:937fe283483e5830",
+      "r10_hit_best_query": "Q0",
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": 3,
+        "source_first_rank": 2,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "M2ref": {
+        "unit_hit_rank": 3,
+        "source_first_rank": 2,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "R10": {
+        "unit_hit_rank": 5,
+        "source_first_rank": 2,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "unit_delta_r10_vs_r0": "regressed",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-016",
+      "n_queries": 3,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2020:u00179:1478a11f55866d56",
+        "q0_full_rank": 70,
+        "q0_score": 17.203355,
+        "union_full_rank": 120,
+        "union_score": 19.750653,
+        "best_query": "Q1",
+        "per_query_rank_score": {
+          "Q0": [
+            70,
+            17.203355
+          ],
+          "Q1": [
+            118,
+            19.750653
+          ],
+          "Q2": [
+            74,
+            17.203355
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 2,
+        "evidence_answer_score": 1.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-017",
+      "n_queries": 3,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2"
+      ],
+      "expected_unit_feature": null,
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": false,
+      "pool_in_union": false,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 3,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-018",
+      "n_queries": 3,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2014:u00096:7cb49cdb8f5fb502",
+        "q0_full_rank": 119,
+        "q0_score": 9.209969,
+        "union_full_rank": 39,
+        "union_score": 15.85291,
+        "best_query": "Q1",
+        "per_query_rank_score": {
+          "Q0": [
+            119,
+            9.209969
+          ],
+          "Q1": [
+            37,
+            15.85291
+          ],
+          "Q2": [
+            13,
+            15.85291
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-021",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": null,
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": false,
+      "pool_in_union": false,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 8,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-023",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-0038:u00337:811b4978f0ed0c7c",
+        "q0_full_rank": 75,
+        "q0_score": 31.487249,
+        "union_full_rank": 75,
+        "union_score": 31.487249,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            75,
+            31.487249
+          ],
+          "Q1": [
+            1,
+            25.207232
+          ],
+          "Q2": [
+            45,
+            12.651778
+          ],
+          "Q3": [
+            2,
+            22.442892
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 5,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 4,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 4,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-037",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+        "q0_full_rank": 46,
+        "q0_score": 15.534616,
+        "union_full_rank": 201,
+        "union_score": 15.534616,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            46,
+            15.534616
+          ],
+          "Q1": [
+            107,
+            11.876217
+          ],
+          "Q2": [
+            23202,
+            5.400707
+          ],
+          "Q3": [
+            159,
+            12.793014
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 3,
+        "evidence_answer_score": null,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 3,
+        "evidence_answer_score": null,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": null,
+        "evidence_answer_score": null,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-041",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-0038:u01125:7e8bab53d5114a3c",
+        "q0_full_rank": 4,
+        "q0_score": 21.168825,
+        "union_full_rank": 6,
+        "union_score": 21.168825,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            4,
+            21.168825
+          ],
+          "Q1": [
+            3,
+            15.943771
+          ],
+          "Q2": [
+            4,
+            20.783112
+          ],
+          "Q3": [
+            13,
+            12.217226
+          ]
+        }
+      },
+      "r10_hit_text_id": "SVK-0038:u01125:7e8bab53d5114a3c",
+      "r10_hit_best_query": "Q0",
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": 4,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "R10": {
+        "unit_hit_rank": 6,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": false,
+        "unit_top10": true
+      },
+      "unit_delta_r10_vs_r0": "improved",
+      "known_miss_case": false
+    },
+    {
+      "example_id": "DAPT01EVAL-044",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-1001:u01494:5343b1b40436c058",
+        "q0_full_rank": 4,
+        "q0_score": 52.216161,
+        "union_full_rank": 8,
+        "union_score": 52.216161,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            4,
+            52.216161
+          ],
+          "Q1": [
+            24,
+            49.555724
+          ],
+          "Q2": [
+            32,
+            43.161204
+          ],
+          "Q3": [
+            55,
+            43.161204
+          ]
+        }
+      },
+      "r10_hit_text_id": "SVK-1001:u01494:5343b1b40436c058",
+      "r10_hit_best_query": "Q0",
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": 6,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": true
+      },
+      "M2ref": {
+        "unit_hit_rank": 4,
+        "source_first_rank": 1,
+        "evidence_answer_score": 1.0,
+        "unit_top5": true,
+        "unit_top10": true
+      },
+      "R10": {
+        "unit_hit_rank": 8,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": true
+      },
+      "unit_delta_r10_vs_r0": "regressed",
+      "known_miss_case": true
+    },
+    {
+      "example_id": "DAPT01EVAL-047",
+      "n_queries": 4,
+      "queries_used": [
+        "Q0",
+        "Q1",
+        "Q2",
+        "Q3"
+      ],
+      "expected_unit_feature": {
+        "text_id": "SVK-2007:u32618:03a7314260dbe18d",
+        "q0_full_rank": 873,
+        "q0_score": 13.82094,
+        "union_full_rank": 1001,
+        "union_score": 13.82094,
+        "best_query": "Q0",
+        "per_query_rank_score": {
+          "Q0": [
+            873,
+            13.82094
+          ],
+          "Q1": [
+            495,
+            13.82094
+          ],
+          "Q2": [
+            437,
+            13.82094
+          ],
+          "Q3": [
+            77,
+            13.82094
+          ]
+        }
+      },
+      "r10_hit_text_id": null,
+      "r10_hit_best_query": null,
+      "pool_in_q0": true,
+      "pool_in_union": true,
+      "R0": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "M2ref": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "R10": {
+        "unit_hit_rank": null,
+        "source_first_rank": 1,
+        "evidence_answer_score": 0.0,
+        "unit_top5": false,
+        "unit_top10": false
+      },
+      "unit_delta_r10_vs_r0": "unchanged",
+      "known_miss_case": true
+    }
+  ],
+  "improved_regressed": {
+    "unit_improved_r10": [
+      "DAPT01EVAL-041"
+    ],
+    "unit_regressed_r10": [
+      "DAPT01EVAL-001",
+      "DAPT01EVAL-003",
+      "DAPT01EVAL-015",
+      "DAPT01EVAL-044"
+    ],
+    "source_improved_r10": [
+      "DAPT01EVAL-023"
+    ],
+    "source_regressed_r10": [
+      "DAPT01EVAL-003",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-037"
+    ],
+    "unit_improved_m2ref": [
+      "DAPT01EVAL-041",
+      "DAPT01EVAL-044"
+    ],
+    "unit_regressed_m2ref": []
+  },
+  "failure_recovery": {
+    "unit_zero_hit_r0": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-024",
+      "DAPT01EVAL-025",
+      "DAPT01EVAL-026",
+      "DAPT01EVAL-027",
+      "DAPT01EVAL-028",
+      "DAPT01EVAL-035",
+      "DAPT01EVAL-037",
+      "DAPT01EVAL-041",
+      "DAPT01EVAL-042",
+      "DAPT01EVAL-043",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "unit_zero_hit_recovered_m2ref": [
+      "DAPT01EVAL-041"
+    ],
+    "unit_zero_hit_recovered_r10": [
+      "DAPT01EVAL-041"
+    ],
+    "unit_zero_hit_new_r10": [],
+    "ev0_r0": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-004",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-044",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "ev0_recovered_m2ref": [
+      "DAPT01EVAL-044"
+    ],
+    "ev0_recovered_r10": [],
+    "ev0_new_r10": [
+      "DAPT01EVAL-003"
+    ],
+    "ranking_miss_r0": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-028",
+      "DAPT01EVAL-037",
+      "DAPT01EVAL-041",
+      "DAPT01EVAL-047"
+    ],
+    "ranking_miss_recovered_r10": [
+      "DAPT01EVAL-041"
+    ]
+  },
+  "runtimes": {
+    "phase1_gate_seconds": 72.1,
+    "r0_arm_seconds": 13.3,
+    "m2ref_arm_seconds": 5.7,
+    "r10_arm_seconds": 53.3,
+    "r10_variant_search_seconds": 28.7,
+    "experiment_total_seconds": 130.4
+  },
+  "decision_gate": {
+    "all_met": false,
+    "recommend_query_expansion": false,
+    "criteria": {
+      "unit_at_5_ge_0.46": false,
+      "ev0_le_12": false,
+      "source_at_5_ge_0.90": false,
+      "drift_low": true
+    }
+  },
+  "post_hoc_m2ref_reference": {
+    "source": "task72_metrics.json post_hoc_sensitivity.M2_K5_aggregate",
+    "unit_recall_at_5": 0.4359,
+    "source_recall_at_5": 0.8913,
+    "evidence_ceiling_mean": 0.655,
+    "ev0_count": 14
+  }
+}

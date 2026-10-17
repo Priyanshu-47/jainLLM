@@ -1,0 +1,668 @@
+{
+  "task": 63,
+  "generated_at": "2026-10-01T07:10:11.091567+00:00",
+  "adjudicator": "task63_adjudication_layer",
+  "source_pool": "data/training/sft_task62_review_queue_v1.jsonl",
+  "total_candidates": 252,
+  "expected_total": 252,
+  "counts": {
+    "APPROVE": 54,
+    "REVISE": 104,
+    "REJECT": 94
+  },
+  "counts_by_queue": {
+    "A": {
+      "APPROVE": 37,
+      "REVISE": 2
+    },
+    "B": {
+      "REVISE": 13,
+      "REJECT": 7
+    },
+    "C": {
+      "REVISE": 15,
+      "APPROVE": 7
+    },
+    "D": {
+      "REVISE": 74,
+      "REJECT": 84,
+      "APPROVE": 10
+    },
+    "R": {
+      "REJECT": 3
+    }
+  },
+  "counts_by_category": {
+    "ABSTENTION/INSUFFICIENT_EVIDENCE": 22,
+    "AGAM_EXPLANATION": 1,
+    "AGAM_GROUNDED": 13,
+    "CANONICAL_VS_COMMENTARY": 12,
+    "CONCEPT_EXPLANATION": 2,
+    "GENERAL_JAIN_CONCEPT": 12,
+    "GUJARATI": 20,
+    "HINDI": 30,
+    "PRACTICE_EXPLANATION": 29,
+    "PRAKRIT": 25,
+    "SANSKRIT": 12,
+    "SOURCE_ATTRIBUTION": 39,
+    "STHANAKAVASI_DISTINCTION": 20,
+    "STHANAKAVASI_TERMINOLOGY": 15
+  },
+  "counts_by_shape": {
+    "manifest": 59,
+    "fragment": 168,
+    "abstention": 22,
+    "concept": 3
+  },
+  "failed_criterion_frequencies": {
+    "source_grounding": 184,
+    "qa_alignment": 163,
+    "language_quality": 34,
+    "language": 28,
+    "sect_distinction": 19,
+    "no_fabrication": 3,
+    "attribution": 1
+  },
+  "rejection_reasons": {
+    "source is on topic but has no complete usable sentence": 53,
+    "no source text supplied with the candidate": 3,
+    "answer does not answer the question (boilerplate wrapper)": 3,
+    "wrong source/topic/tradition for the question": 5,
+    "unusable OCR: meaning cannot be recovered from the source": 28,
+    "duplicate with no distinct training value": 2
+  },
+  "rejection_reason_examples": {
+    "answer does not answer the question (boilerplate wrapper)": [
+      "T61-RECON-SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "T61-RECON-SFT-SEED-CAND-SVK-2029-SVK-2029",
+      "T61-RECON-SFT-SEED-CAND-SVK-0038-unknown"
+    ],
+    "duplicate with no distinct training value": [
+      "T61-CAND-0125",
+      "T61-CAND-0126"
+    ],
+    "no source text supplied with the candidate": [
+      "T61-CAND-0060",
+      "T61-CAND-0102",
+      "T61-CAND-0117"
+    ],
+    "source is on topic but has no complete usable sentence": [
+      "T61-CAND-0044",
+      "T61-CAND-0046",
+      "T61-CAND-0048",
+      "T61-CAND-0052"
+    ],
+    "unusable OCR: meaning cannot be recovered from the source": [
+      "T61-CAND-0084",
+      "T61-CAND-0113",
+      "T61-CAND-0114",
+      "T61-CAND-0163"
+    ],
+    "wrong source/topic/tradition for the question": [
+      "T61-CAND-0080",
+      "T61-CAND-0081",
+      "T61-CAND-0082",
+      "T61-CAND-0083"
+    ]
+  },
+  "rejection_examples_by_queue": {
+    "B": 7,
+    "R": 3,
+    "D": 84
+  },
+  "revision_patterns": {
+    "manifest wording repair (bracket/truncation)": 12,
+    "rebuild a complete answer from the supplied source sentence": 77,
+    "drop non-evidentiary quotation, keep the gap statement": 15
+  },
+  "revision_confidence": {
+    "high": 28,
+    "medium": 67,
+    "low": 9
+  },
+  "deduplication": {
+    "exact_duplicate_question_groups": 0,
+    "spacing_duplicate_question_groups": 2,
+    "near_duplicate_pairs": 119,
+    "near_duplicate_pairs_same_queue": 119,
+    "same_evidence_and_answer_groups": 0,
+    "same_evidence_and_answer_rows": 0,
+    "demoted_to_reject_as_duplicate": [
+      {
+        "review_id": "T61-CAND-0125",
+        "duplicate_of": "T61-CAND-0128",
+        "kind": "spacing"
+      },
+      {
+        "review_id": "T61-CAND-0126",
+        "duplicate_of": "T61-CAND-0129",
+        "kind": "spacing"
+      }
+    ],
+    "near_duplicate_pairs_both_approve": 0,
+    "removed_from_sft_pool_by_duplication": 0,
+    "near_duplicate_detail": [
+      {
+        "similarity": 1.0,
+        "queue": "D",
+        "a": "T61-CAND-0125",
+        "b": "T61-CAND-0128",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 1.0,
+        "queue": "D",
+        "a": "T61-CAND-0126",
+        "b": "T61-CAND-0129",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.988,
+        "queue": "D",
+        "a": "T61-CAND-0130",
+        "b": "T61-CAND-0133",
+        "a_decision": "REVISE",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.988,
+        "queue": "D",
+        "a": "T61-CAND-0131",
+        "b": "T61-CAND-0134",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.984,
+        "queue": "D",
+        "a": "T61-CAND-0118",
+        "b": "T61-CAND-0121",
+        "a_decision": "REVISE",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.984,
+        "queue": "D",
+        "a": "T61-CAND-0119",
+        "b": "T61-CAND-0122",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.944,
+        "queue": "D",
+        "a": "T61-CAND-0193",
+        "b": "T61-CAND-0202",
+        "a_decision": "REVISE",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.94,
+        "queue": "D",
+        "a": "T61-CAND-0132",
+        "b": "T61-CAND-0135",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.938,
+        "queue": "D",
+        "a": "T61-CAND-0174",
+        "b": "T61-CAND-0176",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.938,
+        "queue": "D",
+        "a": "T61-CAND-0176",
+        "b": "T61-CAND-0178",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.938,
+        "queue": "D",
+        "a": "T61-CAND-0176",
+        "b": "T61-CAND-0180",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.935,
+        "queue": "D",
+        "a": "T61-CAND-0202",
+        "b": "T61-CAND-0205",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.927,
+        "queue": "D",
+        "a": "T61-CAND-0174",
+        "b": "T61-CAND-0178",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.927,
+        "queue": "D",
+        "a": "T61-CAND-0174",
+        "b": "T61-CAND-0180",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.927,
+        "queue": "D",
+        "a": "T61-CAND-0178",
+        "b": "T61-CAND-0180",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.919,
+        "queue": "D",
+        "a": "T61-CAND-0140",
+        "b": "T61-CAND-0141",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.918,
+        "queue": "D",
+        "a": "T61-CAND-0193",
+        "b": "T61-CAND-0205",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.917,
+        "queue": "D",
+        "a": "T61-CAND-0164",
+        "b": "T61-CAND-0166",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.917,
+        "queue": "D",
+        "a": "T61-CAND-0195",
+        "b": "T61-CAND-0207",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.913,
+        "queue": "D",
+        "a": "T61-CAND-0144",
+        "b": "T61-CAND-0150",
+        "a_decision": "REVISE",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.909,
+        "queue": "D",
+        "a": "T61-CAND-0186",
+        "b": "T61-CAND-0190",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.907,
+        "queue": "D",
+        "a": "T61-CAND-0182",
+        "b": "T61-CAND-0184",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.902,
+        "queue": "B",
+        "a": "T61-CAND-0048",
+        "b": "T61-CAND-0054",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.899,
+        "queue": "D",
+        "a": "T61-CAND-0173",
+        "b": "T61-CAND-0175",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.899,
+        "queue": "D",
+        "a": "T61-CAND-0173",
+        "b": "T61-CAND-0177",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.899,
+        "queue": "D",
+        "a": "T61-CAND-0173",
+        "b": "T61-CAND-0179",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.899,
+        "queue": "D",
+        "a": "T61-CAND-0173",
+        "b": "T61-CAND-0181",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0164",
+        "b": "T61-CAND-0168",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0164",
+        "b": "T61-CAND-0170",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0164",
+        "b": "T61-CAND-0172",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0166",
+        "b": "T61-CAND-0168",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0166",
+        "b": "T61-CAND-0170",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0166",
+        "b": "T61-CAND-0172",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "D",
+        "a": "T61-CAND-0195",
+        "b": "T61-CAND-0204",
+        "a_decision": "REVISE",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.898,
+        "queue": "B",
+        "a": "T61-CAND-0051",
+        "b": "T61-CAND-0057",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.896,
+        "queue": "D",
+        "a": "T61-CAND-0140",
+        "b": "T61-CAND-0142",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.891,
+        "queue": "D",
+        "a": "T61-CAND-0144",
+        "b": "T61-CAND-0148",
+        "a_decision": "REVISE",
+        "b_decision": "REJECT"
+      },
+      {
+        "similarity": 0.891,
+        "queue": "D",
+        "a": "T61-CAND-0148",
+        "b": "T61-CAND-0150",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.891,
+        "queue": "D",
+        "a": "T61-CAND-0148",
+        "b": "T61-CAND-0152",
+        "a_decision": "REJECT",
+        "b_decision": "REVISE"
+      },
+      {
+        "similarity": 0.891,
+        "queue": "D",
+        "a": "T61-CAND-0148",
+        "b": "T61-CAND-0154",
+        "a_decision": "REJECT",
+        "b_decision": "REJECT"
+      }
+    ],
+    "near_duplicate_rows_annotated": [
+      "T61-CAND-0042",
+      "T61-CAND-0044",
+      "T61-CAND-0047",
+      "T61-CAND-0048",
+      "T61-CAND-0051",
+      "T61-CAND-0054",
+      "T61-CAND-0055",
+      "T61-CAND-0057",
+      "T61-CAND-0058",
+      "T61-CAND-0118",
+      "T61-CAND-0119",
+      "T61-CAND-0121",
+      "T61-CAND-0122",
+      "T61-CAND-0125",
+      "T61-CAND-0126",
+      "T61-CAND-0128",
+      "T61-CAND-0129",
+      "T61-CAND-0130",
+      "T61-CAND-0131",
+      "T61-CAND-0132",
+      "T61-CAND-0133",
+      "T61-CAND-0134",
+      "T61-CAND-0135",
+      "T61-CAND-0136",
+      "T61-CAND-0137",
+      "T61-CAND-0139",
+      "T61-CAND-0140",
+      "T61-CAND-0141",
+      "T61-CAND-0142",
+      "T61-CAND-0143",
+      "T61-CAND-0144",
+      "T61-CAND-0147",
+      "T61-CAND-0148",
+      "T61-CAND-0150",
+      "T61-CAND-0152",
+      "T61-CAND-0154",
+      "T61-CAND-0156",
+      "T61-CAND-0158",
+      "T61-CAND-0160",
+      "T61-CAND-0162",
+      "T61-CAND-0164",
+      "T61-CAND-0166",
+      "T61-CAND-0168",
+      "T61-CAND-0170",
+      "T61-CAND-0172",
+      "T61-CAND-0173",
+      "T61-CAND-0174",
+      "T61-CAND-0175",
+      "T61-CAND-0176",
+      "T61-CAND-0177",
+      "T61-CAND-0178",
+      "T61-CAND-0179",
+      "T61-CAND-0180",
+      "T61-CAND-0181",
+      "T61-CAND-0182",
+      "T61-CAND-0184",
+      "T61-CAND-0186",
+      "T61-CAND-0188",
+      "T61-CAND-0190",
+      "T61-CAND-0192",
+      "T61-CAND-0193",
+      "T61-CAND-0194",
+      "T61-CAND-0195",
+      "T61-CAND-0197",
+      "T61-CAND-0198",
+      "T61-CAND-0201",
+      "T61-CAND-0202",
+      "T61-CAND-0203",
+      "T61-CAND-0204",
+      "T61-CAND-0205",
+      "T61-CAND-0206",
+      "T61-CAND-0207"
+    ],
+    "sources_shared_without_duplication": true
+  },
+  "gold_gate_failures": [],
+  "sft_gold_candidates": 54,
+  "sft_gold_sources": [
+    "SVK-0007",
+    "SVK-0016",
+    "SVK-0026",
+    "SVK-0027",
+    "SVK-0037",
+    "SVK-0038",
+    "SVK-1002",
+    "SVK-1003",
+    "SVK-1005",
+    "SVK-1006",
+    "SVK-1007",
+    "SVK-1008",
+    "SVK-1009",
+    "SVK-1010",
+    "SVK-2002",
+    "SVK-2003",
+    "SVK-2004",
+    "SVK-2005",
+    "SVK-2006",
+    "SVK-2007",
+    "SVK-2008",
+    "SVK-2009",
+    "SVK-2010",
+    "SVK-2011",
+    "SVK-2012",
+    "SVK-2013",
+    "SVK-2014",
+    "SVK-2016",
+    "SVK-2019",
+    "SVK-2020",
+    "SVK-2021",
+    "SVK-2022",
+    "SVK-2023",
+    "SVK-2024",
+    "SVK-2025",
+    "SVK-2026",
+    "SVK-2027",
+    "SVK-2029"
+  ],
+  "human_verified_before": 8,
+  "human_verified_after": 8,
+  "human_verified_rows_by_file": {
+    "data/training/sft_reconciled_v1.jsonl": 8,
+    "data/training/sft_seed_v1.jsonl": 6
+  },
+  "human_verified_examples": [
+    "REV-EX-000001",
+    "REV-EX-000003",
+    "SFT-SEED-CAND-SVK-0038-unknown",
+    "SFT-SEED-CAND-SVK-2022-SVK-2022",
+    "SFT-SEED-CAND-SVK-2023-SVK-2023",
+    "SFT-SEED-CAND-SVK-2024-SVK-2024",
+    "SFT-SEED-CAND-SVK-2025-SVK-2025",
+    "SFT-SEED-CAND-SVK-2029-SVK-2029"
+  ],
+  "newly_marked_human_verified": [],
+  "human_verified_delta": 0,
+  "human_review_required_after": 252,
+  "rights_status_counts": {
+    "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE": 25,
+    "TRAINING_ALLOWED": 227
+  },
+  "rights_blockers": [],
+  "provenance_blockers": [],
+  "validation_checks": {
+    "every_candidate_has_exactly_one_decision": {
+      "pass": true,
+      "detail": "records=252 queue=252 decisions={'APPROVE': 54, 'REVISE': 104, 'REJECT': 94}"
+    },
+    "no_candidate_disappears": {
+      "pass": true,
+      "detail": "missing=[] extra=[]"
+    },
+    "no_duplicate_review_ids": {
+      "pass": true,
+      "detail": "[]"
+    },
+    "counts_sum_to_total": {
+      "pass": true,
+      "detail": "{'APPROVE': 54, 'REVISE': 104, 'REJECT': 94} == 252"
+    },
+    "rejected_candidates_retained": {
+      "pass": true,
+      "detail": "94 reject records"
+    },
+    "revised_answers_have_revision_basis": {
+      "pass": true,
+      "detail": "0 REVISE rows missing answer/basis"
+    },
+    "no_raw_urls_in_answers": {
+      "pass": true,
+      "detail": "schema_prohibits_urls=False url_hits=[]"
+    },
+    "no_unsupported_source_attribution": {
+      "pass": true,
+      "detail": "[]"
+    },
+    "no_cross_sect_contamination": {
+      "pass": true,
+      "detail": "[]"
+    },
+    "no_human_verified_status_fabricated": {
+      "pass": true,
+      "detail": "records=[] outputs=[]"
+    },
+    "gold_candidates_traceable_to_evidence": {
+      "pass": true,
+      "detail": "0/54 untraceable"
+    },
+    "duplicate_pass_reported": {
+      "pass": true,
+      "detail": "near_dup_pairs=119 removed=0"
+    }
+  },
+  "validation_errors": [],
+  "outputs": {
+    "adjudication": "data/evaluation/task62_adjudication_v1.jsonl",
+    "approve": "data/evaluation/task62_approve_v1.jsonl",
+    "revise": "data/evaluation/task62_revise_v1.jsonl",
+    "reject": "data/evaluation/task62_reject_v1.jsonl",
+    "gold_candidates": "data/training/sft_gold_v4_candidates.jsonl",
+    "stats": "data/reports/task62_human_review_stats.json"
+  }
+}

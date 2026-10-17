@@ -1,0 +1,597 @@
+{
+  "phase1_reconstruction": {
+    "n_cases": 47,
+    "frozen_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "evidence_zero_cases": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-004",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-044",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "n_evidence_zero": 15,
+    "ri_base_rag": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-044",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "n_ri_base_rag": 13,
+    "ri_dapt_rag": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-044",
+      "DAPT01EVAL-045"
+    ],
+    "n_ri_dapt_rag": 12,
+    "ev0_but_prior_knowledge": [
+      "DAPT01EVAL-004",
+      "DAPT01EVAL-009"
+    ],
+    "evidence_k": 5,
+    "top_k": 10,
+    "pool": 2000,
+    "retrieval_mode": "unit_bm25+source_metadata combined (evaluate.py mode C, validated baseline)",
+    "contract_violations_task69": [],
+    "note_13_vs_15": "Task-70 brief cites 13 Ev=0; raw artifacts show 15 evidence-zero cases. 13 = BASE+RAG RETRIEVAL_INSUFFICIENT count; DAPT01EVAL-004 and -009 are evidence-zero too but scored 1.0 from prior knowledge in BASE+RAG (047 likewise in DAPT+RAG), so they leave the failure bucket."
+  },
+  "phase2_classification_counts_all": {
+    "A": 1,
+    "B": 1,
+    "C": 1,
+    "D": 13,
+    "F": 1,
+    "G": 12,
+    "H": 18
+  },
+  "phase2_classification_counts_ev0": {
+    "A": 1,
+    "B": 1,
+    "C": 1,
+    "D": 12
+  },
+  "phase3_retrieval_metrics": {
+    "n_source_level": 46,
+    "n_no_expected_source": 1,
+    "source_recall_at_1": 0.7174,
+    "source_recall_at_3": 0.8696,
+    "source_recall_at_5": 0.913,
+    "source_recall_at_10": 0.9783,
+    "source_mrr": 0.804,
+    "source_zero_hit": [
+      "DAPT01EVAL-045"
+    ],
+    "n_unit_labeled": 39,
+    "unit_recall_at_1": 0.2821,
+    "unit_recall_at_3": 0.3846,
+    "unit_recall_at_5": 0.3846,
+    "unit_recall_at_10": 0.4103,
+    "unit_mrr": 0.3333,
+    "unit_candidate_pool_hit": 29,
+    "unit_candidate_pool_hit_at_2000": 0.7436,
+    "metadata_only_cases": [
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-021"
+    ],
+    "n_metadata_only": 2,
+    "source_hit_but_unit_miss_cases": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-024",
+      "DAPT01EVAL-025",
+      "DAPT01EVAL-026",
+      "DAPT01EVAL-027",
+      "DAPT01EVAL-028",
+      "DAPT01EVAL-035",
+      "DAPT01EVAL-037",
+      "DAPT01EVAL-041",
+      "DAPT01EVAL-042",
+      "DAPT01EVAL-043",
+      "DAPT01EVAL-047"
+    ],
+    "n_source_hit_but_unit_miss": 22,
+    "not_measured": [
+      "graded/passage-level relevance: NOT_MEASURED (no graded qrels exist)",
+      "recall@k for the 1 corpus-absence case: NOT_APPLICABLE (no expected source)",
+      "unit recall for the 8 cases without unit_ids provenance: NOT_MEASURED"
+    ]
+  },
+  "phase4_ev0_table": [
+    {
+      "case_id": "DAPT01EVAL-002",
+      "category": "JAIN_TERMINOLOGY",
+      "language": "en",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-0038:u00638"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-0038:u00638": 196
+      },
+      "metadata_found_expected_source": true,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-0038:u00638': 196}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-004",
+      "category": "JAIN_TERMINOLOGY",
+      "language": "en",
+      "in_ri13_base_rag": false,
+      "task69_failure_class_base_rag": "PRIOR_KNOWLEDGE",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-0038:u00989",
+        "SVK-0038:u00990"
+      ],
+      "relevant_unit_present": true,
+      "relevant_unit_rank": 2,
+      "relevant_unit_within_top_5": true,
+      "unit_in_pool_rank": {
+        "SVK-0038:u00989": 2,
+        "SVK-0038:u00990": 1004
+      },
+      "metadata_found_expected_source": true,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": false,
+      "support_top10_full": [
+        0
+      ],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "supporting keyterms exist in candidates outside the evidence selection (groups [0] pass on full top-10 texts but not on the selected 5) — lost during ranking/top-K/evidence selection",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-007",
+      "category": "STHANAKAVASI_TERMINOLOGY",
+      "language": "en",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 8,
+      "source_within_top_5": false,
+      "relevant_unit_ids": [
+        "SVK-0038:u00399"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-0038:u00399": 14
+      },
+      "metadata_found_expected_source": true,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-0038:u00399': 14}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-009",
+      "category": "PRAKRIT",
+      "language": "hi",
+      "in_ri13_base_rag": false,
+      "task69_failure_class_base_rag": "PRIOR_KNOWLEDGE",
+      "correct_source_present": true,
+      "source_first_rank": 2,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2006:u04075"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2006:u04075": 886
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-2006:u04075': 886}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-010",
+      "category": "PRAKRIT",
+      "language": "hi",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2007:u09904"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2007:u09904": null
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": false,
+      "removed_before_final_evidence": false,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "C",
+      "class_name": "UNIT_MISS",
+      "reason": "expected source was retrieved (rank 1) but expected unit(s) ['SVK-2007:u09904'] never enter the BM25 pool of 2000 — passage-level candidate generation failure",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-011",
+      "category": "PRAKRIT",
+      "language": "hi",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 3,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2006:u39393"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2006:u39393": 1484
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [
+        1
+      ],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "supporting keyterms exist in candidates outside the evidence selection (groups [1] pass on full top-10 texts but not on the selected 5) — lost during ranking/top-K/evidence selection",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-013",
+      "category": "HINDI",
+      "language": "hi",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 6,
+      "source_within_top_5": false,
+      "relevant_unit_ids": [
+        "SVK-2020:u00021"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2020:u00021": 986
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-2020:u00021': 986}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-014",
+      "category": "HINDI",
+      "language": "hi",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 5,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2020:u00020"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2020:u00020": 186
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-2020:u00020': 186}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-017",
+      "category": "GUJARATI",
+      "language": "gu",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2027:u095770"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2027:u095770": null
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": false,
+      "removed_before_final_evidence": false,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "A",
+      "class_name": "CORPUS_ABSENCE",
+      "reason": "expected source was retrieved (rank 1) but expected unit(s) ['SVK-2027:u095770'] do not exist anywhere in data/release/rag_corpus.jsonl — relevant passage genuinely absent (corpus absence)",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-018",
+      "category": "GUJARATI",
+      "language": "gu",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2014:u00096"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2014:u00096": 119
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-2014:u00096': 119}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-021",
+      "category": "SANSKRIT",
+      "language": "en",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 8,
+      "source_within_top_5": false,
+      "relevant_unit_ids": null,
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {},
+      "metadata_found_expected_source": true,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": false,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [
+        0
+      ],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "supporting keyterms exist in candidates outside the evidence selection (groups [0] pass on full top-10 texts but not on the selected 5) — lost during ranking/top-K/evidence selection",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-023",
+      "category": "SANSKRIT",
+      "language": "en",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 5,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-0038:u00337"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-0038:u00337": 75
+      },
+      "metadata_found_expected_source": true,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [
+        1
+      ],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "supporting keyterms exist in candidates outside the evidence selection (groups [1] pass on full top-10 texts but not on the selected 5) — lost during ranking/top-K/evidence selection",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-044",
+      "category": "MULTILINGUAL_MAPPING",
+      "language": "en",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-1001:u01494"
+      ],
+      "relevant_unit_present": true,
+      "relevant_unit_rank": 6,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-1001:u01494": 4
+      },
+      "metadata_found_expected_source": true,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [
+        0
+      ],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "supporting keyterms exist in candidates outside the evidence selection (groups [0] pass on full top-10 texts but not on the selected 5) — lost during ranking/top-K/evidence selection",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-045",
+      "category": "MULTILINGUAL_MAPPING",
+      "language": "gu",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": false,
+      "source_first_rank": null,
+      "source_within_top_5": false,
+      "relevant_unit_ids": [
+        "SVK-1002:u00101"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-1002:u00101": null
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": false,
+      "bm25_found_expected_unit": false,
+      "removed_before_final_evidence": false,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "B",
+      "class_name": "SOURCE_MISS",
+      "reason": "expected source SVK-1002 exists in corpus (pool rank None) but is absent from the mode-C top-10 result list; source-metadata channel did not match it either",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    },
+    {
+      "case_id": "DAPT01EVAL-047",
+      "category": "MULTILINGUAL_MAPPING",
+      "language": "hi",
+      "in_ri13_base_rag": true,
+      "task69_failure_class_base_rag": "RETRIEVAL_INSUFFICIENT",
+      "correct_source_present": true,
+      "source_first_rank": 1,
+      "source_within_top_5": true,
+      "relevant_unit_ids": [
+        "SVK-2007:u32618"
+      ],
+      "relevant_unit_present": false,
+      "relevant_unit_rank": null,
+      "relevant_unit_within_top_5": false,
+      "unit_in_pool_rank": {
+        "SVK-2007:u32618": 873
+      },
+      "metadata_found_expected_source": false,
+      "bm25_found_expected_source": true,
+      "bm25_found_expected_unit": true,
+      "removed_before_final_evidence": true,
+      "support_top10_full": [],
+      "support_block": [],
+      "classification": "D",
+      "class_name": "RANKING_MISS",
+      "reason": "expected unit present in BM25 pool (ranks {'SVK-2007:u32618': 873}) but not in the mode-C top-10 — lost at diversify/max_per_source/top-K stage",
+      "confidence": "high",
+      "fundamental_side": "retrieval"
+    }
+  ],
+  "baseline_reproduction": "verified (block sha, ranks, ev scores, contracts, text order)",
+  "frozen_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81"
+}

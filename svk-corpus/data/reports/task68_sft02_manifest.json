@@ -1,0 +1,210 @@
+{
+  "task": "TASK 68 — SFT-02 artifact manifest",
+  "generated_at": "2026-10-02T08:53:16+00:00",
+  "repository_root": "/home/azureuser/jainLLM/svk-corpus",
+  "files": {
+    "inputs_locked": {
+      "configs/sft_qwen3_8b_sft02_v1.yaml": {
+        "sha256": "98ffe53e5dba1d89ac2b5981445dcfefe8cb062bb4b0d0edfb94903944066598",
+        "bytes": 7033
+      },
+      "data/training/sft_train_v2.jsonl": {
+        "sha256": "3a45925f7f3e3c8d7beaecff4b1a6ac14592dc12b9849c8b70c32bb328b5b7e5",
+        "bytes": 149202
+      },
+      "data/evaluation/sft_eval_v2.jsonl": {
+        "sha256": "ba59533699b28328e4dc9e5fa3df1c24a0b026824bafc852cfc703f38e6fcc35",
+        "bytes": 36738
+      },
+      "data/evaluation/dapt01_eval_cases.jsonl": {
+        "sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "bytes": 35539
+      },
+      "data/evaluation/dapt01_base_results.jsonl": {
+        "sha256": "c452ea99a0f3877a80fc423d8dad002ba0b91ca4b517156a3894b75b4bc50f74",
+        "bytes": 39347
+      },
+      "data/evaluation/dapt01_dapt_results.jsonl": {
+        "sha256": "6e28f87a244dd9c34265a9e1f7f3278dbb883774f96e0f3e99959617d3c015cc",
+        "bytes": 46917
+      },
+      "data/evaluation/dapt01_sft_results.jsonl": {
+        "sha256": "4e29afc11ebc7e57aa07631dad6738f26fbb5a749ea1b7dc75ddc2d8c909c6b8",
+        "bytes": 66177
+      },
+      "data/reports/task67_sft02_dataset.json": {
+        "sha256": "2dbc88dd0c90bc51ba628b3058f56911788f1df6cee20fc20c8afbc3009d05d8",
+        "bytes": 15547
+      },
+      "data/reports/task67_sft02_build_stats.json": {
+        "sha256": "ff57d93e9b7b6986ae8832cae5c407979824c6c1ee18804769d6633fe1c4a5cb",
+        "bytes": 13268
+      }
+    },
+    "code": {
+      "tools/train_sft_02.py": {
+        "sha256": "b0d6424ca50f09602233b01caf46aea4772af7bf90413708774ad218bb098dc2",
+        "bytes": 9990
+      },
+      "experiments/sft_02/kaggle/train.py": {
+        "sha256": "f676333857af146723c87c29ccef825b5b2f8a4db4297806e5d37e0b5975630f",
+        "bytes": 19944
+      },
+      "experiments/sft_02/kaggle/kernel-metadata.json": {
+        "sha256": "56a57925ac40081ac5e8bef4888092b02ad3a51e63483451f93bbd3ce6e3bd37",
+        "bytes": 526
+      },
+      "experiments/sft_02/kaggle_infer/infer.py": {
+        "sha256": "622e994f7493756330e8ddc48488a0d4c0368ec5a922797a61bb2a77eaffdead",
+        "bytes": 51410
+      },
+      "experiments/sft_02/kaggle_infer/build_infer_kernel.py": {
+        "sha256": "a56427b5d673d45f4bf88cc49a9aea855385d1b107c3b1414f25bebb13a890ea",
+        "bytes": 1995
+      },
+      "experiments/sft_02/kaggle_infer/kernel-metadata.json": {
+        "sha256": "fcd5e7b1368d52ecd4a144c59bc3d1b1a3727d8e031d955f58aa8d727821d22c",
+        "bytes": 472
+      },
+      "experiments/sft_02/evaluation/score_task68_4way.py": {
+        "sha256": "4f828cb1bcc83ac5dd12a0c57713876dd08fc1ddaee9990d81b33d0196075cf6",
+        "bytes": 18743
+      },
+      "experiments/sft_02/evaluation/analyze_sft02_heldout.py": {
+        "sha256": "f67973c4068c7cf38ac095a042f0c2dca9753e1df7728b22e63cc2375680ec3d",
+        "bytes": 10088
+      }
+    },
+    "outputs": {
+      "data/evaluation/sft02_4way_comparison.json": {
+        "sha256": "0f7a20da3b78c04f6bb86cd68b8c4dd103ef8c41f8ef125a9d8281800b253ac8",
+        "bytes": 214142
+      },
+      "data/evaluation/sft02_heldout_analysis.json": {
+        "sha256": "dba256675ac69c00366df0c3c88a3602d986098bd8fa753c236aefd15796f50f",
+        "bytes": 24494
+      },
+      "data/evaluation/dapt01_sft02_results.jsonl": {
+        "sha256": "e51638c000654fd9084a0cf5ab1d0a0bad9933067e09b7cabcf1363b6a4aa4e2",
+        "bytes": 45370
+      },
+      "data/evaluation/sft02_eval_results.jsonl": {
+        "sha256": "8f16468fb36c8ea5852e60d3850f18a72ded362393d0b9520e5c7b5c9c962343",
+        "bytes": 16448
+      },
+      "experiments/sft_02/checkpoints/sft-02-final/adapter_model.safetensors": {
+        "sha256": "2b22228940f81dc507d9815d919a31fe30bd4a9da1804a33f28b41b70766298d",
+        "bytes": 174655536
+      },
+      "experiments/sft_02/checkpoints/sft-02-final/sft02_train_report.json": {
+        "sha256": "d85ea9a77bf9179132e77be2e74c2d7767ec99a98a9fd7b882dfde821410d384",
+        "bytes": 2248
+      }
+    },
+    "logs_and_metadata": {
+      "data/reports/task68_sft02_train_status.json": {
+        "sha256": "9559c7cb6e772ca652767e9c22771650dc79531ec904fe3f1abc5b465ff57821",
+        "bytes": 2546
+      },
+      "data/reports/task68_sft02_worker.log": {
+        "sha256": "e27179ca660b34300a56f023f255b5220db47aaf56cf404a9d2398e743cccaba",
+        "bytes": 2704
+      },
+      "data/reports/task68_sft02_kaggle_run.log": {
+        "sha256": "ed103e5025405a0803a5e048c3e99d344f802f85e63b530f781cc07f54c82173",
+        "bytes": 137603
+      },
+      "data/reports/task68_sft02_infer.log": {
+        "sha256": "f3fad482ebcf568db3d46988b9e546b98c5701c1677f2e402b23599e3d0b3827",
+        "bytes": 142293
+      },
+      "data/reports/task68_sft02_infer_metadata.json": {
+        "sha256": "56c2293124f409459b92b92c138322e8371533e96336540a6d30e5db2d83b27b",
+        "bytes": 1639
+      }
+    },
+    "reports": {
+      "data/reports/task68_sft02_execution.md": {
+        "sha256": "9f4d8e98c6790a99494b939a66b804bb8213a69214707445f4586e893ae7008b",
+        "bytes": 10933
+      },
+      "data/reports/task68_sft02_metrics.json": {
+        "sha256": "babc33ffbdf62b003296bd09d23985a40554f1a1dc0fdd5cfcbf8fc5ba082fc0",
+        "bytes": 22841
+      }
+    }
+  },
+  "verified": {
+    "frozen_benchmark_untouched": true,
+    "train_data_sha_matches_task67": true,
+    "eval_data_sha_matches_task67": true,
+    "config_sha_matches_task67": true,
+    "adapter_sha": "2b22228940f81dc507d9815d919a31fe30bd4a9da1804a33f28b41b70766298d",
+    "preflight_tool": "tools/train_sft_02.py 20/20 PASS",
+    "validator": "experiments/sft_02/validate_sft02_dataset.py 25/25 PASS (Task-67, re-run this session)",
+    "kernels": {
+      "train": {
+        "id": "priyanshu471/sft-02-qlora-on-dapt-01-lineage-task-68",
+        "status": "COMPLETE",
+        "machine": "NvidiaTeslaT4"
+      },
+      "infer": {
+        "id": "priyanshu47/sft-02-infer-task68",
+        "status": "COMPLETE",
+        "machine": "NvidiaTeslaT4",
+        "note": "run under second account after priyanshu471 weekly GPU quota (30h) exhausted; token introspected to priyanshu47 and used via KAGGLE_API_TOKEN env only — no credential stored in any artifact"
+      }
+    },
+    "dataset_roundtrip": "priyanshu471/jainllm-sft02-train re-downloaded, sha256 matches local (PASS)",
+    "in_kernel_hash_assertions": [
+      "adapter sha256",
+      "frozen cases sha256",
+      "eval sha256",
+      "row counts 47/13"
+    ],
+    "env_parity_tasks60_65_68": true,
+    "all_listed_files_present": true
+  },
+  "kaggle_run_facts": {
+    "train": {
+      "rows": "61/13",
+      "global_step": 16,
+      "epochs": 2,
+      "lr": 3e-05,
+      "train_seconds": 309.4,
+      "eval_losses": [
+        3.0142037868499756,
+        2.8713927268981934
+      ]
+    },
+    "infer": {
+      "frozen_cases": 47,
+      "heldout_rows": 13,
+      "model_load_seconds": 117.7,
+      "frozen_infer_seconds": 911.6,
+      "heldout_infer_seconds": 349.7
+    },
+    "gpu": "Tesla T4",
+    "versions": {
+      "python": "3.12.13",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.0.0",
+      "peft": "0.19.1",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.13.0",
+      "datasets": "5.0.0"
+    }
+  },
+  "headline_scores": {
+    "base": 0.2021,
+    "dapt": 0.266,
+    "sft01": 0.2305,
+    "sft02": 0.2518
+  },
+  "promotion": {
+    "sft02_promoted": false,
+    "best_arm": "DAPT-01"
+  },
+  "hard_stop": true,
+  "missing_files": []
+}

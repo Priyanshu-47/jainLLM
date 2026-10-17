@@ -1,0 +1,308 @@
+{
+  "task": 64,
+  "built_at": "2026-10-01T07:59:53Z",
+  "elapsed_sec": 13.1,
+  "inputs": {
+    "task63_approve": 54,
+    "human_verified": 8,
+    "total": 62
+  },
+  "conflict_rule": "HUMAN_VERIFIED rows whose identical record is a Task 63 REJECT/REVISE are excluded; the explicit Task-63 exclusion rule takes precedence.",
+  "exclusions": {
+    "TASK63_REJECT": 3
+  },
+  "exclusion_detail": [
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "example_id": "svk-2025:qa:d8603075",
+      "input": "human_verified",
+      "code": "TASK63_REJECT",
+      "review_id": "T61-RECON-SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "task63_reason": "The answer is a boilerplate 'The concept of X is central to Jain philosophy' wrapper around an unrelated source quotation; it does not answer the question and the quotation is a raw passage dump, not an explanation.",
+      "conflict": "row is HUMAN_VERIFIED but Task 63 adjudicated the identical record REJECT; Task 63 exclusion rule wins"
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2029-SVK-2029",
+      "example_id": "svk-2029:qa:f407b6b9",
+      "input": "human_verified",
+      "code": "TASK63_REJECT",
+      "review_id": "T61-RECON-SFT-SEED-CAND-SVK-2029-SVK-2029",
+      "task63_reason": "The answer is a boilerplate 'The concept of X is central to Jain philosophy' wrapper around an unrelated source quotation; it does not answer the question and the quotation is a raw passage dump, not an explanation.",
+      "conflict": "row is HUMAN_VERIFIED but Task 63 adjudicated the identical record REJECT; Task 63 exclusion rule wins"
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-0038-unknown",
+      "example_id": "svk-0038:qa:a7fc9fec",
+      "input": "human_verified",
+      "code": "TASK63_REJECT",
+      "review_id": "T61-RECON-SFT-SEED-CAND-SVK-0038-unknown",
+      "task63_reason": "The answer is a boilerplate 'The concept of X is central to Jain philosophy' wrapper around an unrelated source quotation; it does not answer the question and the quotation is a raw passage dump, not an explanation.",
+      "conflict": "row is HUMAN_VERIFIED but Task 63 adjudicated the identical record REJECT; Task 63 exclusion rule wins"
+    }
+  ],
+  "selected_total": 59,
+  "splits": {
+    "train": 50,
+    "eval": 9,
+    "method": "source-level, sha256(seed=42|source_id) order, frozen-eval sources first",
+    "seed": 42,
+    "eval_fraction_target": 0.15,
+    "min_eval_rows": 6,
+    "target_eval_rows": 9,
+    "eval_sources": [
+      "SVK-0038",
+      "SVK-2007",
+      "SVK-2008",
+      "SVK-2010",
+      "SVK-2014",
+      "SVK-2026"
+    ],
+    "train_sources": [
+      "SVK-0007",
+      "SVK-0016",
+      "SVK-0026",
+      "SVK-0027",
+      "SVK-0037",
+      "SVK-1002",
+      "SVK-1003",
+      "SVK-1005",
+      "SVK-1006",
+      "SVK-1007",
+      "SVK-1008",
+      "SVK-1009",
+      "SVK-1010",
+      "SVK-2002",
+      "SVK-2003",
+      "SVK-2004",
+      "SVK-2005",
+      "SVK-2006",
+      "SVK-2009",
+      "SVK-2011",
+      "SVK-2012",
+      "SVK-2013",
+      "SVK-2016",
+      "SVK-2019",
+      "SVK-2020",
+      "SVK-2021",
+      "SVK-2022",
+      "SVK-2023",
+      "SVK-2024",
+      "SVK-2025",
+      "SVK-2027",
+      "SVK-2029"
+    ],
+    "overlap_sources_preferred_into_eval": [
+      "SVK-0038",
+      "SVK-2007",
+      "SVK-2008",
+      "SVK-2010",
+      "SVK-2014",
+      "SVK-2026"
+    ]
+  },
+  "distributions": {
+    "task_category": {
+      "abstention": 7,
+      "canonical_commentary_distinction": 10,
+      "general_qa": 5,
+      "source_citation": 37
+    },
+    "rights_status": {
+      "TRAINING_ALLOWED": 42,
+      "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE": 17
+    },
+    "input": {
+      "human_verified": 5,
+      "task63_approve": 54
+    },
+    "knowledge_layer": {
+      "CANONICAL_SCRIPTURE": 16,
+      "LEXICON": 15,
+      "MIXED": 17,
+      "REFERENCE": 5,
+      "SECONDARY_SCHOLARSHIP": 6
+    },
+    "sect": {
+      "GENERIC_JAIN": 1,
+      "MULTI_TRADITION": 2,
+      "STHANAKAVASI": 27,
+      "SVETAMBARA": 2,
+      "UNKNOWN": 27
+    },
+    "religious_scope": {
+      "COMPARATIVE_OTHER_TRADITION": 1,
+      "CONTEXTUAL_JAIN": 13,
+      "CORE_STHANAKAVASI": 13,
+      "HIGH_STHANAKAVASI_RELEVANCE": 4,
+      "UNKNOWN": 28
+    },
+    "train_task_category": {
+      "abstention": 7,
+      "canonical_commentary_distinction": 8,
+      "general_qa": 5,
+      "source_citation": 30
+    },
+    "eval_task_category": {
+      "canonical_commentary_distinction": 2,
+      "source_citation": 7
+    }
+  },
+  "human_verified": {
+    "input": 8,
+    "input_ids": [
+      "REV-EX-000001",
+      "REV-EX-000003",
+      "SFT-SEED-CAND-SVK-0038-unknown",
+      "SFT-SEED-CAND-SVK-2022-SVK-2022",
+      "SFT-SEED-CAND-SVK-2023-SVK-2023",
+      "SFT-SEED-CAND-SVK-2024-SVK-2024",
+      "SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "SFT-SEED-CAND-SVK-2029-SVK-2029"
+    ],
+    "selected": 5,
+    "excluded": 3,
+    "excluded_ids": [
+      "SFT-SEED-CAND-SVK-0038-unknown",
+      "SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "SFT-SEED-CAND-SVK-2029-SVK-2029"
+    ],
+    "newly_created": 0,
+    "selected_ids": [
+      "svk-2022:qa:23bb2ae8",
+      "svk-2022:qa:e3a4db5c",
+      "svk-2023:qa:c58c0314",
+      "svk-2023:qa:f8c0ac79",
+      "svk-2024:qa:a9cea037"
+    ]
+  },
+  "normalizations": [
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2025-SVK-2025",
+      "example_id": "svk-2025:qa:d8603075",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "provenance.source_quality_UNMEASURED_to_UNKNOWN",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2024-SVK-2024",
+      "example_id": "svk-2024:qa:a9cea037",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "provenance.source_quality_UNMEASURED_to_UNKNOWN",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2023-SVK-2023",
+      "example_id": "svk-2023:qa:f8c0ac79",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "provenance.source_quality_UNMEASURED_to_UNKNOWN",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2029-SVK-2029",
+      "example_id": "svk-2029:qa:f407b6b9",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-0038-unknown",
+      "example_id": "svk-0038:qa:a7fc9fec",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "SFT-SEED-CAND-SVK-2022-SVK-2022",
+      "example_id": "svk-2022:qa:23bb2ae8",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "provenance.source_quality_UNMEASURED_to_UNKNOWN",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "REV-EX-000001",
+      "example_id": "svk-2022:qa:e3a4db5c",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "provenance.source_quality_UNMEASURED_to_UNKNOWN",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    },
+    {
+      "original_id": "REV-EX-000003",
+      "example_id": "svk-2023:qa:c58c0314",
+      "notes": [
+        "example_id_reformatted_to_schema_pattern",
+        "provenance.source_quality_UNMEASURED_to_UNKNOWN",
+        "quality_flags_non_enum_moved_to_quality_flags_notes"
+      ]
+    }
+  ],
+  "dedup": {
+    "pairs_checked": 1711,
+    "near_dup_pairs": 0,
+    "removed": []
+  },
+  "leakage_checks": {
+    "shared_sources": [],
+    "shared_example_ids": [],
+    "shared_questions": [],
+    "shared_answers": []
+  },
+  "frozen_eval": {
+    "sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "sha256_matches_expected": true,
+    "sources_in_frozen_eval": [
+      "SVK-0038",
+      "SVK-1001",
+      "SVK-1002",
+      "SVK-1005",
+      "SVK-2006",
+      "SVK-2007",
+      "SVK-2008",
+      "SVK-2010",
+      "SVK-2012",
+      "SVK-2014",
+      "SVK-2015",
+      "SVK-2020",
+      "SVK-2022",
+      "SVK-2024",
+      "SVK-2025",
+      "SVK-2026",
+      "SVK-2027",
+      "SVK-2029"
+    ],
+    "overlap_rows_train": 17,
+    "overlap_rows_eval": 9,
+    "note": "overlap sources are preferred into the eval split so they are never trained on unless the eval budget is already full; residual overlap is reported as a known limitation"
+  },
+  "schema": {
+    "valid": true,
+    "errors": []
+  },
+  "gates_passed_counts": {
+    "rights:TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE": 17,
+    "grounding:quote_in_unit_text": 3,
+    "rights:TRAINING_ALLOWED": 42,
+    "grounding:manifest_grounded_metadata": 51,
+    "grounding:corpus_linked_units": 4,
+    "grounding:corpus_source_units": 1
+  },
+  "outputs": {
+    "train_file": "data/training/sft_train_v1.jsonl",
+    "eval_file": "data/evaluation/sft_eval_v1.jsonl",
+    "train_sha256": "77bd61ff5423b3c970d8f24b961fa22100213410593d6461fb60ce30b053615d",
+    "eval_sha256": "4ef9d81416e43ec1eb5355c3384888a2378b0a94b6f5cb5e36071560252722cb",
+    "train_rows": 50,
+    "eval_rows": 9
+  }
+}

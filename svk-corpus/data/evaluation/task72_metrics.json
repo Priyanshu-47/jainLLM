@@ -1,0 +1,1992 @@
+{
+  "task": "TASK 72 — source-anchored within-source passage retrieval",
+  "frozen_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+  "design": {
+    "algorithm": "global BM25 (Task-69 exact) -> selected sources by first appearance -> per-source BM25 (allowed indices, global IDF) -> round-robin merge by (within_source_rank, source_candidate_rank) up to top_k - fills_kept; metadata fills kept only for sources with zero lexical candidates (tail, max 3)",
+    "configs": {
+      "R0": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "global"
+      },
+      "R7": {
+        "evidence_k": 10,
+        "text_trunc": 1000,
+        "mode": "global"
+      },
+      "R8": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "within_source"
+      },
+      "R9": {
+        "evidence_k": 10,
+        "text_trunc": 1000,
+        "mode": "within_source"
+      }
+    },
+    "phase8_pre_registered_criteria": {
+      "A_material_unit_improvement": "R8-R0 unit_recall_at_5 >= +0.05 AND unit_mrr >= +0.05",
+      "C_selection_limited": "unit metrics improve materially but evidence ceiling gain < +0.02 and Ev0 reduction < 3",
+      "B_source_limited": "residual unit misses are source-miss / corpus-absence / zero lexical overlap (candidate miss), not within-source rank depth",
+      "D_cost_limited": "within-source retrieval runtime > 2x R0 global runtime, or R8 context median > 1.2x R7 context median"
+    },
+    "no_dense": true,
+    "no_new_tokenizer": true,
+    "corpus_normalization_unchanged": true,
+    "source_metadata_semantics_unchanged": true
+  },
+  "gates": {
+    "phase1_baseline": "PASS (task72_phase1.py)",
+    "r0_byte_exact_vs_task69": "47/47",
+    "r7_frozen_rescore_matches_task71": true,
+    "source_presence_invariant_across_configs": true,
+    "contract_violations": []
+  },
+  "aggregate": {
+    "R0": {
+      "config": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "global"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8696,
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.804,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3846,
+      "unit_recall_at_5": 0.3846,
+      "unit_recall_at_10": 0.4103,
+      "unit_mrr": 0.3333,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 23,
+      "evidence_ceiling_mean": 0.6318,
+      "evidence_ceiling_full": 26,
+      "ev0_count": 15,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-021"
+      ],
+      "n_metadata_only": 2,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 22,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 13,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 10,
+      "selection_width_miss_cases": [
+        "DAPT01EVAL-044"
+      ],
+      "n_selection_width_miss": 1,
+      "abstention_forbidden_hits": 4,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 4198,
+        "mean": 4348.7,
+        "max": 6083
+      },
+      "user_content_chars": {
+        "median": 4283,
+        "max": 6220
+      },
+      "n_results_median": 10
+    },
+    "R7": {
+      "config": {
+        "evidence_k": 10,
+        "text_trunc": 1000,
+        "mode": "global"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8696,
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.804,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3846,
+      "unit_recall_at_5": 0.3846,
+      "unit_recall_at_10": 0.4103,
+      "unit_mrr": 0.3333,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 23,
+      "evidence_ceiling_mean": 0.7403,
+      "evidence_ceiling_full": 31,
+      "ev0_count": 10,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-021"
+      ],
+      "n_metadata_only": 2,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 22,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 13,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 10,
+      "selection_width_miss_cases": [],
+      "n_selection_width_miss": 0,
+      "abstention_forbidden_hits": 4,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 11602,
+        "mean": 11710.3,
+        "max": 15375
+      },
+      "user_content_chars": {
+        "median": 11696,
+        "max": 15515
+      },
+      "n_results_median": 10
+    },
+    "R8": {
+      "config": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "within_source"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8913,
+      "source_recall_at_5": 0.9565,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.8159,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3333,
+      "unit_recall_at_5": 0.359,
+      "unit_recall_at_10": 0.4103,
+      "unit_mrr": 0.3212,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 23,
+      "evidence_ceiling_mean": 0.655,
+      "evidence_ceiling_full": 27,
+      "ev0_count": 14,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [],
+      "n_metadata_only": 0,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 22,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 14,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 9,
+      "selection_width_miss_cases": [
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-015"
+      ],
+      "n_selection_width_miss": 2,
+      "abstention_forbidden_hits": 3,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 5273,
+        "mean": 5318.5,
+        "max": 6234
+      },
+      "user_content_chars": {
+        "median": 5354,
+        "max": 6303
+      },
+      "n_results_median": 10
+    },
+    "R9": {
+      "config": {
+        "evidence_k": 10,
+        "text_trunc": 1000,
+        "mode": "within_source"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8913,
+      "source_recall_at_5": 0.9565,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.8159,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3333,
+      "unit_recall_at_5": 0.359,
+      "unit_recall_at_10": 0.4103,
+      "unit_mrr": 0.3212,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 23,
+      "evidence_ceiling_mean": 0.7326,
+      "evidence_ceiling_full": 31,
+      "ev0_count": 11,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [],
+      "n_metadata_only": 0,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 22,
+      "ranking_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-047"
+      ],
+      "n_ranking_miss": 14,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045"
+      ],
+      "n_candidate_miss": 9,
+      "selection_width_miss_cases": [],
+      "n_selection_width_miss": 0,
+      "abstention_forbidden_hits": 4,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 10315,
+        "mean": 10773.6,
+        "max": 14660
+      },
+      "user_content_chars": {
+        "median": 10409,
+        "max": 14745
+      },
+      "n_results_median": 10
+    }
+  },
+  "deltas": {
+    "R8_minus_R0": {
+      "unit_recall_at_1": 0.0,
+      "unit_recall_at_3": -0.0513,
+      "unit_recall_at_5": -0.0256,
+      "unit_recall_at_10": 0.0,
+      "unit_mrr": -0.0121,
+      "evidence_ceiling_mean": 0.0232
+    },
+    "R9_minus_R7": {
+      "unit_recall_at_1": 0.0,
+      "unit_recall_at_3": -0.0513,
+      "unit_recall_at_5": -0.0256,
+      "unit_recall_at_10": 0.0,
+      "unit_mrr": -0.0121,
+      "evidence_ceiling_mean": -0.0077
+    },
+    "R8_ev0_delta": -1
+  },
+  "within_source_rank_of_expected_units": {
+    "n_with_rank": 32,
+    "median": 2.0,
+    "top5": 20,
+    "top10": 20,
+    "min": 1,
+    "max": 495
+  },
+  "runtime_seconds": {
+    "global_step_total": 13.22,
+    "within_source_total": 7.65,
+    "merge_and_score_total": 0.02,
+    "r0_equivalent": 13.22,
+    "r8_equivalent": 20.89,
+    "r8_vs_r0_ratio": 1.58
+  },
+  "phase5_known_cases": [
+    {
+      "case_id": "DAPT01EVAL-002",
+      "category": "JAIN_TERMINOLOGY",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-0038",
+      "expected_units": [
+        "SVK-0038:u00638"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-0038:u00638": 196
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-0038:u00638": 196
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-0038:u00638": 196
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-004",
+      "category": "JAIN_TERMINOLOGY",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": false,
+      "expected_source": "SVK-0038",
+      "expected_units": [
+        "SVK-0038:u00989",
+        "SVK-0038:u00990"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-0038:u00989": 2,
+        "SVK-0038:u00990": 1004
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-0038:u00989": 2,
+        "SVK-0038:u00990": 1004
+      },
+      "r0_unit_hit_rank": 2,
+      "r7_unit_hit_rank": 2,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-0038:u00989": 2,
+        "SVK-0038:u00990": 495
+      },
+      "r8_unit_hit_rank": 9,
+      "r9_unit_hit_rank": 9,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 1.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": true,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-007",
+      "category": "STHANAKAVASI_TERMINOLOGY",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-0038",
+      "expected_units": [
+        "SVK-0038:u00399"
+      ],
+      "global_source_rank_r0": 8,
+      "global_unit_pool_rank_r0": {
+        "SVK-0038:u00399": 14
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-0038:u00399": 14
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 4,
+      "r8_within_source_rank": {
+        "SVK-0038:u00399": 1
+      },
+      "r8_unit_hit_rank": 4,
+      "r9_unit_hit_rank": 4,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 1.0,
+      "unit_recovered_r8_vs_r0": true,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": true,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-009",
+      "category": "PRAKRIT",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": false,
+      "expected_source": "SVK-2006",
+      "expected_units": [
+        "SVK-2006:u04075"
+      ],
+      "global_source_rank_r0": 2,
+      "global_unit_pool_rank_r0": {
+        "SVK-2006:u04075": 886
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2006:u04075": 886
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 2,
+      "r8_within_source_rank": {
+        "SVK-2006:u04075": 193
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-010",
+      "category": "PRAKRIT",
+      "task70_classification": "C",
+      "task70_class_name": "UNIT_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2007",
+      "expected_units": [
+        "SVK-2007:u09904"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-2007:u09904": null
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2007:u09904": 2335
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-2007:u09904": 268
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-011",
+      "category": "PRAKRIT",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2006",
+      "expected_units": [
+        "SVK-2006:u39393"
+      ],
+      "global_source_rank_r0": 3,
+      "global_unit_pool_rank_r0": {
+        "SVK-2006:u39393": 1484
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2006:u39393": 1484
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 2,
+      "r8_within_source_rank": {
+        "SVK-2006:u39393": 236
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.5,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": true,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-013",
+      "category": "HINDI",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2020",
+      "expected_units": [
+        "SVK-2020:u00021"
+      ],
+      "global_source_rank_r0": 6,
+      "global_unit_pool_rank_r0": {
+        "SVK-2020:u00021": 986
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2020:u00021": 986
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 4,
+      "r8_within_source_rank": {
+        "SVK-2020:u00021": 45
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-014",
+      "category": "HINDI",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2020",
+      "expected_units": [
+        "SVK-2020:u00020"
+      ],
+      "global_source_rank_r0": 5,
+      "global_unit_pool_rank_r0": {
+        "SVK-2020:u00020": 186
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2020:u00020": 186
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 3,
+      "r8_within_source_rank": {
+        "SVK-2020:u00020": 48
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-017",
+      "category": "GUJARATI",
+      "task70_classification": "A",
+      "task70_class_name": "CORPUS_ABSENCE",
+      "in_ev0_set": true,
+      "in_known_list": false,
+      "expected_source": "SVK-2027",
+      "expected_units": [
+        "SVK-2027:u095770"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-2027:u095770": null
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2027:u095770": null
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-2027:u095770": null
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": "UNKNOWN — expected unit not present in corpus (corpus absence)"
+    },
+    {
+      "case_id": "DAPT01EVAL-018",
+      "category": "GUJARATI",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2014",
+      "expected_units": [
+        "SVK-2014:u00096"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-2014:u00096": 119
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2014:u00096": 119
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-2014:u00096": 41
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-021",
+      "category": "SANSKRIT",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2015",
+      "expected_units": [],
+      "global_source_rank_r0": 8,
+      "global_unit_pool_rank_r0": {},
+      "global_unit_full_rank_r0": {},
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 6,
+      "r8_within_source_rank": {},
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 1.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": true,
+      "note": "UNKNOWN — no expected units recorded in frozen benchmark"
+    },
+    {
+      "case_id": "DAPT01EVAL-023",
+      "category": "SANSKRIT",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-0038",
+      "expected_units": [
+        "SVK-0038:u00337"
+      ],
+      "global_source_rank_r0": 5,
+      "global_unit_pool_rank_r0": {
+        "SVK-0038:u00337": 75
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-0038:u00337": 75
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 5,
+      "r8_within_source_rank": {
+        "SVK-0038:u00337": 11
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.3333333333333333,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": true,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-040",
+      "category": "PRACTICE",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": false,
+      "in_known_list": false,
+      "expected_source": "SVK-0038",
+      "expected_units": [
+        "SVK-0038:u01132"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-0038:u01132": 1
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-0038:u01132": 1
+      },
+      "r0_unit_hit_rank": 1,
+      "r7_unit_hit_rank": 1,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-0038:u01132": 1
+      },
+      "r8_unit_hit_rank": 1,
+      "r9_unit_hit_rank": 1,
+      "r0_evidence_score": 0.5,
+      "r7_evidence_score": 1.0,
+      "r8_evidence_score": 1.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-044",
+      "category": "MULTILINGUAL_MAPPING",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-1001",
+      "expected_units": [
+        "SVK-1001:u01494"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-1001:u01494": 4
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-1001:u01494": 4
+      },
+      "r0_unit_hit_rank": 6,
+      "r7_unit_hit_rank": 6,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-1001:u01494": 4
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 1.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": true,
+      "note": ""
+    },
+    {
+      "case_id": "DAPT01EVAL-045",
+      "category": "MULTILINGUAL_MAPPING",
+      "task70_classification": "B",
+      "task70_class_name": "SOURCE_MISS",
+      "in_ev0_set": true,
+      "in_known_list": false,
+      "expected_source": "SVK-1002",
+      "expected_units": [
+        "SVK-1002:u00101"
+      ],
+      "global_source_rank_r0": null,
+      "global_unit_pool_rank_r0": {
+        "SVK-1002:u00101": null
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-1002:u00101": null
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": null,
+      "r8_within_source_rank": {
+        "SVK-1002:u00101": null
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": "expected source not in selected set (cannot anchor within-source)"
+    },
+    {
+      "case_id": "DAPT01EVAL-047",
+      "category": "MULTILINGUAL_MAPPING",
+      "task70_classification": "D",
+      "task70_class_name": "RANKING_MISS",
+      "in_ev0_set": true,
+      "in_known_list": true,
+      "expected_source": "SVK-2007",
+      "expected_units": [
+        "SVK-2007:u32618"
+      ],
+      "global_source_rank_r0": 1,
+      "global_unit_pool_rank_r0": {
+        "SVK-2007:u32618": 873
+      },
+      "global_unit_full_rank_r0": {
+        "SVK-2007:u32618": 873
+      },
+      "r0_unit_hit_rank": null,
+      "r7_unit_hit_rank": null,
+      "r8_source_candidate_rank": 1,
+      "r8_within_source_rank": {
+        "SVK-2007:u32618": 173
+      },
+      "r8_unit_hit_rank": null,
+      "r9_unit_hit_rank": null,
+      "r0_evidence_score": 0.0,
+      "r7_evidence_score": 0.0,
+      "r8_evidence_score": 0.0,
+      "unit_recovered_r8_vs_r0": false,
+      "unit_recovered_r7_vs_r0": false,
+      "ev0_recovered_r8": false,
+      "ev0_recovered_r7": false,
+      "note": ""
+    }
+  ],
+  "phase5_all_cases_file": "data/evaluation/task72_failure_cases.jsonl",
+  "not_measured": [
+    "generation e2e scores for R8/R9: NOT_RUN in this script (retrieval-only phases; BASE generation decided separately in report)",
+    "graded passage relevance: NOT_MEASURED (no graded qrels exist)",
+    "dense/reranker channels: NOT_APPLICABLE (forbidden by task)"
+  ],
+  "post_hoc_sensitivity": {
+    "post_hoc": true,
+    "purpose": "isolate merge-policy effects (M2 score-order vs R8 round-robin) and split residual ranking-miss into within-source depth vs merge-blocking; NOT a pre-registered config, NOT used for the primary verdict",
+    "M2_definition": "top_k = global BM25 score order filtered to the Task-69 selected sources + R8 fills policy (fills kept only for zero-lexical sources); k5/500 and k10/1000 scored like R0/R7",
+    "M2_K5_aggregate": {
+      "config": {
+        "evidence_k": 5,
+        "text_trunc": 500,
+        "mode": "score_order_merge",
+        "label": "M2_K5"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8696,
+      "source_recall_at_5": 0.8913,
+      "source_recall_at_10": 0.913,
+      "source_mrr": 0.7944,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3846,
+      "unit_recall_at_5": 0.4359,
+      "unit_recall_at_10": 0.4359,
+      "unit_mrr": 0.3419,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 22,
+      "evidence_ceiling_mean": 0.655,
+      "evidence_ceiling_full": 27,
+      "ev0_count": 14,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [],
+      "n_metadata_only": 0,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 19,
+      "ranking_miss_cases": [],
+      "n_ranking_miss": 0,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-001",
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-005",
+        "DAPT01EVAL-006",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-008",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-015",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-020",
+        "DAPT01EVAL-022",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-029",
+        "DAPT01EVAL-030",
+        "DAPT01EVAL-031",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-040",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-046",
+        "DAPT01EVAL-047"
+      ],
+      "n_candidate_miss": 39,
+      "selection_width_miss_cases": [],
+      "n_selection_width_miss": 0,
+      "abstention_forbidden_hits": 3,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 3734,
+        "mean": 3937.0,
+        "max": 6083
+      },
+      "user_content_chars": {
+        "median": 3797,
+        "max": 6220
+      },
+      "n_results_median": 10
+    },
+    "M2_K10_aggregate": {
+      "config": {
+        "evidence_k": 10,
+        "text_trunc": 1000,
+        "mode": "score_order_merge",
+        "label": "M2_K10"
+      },
+      "n_source_level": 46,
+      "source_recall_at_1": 0.7174,
+      "source_recall_at_3": 0.8696,
+      "source_recall_at_5": 0.8913,
+      "source_recall_at_10": 0.913,
+      "source_mrr": 0.7944,
+      "source_zero_hit_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-045"
+      ],
+      "n_unit_labeled": 39,
+      "unit_recall_at_1": 0.2821,
+      "unit_recall_at_3": 0.3846,
+      "unit_recall_at_5": 0.4359,
+      "unit_recall_at_10": 0.4359,
+      "unit_mrr": 0.3419,
+      "unit_zero_hit_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "zero_hit": 22,
+      "evidence_ceiling_mean": 0.7209,
+      "evidence_ceiling_full": 30,
+      "ev0_count": 11,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "metadata_only_cases": [],
+      "n_metadata_only": 0,
+      "source_hit_but_unit_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-047"
+      ],
+      "n_source_hit_but_unit_miss": 19,
+      "ranking_miss_cases": [],
+      "n_ranking_miss": 0,
+      "candidate_miss_cases": [
+        "DAPT01EVAL-001",
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-005",
+        "DAPT01EVAL-006",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-008",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-015",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-020",
+        "DAPT01EVAL-022",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-029",
+        "DAPT01EVAL-030",
+        "DAPT01EVAL-031",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-040",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-044",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-046",
+        "DAPT01EVAL-047"
+      ],
+      "n_candidate_miss": 39,
+      "selection_width_miss_cases": [],
+      "n_selection_width_miss": 0,
+      "abstention_forbidden_hits": 3,
+      "contract_violations": 0,
+      "context_chars": {
+        "median": 7730,
+        "mean": 8595.9,
+        "max": 15227
+      },
+      "user_content_chars": {
+        "median": 7849,
+        "max": 15296
+      },
+      "n_results_median": 10
+    },
+    "M2_K5_per_case_compact": [
+      {
+        "example_id": "DAPT01EVAL-001",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-002",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-003",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-004",
+        "source_first_rank": 1,
+        "unit_hit_rank": 2,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-005",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-006",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-007",
+        "source_first_rank": null,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-008",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-009",
+        "source_first_rank": 2,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-010",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-011",
+        "source_first_rank": 3,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-012",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-013",
+        "source_first_rank": null,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-014",
+        "source_first_rank": 8,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-015",
+        "source_first_rank": 2,
+        "unit_hit_rank": 3,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-016",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-017",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-018",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-019",
+        "source_first_rank": 2,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-020",
+        "source_first_rank": 2,
+        "unit_hit_rank": 2,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-021",
+        "source_first_rank": null,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-022",
+        "source_first_rank": 2,
+        "unit_hit_rank": 2,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-023",
+        "source_first_rank": 4,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-024",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-025",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-026",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.6666666666666666
+      },
+      {
+        "example_id": "DAPT01EVAL-027",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-028",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-029",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-030",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-031",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-032",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-033",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-034",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-035",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-036",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": null
+      },
+      {
+        "example_id": "DAPT01EVAL-037",
+        "source_first_rank": 3,
+        "unit_hit_rank": null,
+        "evidence_answer_score": null
+      },
+      {
+        "example_id": "DAPT01EVAL-038",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": null
+      },
+      {
+        "example_id": "DAPT01EVAL-039",
+        "source_first_rank": null,
+        "unit_hit_rank": null,
+        "evidence_answer_score": null
+      },
+      {
+        "example_id": "DAPT01EVAL-040",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 0.5
+      },
+      {
+        "example_id": "DAPT01EVAL-041",
+        "source_first_rank": 1,
+        "unit_hit_rank": 4,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-042",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-043",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-044",
+        "source_first_rank": 1,
+        "unit_hit_rank": 4,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-045",
+        "source_first_rank": null,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-046",
+        "source_first_rank": 1,
+        "unit_hit_rank": 1,
+        "evidence_answer_score": 1.0
+      },
+      {
+        "example_id": "DAPT01EVAL-047",
+        "source_first_rank": 1,
+        "unit_hit_rank": null,
+        "evidence_answer_score": 0.0
+      }
+    ],
+    "M2_K5_minus_R0": {
+      "unit_recall_at_1": 0.0,
+      "unit_recall_at_3": 0.0,
+      "unit_recall_at_5": 0.0513,
+      "unit_recall_at_10": 0.0256,
+      "unit_mrr": 0.0086,
+      "source_recall_at_5": -0.0217,
+      "evidence_ceiling_mean": 0.0232
+    },
+    "M2_K10_minus_R7": {
+      "unit_recall_at_1": 0.0,
+      "unit_recall_at_3": 0.0,
+      "unit_recall_at_5": 0.0513,
+      "unit_recall_at_10": 0.0256,
+      "unit_mrr": 0.0086,
+      "source_recall_at_5": -0.0217,
+      "evidence_ceiling_mean": -0.0194
+    },
+    "attribution_ranking_miss": {
+      "n_ranking_miss_r0": 13,
+      "n_depth_blocked_gt10": 10,
+      "n_fits_within_top10": 3,
+      "cases": [
+        {
+          "example_id": "DAPT01EVAL-002",
+          "within_source_ranks": {
+            "SVK-0038:u00638": 196
+          },
+          "min_within_rank": 196,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-007",
+          "within_source_ranks": {
+            "SVK-0038:u00399": 1
+          },
+          "min_within_rank": 1,
+          "bucket": "fits_within_top10"
+        },
+        {
+          "example_id": "DAPT01EVAL-009",
+          "within_source_ranks": {
+            "SVK-2006:u04075": 193
+          },
+          "min_within_rank": 193,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-011",
+          "within_source_ranks": {
+            "SVK-2006:u39393": 236
+          },
+          "min_within_rank": 236,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-013",
+          "within_source_ranks": {
+            "SVK-2020:u00021": 45
+          },
+          "min_within_rank": 45,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-014",
+          "within_source_ranks": {
+            "SVK-2020:u00020": 48
+          },
+          "min_within_rank": 48,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-016",
+          "within_source_ranks": {
+            "SVK-2020:u00179": 22
+          },
+          "min_within_rank": 22,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-018",
+          "within_source_ranks": {
+            "SVK-2014:u00096": 41
+          },
+          "min_within_rank": 41,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-023",
+          "within_source_ranks": {
+            "SVK-0038:u00337": 11
+          },
+          "min_within_rank": 11,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-028",
+          "within_source_ranks": {
+            "SVK-0038:u00185": 21
+          },
+          "min_within_rank": 21,
+          "bucket": "depth_blocked_gt10"
+        },
+        {
+          "example_id": "DAPT01EVAL-037",
+          "within_source_ranks": {
+            "SVK-0038:u01198": 5
+          },
+          "min_within_rank": 5,
+          "bucket": "fits_within_top10"
+        },
+        {
+          "example_id": "DAPT01EVAL-041",
+          "within_source_ranks": {
+            "SVK-0038:u01125": 4
+          },
+          "min_within_rank": 4,
+          "bucket": "fits_within_top10"
+        },
+        {
+          "example_id": "DAPT01EVAL-047",
+          "within_source_ranks": {
+            "SVK-2007:u32618": 173
+          },
+          "min_within_rank": 173,
+          "bucket": "depth_blocked_gt10"
+        }
+      ]
+    },
+    "merge_blocked_units_r8": [
+      {
+        "example_id": "DAPT01EVAL-037",
+        "unit": "SVK-0038:u01198",
+        "within_rank": 5,
+        "source_candidate_rank": 3
+      },
+      {
+        "example_id": "DAPT01EVAL-041",
+        "unit": "SVK-0038:u01125",
+        "within_rank": 4,
+        "source_candidate_rank": 1
+      },
+      {
+        "example_id": "DAPT01EVAL-044",
+        "unit": "SVK-1001:u01494",
+        "within_rank": 4,
+        "source_candidate_rank": 1
+      }
+    ],
+    "width_pushed_units_r8": [
+      {
+        "example_id": "DAPT01EVAL-004",
+        "unit": "SVK-0038:u00989",
+        "within_rank": 2,
+        "r8_rank": 9
+      },
+      {
+        "example_id": "DAPT01EVAL-015",
+        "unit": "SVK-2020:u00168",
+        "within_rank": 2,
+        "r8_rank": 6
+      }
+    ],
+    "ev0_set_r0": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-004",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-044",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "ev0_set_r8": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-004",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-044",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "ev0_recovered_r8": [
+      "DAPT01EVAL-007"
+    ],
+    "ev0_new_r8": [],
+    "contract_violations_m2": [],
+    "runtime_seconds": 77.7
+  }
+}

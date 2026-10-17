@@ -1,0 +1,198 @@
+{
+  "task": 80,
+  "stage": "full",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cpu",
+    "torch_cuda_available": false,
+    "sentence_transformers": "6.1.0",
+    "transformers": "5.19.0",
+    "numpy": "2.5.3",
+    "torch_num_threads": 2,
+    "torch_num_interop_threads": 4
+  },
+  "measurements": {
+    "query_set": {
+      "total_frozen": 47,
+      "representative": 12,
+      "representative_ids": [
+        "DAPT01EVAL-001",
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-019",
+        "DAPT01EVAL-020"
+      ],
+      "languages_covered": [
+        "devanagari",
+        "gujarati",
+        "latin"
+      ]
+    },
+    "model_load": {
+      "model_id": "BAAI/bge-m3",
+      "model_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+      "was_cached_before": true,
+      "download_plus_init_s": 2.91,
+      "cache_path": "/home/azureuser/.cache/huggingface/hub/models--BAAI--bge-m3",
+      "model_disk_mb": 8705.9,
+      "rss_before_mb": 412.2,
+      "rss_after_load_mb": 841.4,
+      "cpu_during_load": {
+        "process_cpu_pct": {
+          "mean_pct": 4056.3,
+          "p95_pct": 10692.6,
+          "max_pct": 10692.6
+        },
+        "system_load1": {
+          "mean_pct": 1.5,
+          "p95_pct": 1.5,
+          "max_pct": 1.5
+        }
+      }
+    },
+    "embedding_validity": {
+      "dim": 1024,
+      "dtype": "float32",
+      "l2_norm_first": 1.0,
+      "finite": true,
+      "matches_index_dim_1024": true,
+      "normalized_l2_1": true
+    },
+    "determinism": {
+      "max_abs_diff_repeat": 0.0,
+      "within_1e4": true,
+      "note": "float32 CPU inference, deterministic ops"
+    },
+    "first_query_s": 0.264,
+    "encoder_warm_per_query_rep": {
+      "samples": 120,
+      "n": 120,
+      "mean_ms": 252.62,
+      "p50_ms": 257.65,
+      "p95_ms": 291.35,
+      "p99_ms": 332.83,
+      "max_ms": 339.08,
+      "queries": 12,
+      "iters": 10,
+      "cpu": {
+        "process_cpu_pct": {
+          "mean_pct": 20096.0,
+          "p95_pct": 21707.1,
+          "max_pct": 23685.3
+        },
+        "system_load1": {
+          "mean_pct": 2.2,
+          "p95_pct": 2.5,
+          "max_pct": 2.5
+        }
+      }
+    },
+    "encoder_warm_per_query_all47": {
+      "samples": 141,
+      "n": 141,
+      "mean_ms": 257.1,
+      "p50_ms": 254.61,
+      "p95_ms": 312.97,
+      "p99_ms": 326.33,
+      "max_ms": 332.44
+    },
+    "peak_rss_mb": 4035.0,
+    "e2e_cold_start_s": {
+      "corpus": 5.74,
+      "bm25": 57.8,
+      "dense": 1.62,
+      "total_without_encoder_load": 65.15,
+      "note": "encoder already loaded above; not re-timed here"
+    },
+    "e2e_components_rep": {
+      "encode_s": {
+        "n": 60,
+        "mean_ms": 315.27,
+        "p50_ms": 292.81,
+        "p95_ms": 620.4,
+        "p99_ms": 709.34,
+        "max_ms": 709.34
+      },
+      "dense_s": {
+        "n": 60,
+        "mean_ms": 42.19,
+        "p50_ms": 37.68,
+        "p95_ms": 84.33,
+        "p99_ms": 112.02,
+        "max_ms": 112.02
+      },
+      "fusion_s": {
+        "n": 60,
+        "mean_ms": 38.94,
+        "p50_ms": 33.29,
+        "p95_ms": 85.38,
+        "p99_ms": 87.67,
+        "max_ms": 87.67
+      },
+      "bm25_s": {
+        "n": 60,
+        "mean_ms": 156.39,
+        "p50_ms": 51.35,
+        "p95_ms": 828.75,
+        "p99_ms": 1117.44,
+        "max_ms": 1117.44
+      },
+      "total_s": {
+        "n": 60,
+        "mean_ms": 552.81,
+        "p50_ms": 431.07,
+        "p95_ms": 1187.38,
+        "p99_ms": 1569.12,
+        "max_ms": 1569.12
+      }
+    },
+    "e2e_h3_service_all47": {
+      "samples": 141,
+      "n": 141,
+      "mean_ms": 1138.33,
+      "p50_ms": 1032.19,
+      "p95_ms": 2069.36,
+      "p99_ms": 2497.47,
+      "max_ms": 3018.88,
+      "note": "REAL encoder + dense + fusion + contract; end-to-end"
+    },
+    "frozen_benchmark_real_encoder": {
+      "H1_BM25": {
+        "agg": {
+          "src@5": 0.913,
+          "unit@5": 0.3846,
+          "src_mrr": 0.7986,
+          "unit_mrr": 0.3333,
+          "n_src": 46,
+          "n_unit": 39
+        },
+        "fallbacks": 0
+      },
+      "H3_RRF20": {
+        "agg": {
+          "src@5": 0.9783,
+          "unit@5": 0.5385,
+          "src_mrr": 0.9174,
+          "unit_mrr": 0.4618,
+          "n_src": 46,
+          "n_unit": 39
+        },
+        "fallbacks": 0
+      },
+      "expected_H3": {
+        "unit@5": 0.5385,
+        "src@5": 0.9783
+      },
+      "reproduction_pass": true,
+      "note": "real encoder; tolerance 2e-3 to allow CPU/GPU float differences"
+    }
+  },
+  "environment_note": "Standard_B4as_v2 (westus2), AMD EPYC 7763, 2 physical cores, 15.6 GiB RAM, no GPU; measured while OpenCode + uvicorn orchestrator + ollama were running; torch threads bounded to 2."
+}

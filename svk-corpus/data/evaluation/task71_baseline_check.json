@@ -1,0 +1,25 @@
+{
+  "task": "TASK 71 Phase 3 — Task-69 BASE+RAG baseline reproduction",
+  "frozen_file": "data/evaluation/task69_base_rag_results.jsonl",
+  "frozen_sha256": "9bfd6fce30fa338904e3fe4c06689aa5f136630988f13c512d5bc9d480728e72",
+  "fresh_file": "data/evaluation/task71_baseline_base_rag_results.jsonl",
+  "fresh_sha256": "af9c851844bc27e382ee62088a5eff2869a56fc58f55943c8a5dec0d8b5aef15",
+  "prompts_sha_expected": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+  "n_frozen": 47,
+  "n_fresh": 47,
+  "mismatches": [],
+  "timing_note": "decode_seconds excluded (wall-clock, non-deterministic)",
+  "gate": "PASS",
+  "verified_byte_exact_fields": [
+    "answer",
+    "input_prompt_sha256",
+    "evidence_context_sha256",
+    "new_tokens",
+    "prompt_style",
+    "decoding",
+    "seed",
+    "system_prompt",
+    "n_evidence_items"
+  ],
+  "answer_sha256_all_match": true
+}

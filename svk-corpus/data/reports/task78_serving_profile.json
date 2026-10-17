@@ -1,0 +1,277 @@
+{
+  "task": 78,
+  "title": "SERVING ENVIRONMENT DECISION & DEPLOYMENT PROFILE",
+  "verdict": "PARTIAL_PROFILE_ONLY",
+  "verdict_explanation": "A fully free profile cannot host the complete assistant (retrieval + BGE-M3 encoding + Qwen3-8B generation) at zero recurring cost on any examined provider. A persistent RETRIEVAL-ONLY profile is viable on Oracle Cloud Always Free Ampere A1 (2 OCPU / 12 GB Arm VM): BM25 + dense index + BGE-M3 query encoding fit within RAM and disk, and an always-on API is possible. Qwen3-8B generation is NOT feasible there (8B model on Arm CPU is impractically slow for interactive use; no free always-on GPU exists on any examined profile). The recommended profile is therefore retrieval-only; generation remains a separate, unresolved gate. This is explicitly NOT a complete AI assistant deployment.",
+  "next_action": "User provisions an Oracle Cloud Always Free account and one VM.Standard.A1.Flex instance (2 OCPU / 12 GB) in their home region (manual step; requires card verification; NOT done by this task). Then run the Task-78 validation plan (experiments/task78/task78_validate_plan.md) to measure BGE-M3 encoder latency and end-to-end retrieval latency in that environment before any latency gate is claimed passed.",
+
+  "final_status": {
+    "selected_profile": "Oracle Cloud Always Free — Ampere A1 (VM.Standard.A1.Flex, 2 OCPU / 12 GB), retrieval-only",
+    "recurring_cost_target": "0 INR (Always Free resources only; no paid fallback)",
+    "retrieval_deployment_feasible": "YES (conditional on account eligibility, regional capacity, and idle-reclamation risk — all documented)",
+    "full_qwen_assistant_feasible_at_zero_cost": "NO",
+    "encoder_latency_measured_in_target_environment": "NO",
+    "slo_gates_passed": "0 passed / 8 unresolved (retrieval latency, cold start, RSS, disk, concurrency, throughput, encoder latency, generation latency — none measurable until the target host exists)",
+    "production_default_changed": "NO",
+    "infrastructure_provisioned": "NO",
+    "final_verdict": "PARTIAL_PROFILE_ONLY"
+  },
+
+  "architecture_audit": {
+    "summary": "The repository implements an offline/batch retrieval pipeline with a production BM25 path (H1) and an opt-in hybrid candidate (H3_RRF20). There is NO inference/serving code for answer generation, NO API server, and NO frontend. Answer generation exists only as training configuration (DAPT-01 / SFT-01 for Qwen3-8B-Base); the Task-69/70 RAG answers were produced offline on external GPU sessions and stored as artifacts.",
+    "boundaries": [
+      {
+        "layer": "1. Corpus + index storage",
+        "components": [
+          "data/release/rag_corpus.jsonl (495 MB)",
+          "manifests/source_manifest.csv",
+          "experiments/task74/dense_index/ (corpus_emb.f16.npy 336 MB + index_meta.json + queries_emb.f32.npy)"
+        ],
+        "notes": "Dense index sha-verified (corpus_emb f16 sha f54919e6..., alignment: corpus_text/doc_ids/queries shas + 164238/47 counts). Frozen bench sha 06625f72...."
+      },
+      {
+        "layer": "2. BM25 retrieval",
+        "components": [
+          "src/svk_corpus/retrieval/bm25.py BM25Index",
+          "service.py _search_bm25 (pool=2000 -> diversify -> metadata tail)",
+          "evaluate.py mode C_combined (production)"
+        ],
+        "notes": "Byte-compatible; production default; pool=2000, max_metadata_fill=3."
+      },
+      {
+        "layer": "3. BGE-M3 encoding + dense search",
+        "components": [
+          "service.py load_dense_index + numpy matmul search",
+          "dense.py SentenceTransformerDense (prototype, defaults to MiniLM)",
+          "queries_emb.f32.npy pre-computed Task-74 artifact"
+        ],
+        "notes": "Service does NOT bundle the encoder; callers pass a query_encoder callable or pre-computed embeddings. Encoder model: BAAI/bge-m3 rev 5617a9f..., dim 1024, L2-normalised. Corpus encoding was a one-time Colab T4 job (1882.6 s)."
+      },
+      {
+        "layer": "4. RRF fusion + evidence validation",
+        "components": [
+          "service.py rrf_fuse_full (vectorised, exact-equivalent, k=20)",
+          "contract.py validate_result + CanonicalResult"
+        ],
+        "notes": "Fusion optimised in Task-77 (~1.3x, exact equivalence proven on 54 cases); contract violations 0 in benchmarks."
+      },
+      {
+        "layer": "5. Answer generation (Qwen)",
+        "components": [
+          "src/svk_corpus/training/dapt_trainer.py (QLoRA 4-bit training)",
+          "src/svk_corpus/training/sft_candidates.py (SFT dataset prep)",
+          "configs/sft_qwen3_8b_v1.yaml / sft_qwen3_8b_sft02_v1.yaml (training configs)",
+          "experiments/task70/retrieval_stack.py (reads pre-computed Task-69 answers; does NOT generate)"
+        ],
+        "notes": "NO inference/serving code exists. Qwen3-8B-Base + DAPT-01 adapter lineage is training-only. Generation latency and memory are UNRESOLVED and unmeasured."
+      },
+      {
+        "layer": "6. Frontend / API hosting",
+        "components": [],
+        "notes": "NONE exists. No FastAPI/flask/gradio/streamlit/uvicorn server anywhere in src/ or experiments/."
+      }
+    ],
+    "key_documents_reviewed": [
+      "docs/TASK77_SERVING_ENV_AUDIT.md",
+      "docs/TASK76_RETRIEVAL_DESIGN.md",
+      "docs/TASK76_FEATURE_FLAG_ROLLBACK.md",
+      "data/reports/task76_production_readiness.md",
+      "data/reports/task77_serving_feasibility.md",
+      "data/reports/task77_latency.json",
+      "data/reports/task77_fusion_opt.json",
+      "configs/policy.toml",
+      "pyproject.toml"
+    ]
+  },
+
+  "resource_requirements": {
+    "corpus_disk_mb": 472,
+    "dense_index_disk_mb": 321,
+    "retrieval_rss_mb_task77": 2125,
+    "bge_m3_model_download_gb": 2.2,
+    "bge_m3_peak_ram_mb_task74": 3816,
+    "bm25_build_cold_start_s_task77": 64.8,
+    "retrieval_p95_ms_task77_no_encoder": 1123,
+    "qwen3_8b_4bit_weights_gb": 5.5,
+    "notes": "Task-77 measurements are from a 2-physical-core x86 VM without the encoder in the loop. Oracle Ampere A1 Arm cores differ; all latency gates remain UNRESOLVED until measured there."
+  },
+
+  "profile_comparison": {
+    "A_oracle_always_free_ampere": {
+      "provider_docs": [
+        "https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm",
+        "https://www.oracle.com/cloud/free/faq/"
+      ],
+      "what_runs_free": "VM.Standard.A1.Flex up to 2 OCPU + 12 GB RAM (Arm), OR up to 2 VM.Standard.E2.1.Micro AMD instances; 200 GB always-free block volume storage.",
+      "persistent_storage": "YES - block volumes persist across stops/starts (200 GB free).",
+      "cpu_memory": "2 OCPU (Arm Neoverse-N1) + 12 GB RAM total, flexibly allocated across 1-2 instances.",
+      "gpu": "NONE on Always Free.",
+      "always_on_api": "YES - it is a VM; any long-lived process (e.g., systemd service) can run continuously.",
+      "sleep_suspension": "No automatic sleep, BUT idle Always Free instances (CPU/network/memory 95th-percentile < 20% over 7 days) MAY be reclaimed by Oracle.",
+      "capacity_quota": "Always Free shapes are capacity-limited per region; 'out of host capacity' errors are possible. One free account per person.",
+      "account_verification": "Requires credit/debit card (credit-card logo, no PIN) for identity verification; temporary authorization hold possible; card NOT charged unless upgrading. Mobile number often required.",
+      "charges_possible": "Only if Always Free limits are exceeded or non-free resources are provisioned. Staying within Always Free = 0 INR recurring.",
+      "bge_m3_suitability": "PLAUSIBLE but UNMEASURED - 12 GB RAM fits model (~2.2 GB) + retrieval (~2.1 GB) with headroom; Arm CPU query-encoding latency unknown (needs validation).",
+      "dense_retrieval_suitability": "YES - dense index (321 MB disk, ~1.3 GB loaded) + numpy search fits easily.",
+      "qwen_generation_suitability": "NO for interactive use - Qwen3-8B-4bit (~5.5 GB weights + KV cache) fits tightly in 12 GB alongside retrieval, but Arm CPU generation throughput (~1-3 tok/s class) is impractical for an interactive assistant. No GPU available.",
+      "terms_to_verify": "Home-region choice is permanent for Always Free provisioning; idle-reclamation policy; regional capacity at sign-up time."
+    },
+    "B_free_gpu_notebook_sessions": {
+      "provider_docs": [
+        "https://www.kaggle.com/docs/notebooks"
+      ],
+      "what_runs_free": "Kaggle notebooks with free NVIDIA Tesla P100 (or T4-class) GPU; ~30 hours/week GPU quota (resets weekly, 'floating' quota may vary).",
+      "persistent_storage": "NO - notebook sessions are ephemeral; attached datasets persist but the runtime does not.",
+      "cpu_memory": "Limited CPU/RAM when GPU is attached (lower than CPU-only sessions).",
+      "gpu": "YES (conditional, quota-limited, queue at busy times).",
+      "always_on_api": "NO - sessions disconnect after inactivity; not a serving platform.",
+      "sleep_suspension": "Sessions auto-terminate; GPU quota exhaustion stops further sessions that week.",
+      "capacity_quota": "Weekly GPU-hour quota; availability conditional on demand.",
+      "account_verification": "Google account; no payment method required for basic free tier.",
+      "charges_possible": "No, for free-tier notebook usage.",
+      "bge_m3_suitability": "GOOD for one-off benchmarking only (GPU encode), not for persistent serving.",
+      "dense_retrieval_suitability": "N/A for serving.",
+      "qwen_generation_suitability": "GOOD for offline batch experiments/benchmarking only; not for an always-on assistant.",
+      "verdict": "Benchmarking-only profile. Explicitly NOT a serving environment."
+    },
+    "C_hugging_face_spaces_free": {
+      "provider_docs": [
+        "https://huggingface.co/docs/hub/spaces-overview",
+        "https://huggingface.co/docs/hub/spaces-gpus"
+      ],
+      "what_runs_free": "Static Spaces (no compute) free for all. Gradio/Docker Spaces on compute now REQUIRE a paid plan (PRO for personal accounts). Free accounts may host up to 2 Gradio Spaces on ZeroGPU (conditional GPU quota).",
+      "persistent_storage": "NO - 50 GB non-persistent disk per Space; rebuild on restart.",
+      "cpu_memory": "CPU Basic: 2 vCPU, 16 GB RAM (free tier hardware) - but creating a Gradio Space on it now requires a paid plan.",
+      "gpu": "ZeroGPU only for free accounts (conditional quota; not guaranteed).",
+      "always_on_api": "Free hardware sleeps after ~48 h inactivity; wake-on-visit possible but not always-on.",
+      "sleep_suspension": "Automatic sleep on free hardware; suspension on failure.",
+      "capacity_quota": "ZeroGPU quota-limited; free-tier compute creation restricted.",
+      "account_verification": "Hugging Face account; no payment method for basic account.",
+      "charges_possible": "Only if upgrading hardware or exceeding free quotas.",
+      "bge_m3_suitability": "POOR under current terms - free Gradio hosting is no longer available without a paid plan; ZeroGPU is conditional.",
+      "dense_retrieval_suitability": "POOR - same restriction; disk is non-persistent.",
+      "qwen_generation_suitability": "CONDITIONAL - ZeroGPU could run small models but is quota-limited and not guaranteed; 8B model may not fit ZeroGPU memory reliably.",
+      "terms_to_verify": "The paid-plan requirement for Gradio/Docker Spaces is recent and may change; re-check before relying on it."
+    },
+    "D_google_cloud_free_tier": {
+      "provider_docs": [
+        "https://docs.cloud.google.com/free/docs/free-cloud-features"
+      ],
+      "what_runs_free": "Always Free: 1 non-preemptible e2-micro VM (shared 0.25 vCPU, 1 GB RAM) in us-west1/us-central1/us-east1; 30 GB persistent disk; 5 GB Cloud Storage; Cloud Run / Cloud Functions request quotas. Plus $300 trial credit for 90 days (NOT sustainable zero-cost evidence).",
+      "persistent_storage": "YES - 30 GB persistent disk (e2-micro) + 5 GB Cloud Storage.",
+      "cpu_memory": "e2-micro: ~0.25 vCPU shared, 1 GB RAM - far too small for BGE-M3 (~2.2 GB model) or the retrieval stack (~2.1 GB RSS).",
+      "gpu": "NOT included in free tier; GPUs always billed.",
+      "always_on_api": "e2-micro can run a service, but lacks the memory for this workload. Cloud Run free tier is request-based and scale-to-zero (cold starts).",
+      "sleep_suspension": "e2-micro is non-preemptible and always-on within quota; Cloud Run scales to zero.",
+      "capacity_quota": "1 e2-micro per month (by time); region-restricted to 3 US regions.",
+      "account_verification": "Billing account with payment method required even for free tier / trial.",
+      "charges_possible": "Yes if limits exceeded or non-free resources used; trial credit expiry does not auto-charge but upgrade does.",
+      "bge_m3_suitability": "NO - 1 GB RAM cannot load the model.",
+      "dense_retrieval_suitability": "NO - retrieval stack RSS (~2.1 GB) exceeds e2-micro RAM.",
+      "qwen_generation_suitability": "NO - no free GPU; CPU far too small.",
+      "verdict": "Rejected for this workload. e2-micro is an order of magnitude too small."
+    }
+  },
+
+  "recommended_profile": {
+    "name": "Oracle Cloud Always Free - Ampere A1 retrieval service",
+    "shape": "VM.Standard.A1.Flex, 2 OCPU / 12 GB RAM (single instance)",
+    "os_image": "Ubuntu (Always Free-eligible image)",
+    "storage": "Boot volume >= 47 GB (min) - enough for corpus (~0.5 GB), dense index (~0.3 GB), OS, and Python env; block volume persists.",
+    "software": "Python 3.11+, numpy; sentence-transformers + torch (CPU) for BGE-M3 query encoding; the existing svk_corpus retrieval service.",
+    "service_shape": "Long-lived Python process (systemd) exposing RetrievalService.search over a minimal local HTTP endpoint (to be built in a FUTURE task - does not exist yet). BM25 default; hybrid_rrf20 opt-in via SVK_RETRIEVAL_MODE.",
+    "serves": "RETRIEVAL ONLY (BM25 + optional H3_RRF20 dense fusion + BGE-M3 query encoding).",
+    "does_not_serve": "Answer generation (Qwen3-8B). No frontend. This is explicitly NOT a complete AI assistant.",
+    "conditional_on": [
+      "Oracle account eligibility (one free account per person; card verification).",
+      "Regional capacity for A1.Flex shapes at sign-up time.",
+      "Idle-reclamation risk mitigation (keep 95th-percentile utilization >= 20% or accept reclamation/reprovision workflow).",
+      "User manually provisions the instance (this task does NOT provision)."
+    ]
+  },
+
+  "retrieval_vs_generation_decision": {
+    "retrieval_on_proposed_host": "YES - 12 GB RAM and 2 OCPU comfortably fit BM25 + dense index + BGE-M3 encoder with headroom; always-on API possible.",
+    "bge_m3_latency_on_cpu": "UNRESOLVED - Arm CPU query-encoding latency not measured; proposed p95 gate (<= 2 s incl. encoder) is plausible but unproven.",
+    "qwen_on_same_host": "NO for interactive assistant - 8B model generation on Arm CPU is impractically slow; memory would also be tight alongside retrieval.",
+    "separate_retrieval_and_generation": "YES - retrieval stays persistent on Oracle Always Free; generation is kept separate and remains an unresolved gate (could be batch/offline on a free GPU notebook when needed, but not an always-on zero-cost service).",
+    "notebook_for_gpu_benchmarking_only": "YES - Kaggle free GPU is suitable only for experimental benchmarking (e.g., measuring Qwen generation latency once), never for serving."
+  },
+
+  "proposed_slos": {
+    "status": "PROPOSED - not pre-existing requirements. A repository-wide search (Task 77) found no SLOs; these are new proposals for explicit approval.",
+    "table": [
+      {"gate": "Recurring infrastructure cost", "proposed": "0 INR", "plausibility": "Met by using Always Free resources only."},
+      {"gate": "Warm retrieval p95 (incl. encoder)", "proposed": "<= 2000 ms", "plausibility": "PLAUSIBLE but UNPROVEN - Task-77 local p95 (no encoder) was 1123 ms on 2 x86 cores; Arm + encoder adds latency. Requires validation."},
+      {"gate": "Warm retrieval p99 (incl. encoder)", "proposed": "<= 3000 ms", "plausibility": "PLAUSIBLE but UNPROVEN - local p99 (no encoder) was 1520 ms; encoder + Arm variance unmeasured."},
+      {"gate": "Cold start", "proposed": "<= 120 s", "plausibility": "Met locally (71.9 s) but dominated by 65 s BM25 build; Arm CPU may differ. Requires validation."},
+      {"gate": "Peak process RSS", "proposed": "<= 8 GB on a 12 GB host", "plausibility": "Met locally (2.1 GB retrieval-only); encoder adds ~2 GB; comfortable headroom."},
+      {"gate": "Dense index size", "proposed": "<= 1 GB", "plausibility": "Met (321 MB)."},
+      {"gate": "Initial concurrency", "proposed": "1 active request", "plausibility": "Met - single-threaded service; no concurrency required initially."},
+      {"gate": "BM25 fallback", "proposed": "explicit, logged, tested, never misreported as hybrid", "plausibility": "Already implemented and tested (Task 76/77); fallback_probe PASS."},
+      {"gate": "Retrieval quality", "proposed": "Reproduce Task-74 H3_RRF20 metrics on frozen benchmark", "plausibility": "Already verified (REPRODUCTION_PASS, unit@5 0.5385 / src@5 0.9783)."},
+      {"gate": "Answer generation latency", "proposed": "UNRESOLVED - separate gate until full Qwen serving path is measured", "plausibility": "Cannot be proposed numerically; no inference path exists."}
+    ],
+    "latency_excludes_generation": "YES - all retrieval latency numbers exclude answer generation unless explicitly measured (generation is unmeasured)."
+  },
+
+  "cost_billing_safeguards": {
+    "zero_budget_policy": [
+      "No paid fallback - if a resource is not Always Free, it is not used.",
+      "No provisioning of cloud resources in this task.",
+      "No enabling paid GPU hardware on any provider.",
+      "No reliance on expiring trial credits ($300 GCP, $300 OCI trial) as evidence of sustainable zero-cost hosting.",
+      "No secrets, API tokens, or card details in source code or reports."
+    ],
+    "provider_billing_requirements": {
+      "oracle": "Credit/debit card (credit-card logo, no PIN) required for identity verification at sign-up; temporary authorization hold possible; NOT charged unless upgrading to paid account. Mobile number often required.",
+      "google_cloud": "Billing account with payment method required even for Always Free / trial.",
+      "hugging_face": "No payment method for basic account; paid plan now required to CREATE Gradio/Docker Spaces.",
+      "kaggle": "No payment method for basic free tier."
+    },
+    "recommended_controls": [
+      "Oracle: set a budget/alarm alert in the Console (though Always Free usage should remain 0 INR); do NOT upgrade the account; avoid provisioning any non-'Always Free-eligible' shapes.",
+      "Oracle: monitor the idle-reclamation status; a keep-alive workload (e.g., periodic retrieval self-test) can keep utilization above 20% if desired, but must itself stay within free limits.",
+      "General: treat any 'out of host capacity' or quota error as a signal to stop, not to upgrade."
+    ],
+    "caveat": "Billing alerts and spending caps are safeguards, NOT substitutes for selecting genuinely free resources. If a candidate cannot reliably remain at 0 INR, it is rejected or marked conditional."
+  },
+
+  "validation_plan": {
+    "document": "experiments/task78/task78_validate_plan.md",
+    "prerequisite": "Oracle Always Free account + one A1.Flex instance provisioned by the user (NOT by this task).",
+    "measurements": [
+      "Model + encoder initialization time (load BAAI/bge-m3 rev 5617a9f...).",
+      "Encoder cold and warm latency (p50/p95/p99) over the frozen 47 queries + repeat workload.",
+      "Dense search latency (numpy matmul + argsort).",
+      "BM25 latency (pool=2000 and full-list).",
+      "RRF fusion latency (vectorised rrf_fuse_full).",
+      "Total retrieval latency including encoding.",
+      "Full answer-generation latency and peak memory (only if/when an inference path exists - currently UNRESOLVED).",
+      "Disk usage, cold start, restart behavior."
+    ],
+    "integrity": "Use the verified BGE-M3 revision and Task-74 index; do not download a different model or rebuild verified artifacts without a documented reason. Preserve the frozen benchmark and all existing integrity checks.",
+    "gate_claiming": "No latency gate is claimed passed until measured in the selected representative environment. Encoder or generator gates that cannot be run remain UNRESOLVED."
+  },
+
+  "risks_limitations_rollback": {
+    "risks": [
+      "Oracle A1 capacity may be unavailable in the user's preferred home region at sign-up time ('out of host capacity').",
+      "Idle Always Free instances may be reclaimed after 7 days of <20% utilization; reprovisioning is possible but disruptive.",
+      "Arm CPU BGE-M3 encoder latency may exceed the proposed 2 s p95 gate (unmeasured).",
+      "Oracle free-tier terms (idle reclamation, capacity) can change.",
+      "No API server exists yet - building one is a separate future task."
+    ],
+    "limitations": [
+      "This task did NOT provision infrastructure, deploy code, or change production defaults.",
+      "Encoder and generator latency were NOT measured in the target environment (it does not exist yet).",
+      "The profile is retrieval-only; it is not a complete AI assistant."
+    ],
+    "rollback": [
+      "If Oracle capacity/eligibility fails: fall back to running retrieval locally on the existing VM (already validated) or re-evaluate HF Spaces / other profiles.",
+      "If encoder latency fails the gate on Arm: keep BM25-only as the production default (already the case) and treat hybrid as bench-only.",
+      "If idle reclamation disrupts service: implement a lightweight keep-alive or accept on-demand reprovisioning.",
+      "The feature flag (SVK_RETRIEVAL_MODE) rollback to bm25 is instant and lossless (Task-76 doc)."
+    ]
+  }
+}

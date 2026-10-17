@@ -1,0 +1,198 @@
+{
+  "example_id": "DAPT01EVAL-037",
+  "question": "In which year exactly was the Terapanth founded?",
+  "configs": {
+    "pfull_task75": {
+      "context_sha256": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e",
+      "items": [
+        {
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "channel": "unit_bm25",
+          "retrieval_rank": 1,
+          "unit_bm25_rank": 46,
+          "score": 0.0628,
+          "title": "Notes on Modern Jainism (1910)"
+        },
+        {
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "channel": "unit_bm25",
+          "retrieval_rank": 2,
+          "unit_bm25_rank": 2,
+          "score": 0.0548,
+          "title": "Notes on the Religious Literature of India (1920)"
+        },
+        {
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "channel": "unit_bm25",
+          "retrieval_rank": 3,
+          "unit_bm25_rank": 1,
+          "score": 0.0484,
+          "title": "The Kalpa Sutra and Nava Tatva (1848)"
+        },
+        {
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "channel": "unit_bm25",
+          "retrieval_rank": 4,
+          "unit_bm25_rank": 24241,
+          "score": 0.0455,
+          "title": "Risabha Deva, the Founder of Jainism (1929)"
+        },
+        {
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "channel": "unit_bm25",
+          "retrieval_rank": 5,
+          "unit_bm25_rank": 1110,
+          "score": 0.0444,
+          "title": "Notes on the Religious Literature of India (1920)"
+        }
+      ],
+      "fifth_item_text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+      "fifth_item_channel": "unit_bm25",
+      "matches_task75_sha": true
+    },
+    "p250_task82": {
+      "context_sha256": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+      "items": [
+        {
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "channel": "unit_bm25",
+          "retrieval_rank": 1,
+          "unit_bm25_rank": 46,
+          "score": 0.0628,
+          "title": "Notes on Modern Jainism (1910)"
+        },
+        {
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "channel": "unit_bm25",
+          "retrieval_rank": 2,
+          "unit_bm25_rank": 2,
+          "score": 0.0548,
+          "title": "Notes on the Religious Literature of India (1920)"
+        },
+        {
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "channel": "unit_bm25",
+          "retrieval_rank": 3,
+          "unit_bm25_rank": 1,
+          "score": 0.0484,
+          "title": "The Kalpa Sutra and Nava Tatva (1848)"
+        },
+        {
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "channel": "dense",
+          "retrieval_rank": 4,
+          "unit_bm25_rank": null,
+          "score": 0.0455,
+          "title": "Risabha Deva, the Founder of Jainism (1929)"
+        },
+        {
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "channel": "unit_bm25",
+          "retrieval_rank": 5,
+          "unit_bm25_rank": 3,
+          "score": 0.0436,
+          "title": "Notes on Modern Jainism (1910)"
+        }
+      ],
+      "fifth_item_text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+      "fifth_item_channel": "unit_bm25",
+      "matches_task75_sha": false
+    },
+    "p500": {
+      "context_sha256": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+      "items": [
+        {
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "channel": "unit_bm25",
+          "retrieval_rank": 1,
+          "unit_bm25_rank": 46,
+          "score": 0.0628,
+          "title": "Notes on Modern Jainism (1910)"
+        },
+        {
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "channel": "unit_bm25",
+          "retrieval_rank": 2,
+          "unit_bm25_rank": 2,
+          "score": 0.0548,
+          "title": "Notes on the Religious Literature of India (1920)"
+        },
+        {
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "channel": "unit_bm25",
+          "retrieval_rank": 3,
+          "unit_bm25_rank": 1,
+          "score": 0.0484,
+          "title": "The Kalpa Sutra and Nava Tatva (1848)"
+        },
+        {
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "channel": "dense",
+          "retrieval_rank": 4,
+          "unit_bm25_rank": null,
+          "score": 0.0455,
+          "title": "Risabha Deva, the Founder of Jainism (1929)"
+        },
+        {
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "channel": "unit_bm25",
+          "retrieval_rank": 5,
+          "unit_bm25_rank": 3,
+          "score": 0.0436,
+          "title": "Notes on Modern Jainism (1910)"
+        }
+      ],
+      "fifth_item_text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+      "fifth_item_channel": "unit_bm25",
+      "matches_task75_sha": false
+    },
+    "p1000": {
+      "context_sha256": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+      "items": [
+        {
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "channel": "unit_bm25",
+          "retrieval_rank": 1,
+          "unit_bm25_rank": 46,
+          "score": 0.0628,
+          "title": "Notes on Modern Jainism (1910)"
+        },
+        {
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "channel": "unit_bm25",
+          "retrieval_rank": 2,
+          "unit_bm25_rank": 2,
+          "score": 0.0548,
+          "title": "Notes on the Religious Literature of India (1920)"
+        },
+        {
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "channel": "unit_bm25",
+          "retrieval_rank": 3,
+          "unit_bm25_rank": 1,
+          "score": 0.0484,
+          "title": "The Kalpa Sutra and Nava Tatva (1848)"
+        },
+        {
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "channel": "dense",
+          "retrieval_rank": 4,
+          "unit_bm25_rank": null,
+          "score": 0.0455,
+          "title": "Risabha Deva, the Founder of Jainism (1929)"
+        },
+        {
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "channel": "unit_bm25",
+          "retrieval_rank": 5,
+          "unit_bm25_rank": 3,
+          "score": 0.0436,
+          "title": "Notes on Modern Jainism (1910)"
+        }
+      ],
+      "fifth_item_text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+      "fifth_item_channel": "unit_bm25",
+      "matches_task75_sha": false
+    }
+  }
+}

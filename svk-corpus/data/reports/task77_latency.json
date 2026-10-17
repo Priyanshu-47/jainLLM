@@ -1,0 +1,116 @@
+{
+  "task": 77,
+  "measurements": {
+    "cold_start": {
+      "corpus_load_s": 5.452,
+      "bm25_index_build_s": 64.832,
+      "dense_index_load_s": 1.596,
+      "total_startup_s": 71.879,
+      "corpus_docs": 164238,
+      "rss_baseline_mb": 32.5,
+      "rss_after_corpus_mb": 302.3,
+      "rss_after_bm25_mb": 841.4,
+      "rss_after_dense_mb": 2124.8,
+      "rss_delta_dense_mb": 1283.4,
+      "note": "corpus load + BM25 build + dense load are sequential; dense load is optional (BM25-only serving skips it)."
+    },
+    "component_latency_47_queries": {
+      "bm25_pool_2000_s": {
+        "n": 47,
+        "mean": 0.168428,
+        "p50": 0.161239,
+        "p95": 0.340336,
+        "p99": 0.679913,
+        "min": 0.001286,
+        "max": 0.679913
+      },
+      "bm25_full_list_s": {
+        "n": 47,
+        "mean": 0.310639,
+        "p50": 0.188284,
+        "p95": 1.088581,
+        "p99": 1.107832,
+        "min": 0.001408,
+        "max": 1.107832
+      },
+      "dense_search_s": {
+        "n": 47,
+        "mean": 0.057273,
+        "p50": 0.046656,
+        "p95": 0.098374,
+        "p99": 0.16005,
+        "min": 0.037076,
+        "max": 0.16005
+      },
+      "rrf20_fusion_s": {
+        "n": 47,
+        "mean": 0.06693,
+        "p50": 0.062958,
+        "p95": 0.12419,
+        "p99": 0.159643,
+        "min": 0.019906,
+        "max": 0.159643
+      },
+      "fusion_micro_profile": {
+        "score_compute_s": 0.023403,
+        "lexsort_s": 0.024574,
+        "dominant": "lexsort",
+        "iterations": 200,
+        "n_candidates": 164238
+      }
+    },
+    "end_to_end_warm": {
+      "workload": "10 sequential repeats of the 47 frozen queries",
+      "samples_per_mode": 470,
+      "H1_BM25_s": {
+        "n": 470,
+        "mean": 0.165385,
+        "p50": 0.153318,
+        "p95": 0.344301,
+        "p99": 0.724139,
+        "min": 0.005125,
+        "max": 0.85956
+      },
+      "H3_RRF20_s": {
+        "n": 470,
+        "mean": 0.433538,
+        "p50": 0.338452,
+        "p95": 1.122524,
+        "p99": 1.520323,
+        "min": 0.05593,
+        "max": 1.639153
+      },
+      "first_query_H1_s": 0.656899,
+      "first_query_H3_s": 0.28316,
+      "throughput_H1_qps": 6.05,
+      "throughput_H3_qps": 2.31,
+      "h3_over_h1_mean_ratio": 2.621,
+      "note": "Sequential single-threaded; no concurrent server exists. Query embeddings are pre-computed (encoder not run)."
+    },
+    "memory_disk": {
+      "peak_rss_mb": 2124.8,
+      "dense_disk_bytes": 336359552,
+      "dense_loaded_f32_bytes": 672718848,
+      "dense_index_load_s": 1.596,
+      "bm25_memory_bytes": "unresolved (python object graph; not directly measurable)",
+      "corpus_docs": 164238
+    },
+    "fallback_probe": {
+      "mode_used": "bm25",
+      "fallback_reason": "dense index not loaded (load_dense_index not run or failed)",
+      "logged": true,
+      "results_nonempty": true,
+      "pass": true
+    }
+  },
+  "environment": {
+    "cpu": "AMD EPYC 7763, 4 logical / 2 physical cores",
+    "isa": "avx, avx2, fma (no avx512, no amx)",
+    "ram_total_gb": 15.61,
+    "gpu": "none",
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "torch": "absent",
+    "device": "cpu-only"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "task": "TASK 65 — SHA256 manifest",
+  "generated_at": "2026-10-01 13:40:43",
+  "kaggle": {
+    "datasets": {
+      "priyanshu471/jainllm-sft01-train": {
+        "train_sha256": "77bd61ff5423b3c970d8f24b961fa22100213410593d6461fb60ce30b053615d",
+        "eval_sha256": "4ef9d81416e43ec1eb5355c3384888a2378b0a94b6f5cb5e36071560252722cb",
+        "roundtrip_verified": true
+      },
+      "priyanshu471/sft01-output": {
+        "adapter_sha256": "65ad95954c07711f84d297314cb305b2c6f9c791a6d4a7b529e3768e407c81f8",
+        "report_sha256": "1186b47ce31fca62dbbfab5773becb5458744aed149ec48ec1c158afbce6a087",
+        "roundtrip_verified": true
+      },
+      "priyanshu471/dapt01-checkpoint-15248": {
+        "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9"
+      }
+    },
+    "kernels": {
+      "train": "priyanshu471/sft-01-qlora-on-dapt-01-lineage-task-64 (version 2, COMPLETE)",
+      "infer": "priyanshu471/sft-01-infer-task65 (version 1, COMPLETE)"
+    }
+  },
+  "files": {
+    "data/training/sft_train_v1.jsonl": "77bd61ff5423b3c970d8f24b961fa22100213410593d6461fb60ce30b053615d",
+    "data/evaluation/sft_eval_v1.jsonl": "4ef9d81416e43ec1eb5355c3384888a2378b0a94b6f5cb5e36071560252722cb",
+    "data/evaluation/dapt01_eval_cases.jsonl": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "data/evaluation/dapt01_base_results.jsonl": "c452ea99a0f3877a80fc423d8dad002ba0b91ca4b517156a3894b75b4bc50f74",
+    "data/evaluation/dapt01_dapt_results.jsonl": "6e28f87a244dd9c34265a9e1f7f3278dbb883774f96e0f3e99959617d3c015cc",
+    "data/evaluation/dapt01_evaluator_review.jsonl": "fd8649647082e9059576260d6e79591a94ca1167c22b18aac3752ae5ff63c2cd",
+    "data/evaluation/dapt01_comparison.json": "d92a04e710b6f0e821c2163cea7d1c9bfac5d351096872f6ddb481228a645875",
+    "data/evaluation/dapt01_sft_results.jsonl": "4e29afc11ebc7e57aa07631dad6738f26fbb5a749ea1b7dc75ddc2d8c909c6b8",
+    "data/evaluation/sft01_eval_results.jsonl": "4f924fe285d73772d19d2640f3981aad9bc0130a4517128aa9246b860370823a",
+    "data/evaluation/task65_sft_infer_metadata.json": "f3dfb5f860738ec35238be6d39c29ca84a20aeafa4ec84cbd3e677794dcf9ee2",
+    "data/evaluation/sft01_3way_comparison.json": "45541f222b47a3fc0a0e0fb3193e74a8da2c8232b1ade87d8d3c23f207bb6f56",
+    "data/reports/task64_sft01_build_stats.json": "fd41df4dc5099bbf39cfc503f2154444bd1640bb8ea38e3a73ca7d17088fc96e",
+    "data/reports/task65_sft01_metrics.json": "dc3f7a96b8b64a0bd42f825b394ec4c01387b008306a57ed59f7f9128ffac754",
+    "data/reports/task65_sft01_train_status.json": "b8a1993ffddc3011f8bafc3d66972f831e43a945ac3148dafbc334241e2270a8",
+    "data/reports/task65_sft01_attempt1_error.json": "89cf5b0857ed7de48256c4f83ee586d9ae56754fbea11f8b3b86ee95734d86fd",
+    "data/reports/task65_sft01_kaggle_run.log": "a38e93120caff9e9d3988f6832d9f86e693bc15bae5ea1c7c635e849d7625c59",
+    "data/reports/task65_sft01_worker.log": "9cdeb25ec3c90ba2c93f0cf7a38295c321442f3e3ac900f55a7f7ca6200ceba7",
+    "data/reports/task65_sft01_infer.log": "b6c62c0c2f5c8e30b44c3cfb1de8a05eb0bf02069d0de89446514308d1070f35",
+    "configs/sft_qwen3_8b_v1.yaml": "003dd98f715dcf48bf60bb9ee0a5cf9c7155445c1ec237a8377ec46decd22c12",
+    "experiments/sft_01/kaggle/train.py": "da6638265868d083652f3b88fb34f17320e68f647a4b60d1a661947b52dbae4d",
+    "experiments/sft_01/kaggle/kernel-metadata.json": "d0c95b960702fbfb03fa1810a80c613f5b5437423ef74889cc84177445166789",
+    "experiments/sft_01/kaggle_infer/infer.py": "b52db0ed98c638d467cb733cce88bfa91fcb83f43fbd632a27146871955e46e9",
+    "experiments/sft_01/kaggle_infer/kernel-metadata.json": "5eeb906a5d9d8a2ff94f3491abcc4e8bad842cb8b26f4038a83e6756bf2c5c69",
+    "experiments/sft_01/checkpoints/sft-01-final/adapter_model.safetensors": "65ad95954c07711f84d297314cb305b2c6f9c791a6d4a7b529e3768e407c81f8",
+    "experiments/sft_01/checkpoints/sft-01-final/adapter_config.json": "6f4a6f9c8aba0ab706aedca34309d2eb4ba0b044cea5f080910599bb3de6a96b",
+    "experiments/sft_01/checkpoints/sft-01-final/sft01_train_report.json": "1186b47ce31fca62dbbfab5773becb5458744aed149ec48ec1c158afbce6a087",
+    "data/reports/task65_sft01_execution.md": "398828de04f58a0053a1abbbe1af4f7bd0f2bc858a41a82abcd43128019d9f8a",
+    "experiments/sft_01/evaluation/score_task65_3way.py": "f13a4263455301f60d60070ddb4ddb54f678cb989eb358a4623d6136d48e4f3a"
+  }
+}

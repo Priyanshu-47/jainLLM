@@ -1,0 +1,299 @@
+{
+  "task": "TASK 83 preflight — verified setup + mini-gate criteria registered BEFORE generation",
+  "verified_before_generation": {
+    "frozen_benchmark_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "frozen_benchmark_sha_ok": true,
+    "dense_index_alignment_ok": true,
+    "dapt01_adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "dapt01_adapter_sha_ok": true,
+    "task74_frozen_aggregates_ok": true,
+    "task82_12_case_list_recovered": [
+      "DAPT01EVAL-001",
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-012",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-033",
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-037",
+      "DAPT01EVAL-039"
+    ],
+    "case037_contexts_recovered": {
+      "task75_sha": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e",
+      "task82_sha": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+      "ok": true
+    },
+    "case037_outputs_recovered": {
+      "task75_dapt_answer_prefix": "The Terapanth was founded in 1583 by Kundakunda",
+      "task82_dapt_answer_prefix": "The Terapanth was founded in 1658 by Birbhan",
+      "task75_dapt_flags": {
+        "abstention_detected": true,
+        "abstention_correct": true,
+        "forbidden_hits": [],
+        "looped": false,
+        "at_cap_192": false
+      },
+      "task82_dapt_flags": {
+        "abstention_detected": false,
+        "abstention_correct": false,
+        "forbidden_hits": [],
+        "looped": false,
+        "at_cap_192": true
+      }
+    },
+    "task81_implementation": "bm25.search(query, top_k=pool) + t74.rrf_fuse stable tie-breaking, dense full list, RRF k=20 — exact Task-81/82 code",
+    "task81_edge_equivalence_reference": "6/6 PASS re-verified in Task-82 preflight",
+    "run_host": "Kaggle T4 (established; Colab token expired 2026-10-09)",
+    "evidence_generation_only": true,
+    "production_default_unchanged": true
+  },
+  "config_summaries": {
+    "500": {
+      "pool": 500,
+      "aggregate": {
+        "unit_recall_at_5": 0.5385,
+        "source_recall_at_5": 0.9783,
+        "evidence_ceiling_mean": 0.8372,
+        "ev0_count": 7,
+        "contexts_matching_task75": 38,
+        "contract_violations": 0
+      },
+      "diff_vs_task75": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-033",
+        "DAPT01EVAL-034",
+        "DAPT01EVAL-037"
+      ],
+      "diff_vs_task75_n": 9,
+      "diff_kinds_vs_task75": {
+        "identical": 38,
+        "channel_header_only": 2,
+        "reorder_same_set": 5,
+        "one_item_swap": 2
+      },
+      "identical_to_task82_n": 44
+    },
+    "1000": {
+      "pool": 1000,
+      "aggregate": {
+        "unit_recall_at_5": 0.5385,
+        "source_recall_at_5": 0.9783,
+        "evidence_ceiling_mean": 0.8372,
+        "ev0_count": 7,
+        "contexts_matching_task75": 39,
+        "contract_violations": 0
+      },
+      "diff_vs_task75": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-033",
+        "DAPT01EVAL-037"
+      ],
+      "diff_vs_task75_n": 8,
+      "diff_kinds_vs_task75": {
+        "identical": 39,
+        "channel_header_only": 2,
+        "reorder_same_set": 4,
+        "one_item_swap": 2
+      },
+      "identical_to_task82_n": 43
+    }
+  },
+  "generation_targets": {
+    "p500": [
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-012",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-033",
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-037"
+    ],
+    "p1000": [
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-012",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-033",
+      "DAPT01EVAL-037"
+    ]
+  },
+  "generation_target_union_n": 9,
+  "task82_registered_gates_recovered": {
+    "arm_c_macro_not_down": {
+      "threshold": 0.675
+    },
+    "arm_c_pass_not_down": {
+      "threshold": 30
+    },
+    "arm_d_macro_not_down": {
+      "threshold": 0.675
+    },
+    "arm_d_pass_not_down": {
+      "threshold": 29
+    },
+    "abstention_not_regressed": {
+      "threshold": 1
+    },
+    "no_loop_increase": {
+      "threshold": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      }
+    },
+    "contract_violations_zero": {
+      "threshold": 0
+    },
+    "identical_contexts_both_rag_arms": {
+      "threshold": true
+    },
+    "fabrication_not_up": {
+      "threshold": {
+        "base_rag": 2,
+        "dapt_rag": 1
+      }
+    },
+    "dapt_value_under_rag_still_zero": {
+      "threshold": 0.02
+    },
+    "every_new_regression_investigated": {
+      "threshold": null
+    }
+  },
+  "mini_gate_acceptance_criteria": {
+    "case037_context_restored": {
+      "description": "DAPT01EVAL-037 evidence context sha equals the Task-75 full-list sha 9b28cfb693c1d7d3… (the SVK-1005:u02684 fifth item returns)",
+      "expected_sha": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e"
+    },
+    "all_12_contexts_restored": {
+      "description": "every one of the 12 Task-82 differing cases has evidence context sha identical to the Task-75 full-list reference",
+      "threshold": 12
+    },
+    "case037_dapt_outcome_restored": {
+      "description": "DAPT arm on 037 reproduces the Task-75 outcome: score 1.0, abstention_correct=true, failure class ABSTENTION_CORRECT (no GENERATION_FABRICATION)",
+      "expected_score": 1.0
+    },
+    "case037_base_outcome_preserved": {
+      "description": "BASE arm on 037 score equals the Task-75 Task-82-stable value 0.0 (byte-identical answer history; no fabrication flag introduced)",
+      "expected_score": 0.0
+    },
+    "projected_base_rag_macro_not_down": {
+      "description": "PROJECTED full-47 BASE+RAG macro >= Task-75 (0.695) - 0.02 (Task-82 gate arm_c_macro_not_down)",
+      "threshold": 0.675
+    },
+    "projected_base_rag_pass_not_down": {
+      "description": "PROJECTED full-47 BASE+RAG pass_all >= 30 (Task-82 gate)",
+      "threshold": 30
+    },
+    "projected_dapt_rag_macro_not_down": {
+      "description": "PROJECTED full-47 DAPT+RAG macro >= Task-75 (0.695) - 0.02 (Task-82 gate arm_d_macro_not_down — the gate that FAILED at pool=250)",
+      "threshold": 0.675
+    },
+    "projected_dapt_rag_pass_not_down": {
+      "description": "PROJECTED full-47 DAPT+RAG pass_all >= 29 (Task-82 gate)",
+      "threshold": 29
+    },
+    "projected_abstention_not_regressed": {
+      "description": "PROJECTED RAG-arm abstention-correct total >= Task-75 total 1 (Task-82 gate abstention_not_regressed)",
+      "threshold": 1
+    },
+    "projected_no_loop_increase": {
+      "description": "PROJECTED loops: base_rag <= 0 AND dapt_rag <= 4 (Task-82 gate)",
+      "threshold": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      }
+    },
+    "projected_fabrication_not_up": {
+      "description": "PROJECTED GENERATION_FABRICATION counts: base_rag <= 2 AND dapt_rag <= 1 (Task-82 gate fabrication_not_up, keyed by the evaluator's GENERATION_FABRICATION class)",
+      "threshold": {
+        "base_rag": 2,
+        "dapt_rag": 1
+      }
+    },
+    "projected_dapt_value_under_rag_still_zero": {
+      "description": "PROJECTED |D-C macro| <= 0.02 (Task-82 gate dapt_value_under_rag_still_zero)",
+      "threshold": 0.02
+    },
+    "contract_violations_zero": {
+      "description": "retrieval contract violations == 0 (Task-82 gate)",
+      "threshold": 0
+    },
+    "identical_contexts_both_rag_arms": {
+      "description": "BASE and DAPT arms carry byte-identical evidence contexts per case (Task-82 gate; enforced by construction — one context per config)"
+    },
+    "attribution_not_worse_on_12": {
+      "description": "on the 12-case subset, per arm, counts of cited_evidence_author and cited_attribution_word are >= the recorded Task-75 subset counts (reference-derived; no attribution behaviour may be lost)"
+    },
+    "sect_term_counts_not_up_on_12": {
+      "description": "on the 12-case subset, per arm and per sect term (sthanakvasi|digambara|shvetambara|agam), mechanical occurrence counts in answers are <= recorded Task-75 subset counts (reference-derived; no new sect confusion)"
+    },
+    "every_new_regression_investigated": {
+      "description": "each case whose projected score drops vs the same Task-75 arm is listed with a written cause; no unexplained regression may remain (Task-82 gate)"
+    }
+  },
+  "gate_registration": "written BEFORE any Task-83 generation was run; thresholds are recovered Task-82 values applied to the projected full-47 or recorded Task-75 reference outcomes; none informed by Task-83 outputs",
+  "projection_method": "projected full-47 arm = fresh Task-83 scores on the candidate's differing cases + recorded Task-75 rows elsewhere (valid: non-differing contexts are byte-identical to Task-75; cross-host determinism established by Task-82 arms A/B/C exact reproduction)",
+  "prior_comparisons": {
+    "task75_pfull": {
+      "base_rag": [
+        0.695,
+        32
+      ],
+      "dapt_rag": [
+        0.695,
+        31
+      ],
+      "abstention_correct": {
+        "base_rag": 0,
+        "dapt_rag": 1
+      },
+      "loops": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      },
+      "generation_fabrication": {
+        "base_rag": 2,
+        "dapt_rag": 1
+      }
+    },
+    "task82_p250": {
+      "base_rag": [
+        0.695,
+        32
+      ],
+      "dapt_rag": [
+        0.6738,
+        30
+      ],
+      "abstention_correct": {
+        "base_rag": 0,
+        "dapt_rag": 0
+      },
+      "loops": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      },
+      "generation_fabrication": {
+        "base_rag": 2,
+        "dapt_rag": 2
+      }
+    }
+  }
+}

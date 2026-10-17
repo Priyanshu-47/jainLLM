@@ -1,0 +1,74 @@
+{
+  "task": 86,
+  "title": "Azure expiry recovery & portability audit",
+  "generated_utc": "2026-10-15T06:49:20Z",
+  "verdict": "RECOVERY_AUDIT_PASS",
+  "git": {
+    "before_head": "feb6ef2",
+    "after_head": "39257a7",
+    "commit": "39257a77cea3b12c19c210f961f5452e5d4f0bc8",
+    "commit_contents": "svk-corpus/docs/recovery/* only (4 files, 768 insertions)",
+    "tracked_mod_preserved": "svk-corpus/configs/policy.toml (+27, Task 76, uncommitted)",
+    "pushed": false,
+    "remote_host_path": "github.com/Priyanshu-47/jainLLM"
+  },
+  "files_created": [
+    "docs/recovery/VM_EXPIRY_RUNBOOK.md",
+    "docs/recovery/ARTIFACT_INVENTORY.md",
+    "docs/recovery/RECOVERY_MANIFEST.json",
+    "docs/recovery/RESTORE_VERIFICATION.md",
+    "experiments/task86/build_recovery_manifest.py",
+    "data/reports/task86_recovery_audit.json"
+  ],
+  "archive": {
+    "path": "~/svk-recovery-20261015.tar.gz",
+    "size_bytes": 1520048132,
+    "sha256": "a882a11bdd233850414aa2d602bbc7b66aac9b1260c3b5e822947d805dc923b5",
+    "gzip_verified": true,
+    "critical_paths_spotchecked": true,
+    "excluded": [
+      ".venv",
+      ".venv-cpu-bench",
+      ".hf_cache",
+      ".bench_ckpt",
+      "kaggle.json",
+      "__pycache__"
+    ],
+    "external_copy_verified": false,
+    "external_note": "local-only; must be copied to user PC before expiry; GitHub push blocked pending authorization"
+  },
+  "verification": {
+    "manifest_json_parses": true,
+    "manifest_hashes_verified": "17/17",
+    "runbook_paths_exist": true,
+    "fanpulse_alive": true,
+    "ollama_alive": true,
+    "frozen_bench_sha_ok": true,
+    "policy_default_bm25": true
+  },
+  "risk": {
+    "at_risk": [
+      "202 untracked files (Tasks 62-85) exist only on this VM until archive is copied off",
+      "DAPT-01 adapter in /tmp (volatile) \u2014 archive + Kaggle dataset priyanshu471/dapt01-checkpoint-15248",
+      "configs/policy.toml +27 mod uncommitted (content also in archive + Task-76 docs)"
+    ],
+    "safe": [
+      "428 git-tracked files (local clone; remote push pending auth)",
+      "frozen benchmark + manifests (git + archive)",
+      "retrieval service/API/tests/docs (archive)",
+      "dense index + evaluation results + reports 62-85 (archive)"
+    ]
+  },
+  "top3_actions": [
+    "1. Copy ~/svk-recovery-20261015.tar.gz + .sha256 to a Windows PC / independent storage NOW and verify sha256sum -c there",
+    "2. Authorize a git push of local main (incl. commit 39257a7 + optionally later the untracked work) to github.com/Priyanshu-47/jainLLM for a second independent copy",
+    "3. Download the DAPT-01 adapter off Kaggle (dataset priyanshu471/dapt01-checkpoint-15248) to independent storage, or rely on the archive copy once verified off-VM"
+  ],
+  "blockers": [
+    "External backup NOT verified: archive is local-only on the same VM",
+    "Git push not performed (requires explicit authorization)",
+    "kaggle.json intentionally not archived (user must recreate credentials)"
+  ],
+  "restorable_on_fresh_machine": true,
+  "restorable_note": "runbook + archive cover retrieval stack fully; model weights are re-downloadable external deps; generation serving was never implemented"
+}

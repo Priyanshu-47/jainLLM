@@ -1,0 +1,43 @@
+{
+  "task": 77,
+  "fusion_bottleneck_material": true,
+  "materiality_note": "fusion mean ~67ms = ~19% of H3_RRF20 p50 (338ms)",
+  "dominant_cost": "lexsort (~25ms) + score compute (~23ms) + python bm25 loop (~19ms)",
+  "optimization": {
+    "change": "vectorised BM25 score/bmr update (numpy fancy indexing replaces per-doc python loop); lexsort keys unchanged",
+    "equivalence": {
+      "n_cases": 54,
+      "n_mismatches": 0,
+      "exact_match": true,
+      "mismatches": []
+    },
+    "production_modified": false,
+    "note": "experiment-local prototype only; production service.rrf_fuse_full untouched"
+  },
+  "latency": {
+    "baseline": {
+      "n": 235,
+      "mean": 0.051446,
+      "p50": 0.04846,
+      "p95": 0.095998
+    },
+    "optimized": {
+      "n": 235,
+      "mean": 0.039703,
+      "p50": 0.037556,
+      "p95": 0.070559
+    },
+    "speedup": 1.296
+  },
+  "memory": {
+    "score_array_bytes": 1313904,
+    "bmr_array_bytes": 1313904,
+    "note": "identical array footprint before/after; only the update path is faster"
+  },
+  "e2e_context": {
+    "H3_RRF20_p50_ms": 338.5,
+    "fusion_baseline_mean_ms": 51.45,
+    "fusion_optimized_mean_ms": 39.7,
+    "expected_e2e_saving_ms": 11.74
+  }
+}

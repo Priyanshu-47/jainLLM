@@ -1,0 +1,333 @@
+{
+  "task": "TASK 65 — SFT-01 execution",
+  "generated_at": "2026-10-01 13:40:43",
+  "training": {
+    "kaggle_kernel": "priyanshu471/sft-01-qlora-on-dapt-01-lineage-task-64",
+    "kernel_version_used": 2,
+    "attempt_1": "training completed (21 steps, identical losses) but crashed in save_outputs (TypeError on dict(TrainerOutput)); fixed in kernel version 2; attempt-1 status preserved at data/reports/task65_sft01_attempt1_error.json",
+    "gpu": "Tesla T4",
+    "adapter_start": "priyanshu471/dapt01-checkpoint-15248",
+    "adapter_start_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "final_adapter_sha256": "65ad95954c07711f84d297314cb305b2c6f9c791a6d4a7b529e3768e407c81f8",
+    "train_rows": 50,
+    "eval_rows": 9,
+    "global_step": 21.0,
+    "epochs": 3,
+    "elapsed_sec": 354.6,
+    "starting_train_loss": 4.47083854675293,
+    "ending_train_loss": 1.5554325580596924,
+    "training_loss_mean": 2.7132562569209506,
+    "first_eval_loss": 2.745046377182007,
+    "last_eval_loss": 1.9924986362457275,
+    "eval_loss_by_epoch": {
+      "1": 2.745046377182007,
+      "2": 2.135,
+      "3": 1.9924986362457275
+    },
+    "train_sha256": "77bd61ff5423b3c970d8f24b961fa22100213410593d6461fb60ce30b053615d",
+    "eval_sha256": "4ef9d81416e43ec1eb5355c3384888a2378b0a94b6f5cb5e36071560252722cb",
+    "config_locked_match": true,
+    "determinism_note": "attempt-1 and attempt-2 produced identical metrics (train_loss 2.713, eval 2.745/2.135/1.992) but bitwise-different adapter weights (fp16 GPU nondeterminism); attempt-2 adapter is canonical and was uploaded",
+    "checkpoints": {
+      "worker_paths": [
+        "/kaggle/working/sft-01-output/checkpoint-7",
+        "/kaggle/working/sft-01-output/checkpoint-14",
+        "/kaggle/working/sft-01-output/checkpoint-21",
+        "/kaggle/working/sft-01-output/sft-01-final"
+      ],
+      "save_strategy": "epoch (locked)",
+      "resume_mechanism": "SFT01_RESUME or auto-detect latest checkpoint-*",
+      "resume_events": "none in canonical run; attempt-1 post-training crash recorded at data/reports/task65_sft01_attempt1_error.json (checkpoints left intact)",
+      "checkpoint21_equals_final": true,
+      "final_lr": 6.156e-07,
+      "training_sub_runtime_sec": 147.2
+    }
+  },
+  "frozen_47case_3way": {
+    "base_mean_score": 0.2021,
+    "dapt_mean_score": 0.266,
+    "sft_mean_score": 0.2305,
+    "sft_minus_dapt": -0.0355,
+    "sft_minus_base": 0.0284,
+    "pass_all": {
+      "base": 6,
+      "dapt": 8,
+      "sft": 7
+    },
+    "abstention_correct": {
+      "base": 0,
+      "dapt": 0,
+      "sft": 1,
+      "n": 4
+    },
+    "improvements_vs_dapt": [
+      "DAPT01EVAL-036"
+    ],
+    "regressions_vs_dapt": [
+      "DAPT01EVAL-008",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-040",
+      "DAPT01EVAL-043"
+    ],
+    "improvements_vs_base": [
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-015",
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-036"
+    ],
+    "regressions_vs_base": [
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-026",
+      "DAPT01EVAL-030"
+    ],
+    "category_table": [
+      {
+        "category": "ABSTENTION",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft_mean_score": 0.25,
+        "sft_minus_dapt": 0.25,
+        "sft_minus_base": 0.25,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 1,
+        "abstention_cases": 4
+      },
+      {
+        "category": "AGAM_GROUNDED",
+        "n": 4,
+        "base_mean_score": 0.25,
+        "dapt_mean_score": 0.0833,
+        "sft_mean_score": 0.0833,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": -0.1667,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "GUJARATI",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft_mean_score": 0.0,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "HINDI",
+        "n": 4,
+        "base_mean_score": 0.1667,
+        "dapt_mean_score": 0.25,
+        "sft_mean_score": 0.1667,
+        "sft_minus_dapt": -0.0833,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "JAIN_TERMINOLOGY",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft_mean_score": 0.0,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "MULTILINGUAL_MAPPING",
+        "n": 4,
+        "base_mean_score": 0.5,
+        "dapt_mean_score": 0.5,
+        "sft_mean_score": 0.5,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 2,
+        "dapt_pass_all": 2,
+        "sft_pass_all": 2,
+        "abstention_cases": 0
+      },
+      {
+        "category": "PRACTICE",
+        "n": 4,
+        "base_mean_score": 0.375,
+        "dapt_mean_score": 0.625,
+        "sft_mean_score": 0.375,
+        "sft_minus_dapt": -0.25,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 1,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "PRAKRIT",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.375,
+        "sft_mean_score": 0.375,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": 0.375,
+        "base_pass_all": 0,
+        "dapt_pass_all": 1,
+        "sft_pass_all": 1,
+        "abstention_cases": 0
+      },
+      {
+        "category": "SANSKRIT",
+        "n": 3,
+        "base_mean_score": 0.1111,
+        "dapt_mean_score": 0.2222,
+        "sft_mean_score": 0.1111,
+        "sft_minus_dapt": -0.1111,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "SOURCE_ATTRIBUTION",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.125,
+        "sft_mean_score": 0.125,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": 0.125,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "STHANAKAVASI_DISTINCTION",
+        "n": 4,
+        "base_mean_score": 1.0,
+        "dapt_mean_score": 0.75,
+        "sft_mean_score": 0.75,
+        "sft_minus_dapt": 0.0,
+        "sft_minus_base": -0.25,
+        "base_pass_all": 4,
+        "dapt_pass_all": 3,
+        "sft_pass_all": 3,
+        "abstention_cases": 0
+      },
+      {
+        "category": "STHANAKAVASI_TERMINOLOGY",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.25,
+        "sft_mean_score": 0.0,
+        "sft_minus_dapt": -0.25,
+        "sft_minus_base": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 1,
+        "sft_pass_all": 0,
+        "abstention_cases": 0
+      }
+    ],
+    "evaluator_based": {
+      "review_coverage": "47/47",
+      "base_factual_errors": 41,
+      "dapt_factual_errors": 47,
+      "sft_factual_errors": "NOT_MEASURED",
+      "base_unsupported_claims": 6,
+      "dapt_unsupported_claims": 20,
+      "sft_unsupported_claims": "NOT_MEASURED",
+      "base_sect_confusion_cases": 1,
+      "dapt_sect_confusion_cases": 4,
+      "sft_sect_confusion_cases": "NOT_MEASURED",
+      "base_degenerate_loop_cases": 1,
+      "dapt_degenerate_loop_cases": 8,
+      "sft_degenerate_loop_cases": "NOT_MEASURED",
+      "label": "evaluator_based for base/dapt only; SFT arm NOT_MEASURED (no evaluator pass was run for it)"
+    },
+    "task60_reference_dapt_minus_base": {
+      "base_mean_score": 0.2021,
+      "dapt_mean_score": 0.266,
+      "base_pass_all": 6,
+      "dapt_pass_all": 8,
+      "note": "macro-average of per-case objective scores; category-level results are authoritative and no single subjective overall score is asserted"
+    },
+    "verdict": "SFT-01 scores BETWEEN BASE and DAPT-01 on the frozen set: below DAPT-01 overall (-0.0355) and above BASE (+0.0284); abstention correct 0/4 -> 1/4; DAPT-unseen (test) split improves vs both arms, DAPT-seen (train) split regresses vs DAPT-01",
+    "not_measured": [
+      "SFT-arm factual_error / unsupported_claims / sect_confusion / degenerate_loop: NOT_MEASURED (dapt01_evaluator_review.jsonl covers base and dapt arms only; no evaluator pass was run for the SFT arm and none is synthesised).",
+      "No automated fluency/grammar score (NOT_MEASURED).",
+      "No pairwise human preference study (NOT_MEASURED).",
+      "sft_eval_v1 per-example generations are recorded in sft01_eval_results.jsonl but not keyterm-scoreed (the 9 rows carry no scoring rubric; eval_loss progression is the held-out numeric signal) — NOT_MEASURED as a score."
+    ]
+  },
+  "sft_eval_v1": {
+    "held_out_rows": 9,
+    "eval_loss_by_epoch": {
+      "1": 2.745046377182007,
+      "2": 2.135,
+      "3": 1.9924986362457275
+    },
+    "per_example_generations": "data/evaluation/sft01_eval_results.jsonl (9 rows)",
+    "score": "NOT_MEASURED (rows carry no scoring rubric; eval_loss is the held-out numeric signal)",
+    "behaviour_observations": {
+      "note": "descriptive per-example record from sft01_eval_results.jsonl; not a rubric score",
+      "clearly_correct": [
+        "svk-2007:source_attribution:8a4d2b6e",
+        "svk-2026:source_attribution:7009447a",
+        "svk-2007:canonical_vs_commentary:8c483765"
+      ],
+      "repetition_loop_outputs": [
+        "svk-2026:source_attribution:0c412c5f",
+        "svk-2008:source_attribution:b84e9cbd",
+        "svk-2007:canonical_vs_commentary:8c483765"
+      ],
+      "sect_asserted_vs_unknown_reference": [
+        "svk-2008:source_attribution:b84e9cbd",
+        "svk-2014:source_attribution:e24370cf"
+      ],
+      "fabricated_provenance": [
+        "svk-0038:source_attribution:e355a8ac"
+      ],
+      "under_confident_abstain": [
+        "svk-2010:source_attribution:27687711"
+      ]
+    }
+  },
+  "hard_stops": {
+    "dapt_retrained": false,
+    "instruct_switched": false,
+    "full_finetune": false,
+    "dataset_expanded": false,
+    "frozen_cases_modified": false,
+    "frozen_cases_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "evaluator_metrics_fabricated": false,
+    "next_training_started": false
+  },
+  "software": {
+    "gpu": "Tesla T4 (15.6GB total; 15.5GB free at start)",
+    "peak_vram": "NOT_RECORDED (free-at-start logged only; no OOM)",
+    "torch": "2.10.0+cu128",
+    "transformers": "5.0.0",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.50.2",
+    "python": "3.12.13",
+    "accelerate": "import verified; version NOT_RECORDED",
+    "kaggle_cli": "2.2.4"
+  },
+  "readiness": {
+    "ready_for_next_stage_evaluation": true,
+    "ready_for_promotion": false,
+    "reason": "artifact complete + hash-verified; frozen benchmark below DAPT-01 overall; held-out set shows fabrications/sect assertions/repetition loops"
+  }
+}

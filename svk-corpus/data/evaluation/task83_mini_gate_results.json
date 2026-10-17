@@ -1,0 +1,1140 @@
+{
+  "task": "TASK 83 — targeted evidence-composition mini-gate",
+  "verdict": "MINI_GATE_PASS",
+  "selected_generation_facing_pool": "pfull",
+  "passing_candidates": [
+    "pfull"
+  ],
+  "candidates": {
+    "p250": {
+      "config": "p250",
+      "source": "recorded Task-82 full-47 run (Kaggle T4)",
+      "all_gates_pass": false,
+      "gates": {
+        "case037_context_restored": {
+          "pass": false,
+          "observed": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+          "expected": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e"
+        },
+        "all_12_contexts_restored": {
+          "pass": false,
+          "observed": 0,
+          "expected": 12
+        },
+        "case037_dapt_outcome_restored": {
+          "pass": false,
+          "observed": {
+            "score": 0.0,
+            "abstention_correct": false,
+            "failure_class": "GENERATION_FABRICATION",
+            "at_cap_192": true
+          },
+          "expected": {
+            "score": 1.0,
+            "failure_class": "ABSTENTION_CORRECT"
+          }
+        },
+        "case037_base_outcome_preserved": {
+          "pass": true,
+          "observed": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          },
+          "expected": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          }
+        },
+        "projected_base_rag_macro_not_down": {
+          "pass": true,
+          "observed": 0.695,
+          "expected": ">= 0.675"
+        },
+        "projected_base_rag_pass_not_down": {
+          "pass": true,
+          "observed": 32,
+          "expected": ">= 30"
+        },
+        "projected_dapt_rag_macro_not_down": {
+          "pass": false,
+          "observed": 0.6738,
+          "expected": ">= 0.675"
+        },
+        "projected_dapt_rag_pass_not_down": {
+          "pass": true,
+          "observed": 30,
+          "expected": ">= 29"
+        },
+        "projected_abstention_not_regressed": {
+          "pass": false,
+          "observed": 0,
+          "expected": ">= 1"
+        },
+        "projected_no_loop_increase": {
+          "pass": true,
+          "observed": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          },
+          "expected": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          }
+        },
+        "projected_fabrication_not_up": {
+          "pass": false,
+          "observed": {
+            "base_rag": 2,
+            "dapt_rag": 2
+          },
+          "expected": {
+            "base_rag": 2,
+            "dapt_rag": 1
+          }
+        },
+        "projected_dapt_value_under_rag_still_zero": {
+          "pass": false,
+          "observed": -0.0212,
+          "expected": "|delta| <= 0.02"
+        },
+        "contract_violations_zero": {
+          "pass": true,
+          "observed": 0,
+          "expected": 0,
+          "note": "build-stage violations_total == 0 for all configs"
+        },
+        "identical_contexts_both_rag_arms": {
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        "attribution_not_worse_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 6,
+              "cited_attribution_word": 6
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          }
+        },
+        "sect_term_counts_not_up_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 0,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          }
+        },
+        "every_new_regression_investigated": {
+          "pass": true,
+          "observed": [
+            {
+              "example_id": "DAPT01EVAL-037",
+              "arm": "dapt_rag",
+              "t75": 1.0,
+              "candidate": 0.0,
+              "t75_class": "ABSTENTION_CORRECT",
+              "candidate_class": "GENERATION_FABRICATION"
+            }
+          ],
+          "expected": "each regression listed with a written cause",
+          "note": "regressions vs Task-75 listed above; causes written in the report (evidence composition)"
+        }
+      },
+      "overall": {
+        "base": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "dapt": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "base_rag": {
+          "macro_keyterm": 0.695,
+          "pass_all": 32
+        },
+        "dapt_rag": {
+          "macro_keyterm": 0.6738,
+          "pass_all": 30
+        }
+      },
+      "case037": {
+        "scores": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 0.0
+        },
+        "failure_class": {
+          "base_rag": "RETRIEVAL_RISK_CONTRIBUTED",
+          "dapt_rag": "GENERATION_FABRICATION"
+        },
+        "answers": {
+          "base_rag": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+          "dapt_rag": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighti"
+        },
+        "flags": {
+          "base_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": true,
+            "abstention_correct": false,
+            "forbidden_hits": [
+              "\\b(17|18)\\d{2}\\b"
+            ],
+            "looped": false,
+            "at_cap_192": false,
+            "len_chars": 221,
+            "cited_evidence_author": false,
+            "cited_attribution_word": false
+          },
+          "dapt_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": false,
+            "abstention_correct": false,
+            "forbidden_hits": [],
+            "looped": false,
+            "at_cap_192": true,
+            "len_chars": 997,
+            "cited_evidence_author": false,
+            "cited_attribution_word": true
+          }
+        }
+      },
+      "subset12": {
+        "base_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5,
+          "t75_pass_all": 6
+        },
+        "dapt_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5833,
+          "t75_pass_all": 7
+        }
+      },
+      "failure_counts": {
+        "base_rag": {
+          "GROUNDED_SUCCESS": 31,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 5,
+          "PRIOR_KNOWLEDGE": 1,
+          "GENERATION_FABRICATION": 2,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2
+        },
+        "dapt_rag": {
+          "GROUNDED_SUCCESS": 29,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 7,
+          "PRIOR_KNOWLEDGE": 1,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2,
+          "GENERATION_FABRICATION": 2
+        }
+      },
+      "abstention_total": 0,
+      "loops": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      },
+      "dapt_delta_within_rag": -0.0212
+    },
+    "pfull": {
+      "config": "pfull",
+      "source": "recorded Task-75 full-47 run (Colab T4)",
+      "all_gates_pass": true,
+      "gates": {
+        "case037_context_restored": {
+          "pass": true,
+          "observed": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e",
+          "expected": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e"
+        },
+        "all_12_contexts_restored": {
+          "pass": true,
+          "observed": 12,
+          "expected": 12
+        },
+        "case037_dapt_outcome_restored": {
+          "pass": true,
+          "observed": {
+            "score": 1.0,
+            "abstention_correct": true,
+            "failure_class": "ABSTENTION_CORRECT",
+            "at_cap_192": false
+          },
+          "expected": {
+            "score": 1.0,
+            "failure_class": "ABSTENTION_CORRECT"
+          }
+        },
+        "case037_base_outcome_preserved": {
+          "pass": true,
+          "observed": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          },
+          "expected": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          }
+        },
+        "projected_base_rag_macro_not_down": {
+          "pass": true,
+          "observed": 0.695,
+          "expected": ">= 0.675"
+        },
+        "projected_base_rag_pass_not_down": {
+          "pass": true,
+          "observed": 32,
+          "expected": ">= 30"
+        },
+        "projected_dapt_rag_macro_not_down": {
+          "pass": true,
+          "observed": 0.695,
+          "expected": ">= 0.675"
+        },
+        "projected_dapt_rag_pass_not_down": {
+          "pass": true,
+          "observed": 31,
+          "expected": ">= 29"
+        },
+        "projected_abstention_not_regressed": {
+          "pass": true,
+          "observed": 1,
+          "expected": ">= 1"
+        },
+        "projected_no_loop_increase": {
+          "pass": true,
+          "observed": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          },
+          "expected": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          }
+        },
+        "projected_fabrication_not_up": {
+          "pass": true,
+          "observed": {
+            "base_rag": 2,
+            "dapt_rag": 1
+          },
+          "expected": {
+            "base_rag": 2,
+            "dapt_rag": 1
+          }
+        },
+        "projected_dapt_value_under_rag_still_zero": {
+          "pass": true,
+          "observed": 0.0,
+          "expected": "|delta| <= 0.02"
+        },
+        "contract_violations_zero": {
+          "pass": true,
+          "observed": 0,
+          "expected": 0,
+          "note": "build-stage violations_total == 0 for all configs"
+        },
+        "identical_contexts_both_rag_arms": {
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        "attribution_not_worse_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          }
+        },
+        "sect_term_counts_not_up_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          }
+        },
+        "every_new_regression_investigated": {
+          "pass": true,
+          "observed": [],
+          "expected": "each regression listed with a written cause",
+          "note": "regressions vs Task-75 listed above; causes written in the report (evidence composition)"
+        }
+      },
+      "overall": {
+        "base": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "dapt": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "base_rag": {
+          "macro_keyterm": 0.695,
+          "pass_all": 32
+        },
+        "dapt_rag": {
+          "macro_keyterm": 0.695,
+          "pass_all": 31
+        }
+      },
+      "case037": {
+        "scores": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 1.0
+        },
+        "failure_class": {
+          "base_rag": "RETRIEVAL_RISK_CONTRIBUTED",
+          "dapt_rag": "ABSTENTION_CORRECT"
+        },
+        "answers": {
+          "base_rag": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+          "dapt_rag": "The Terapanth was founded in 1583 by Kundakunda Acharya. This date is based on the information provided in the source SVK-0038, which states that the sect was founded by a Sthânakavasi named Kundakunda Acharya in 1583. This information is considered reliable and is consistent with the historical con"
+        },
+        "flags": {
+          "base_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": true,
+            "abstention_correct": false,
+            "forbidden_hits": [
+              "\\b(17|18)\\d{2}\\b"
+            ],
+            "looped": false,
+            "at_cap_192": false,
+            "len_chars": 221,
+            "cited_evidence_author": false,
+            "cited_attribution_word": false
+          },
+          "dapt_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": true,
+            "abstention_correct": true,
+            "forbidden_hits": [],
+            "looped": false,
+            "at_cap_192": false,
+            "len_chars": 648,
+            "cited_evidence_author": false,
+            "cited_attribution_word": true
+          }
+        }
+      },
+      "subset12": {
+        "base_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5,
+          "t75_pass_all": 6
+        },
+        "dapt_rag": {
+          "macro": 0.5833,
+          "pass_all": 7,
+          "t75_macro": 0.5833,
+          "t75_pass_all": 7
+        }
+      },
+      "failure_counts": {
+        "base_rag": {
+          "GROUNDED_SUCCESS": 31,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 5,
+          "PRIOR_KNOWLEDGE": 1,
+          "GENERATION_FABRICATION": 2,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2
+        },
+        "dapt_rag": {
+          "GROUNDED_SUCCESS": 29,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 7,
+          "PRIOR_KNOWLEDGE": 1,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2,
+          "ABSTENTION_CORRECT": 1,
+          "GENERATION_FABRICATION": 1
+        }
+      },
+      "abstention_total": 1,
+      "loops": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      },
+      "dapt_delta_within_rag": 0.0
+    },
+    "p500": {
+      "config": "p500",
+      "source": "projected full-47 (fresh targeted generation, pool=500)",
+      "all_gates_pass": false,
+      "gates": {
+        "case037_context_restored": {
+          "pass": false,
+          "observed": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+          "expected": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e"
+        },
+        "all_12_contexts_restored": {
+          "pass": false,
+          "observed": 3,
+          "expected": 12
+        },
+        "case037_dapt_outcome_restored": {
+          "pass": false,
+          "observed": {
+            "score": 0.0,
+            "abstention_correct": false,
+            "failure_class": "GENERATION_FABRICATION",
+            "at_cap_192": true
+          },
+          "expected": {
+            "score": 1.0,
+            "failure_class": "ABSTENTION_CORRECT"
+          }
+        },
+        "case037_base_outcome_preserved": {
+          "pass": true,
+          "observed": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          },
+          "expected": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          }
+        },
+        "projected_base_rag_macro_not_down": {
+          "pass": true,
+          "observed": 0.695,
+          "expected": ">= 0.675"
+        },
+        "projected_base_rag_pass_not_down": {
+          "pass": true,
+          "observed": 32,
+          "expected": ">= 30"
+        },
+        "projected_dapt_rag_macro_not_down": {
+          "pass": false,
+          "observed": 0.6738,
+          "expected": ">= 0.675"
+        },
+        "projected_dapt_rag_pass_not_down": {
+          "pass": true,
+          "observed": 30,
+          "expected": ">= 29"
+        },
+        "projected_abstention_not_regressed": {
+          "pass": false,
+          "observed": 0,
+          "expected": ">= 1"
+        },
+        "projected_no_loop_increase": {
+          "pass": true,
+          "observed": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          },
+          "expected": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          }
+        },
+        "projected_fabrication_not_up": {
+          "pass": false,
+          "observed": {
+            "base_rag": 2,
+            "dapt_rag": 2
+          },
+          "expected": {
+            "base_rag": 2,
+            "dapt_rag": 1
+          }
+        },
+        "projected_dapt_value_under_rag_still_zero": {
+          "pass": false,
+          "observed": -0.0212,
+          "expected": "|delta| <= 0.02"
+        },
+        "contract_violations_zero": {
+          "pass": true,
+          "observed": 0,
+          "expected": 0,
+          "note": "build-stage violations_total == 0 for all configs"
+        },
+        "identical_contexts_both_rag_arms": {
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        "attribution_not_worse_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          }
+        },
+        "sect_term_counts_not_up_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          }
+        },
+        "every_new_regression_investigated": {
+          "pass": true,
+          "observed": [
+            {
+              "example_id": "DAPT01EVAL-037",
+              "arm": "dapt_rag",
+              "t75": 1.0,
+              "candidate": 0.0,
+              "t75_class": "ABSTENTION_CORRECT",
+              "candidate_class": "GENERATION_FABRICATION"
+            }
+          ],
+          "expected": "each regression listed with a written cause",
+          "note": "regressions vs Task-75 listed above; causes written in the report (evidence composition)"
+        }
+      },
+      "overall": {
+        "base": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "dapt": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "base_rag": {
+          "macro_keyterm": 0.695,
+          "pass_all": 32
+        },
+        "dapt_rag": {
+          "macro_keyterm": 0.6738,
+          "pass_all": 30
+        }
+      },
+      "case037": {
+        "scores": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 0.0
+        },
+        "failure_class": {
+          "base_rag": "RETRIEVAL_RISK_CONTRIBUTED",
+          "dapt_rag": "GENERATION_FABRICATION"
+        },
+        "answers": {
+          "base_rag": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+          "dapt_rag": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighti"
+        },
+        "flags": {
+          "base_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": true,
+            "abstention_correct": false,
+            "forbidden_hits": [
+              "\\b(17|18)\\d{2}\\b"
+            ],
+            "looped": false,
+            "at_cap_192": false,
+            "len_chars": 221,
+            "cited_evidence_author": false,
+            "cited_attribution_word": false
+          },
+          "dapt_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": false,
+            "abstention_correct": false,
+            "forbidden_hits": [],
+            "looped": false,
+            "at_cap_192": true,
+            "len_chars": 997,
+            "cited_evidence_author": false,
+            "cited_attribution_word": true
+          }
+        }
+      },
+      "subset12": {
+        "base_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5,
+          "t75_pass_all": 6
+        },
+        "dapt_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5833,
+          "t75_pass_all": 7
+        }
+      },
+      "failure_counts": {
+        "base_rag": {
+          "GROUNDED_SUCCESS": 31,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 5,
+          "PRIOR_KNOWLEDGE": 1,
+          "GENERATION_FABRICATION": 2,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2
+        },
+        "dapt_rag": {
+          "GROUNDED_SUCCESS": 29,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 7,
+          "PRIOR_KNOWLEDGE": 1,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2,
+          "GENERATION_FABRICATION": 2
+        }
+      },
+      "abstention_total": 0,
+      "loops": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      },
+      "dapt_delta_within_rag": -0.0212
+    },
+    "p1000": {
+      "config": "p1000",
+      "source": "projected full-47 (fresh targeted generation, pool=1000)",
+      "all_gates_pass": false,
+      "gates": {
+        "case037_context_restored": {
+          "pass": false,
+          "observed": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6",
+          "expected": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e"
+        },
+        "all_12_contexts_restored": {
+          "pass": false,
+          "observed": 4,
+          "expected": 12
+        },
+        "case037_dapt_outcome_restored": {
+          "pass": false,
+          "observed": {
+            "score": 0.0,
+            "abstention_correct": false,
+            "failure_class": "GENERATION_FABRICATION",
+            "at_cap_192": true
+          },
+          "expected": {
+            "score": 1.0,
+            "failure_class": "ABSTENTION_CORRECT"
+          }
+        },
+        "case037_base_outcome_preserved": {
+          "pass": true,
+          "observed": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          },
+          "expected": {
+            "score": 0.0,
+            "failure_class": "RETRIEVAL_RISK_CONTRIBUTED"
+          }
+        },
+        "projected_base_rag_macro_not_down": {
+          "pass": true,
+          "observed": 0.695,
+          "expected": ">= 0.675"
+        },
+        "projected_base_rag_pass_not_down": {
+          "pass": true,
+          "observed": 32,
+          "expected": ">= 30"
+        },
+        "projected_dapt_rag_macro_not_down": {
+          "pass": false,
+          "observed": 0.6738,
+          "expected": ">= 0.675"
+        },
+        "projected_dapt_rag_pass_not_down": {
+          "pass": true,
+          "observed": 30,
+          "expected": ">= 29"
+        },
+        "projected_abstention_not_regressed": {
+          "pass": false,
+          "observed": 0,
+          "expected": ">= 1"
+        },
+        "projected_no_loop_increase": {
+          "pass": true,
+          "observed": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          },
+          "expected": {
+            "base_rag": 0,
+            "dapt_rag": 4
+          }
+        },
+        "projected_fabrication_not_up": {
+          "pass": false,
+          "observed": {
+            "base_rag": 2,
+            "dapt_rag": 2
+          },
+          "expected": {
+            "base_rag": 2,
+            "dapt_rag": 1
+          }
+        },
+        "projected_dapt_value_under_rag_still_zero": {
+          "pass": false,
+          "observed": -0.0212,
+          "expected": "|delta| <= 0.02"
+        },
+        "contract_violations_zero": {
+          "pass": true,
+          "observed": 0,
+          "expected": 0,
+          "note": "build-stage violations_total == 0 for all configs"
+        },
+        "identical_contexts_both_rag_arms": {
+          "pass": true,
+          "observed": true,
+          "expected": true
+        },
+        "attribution_not_worse_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "cited_evidence_author": 4,
+              "cited_attribution_word": 0
+            },
+            "dapt_rag": {
+              "cited_evidence_author": 5,
+              "cited_attribution_word": 5
+            }
+          }
+        },
+        "sect_term_counts_not_up_on_12": {
+          "pass": true,
+          "observed": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          },
+          "expected": {
+            "base_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 0,
+              "digambara": 1,
+              "agam": 1
+            },
+            "dapt_rag": {
+              "sthanakvasi": 1,
+              "shvetambara": 1,
+              "digambara": 1,
+              "agam": 1
+            }
+          }
+        },
+        "every_new_regression_investigated": {
+          "pass": true,
+          "observed": [
+            {
+              "example_id": "DAPT01EVAL-037",
+              "arm": "dapt_rag",
+              "t75": 1.0,
+              "candidate": 0.0,
+              "t75_class": "ABSTENTION_CORRECT",
+              "candidate_class": "GENERATION_FABRICATION"
+            }
+          ],
+          "expected": "each regression listed with a written cause",
+          "note": "regressions vs Task-75 listed above; causes written in the report (evidence composition)"
+        }
+      },
+      "overall": {
+        "base": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "dapt": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "base_rag": {
+          "macro_keyterm": 0.695,
+          "pass_all": 32
+        },
+        "dapt_rag": {
+          "macro_keyterm": 0.6738,
+          "pass_all": 30
+        }
+      },
+      "case037": {
+        "scores": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 0.0
+        },
+        "failure_class": {
+          "base_rag": "RETRIEVAL_RISK_CONTRIBUTED",
+          "dapt_rag": "GENERATION_FABRICATION"
+        },
+        "answers": {
+          "base_rag": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+          "dapt_rag": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighti"
+        },
+        "flags": {
+          "base_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": true,
+            "abstention_correct": false,
+            "forbidden_hits": [
+              "\\b(17|18)\\d{2}\\b"
+            ],
+            "looped": false,
+            "at_cap_192": false,
+            "len_chars": 221,
+            "cited_evidence_author": false,
+            "cited_attribution_word": false
+          },
+          "dapt_rag": {
+            "groups_satisfied": "1/1",
+            "abstention_detected": false,
+            "abstention_correct": false,
+            "forbidden_hits": [],
+            "looped": false,
+            "at_cap_192": true,
+            "len_chars": 997,
+            "cited_evidence_author": false,
+            "cited_attribution_word": true
+          }
+        }
+      },
+      "subset12": {
+        "base_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5,
+          "t75_pass_all": 6
+        },
+        "dapt_rag": {
+          "macro": 0.5,
+          "pass_all": 6,
+          "t75_macro": 0.5833,
+          "t75_pass_all": 7
+        }
+      },
+      "failure_counts": {
+        "base_rag": {
+          "GROUNDED_SUCCESS": 31,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 5,
+          "PRIOR_KNOWLEDGE": 1,
+          "GENERATION_FABRICATION": 2,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2
+        },
+        "dapt_rag": {
+          "GROUNDED_SUCCESS": 29,
+          "RETRIEVAL_INSUFFICIENT": 6,
+          "GENERATION_FAILURE": 7,
+          "PRIOR_KNOWLEDGE": 1,
+          "RETRIEVAL_RISK_CONTRIBUTED": 2,
+          "GENERATION_FABRICATION": 2
+        }
+      },
+      "abstention_total": 0,
+      "loops": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      },
+      "dapt_delta_within_rag": -0.0212
+    }
+  },
+  "determinism_checks": {
+    "p500_base_vs_t82": {
+      "n": 9,
+      "byte_identical": 9,
+      "mismatched": [],
+      "note": "target contexts are byte-identical to Task-82 pool-250 contexts (verified at build); answers must match"
+    },
+    "p500_dapt_vs_t82": {
+      "n": 9,
+      "byte_identical": 9,
+      "mismatched": [],
+      "note": "target contexts are byte-identical to Task-82 pool-250 contexts (verified at build); answers must match"
+    },
+    "p1000_base_vs_t82": {
+      "n": 8,
+      "byte_identical": 8,
+      "mismatched": [],
+      "note": "target contexts are byte-identical to Task-82 pool-250 contexts (verified at build); answers must match"
+    },
+    "p1000_dapt_vs_t82": {
+      "n": 8,
+      "byte_identical": 8,
+      "mismatched": [],
+      "note": "target contexts are byte-identical to Task-82 pool-250 contexts (verified at build); answers must match"
+    },
+    "p250ctrl_vs_t82": {
+      "base": {
+        "fresh": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+        "recorded": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+        "byte_identical": true
+      },
+      "dapt": {
+        "fresh": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighting the historical context and the significance of this event in Jain history. This information is presented as a factual statement, without any additional commentary or interpretation. The text emphasizes the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the role of Birbhan in shaping the Terapanth and its teachings, emphasizing the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the",
+        "recorded": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighting the historical context and the significance of this event in Jain history. This information is presented as a factual statement, without any additional commentary or interpretation. The text emphasizes the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the role of Birbhan in shaping the Terapanth and its teachings, emphasizing the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the",
+        "byte_identical": true
+      }
+    },
+    "pfullctrl_vs_t75": {
+      "base": {
+        "fresh": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+        "recorded": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+        "byte_identical": true,
+        "note": "cross-host (Kaggle fresh vs Colab recorded)"
+      },
+      "dapt": {
+        "fresh": "The Terapanth was founded in 1583 by Kundakunda Acharya. This date is based on the information provided in the source SVK-0038, which states that the sect was founded by a Sthânakavasi named Kundakunda Acharya in 1583. This information is considered reliable and is consistent with the historical context provided in the source. The other sources do not provide specific dates for the founding of the Terapanth, but they do provide additional context and information about the sect's history and practices. The information provided in SVK-0038 is considered the most accurate and reliable for determining the exact year of the Terapanth's founding.",
+        "recorded": "The Terapanth was founded in 1583 by Kundakunda Acharya. This date is based on the information provided in the source SVK-0038, which states that the sect was founded by a Sthânakavasi named Kundakunda Acharya in 1583. This information is considered reliable and is consistent with the historical context provided in the source. The other sources do not provide specific dates for the founding of the Terapanth, but they do provide additional context and information about the sect's history and practices. The information provided in SVK-0038 is considered the most accurate and reliable for determining the exact year of the Terapanth's founding.",
+        "byte_identical": true,
+        "note": "cross-host (Kaggle fresh vs Colab recorded)"
+      }
+    }
+  },
+  "controls_note": "p250 and pfull are the recorded Task-82 and Task-75 full-47 runs; their gates are evaluated from the published comparisons (exact prompt/model/context/settings verified)",
+  "projection_note": "projected full-47 arm = fresh Task-83 scores on the candidate's differing cases + recorded Task-75 rows elsewhere (valid: non-differing contexts are byte-identical to Task-75; cross-host determinism established by Task-82 arms A/B/C exact reproduction)"
+}

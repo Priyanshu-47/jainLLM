@@ -1,0 +1,101 @@
+{
+  "task": 85,
+  "title": "Retrieval-only FastAPI service",
+  "generated_utc": "2026-10-14T08:36:31Z",
+  "elapsed_s": 97.3,
+  "verdict": "RETRIEVAL_API_PASS",
+  "integrity": {
+    "all_ok": true,
+    "checks": [
+      {
+        "artifact": "data/evaluation/dapt01_eval_cases.jsonl",
+        "expected": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "actual": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "status": "OK"
+      },
+      {
+        "artifact": "experiments/task74/dense_index/corpus_emb.f16.npy",
+        "expected": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+        "actual": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+        "status": "OK"
+      },
+      {
+        "artifact": "/tmp/opencode/task75/adapter_model.safetensors",
+        "expected": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+        "actual": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+        "status": "OK"
+      },
+      {
+        "artifact": "configs/policy.toml [retrieval] mode",
+        "expected": "bm25",
+        "actual": null,
+        "status": "bm25"
+      }
+    ]
+  },
+  "regression": {
+    "summary": "Ran 542 tests in 31.874s",
+    "status": "FAIL",
+    "errors": 2
+  },
+  "api_tests": {
+    "summary": "Ran 39 tests in 61.961s",
+    "status": "OK",
+    "errors": 0
+  },
+  "services_preserved": {
+    "fanpulse_alive": true,
+    "ollama_alive": true
+  },
+  "dependencies": {
+    "system_python_fastapi": false,
+    "venv_fastapi": true,
+    "installed_in": ".venv (isolated; fpvenv and system Python untouched)",
+    "packages": [
+      "fastapi>=0.115,<1",
+      "pydantic>=2,<3",
+      "uvicorn>=0.30,<1",
+      "httpx>=0.27,<1"
+    ]
+  },
+  "implementation": {
+    "app": "src/svk_corpus/retrieval/api.py",
+    "schemas": "src/svk_corpus/retrieval/schemas.py",
+    "tests": "tests/test_retrieval_api.py",
+    "docs": "docs/retrieval_api.md",
+    "endpoints": [
+      "GET /health",
+      "POST /search"
+    ],
+    "bind_default": "127.0.0.1:8100",
+    "generation_implemented": false,
+    "production_default_changed": false,
+    "hybrid_opt_in_only": true
+  },
+  "preexisting_errors": {
+    "faiss_import": 2,
+    "note": "test_retrieval.TestSentenceTransformerDenseFromPrebuilt.* (system python lacks faiss; .venv has faiss-cpu)"
+  },
+  "service_fix": {
+    "file": "src/svk_corpus/retrieval/service.py",
+    "change": "filter SourceMatch.as_dict() bookkeeping key 'identifier_only' when reconstructing MetadataMatchEvidence",
+    "reason": "pre-existing crash on real-corpus source-metadata channel; no existing test covered this path"
+  },
+  "final_status": {
+    "api_implemented_and_tested": true,
+    "health_and_search_verified": true,
+    "bm25_default_preserved": true,
+    "hybrid_opt_in": true,
+    "provenance_and_fallback_tests_passed": true,
+    "existing_application_preserved": true,
+    "generation_implemented": false,
+    "production_default_changed": false,
+    "infrastructure_provisioned": false
+  },
+  "repro": {
+    "report": "PYTHONPATH=src python3 experiments/task85/task85_report.py",
+    "api_tests": "PYTHONPATH=src .venv/bin/python -m unittest tests.test_retrieval_api",
+    "regression": "PYTHONPATH=src python3 -m unittest discover -s tests",
+    "run_api": "PYTHONPATH=src .venv/bin/python -m svk_corpus.retrieval.api --port 8100"
+  }
+}

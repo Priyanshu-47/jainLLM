@@ -1,0 +1,555 @@
+{
+  "task": 76,
+  "shadow_validation": "OFFLINE",
+  "authoritative_mode": "bm25",
+  "shadow_mode": "hybrid_rrf20",
+  "n_cases": 47,
+  "n_unit_labeled": 39,
+  "served_modes_observed": [
+    "bm25"
+  ],
+  "bm25_authoritative_unchanged": true,
+  "shadow_never_replaced_authoritative": true,
+  "agreement": {
+    "overlap_at_5_mean": 0.3305,
+    "overlap_at_5_median": 0.25
+  },
+  "unit_hit5_dynamics": {
+    "both_hit": 15,
+    "both_hit_cases": [
+      "DAPT01EVAL-001",
+      "DAPT01EVAL-003",
+      "DAPT01EVAL-004",
+      "DAPT01EVAL-005",
+      "DAPT01EVAL-006",
+      "DAPT01EVAL-008",
+      "DAPT01EVAL-012",
+      "DAPT01EVAL-015",
+      "DAPT01EVAL-020",
+      "DAPT01EVAL-022",
+      "DAPT01EVAL-029",
+      "DAPT01EVAL-030",
+      "DAPT01EVAL-031",
+      "DAPT01EVAL-040",
+      "DAPT01EVAL-046"
+    ],
+    "recoveries_hybrid_adds": 6,
+    "recoveries_cases": [
+      "DAPT01EVAL-007",
+      "DAPT01EVAL-014",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-037",
+      "DAPT01EVAL-041",
+      "DAPT01EVAL-044"
+    ],
+    "regressions_hybrid_loses": 0,
+    "regressions_cases": [],
+    "both_miss": 26,
+    "both_miss_cases": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-013",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-017",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-019",
+      "DAPT01EVAL-021",
+      "DAPT01EVAL-024",
+      "DAPT01EVAL-025",
+      "DAPT01EVAL-026",
+      "DAPT01EVAL-027",
+      "DAPT01EVAL-028",
+      "DAPT01EVAL-032",
+      "DAPT01EVAL-033",
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-035",
+      "DAPT01EVAL-036",
+      "DAPT01EVAL-038",
+      "DAPT01EVAL-039",
+      "DAPT01EVAL-042",
+      "DAPT01EVAL-043",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "net_delta_hits_at_5": 6
+  },
+  "per_case": [
+    {
+      "example_id": "DAPT01EVAL-001",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-002",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 7,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-003",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 1.0,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-004",
+      "auth_unit_rank": 2,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-005",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-006",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-007",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 1,
+      "auth_hit5": false,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-008",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-009",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 6,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-010",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-011",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-012",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-013",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-014",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 5,
+      "auth_hit5": false,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-015",
+      "auth_unit_rank": 3,
+      "shadow_unit_rank": 2,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 1.0,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-016",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-017",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-018",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-019",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.0,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-020",
+      "auth_unit_rank": 2,
+      "shadow_unit_rank": 3,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-021",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-022",
+      "auth_unit_rank": 2,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.6667,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-023",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 3,
+      "auth_hit5": false,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-024",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.0,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-025",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.1111,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-026",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-027",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-028",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-029",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-030",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-031",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-032",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-033",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-034",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-035",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.1111,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-036",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-037",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 1,
+      "auth_hit5": false,
+      "shadow_hit5": true,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-038",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.0,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-039",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-040",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-041",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": 3,
+      "auth_hit5": false,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-042",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-043",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-044",
+      "auth_unit_rank": 6,
+      "shadow_unit_rank": 1,
+      "auth_hit5": false,
+      "shadow_hit5": true,
+      "overlap5": 0.1111,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-045",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-046",
+      "auth_unit_rank": 1,
+      "shadow_unit_rank": 1,
+      "auth_hit5": true,
+      "shadow_hit5": true,
+      "overlap5": 0.4286,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    },
+    {
+      "example_id": "DAPT01EVAL-047",
+      "auth_unit_rank": null,
+      "shadow_unit_rank": null,
+      "auth_hit5": false,
+      "shadow_hit5": false,
+      "overlap5": 0.25,
+      "auth_mode": "bm25",
+      "shadow_mode": "hybrid_rrf20"
+    }
+  ],
+  "notes": [
+    "Offline replay: no live serving API exists; shadow is OFFLINE.",
+    "BM25 is authoritative and unchanged; hybrid is recorded alongside.",
+    "Recoveries = expected unit a top-5 miss under BM25 but hit under hybrid; regressions = the reverse."
+  ]
+}

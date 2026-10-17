@@ -1,0 +1,968 @@
+{
+  "task": "TASK 82 — FOUR-ARM OPTIMIZED H3_RRF20 (pool=250) GENERATION GATE",
+  "verdict": "GENERATION_GATE_FAIL",
+  "final_status": {
+    "four_arm_evaluation_complete": "YES",
+    "optimized_base_rag_macro_keyterm": 0.695,
+    "optimized_base_rag_pass_all": 32,
+    "optimized_dapt_rag_macro_keyterm": 0.6738,
+    "optimized_dapt_rag_pass_all": 30,
+    "generation_quality_regressions": 1,
+    "regressed_cases": [
+      "DAPT01EVAL-037"
+    ],
+    "abstention_gate": "FAIL",
+    "loop_gate": "PASS",
+    "dapt_value_under_optimized_rag": "NO",
+    "frozen_benchmark_integrity": "PASS",
+    "production_default_changed": "NO",
+    "training_started": "NO"
+  },
+  "headline": {
+    "overall_four_arms": {
+      "base": {
+        "macro_keyterm": 0.2021,
+        "pass_all": 6
+      },
+      "dapt": {
+        "macro_keyterm": 0.266,
+        "pass_all": 8
+      },
+      "base_rag": {
+        "macro_keyterm": 0.695,
+        "pass_all": 32
+      },
+      "dapt_rag": {
+        "macro_keyterm": 0.6738,
+        "pass_all": 30
+      }
+    },
+    "task75_reference": {
+      "base": {
+        "macro_keyterm": 0.2021,
+        "pass_all": 6
+      },
+      "dapt": {
+        "macro_keyterm": 0.266,
+        "pass_all": 8
+      },
+      "base_rag": {
+        "macro_keyterm": 0.695,
+        "pass_all": 32
+      },
+      "dapt_rag": {
+        "macro_keyterm": 0.695,
+        "pass_all": 31
+      }
+    },
+    "vs_task75": {
+      "base": {
+        "delta_macro": 0.0,
+        "delta_pass_all": 0
+      },
+      "dapt": {
+        "delta_macro": 0.0,
+        "delta_pass_all": 0
+      },
+      "base_rag": {
+        "delta_macro": 0.0,
+        "delta_pass_all": 0
+      },
+      "dapt_rag": {
+        "delta_macro": -0.0212,
+        "delta_pass_all": -1
+      }
+    },
+    "rag_gain_over_base": 0.4929,
+    "rag_gain_over_dapt": 0.4078,
+    "dapt_gain_within_optimized_rag": -0.0212,
+    "evidence_ceiling_mean": 0.8372,
+    "evidence_ceiling_full": 36,
+    "ev0_from_retrieval": 7
+  },
+  "verified_setup": {
+    "frozen_benchmark_sha_ok": true,
+    "dapt01_adapter_sha_ok": true,
+    "task81_pool250_reproduction": {
+      "expected": {
+        "unit_recall_at_5": 0.5385,
+        "source_recall_at_5": 0.9783,
+        "evidence_ceiling_mean": 0.8372,
+        "ev0_count": 7
+      },
+      "observed": {
+        "unit_recall_at_5": 0.5385,
+        "source_recall_at_5": 0.9783,
+        "evidence_ceiling_mean": 0.8372,
+        "ev0_count": 7
+      },
+      "result": "PASS"
+    },
+    "contexts_matching_task75": 35,
+    "contexts_breakdown": {
+      "n_differing": 12,
+      "n_identical": 35,
+      "all_ceiling_deltas_zero": true,
+      "kinds": {
+        "reorder_same_set": 6,
+        "one_item_swap": 4,
+        "channel_header_only": 2
+      },
+      "cases": [
+        {
+          "example_id": "DAPT01EVAL-001",
+          "difference_kind": "one_item_swap",
+          "top5_overlap": 4,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-007",
+          "difference_kind": "channel_header_only",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-010",
+          "difference_kind": "channel_header_only",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 0.0,
+          "evidence_answer_score_t82": 0.0,
+          "ceiling_delta": 0
+        },
+        {
+          "example_id": "DAPT01EVAL-011",
+          "difference_kind": "reorder_same_set",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 0.0,
+          "evidence_answer_score_t82": 0.0,
+          "ceiling_delta": 0
+        },
+        {
+          "example_id": "DAPT01EVAL-012",
+          "difference_kind": "reorder_same_set",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-013",
+          "difference_kind": "reorder_same_set",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-017",
+          "difference_kind": "reorder_same_set",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-021",
+          "difference_kind": "reorder_same_set",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-033",
+          "difference_kind": "one_item_swap",
+          "top5_overlap": 4,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-034",
+          "difference_kind": "reorder_same_set",
+          "top5_overlap": 5,
+          "evidence_answer_score_t75": 1.0,
+          "evidence_answer_score_t82": 1.0,
+          "ceiling_delta": 0.0
+        },
+        {
+          "example_id": "DAPT01EVAL-037",
+          "difference_kind": "one_item_swap",
+          "top5_overlap": 4,
+          "evidence_answer_score_t75": null,
+          "evidence_answer_score_t82": null,
+          "ceiling_delta": null
+        },
+        {
+          "example_id": "DAPT01EVAL-039",
+          "difference_kind": "one_item_swap",
+          "top5_overlap": 4,
+          "evidence_answer_score_t75": null,
+          "evidence_answer_score_t82": null,
+          "ceiling_delta": null
+        }
+      ]
+    },
+    "prompts_sha256_task82": "6d8d40cfeaad7f868fdc4b405fd460630e342c68e13ae936458b95cc763393c0",
+    "prompts_sha256_task75": "302f6c917b538bb440d244eeeba9aba35756186bef04cb1cd89415f65a774409",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "generation_protocol_identical_to_task75": true,
+    "run_host_task82": "Kaggle T4 (established safe execution method; Colab token expired)",
+    "run_host_task75": "Google Colab T4",
+    "identical_contexts_both_rag_arms": true
+  },
+  "acceptance_gates": {
+    "source": "verbatim from data/evaluation/task82_preflight.json generation_acceptance_gates, registered BEFORE generation",
+    "criteria": {
+      "arms_ab_reproduce_task75": {
+        "expected": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "observed_base": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "observed_dapt": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "pass": true
+      },
+      "arm_c_macro_not_down": {
+        "threshold": 0.675,
+        "observed": 0.695,
+        "reference": 0.695,
+        "pass": true
+      },
+      "arm_c_pass_not_down": {
+        "threshold": 30,
+        "observed": 32,
+        "reference": 32,
+        "pass": true
+      },
+      "arm_d_macro_not_down": {
+        "threshold": 0.675,
+        "observed": 0.6738,
+        "reference": 0.695,
+        "pass": false
+      },
+      "arm_d_pass_not_down": {
+        "threshold": 29,
+        "observed": 30,
+        "reference": 31,
+        "pass": true
+      },
+      "abstention_not_regressed": {
+        "threshold": 1,
+        "observed_total_rag": 0,
+        "reference_total_rag": 1,
+        "per_case": [
+          {
+            "example_id": "DAPT01EVAL-036",
+            "base_correct": false,
+            "dapt_correct": false,
+            "base_rag_correct": false,
+            "dapt_rag_correct": false,
+            "evidence_forbidden_hits": [
+              "(18|19|20)\\d{2}"
+            ],
+            "base_answer": "The book 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1970.",
+            "dapt_answer": "'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1914. It is a historical account of the Sthanakavasi community, providing insights into their practices and traditions. This work is considered an important source for understanding the history ",
+            "base_rag_answer": "The provided evidence does not specify the exact year of publication for 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari. The text mentions various pages and sections but does not provide a clear publication date.",
+            "dapt_rag_answer": "1898\n[End of answer]"
+          },
+          {
+            "example_id": "DAPT01EVAL-037",
+            "base_correct": false,
+            "dapt_correct": false,
+            "base_rag_correct": false,
+            "dapt_rag_correct": false,
+            "evidence_forbidden_hits": [
+              "\\b(17|18)\\d{2}\\b"
+            ],
+            "base_answer": "The Terapanth was founded in 1916 by Swami Paramanand.",
+            "dapt_answer": "The Terapanth was founded in 1669. This is based on the account of the first Terapanthi, Bhagwanlal IndrajI, who was born in 1669. His birth is considered the beginning of the Terapanth. The Terapanthi community, therefore, celebrates the anniversary of Bhagwa",
+            "base_rag_answer": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+            "dapt_rag_answer": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the "
+          },
+          {
+            "example_id": "DAPT01EVAL-038",
+            "base_correct": false,
+            "dapt_correct": false,
+            "base_rag_correct": false,
+            "dapt_rag_correct": false,
+            "evidence_forbidden_hits": [],
+            "base_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Jain Society of Bombay.",
+            "dapt_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Oxford University Press. It was written by Lewis Rice, a British scholar and a Jain layman. The book provides a detailed account of Jainism, its history, and its practices. It is considered a valua",
+            "base_rag_answer": "Mrs. Sinclair Stevenson published 'Notes on Modern Jainism' (1910).",
+            "dapt_rag_answer": "The book 'Notes on Modern Jainism' (1910) was published by Mrs. Sinclair Stevenson. She is the author of the work, which explores various aspects of Jainism, including its scriptures and practices. The book was published in 1910, providing valuable insights in"
+          },
+          {
+            "example_id": "DAPT01EVAL-039",
+            "base_correct": false,
+            "dapt_correct": false,
+            "base_rag_correct": false,
+            "dapt_rag_correct": false,
+            "evidence_forbidden_hits": [
+              "\\b(24|36|45|64|72)\\s*(agam|aagam)"
+            ],
+            "base_answer": "The Digambara tradition accepts 12 Agams. These texts are considered to be the oral teachings of Mahavira, the 24th Tirthankara of Jainism, and are believed to have been passed down through generations of Jain monks.",
+            "dapt_answer": "The Digambara tradition accepts 24 Agams. These Agams are considered to be the sacred scriptures of the Jain community, containing the teachings of the Tirthankars. The content of these Agams is believed to have been lost over time, leaving only the names and ",
+            "base_rag_answer": "The Digambara tradition accepts 45 Agams. This is in contrast to the Sthanakvasi and Terapanthi sects among the Shvetambar tradition, which believe that only 32 of the Agams are original and authentic. The Digambara tradition considers the complete set of orig",
+            "dapt_rag_answer": "The Digambara tradition accepts 25 Agams. This is in contrast to the Sthanakavasi and Terapanthi sects, who believe in 32 Agams, and the Shvetambara tradition, which accepts 45 Agams. The Digambara tradition's acceptance of 25 Agams is based on their belief th"
+          }
+        ],
+        "pass": false
+      },
+      "no_loop_increase": {
+        "threshold": {
+          "base_rag": 0,
+          "dapt_rag": 4
+        },
+        "observed": {
+          "base_rag": 0,
+          "dapt_rag": 4
+        },
+        "reference": {
+          "base_rag": 0,
+          "dapt_rag": 4
+        },
+        "pass": true
+      },
+      "contract_violations_zero": {
+        "observed": 0,
+        "pass": true
+      },
+      "identical_contexts_both_rag_arms": {
+        "observed": true,
+        "pass": true
+      },
+      "fabrication_not_up": {
+        "threshold": {
+          "base_rag": 2,
+          "dapt_rag": 1
+        },
+        "observed": {
+          "base_rag": 2,
+          "dapt_rag": 2
+        },
+        "reference": {
+          "base_rag": 2,
+          "dapt_rag": 1
+        },
+        "pass": false
+      },
+      "dapt_value_under_rag_still_zero": {
+        "threshold": 0.02,
+        "observed_delta_macro": -0.0212,
+        "reference_delta_macro": 0.0,
+        "pass": false
+      },
+      "every_new_regression_investigated": {
+        "n_regressions": 1,
+        "regressions": [
+          {
+            "example_id": "DAPT01EVAL-037",
+            "arm": "dapt_rag",
+            "task75_score": 1.0,
+            "task82_score": 0.0,
+            "delta": -1.0,
+            "context_differs_from_task75": true,
+            "likely_cause": "retrieval_evidence_differs",
+            "task75_answer": "The Terapanth was founded in 1583 by Kundakunda Acharya. This date is based on the information provided in the source SVK-0038, which states that the sect was founded by a Sthânakavasi named Kundakunda Acharya in 1583. This information is considered reliable and is consistent with the historical context provided in the source. The other sources do not provide specific dates for the founding of the Terapanth, but they do provide additional context and information about the sect's history and practices. The information provided in SVK-0038 is considered the most accurate and reliable for determining the exact year of the Terapanth's founding.",
+            "task82_answer": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighting the historical context and the significance of this event in Jain history. This information is presented as a factual statement, without any additional commentary or interpretation. The text emphasizes the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the role of Birbhan in shaping the Terapanth and its teachings, emphasizing the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the",
+            "task75_flags": {
+              "groups_satisfied": "1/1",
+              "abstention_detected": true,
+              "abstention_correct": true,
+              "forbidden_hits": [],
+              "looped": false,
+              "at_cap_192": false,
+              "len_chars": 648,
+              "cited_evidence_author": false,
+              "cited_attribution_word": true
+            },
+            "task82_flags": {
+              "groups_satisfied": "1/1",
+              "abstention_detected": false,
+              "abstention_correct": false,
+              "forbidden_hits": [],
+              "looped": false,
+              "at_cap_192": true,
+              "len_chars": 997,
+              "cited_evidence_author": false,
+              "cited_attribution_word": true
+            },
+            "task75_failure_class": "ABSTENTION_CORRECT",
+            "task82_failure_class": "GENERATION_FABRICATION"
+          }
+        ],
+        "unexplained": [],
+        "pass": true
+      }
+    },
+    "all_met": false,
+    "outcome": "GENERATION_GATE_FAIL"
+  },
+  "per_case_vs_task75": {
+    "base": {
+      "improved_n": 0,
+      "improved": [],
+      "unchanged_n": 47,
+      "regressed_n": 0,
+      "regressed": []
+    },
+    "dapt": {
+      "improved_n": 0,
+      "improved": [],
+      "unchanged_n": 47,
+      "regressed_n": 0,
+      "regressed": []
+    },
+    "base_rag": {
+      "improved_n": 0,
+      "improved": [],
+      "unchanged_n": 47,
+      "regressed_n": 0,
+      "regressed": []
+    },
+    "dapt_rag": {
+      "improved_n": 0,
+      "improved": [],
+      "unchanged_n": 46,
+      "regressed_n": 1,
+      "regressed": [
+        "DAPT01EVAL-037"
+      ]
+    }
+  },
+  "regressions_investigated": [
+    {
+      "example_id": "DAPT01EVAL-037",
+      "arm": "dapt_rag",
+      "task75_score": 1.0,
+      "task82_score": 0.0,
+      "delta": -1.0,
+      "context_differs_from_task75": true,
+      "likely_cause": "retrieval_evidence_differs",
+      "task75_answer": "The Terapanth was founded in 1583 by Kundakunda Acharya. This date is based on the information provided in the source SVK-0038, which states that the sect was founded by a Sthânakavasi named Kundakunda Acharya in 1583. This information is considered reliable and is consistent with the historical context provided in the source. The other sources do not provide specific dates for the founding of the Terapanth, but they do provide additional context and information about the sect's history and practices. The information provided in SVK-0038 is considered the most accurate and reliable for determining the exact year of the Terapanth's founding.",
+      "task82_answer": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the Terapanth by Birbhan in 1658, highlighting the historical context and the significance of this event in Jain history. This information is presented as a factual statement, without any additional commentary or interpretation. The text emphasizes the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the role of Birbhan in shaping the Terapanth and its teachings, emphasizing the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the historical context of Jain sects and their development over time. The text also highlights the importance of understanding the",
+      "task75_flags": {
+        "groups_satisfied": "1/1",
+        "abstention_detected": true,
+        "abstention_correct": true,
+        "forbidden_hits": [],
+        "looped": false,
+        "at_cap_192": false,
+        "len_chars": 648,
+        "cited_evidence_author": false,
+        "cited_attribution_word": true
+      },
+      "task82_flags": {
+        "groups_satisfied": "1/1",
+        "abstention_detected": false,
+        "abstention_correct": false,
+        "forbidden_hits": [],
+        "looped": false,
+        "at_cap_192": true,
+        "len_chars": 997,
+        "cited_evidence_author": false,
+        "cited_attribution_word": true
+      },
+      "task75_failure_class": "ABSTENTION_CORRECT",
+      "task82_failure_class": "GENERATION_FABRICATION"
+    }
+  ],
+  "single_case_attribution": {
+    "regressed_example_ids": [
+      "DAPT01EVAL-037"
+    ],
+    "n_distinct_regressed_cases": 1,
+    "failed_gates": [
+      "arm_d_macro_not_down",
+      "abstention_not_regressed",
+      "fabrication_not_up",
+      "dapt_value_under_rag_still_zero"
+    ],
+    "all_failures_trace_to_single_case": true,
+    "base_arms_unaffected": true,
+    "arm_c_exact_reproduction": true,
+    "arms_ab_exact_reproduction": true,
+    "note": "Every failing gate is a downstream consequence of the single regressed case: the pool=250 cap swapped the 5th evidence item for that case, which flipped the DAPT arm's greedy continuation (abstention-hedged 1583/Kundakunda answer -> bare 1658/Birbhan answer that also ran to the 192-token cap with tail repetition). The BASE arm's answer for the same case is byte-identical to Task-75, and arms A/B/C reproduce Task-75 exactly — so this is an evidence-composition effect of the pool cap, not run-host numerics."
+  },
+  "dapt_value_under_optimized_rag": {
+    "delta_macro_d_minus_c": -0.0212,
+    "delta_pass_all": -2,
+    "per_case": {
+      "improved": [],
+      "regressed": [
+        "DAPT01EVAL-037"
+      ]
+    },
+    "conclusion": "NO — DAPT still adds no positive value under optimized RAG (D−C = -0.0212 macro, driven entirely by the single regressed case 037); the registered equality-tolerance gate (|D−C| <= 0.02) FAILED, so numeric parity with Task-75 is not confirmed",
+    "final_status_value_answer": "NO"
+  },
+  "failure_attribution": {
+    "base_rag": {
+      "GROUNDED_SUCCESS": 31,
+      "RETRIEVAL_INSUFFICIENT": 6,
+      "GENERATION_FAILURE": 5,
+      "PRIOR_KNOWLEDGE": 1,
+      "GENERATION_FABRICATION": 2,
+      "RETRIEVAL_RISK_CONTRIBUTED": 2
+    },
+    "dapt_rag": {
+      "GROUNDED_SUCCESS": 29,
+      "RETRIEVAL_INSUFFICIENT": 6,
+      "GENERATION_FAILURE": 7,
+      "PRIOR_KNOWLEDGE": 1,
+      "RETRIEVAL_RISK_CONTRIBUTED": 2,
+      "GENERATION_FABRICATION": 2
+    }
+  },
+  "abstention": {
+    "n_cases": 4,
+    "base_correct": 0,
+    "dapt_correct": 0,
+    "base_rag_correct": 0,
+    "dapt_rag_correct": 0,
+    "per_case": [
+      {
+        "example_id": "DAPT01EVAL-036",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "(18|19|20)\\d{2}"
+        ],
+        "base_answer": "The book 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1970.",
+        "dapt_answer": "'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1914. It is a historical account of the Sthanakavasi community, providing insights into their practices and traditions. This work is considered an important source for understanding the history ",
+        "base_rag_answer": "The provided evidence does not specify the exact year of publication for 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari. The text mentions various pages and sections but does not provide a clear publication date.",
+        "dapt_rag_answer": "1898\n[End of answer]"
+      },
+      {
+        "example_id": "DAPT01EVAL-037",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "\\b(17|18)\\d{2}\\b"
+        ],
+        "base_answer": "The Terapanth was founded in 1916 by Swami Paramanand.",
+        "dapt_answer": "The Terapanth was founded in 1669. This is based on the account of the first Terapanthi, Bhagwanlal IndrajI, who was born in 1669. His birth is considered the beginning of the Terapanth. The Terapanthi community, therefore, celebrates the anniversary of Bhagwa",
+        "base_rag_answer": "The Terapanth was founded about 150 years ago, which would be around 1770 based on the information provided. However, please note that this is an approximate date and the exact year is not specified in the given evidence.",
+        "dapt_rag_answer": "The Terapanth was founded in 1658 by Birbhan. This information is derived from the source SVK-1005, which provides a detailed account of the religious literature of India, including the history of Jain sects. The text specifically mentions the founding of the "
+      },
+      {
+        "example_id": "DAPT01EVAL-038",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [],
+        "base_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Jain Society of Bombay.",
+        "dapt_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Oxford University Press. It was written by Lewis Rice, a British scholar and a Jain layman. The book provides a detailed account of Jainism, its history, and its practices. It is considered a valua",
+        "base_rag_answer": "Mrs. Sinclair Stevenson published 'Notes on Modern Jainism' (1910).",
+        "dapt_rag_answer": "The book 'Notes on Modern Jainism' (1910) was published by Mrs. Sinclair Stevenson. She is the author of the work, which explores various aspects of Jainism, including its scriptures and practices. The book was published in 1910, providing valuable insights in"
+      },
+      {
+        "example_id": "DAPT01EVAL-039",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "\\b(24|36|45|64|72)\\s*(agam|aagam)"
+        ],
+        "base_answer": "The Digambara tradition accepts 12 Agams. These texts are considered to be the oral teachings of Mahavira, the 24th Tirthankara of Jainism, and are believed to have been passed down through generations of Jain monks.",
+        "dapt_answer": "The Digambara tradition accepts 24 Agams. These Agams are considered to be the sacred scriptures of the Jain community, containing the teachings of the Tirthankars. The content of these Agams is believed to have been lost over time, leaving only the names and ",
+        "base_rag_answer": "The Digambara tradition accepts 45 Agams. This is in contrast to the Sthanakvasi and Terapanthi sects among the Shvetambar tradition, which believe that only 32 of the Agams are original and authentic. The Digambara tradition considers the complete set of orig",
+        "dapt_rag_answer": "The Digambara tradition accepts 25 Agams. This is in contrast to the Sthanakavasi and Terapanthi sects, who believe in 32 Agams, and the Shvetambara tradition, which accepts 45 Agams. The Digambara tradition's acceptance of 25 Agams is based on their belief th"
+      }
+    ]
+  },
+  "behaviour": {
+    "base": {
+      "n": 47,
+      "looped_cases": 0,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 183,
+      "answer_len_mean": 204.1,
+      "answer_len_max": 553,
+      "mode_opener": "ahimsa, as defined by j",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "dapt": {
+      "n": 47,
+      "looped_cases": 1,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 330,
+      "answer_len_mean": 379.3,
+      "answer_len_max": 1025,
+      "mode_opener": "ahimsa is defined as the avoidance of all forms of violence, encompassing not only physical harm but also mental and verbal harm",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "base_rag": {
+      "n": 47,
+      "looped_cases": 0,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 140,
+      "answer_len_mean": 154.3,
+      "answer_len_max": 389,
+      "mode_opener": "ahimsa, or non-injury, is especially defined as non-injury to animal life in the context of jainism",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "dapt_rag": {
+      "n": 47,
+      "looped_cases": 4,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 521,
+      "answer_len_mean": 537.9,
+      "answer_len_max": 1066,
+      "mode_opener": "according to mrs",
+      "mode_opener_count": 2,
+      "mode_opener_share": 0.0426,
+      "distinct_openers": 46
+    }
+  },
+  "language_table": [
+    {
+      "language": "en",
+      "n": 34,
+      "base_mean": 0.2304,
+      "dapt_mean": 0.2647,
+      "base_rag_mean": 0.7843,
+      "dapt_rag_mean": 0.7843
+    },
+    {
+      "language": "gu",
+      "n": 5,
+      "base_mean": 0.0,
+      "dapt_mean": 0.0,
+      "base_rag_mean": 0.2,
+      "dapt_rag_mean": 0.4
+    },
+    {
+      "language": "hi",
+      "n": 8,
+      "base_mean": 0.2083,
+      "dapt_mean": 0.4375,
+      "base_rag_mean": 0.625,
+      "dapt_rag_mean": 0.375
+    }
+  ],
+  "category_table": [
+    {
+      "category": "ABSTENTION",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.0,
+      "base_rag_pass_all": 0,
+      "dapt_rag_mean": 0.0,
+      "dapt_rag_pass_all": 0
+    },
+    {
+      "category": "AGAM_GROUNDED",
+      "n": 4,
+      "base_mean": 0.25,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0833,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.6667,
+      "base_rag_pass_all": 2,
+      "dapt_rag_mean": 0.6667,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "GUJARATI",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.25,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "HINDI",
+      "n": 4,
+      "base_mean": 0.1667,
+      "base_pass_all": 0,
+      "dapt_mean": 0.25,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "JAIN_TERMINOLOGY",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "MULTILINGUAL_MAPPING",
+      "n": 4,
+      "base_mean": 0.5,
+      "base_pass_all": 2,
+      "dapt_mean": 0.5,
+      "dapt_pass_all": 2,
+      "base_rag_mean": 0.5,
+      "base_rag_pass_all": 2,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "PRACTICE",
+      "n": 4,
+      "base_mean": 0.375,
+      "base_pass_all": 0,
+      "dapt_mean": 0.625,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "PRAKRIT",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.375,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.5,
+      "base_rag_pass_all": 2,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "SANSKRIT",
+      "n": 3,
+      "base_mean": 0.1111,
+      "base_pass_all": 0,
+      "dapt_mean": 0.2222,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "SOURCE_ATTRIBUTION",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.125,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "STHANAKAVASI_DISTINCTION",
+      "n": 4,
+      "base_mean": 1.0,
+      "base_pass_all": 4,
+      "dapt_mean": 0.75,
+      "dapt_pass_all": 3,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "STHANAKAVASI_TERMINOLOGY",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.25,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    }
+  ],
+  "sect_term_scan_rag_arms": {
+    "base_rag": {
+      "sthanakvasi": 9,
+      "shvetambara": 0,
+      "digambara": 4,
+      "agam": 3
+    },
+    "dapt_rag": {
+      "sthanakvasi": 9,
+      "shvetambara": 0,
+      "digambara": 4,
+      "agam": 2
+    }
+  },
+  "attribution": {
+    "base": {
+      "cited_evidence_author": 13,
+      "cited_attribution_word": 16,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "dapt": {
+      "cited_evidence_author": 13,
+      "cited_attribution_word": 11,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "base_rag": {
+      "cited_evidence_author": 9,
+      "cited_attribution_word": 7,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "dapt_rag": {
+      "cited_evidence_author": 14,
+      "cited_attribution_word": 14,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    }
+  },
+  "retrieval_aggregate_pool250": {
+    "n_source_level": 46,
+    "source_recall_at_5": 0.9783,
+    "source_recall_at_10": 0.9783,
+    "source_mrr": 0.8993,
+    "source_zero_hit_cases": [
+      "DAPT01EVAL-045"
+    ],
+    "n_unit_labeled": 39,
+    "unit_recall_at_5": 0.5385,
+    "unit_recall_at_10": 0.5897,
+    "unit_mrr": 0.4618,
+    "evidence_ceiling_mean": 0.8372,
+    "evidence_ceiling_full": 36,
+    "ev0_count": 7,
+    "ev0_cases": [
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-009",
+      "DAPT01EVAL-010",
+      "DAPT01EVAL-011",
+      "DAPT01EVAL-018",
+      "DAPT01EVAL-045",
+      "DAPT01EVAL-047"
+    ],
+    "abstention_forbidden_hits": 3,
+    "contract_violations": 0,
+    "context_chars": {
+      "median": 3845,
+      "mean": 3827.0,
+      "max": 5707
+    }
+  },
+  "run_metadata": {
+    "task": "TASK 82 — FOUR-ARM OPTIMIZED H3_RRF20 (pool=250) GENERATION GATE",
+    "model": "Qwen/Qwen3-8B-Base",
+    "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "adapter_merged": false,
+    "quantization": "4bit-nf4-double, compute dtype fp16 (identical all arms)",
+    "attention_backend": "torch SDPA memory-efficient only (math disabled; flash/cudnn invalid on sm75 T4; transformers enable_gqa forced to repeat_kv). fp16 numerics; greedy/seed/cap/prompts/model unchanged from Task-75",
+    "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+    "system_prompt_identical_to_task60_69_71_75": true,
+    "user_content": {
+      "norag_arms": "frozen question only (Task-60 protocol)",
+      "rag_arms": "optimized H3_RRF20 (BM25 pool=250) governed evidence + question"
+    },
+    "prompts_file": "task82_rag_prompts.jsonl",
+    "prompts_sha256": "6d8d40cfeaad7f868fdc4b405fd460630e342c68e13ae936458b95cc763393c0",
+    "evidence_window": "optimized H3_RRF20 (BM25 pool=250, EVIDENCE_K=5, TEXT_TRUNC=500, RRF k=20)",
+    "n_evidence_items_per_case": 5,
+    "prompt_style": "chat_template if available else plain_fallback",
+    "decoding": "greedy (do_sample=False)",
+    "max_new_tokens": 192,
+    "seed": 42,
+    "n_cases": 47,
+    "arms": [
+      "base_norag",
+      "base_rrf250",
+      "dapt_norag",
+      "dapt_rrf250"
+    ],
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu128",
+    "python": "3.13.15",
+    "transformers": "5.0.0",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.50.2",
+    "model_load_seconds": 99.7,
+    "base_norag_infer_seconds": 446.0,
+    "base_rrf250_infer_seconds": 422.0,
+    "adapter_attach_seconds": 8.1,
+    "dapt_norag_infer_seconds": 1061.8,
+    "dapt_rrf250_infer_seconds": 1486.0,
+    "identical_contexts_both_rag_arms": true,
+    "run_host": "Kaggle T4 (established safe execution method; Colab token expired)",
+    "finished_at": "2026-10-13 17:01:26"
+  },
+  "artifacts": {
+    "comparison": "data/evaluation/task82_rag_comparison.json",
+    "task75_comparison": "data/evaluation/task75_rag_comparison.json",
+    "preflight": "data/evaluation/task82_preflight.json",
+    "retrieval_metrics": "data/evaluation/task82_retrieval_metrics.json",
+    "evidence": "data/evaluation/task82_rag_evidence.jsonl",
+    "prompts": "data/evaluation/task82_rag_prompts.jsonl",
+    "results": [
+      "data/evaluation/task82_base_norag_results.jsonl",
+      "data/evaluation/task82_dapt_norag_results.jsonl",
+      "data/evaluation/task82_base_rrf250_results.jsonl",
+      "data/evaluation/task82_dapt_rrf250_results.jsonl"
+    ],
+    "run_metadata_path": "data/evaluation/task82_rag_run_metadata.json"
+  },
+  "limitations": [
+    "n=47; raw counts alongside percentages; no statistical-significance claims",
+    "keyterm scorer is substring-based (Task-60 frozen); no human preference study",
+    "4-bit quantization and greedy decoding frozen from Task-60/69/71/75",
+    "generation ran on a different T4 host (Kaggle) than Task-75 (Colab); arms A/B reproduction is the control for run-host numerics",
+    "12/47 evidence contexts differ from Task-75 (channel headers, reorders, one-item swaps) with zero evidence-ceiling delta"
+  ],
+  "runtime_deviations": [
+    {
+      "deviation": "run host: Google Colab T4 (Task-75) -> Kaggle T4 (Task-82); Colab CLI OAuth token expired 2026-10-09 05:57 UTC and re-auth requires interactive browser consent",
+      "impact": "arms A/B reproduced Task-75 macro/pass_all EXACTLY (0.2021/6, 0.266/8) and arm C exactly (0.695/32), so run-host numerics did not move any scored outcome"
+    },
+    {
+      "deviation": "torch build: 2.11.0+cu130 (Task-75 Colab) -> 2.11.0+cu128 (Kaggle image); same torch/transformers/peft/bitsandbytes versions (5.0.0 / 0.19.1 / 0.50.2)",
+      "impact": "none observed (exact A/B/C reproduction)"
+    },
+    {
+      "deviation": "kernel attempt 1 failed: Kaggle pre-imports transformers 5.16.1 into sys.modules, shadowing the pip pin to 5.0.0 (mixed-stack guard tripped at 52 s)",
+      "resolution": "kernel v2 purges transformers/peft/bitsandbytes/tokenizers/accelerate/huggingface_hub/safetensors from sys.modules after the pin, then re-imports; guard verified 5.0.0 in-run",
+      "impact": "none on results (attempt 1 produced no outputs)"
+    },
+    {
+      "deviation": "prompts file sha differs from Task-75 (6d8d40cf… vs 302f6c91…): 12 evidence contexts differ (characterized) plus one inert metadata field (context_matches_task75) added to each row",
+      "impact": "user_content bytes are identical for 35/47 cases; the 12 differing contexts are the experimental variable under test"
+    }
+  ],
+  "generated_at": "2026-10-13 17:15:49"
+}

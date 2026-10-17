@@ -1,0 +1,10 @@
+2026-10-01 09:12:04 pip install missing: ['bitsandbytes']
+2026-10-01 09:12:10 pip ok attempt=1
+2026-10-01 09:12:10 GPU=Tesla T4 vram_free=15.5GB vram_total=15.6GB
+2026-10-01 09:12:10 SFT01 START gpu=Tesla T4 adapter=/kaggle/input/datasets/priyanshu471/dapt01-checkpoint-15248 lr=0.0001 epochs=3 seed=42
+2026-10-01 09:14:24 attached train=/kaggle/working/sft01_data/train.jsonl eval=/kaggle/working/sft01_data/eval.jsonl
+2026-10-01 09:14:28 dataset train=50 eval=9
+2026-10-01 09:14:28 TrainingArguments ok epochs=3 lr=0.0001 save=SaveStrategy.EPOCH eval=IntervalStrategy.EPOCH fp16=True
+2026-10-01 09:17:00 REPORT {"experiment": "SFT-01", "locked": {"model": "Qwen/Qwen3-8B-Base", "quant": "4bit-nf4-double", "lora_r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"], "lr": 0.0001, "scheduler": "cosine", "warmup_ratio": 0.03, "batch": 1, "grad_accum": 8, "effective_batch": 8, "max_seq_length": 2048, "precision": "fp16", "seed": 42, "epochs": 3, "save_eval": "epoch"}, "base_model": "Qwen/Qwen3-8B-Base", "continues_adapter": "/kaggle/input/datasets/priyanshu471/dapt01-checkpoint-15248", "train_file": "/kaggle/working/sft01_data/train.jsonl", "train_sha256": "77bd61ff5423b3c970d8f24b961fa22100213410593d6461fb60ce30b053615d", "eval_file": "/kaggle/working/sft01_data/eval.jsonl", "eval_sha256": "4ef9d81416e43ec1eb5355c3384888a2378b0a94b6f5cb5e36071560252722cb", "train_rows": 50, "eval_rows": 9, "global_step": 21.0, "epochs": 3, "elapsed_sec": 354.6, "training_started": true, "final_adapter_dir": "/kaggle/working/sft-01-output/sft-01-final", "training_loss": 2.7132562569209506, "first_eval_loss": 2.745046377182007, "last_eval_loss": 1.9924986362457275, "starting_train_loss": 4.47083854675293, "ending_train_loss": 1.5554325580596924}
+2026-10-01 09:17:20 upload create ok
+2026-10-01 09:17:20 SFT01 COMPLETE uploaded=priyanshu471/sft01-output

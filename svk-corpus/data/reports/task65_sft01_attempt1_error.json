@@ -1,0 +1,5 @@
+{
+  "ts": 1790845501.285091,
+  "state": "fatal",
+  "error": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 428, in <module>\n    sys.exit(main())\n             ^^^^^^\n  File \"/kaggle/src/script.py\", line 417, in main\n    final_dir, report = save_outputs(trainer, tok, model, adapter_dir,\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 350, in save_outputs\n    report.update({k: float(v) for k, v in dict(result).items()\n                                           ^^^^^^^^^^^^\nTypeError: cannot convert dictionary update sequence element #0 to a sequence\n"
+}

@@ -1,0 +1,269 @@
+{
+  "task": "TASK 82 preflight — verified setup + gates registered BEFORE generation",
+  "verified_before_generation": {
+    "frozen_benchmark_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "frozen_benchmark_sha_ok": true,
+    "dense_index_sha_ok": true,
+    "task74_frozen_aggregates_ok": true,
+    "dapt01_adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "dapt01_adapter_sha_ok": true,
+    "task81_pool250_reproduction": {
+      "expected": {
+        "unit_recall_at_5": 0.5385,
+        "source_recall_at_5": 0.9783,
+        "evidence_ceiling_mean": 0.8372,
+        "ev0_count": 7
+      },
+      "observed": {
+        "unit_recall_at_5": 0.5385,
+        "source_recall_at_5": 0.9783,
+        "evidence_ceiling_mean": 0.8372,
+        "ev0_count": 7
+      },
+      "result": "PASS"
+    },
+    "task81_context_equivalence_vs_task75": {
+      "contexts_matching": 35,
+      "n_cases": 47,
+      "mismatched_example_ids": [
+        "DAPT01EVAL-001",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-033",
+        "DAPT01EVAL-034",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-039"
+      ],
+      "result": "DIFFERS"
+    },
+    "prompts_sha256_task82": "6d8d40cfeaad7f868fdc4b405fd460630e342c68e13ae936458b95cc763393c0",
+    "prompts_sha256_task75": "302f6c917b538bb440d244eeeba9aba35756186bef04cb1cd89415f65a774409",
+    "prompts_byte_identical_to_task75": false,
+    "evaluator": "score_task60 norm/group_pass/score_case via score_task69_rag (verbatim)",
+    "generation_protocol": {
+      "model": "Qwen/Qwen3-8B-Base",
+      "adapter": "DAPT-01 checkpoint-15248",
+      "quantization": "4bit-nf4-double, compute fp16",
+      "decoding": "greedy, max_new_tokens=192, seed=42",
+      "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+      "identical_to_task75": true
+    },
+    "run_host": "Kaggle T4 (established safe execution method; Colab T4 session token expired 2026-10-09 05:57 UTC)"
+  },
+  "task75_reference_four_arms": {
+    "base": {
+      "macro_keyterm": 0.2021,
+      "pass_all": 6
+    },
+    "dapt": {
+      "macro_keyterm": 0.266,
+      "pass_all": 8
+    },
+    "base_rag": {
+      "macro_keyterm": 0.695,
+      "pass_all": 32
+    },
+    "dapt_rag": {
+      "macro_keyterm": 0.695,
+      "pass_all": 31
+    }
+  },
+  "task75_reference_behaviour": {
+    "abstention_correct": {
+      "base_rag": 0,
+      "dapt_rag": 1
+    },
+    "looped": {
+      "base_rag": 0,
+      "dapt_rag": 4
+    },
+    "failure_counts": {
+      "base_rag": {
+        "FABRICATION": 2
+      },
+      "dapt_rag": {
+        "FABRICATION": 1
+      }
+    },
+    "contract_violations": 0,
+    "prompts_sha256": "302f6c917b538bb440d244eeeba9aba35756186bef04cb1cd89415f65a774409",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9"
+  },
+  "generation_acceptance_gates": {
+    "arms_ab_reproduce_task75": {
+      "description": "no-RAG arms A/B must reproduce Task-75 macro/pass_all exactly (same model, same prompts, same evaluator — validates run setup)",
+      "expected": {
+        "base": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "dapt": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        }
+      }
+    },
+    "arm_c_macro_not_down": {
+      "description": "BASE+RAG macro >= Task-75 (0.695) - 0.02",
+      "threshold": 0.675
+    },
+    "arm_c_pass_not_down": {
+      "description": "BASE+RAG pass_all >= Task-75 (32) - 2",
+      "threshold": 30
+    },
+    "arm_d_macro_not_down": {
+      "description": "DAPT+RAG macro >= Task-75 (0.695) - 0.02",
+      "threshold": 0.675
+    },
+    "arm_d_pass_not_down": {
+      "description": "DAPT+RAG pass_all >= Task-75 (31) - 2",
+      "threshold": 29
+    },
+    "abstention_not_regressed": {
+      "description": "RAG-arm abstention-correct total (base_rag + dapt_rag) >= Task-75 total (0 + 1 = 1)",
+      "threshold": 1
+    },
+    "no_loop_increase": {
+      "description": "base_rag loops <= Task-75 (0) AND dapt_rag loops <= Task-75 (4)",
+      "threshold": {
+        "base_rag": 0,
+        "dapt_rag": 4
+      }
+    },
+    "contract_violations_zero": {
+      "description": "retrieval contract violations == 0"
+    },
+    "identical_contexts_both_rag_arms": {
+      "description": "arms C and D carry byte-identical evidence contexts"
+    },
+    "fabrication_not_up": {
+      "description": "FABRICATION failure count not above Task-75 (base_rag 2, dapt_rag 1)",
+      "threshold": {
+        "base_rag": 2,
+        "dapt_rag": 1
+      }
+    },
+    "dapt_value_under_rag_still_zero": {
+      "description": "DAPT value under optimized RAG (D-C macro) still ~0: |delta| <= 0.02",
+      "threshold": 0.02
+    },
+    "every_new_regression_investigated": {
+      "description": "each case whose score dropped vs the same Task-75 arm is listed with a written cause (retrieval evidence diff vs generation numerics); no unexplained regression may remain"
+    }
+  },
+  "gate_registration": "written BEFORE any Task-82 generation was run; thresholds not informed by Task-82 outputs",
+  "task75_contexts_all_identical": false,
+  "task81_context_equivalence_vs_task75_breakdown": {
+    "n_differing": 12,
+    "n_identical": 35,
+    "all_ceiling_deltas_zero": true,
+    "kinds": {
+      "reorder_same_set": 6,
+      "one_item_swap": 4,
+      "channel_header_only": 2
+    },
+    "cases": [
+      {
+        "example_id": "DAPT01EVAL-001",
+        "difference_kind": "one_item_swap",
+        "top5_overlap": 4,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-007",
+        "difference_kind": "channel_header_only",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-010",
+        "difference_kind": "channel_header_only",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 0.0,
+        "evidence_answer_score_t82": 0.0,
+        "ceiling_delta": 0
+      },
+      {
+        "example_id": "DAPT01EVAL-011",
+        "difference_kind": "reorder_same_set",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 0.0,
+        "evidence_answer_score_t82": 0.0,
+        "ceiling_delta": 0
+      },
+      {
+        "example_id": "DAPT01EVAL-012",
+        "difference_kind": "reorder_same_set",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-013",
+        "difference_kind": "reorder_same_set",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-017",
+        "difference_kind": "reorder_same_set",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-021",
+        "difference_kind": "reorder_same_set",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-033",
+        "difference_kind": "one_item_swap",
+        "top5_overlap": 4,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-034",
+        "difference_kind": "reorder_same_set",
+        "top5_overlap": 5,
+        "evidence_answer_score_t75": 1.0,
+        "evidence_answer_score_t82": 1.0,
+        "ceiling_delta": 0.0
+      },
+      {
+        "example_id": "DAPT01EVAL-037",
+        "difference_kind": "one_item_swap",
+        "top5_overlap": 4,
+        "evidence_answer_score_t75": null,
+        "evidence_answer_score_t82": null,
+        "ceiling_delta": null
+      },
+      {
+        "example_id": "DAPT01EVAL-039",
+        "difference_kind": "one_item_swap",
+        "top5_overlap": 4,
+        "evidence_answer_score_t75": null,
+        "evidence_answer_score_t82": null,
+        "ceiling_delta": null
+      }
+    ]
+  }
+}

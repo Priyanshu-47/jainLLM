@@ -1,0 +1,581 @@
+{
+  "task": "TASK 73 — zero-shot query expansion retrieval experiment",
+  "title": "Query-expansion retrieval (R10) vs R0/M2ref on the frozen 47-case benchmark",
+  "generated_at": "2026-10-04 13:21:52",
+  "verdict": "HYPOTHESIS_NOT_SUPPORTED",
+  "verdict_detail": "HYPOTHESIS_NOT_SUPPORTED — REJECT query expansion as configured (R10 = max-score union + score-order merge)",
+  "items": {
+    "1_baseline": {
+      "gate": "PASS",
+      "frozen_sha": "06625f72190e3ae1…",
+      "r0_byte_exact": 47,
+      "r0_rank_crosscheck": 47,
+      "values": {
+        "source_recall_at_5": 0.913,
+        "source_recall_at_10": 0.9783,
+        "unit_mrr": 0.3333,
+        "evidence_ceiling_mean": 0.6318,
+        "evidence_ceiling_full": 26,
+        "ev0_count": 15
+      },
+      "corpus_docs": 164238,
+      "note": "independent Phase-1 rerun of the exact Task-69 R0 pipeline; re-verified inside the experiment (gates PASS)"
+    },
+    "2_query_expansion_validity": {
+      "model": "Qwen/Qwen3-8B-Base",
+      "protocol": "greedy (do_sample=False), seed 42, max_new_tokens 160, 4-bit nf4, chat_template, no evidence in prompt",
+      "requested": 141,
+      "valid": 127,
+      "invalid": 14,
+      "valid_fraction": 0.9007,
+      "invalid_by_reason": {
+        "truncated_at_cap": 10,
+        "empty_after_truncation": 4
+      },
+      "cases_with_invalid": 10,
+      "cases_zero_valid": [
+        "DAPT01EVAL-045"
+      ],
+      "review": "all 141 variants reviewed against guard rules"
+    },
+    "3_unit_retrieval_deltas": {
+      "R0": {
+        "unit_recall_at_1": 0.2821,
+        "unit_recall_at_3": 0.3846,
+        "unit_recall_at_5": 0.3846,
+        "unit_recall_at_10": 0.4103,
+        "unit_mrr": 0.3333
+      },
+      "M2ref": {
+        "unit_recall_at_1": 0.2821,
+        "unit_recall_at_3": 0.3846,
+        "unit_recall_at_5": 0.4359,
+        "unit_recall_at_10": 0.4359,
+        "unit_mrr": 0.3419
+      },
+      "R10": {
+        "unit_recall_at_1": 0.2308,
+        "unit_recall_at_3": 0.3077,
+        "unit_recall_at_5": 0.359,
+        "unit_recall_at_10": 0.4359,
+        "unit_mrr": 0.2908
+      },
+      "R10_minus_R0": {
+        "unit_recall_at_1": -0.0513,
+        "unit_recall_at_3": -0.0769,
+        "unit_recall_at_5": -0.0256,
+        "unit_recall_at_10": 0.0256,
+        "unit_mrr": -0.0425
+      },
+      "R10_minus_M2ref": {
+        "unit_recall_at_1": -0.0513,
+        "unit_recall_at_3": -0.0769,
+        "unit_recall_at_5": -0.0769,
+        "unit_recall_at_10": 0.0,
+        "unit_mrr": -0.0511
+      },
+      "target_unit_at_5": {
+        "target": 0.46,
+        "r0": 0.3846,
+        "m2ref": 0.4359,
+        "r10": 0.359,
+        "met": false
+      },
+      "verdict_line": "unit@5 0.3846 -> 0.3590 (R10) vs target 0.46: MISSED; even M2ref's merge-policy-only 0.4359 beats expansion"
+    },
+    "4_source_retrieval_deltas": {
+      "R0": {
+        "source_recall_at_1": 0.7174,
+        "source_recall_at_5": 0.913,
+        "source_recall_at_10": 0.9783,
+        "source_mrr": 0.804
+      },
+      "M2ref": {
+        "source_recall_at_1": 0.7174,
+        "source_recall_at_5": 0.8913,
+        "source_recall_at_10": 0.913,
+        "source_mrr": 0.7944
+      },
+      "R10": {
+        "source_recall_at_1": 0.6522,
+        "source_recall_at_5": 0.8478,
+        "source_recall_at_10": 0.8913,
+        "source_mrr": 0.7413
+      },
+      "R10_minus_R0_at_5": -0.0652,
+      "guardrail_source_at_5_ge_0.90": {
+        "min": 0.9,
+        "r0": 0.913,
+        "m2ref": 0.8913,
+        "r10": 0.8478,
+        "met": false
+      },
+      "new_source_zero_hit_r10": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-037"
+      ],
+      "source_regressed_r10": [
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-037"
+      ],
+      "source_improved_r10": [
+        "DAPT01EVAL-023"
+      ]
+    },
+    "5_ev0": {
+      "R0": 15,
+      "M2ref": 14,
+      "R10": 16,
+      "target_max": 12,
+      "recovered_m2ref": [
+        "DAPT01EVAL-044"
+      ],
+      "recovered_r10": [],
+      "new_r10": [
+        "DAPT01EVAL-003"
+      ],
+      "verdict_line": "Ev0 15 (R0) -> 14 (M2ref, recovered 044) -> 16 (R10, recovered none, new 003); target <=12 MISSED"
+    },
+    "6_evidence_ceiling": {
+      "R0": {
+        "mean": 0.6318,
+        "full": 26
+      },
+      "M2ref": {
+        "mean": 0.655,
+        "full": 27
+      },
+      "R10": {
+        "mean": 0.6202,
+        "full": 26
+      },
+      "R10_minus_R0_mean": -0.0116,
+      "R10_minus_M2ref_mean": -0.0348
+    },
+    "7_failure_case_recovery": {
+      "known_cases": [
+        {
+          "case": "002",
+          "q0_rank": 196,
+          "union_rank": 54,
+          "best_query": "Q1",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 1,
+          "src_r10": 1,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "007",
+          "q0_rank": 14,
+          "union_rank": 14,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 8,
+          "src_r10": null,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "010",
+          "q0_rank": 2335,
+          "union_rank": 2358,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 1,
+          "src_r10": 1,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "011",
+          "q0_rank": 1484,
+          "union_rank": 2480,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 3,
+          "src_r10": 4,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "013",
+          "q0_rank": 986,
+          "union_rank": 2119,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 6,
+          "src_r10": null,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "014",
+          "q0_rank": 186,
+          "union_rank": 186,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 5,
+          "src_r10": 8,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "018",
+          "q0_rank": 119,
+          "union_rank": 39,
+          "best_query": "Q1",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 1,
+          "src_r10": 1,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "021",
+          "q0_rank": null,
+          "union_rank": null,
+          "best_query": null,
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 8,
+          "src_r10": null,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "023",
+          "q0_rank": 75,
+          "union_rank": 75,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 5,
+          "src_r10": 4,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        },
+        {
+          "case": "044",
+          "q0_rank": 4,
+          "union_rank": 8,
+          "best_query": "Q0",
+          "unit_r0": 6,
+          "unit_m2ref": 4,
+          "unit_r10": 8,
+          "src_r0": 1,
+          "src_r10": 1,
+          "ev_r0": 0.0,
+          "ev_m2ref": 1.0,
+          "ev_r10": 0.0,
+          "delta": "regressed"
+        },
+        {
+          "case": "047",
+          "q0_rank": 873,
+          "union_rank": 1001,
+          "best_query": "Q0",
+          "unit_r0": null,
+          "unit_m2ref": null,
+          "unit_r10": null,
+          "src_r0": 1,
+          "src_r10": 1,
+          "ev_r0": 0.0,
+          "ev_m2ref": 0.0,
+          "ev_r10": 0.0,
+          "delta": "unchanged"
+        }
+      ],
+      "unit_zero_hit_r0": 23,
+      "recovered_r10": [
+        "DAPT01EVAL-041"
+      ],
+      "recovered_m2ref": [
+        "DAPT01EVAL-041"
+      ],
+      "new_zero_r10": [],
+      "unit_improved_r10": [
+        "DAPT01EVAL-041"
+      ],
+      "unit_regressed_r10": [
+        "DAPT01EVAL-001",
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-015",
+        "DAPT01EVAL-044"
+      ],
+      "candidate_set_flips_out_of_pool": [
+        "011",
+        "013"
+      ],
+      "depth_promotion_not_enough": {
+        "002": "q0 196 -> union 54",
+        "018": "q0 119 -> union 39"
+      },
+      "mechanism": "max-score union compares BM25 scores ACROSS queries whose score scales differ with query term count; variant-score inflation displaces Q0's top docs (001 1->4, 003 1->10, 015 3->5, 044 4->8 losing M2ref's recovery), sinks depth docs below the pool head (011 1484->2480, 013 986->2119 -> new candidate misses) and reorders the diversify source composition (007/013/021/037 lost)",
+      "variant_slots_in_r10_top10": 180,
+      "r10_top10_slots_total": 470
+    },
+    "8_query_drift": {
+      "valid": 127,
+      "max_possible": 141,
+      "valid_fraction": 0.9007,
+      "criterion_met": true,
+      "invalid_recorded_not_discarded": {
+        "truncated_at_cap": 10,
+        "empty_after_truncation": 4
+      },
+      "cases_with_invalid": {
+        "DAPT01EVAL-009": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-010": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-011": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-013": [
+          "v2:truncated_at_cap",
+          "v3:empty_after_truncation"
+        ],
+        "DAPT01EVAL-016": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-017": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-018": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-019": [
+          "v3:truncated_at_cap"
+        ],
+        "DAPT01EVAL-020": [
+          "v2:truncated_at_cap",
+          "v3:empty_after_truncation"
+        ],
+        "DAPT01EVAL-045": [
+          "v1:truncated_at_cap",
+          "v2:empty_after_truncation",
+          "v3:empty_after_truncation"
+        ]
+      },
+      "zero_valid_handling": "DAPT01EVAL-045 runs Q0-only; R10 == R0 for that case by construction"
+    },
+    "9_runtime": {
+      "generation": {
+        "model_load_seconds": 274.4,
+        "generation_seconds": 412.0,
+        "total_seconds": 686.4,
+        "variants_generated": 141,
+        "gpu": "Tesla T4"
+      },
+      "retrieval": {
+        "phase1_gate_seconds": 72.1,
+        "r0_arm_seconds": 13.3,
+        "m2ref_arm_seconds": 5.7,
+        "r10_arm_seconds": 53.3,
+        "r10_variant_search_seconds": 28.7,
+        "experiment_total_seconds": 130.4,
+        "r10_vs_r0_arm_ratio": 4.01
+      },
+      "context_expansion": "none (k5/500 evidence window unchanged, no context growth)"
+    },
+    "10_verdict": {
+      "verdict": "REJECT query expansion as configured (R10 = max-score union + score-order merge)",
+      "targets": {
+        "unit_recall_at_5": {
+          "target": 0.46,
+          "r0": 0.3846,
+          "m2ref": 0.4359,
+          "r10": 0.359,
+          "met": false
+        },
+        "ev0_count": {
+          "max": 12,
+          "r0": 15,
+          "m2ref": 14,
+          "r10": 16,
+          "met": false
+        },
+        "source_recall_at_5": {
+          "min": 0.9,
+          "r0": 0.913,
+          "m2ref": 0.8913,
+          "r10": 0.8478,
+          "met": false
+        },
+        "query_drift_low": {
+          "criterion": "valid >= 90% and <=1 case zero-valid",
+          "valid_fraction": 0.9007,
+          "zero_valid_cases": 1,
+          "met": true
+        }
+      },
+      "targets_met": 1,
+      "targets_total": 4,
+      "decision_gate": {
+        "all_met": false,
+        "recommend_query_expansion": false,
+        "criteria": {
+          "unit_at_5_ge_0.46": false,
+          "ev0_le_12": false,
+          "source_at_5_ge_0.90": false,
+          "drift_low": true
+        }
+      },
+      "decomposition": "M2ref (Q0 score-order merge, no expansion) reproduces Task-72 M2 exactly (19/19 integrity keys) at unit@5 0.4359 > R10 0.359: merge policy alone explains the recoverable gain; adding expansion under score-max fusion is strictly counterproductive (unit MRR -0.0425 vs R0, src@5 -0.0652 vs R0, Ev0 +1)"
+    },
+    "11_recommended_next_experiment": {
+      "recommendation": "Rank-fusion query expansion: re-run the R10 candidate union with RRF (or Q0-primary ordering: union candidates, Q0 score for any Q0-present doc, variant rank only for variant-only docs) so cross-query score scales cannot displace Q0's top docs; keep R0's source-anchored candidate policy and score-order merge",
+      "bars_to_beat": {
+        "unit_at_5": "0.4359 (M2ref), R0 floor 0.3846, original target 0.46",
+        "source_at_5": ">= 0.913 (R0 anchor; R10 failed at 0.8478, M2ref failed at 0.8913)",
+        "ev0": "<= 12 (R0 15, M2ref 14, R10 16)"
+      },
+      "no_production_change": true
+    },
+    "12_tests": {
+      "ran": 462,
+      "failures": 0,
+      "errors": 2,
+      "skipped": 1,
+      "baseline_equal": true,
+      "errors_are_preexisting_faiss": true
+    },
+    "13_git_status": {
+      "git_diff_empty": true,
+      "tracked_file_modifications": [],
+      "task73_untracked_new_files": 7,
+      "note": "repo convention: prior-task artifacts are untracked; no tracked file is ever modified by experiments"
+    }
+  },
+  "gates": {
+    "r0_byte_exact": "47/47",
+    "r0_rank_crosscheck": "47/47",
+    "r0_published_aggregates": "match",
+    "m2ref_integrity_keys": 19,
+    "m2ref_integrity": "match",
+    "contract_violations": 0
+  },
+  "inputs": {
+    "frozen_sha": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "expansions_sha256": "c5daf50449a39a7a6d173511854b555533647481db0d85b29c397860ee855f73",
+    "task72_metrics_sha256": "11859d3740480eff9c0aaa710b7a259a000cebfd056f09bf569659d97784e69c"
+  },
+  "integrity": {
+    "data/evaluation/dapt01_eval_cases.jsonl": {
+      "sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task69_rag_evidence.jsonl": {
+      "sha256": "a51f59d88dad86ebea79cd158b69f845c0f02f3090a92e935f2c5956492d0f33",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task69_retrieval_metrics.json": {
+      "sha256": "c642e463c35ed15ab92d2fe9335b91f77af1f99912c1ec17bef670c261aaae73",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task70_retrieval_failure_cases.jsonl": {
+      "sha256": "c6024bd8a89b2fd6004a3f11fdf3257b545e18004f639d5ac1ac9feab0810a59",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task71_r7_evidence.jsonl": {
+      "sha256": "261d6e4f577914b846ebb03bb0ee4b47370a25eb979ed3cb44e357f474c6fd21",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task71_r7_metrics.json": {
+      "sha256": "8f00daa994d929cccdf86f758a4dc1978a2e8d448d2b2e5848d3b7f3c6bca8c8",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task72_retrieval_results.jsonl": {
+      "sha256": "0908044bc86389e990cc227a3bebdfc0ef9844f52b9b345361e306f154b70404",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task72_failure_cases.jsonl": {
+      "sha256": "9ed3df4a97aadf35d1248d0bb2ae0d389398c8a0a71cc8a4aca500d3b4f6760d",
+      "mtime_pre_task73": true
+    },
+    "data/evaluation/task72_metrics.json": {
+      "sha256": "11859d3740480eff9c0aaa710b7a259a000cebfd056f09bf569659d97784e69c",
+      "mtime_pre_task73": true
+    },
+    "data/release/rag_corpus.jsonl": {
+      "sha256": "4db164bc70e68b4f89837a9f3d3f3bc7fc126d99c826776ba9bf832f070ff8cf",
+      "mtime_pre_task73": true
+    },
+    "manifests/source_manifest.csv": {
+      "sha256": "b96e572f8d97891cc5b472bd21d4355b3b60b2afc74e48d70716ce95bf3293f2",
+      "mtime_pre_task73": true
+    }
+  },
+  "constraints_confirmation": {
+    "training_started": false,
+    "sft03_started": false,
+    "dapt02_started": false,
+    "dense_model_downloaded": false,
+    "reranker_added": false,
+    "corpus_changed": false,
+    "production_retrieval_changed": false,
+    "frozen_task60_changed": false,
+    "task69_70_71_72_artifacts_unchanged": true,
+    "benchmark_generation_run": false,
+    "qwen3_8b_used_only_for_variant_generation": true,
+    "generation_ran_because": "Phase-10 retrieval gate FAILED -> full benchmark generation NOT run"
+  },
+  "artifacts": {
+    "data/evaluation/task73_query_expansions.jsonl": "141 slots, 127 valid",
+    "data/evaluation/task73_retrieval_results.jsonl": 47,
+    "data/evaluation/task73_metrics.json": "aggregates, gates, forensics, decision",
+    "data/reports/task73_query_expansion.md": "this report",
+    "data/reports/task73_query_expansion.json": "this report (json)",
+    "experiments/task73/task73_phase1.py": "phase 1 baseline gate",
+    "experiments/task73/task73_expand_colab.py": "phase 2 generation kernel",
+    "experiments/task73/task73_quality_guard.py": "phase 3 quality guard",
+    "experiments/task73/task73_experiment.py": "phases 4-6",
+    "experiments/task73/task73_report.py": "phase 11 (this script)"
+  }
+}

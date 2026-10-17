@@ -1,0 +1,250 @@
+{
+  "task": 76,
+  "title": "HYBRID RAG PRODUCTION READINESS",
+  "candidate": "BASE + H3_RRF20 (Task-75 recommended configuration)",
+  "verdict": "READY_FOR_SEPARATE_ROLLOUT_REVIEW",
+  "verdict_rationale": [
+    "H1 BM25 path is byte-compatible with production evaluate.py and reproduces its frozen aggregates exactly (unit@5=0.3846, src@5=0.9130).",
+    "H3_RRF20 reproduces Task-74 pre-registered aggregates exactly through the service (unit@5=0.5385, src@5=0.9783); contract violations=0.",
+    "Retrieval service implemented with explicit feature flag; BM25 remains the production default; hybrid is opt-in only.",
+    "39 new regression tests pass; full suite baseline-equal (501 ran, 0 failures, 2 pre-existing faiss errors, 1 skip).",
+    "Offline shadow replay: BM25 authoritative and unchanged; hybrid recovers 6 expected-unit top-5 misses with 0 regressions (net +6).",
+    "Failure behaviour verified: missing/sha-mismatched dense artifacts produce an explicit, logged fallback to BM25 (or a hard exception under strict_dense).",
+    "Query-encoder latency is UNRESOLVED in this environment (torch absent) and full-list BM25 fusion cost is a known optimisation opportunity; both must be addressed in the serving environment before any production-default change \u2014 hence a SEPARATE rollout review, not an automatic rollout."
+  ],
+  "final_status_block": {
+    "Integration implemented": "YES",
+    "Shadow validation": "OFFLINE",
+    "BM25 compatibility": "PASS",
+    "H3_RRF20 reproducibility": "PASS",
+    "Evidence provenance tests": "PASS",
+    "Performance gates": "UNRESOLVED",
+    "Training started": "NO",
+    "Production default changed": "NO"
+  },
+  "hard_stops_observed": {
+    "training_or_finetuning": "NO",
+    "dapt02_or_sft03": "NO",
+    "new_embedding_model_or_reranker": "NO",
+    "frozen_benchmark_modified": "NO",
+    "automatic_production_default_change": "NO",
+    "bm25_remains_production_default": "YES"
+  },
+  "quality_regression": {
+    "frozen_bench_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "n_cases": 47,
+    "H1_BM25": {
+      "unit_recall_at_5": 0.3846,
+      "source_recall_at_5": 0.913,
+      "unit_mrr": 0.3333,
+      "source_mrr": 0.7986,
+      "reproduction_gate": {
+        "unit_recall_at_5": {
+          "expected": 0.3846,
+          "got": 0.3846,
+          "pass": true
+        },
+        "source_recall_at_5": {
+          "expected": 0.913,
+          "got": 0.913,
+          "pass": true
+        },
+        "all_pass": true
+      }
+    },
+    "H3_RRF20": {
+      "unit_recall_at_1": 0.4103,
+      "unit_recall_at_3": 0.5128,
+      "unit_recall_at_5": 0.5385,
+      "unit_recall_at_10": 0.5897,
+      "unit_mrr": 0.4618,
+      "source_recall_at_1": 0.8696,
+      "source_recall_at_3": 0.9565,
+      "source_recall_at_5": 0.9783,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.9174,
+      "reproduction_gate": {
+        "unit_recall_at_5": {
+          "expected": 0.5385,
+          "got": 0.5385,
+          "pass": true
+        },
+        "source_recall_at_5": {
+          "expected": 0.9783,
+          "got": 0.9783,
+          "pass": true
+        },
+        "all_pass": true
+      }
+    },
+    "contract_violations": {
+      "H1": 0,
+      "H3": 0
+    },
+    "verdict": "REPRODUCTION_PASS"
+  },
+  "shadow_replay": {
+    "mode": "OFFLINE",
+    "authoritative_mode": "bm25",
+    "shadow_mode": "hybrid_rrf20",
+    "bm25_authoritative_unchanged": true,
+    "shadow_never_replaced_authoritative": true,
+    "overlap_at_5_mean": 0.3305,
+    "unit_hit5_dynamics": {
+      "both_hit": 15,
+      "both_hit_cases": [
+        "DAPT01EVAL-001",
+        "DAPT01EVAL-003",
+        "DAPT01EVAL-004",
+        "DAPT01EVAL-005",
+        "DAPT01EVAL-006",
+        "DAPT01EVAL-008",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-015",
+        "DAPT01EVAL-020",
+        "DAPT01EVAL-022",
+        "DAPT01EVAL-029",
+        "DAPT01EVAL-030",
+        "DAPT01EVAL-031",
+        "DAPT01EVAL-040",
+        "DAPT01EVAL-046"
+      ],
+      "recoveries_hybrid_adds": 6,
+      "recoveries_cases": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-023",
+        "DAPT01EVAL-037",
+        "DAPT01EVAL-041",
+        "DAPT01EVAL-044"
+      ],
+      "regressions_hybrid_loses": 0,
+      "regressions_cases": [],
+      "both_miss": 26,
+      "both_miss_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-016",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-019",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-024",
+        "DAPT01EVAL-025",
+        "DAPT01EVAL-026",
+        "DAPT01EVAL-027",
+        "DAPT01EVAL-028",
+        "DAPT01EVAL-032",
+        "DAPT01EVAL-033",
+        "DAPT01EVAL-034",
+        "DAPT01EVAL-035",
+        "DAPT01EVAL-036",
+        "DAPT01EVAL-038",
+        "DAPT01EVAL-039",
+        "DAPT01EVAL-042",
+        "DAPT01EVAL-043",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "net_delta_hits_at_5": 6
+    }
+  },
+  "performance": {
+    "H1_total_s": {
+      "mean": 0.1418,
+      "median": 0.1536,
+      "p95": 0.2583,
+      "max": 0.5428,
+      "n": 47
+    },
+    "H3_total_s": {
+      "mean": 0.3767,
+      "median": 0.2884,
+      "p95": 1.3546,
+      "max": 1.4273,
+      "n": 47
+    },
+    "H3_first_query_s": 0.285913,
+    "H3_components_s": {
+      "bm25_full_search": {
+        "mean": 0.2936,
+        "median": 0.1709,
+        "p95": 1.1959,
+        "max": 1.2054,
+        "n": 47
+      },
+      "dense_search": {
+        "mean": 0.0374,
+        "median": 0.0363,
+        "p95": 0.0422,
+        "max": 0.0558,
+        "n": 47
+      },
+      "fusion": {
+        "mean": 0.0613,
+        "median": 0.0559,
+        "p95": 0.1137,
+        "max": 0.121,
+        "n": 47
+      }
+    },
+    "index": {
+      "dense_disk_bytes": 336359552,
+      "dense_array_bytes_loaded_f32": 672718848,
+      "dense_index_load_s": 1.922,
+      "dense_index_meta_runtime": {
+        "model_load_s": 89.5,
+        "corpus_encode_s": 1882.6,
+        "corpus_docs": 164238,
+        "corpus_docs_per_s": 87.2,
+        "query_encode_s": 0.11,
+        "queries": 47,
+        "total_s": 2056.4
+      },
+      "corpus_docs": 164238,
+      "bm25_memory_bytes": "unresolved (python object graph; not measured)",
+      "query_encoder_latency": "UNRESOLVED (torch absent locally; queries pre-encoded by Task-74 artifact)"
+    },
+    "gates": {
+      "retrieval_components_measured": "PASS",
+      "query_encoder_latency": "UNRESOLVED (torch absent locally; pre-computed embeddings used)",
+      "full_list_bm25_fusion_cost": "DOCUMENTED (dominant cost, ~0.29s mean; top-N fusion is an optimisation option requiring re-validation)",
+      "overall": "UNRESOLVED"
+    }
+  },
+  "failure_behaviour": {
+    "missing_dir_falls_back": true,
+    "missing_dir_logged": true,
+    "strict_raises": true,
+    "sha_mismatch_raises": true,
+    "all_pass": true
+  },
+  "tests": {
+    "new_test_file": "tests/test_retrieval_service.py",
+    "new_tests": 39,
+    "new_tests_passed": 39,
+    "full_suite_ran": 501,
+    "full_suite_failures": 0,
+    "preexisting_errors": "2 (faiss import, baseline)",
+    "skips": "1 (baseline)",
+    "baseline_equal": true
+  },
+  "artifacts": {
+    "service": "src/svk_corpus/retrieval/service.py",
+    "config": "configs/policy.toml [retrieval]",
+    "tests": "tests/test_retrieval_service.py",
+    "benchmark_script": "experiments/task76/task76_benchmark.py",
+    "shadow_script": "experiments/task76/task76_shadow.py",
+    "benchmark_report": "data/reports/task76_benchmark.json",
+    "shadow_report": "data/reports/task76_shadow.json",
+    "design_note": "docs/TASK76_RETRIEVAL_DESIGN.md",
+    "flag_rollback_doc": "docs/TASK76_FEATURE_FLAG_ROLLBACK.md"
+  },
+  "task75_reference": {
+    "verdict": "RECOMMEND_H3_RRF20",
+    "note": "Task-75 generation gate; this task (76) does NOT reproduce generation \u2014 it validates retrieval readiness of the same candidate."
+  }
+}

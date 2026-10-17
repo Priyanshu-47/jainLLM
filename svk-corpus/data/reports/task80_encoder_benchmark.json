@@ -1,0 +1,177 @@
+{
+  "task": 80,
+  "title": "BGE-M3 CPU Encoder Benchmark on Existing Azure VM",
+  "verdict": "ENCODER_BENCHMARK_PASS",
+  "verdict_rationale": "BGE-M3 rev 5617a9f loaded successfully on CPU in an isolated venv; encoder latency measured (per-query p95 313ms, p99 326ms); determinism exact (max_abs_diff 0.0); embedding dim 1024 L2-normalized matches the index; frozen retrieval benchmark reproduced EXACTLY with the real encoder (H3 unit@5 0.5385, src@5 0.9783); end-to-end H3_RRF20 latency measured (p50 1032ms, p95 2069ms, p99 2497ms). Task-79's encoder-latency blocker is RESOLVED. The p95 gate is a marginal FAIL (+69ms / +3.5% over the 2s target), driven by BM25 full-scan variance (encoder contributes only ~300ms), reported honestly as a gate assessment; the encoder benchmark itself passed.",
+
+  "environment_and_dependencies": {
+    "isolated_venv": "/home/azureuser/.venvs/task80-bge (separate from fpvenv and all application envs)",
+    "python": "3.12.3",
+    "torch": "2.14.1+cpu (CPU-only build; torch.cuda.is_available()=False; no CUDA packages installed)",
+    "sentence_transformers": "6.1.0",
+    "transformers": "5.19.0",
+    "numpy": "2.5.3",
+    "huggingface_hub": "pulled as dependency",
+    "torch_num_threads": 2,
+    "thread_policy": "torch threads bounded to 2 (physical cores) to protect the running application (OpenCode + uvicorn orchestrator + ollama)",
+    "project_dependencies_modified": false,
+    "fpvenv_modified": false,
+    "production_config_modified": false,
+    "cuda_packages_installed": false
+  },
+
+  "model_artifacts": {
+    "model_id": "BAAI/bge-m3",
+    "pinned_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+    "index_manifest_revision_match": true,
+    "embedding_dim": 1024,
+    "normalization": "L2 (normalize_embeddings=True); verified l2_norm=1.0 on first embedding",
+    "encode_dtype": "float32 (queries)",
+    "artifact_hashes": {
+      "pytorch_model.bin": {"sha256": "b5e0ce3470abf5ef3831aa1bd5553b486803e83251590ab7ff35a117cf6aad38", "size_mb": 2165.9, "role": "primary weights for pinned revision 5617a9f (LOADED)"},
+      "tokenizer.json": {"sha256": "21106b6d7dab2952c1d496fb21d5dc9db75c28ed361a05f5020bbba27810dd08", "size_mb": 16.3},
+      "config.json": {"sha256": "26159e7ad065073448460117eb24b7a4...", "size_mb": 0.04},
+      "sentencepiece.bpe.model": {"size_mb": 5.0}
+    },
+    "secondary_cached_revision": {
+      "revision": "9a0624b896d81da7492a910ffa53731274b6cf3d",
+      "source": "HuggingFace PR #130 (refs/pr/130)",
+      "file": "model.safetensors",
+      "size_mb": 2165.9,
+      "reason": "transformers/sentence-transformers prefer model.safetensors and auto-fetched it from PR #130 even though the pinned revision 5617a9f ships pytorch_model.bin. Side-effect of the loader's safetensors preference, NOT a revision change.",
+      "loaded": false,
+      "content_affected_index": false,
+      "note": "The effective encoder is the pinned 5617a9f (pytorch_model.bin); verified by EXACT frozen-benchmark reproduction. This extra file only inflates the cache footprint and can be deleted in cleanup."
+    }
+  },
+
+  "install_and_download_footprint": {
+    "venv_disk_mb": 1433.6,
+    "model_cache_disk_mb": 4303.0,
+    "model_cache_note": "du -shL (follow symlinks, dedupe hardlinks) = ~4.3 GB = pytorch_model.bin (2166 MB, rev 5617a9f) + model.safetensors (2166 MB, PR #130 rev 9a0624b) + tokenizer (16 MB) + sentencepiece (5 MB) + configs. Total download ~4.25 GB (both revisions auto-cached).",
+    "first_load_with_download_s": 25.1,
+    "cached_load_s": 2.91,
+    "first_load_note": "smoke run performed the ~4.25 GB download + first init in ~25.1s; subsequent loads (cached) ~2.9s",
+    "free_disk_after": "60 GB (of 123 GB; 52% used)"
+  },
+
+  "encoder_latency": {
+    "first_query_s": 0.264,
+    "warm_per_query_all47": {"samples": 141, "p50_ms": 254.61, "p95_ms": 312.97, "p99_ms": 326.33, "mean_ms": 257.1, "max_ms": 332.44,
+                             "note": "3 iters x 47 frozen queries, one-at-a-time; representative multilingual mix (34 EN, 8 Devanagari/Prakrit, 5 GUJ)"},
+    "warm_per_query_representative": {"samples": 120, "p50_ms": 257.65, "p95_ms": 291.35, "p99_ms": 332.83, "queries": 12, "iters": 10},
+    "determinism": {"max_abs_diff_repeat": 0.0, "within_1e4": true, "note": "float32 CPU inference, deterministic ops"},
+    "embedding_validity": {"dim": 1024, "dtype": "float32", "l2_norm_first": 1.0, "finite": true, "normalized_l2_1": true, "matches_index_dim": true},
+    "cpu_utilization": {"torch_num_threads": 2, "system_load1_mean": 2.2, "system_load1_p95": 2.5,
+                        "note": "system load ~2.2 during encoding, matching the 2 bounded torch threads (≈2 cores busy). Per-process CPU% sampler was mis-instrumented (summed all PIDs) and is not reported as reliable."},
+    "languages_covered": ["latin", "devanagari", "gujarati"]
+  },
+
+  "end_to_end_retrieval": {
+    "dense_index_verified": {"sha_ok": true, "model_rev_match": true, "dim_match": true, "rebuilt": false, "modified": false},
+    "cold_start_s": {"corpus": 5.74, "bm25": 57.8, "dense": 1.62, "total_without_encoder_load": 65.15,
+                     "encoder_cached_load_s": 2.91, "approx_total_with_encoder": 68.06},
+    "components_representative": {
+      "encode_s": {"p50_ms": 292.81, "p95_ms": 620.4, "p99_ms": 709.34},
+      "bm25_full_s": {"p50_ms": 51.35, "p95_ms": 828.75, "p99_ms": 1117.44, "note": "BM25 full scan dominates tail variance"},
+      "dense_search_s": {"p50_ms": 37.68, "p95_ms": 84.33},
+      "rrf_fusion_s": {"p50_ms": 33.29, "p95_ms": 85.38},
+      "total_s": {"p50_ms": 431.07, "p95_ms": 1187.38, "p99_ms": 1569.12, "samples": 60}
+    },
+    "service_level_h3_all47": {"samples": 141, "p50_ms": 1032.19, "p95_ms": 2069.36, "p99_ms": 2497.47, "max_ms": 3018.88,
+                               "note": "REAL encoder + BM25 + dense + fusion + contract validation; end-to-end"}
+  },
+
+  "frozen_benchmark_reproduction": {
+    "real_encoder_single_pass": true,
+    "H1_BM25": {"unit@5": 0.3846, "src@5": 0.913, "unit_mrr": 0.3333, "src_mrr": 0.7986, "fallbacks": 0},
+    "H3_RRF20": {"unit@5": 0.5385, "src@5": 0.9783, "unit_mrr": 0.4618, "src_mrr": 0.9174, "fallbacks": 0},
+    "expected_H3": {"unit@5": 0.5385, "src@5": 0.9783},
+    "reproduction_pass": true,
+    "tolerance": "2e-3 (CPU/GPU float differences); matched to <1e-3 (exact)",
+    "provenance_contract_intact": true
+  },
+
+  "peak_memory": {
+    "peak_rss_mb": 4035.0,
+    "note": "encoder (841 MB after load) + corpus + BM25 + dense index + service; measured while OpenCode + uvicorn + ollama were running"
+  },
+
+  "task78_gate_assessment": [
+    {"gate": "warm_retrieval_p95_le_2s_incl_encoder", "proposed_target_ms": 2000, "measured_ms": 2069.36, "result": "FAIL",
+     "evidence": "Service-level H3_RRF20 end-to-end p95 = 2069.36ms (real encoder), +69ms / +3.5% over the 2s gate. Marginal. Dominated by BM25 full-scan tail variance (bm25 p95 828ms); encoder contributes only ~313ms p95. Threshold NOT changed to force a pass."},
+    {"gate": "warm_retrieval_p99_le_3s_incl_encoder", "proposed_target_ms": 3000, "measured_ms": 2497.47, "result": "PASS",
+     "evidence": "Service-level H3_RRF20 end-to-end p99 = 2497.47ms < 3000ms."},
+    {"gate": "cold_start_le_120s", "proposed_target_s": 120, "measured_s": 68.06, "result": "PASS",
+     "evidence": "corpus 5.74 + bm25 57.8 + dense 1.62 + encoder cached load 2.91 ≈ 68s (with download, first-ever load was ~25s encoder + 65s retrieval ≈ 90s, still under 120s)."},
+    {"gate": "peak_rss_le_8gb_on_12gb_host", "proposed_target_gb": 8, "measured_gb": 4.035, "result": "PASS",
+     "hardware_note": "The gate's 12 GB host assumption does NOT apply: this VM (Standard_B4as_v2) has 15.6 GiB total / ~12 GiB available during the run. Measured 4.04 GB is far below the 8 GB ceiling regardless of host size; recommend keeping 8 GB RSS as a safety cap."},
+    {"gate": "dense_index_storage_le_1gb", "proposed_target_gb": 1, "measured_gb": 0.321, "result": "PASS",
+     "evidence": "corpus_emb.f16.npy = 320.8 MB; unchanged."},
+    {"gate": "recurring_infrastructure_cost_rs0", "proposed_target": "Rs.0", "result": "UNRESOLVED",
+     "evidence": "Azure free credit is finite/expiring; VM+disk+IP are billable; credit balance/expiration not readable via available CLI/API (same as Task 79). Not a sustainable Rs.0 guarantee. Benchmark itself added no new cloud charge (ran on the already-provisioned VM)."}
+  ],
+  "task78_gate_summary": {"passed": 4, "failed": 1, "unresolved": 1,
+    "passed_list": ["p99_incl_encoder", "cold_start", "peak_rss (hw note)", "dense_index_storage"],
+    "failed_list": ["p95_incl_encoder (marginal +3.5%)"],
+    "unresolved_list": ["recurring_cost"]},
+
+  "blockers": [
+    {"id": "B1", "component": "retrieval p95 latency", "blocker": "End-to-end H3 p95 = 2069ms exceeds the 2s gate by 3.5%; driven by BM25 full-scan tail variance (p95 828ms), not the encoder.", "impact": "p95 gate FAIL (marginal). p99 gate PASS.", "resolution": "Candidate: cap the BM25 candidate pool (policy [retrieval] pool=2000 already reduces this vs full-scan; the service full-scan path used here is the unbounded INF path) or bound BM25 latency. Requires a separately authorized policy/perf change; not done here."},
+    {"id": "B2", "component": "Azure recurring cost", "blocker": "Free credit finite/expiring; balance not readable via available APIs.", "impact": "Rs.0 cost gate UNRESOLVED; not a sustainable guarantee.", "resolution": "User confirms billing setup, credit balance/expiry, post-credit plan in Azure portal."},
+    {"id": "B3", "component": "Qwen generation", "blocker": "No Qwen3-8B-Base inference serving implementation exists (training code only; re-verified).", "impact": "Full Qwen assistant NOT feasible; generation gate remains UNRESOLVED.", "resolution": "Separate task to build/evaluate an inference path (out of scope; 2-core VM CPU also impractical for 8B)."}
+  ],
+
+  "reproducibility": {
+    "setup": [
+      "python3 -m venv /home/azureuser/.venvs/task80-bge",
+      "/home/azureuser/.venvs/task80-bge/bin/pip install --index-url https://download.pytorch.org/whl/cpu torch==2.14.1",
+      "/home/azureuser/.venvs/task80-bge/bin/pip install sentence-transformers==6.1.0"
+    ],
+    "run": [
+      "/home/azureuser/.venvs/task80-bge/bin/python experiments/task80/task80_encoder_bench.py --stage smoke",
+      "/home/azureuser/.venvs/task80-bge/bin/python experiments/task80/task80_encoder_bench.py --stage full --warmup 3 --iters 10"
+    ],
+    "script": "experiments/task80/task80_encoder_bench.py",
+    "measurements_json": "data/reports/task80_encoder_bench.json",
+    "determinism": "torch.set_num_threads(2); CPU float32 inference is deterministic (verified max_abs_diff 0.0)"
+  },
+
+  "cleanup_procedure": [
+    "Delete the task venv: rm -rf /home/azureuser/.venvs/task80-bge   (reclaims ~1.4 GB)",
+    "Delete the bge-m3 model cache: rm -rf ~/.cache/huggingface/hub/models--BAAI--bge-m3   (reclaims ~4.3 GB, both revisions)",
+    "Optionally keep the measurements JSON and script for provenance; delete only the venv + model cache to reclaim ~5.7 GB total.",
+    "No production config, frozen artifact, or application environment is touched by cleanup."
+  ],
+
+  "integrity_checks": {
+    "existing_application_preserved": true,
+    "ollama_preserved": true,
+    "opencode_preserved": true,
+    "policy_toml_default_still_bm25": true,
+    "frozen_benchmark_unchanged": true,
+    "dense_index_unchanged": true,
+    "corpus_unchanged": true,
+    "source_registry_unchanged": true,
+    "regression_tests_service": "41/41 OK (tests.test_retrieval_service)",
+    "regression_tests_full": "503 ran, 0 failures, 2 pre-existing faiss import errors, 1 skip (baseline unchanged from Task 76/77/79)",
+    "tracked_file_changes": "none to src/, tests/, configs/policy.toml beyond the pre-existing Task-76 +27 [retrieval] lines; Task 80 added only new untracked artifacts (experiments/task80/, data/reports/task80_*)",
+    "new_artifacts": ["experiments/task80/task80_encoder_bench.py", "data/reports/task80_encoder_bench.json", "data/reports/task80_encoder_benchmark.json", "data/reports/task80_encoder_benchmark.md"],
+    "installed_dependencies": ["torch==2.14.1+cpu", "sentence-transformers==6.1.0", "transformers==5.19.0", "numpy==2.5.3", "huggingface-hub (dep)", "tokenizers (dep)", "safetensors (dep)"],
+    "infrastructure_provisioned_or_resized": false,
+    "production_default_changed": false
+  },
+
+  "final_status": {
+    "bge_m3_loaded_successfully": "YES",
+    "encoder_p95_p99_measured": "YES (per-query p95 312.97ms, p99 326.33ms over 141 samples)",
+    "end_to_end_h3_rrf20_latency_measured": "YES (p50 1032.19ms, p95 2069.36ms, p99 2497.47ms)",
+    "frozen_retrieval_benchmark_reproduced": "YES (H3 unit@5 0.5385, src@5 0.9783 exact)",
+    "retrieval_latency_gates": "p95 FAIL (marginal +3.5%), p99 PASS; other latency gates (cold start) PASS",
+    "existing_application_preserved": "YES",
+    "production_default_changed": "NO",
+    "infrastructure_provisioned": "NO",
+    "full_qwen_assistant_validated": "NO",
+    "final_verdict": "ENCODER_BENCHMARK_PASS"
+  }
+}

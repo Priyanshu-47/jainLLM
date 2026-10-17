@@ -1,0 +1,338 @@
+{
+  "task": 77,
+  "title": "HYBRID RAG SERVING FEASIBILITY GATE",
+  "candidate": "BASE + H3_RRF20 (Task-75 recommended; Task-76 READY_FOR_SEPARATE_ROLLOUT_REVIEW)",
+  "verdict": "BLOCKED_ON_SERVING_ENVIRONMENT",
+  "verdict_rationale": [
+    "No intended serving environment is identified anywhere in the repository (no deployment config, host spec, Dockerfile, CI, or IaC). Per the task's own guidance, the missing decision is documented and serving readiness is not claimed.",
+    "Encoder (BAAI/bge-m3) latency was NOT measured: torch/transformers absent, no GPU, model not cached, and the project's dependency policy is deliberately stdlib-only. Installing large packages would still yield unrepresentative 2-core CPU numbers, which the task forbids treating as production.",
+    "All retrieval-side work is complete and green: BM25/H3 latencies measured (pre-computed embeddings), fusion optimised (exact-equivalent, ~1.3x, adopted with regression tests), fallback observability verified, frozen-benchmark reproduction PASS, full test suite baseline-equal, artifact hashes intact, production default unchanged.",
+    "Because the serving environment (and its SLOs) is undecided, encoder latency and end-to-end serving feasibility remain UNRESOLVED regardless of the local retrieval-side measurements."
+  ],
+  "final_status": {
+    "encoder_latency_measured_in_intended_environment": "NO \u2014 no intended serving environment exists; encoder not run locally (no torch/GPU; large-install constraint).",
+    "fusion_material_bottleneck": "YES \u2014 was ~19% of H3_RRF20 p50 (~67ms of 338ms); optimised with exact-equivalent vectorised update (~1.3x, ~12ms e2e saving), adopted with regression tests.",
+    "all_frozen_retrieval_checks_pass": "YES \u2014 frozen-benchmark REPRODUCTION_PASS (H1 0.3846/0.9130, H3 0.5385/0.9783); 503 tests, 0 failures, baseline-equal; artifact hashes intact.",
+    "production_defaults_unchanged": "YES \u2014 BM25 remains the default; only configs/policy.toml [retrieval] (from Task-76, default bm25) is modified; tracked src/evaluate.py untouched."
+  },
+  "hard_stops_observed": {
+    "model_training_or_finetuning": "NO",
+    "dapt02_or_sft03": "NO",
+    "new_embedding_model": "NO (frozen Task-74 bge-m3 artifact only)",
+    "production_default_change": "NO",
+    "deployment_or_paid_infrastructure": "NO (Colab/Kaggle not used for serving claims)",
+    "frozen_benchmark_or_corpus_change": "NO (sha verified)"
+  },
+  "serving_environment": {
+    "identified": false,
+    "blocker": "No deployment target, host spec, or SLO documented in the repository.",
+    "audit_doc": "docs/TASK77_SERVING_ENV_AUDIT.md",
+    "measurement_host": {
+      "cpu": "AMD EPYC 7763, 4 logical / 2 physical cores",
+      "isa": "avx, avx2, fma (no avx512, no amx)",
+      "ram_total_gb": 15.61,
+      "gpu": "none",
+      "python": "3.12.3",
+      "numpy": "2.5.3",
+      "torch": "absent",
+      "device": "cpu-only"
+    },
+    "environments_rejected_as_serving_target": [
+      {
+        "env": "Colab T4",
+        "reason": "experiment platform; task forbids treating Colab T4 timings as production"
+      },
+      {
+        "env": "Kaggle GPU",
+        "reason": "experiment platform; same rationale"
+      },
+      {
+        "env": "this VM (B4as_v2)",
+        "reason": "CPU-only 2-core dev/test host; no identified production role"
+      }
+    ]
+  },
+  "hardware_dependency_manifest": {
+    "cpu": "AMD EPYC 7763, 4 logical / 2 physical cores, avx+avx2+fma (no avx512/amx)",
+    "ram_total_gb": 16.76,
+    "gpu": "none",
+    "os": "Ubuntu 24.04.4 LTS",
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "torch": "absent",
+    "transformers": "absent",
+    "sentence_transformers": "absent",
+    "faiss": "absent",
+    "bge_m3_cached": false,
+    "project_dependency_policy": "stdlib-only (pyproject dependencies=[]); optional accelerators runtime-detected"
+  },
+  "latency_measurements": {
+    "methodology": {
+      "device": "cpu-only, single-threaded",
+      "query_embeddings": "pre-computed Task-74 artifact (queries_emb.f32.npy); encoder not run",
+      "warmup": "first query excluded from warm percentiles (recorded separately)",
+      "workload": "10 sequential repeats of the 47 frozen queries (470 samples/mode) for e2e; 47 queries for components",
+      "clock": "time.perf_counter",
+      "batch_size": 1
+    },
+    "cold_start": {
+      "corpus_load_s": 5.452,
+      "bm25_index_build_s": 64.832,
+      "dense_index_load_s": 1.596,
+      "total_startup_s": 71.879,
+      "corpus_docs": 164238,
+      "rss_baseline_mb": 32.5,
+      "rss_after_corpus_mb": 302.3,
+      "rss_after_bm25_mb": 841.4,
+      "rss_after_dense_mb": 2124.8,
+      "rss_delta_dense_mb": 1283.4,
+      "note": "corpus load + BM25 build + dense load are sequential; dense load is optional (BM25-only serving skips it)."
+    },
+    "component_latency_47_queries": {
+      "bm25_pool_2000_s": {
+        "n": 47,
+        "mean": 0.168428,
+        "p50": 0.161239,
+        "p95": 0.340336,
+        "p99": 0.679913,
+        "min": 0.001286,
+        "max": 0.679913
+      },
+      "bm25_full_list_s": {
+        "n": 47,
+        "mean": 0.310639,
+        "p50": 0.188284,
+        "p95": 1.088581,
+        "p99": 1.107832,
+        "min": 0.001408,
+        "max": 1.107832
+      },
+      "dense_search_s": {
+        "n": 47,
+        "mean": 0.057273,
+        "p50": 0.046656,
+        "p95": 0.098374,
+        "p99": 0.16005,
+        "min": 0.037076,
+        "max": 0.16005
+      },
+      "rrf20_fusion_s": {
+        "n": 47,
+        "mean": 0.06693,
+        "p50": 0.062958,
+        "p95": 0.12419,
+        "p99": 0.159643,
+        "min": 0.019906,
+        "max": 0.159643
+      },
+      "fusion_micro_profile": {
+        "score_compute_s": 0.023403,
+        "lexsort_s": 0.024574,
+        "dominant": "lexsort",
+        "iterations": 200,
+        "n_candidates": 164238
+      }
+    },
+    "end_to_end_warm": {
+      "workload": "10 sequential repeats of the 47 frozen queries",
+      "samples_per_mode": 470,
+      "H1_BM25_s": {
+        "n": 470,
+        "mean": 0.165385,
+        "p50": 0.153318,
+        "p95": 0.344301,
+        "p99": 0.724139,
+        "min": 0.005125,
+        "max": 0.85956
+      },
+      "H3_RRF20_s": {
+        "n": 470,
+        "mean": 0.433538,
+        "p50": 0.338452,
+        "p95": 1.122524,
+        "p99": 1.520323,
+        "min": 0.05593,
+        "max": 1.639153
+      },
+      "first_query_H1_s": 0.656899,
+      "first_query_H3_s": 0.28316,
+      "throughput_H1_qps": 6.05,
+      "throughput_H3_qps": 2.31,
+      "h3_over_h1_mean_ratio": 2.621,
+      "note": "Sequential single-threaded; no concurrent server exists. Query embeddings are pre-computed (encoder not run)."
+    },
+    "encoder_latency": {
+      "status": "BLOCKED / NOT MEASURED",
+      "reason": "no torch/GPU/model locally; no intended serving environment identified",
+      "colab_t4_reference_only": {
+        "query_encode_s_47_queries": 0.11,
+        "note": "experiment-platform reference, NOT production"
+      }
+    }
+  },
+  "memory_disk": {
+    "peak_rss_mb": 2124.8,
+    "dense_disk_bytes": 336359552,
+    "dense_loaded_f32_bytes": 672718848,
+    "dense_index_load_s": 1.596,
+    "bm25_memory_bytes": "unresolved (python object graph; not directly measurable)",
+    "corpus_docs": 164238
+  },
+  "fallback_observability": {
+    "mode_used": "bm25",
+    "fallback_reason": "dense index not loaded (load_dense_index not run or failed)",
+    "logged": true,
+    "results_nonempty": true,
+    "pass": true
+  },
+  "fusion_evaluation": {
+    "material_bottleneck": true,
+    "materiality_note": "fusion mean ~67ms = ~19% of H3_RRF20 p50 (338ms)",
+    "dominant_cost": "lexsort (~25ms) + score compute (~23ms) + python bm25 loop (~19ms)",
+    "optimization": {
+      "change": "vectorised BM25 score/bmr update (numpy fancy indexing replaces per-doc python loop); lexsort keys unchanged",
+      "equivalence": {
+        "n_cases": 54,
+        "n_mismatches": 0,
+        "exact_match": true,
+        "mismatches": []
+      },
+      "production_modified": false,
+      "note": "experiment-local prototype only; production service.rrf_fuse_full untouched"
+    },
+    "latency": {
+      "baseline": {
+        "n": 235,
+        "mean": 0.051446,
+        "p50": 0.04846,
+        "p95": 0.095998
+      },
+      "optimized": {
+        "n": 235,
+        "mean": 0.039703,
+        "p50": 0.037556,
+        "p95": 0.070559
+      },
+      "speedup": 1.296
+    },
+    "e2e_context": {
+      "H3_RRF20_p50_ms": 338.5,
+      "fusion_baseline_mean_ms": 51.45,
+      "fusion_optimized_mean_ms": 39.7,
+      "expected_e2e_saving_ms": 11.74
+    },
+    "production_adopted": true,
+    "adoption_note": "vectorised BM25 update adopted in service.rrf_fuse_full after exact-equivalence proof (54 cases) and regression tests; lexsort keys unchanged"
+  },
+  "serving_gates": {
+    "pre_existing_slos_found": false,
+    "slos_searched": "docs/, README.md, configs/, Dockerfile, CI, prior task reports \u2014 none found",
+    "gates": [
+      {
+        "gate": "H1 retrieval p95",
+        "measured_ms": 344.3,
+        "proposed_threshold_ms": 500,
+        "status": "UNRESOLVED",
+        "note": "proposed, not agreed"
+      },
+      {
+        "gate": "H3 retrieval p95",
+        "measured_ms": 1122.5,
+        "proposed_threshold_ms": 1500,
+        "status": "UNRESOLVED",
+        "note": "proposed, not agreed"
+      },
+      {
+        "gate": "H3 retrieval p99",
+        "measured_ms": 1520.3,
+        "proposed_threshold_ms": 2000,
+        "status": "UNRESOLVED",
+        "note": "proposed, not agreed; tail driven by BM25 full-list search"
+      },
+      {
+        "gate": "cold start (corpus+bm25+dense)",
+        "measured_s": 71.9,
+        "proposed_threshold_s": 120,
+        "status": "UNRESOLVED",
+        "note": "BM25 build dominates (64.8s)"
+      },
+      {
+        "gate": "peak RSS",
+        "measured_mb": 2124.8,
+        "proposed_threshold_mb": 4096,
+        "status": "UNRESOLVED",
+        "note": "proposed, not agreed"
+      },
+      {
+        "gate": "dense index disk",
+        "measured_mb": 320.8,
+        "proposed_threshold_mb": 1024,
+        "status": "UNRESOLVED",
+        "note": "proposed, not agreed"
+      },
+      {
+        "gate": "encoder latency",
+        "measured": null,
+        "status": "BLOCKED",
+        "note": "no serving environment; encoder not measured"
+      },
+      {
+        "gate": "throughput sustainability",
+        "measured_qps": {
+          "H1": 6.05,
+          "H3": 2.31
+        },
+        "status": "UNRESOLVED",
+        "note": "single-threaded sequential; no concurrent server exists; workload target unknown"
+      }
+    ],
+    "note": "All latency/resource gates are UNRESOLVED because no SLOs exist to check against; measured values and proposed thresholds are provided for explicit approval."
+  },
+  "regression_integrity": {
+    "full_test_suite": {
+      "ran": 503,
+      "failures": 0,
+      "preexisting_errors": "2 (faiss import)",
+      "skips": "1",
+      "baseline_equal": true
+    },
+    "frozen_benchmark": {
+      "verdict": "REPRODUCTION_PASS",
+      "H1_unit5": 0.3846,
+      "H1_source5": 0.913,
+      "H3_unit5": 0.5385,
+      "H3_source5": 0.9783,
+      "contract_violations": 0
+    },
+    "artifact_hashes": {
+      "frozen_bench_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81 (OK)",
+      "dense_corpus_emb_sha256": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f (OK)",
+      "corpus_and_manifest": "unchanged (sha recorded)"
+    },
+    "production_default_changed": false,
+    "bm25_byte_compatible": true,
+    "h3_reproducible": true,
+    "provenance_contract_intact": true,
+    "feature_flag_opt_in": true
+  },
+  "artifacts": {
+    "serving_env_audit": "docs/TASK77_SERVING_ENV_AUDIT.md",
+    "latency_script": "experiments/task77/task77_latency.py",
+    "latency_report": "data/reports/task77_latency.json",
+    "fusion_opt_script": "experiments/task77/task77_fusion_opt.py",
+    "fusion_opt_report": "data/reports/task77_fusion_opt.json",
+    "main_report_md": "data/reports/task77_serving_feasibility.md",
+    "main_report_json": "data/reports/task77_serving_feasibility.json",
+    "fusion_change": "src/svk_corpus/retrieval/service.py rrf_fuse_full (vectorised, exact-equivalent)",
+    "fusion_tests": "tests/test_retrieval_service.py TestHybridRRF20.test_rrf_fuse_full_matches_reference_on_edge_cases"
+  },
+  "rollout_prerequisites": [
+    "DECIDE the intended serving environment (host/instance class, GPU vs CPU, region, concurrency model) and document it.",
+    "ESTABLISH latency/resource SLOs (p50/p95/p99 retrieval, cold-start, memory, throughput) and obtain explicit approval.",
+    "MEASURE query-encoder latency in that environment (load bge-m3 rev 5617a9f, warm p50/p95/p99).",
+    "RE-MEASURE end-to-end H3_RRF20 including the encoder in that environment.",
+    "OPTIONALLY adopt the proven fusion optimisation in the serving deployment (already adopted in service.rrf_fuse_full).",
+    "Only then: a separate, explicit decision to flip SVK_RETRIEVAL_MODE=hybrid_rrf20 in the target environment, with the documented rollback ready."
+  ],
+  "rollback_plan": "export SVK_RETRIEVAL_MODE=bm25 (or unset; configs/policy.toml [retrieval] mode stays bm25). Instant, lossless; next search() serves H1 BM25. Fallback-on-dense-failure also auto-serves BM25 with a logged reason if dense artifacts break."
+}

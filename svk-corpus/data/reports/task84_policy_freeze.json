@@ -1,0 +1,244 @@
+{
+  "task": 84,
+  "title": "Retrieval-policy freeze and integration-plan audit",
+  "generated_utc": "2026-10-14T07:32:57Z",
+  "elapsed_s": 32.6,
+  "verdict": {
+    "retrieval_policy": "RETRIEVAL_POLICY_FROZEN",
+    "integration_plan": "INTEGRATION_PLAN_INCOMPLETE",
+    "overall": "BLOCKED"
+  },
+  "integrity": {
+    "all_ok": true,
+    "checks": [
+      {
+        "artifact": "data/evaluation/dapt01_eval_cases.jsonl",
+        "expected_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "actual_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "status": "OK"
+      },
+      {
+        "artifact": "experiments/task74/dense_index/corpus_emb.f16.npy",
+        "expected_sha256": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+        "actual_sha256": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+        "status": "OK"
+      },
+      {
+        "artifact": "/tmp/opencode/task75/adapter_model.safetensors",
+        "expected_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+        "actual_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+        "status": "OK"
+      },
+      {
+        "artifact": "data/release/rag_corpus.jsonl",
+        "expected_sha256": null,
+        "actual_sha256": "4db164bc70e68b4f89837a9f3d3f3bc7fc126d99c826776ba9bf832f070ff8cf",
+        "status": "PRESENT"
+      },
+      {
+        "artifact": "manifests/source_manifest.csv",
+        "expected_sha256": null,
+        "actual_sha256": "b96e572f8d97891cc5b472bd21d4355b3b60b2afc74e48d70716ce95bf3293f2",
+        "status": "PRESENT"
+      },
+      {
+        "artifact": "configs/policy.toml",
+        "expected_sha256": null,
+        "actual_sha256": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+        "status": "PRESENT"
+      },
+      {
+        "artifact": "configs/policy.toml [retrieval] mode",
+        "expected_sha256": null,
+        "actual_sha256": null,
+        "status": "bm25"
+      },
+      {
+        "artifact": "BGE-M3 revision (index_meta)",
+        "expected_sha256": null,
+        "actual_sha256": "5617a9f61b028005a4858fdac845db406aefb181",
+        "status": "OK"
+      }
+    ]
+  },
+  "regression": {
+    "summary_line": "Ran 503 tests in 31.035s",
+    "errors": 2,
+    "preexisting_faiss_errors": 2,
+    "skipped": 1,
+    "baseline": "503 ran, 2 pre-existing faiss import errors, 1 skip",
+    "status": "PASS_BASELINE"
+  },
+  "task81_edge_tests": {
+    "all_pass": true,
+    "n_tests": 6,
+    "n_passed": 6,
+    "tests": {
+      "equal_scores_tiebreak": true,
+      "distinct_scores": true,
+      "duplicate_ids": true,
+      "missing_candidates": true,
+      "deterministic_ranking": true,
+      "topk_gt_nsored": true
+    }
+  },
+  "policy_audit": {
+    "production_default": {
+      "mode": "bm25",
+      "source": "configs/policy.toml [retrieval] mode (authoritative); svk_corpus.retrieval.service.RetrievalPolicy default",
+      "status": "FROZEN",
+      "tests": [
+        "test_h1_mode_is_the_default",
+        "test_default_policy_is_bm25",
+        "test_from_toml_default_is_bm25",
+        "test_service_with_default_policy_never_touches_dense"
+      ]
+    },
+    "generation_facing_hybrid": {
+      "mode": "hybrid_rrf20",
+      "candidate_pool": "FULL BM25 list + FULL dense list (PFULL)",
+      "rrf_k": 20,
+      "evidence_k": 5,
+      "text_trunc": 500,
+      "source": "svk_corpus.retrieval.service._search_hybrid uses bm25.search(top_k=INF); rrf_fuse_full; Task-83 mini gate selected PFULL (only config passing all 17 registered gates)",
+      "status": "FROZEN_AS_GENERATION_FACING_CANDIDATE",
+      "production_adoption": "NOT_ADOPTED (requires explicit rollout task)"
+    },
+    "retrieval_only_pool_250": {
+      "location": "experiments/task81/task81_pool_opt.py (experiment-local)",
+      "implementation": "search_ranks + heapq bounded top-k; 6/6 edge tests pass",
+      "wired_into_production_service": false,
+      "status": "DOCUMENTED_EXPERIMENT_ONLY",
+      "note": "separable from generation-facing path; pool cap is a retrieval-only knob, not a mode change"
+    },
+    "policy_points": [
+      {
+        "point": "1. Production default remains bm25 (H1)",
+        "verified": true
+      },
+      {
+        "point": "2. Generation-facing hybrid = H3_RRF20 over FULL lists (PFULL)",
+        "verified": true
+      },
+      {
+        "point": "3. Pool-250 is experiment-local, retrieval-only, 6/6 edge tests",
+        "verified": true
+      },
+      {
+        "point": "4. Pool-250 NOT applied to generation-facing path (PFULL frozen)",
+        "verified": true
+      },
+      {
+        "point": "5. BGE-M3 revision 5617a9f... pinned in index_meta",
+        "verified": true
+      },
+      {
+        "point": "6. Dense-index sha verification + bm25 fallback + mode_used logging",
+        "verified": true
+      }
+    ],
+    "processes_at_audit": {
+      "uvicorn_processes": 1,
+      "ollama_serve_processes": 1,
+      "uvicorn_cmd": "-m uvicorn services.orchestrator.main:app --host 127.0.0.1 --port 8000"
+    }
+  },
+  "serving_gap_audit": {
+    "retrieval_library": "PRESENT (svk_corpus.retrieval.service, 41 tests)",
+    "retrieval_http_api": "ABSENT (no FastAPI/uvicorn in svk-corpus src)",
+    "bge_m3_query_encoder_runtime": "ABSENT (encoder weights cached 4.3G; no deployed query-encoding service; hybrid falls back to bm25 without query_embedding)",
+    "evidence_validation": "PRESENT offline (task83_build_evidence); not in a service",
+    "qwen3_8b_inference_serving": "ABSENT",
+    "qwen3_8b_base_weights": "CACHED (16G, 5 safetensors shards, rev 49e3418f...)",
+    "dapt01_adapter": "CACHED (/tmp/opencode/task75, 167M, sha verified)",
+    "prompt_construction": "experiment-local (task72/75/83 scripts); not in a service",
+    "streaming": "ABSENT",
+    "ui": "ABSENT",
+    "citations": "experiment-local (provenance in results; no user-facing citation layer)",
+    "logging_health": "partial (SearchResponse.summary; no health endpoint)",
+    "note": "port 8000 uvicorn is fanpulse-ai orchestrator (unrelated project); ollama serves qwen2.5:7b-instruct only (4.7G) — NOT Qwen3-8B"
+  },
+  "assistant_architecture": {
+    "minimum_complete_components": [
+      {
+        "component": "retrieval (production bm25 H1)",
+        "state": "PRESENT (library)"
+      },
+      {
+        "component": "generation-facing retrieval (hybrid_rrf20 PFULL)",
+        "state": "PRESENT (library, opt-in mode; not production default)"
+      },
+      {
+        "component": "evidence assembly (k=5, trunc=500, provenance)",
+        "state": "EXPERIMENT-LOCAL"
+      },
+      {
+        "component": "prompt construction (frozen protocol)",
+        "state": "EXPERIMENT-LOCAL"
+      },
+      {
+        "component": "Qwen3-8B-Base + DAPT-01 inference (4-bit NF4, greedy, max_new_tokens=192, seed=42)",
+        "state": "ABSENT (no serving runtime on VM)"
+      },
+      {
+        "component": "response shaping / abstention handling",
+        "state": "ABSENT (evaluated in benchmark only)"
+      },
+      {
+        "component": "HTTP API + health + logging",
+        "state": "ABSENT"
+      },
+      {
+        "component": "UI",
+        "state": "ABSENT"
+      }
+    ],
+    "first_executable_task": {
+      "id": "TASK 85 (proposed)",
+      "scope": "Implement a retrieval-only HTTP service (FastAPI) wrapping RetrievalService under the frozen production policy (mode=bm25), with: /health, /search (query, top_k, mode), SearchResponse.summary logging, unit tests, and a client script. Generation and Qwen inference remain out of scope (BLOCKED).",
+      "rationale": "retrieval is the only fully-verified, test-covered layer; shipping it as a service is the smallest end-to-end step that does not require model serving or policy change",
+      "hard_stops": [
+        "no production default change",
+        "no Qwen inference (blocked on serving decision)",
+        "no training",
+        "no frozen-benchmark modification"
+      ]
+    }
+  },
+  "serving_feasibility": {
+    "verified_facts": [
+      "VM: 4 vCPU (AMD EPYC 7763), 15.6 GiB RAM, no GPU",
+      "Qwen3-8B-Base fp16 weights = 16 GiB — does not fit in available RAM for CPU inference alongside OS/services",
+      "4-bit NF4 quantization would fit (~5-6 GiB) but bitsandbytes is not installed and CPU 4-bit generation would be slow (unmeasured); not attempted per hard stop on dependency installs",
+      "ollama present (127.0.0.1:11434) but only qwen2.5:7b-instruct — different architecture, NOT interchangeable with evaluated Qwen3-8B-Base/DAPT-01",
+      "no llama.cpp / vllm / tgi / llama-cpp-python installed",
+      "BGE-M3 query-encoder runtime also absent (weights cached 4.3G); hybrid mode requires caller-supplied query_embedding or falls back",
+      "generation was previously run on Kaggle T4 (GPU quota 30h) — remote, not on this VM"
+    ],
+    "proposed_decisions": [
+      "Retrieval-only service first (TASK 85); generation integration deferred until a serving path is chosen and funded",
+      "Serving path options (UNRESOLVED): (a) remote API (external cost), (b) GPU VM (Azure credit cost UNVERIFIED), (c) CPU-only 4-bit (feasibility unmeasured, slow), (d) keep benchmark-only on Kaggle"
+    ],
+    "unresolved_questions": [
+      "Is a GPU VM or external inference API budget approved? (Azure credit sustainability UNVERIFIED — not checked this task)",
+      "Should hybrid_rrf20 PFULL ever become the generation-facing production default, or stay an explicit opt-in? (adoption requires a separate rollout task with its own gate)",
+      "Is qwen2.5:7b acceptable as a non-evaluated development stand-in? (currently present; must NOT be presented as the evaluated model)",
+      "Who owns the first-executable-task decision (TASK 85 scope)?"
+    ]
+  },
+  "final_status": {
+    "generation_facing_policy_documented_and_verified": true,
+    "pool_250_retrieval_only_policy_documented_and_verified": true,
+    "tests_and_integrity_verified": true,
+    "qwen_inference_serving_present": false,
+    "full_assistant_ready": false,
+    "azure_cost_sustainability": "UNVERIFIED",
+    "production_default_changed": false,
+    "training_started": false
+  },
+  "repro": {
+    "report_script": "experiments/task84/task84_report.py",
+    "regression": "PYTHONPATH=src python3 -m unittest discover -s tests",
+    "edge_tests": "experiments/task81/task81_pool_opt.py::_edge_case_tests"
+  }
+}

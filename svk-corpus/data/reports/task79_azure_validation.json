@@ -1,0 +1,158 @@
+{
+  "task": 79,
+  "title": "Existing Azure VM Serving Validation",
+  "verdict": "AZURE_RETRIEVAL_VALIDATION_PENDING",
+  "verdict_rationale": "The retrieval pipeline itself (H1 BM25, H3_RRF20 hybrid with pre-computed embeddings, RRF fusion, frozen-benchmark quality reproduction, memory, cold start, BM25 fallback) is validated on this exact VM. The BGE-M3 ENCODER is BLOCKED (not cached, torch/sentence-transformers absent, download forbidden), so end-to-end hybrid latency INCLUDING encoding is UNRESOLVED and the p95/p99 gates cannot be closed. Azure free credit is not a permanent Rs.0 recurring-cost guarantee and the balance is not verifiable, so the cost gate is UNRESOLVED. Full Qwen assistant is NOT feasible (no Qwen3-8B-Base inference serving implementation exists; only training code).",
+
+  "vm_manifest": {
+    "azure_vm_size": "Standard_B4as_v2",
+    "azure_region": "westus2",
+    "vm_size_source": "Azure Instance Metadata Service (IMDS), read-only",
+    "os": "Ubuntu 24.04.4 LTS (Noble Numbat)",
+    "kernel": "7.0.0-1014-azure",
+    "architecture": "x86_64",
+    "cpu_model": "AMD EPYC 7763 64-Core Processor",
+    "vcpu_total": 4,
+    "physical_cores": 2,
+    "threads_per_core": 2,
+    "hypervisor": "Microsoft",
+    "instruction_support": ["avx", "avx2", "fma", "sse4_1", "sse4_2", "sse4a"],
+    "instruction_absent": ["avx512", "amx"],
+    "ram_total_gib": 15.6,
+    "ram_available_gib": 13.9,
+    "swap": "none (0B)",
+    "disk_total_g": 123,
+    "disk_used_g": 55,
+    "disk_available_g": 69,
+    "disk_usage_pct": 45,
+    "gpu_present": false,
+    "gpu_note": "No nvidia-smi, no /dev/nvidia*; CPU-only host.",
+    "python_system": "3.12.3 (numpy 2.5.3; no torch, no transformers, no sentence-transformers, no faiss)",
+    "python_fpvenv": "/home/azureuser/fpvenv (fastapi 0.142.2, uvicorn 0.54.0, numpy 2.3.5; no torch/transformers/sentence-transformers)",
+    "existing_application": {
+      "orchestrator": "uvicorn services.orchestrator.main:app on 127.0.0.1:8000 via /home/azureuser/fpvenv (fanpulse-ai repo)",
+      "ollama": "ollama serve running qwen2.5:7b-instruct (Q4_K_M, 4.7 GB, 7.6B params) -- DIFFERENT model from the project Qwen3-8B-Base+DAPT lineage",
+      "opencode": "current session, running",
+      "process_manager": "No Docker; orchestrator + ollama run as raw processes. No systemd user units.",
+      "note": "Existing application preserved; no restart/redeploy performed."
+    },
+    "memory_headroom_after_existing_app": "13.9 GiB available of 15.6 GiB (existing app + opencode + ollama ~2.1 GiB used)"
+  },
+
+  "azure_cost_verification": {
+    "credit_status": "UNVERIFIABLE",
+    "cost_bearing_resources_identified": [
+      "Virtual machine: JainVM (Microsoft.Compute/virtualMachines)",
+      "OS disk: JainVM_OsDisk_1 (Microsoft.Compute/disks)",
+      "Public IP: jainvm-ip (microsoft.network/publicipaddresses)"
+    ],
+    "consumption_api": "az consumption usage list returned 20 rows naming the VM/OS-disk/public-IP resources, but ALL cost/quantity/billing-period fields were null (free-credit subscription does not expose per-resource cost via this API).",
+    "balance_access": "az billing balance show requires --account-name/--profile-name that are not available; credit balance and expiration could NOT be read.",
+    "subscription_id": "present but REDACTED from all reports per policy.",
+    "free_credit_caveat": "Azure free credit is a finite, expiring balance. It is NOT a sustainable Rs.0 recurring-cost guarantee after expiry. The Standard_B4as_v2 VM, its OS disk, and public IP are billable resources that consume credit.",
+    "unverified": ["remaining credit balance", "credit expiration date", "actual Rs./hour burn rate for this VM", "whether the subscription will start billing after credit expiry"]
+  },
+
+  "compatibility_findings": {
+    "h1_bm25_production_default": "CONFIRMED. configs/policy.toml [retrieval] mode = \"bm25\"; unchanged from Task 76.",
+    "h3_rrf20_opt_in": "CONFIRMED. RetrievalMode.HYBRID_RRF20 is opt-in via policy; not the default.",
+    "dense_index_loadable": "CONFIRMED. Task-74 sha-verified dense index (BGE-M3 rev 5617a9f, corpus_emb.f16.npy 320.8 MB, sha f54919e...) loads on this VM via numpy with NO content change. Dense search = numpy matmul; no torch needed for the index itself.",
+    "runtime_dependencies": "BM25 + dense index + fusion need only numpy + stdlib (PRESENT). The BGE-M3 ENCODER needs torch + sentence-transformers (ABSENT in system python and fpvenv) and the bge-m3 model (NOT cached in ~/.cache/huggingface/hub). Installing torch/sentence-transformers and downloading bge-m3 are out of scope for this task.",
+    "provenance_and_fallback": "CONFIRMED. RetrievalService preserves contract.validate_result provenance; fallback_to_bm25 is explicit, logged, and returns non-empty BM25 results (fallback probe PASS).",
+    "frozen_artifacts_unchanged": "CONFIRMED. Frozen benchmark sha 06625f7... VERIFIED; dense index sha VERIFIED; corpus/manifest unchanged. No rebuild/modification performed."
+  },
+
+  "measurements": {
+    "note": "All latency numbers use PRE-COMPUTED query embeddings (queries_emb.f32.npy). The BGE-M3 encoder is EXCLUDED. These are NOT end-to-end hybrid latency figures.",
+    "integrity": {"frozen_bench_sha_ok": true, "dense_index_sha_ok": true},
+    "cold_start_s": {"corpus_load": 5.96, "bm25_build": 53.88, "dense_load": 1.55, "total": 61.40, "note": "without encoder load (encoder unavailable); Task-77 with encoder was 71.9s"},
+    "component_latency_ms": {
+      "bm25_pool2000_p50": 130, "bm25_pool2000_p95": 266,
+      "bm25_full_p50": 213, "bm25_full_p95": 805,
+      "dense_search_p50": 38, "dense_search_p95": 52,
+      "rrf_fusion_p50": 45, "rrf_fusion_p95": 98
+    },
+    "warm_e2e_retrieval_only_235_samples_per_mode": {
+      "H1_BM25": {"p50_ms": 150, "p95_ms": 274, "p99_ms": 594, "qps": 6.71},
+      "H3_RRF20": {"p50_ms": 309, "p95_ms": 1057, "p99_ms": 1137, "qps": 2.48},
+      "caveat": "PRE-COMPUTED embeddings; encoder excluded; NOT end-to-end hybrid"
+    },
+    "frozen_benchmark_reproduction": {
+      "pass": true,
+      "H1": {"src@5": 0.913, "unit@5": 0.3846, "src_mrr": 0.7986, "unit_mrr": 0.3333},
+      "H3": {"src@5": 0.9783, "unit@5": 0.5385, "src_mrr": 0.9174, "unit_mrr": 0.4618},
+      "expected_match": "exact within 1e-3 of Task-74 aggregates"
+    },
+    "fallback_probe": {"mode_used": "bm25", "logged": true, "results_nonempty": true, "pass": true},
+    "memory_disk": {"peak_rss_mb": 2124.8, "dense_disk_mb": 320.8, "dense_loaded_f32_mb": 641.6},
+    "encoder": {
+      "status": "BLOCKED",
+      "encoder_initialization_time": "NOT MEASURED",
+      "first_query_latency": "NOT MEASURED",
+      "warm_encoder_latency": "NOT MEASURED",
+      "reason": "bge-m3 not cached; torch/sentence-transformers absent; model download + large dependency install out of scope.",
+      "requirement_for_separately_authorized_benchmark": "Install torch + sentence-transformers (CPU build) and download BAAI/bge-m3 (model rev 5617a9f, ~2.2 GB download, ~3.8 GB peak RAM), then run the bounded encoder smoke test in Task-78 experiments/task78/task78_validate_plan.md."
+    }
+  },
+
+  "task78_gate_assessment": [
+    {"gate": "recurring_infrastructure_cost_rs0", "proposed_target": "Rs.0", "result": "UNRESOLVED", "evidence": "Azure free credit is finite/expiring; VM+disk+IP are billable; credit balance not verifiable via available APIs. Not a sustainable Rs.0 guarantee."},
+    {"gate": "warm_retrieval_p95_le_2s_incl_encoder", "proposed_target": "2000 ms", "result": "UNRESOLVED", "evidence": "Retrieval-only H3 p95 = 1057 ms (encoder excluded). Encoder latency NOT measured (BLOCKED). Cannot close the gate without encoder measurement."},
+    {"gate": "warm_retrieval_p99_le_3s_incl_encoder", "proposed_target": "3000 ms", "result": "UNRESOLVED", "evidence": "Retrieval-only H3 p99 = 1137 ms (encoder excluded). Encoder latency NOT measured (BLOCKED)."},
+    {"gate": "cold_start_le_120s", "proposed_target": "120 s", "result": "PASS", "evidence": "61.4 s measured without encoder load (Task-77 with encoder 71.9 s); both under 120 s."},
+    {"gate": "peak_rss_le_8gb_on_12gb_host", "proposed_target": "8 GB on 12 GB host", "result": "PASS (with hardware-assumption note)", "evidence": "Peak RSS 2124.8 MB (2.1 GB) measured. NOTE: the gate assumed a 12 GB host; this VM has 15.6 GiB total / 13.9 GiB available, so the original 12 GB hardware assumption does not apply. The measured 2.1 GB is far below any reasonable threshold on this host; recommend keeping the 8 GB RSS ceiling as a safety cap regardless of host size."},
+    {"gate": "dense_index_storage_le_1gb", "proposed_target": "1 GB", "result": "PASS", "evidence": "320.8 MB on disk (corpus_emb.f16.npy)."},
+    {"gate": "initial_concurrency_one", "proposed_target": "1 active request", "result": "PASS", "result_note": "single-threaded by design; all measurements single-request."},
+    {"gate": "retrieval_quality_h3_reproduce", "proposed_target": "reproduce Task-74 H3_RRF20", "result": "PASS", "evidence": "unit@5 0.5385, src@5 0.9783 exact match to frozen aggregates."},
+    {"gate": "bm25_fallback_explicit_logged_tested", "proposed_target": "fallback works", "result": "PASS", "evidence": "fallback probe: mode= bm25, logged=true, results non-empty."},
+    {"gate": "generation_latency_qwen", "proposed_target": "separate unresolved gate", "result": "UNRESOLVED", "evidence": "No Qwen3-8B-Base inference serving implementation exists (training code only). Ollama qwen2.5:7b is a different model. Not measured."}
+  ],
+  "task78_gate_summary": {"passed": 6, "unresolved": 4, "failed": 0,
+    "passed_list": ["cold_start", "peak_rss (w/ hw note)", "dense_index_storage", "concurrency", "retrieval_quality", "bm25_fallback"],
+    "unresolved_list": ["recurring_cost", "p95_incl_encoder", "p99_incl_encoder", "generation_latency"]},
+
+  "azure_suitability_retrieval_only": {
+    "suitable": "YES (conditional)",
+    "rationale": "The retrieval pipeline runs correctly on this VM: frozen-benchmark quality reproduced exactly, retrieval-side H3 p95 = 1057 ms (well under the 2 s gate if encoder stays under ~940 ms, which BGE-M3 query encoding typically does), peak RSS 2.1 GB on a 15.6 GiB host, cold start 61 s, dense index 321 MB. BM25 fallback and provenance preserved. The VM is architecturally compatible (x86_64, AVX2 present).",
+    "conditions": ["Encoder latency must be measured in a separately authorized benchmark to close the p95/p99 gates.", "Recurring cost is NOT Rs.0-sustainable once Azure free credit expires; a paid plan is required thereafter.", "Single-concurrency only; the 2-physical-core CPU is the bottleneck (BM25 full scan p95 805 ms)."]
+  },
+
+  "full_qwen_assistant_feasible": {
+    "feasible": "NO",
+    "rationale": "The project's generator is Qwen3-8B-Base with DAPT-01/SFT-01 adapters. There is NO inference/serving implementation for it in the repo (Task-78 audit finding re-verified: only training code dapt_trainer.py/sft_candidates.py and offline Colab inference task75_rag_infer.py, which produced frozen artifacts, not a serving path). Qwen3-8B-Base weights ARE cached in the HF hub but cannot be served without writing a new inference stack. Ollama is running qwen2.5:7b-instruct (a DIFFERENT, smaller model, not the project generator). The VM is a 2-physical-core CPU host with no GPU; 8B generation on CPU would be impractically slow (~1-3 tok/s) and would contend with the running application. No bounded generation test was run (out of scope; different model; no project serving impl).",
+    "not_claimed": "Retrieval working does NOT imply Qwen generation is supported."
+  },
+
+  "blockers": [
+    {"id": "B1", "component": "BGE-M3 encoder", "blocker": "bge-m3 not cached in ~/.cache/huggingface/hub; torch + sentence-transformers absent in system python and fpvenv.", "impact": "Encoder latency unmeasured; end-to-end hybrid p95/p99 gates UNRESOLVED.", "resolution": "Separately authorize: install torch (CPU) + sentence-transformers, download BAAI/bge-m3 rev 5617a9f (~2.2 GB), run bounded encoder smoke test per Task-78 validation plan."},
+    {"id": "B2", "component": "Azure recurring cost", "blocker": "Free credit is finite/expiring; VM+disk+IP are billable; balance/expiration not readable via available CLI/API.", "impact": "Recurring-cost gate (Rs.0) UNRESOLVED; not a sustainable guarantee.", "resolution": "User must confirm billing setup, credit balance/expiry, and post-credit plan in the Azure portal (not done here; read-only constraint)."},
+    {"id": "B3", "component": "Qwen generation", "blocker": "No Qwen3-8B-Base inference serving implementation exists (training code only).", "impact": "Full Qwen assistant NOT feasible; generation gate UNRESOLVED.", "resolution": "Requires a separate task to build/evaluate an inference path (out of scope; VM CPU also impractical for 8B)."}
+  ],
+
+  "next_required_action": "User authorizes a separately scoped encoder benchmark (install torch+sentence-transformers, download bge-m3, run bounded smoke test) to close the p95/p99 gates AND confirms Azure billing/credit-expiry plan. Until then the verdict remains AZURE_RETRIEVAL_VALIDATION_PENDING.",
+
+  "hard_stops_observed": {
+    "no_provision_resize_restart_redeploy": true,
+    "no_large_dependency_install_or_model_download": true,
+    "no_training_or_dapt02_sft03": true,
+    "no_production_default_change": true,
+    "no_frozen_artifact_modification": true,
+    "no_full_qwen_generation_run": true,
+    "existing_application_and_opencode_preserved": true
+  },
+
+  "final_status": {
+    "actual_vm_size_and_architecture": "Standard_B4as_v2, westus2, x86_64 AMD EPYC 7763, 2 physical cores (4 vCPU), AVX2 present",
+    "available_ram_gib": 13.9,
+    "gpu_status": "none (CPU-only)",
+    "azure_credit_cost_status": "UNVERIFIABLE - free credit finite/expiring, not a sustainable Rs.0 guarantee; balance not readable",
+    "encoder_latency_measured": "NO (BLOCKED: bge-m3 not cached, torch/sentence-transformers absent, download out of scope)",
+    "retrieval_slo_gates_passed": 6,
+    "retrieval_slo_gates_unresolved": 4,
+    "retrieval_slo_gates_failed": 0,
+    "full_qwen_assistant_feasible": "NO",
+    "production_default_changed": "NO",
+    "infrastructure_provisioned_or_resized": "NO",
+    "final_verdict": "AZURE_RETRIEVAL_VALIDATION_PENDING"
+  }
+}

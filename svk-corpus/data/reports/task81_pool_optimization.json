@@ -1,0 +1,143 @@
+{
+  "task": 81,
+  "title": "BM25 Candidate-Pool Optimization Experiment",
+  "verdict": "OPTIMIZATION_PASS",
+  "verdict_rationale": "The heap top-k BM25 selection optimization is exactly equivalent to the full-sort baseline (235 real-query cases + 6/6 synthetic edge cases, max_rank_diff=0) and, combined with a BM25 candidate-pool cap of 250 and an experiment-local search_ranks primitive (avoids unnecessary BM25Result object construction), achieves end-to-end H3_RRF20 p95 = 693 ms and p99 = 748 ms — well under the proposed 2 s / 3 s gates — while preserving retrieval quality exactly (unit R@5 = 0.5385, source R@5 = 0.9783, evidence ceiling = 0.8372, ev0 = 7, matching the full-list control). All quality gates pass at pool >= 100; pool = 250 is the fastest eligible candidate with zero per-case regressions. Production defaults, frozen artifacts, and the existing application are unchanged.",
+
+  "baseline_profiling": {
+    "total_latency_ms": {"p50": 1165.81, "p95": 2137.52, "p99": 2616.92},
+    "cost_attribution_pct": {
+      "encode": 53.0, "build_bm25result": 12.6, "bm25_score": 9.2,
+      "fusion": 7.1, "dense": 6.7, "bm25_sort": 5.7, "dict_build": 4.4,
+      "norm": 0.0, "result_construct": 0.0
+    },
+    "n_bm25_scored_per_query": {"mean": 47132, "min": 576, "max": 113087},
+    "bottleneck": "BGE-M3 ENCODER (53% of total time). Within BM25: BM25Result object construction (12.6%) > scoring (9.2%) > sorting (5.7%).",
+    "key_finding": "BM25 scores ~47k docs/query via postings and sorts ALL scored docs regardless of top_k. The candidate-pool cap does NOT reduce BM25 scoring or sorting work — only the BM25Result object building and dict/fusion input size."
+  },
+
+  "candidate_pool_sweep": {
+    "note": "All variants use an experiment-local search_ranks primitive (returns rank/score dicts directly, no BM25Result objects). The pool cap applies ONLY to the BM25 input list to RRF; dense list is always full; RRF k=20, tie-breaking, evidence contract unchanged.",
+    "results": {
+      "50":   {"unit_r5": 0.5128, "src_r5": 0.9783, "ceil": 0.8295, "ev0": 7, "unit_mrr": 0.4607, "p50_ms": 532.8,  "p95_ms": 743.02, "p99_ms": 855.63,  "quality_gates": "FAIL", "regressions": 2, "recoveries": 0},
+      "100":  {"unit_r5": 0.5385, "src_r5": 0.9783, "ceil": 0.8372, "ev0": 7, "unit_mrr": 0.4656, "p50_ms": 518.91, "p95_ms": 766.64, "p99_ms": 937.61,  "quality_gates": "PASS", "regressions": 1, "recoveries": 0},
+      "250":  {"unit_r5": 0.5385, "src_r5": 0.9783, "ceil": 0.8372, "ev0": 7, "unit_mrr": 0.4618, "p50_ms": 480.86, "p95_ms": 692.83, "p99_ms": 748.05,  "quality_gates": "PASS", "regressions": 0, "recoveries": 0},
+      "500":  {"unit_r5": 0.5385, "src_r5": 0.9783, "ceil": 0.8372, "ev0": 7, "unit_mrr": 0.4618, "p50_ms": 492.87, "p95_ms": 708.54, "p99_ms": 742.66,  "quality_gates": "PASS", "regressions": 0, "recoveries": 0},
+      "1000": {"unit_r5": 0.5385, "src_r5": 0.9783, "ceil": 0.8372, "ev0": 7, "unit_mrr": 0.4618, "p50_ms": 486.31, "p95_ms": 693.57, "p99_ms": 754.95,  "quality_gates": "PASS", "regressions": 0, "recoveries": 0},
+      "full": {"unit_r5": 0.5385, "src_r5": 0.9783, "ceil": 0.8372, "ev0": 7, "unit_mrr": 0.4618, "p50_ms": 538.4,  "p95_ms": 831.06, "p99_ms": 1124.01, "quality_gates": "PASS (control)", "regressions": 0, "recoveries": 0}
+    },
+    "latency_samples_per_variant": 141,
+    "quality_samples": 47,
+    "peak_rss_mb": 3760.0
+  },
+
+  "cost_attribution_answer": {
+    "main_bottleneck": "BGE-M3 ENCODER (53%)",
+    "bm25_scoring_responsible": "NO (9.2% of total)",
+    "bm25_sorting_responsible": "NO (5.7% of total)",
+    "within_bm25": "BM25Result object construction (12.6%) > scoring (9.2%) > sorting (5.7%)",
+    "pool_cap_reduces_scoring_or_sorting": "NO — BM25 still scores ~47k docs and sorts all scored docs regardless of pool size. The pool cap only reduces BM25Result object building and dict/fusion input size.",
+    "honest_finding": "Per task section 2: truncating the BM25 list does NOT reduce the expensive scoring or sorting work. The fusion-input reduction is NOT a BM25 search optimization."
+  },
+
+  "true_bm25_optimization": {
+    "search_ranks": {
+      "description": "Experiment-local primitive that returns (rank_dict, score_dict) directly from the scored+sorted list, skipping BM25Result object construction for all ~47k scored docs. The hybrid path only needs rank/score dicts — the BM25Result objects are unnecessary work.",
+      "effect": "Service-level baseline (builds 47k BM25Result objects): p50 847 ms, p95 2082 ms. With search_ranks (pool=full): p50 538 ms, p95 831 ms. ~60% p95 reduction from avoiding object construction alone.",
+      "exact_equivalence": "Ranks and scores are identical to the original search(); only the wrapper objects are skipped."
+    },
+    "heap_topk": {
+      "description": "heapq.nsmallest(top_k, scores.items(), key=(-score, doc_idx)) instead of full sorted()[:top_k]. O(m log k) vs O(m log m).",
+      "exact_equivalence": "PASS — 235 real-query cases (5 pools x 47 queries) + 6/6 synthetic edge cases (equal scores tie-break, distinct scores, duplicate IDs, missing candidates, deterministic ranking, top_k > n_scored), max_rank_diff = 0.",
+      "latency_at_pool_1000": {"full_sort_p50_ms": 122.73, "heap_p50_ms": 86.54, "speedup": "~29%"},
+      "quality_at_pool_1000": {"unit_r5": 0.5385, "ceil": 0.8372, "note": "identical to full-sort pooled quality"},
+      "note": "Heap is only meaningful for bounded pools; full-list RRF still needs the full sort."
+    }
+  },
+
+  "quality_gates": {
+    "source_r5_min": 0.9783, "unit_r5_min": 0.5385, "ceil_min": 0.8372, "ev0_max": 7,
+    "pool_50":   {"pass": false, "reason": "unit_r5 0.5128 < 0.5385; ceil 0.8295 < 0.8372"},
+    "pool_100":  {"pass": true},
+    "pool_250":  {"pass": true},
+    "pool_500":  {"pass": true},
+    "pool_1000": {"pass": true},
+    "pool_full": {"pass": true, "note": "control"}
+  },
+
+  "per_case_analysis": {
+    "pool_50_regressions": [
+      {"example_id": "DAPT01EVAL-002", "control_unit_rank": 7, "variant_unit_rank": 8},
+      {"example_id": "DAPT01EVAL-023", "control_unit_rank": 3, "variant_unit_rank": 7}
+    ],
+    "pool_100_regressions": [
+      {"example_id": "DAPT01EVAL-002", "control_unit_rank": 7, "variant_unit_rank": 8}
+    ],
+    "pool_250_and_above": "0 regressions, 0 recoveries",
+    "recoveries_all_pools": "none"
+  },
+
+  "performance_gates": {
+    "target_p95_ms": 2000, "target_p99_ms": 3000,
+    "recommended_p95_ms": 692.83, "recommended_p99_ms": 748.05,
+    "p95_result": "PASS (693 ms << 2000 ms)",
+    "p99_result": "PASS (748 ms << 3000 ms)",
+    "memory": "peak RSS 3760 MB — no unacceptable increase (encoder dominates RSS)",
+    "cpu_contention": "torch threads bounded to 2; existing app + Ollama preserved",
+    "reproducibility": "141 latency samples per variant (3 iters x 47 queries); deterministic CPU inference"
+  },
+
+  "recommendation": {
+    "best_eligible_pool": 250,
+    "rationale": "Fastest eligible candidate (p95 693 ms) with zero per-case regressions and all quality gates passing. pool=100 also passes but has 1 regression (002: rank 7->8) and higher p95 (767 ms). pool>=250 has 0 regressions; 250 is the fastest of these.",
+    "enabling_changes": [
+      "search_ranks: avoid BM25Result object construction (experiment-local; the hybrid path only needs rank/score dicts)",
+      "heap top-k: heapq.nsmallest bounded selection instead of full sort (exact-equivalent; ~29% faster BM25 selection at pool=1000)",
+      "pool cap: limit BM25 candidate list supplied to RRF to 250 (dense list stays full; RRF k=20 unchanged)"
+    ],
+    "production_impact": "NONE — all changes are experiment-local. Production retrieval remains H1 BM25 by default; H3_RRF20 is opt-in and its production implementation is unchanged."
+  },
+
+  "limitations": [
+    "The candidate-pool cap does NOT reduce BM25 scoring or sorting work (those still process all ~47k scored docs). The latency reduction comes primarily from avoiding BM25Result object construction (search_ranks), not from the pool cap itself.",
+    "The heap top-k optimization is only meaningful for bounded pools; full-list RRF still requires the full sort.",
+    "Encoder latency (53% of total) is unchanged by this experiment — it is the dominant cost and would require a faster encoder or GPU to reduce further.",
+    "Latency numbers vary with CPU contention (service-level baseline p95 ranged 1517-2407 ms across runs); the sweep numbers are from a single controlled run.",
+    "No generation evaluation was run (out of scope per task). Any material change to retrieved evidence would require a separate four-arm generation evaluation before rollout."
+  ],
+
+  "unresolved_slos": [
+    "Recurring infrastructure cost (Rs.0): UNRESOLVED — Azure free credit is finite/expiring; billing not verifiable (carried from Task 79/80).",
+    "Full Qwen assistant generation: UNRESOLVED — no Qwen3-8B inference serving implementation exists (carried from Task 78/80)."
+  ],
+
+  "integrity_checks": {
+    "frozen_benchmark_unchanged": true,
+    "dense_index_unchanged": true,
+    "corpus_unchanged": true,
+    "source_registry_unchanged": true,
+    "policy_default_still_bm25": true,
+    "production_hybrid_path_unchanged": true,
+    "existing_application_preserved": true,
+    "ollama_preserved": true,
+    "regression_tests_service": "41/41 OK",
+    "tracked_file_changes": "none to src/, tests/, configs/ beyond the pre-existing Task-76 +27 [retrieval] lines; Task 81 added only new untracked artifacts (experiments/task81/, data/reports/task81_*)",
+    "training_started": false,
+    "infrastructure_provisioned": false,
+    "final_integrity_after": {"frozen_bench_sha_ok": true, "dense_index_sha_ok": true}
+  },
+
+  "final_status": {
+    "best_eligible_candidate_pool": 250,
+    "bm25_scoring_or_sorting_main_bottleneck": "NEITHER — encoder (53%) was the main bottleneck; within BM25, BM25Result construction (12.6%) > scoring (9.2%) > sorting (5.7%)",
+    "exact_ranking_equivalence": "PASS",
+    "retrieval_quality_gates_passed": "YES (pool >= 100; pool 250 recommended)",
+    "end_to_end_p95_ms": 692.83,
+    "end_to_end_p99_ms": 748.05,
+    "frozen_benchmark_integrity": "PASS",
+    "production_default_changed": "NO",
+    "training_started": "NO",
+    "infrastructure_provisioned": "NO",
+    "final_verdict": "OPTIMIZATION_PASS"
+  }
+}

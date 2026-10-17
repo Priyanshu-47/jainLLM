@@ -1,0 +1,1050 @@
+{
+  "task": "TASK 71 — R7 GOVERNED RAG CONTROLLED EVALUATION",
+  "verdict": "DO_NOT_RECOMMEND: context/behavioural or score regressions under R7 => do not recommend the R7 window",
+  "headline": {
+    "overall": {
+      "base": {
+        "macro_keyterm": 0.2021,
+        "pass_all": 6
+      },
+      "dapt": {
+        "macro_keyterm": 0.266,
+        "pass_all": 8
+      },
+      "base_rag": {
+        "macro_keyterm": 0.6312,
+        "pass_all": 29
+      },
+      "dapt_rag": {
+        "macro_keyterm": 0.6702,
+        "pass_all": 29
+      }
+    },
+    "vs_task69": {
+      "base": {
+        "task69": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "task71_r7": {
+          "macro_keyterm": 0.2021,
+          "pass_all": 6
+        },
+        "delta_macro": 0.0,
+        "delta_pass_all": 0
+      },
+      "dapt": {
+        "task69": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "task71_r7": {
+          "macro_keyterm": 0.266,
+          "pass_all": 8
+        },
+        "delta_macro": 0.0,
+        "delta_pass_all": 0
+      },
+      "base_rag": {
+        "task69": {
+          "macro_keyterm": 0.5816,
+          "pass_all": 25
+        },
+        "task71_r7": {
+          "macro_keyterm": 0.6312,
+          "pass_all": 29
+        },
+        "delta_macro": 0.0496,
+        "delta_pass_all": 4
+      },
+      "dapt_rag": {
+        "task69": {
+          "macro_keyterm": 0.5603,
+          "pass_all": 23
+        },
+        "task71_r7": {
+          "macro_keyterm": 0.6702,
+          "pass_all": 29
+        },
+        "delta_macro": 0.1099,
+        "delta_pass_all": 6
+      }
+    },
+    "rag_gain_over_base_r7": 0.4291,
+    "rag_gain_over_dapt_r7": 0.4042,
+    "dapt_gain_within_rag_r7": 0.039
+  },
+  "phase3_baseline_gate": {
+    "task": "TASK 71 Phase 3 — Task-69 BASE+RAG baseline reproduction",
+    "frozen_file": "data/evaluation/task69_base_rag_results.jsonl",
+    "frozen_sha256": "9bfd6fce30fa338904e3fe4c06689aa5f136630988f13c512d5bc9d480728e72",
+    "fresh_file": "data/evaluation/task71_baseline_base_rag_results.jsonl",
+    "fresh_sha256": "af9c851844bc27e382ee62088a5eff2869a56fc58f55943c8a5dec0d8b5aef15",
+    "prompts_sha_expected": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+    "n_frozen": 47,
+    "n_fresh": 47,
+    "mismatches": [],
+    "timing_note": "decode_seconds excluded (wall-clock, non-deterministic)",
+    "gate": "PASS",
+    "verified_byte_exact_fields": [
+      "answer",
+      "input_prompt_sha256",
+      "evidence_context_sha256",
+      "new_tokens",
+      "prompt_style",
+      "decoding",
+      "seed",
+      "system_prompt",
+      "n_evidence_items"
+    ],
+    "answer_sha256_all_match": true
+  },
+  "phase4_design": {
+    "r7_only_diff": "EVIDENCE_K 5->10, TEXT_TRUNC 500->1000 (verified)",
+    "config_diff": {
+      "evidence_k": {
+        "task69": 5,
+        "task71": 10
+      },
+      "text_trunc": {
+        "task69": 500,
+        "task71": 1000
+      }
+    },
+    "prompts_sha256": "8dd60723b03df16b2a20be2c43d6ab24fd09aeb73fcaa0b2c42536976d65ce11",
+    "task69_prompts_sha256": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+    "same_model_decoding_seed": true,
+    "no_rag_arms_reused_frozen": "dapt01_{base,dapt}_results.jsonl (byte-identical to Task-69 input)",
+    "run_metadata": {
+      "task": "TASK 71 — R7 GOVERNED RAG CONTROLLED EVALUATION (generation)",
+      "variant": "r7",
+      "model": "Qwen/Qwen3-8B-Base",
+      "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+      "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+      "adapter_merged": false,
+      "quantization": "4bit-nf4-double, compute dtype fp16 (identical for both arms)",
+      "attention_backend": "torch SDPA memory-efficient only (math disabled — math materializes SxSxH fp32 buffers and OOMs at R7 sequence lengths on the 14.5GiB T4; flash/cudnn disabled — invalid on sm75 T4; transformers enable_gqa forced to repeat_kv path — mem-efficient has no GQA kernel here. fp16 numerics; greedy/seed/cap/prompts/model unchanged)",
+      "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+      "system_prompt_identical_to_task60_task69": true,
+      "user_content": "governed evidence context + frozen question (identical bytes both arms)",
+      "prompts_file": "task71_r7_prompts.jsonl",
+      "prompts_sha256": "8dd60723b03df16b2a20be2c43d6ab24fd09aeb73fcaa0b2c42536976d65ce11",
+      "evidence_window": "R7 (EVIDENCE_K=10, TEXT_TRUNC=1000)",
+      "n_evidence_items_per_case": 10,
+      "prompt_style": "chat_template if available else plain_fallback",
+      "decoding": "greedy (do_sample=False)",
+      "max_new_tokens": 192,
+      "seed": 42,
+      "n_cases": 47,
+      "arms": [
+        "base_rag",
+        "dapt_rag"
+      ],
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu130",
+      "python": "3.13.15",
+      "transformers": "5.0.0",
+      "peft": "0.19.1",
+      "bitsandbytes": "0.50.2",
+      "model_load_seconds": 69.0,
+      "base_rag_infer_seconds": 685.3,
+      "adapter_attach_seconds": 1.4,
+      "dapt_rag_infer_seconds": 1554.5,
+      "identical_contexts_both_rag_arms": true,
+      "run_host": "Google Colab T4 (google-colab-cli; NOT Kaggle)",
+      "finished_at": "2026-10-02 15:30:23",
+      "outputs_reconstructed_from_exec_stdout": "Colab runtime disconnected after generation; RESULT_JSON stream from task71_r7_exec4.log (identical json.dumps serialization as file writer) used to rebuild the two jsonl outputs and this metadata file"
+    },
+    "baseline_run_metadata": {
+      "task": "TASK 71 — R7 GOVERNED RAG CONTROLLED EVALUATION (generation)",
+      "variant": "baseline",
+      "model": "Qwen/Qwen3-8B-Base",
+      "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+      "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+      "adapter_merged": false,
+      "quantization": "4bit-nf4-double, compute dtype fp16 (identical for both arms)",
+      "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+      "system_prompt_identical_to_task60_task69": true,
+      "user_content": "governed evidence context + frozen question (identical bytes both arms)",
+      "prompts_file": "task69_rag_prompts.jsonl",
+      "prompts_sha256": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+      "evidence_window": "Task-69 (EVIDENCE_K=5, TEXT_TRUNC=500)",
+      "n_evidence_items_per_case": 5,
+      "prompt_style": "chat_template if available else plain_fallback",
+      "decoding": "greedy (do_sample=False)",
+      "max_new_tokens": 192,
+      "seed": 42,
+      "n_cases": 47,
+      "arms": [
+        "base_rag"
+      ],
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu130",
+      "python": "3.13.15",
+      "transformers": "5.0.0",
+      "peft": "0.19.1",
+      "bitsandbytes": "0.50.2",
+      "model_load_seconds": 69.7,
+      "base_rag_infer_seconds": 546.5,
+      "identical_contexts_both_rag_arms": true,
+      "run_host": "Google Colab T4 (google-colab-cli; NOT Kaggle)",
+      "finished_at": "2026-10-02 14:23:06"
+    }
+  },
+  "phase5_scores_vs_task69": {
+    "base": {
+      "task69": {
+        "macro_keyterm": 0.2021,
+        "pass_all": 6
+      },
+      "task71_r7": {
+        "macro_keyterm": 0.2021,
+        "pass_all": 6
+      },
+      "delta_macro": 0.0,
+      "delta_pass_all": 0
+    },
+    "dapt": {
+      "task69": {
+        "macro_keyterm": 0.266,
+        "pass_all": 8
+      },
+      "task71_r7": {
+        "macro_keyterm": 0.266,
+        "pass_all": 8
+      },
+      "delta_macro": 0.0,
+      "delta_pass_all": 0
+    },
+    "base_rag": {
+      "task69": {
+        "macro_keyterm": 0.5816,
+        "pass_all": 25
+      },
+      "task71_r7": {
+        "macro_keyterm": 0.6312,
+        "pass_all": 29
+      },
+      "delta_macro": 0.0496,
+      "delta_pass_all": 4
+    },
+    "dapt_rag": {
+      "task69": {
+        "macro_keyterm": 0.5603,
+        "pass_all": 23
+      },
+      "task71_r7": {
+        "macro_keyterm": 0.6702,
+        "pass_all": 29
+      },
+      "delta_macro": 0.1099,
+      "delta_pass_all": 6
+    }
+  },
+  "phase6_retrieval": {
+    "task69": {
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.804,
+      "unit_mrr": 0.3333,
+      "unit_hit_at_10": 16,
+      "evidence_answer_score_mean": 0.6318,
+      "evidence_answer_score_full": 26,
+      "abstention_evidence_forbidden_hits": 4,
+      "context_chars_median": 4198
+    },
+    "task71_r7": {
+      "source_recall_at_5": 0.913,
+      "source_recall_at_10": 0.9783,
+      "source_mrr": 0.804,
+      "unit_mrr": 0.3333,
+      "unit_hit_at_10": 16,
+      "evidence_answer_score_mean": 0.7403,
+      "evidence_answer_score_full": 31,
+      "abstention_evidence_forbidden_hits": 4,
+      "context_chars_median": 11602
+    },
+    "task70_r7_offline_prediction": {
+      "evidence_ceiling_mean": 0.7403,
+      "evidence_ceiling_full": 31,
+      "ev0_count": 10,
+      "ev0_cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "abstention_forbidden_hit_count": 4,
+      "contract_violations": 0,
+      "source_recall_at_10": 0.9783,
+      "unit_recall_at_10": 0.4103
+    },
+    "prediction_match": {
+      "ceiling_mean_match": true,
+      "ceiling_full_match": true,
+      "ev0_count_match": true,
+      "ev0_cases_match": true,
+      "abstention_hits_match": true,
+      "contract_zero": true
+    },
+    "config_diff_vs_task69": {
+      "evidence_k": {
+        "task69": 5,
+        "task71": 10
+      },
+      "text_trunc": {
+        "task69": 500,
+        "task71": 1000
+      }
+    },
+    "config_diff_verified": true
+  },
+  "phase7_failures": {
+    "counts_r7": {
+      "base_rag": {
+        "GROUNDED_SUCCESS": 27,
+        "RETRIEVAL_INSUFFICIENT": 8,
+        "PRIOR_KNOWLEDGE": 2,
+        "GENERATION_FAILURE": 6,
+        "GENERATION_FABRICATION": 3,
+        "RETRIEVAL_RISK_CONTRIBUTED": 1
+      },
+      "dapt_rag": {
+        "GROUNDED_SUCCESS": 25,
+        "RETRIEVAL_INSUFFICIENT": 8,
+        "PRIOR_KNOWLEDGE": 4,
+        "GENERATION_FAILURE": 6,
+        "RETRIEVAL_RISK_CONTRIBUTED": 2,
+        "GENERATION_FABRICATION": 1,
+        "ABSTENTION_CORRECT": 1
+      }
+    },
+    "counts_task69": {
+      "base_rag": {
+        "GROUNDED_SUCCESS": 21,
+        "RETRIEVAL_INSUFFICIENT": 13,
+        "PRIOR_KNOWLEDGE": 3,
+        "GENERATION_FAILURE": 5,
+        "RETRIEVAL_LIMITED": 1,
+        "GENERATION_FABRICATION": 2,
+        "ABSTENTION_CORRECT": 1,
+        "RETRIEVAL_RISK_CONTRIBUTED": 1
+      },
+      "dapt_rag": {
+        "GENERATION_FAILURE": 8,
+        "RETRIEVAL_INSUFFICIENT": 12,
+        "GROUNDED_SUCCESS": 19,
+        "PRIOR_KNOWLEDGE": 4,
+        "RETRIEVAL_RISK_CONTRIBUTED": 2,
+        "GENERATION_FABRICATION": 2
+      }
+    },
+    "split_r7": {
+      "base_rag": {
+        "retrieval_side": 9,
+        "generation_side": 9,
+        "success": 27,
+        "prior_knowledge": 2,
+        "not_measured": 0
+      },
+      "dapt_rag": {
+        "retrieval_side": 10,
+        "generation_side": 7,
+        "success": 26,
+        "prior_knowledge": 4,
+        "not_measured": 0
+      }
+    },
+    "split_task69": {
+      "base_rag": {
+        "retrieval_side": 15,
+        "generation_side": 7,
+        "success": 22,
+        "prior_knowledge": 3,
+        "not_measured": 0
+      },
+      "dapt_rag": {
+        "retrieval_side": 14,
+        "generation_side": 10,
+        "success": 19,
+        "prior_knowledge": 4,
+        "not_measured": 0
+      }
+    },
+    "recovered_cases": [
+      {
+        "example_id": "DAPT01EVAL-004",
+        "evidence_score_task69_k5": 0.0,
+        "evidence_score_task71_r7": 1.0,
+        "scores_task69": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 1.0,
+          "dapt_rag": 1.0
+        },
+        "scores_task71_r7": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 1.0,
+          "dapt_rag": 1.0
+        },
+        "failure_class_task69": {
+          "base_rag": "PRIOR_KNOWLEDGE",
+          "dapt_rag": "PRIOR_KNOWLEDGE"
+        },
+        "failure_class_task71_r7": {
+          "base_rag": "GROUNDED_SUCCESS",
+          "dapt_rag": "GROUNDED_SUCCESS"
+        }
+      },
+      {
+        "example_id": "DAPT01EVAL-011",
+        "evidence_score_task69_k5": 0.0,
+        "evidence_score_task71_r7": 0.5,
+        "scores_task69": {
+          "base": 0.0,
+          "dapt": 0.5,
+          "base_rag": 0.0,
+          "dapt_rag": 0.5
+        },
+        "scores_task71_r7": {
+          "base": 0.0,
+          "dapt": 0.5,
+          "base_rag": 0.0,
+          "dapt_rag": 1.0
+        },
+        "failure_class_task69": {
+          "base_rag": "RETRIEVAL_INSUFFICIENT",
+          "dapt_rag": "RETRIEVAL_INSUFFICIENT"
+        },
+        "failure_class_task71_r7": {
+          "base_rag": "GENERATION_FAILURE",
+          "dapt_rag": "PRIOR_KNOWLEDGE"
+        }
+      },
+      {
+        "example_id": "DAPT01EVAL-021",
+        "evidence_score_task69_k5": 0.0,
+        "evidence_score_task71_r7": 1.0,
+        "scores_task69": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 0.0
+        },
+        "scores_task71_r7": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 0.0
+        },
+        "failure_class_task69": {
+          "base_rag": "RETRIEVAL_INSUFFICIENT",
+          "dapt_rag": "RETRIEVAL_INSUFFICIENT"
+        },
+        "failure_class_task71_r7": {
+          "base_rag": "GENERATION_FAILURE",
+          "dapt_rag": "GENERATION_FAILURE"
+        }
+      },
+      {
+        "example_id": "DAPT01EVAL-023",
+        "evidence_score_task69_k5": 0.0,
+        "evidence_score_task71_r7": 0.3333333333333333,
+        "scores_task69": {
+          "base": 0.3333333333333333,
+          "dapt": 0.6666666666666666,
+          "base_rag": 0.0,
+          "dapt_rag": 0.6666666666666666
+        },
+        "scores_task71_r7": {
+          "base": 0.3333333333333333,
+          "dapt": 0.6666666666666666,
+          "base_rag": 0.0,
+          "dapt_rag": 0.6666666666666666
+        },
+        "failure_class_task69": {
+          "base_rag": "RETRIEVAL_INSUFFICIENT",
+          "dapt_rag": "RETRIEVAL_INSUFFICIENT"
+        },
+        "failure_class_task71_r7": {
+          "base_rag": "GENERATION_FAILURE",
+          "dapt_rag": "PRIOR_KNOWLEDGE"
+        }
+      },
+      {
+        "example_id": "DAPT01EVAL-044",
+        "evidence_score_task69_k5": 0.0,
+        "evidence_score_task71_r7": 1.0,
+        "scores_task69": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 0.0,
+          "dapt_rag": 0.0
+        },
+        "scores_task71_r7": {
+          "base": 0.0,
+          "dapt": 0.0,
+          "base_rag": 1.0,
+          "dapt_rag": 1.0
+        },
+        "failure_class_task69": {
+          "base_rag": "RETRIEVAL_INSUFFICIENT",
+          "dapt_rag": "RETRIEVAL_INSUFFICIENT"
+        },
+        "failure_class_task71_r7": {
+          "base_rag": "GROUNDED_SUCCESS",
+          "dapt_rag": "GROUNDED_SUCCESS"
+        }
+      }
+    ],
+    "residual_ev0": {
+      "cases": [
+        "DAPT01EVAL-002",
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-009",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-014",
+        "DAPT01EVAL-017",
+        "DAPT01EVAL-018",
+        "DAPT01EVAL-045",
+        "DAPT01EVAL-047"
+      ],
+      "note": "evidence score 0 under R7 (retrieval-side residual)",
+      "per_arm_failure_class": {
+        "base_rag": [
+          "DAPT01EVAL-002",
+          "DAPT01EVAL-007",
+          "DAPT01EVAL-010",
+          "DAPT01EVAL-013",
+          "DAPT01EVAL-014",
+          "DAPT01EVAL-017",
+          "DAPT01EVAL-018",
+          "DAPT01EVAL-045"
+        ],
+        "dapt_rag": [
+          "DAPT01EVAL-002",
+          "DAPT01EVAL-007",
+          "DAPT01EVAL-010",
+          "DAPT01EVAL-013",
+          "DAPT01EVAL-014",
+          "DAPT01EVAL-017",
+          "DAPT01EVAL-018",
+          "DAPT01EVAL-045"
+        ]
+      }
+    },
+    "definitions": {
+      "RETRIEVAL_INSUFFICIENT": "evidence context contains none of the answer keyterms (ev=0)",
+      "RETRIEVAL_LIMITED": "answer == evidence ceiling < 1",
+      "RETRIEVAL_RISK_CONTRIBUTED": "abstention failure where the forbidden pattern also occurs in the evidence",
+      "GENERATION_FAILURE": "answer scored below what the evidence supports (ans < ev)",
+      "GENERATION_FABRICATION": "abstention failure; forbidden pattern absent from evidence",
+      "GROUNDED_SUCCESS": "answer==1 and evidence==1",
+      "ABSTENTION_CORRECT": "marker present, no forbidden claim",
+      "PRIOR_KNOWLEDGE": "answer==1 while evidence ceiling < 1 (or partial credit beyond ceiling)"
+    }
+  },
+  "phase8_budget": {
+    "context_chars": {
+      "task69": {
+        "median": 4198,
+        "mean": 4348.7,
+        "max": 6083,
+        "min": 2927
+      },
+      "task71_r7": {
+        "median": 11602,
+        "mean": 11710.3,
+        "max": 15375,
+        "min": 8386
+      },
+      "growth_mean_x": 2.69,
+      "growth_median_x": 2.76
+    },
+    "evidence_items": {
+      "task69": 5,
+      "task71_r7": 10
+    },
+    "at_cap_192": {
+      "base_rag": {
+        "task69": 9,
+        "task71_r7": 12
+      },
+      "dapt_rag": {
+        "task69": 39,
+        "task71_r7": 42
+      }
+    },
+    "answer_len_median_chars": {
+      "base_rag": {
+        "task69": 162,
+        "task71_r7": 166
+      },
+      "dapt_rag": {
+        "task69": 795,
+        "task71_r7": 790
+      }
+    },
+    "decode_seconds": {
+      "base_rag": 685.3,
+      "dapt_rag": 1554.5,
+      "model_load": 69.0,
+      "task69_reference": {
+        "base_rag": 556.6,
+        "dapt_rag": 1436.6
+      }
+    },
+    "input_prompt_sha_recorded": true,
+    "decode_json_bytes": null
+  },
+  "phase9_decision_gate": {
+    "criteria": {
+      "ceiling_mean_up": true,
+      "ceiling_matches_task70_r7_prediction": true,
+      "base_rag_macro_up": true,
+      "base_rag_pass_up": true,
+      "dapt_rag_macro_up": true,
+      "dapt_rag_pass_up": true,
+      "either_rag_arm_e2e_up": true,
+      "neither_rag_arm_macro_down": true,
+      "neither_rag_arm_pass_down": true,
+      "abstention_not_regressed_vs_task69": false,
+      "contract_violations_zero": true,
+      "identical_contexts_both_rag_arms": true,
+      "baseline_gate_pass": true,
+      "no_loop_increase": false
+    },
+    "material_regressions": [
+      "abstention vs Task-69: base_rag 1->0, dapt_rag 0->1 (total 1->1)",
+      "loops up (1, 5) -> (0, 8)"
+    ],
+    "per_case_vs_task69": {
+      "improved_n": 13,
+      "improved": [
+        "DAPT01EVAL-001:dapt_rag:0.0->1.0",
+        "DAPT01EVAL-011:dapt_rag:0.5->1.0",
+        "DAPT01EVAL-025:dapt_rag:0.0->1.0",
+        "DAPT01EVAL-026:base_rag:0.6666666666666666->1.0",
+        "DAPT01EVAL-026:dapt_rag:0.3333333333333333->1.0",
+        "DAPT01EVAL-027:dapt_rag:0.6666666666666666->1.0",
+        "DAPT01EVAL-031:base_rag:0.5->1.0",
+        "DAPT01EVAL-035:dapt_rag:0.0->1.0",
+        "DAPT01EVAL-038:dapt_rag:0.0->1.0",
+        "DAPT01EVAL-041:base_rag:0.5->1.0",
+        "DAPT01EVAL-044:base_rag:0.0->1.0",
+        "DAPT01EVAL-044:dapt_rag:0.0->1.0",
+        "DAPT01EVAL-047:base_rag:0.0->1.0"
+      ],
+      "regressed_n": 3,
+      "regressed": [
+        "DAPT01EVAL-016:dapt_rag:1.0->0.6666666666666666",
+        "DAPT01EVAL-020:dapt_rag:1.0->0.0",
+        "DAPT01EVAL-038:base_rag:1.0->0.0"
+      ]
+    },
+    "looped": {
+      "task69": [
+        1,
+        5
+      ],
+      "task71_r7": [
+        0,
+        8
+      ]
+    },
+    "outcome": "DO_NOT_RECOMMEND",
+    "rationale": "context/behavioural or score regressions under R7 => do not recommend the R7 window",
+    "production_retrieval_changed": false
+  },
+  "category_table": [
+    {
+      "category": "ABSTENTION",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.0,
+      "base_rag_pass_all": 0,
+      "dapt_rag_mean": 0.25,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "AGAM_GROUNDED",
+      "n": 4,
+      "base_mean": 0.25,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0833,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "GUJARATI",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.25,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.0,
+      "dapt_rag_pass_all": 0
+    },
+    {
+      "category": "HINDI",
+      "n": 4,
+      "base_mean": 0.1667,
+      "base_pass_all": 0,
+      "dapt_mean": 0.25,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.4167,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.3333,
+      "dapt_rag_pass_all": 0
+    },
+    {
+      "category": "JAIN_TERMINOLOGY",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "MULTILINGUAL_MAPPING",
+      "n": 4,
+      "base_mean": 0.5,
+      "base_pass_all": 2,
+      "dapt_mean": 0.5,
+      "dapt_pass_all": 2,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "PRACTICE",
+      "n": 4,
+      "base_mean": 0.375,
+      "base_pass_all": 0,
+      "dapt_mean": 0.625,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 0.875,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "PRAKRIT",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.375,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.5,
+      "base_rag_pass_all": 2,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "SANSKRIT",
+      "n": 3,
+      "base_mean": 0.1111,
+      "base_pass_all": 0,
+      "dapt_mean": 0.2222,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.3333,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.5556,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "SOURCE_ATTRIBUTION",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.125,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "STHANAKAVASI_DISTINCTION",
+      "n": 4,
+      "base_mean": 1.0,
+      "base_pass_all": 4,
+      "dapt_mean": 0.75,
+      "dapt_pass_all": 3,
+      "base_rag_mean": 1.0,
+      "base_rag_pass_all": 4,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "STHANAKAVASI_TERMINOLOGY",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.25,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    }
+  ],
+  "language_table": [
+    {
+      "language": "en",
+      "n": 34,
+      "base_mean": 0.2304,
+      "dapt_mean": 0.2647,
+      "base_rag_mean": 0.7353,
+      "dapt_rag_mean": 0.799
+    },
+    {
+      "language": "gu",
+      "n": 5,
+      "base_mean": 0.0,
+      "dapt_mean": 0.0,
+      "base_rag_mean": 0.2,
+      "dapt_rag_mean": 0.0
+    },
+    {
+      "language": "hi",
+      "n": 8,
+      "base_mean": 0.2083,
+      "dapt_mean": 0.4375,
+      "base_rag_mean": 0.4583,
+      "dapt_rag_mean": 0.5417
+    }
+  ],
+  "abstention": {
+    "n_cases": 4,
+    "base_correct": 0,
+    "dapt_correct": 0,
+    "base_rag_correct": 0,
+    "dapt_rag_correct": 1,
+    "per_case": [
+      {
+        "example_id": "DAPT01EVAL-036",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "(18|19|20)\\d{2}"
+        ],
+        "base_answer": "The book 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1970.",
+        "dapt_answer": "'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1914. It is a historical account of the Sthanakavasi community, providing insights into their practices and traditions. This work is considered an important source for understanding the history ",
+        "base_rag_answer": "The exact publication year of 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari is not provided in the given evidence. However, it is mentioned that the book is available on Jain Quantum, which suggests it is a recent publication. For the precise year, you may ",
+        "dapt_rag_answer": "1912\n[End of answer]"
+      },
+      {
+        "example_id": "DAPT01EVAL-037",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "\\b(17|18)\\d{2}\\b"
+        ],
+        "base_answer": "The Terapanth was founded in the year 1916.",
+        "dapt_answer": "The Terapanth was founded in 1669. This is based on the account of the first Terapanthi, Bhagwanlal IndrajI, who was born in 1669. His birth is considered the beginning of the Terapanth. The Terapanthi community, therefore, celebrates the anniversary of Bhagwa",
+        "base_rag_answer": "The Terapanth was founded in 1916 by Bhagwan Swaminarayan.",
+        "dapt_rag_answer": "The Terapanth was founded in 1658 by Bhagwan Bhagwandas. This event marked the beginning of a distinct Jain community within the Svetambara tradition. The Terapanthi community is characterized by its rejection of idol worship and its emphasis on the teachings "
+      },
+      {
+        "example_id": "DAPT01EVAL-038",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": true,
+        "evidence_forbidden_hits": [
+          "(?:publisher is|published by|issued by)\\s+(?!not\\b|unknown|no\\b|none)"
+        ],
+        "base_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Jain Society of Bombay.",
+        "dapt_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Oxford University Press. It was written by Lewis Rice, a British scholar and a Jain layman. The book provides a detailed account of Jainism, its history, and its practices. It is considered a valua",
+        "base_rag_answer": "Notes on Modern Jainism (1910) was published by Mrs. Sinclair Stevenson.",
+        "dapt_rag_answer": "The author of 'Notes on Modern Jainism' (1910) is Mrs. Sinclair Stevenson. She is the author of the book, which was published in 1910. The book is a collection of notes on modern Jainism, providing insights into the Jain community and its practices. The author"
+      },
+      {
+        "example_id": "DAPT01EVAL-039",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "\\b(24|36|45|64|72)\\s*(agam|aagam)"
+        ],
+        "base_answer": "The Digambara tradition accepts 12 Agams. These texts are considered to be the oral teachings of Mahavira, the 24th Tirthankara of Jainism, and are believed to have been passed down through generations of Jain monks.",
+        "dapt_answer": "The Digambara tradition accepts 24 Agams. These Agams are considered to be the sacred scriptures of the Jain community, containing the teachings of the Tirthankars. The content of these Agams is believed to have been lost over time, leaving only the names and ",
+        "base_rag_answer": "The Digambara tradition accepts 12 Agams. These are the original and authentic scriptures believed to be the teachings of Bhagavan Mahavir. The other 20 Agams are considered elaborative or auxiliary works of the later period.",
+        "dapt_rag_answer": "The Digambara tradition accepts 24 Agams. This is in contrast to the Sthanakavasi and Terapanthi sects, who believe that only 32 Agams are original and authentic. The other Agams are considered to be elaborative or auxiliary works of the later period. The Diga"
+      }
+    ]
+  },
+  "behaviour": {
+    "base": {
+      "n": 47,
+      "looped_cases": 0,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 199,
+      "answer_len_mean": 207.4,
+      "answer_len_max": 553,
+      "mode_opener": "ahimsa, as defined by j",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "dapt": {
+      "n": 47,
+      "looped_cases": 1,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 330,
+      "answer_len_mean": 367.9,
+      "answer_len_max": 1012,
+      "mode_opener": "ahimsa is defined as the avoidance of all forms of violence, encompassing not only physical harm but also mental and verbal harm",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "base_rag": {
+      "n": 47,
+      "looped_cases": 0,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 166,
+      "answer_len_mean": 206.7,
+      "answer_len_max": 812,
+      "mode_opener": "ahimsa, or non-injury, is defined as especially non-injury to animal life in j",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "dapt_rag": {
+      "n": 47,
+      "looped_cases": 8,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 790,
+      "answer_len_mean": 623.6,
+      "answer_len_max": 1088,
+      "mode_opener": "the author of 'notes on modern jainism' (1910) is mrs",
+      "mode_opener_count": 2,
+      "mode_opener_share": 0.0426,
+      "distinct_openers": 46
+    }
+  },
+  "attribution": {
+    "base": {
+      "cited_evidence_author": 13,
+      "cited_attribution_word": 16,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "dapt": {
+      "cited_evidence_author": 13,
+      "cited_attribution_word": 11,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "base_rag": {
+      "cited_evidence_author": 9,
+      "cited_attribution_word": 9,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "dapt_rag": {
+      "cited_evidence_author": 12,
+      "cited_attribution_word": 12,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    }
+  },
+  "identical_contexts_verified": true,
+  "integrity": {
+    "frozen_cases_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "prompts_sha256": "8dd60723b03df16b2a20be2c43d6ab24fd09aeb73fcaa0b2c42536976d65ce11",
+    "task69_prompts_sha256": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+    "baseline_gate": "PASS",
+    "artifact_sha256": {
+      "task71_base_rag_results.jsonl": "708bb13b8cd70ec4b47f617e8bd1578bdd2ad37685ed512eb9c4ee95a7b2bc45",
+      "task71_dapt_rag_results.jsonl": "3f1b3e7c115ddbcb758ceda5ece120bd5df007235251b93b3e6c2e4376d83c4e",
+      "task71_r7_evidence.jsonl": "261d6e4f577914b846ebb03bb0ee4b47370a25eb979ed3cb44e357f474c6fd21",
+      "task71_r7_prompts.jsonl": "8dd60723b03df16b2a20be2c43d6ab24fd09aeb73fcaa0b2c42536976d65ce11",
+      "task71_r7_metrics.json": "8f00daa994d929cccdf86f758a4dc1978a2e8d448d2b2e5848d3b7f3c6bca8c8",
+      "task71_r7_comparison.json": "5bcb2da6fb7aea320144a61f89e728920cb83972f2d8380e09faaeb0f5a02325",
+      "task71_r7_run_metadata.json": "ad6ef9e64d10ce994718bb8696b4e930d4d83779fa3d1e57bc1d59974defe3c6",
+      "task71_baseline_base_rag_results.jsonl": "af9c851844bc27e382ee62088a5eff2869a56fc58f55943c8a5dec0d8b5aef15",
+      "task71_baseline_check.json": "cbeb69bc7ed5462b138e07bb54bb4cdf6d9be13991b8206fda42872121c383ad",
+      "task71_baseline_run_metadata.json": "4840d2612e60120e87377698a5c5edc5edf8aec6011f43d33d3b7de598b586d3",
+      "task71_r7_results.jsonl": "baaed123f71c183afe6414657adc5a90c80716de55b8c53cf54bd2b3026f8b89"
+    }
+  },
+  "artifacts": {
+    "consolidated_results": "data/evaluation/task71_r7_results.jsonl",
+    "comparison": "data/evaluation/task71_r7_comparison.json",
+    "report_md": "data/reports/task71_r7_evaluation.md",
+    "report_json": "data/reports/task71_r7_evaluation.json"
+  },
+  "not_measured": [
+    "evaluator-based fields (factual_error etc.): cover base/dapt only via the frozen Task-60 review file; RAG arms NOT_MEASURED (never synthesised)",
+    "dense-channel contribution: NOT_MEASURED (UnavailableDense; no new embedding model)",
+    "query-side sect metadata filters: NOT_APPLICABLE (questions carry no query metadata)",
+    "fluency/grammar, human preference: NOT_MEASURED",
+    "graded passage-level relevance: NOT_MEASURED (no graded qrels)"
+  ],
+  "run_metadata": {
+    "task": "TASK 71 — R7 GOVERNED RAG CONTROLLED EVALUATION (generation)",
+    "variant": "r7",
+    "model": "Qwen/Qwen3-8B-Base",
+    "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "adapter_merged": false,
+    "quantization": "4bit-nf4-double, compute dtype fp16 (identical for both arms)",
+    "attention_backend": "torch SDPA memory-efficient only (math disabled — math materializes SxSxH fp32 buffers and OOMs at R7 sequence lengths on the 14.5GiB T4; flash/cudnn disabled — invalid on sm75 T4; transformers enable_gqa forced to repeat_kv path — mem-efficient has no GQA kernel here. fp16 numerics; greedy/seed/cap/prompts/model unchanged)",
+    "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+    "system_prompt_identical_to_task60_task69": true,
+    "user_content": "governed evidence context + frozen question (identical bytes both arms)",
+    "prompts_file": "task71_r7_prompts.jsonl",
+    "prompts_sha256": "8dd60723b03df16b2a20be2c43d6ab24fd09aeb73fcaa0b2c42536976d65ce11",
+    "evidence_window": "R7 (EVIDENCE_K=10, TEXT_TRUNC=1000)",
+    "n_evidence_items_per_case": 10,
+    "prompt_style": "chat_template if available else plain_fallback",
+    "decoding": "greedy (do_sample=False)",
+    "max_new_tokens": 192,
+    "seed": 42,
+    "n_cases": 47,
+    "arms": [
+      "base_rag",
+      "dapt_rag"
+    ],
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "python": "3.13.15",
+    "transformers": "5.0.0",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.50.2",
+    "model_load_seconds": 69.0,
+    "base_rag_infer_seconds": 685.3,
+    "adapter_attach_seconds": 1.4,
+    "dapt_rag_infer_seconds": 1554.5,
+    "identical_contexts_both_rag_arms": true,
+    "run_host": "Google Colab T4 (google-colab-cli; NOT Kaggle)",
+    "finished_at": "2026-10-02 15:30:23",
+    "outputs_reconstructed_from_exec_stdout": "Colab runtime disconnected after generation; RESULT_JSON stream from task71_r7_exec4.log (identical json.dumps serialization as file writer) used to rebuild the two jsonl outputs and this metadata file"
+  }
+}

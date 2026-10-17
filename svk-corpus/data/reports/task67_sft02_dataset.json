@@ -1,0 +1,406 @@
+{
+  "task": 67,
+  "title": "SFT-02 dataset build from Task-66 failure analysis (data + gate + tests + config only)",
+  "date": "2026-10-01",
+  "scope_declaration": {
+    "training_run": false,
+    "kaggle_api_call": false,
+    "launch": false,
+    "frozen_benchmark_modified": false,
+    "current_best": {
+      "experiment": "DAPT-01",
+      "factual_grounding": 0.266
+    },
+    "sft01_status": "unpromoted (0.2305 < DAPT-01 0.2660)",
+    "statement": "Analysis-only task extended with dataset construction. No model was trained, no Kaggle kernel created or launched, the frozen 47-case benchmark is byte-identical."
+  },
+  "repository_state": {
+    "git_diff_tracked": "empty (0 tracked modifications)",
+    "git_status": "untracked files only (this task adds task67_* outputs; sft/task-64..66 files remain untracked as before)",
+    "frozen_benchmark": {
+      "path": "data/evaluation/dapt01_eval_cases.jsonl",
+      "sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+      "expected_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+      "unchanged": true
+    }
+  },
+  "deliverables": [
+    {
+      "path": "data/training/sft_train_v2.jsonl",
+      "detail": "61 rows",
+      "sha256": "3a45925f7f3e3c8d7beaecff4b1a6ac14592dc12b9849c8b70c32bb328b5b7e5"
+    },
+    {
+      "path": "data/evaluation/sft_eval_v2.jsonl",
+      "detail": "13 rows",
+      "sha256": "ba59533699b28328e4dc9e5fa3df1c24a0b026824bafc852cfc703f38e6fcc35"
+    },
+    {
+      "path": "data/reports/task67_sft02_build_stats.json",
+      "detail": "build stats",
+      "sha256": "ff57d93e9b7b6986ae8832cae5c407979824c6c1ee18804769d6633fe1c4a5cb"
+    },
+    {
+      "path": "experiments/sft_02/sft02_common.py",
+      "detail": "shared helpers / constants",
+      "sha256": "aadb170f9cabc8cea823825ffb98403d59fc8c2b14582f0a64d18bf9d093b351"
+    },
+    {
+      "path": "experiments/sft_02/anti_template_gate.py",
+      "detail": "Phase-5 anti-template gate",
+      "sha256": "ab31d7e78392f42bb82cb8f7ab8a1e80a8f47803176f6d404f9c676847d6f6da"
+    },
+    {
+      "path": "experiments/sft_02/build_sft02_dataset.py",
+      "detail": "dataset builder",
+      "sha256": "68b505e0673a5903dee5508263f00b96ed2c6876ea83ebab9605a9bca2f5475c"
+    },
+    {
+      "path": "experiments/sft_02/validate_sft02_dataset.py",
+      "detail": "25-check validator",
+      "sha256": "3b875638f7971e20f49a24e096f5f97aa0eb1e0ee7246473f4a87d1b5c401887"
+    },
+    {
+      "path": "tests/test_sft02_dataset.py",
+      "detail": "27 tests",
+      "sha256": "466ea4e3b55e242609df20cbcd90fedeeb47ec971d22e4fbfc583548cb356b84"
+    },
+    {
+      "path": "configs/sft_qwen3_8b_sft02_v1.yaml",
+      "detail": "conservative training config (not launched)",
+      "sha256": "98ffe53e5dba1d89ac2b5981445dcfefe8cb062bb4b0d0edfb94903944066598"
+    },
+    {
+      "path": "data/reports/task67_sft02_dataset.md",
+      "detail": "this report",
+      "sha256": "6b7ab8335b25919097cd098f35ace23c462b5030563bbb06f5f5dbf6bea1a244"
+    },
+    {
+      "path": "data/reports/task67_sft02_dataset.json",
+      "detail": "machine-readable report",
+      "sha256": "self (computed after write)"
+    }
+  ],
+  "inputs_read_only": {
+    "gold_candidates": 54,
+    "sft_train_v1": 50,
+    "sft_eval_v1": 9,
+    "verified_pool": 16409,
+    "corpus_units": 97763,
+    "corpus_sources": 39,
+    "manifest_sources": 107,
+    "frozen_cases": 47,
+    "frozen_sources_excluded": 18
+  },
+  "dataset": {
+    "totals": {
+      "train": 61,
+      "eval": 13,
+      "total": 74
+    },
+    "category_counts": {
+      "ABSTENTION/INSUFFICIENT_EVIDENCE": 12,
+      "CANONICAL_VS_COMMENTARY": 9,
+      "GENERAL_JAIN_CONCEPT": 2,
+      "GUJARATI": 4,
+      "HINDI": 5,
+      "JAIN_CONCEPT": 1,
+      "PRACTICE_EXPLANATION": 11,
+      "PRAKRIT": 1,
+      "SOURCE_ATTRIBUTION": 18,
+      "STHANAKAVASI_DISTINCTION": 8,
+      "STHANAKAVASI_TERMINOLOGY": 3
+    },
+    "task_category_counts": {
+      "abstention": 12,
+      "canonical_commentary_distinction": 9,
+      "cross_tradition_distinction": 8,
+      "general_qa": 14,
+      "multilingual_mapping": 9,
+      "prakrit_explanation": 1,
+      "source_citation": 18,
+      "sthanaqa": 3
+    },
+    "language_counts": {
+      "English": 2,
+      "en": 54,
+      "gu": 5,
+      "hi": 5,
+      "pra": 7,
+      "sa": 1
+    },
+    "knowledge_layer_counts": {
+      "CANONICAL_SCRIPTURE": 19,
+      "LEXICON": 17,
+      "MIXED": 27,
+      "REFERENCE": 5,
+      "SECONDARY_SCHOLARSHIP": 6
+    },
+    "sect_counts": {
+      "MULTI_TRADITION": 1,
+      "STHANAKAVASI": 37,
+      "SVETAMBARA": 1,
+      "UNKNOWN": 35
+    },
+    "distinct_sources": 22,
+    "origin_method_counts": {
+      "expert_reviewed": 2,
+      "synthetic_abstention": 20,
+      "synthetic_qa_generation": 52
+    },
+    "answer_len": {
+      "max": 671,
+      "mean": 231.0,
+      "median": 197,
+      "min": 89,
+      "n": 74,
+      "p25": 146,
+      "p75": 255
+    },
+    "wh_question_counts": {
+      "\"aadhyatm": 2,
+      "\"an": 3,
+      "\"panch-pratikraman": 2,
+      "\"shri": 2,
+      "according": 2,
+      "how": 16,
+      "in": 6,
+      "is": 13,
+      "what": 8,
+      "where": 1,
+      "which": 2,
+      "who": 17
+    },
+    "task66_s14_targets": {
+      "concept_practice": {
+        "target": "12-15 (incl >=8 practice-explanation, non-frozen)",
+        "actual": "14 (GENERAL_JAIN_CONCEPT 2 + JAIN_CONCEPT 1 + PRACTICE_EXPLANATION 11)",
+        "practice_rows": 10,
+        "status": "MET"
+      },
+      "source_attribution": {
+        "target": "16-18 (incl >=6 unknown-attribution variants)",
+        "actual": "18 (6 approved + 12 anti-fabrication; 12 unknown-attribution)",
+        "share_of_dataset": 0.243,
+        "status": "MET"
+      },
+      "canonical_vs_commentary": {
+        "target": "8-10 (incl >=3 source-disjoint contrast pairs)",
+        "actual": "9 rows; 4 source-disjoint contrast pairs (5 approved-like sources vs 4 positive sources, 0 overlap)",
+        "status": "MET"
+      },
+      "abstention": {
+        "target": "10-12 as answerable/unanswerable pairs (>=4 pairs, >=4 phrasings)",
+        "actual": "12 rows; 4 intact pairs (4 answerable + 4 unanswerable + 4 pair-extra approved); 4 distinct refusal phrasings",
+        "status": "MET"
+      },
+      "sect_distinction_discipline": {
+        "target": "8 (4 distinction + 4 unknown-vs-definite discipline)",
+        "actual": "8 (4 sect_contrast + 4 sect_unknown_discipline)",
+        "status": "MET"
+      },
+      "anti_fabrication": {
+        "target": "6-8 pairs (false claim -> not recorded)",
+        "actual": "6 intact pairs = 12 rows (all SOURCE_ATTRIBUTION, evidence manifest_absence, 1 false_presupposition + 1 plain per pair)",
+        "status": "MET"
+      },
+      "multilingual": {
+        "target": "8-10 rows split hi/gu + Prakrit terms",
+        "actual": "9 (HINDI 5 + GUJARATI 4) + 1 PRAKRIT terminology row",
+        "status": "MET"
+      },
+      "length_discipline": {
+        "target": "median answer <= ~350 chars (cross-category)",
+        "actual": "median 197 chars (mean 231.0, max 671)",
+        "status": "MET"
+      },
+      "wh_breadth": {
+        "target": ">=10 varied wh-questions",
+        "actual": "12 distinct question openers (who 17, how 16, is 13, what 8, in 6, ...)",
+        "status": "MET"
+      }
+    }
+  },
+  "split_protocol": {
+    "method": "source-level, sha256(seed|source_id) order; union-find pair components (pairs train-locked); densest-coverage then smallest size fill",
+    "seed": 42,
+    "train_rows": 61,
+    "eval_rows": 13,
+    "eval_target_rows": 12,
+    "eval_sources": [
+      "SVK-0007",
+      "SVK-0027",
+      "SVK-1003",
+      "SVK-1008",
+      "SVK-2009",
+      "SVK-2016",
+      "SVK-2019",
+      "SVK-2021"
+    ],
+    "train_sources": [
+      "SVK-0016",
+      "SVK-0037",
+      "SVK-1006",
+      "SVK-1007",
+      "SVK-1009",
+      "SVK-1010",
+      "SVK-2002",
+      "SVK-2003",
+      "SVK-2004",
+      "SVK-2005",
+      "SVK-2011",
+      "SVK-2013",
+      "SVK-2023",
+      "SVK-2028"
+    ],
+    "source_overlap_train_eval": [],
+    "coverage_required": [
+      "ABSTENTION/INSUFFICIENT_EVIDENCE",
+      "CANONICAL_VS_COMMENTARY",
+      "SOURCE_ATTRIBUTION"
+    ],
+    "coverage_missing": [],
+    "pair_components_train_locked": 11,
+    "deterministic": true
+  },
+  "pair_integrity": {
+    "abstention_pairs": {
+      "broken": [],
+      "built": 4,
+      "intact_after_dedup": 4
+    },
+    "antifab_pairs_intact": 6,
+    "total_pair_groups": 10,
+    "all_same_split": true,
+    "all_train_locked": true,
+    "broken": []
+  },
+  "anti_template_gate": {
+    "level": "WARN",
+    "flags": [
+      "[WARN] category CANONICAL_VS_COMMENTARY: opener 'the manifest records' share 55.6% > warn 40%"
+    ],
+    "n_rows": 74,
+    "near_duplicate_pairs": 0,
+    "exact_duplicate_answers": 0,
+    "worst_sentence_template_share": 0.0541,
+    "worst_8gram_share": 0.0811,
+    "top_opener_phrase_3w": {
+      "count": 5,
+      "phrase": "the manifest records",
+      "share": 0.0676
+    },
+    "manifest_records_opener": {
+      "count": 5,
+      "share": 0.0676
+    },
+    "thresholds": {
+      "near_dup": 0,
+      "opener_warn_fail": "10%/15%",
+      "sentence_template_warn_fail": "10%/20%",
+      "category_opener_warn_fail": "40%/60%",
+      "min_category_n_for_concentration": 4
+    },
+    "accepted_residual_justification": "Gate flag: opener 'the manifest records' share 55.6% (5/9) > warn 40%, below the 60% FAIL threshold. The 5 rows are Task-63 APPROVED rows kept verbatim (approved content is immutable; dropping more would cut canonical below the 8-row floor). Global opener share of 'the manifest records' across all 74 rows is 6.8%; near-duplicate pairs = 0; worst sentence template share 5.4% < 10% warn. Single WARN accepted and documented; gate level WARN (not FAIL)."
+  },
+  "task66_s13_config_compliance": {
+    "path": "configs/sft_qwen3_8b_sft02_v1.yaml",
+    "base_model": "Qwen/Qwen3-8B-Base",
+    "adapter_lineage": "priyanshu471/dapt01-checkpoint-15248 (NOT SFT-01)",
+    "changes_vs_sft01": {
+      "learning_rate": "1e-4 -> 3e-5",
+      "num_train_epochs": "3 -> 2"
+    },
+    "locked": [
+      "QLoRA NF4 r16 alpha32 dropout0.05",
+      "batch 1 / grad-accum 8",
+      "seq 2048",
+      "fp16",
+      "seed 42",
+      "cosine + warmup 0.03"
+    ],
+    "checkpoint_selection": "behavioural (frozen-benchmark behaviour), pre-registered; post-training",
+    "launched": false,
+    "kaggle_status": "not_created"
+  },
+  "design_notes": [
+    {
+      "topic": "frozen source count correction",
+      "note": "Task-66 s13 row 4 says '19 frozen-eval sources'. Recomputed from dapt01_eval_cases.jsonl provenance.source_id: 18 unique non-null sources (the earlier 19 included a null/None entry). SFT-02 excludes all 18; frozen_sources_in_dataset = []."
+    },
+    {
+      "topic": "CANONICAL_VS_COMMENTARY opener WARN (accepted residual)",
+      "note": "Gate flag: opener 'the manifest records' share 55.6% (5/9) > warn 40%, below the 60% FAIL threshold. The 5 rows are Task-63 APPROVED rows kept verbatim (approved content is immutable; dropping more would cut canonical below the 8-row floor). Global opener share of 'the manifest records' across all 74 rows is 6.8%; near-duplicate pairs = 0; worst sentence template share 5.4% < 10% warn. Single WARN accepted and documented; gate level WARN (not FAIL)."
+    },
+    {
+      "topic": "Sanskrit terminology target = 0 (data absence)",
+      "note": "An IAST-character + Latin-term scan over all eligible non-frozen corpus units found zero qualifying Sanskrit units, so the SANSKRIT target was set to 0 with justification. Multilingual coverage is carried by hi/gu/Prakrit rows instead."
+    },
+    {
+      "topic": "Sthanakavasi terminology counts (STK-term notes)",
+      "note": "terminology tag rows = 6 (>=4 target): STHANAKAVASI_TERMINOLOGY 3, GENERAL_JAIN_CONCEPT 2, PRAKRIT 1. The STK category has n=3 < 4, so it is exempt from per-category opener concentration (MIN_CAT_N=4) rather than failing it. Term rows use one row per (category, title, term) plus a question-registry walk (q_ok 0.75) to avoid template duplication."
+    },
+    {
+      "topic": "practice pool sources SVK-2030..SVK-2037",
+      "note": "These sources exist in the rights audit but have ZERO units in data/release/training_corpus.jsonl (corpus covers 39 sources, SVK-0007..SVK-2029). Practice rows from them cannot be corpus-grounded and were correctly skipped; the practice target is met from corpus-grounded non-frozen sources instead."
+    },
+    {
+      "topic": "synthetic source exclusion",
+      "note": "SVK-0026 (third-party ShareGPT-style synthetic export) excluded from all new rows via SYNTHETIC_SOURCES; 21 approved rows (Task-63 APPROVE + 2 HUMAN_VERIFIED) unaffected."
+    },
+    {
+      "topic": "human-verified rows",
+      "note": "5 HUMAN_VERIFIED ids in sft_train_v1; 3 have frozen source ids and are excluded by SOURCE_OVERLAP=0; 2 kept (svk-2023 x2). 0 rows newly upgraded to HUMAN_VERIFIED."
+    },
+    {
+      "topic": "attribution cap rebalanced to fit both s14 targets",
+      "note": "s14 requires attribution 16-18 AND anti-fabrication 6-8 pairs. Anti-fabrication rows are attribution-category rows, so the approved attribution cap was set to 6: 6 approved + 12 anti-fabrication (6 pairs) = 18, top of the 16-18 range, with 12 unknown-attribution variants (>=6 required)."
+    },
+    {
+      "topic": "dedup + pair atomicity",
+      "note": "Exact + near-dup (Jaccard >= 0.80) removal on questions AND answers, pair-group atomic; approved rows win ties. Drops: 2 approved near-dup canonical rows (compression at load) + 1 new term row (svk-2023:term:b012a1b4, near_duplicate_question). Dedup never broke a pair (4 abstain + 6 antifab intact)."
+    },
+    {
+      "topic": "eval coverage set reduced to 3 core categories",
+      "note": "REQUIRED_EVAL_COVERAGE = [ABSTENTION, CANONICAL_VS_COMMENTARY, SOURCE_ATTRIBUTION]: mirrors the SFT-01 9-row source-disjoint protocol (which covered attribution + canonical) plus abstention per s14. Multilingual/practice/terminology/distinction stay train-only because the frozen 47-case benchmark already probes languages and sect externally."
+    }
+  ],
+  "validation": {
+    "validator": {
+      "path": "experiments/sft_02/validate_sft02_dataset.py",
+      "checks": 25,
+      "failed": 0
+    },
+    "tests": {
+      "path": "tests/test_sft02_dataset.py",
+      "tests": 27,
+      "result": "OK"
+    },
+    "full_suite": {
+      "command": "PYTHONPATH=src python3 -m unittest discover -s tests",
+      "ran": 462,
+      "failures": 0,
+      "errors": "2 pre-existing ModuleNotFoundError: faiss (tests/test_retrieval.py)",
+      "skipped": 1,
+      "baseline_before_task": 435
+    },
+    "determinism": "re-running assign_split on the output rows reproduces the partition exactly"
+  },
+  "not_measured": [
+    "SFT-02 training run: NOT_RUN (no Kaggle API call, no launch, by design)",
+    "SFT-02 frozen-benchmark score / delta vs DAPT-01: NOT_MEASURED",
+    "Behavioural checkpoint selection: NOT_RUN (pre-registered in config only)",
+    "Per-epoch behavioural trajectory of any SFT arm: NOT_MEASURED (Task-66 carried forward)",
+    "Evaluator rubric metrics for SFT-02: NOT_MEASURED",
+    "Training VRAM / wall-clock for SFT-02: NOT_MEASURED",
+    "Significance of category deltas: NOT_MEASURED (no run)"
+  ],
+  "test_results": {
+    "baseline_before_task": 435,
+    "now": 462,
+    "new_tests": 27,
+    "failures": 0,
+    "errors": "2 pre-existing faiss import errors",
+    "skips": 1
+  }
+}

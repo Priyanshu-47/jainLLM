@@ -1,0 +1,102 @@
+{
+  "task": "TASK 83 \u2014 TARGETED MINI-GATE GENERATION (P500/P1000 differing cases + P250/PFULL 037 controls)",
+  "model": "Qwen/Qwen3-8B-Base",
+  "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+  "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+  "adapter_merged": false,
+  "quantization": "4bit-nf4-double, compute dtype fp16 (identical all arms)",
+  "attention_backend": "torch SDPA memory-efficient only (math disabled; flash/cudnn invalid on sm75 T4; enable_gqa forced to repeat_kv). fp16 numerics; greedy/seed/cap/prompts/model unchanged from Task-75",
+  "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+  "configs": {
+    "p500": {
+      "n_cases": 9,
+      "example_ids": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-033",
+        "DAPT01EVAL-034",
+        "DAPT01EVAL-037"
+      ],
+      "context_shas": {
+        "DAPT01EVAL-007": "ec7c2393229c98944b081e197550a13b9b50810e75c1e4ffb39300d574e1060e",
+        "DAPT01EVAL-010": "6b0fc8b2795f12fee08b7cc70cc629c1ebdfe8a8ddcc311a78b94e6fc32daadf",
+        "DAPT01EVAL-011": "4636e073e658bfb082c4ace8b2bb1ba952a0f3fcf558c4f60228e08c9808d738",
+        "DAPT01EVAL-012": "6c1cd38e3d695572825d57fae28b28b2d3038d08d14b6b9837d02498196e4766",
+        "DAPT01EVAL-013": "054a7c66c2d8aff5dc052e1331f31fbd1d7a91f7ced5836df79246b0c64d9e68",
+        "DAPT01EVAL-021": "b1cd1d4a020cd6bc9cff6c8751d14606a44ec66a05357113b23e527d391507c5",
+        "DAPT01EVAL-033": "b48970be651edfce3a6e87b90c795f924407b2acc52d56d6f17104e18ab38c96",
+        "DAPT01EVAL-034": "7229fa1f5744dd41992576245db631b13e6d520637026f86ce1f8d271518d4fe",
+        "DAPT01EVAL-037": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6"
+      }
+    },
+    "p1000": {
+      "n_cases": 8,
+      "example_ids": [
+        "DAPT01EVAL-007",
+        "DAPT01EVAL-010",
+        "DAPT01EVAL-011",
+        "DAPT01EVAL-012",
+        "DAPT01EVAL-013",
+        "DAPT01EVAL-021",
+        "DAPT01EVAL-033",
+        "DAPT01EVAL-037"
+      ],
+      "context_shas": {
+        "DAPT01EVAL-007": "ec7c2393229c98944b081e197550a13b9b50810e75c1e4ffb39300d574e1060e",
+        "DAPT01EVAL-010": "6b0fc8b2795f12fee08b7cc70cc629c1ebdfe8a8ddcc311a78b94e6fc32daadf",
+        "DAPT01EVAL-011": "4636e073e658bfb082c4ace8b2bb1ba952a0f3fcf558c4f60228e08c9808d738",
+        "DAPT01EVAL-012": "6c1cd38e3d695572825d57fae28b28b2d3038d08d14b6b9837d02498196e4766",
+        "DAPT01EVAL-013": "054a7c66c2d8aff5dc052e1331f31fbd1d7a91f7ced5836df79246b0c64d9e68",
+        "DAPT01EVAL-021": "b1cd1d4a020cd6bc9cff6c8751d14606a44ec66a05357113b23e527d391507c5",
+        "DAPT01EVAL-033": "b48970be651edfce3a6e87b90c795f924407b2acc52d56d6f17104e18ab38c96",
+        "DAPT01EVAL-037": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6"
+      }
+    },
+    "p250ctrl": {
+      "n_cases": 1,
+      "example_ids": [
+        "DAPT01EVAL-037"
+      ],
+      "context_shas": {
+        "DAPT01EVAL-037": "f5035285236ccc7d92c8912ed358955b3386e64f2149f48040d6297a688cd5c6"
+      }
+    },
+    "pfullctrl": {
+      "n_cases": 1,
+      "example_ids": [
+        "DAPT01EVAL-037"
+      ],
+      "context_shas": {
+        "DAPT01EVAL-037": "9b28cfb693c1d7d30a78dda0a106b845d07b28a1f4ae43dda599afb46a941f4e"
+      }
+    }
+  },
+  "controls": {
+    "p250ctrl": "recorded Task-82 pool-250 context for 037 rerun same host",
+    "pfullctrl": "recorded Task-75 full-list context for 037 rerun same host"
+  },
+  "prompt_style": "chat_template if available else plain_fallback",
+  "decoding": "greedy (do_sample=False)",
+  "max_new_tokens": 192,
+  "seed": 42,
+  "arms": [
+    "base",
+    "dapt"
+  ],
+  "gpu": "Tesla T4",
+  "torch": "2.11.0+cu128",
+  "python": "3.13.15",
+  "transformers": "5.0.0",
+  "peft": "0.19.1",
+  "bitsandbytes": "0.50.2",
+  "model_load_seconds": 120.0,
+  "base_infer_seconds": 165.6,
+  "adapter_attach_seconds": 4.4,
+  "dapt_infer_seconds": 588.9,
+  "run_host": "Kaggle T4 (established; Colab token expired)",
+  "finished_at": "2026-10-14 05:22:48"
+}

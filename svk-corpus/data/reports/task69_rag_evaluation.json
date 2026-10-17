@@ -1,0 +1,568 @@
+{
+  "task": "TASK 69 — DAPT-01 + GOVERNED RAG EVALUATION",
+  "verdict": "BASE + GOVERNED RAG is the recommended architecture on this benchmark",
+  "headline": {
+    "overall": {
+      "base": {
+        "macro_keyterm": 0.2021,
+        "pass_all": 6
+      },
+      "dapt": {
+        "macro_keyterm": 0.266,
+        "pass_all": 8
+      },
+      "base_rag": {
+        "macro_keyterm": 0.5816,
+        "pass_all": 25
+      },
+      "dapt_rag": {
+        "macro_keyterm": 0.5603,
+        "pass_all": 23
+      }
+    },
+    "rag_gain_over_base": 0.3795,
+    "rag_gain_over_dapt": 0.2943,
+    "dapt_gain_within_rag": -0.0213,
+    "dapt_gain_without_rag": 0.0639,
+    "key_question_answer": {
+      "question": "Does DAPT still provide an advantage when both models receive identical governed evidence?",
+      "dapt_gain_within_rag": -0.0213,
+      "dapt_gain_without_rag": 0.0639,
+      "rag_gain_over_base": 0.3795,
+      "rag_gain_over_dapt": 0.2943
+    }
+  },
+  "retrieval_quality": {
+    "n_cases": 47,
+    "n_source_level_queries": 46,
+    "n_corpus_absence_queries": 1,
+    "source_recall_at_5": 0.913,
+    "source_recall_at_10": 0.9783,
+    "source_mrr": 0.804,
+    "source_zero_hit": 1,
+    "unit_mrr": 0.3333,
+    "unit_hit_at_10": 16,
+    "evidence_answer_score_mean": 0.6318,
+    "evidence_answer_score_full": 26,
+    "abstention_evidence_forbidden_hits": 4,
+    "context_chars_median": 4198,
+    "contract_violations": [],
+    "retrieval_mode": "unit_bm25+source_metadata combined (evaluate.py mode C, validated baseline)",
+    "dense_channel": "not used (UnavailableDense; no new embedding model, no BGE-M3 rerun)",
+    "not_measured": [
+      "query-side sect/tradition metadata filters: NOT_APPLICABLE (frozen questions carry no query metadata; source-channel metadata matching is the metadata filtering step)",
+      "graded/passage-level relevance labels: NOT_MEASURED (frozen cases carry one expected source + optional unit ids, so source-level Recall@k/MRR and unit RIR are computed; no graded qrels exist)",
+      "dense/RRF fusion contribution: NOT_MEASURED (production path is lexical+source; dense unavailable by design in this task)"
+    ]
+  },
+  "evidence_ceiling": {
+    "evidence_answer_score_mean": 0.6318,
+    "evidence_answer_score_full": 26,
+    "n_non_abstention": 43,
+    "utilization": {
+      "base": {
+        "answer_mean": 0.2209,
+        "gap_to_ceiling": -0.4109
+      },
+      "dapt": {
+        "answer_mean": 0.2907,
+        "gap_to_ceiling": -0.3411
+      },
+      "base_rag": {
+        "answer_mean": 0.6124,
+        "gap_to_ceiling": -0.0194
+      },
+      "dapt_rag": {
+        "answer_mean": 0.6124,
+        "gap_to_ceiling": -0.0194
+      }
+    }
+  },
+  "failure_split": {
+    "base_rag": {
+      "retrieval_side": 15,
+      "generation_side": 7,
+      "success": 22,
+      "prior_knowledge": 3,
+      "not_measured": 0
+    },
+    "dapt_rag": {
+      "retrieval_side": 14,
+      "generation_side": 10,
+      "success": 19,
+      "prior_knowledge": 4,
+      "not_measured": 0
+    }
+  },
+  "failure_counts": {
+    "base_rag": {
+      "GROUNDED_SUCCESS": 21,
+      "RETRIEVAL_INSUFFICIENT": 13,
+      "PRIOR_KNOWLEDGE": 3,
+      "GENERATION_FAILURE": 5,
+      "RETRIEVAL_LIMITED": 1,
+      "GENERATION_FABRICATION": 2,
+      "ABSTENTION_CORRECT": 1,
+      "RETRIEVAL_RISK_CONTRIBUTED": 1
+    },
+    "dapt_rag": {
+      "GENERATION_FAILURE": 8,
+      "RETRIEVAL_INSUFFICIENT": 12,
+      "GROUNDED_SUCCESS": 19,
+      "PRIOR_KNOWLEDGE": 4,
+      "RETRIEVAL_RISK_CONTRIBUTED": 2,
+      "GENERATION_FABRICATION": 2
+    }
+  },
+  "failure_definitions": {
+    "RETRIEVAL_INSUFFICIENT": "evidence context contains none of the answer keyterms (ev=0)",
+    "RETRIEVAL_LIMITED": "answer == evidence ceiling < 1",
+    "RETRIEVAL_RISK_CONTRIBUTED": "abstention failure where the forbidden pattern also occurs in the evidence",
+    "GENERATION_FAILURE": "answer scored below what the evidence supports (ans < ev)",
+    "GENERATION_FABRICATION": "abstention failure; forbidden pattern absent from evidence",
+    "GROUNDED_SUCCESS": "answer==1 and evidence==1",
+    "ABSTENTION_CORRECT": "marker present, no forbidden claim",
+    "PRIOR_KNOWLEDGE": "answer==1 while evidence ceiling < 1 (or partial credit beyond ceiling)"
+  },
+  "category_table": [
+    {
+      "category": "ABSTENTION",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.25,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.0,
+      "dapt_rag_pass_all": 0
+    },
+    {
+      "category": "AGAM_GROUNDED",
+      "n": 4,
+      "base_mean": 0.25,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0833,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.9167,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "GUJARATI",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.25,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.25,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "HINDI",
+      "n": 4,
+      "base_mean": 0.1667,
+      "base_pass_all": 0,
+      "dapt_mean": 0.25,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.4167,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.4167,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "JAIN_TERMINOLOGY",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.0,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "MULTILINGUAL_MAPPING",
+      "n": 4,
+      "base_mean": 0.5,
+      "base_pass_all": 2,
+      "dapt_mean": 0.5,
+      "dapt_pass_all": 2,
+      "base_rag_mean": 0.25,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.5,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "PRACTICE",
+      "n": 4,
+      "base_mean": 0.375,
+      "base_pass_all": 0,
+      "dapt_mean": 0.625,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.875,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.875,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "PRAKRIT",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.375,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.5,
+      "base_rag_pass_all": 2,
+      "dapt_rag_mean": 0.625,
+      "dapt_rag_pass_all": 2
+    },
+    {
+      "category": "SANSKRIT",
+      "n": 3,
+      "base_mean": 0.1111,
+      "base_pass_all": 0,
+      "dapt_mean": 0.2222,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.3333,
+      "base_rag_pass_all": 1,
+      "dapt_rag_mean": 0.5556,
+      "dapt_rag_pass_all": 1
+    },
+    {
+      "category": "SOURCE_ATTRIBUTION",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.125,
+      "dapt_pass_all": 0,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    },
+    {
+      "category": "STHANAKAVASI_DISTINCTION",
+      "n": 4,
+      "base_mean": 1.0,
+      "base_pass_all": 4,
+      "dapt_mean": 0.75,
+      "dapt_pass_all": 3,
+      "base_rag_mean": 0.875,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 1.0,
+      "dapt_rag_pass_all": 4
+    },
+    {
+      "category": "STHANAKAVASI_TERMINOLOGY",
+      "n": 4,
+      "base_mean": 0.0,
+      "base_pass_all": 0,
+      "dapt_mean": 0.25,
+      "dapt_pass_all": 1,
+      "base_rag_mean": 0.75,
+      "base_rag_pass_all": 3,
+      "dapt_rag_mean": 0.75,
+      "dapt_rag_pass_all": 3
+    }
+  ],
+  "language_table": [
+    {
+      "language": "en",
+      "n": 34,
+      "base_mean": 0.2304,
+      "dapt_mean": 0.2647,
+      "base_rag_mean": 0.6961,
+      "dapt_rag_mean": 0.6225
+    },
+    {
+      "language": "gu",
+      "n": 5,
+      "base_mean": 0.0,
+      "dapt_mean": 0.0,
+      "base_rag_mean": 0.2,
+      "dapt_rag_mean": 0.2
+    },
+    {
+      "language": "hi",
+      "n": 8,
+      "base_mean": 0.2083,
+      "dapt_mean": 0.4375,
+      "base_rag_mean": 0.3333,
+      "dapt_rag_mean": 0.5208
+    }
+  ],
+  "abstention": {
+    "n_cases": 4,
+    "base_correct": 0,
+    "dapt_correct": 0,
+    "base_rag_correct": 1,
+    "dapt_rag_correct": 0,
+    "per_case": [
+      {
+        "example_id": "DAPT01EVAL-036",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "(18|19|20)\\d{2}"
+        ],
+        "base_answer": "The book 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1970.",
+        "dapt_answer": "'Sthanakvasi Jain Itihas' by Kesrichand Bhandari was published in 1914. It is a historical account of the Sthanakavasi community, providing insights into their practices and traditions. This work is considered an important source for understanding the history ",
+        "base_rag_answer": "The exact publication year of 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari is not provided in the given evidence. However, the source metadata indicates that the book is associated with the Sthanakvasi tradition and was published by the Sthanakvasi Jain Ka",
+        "dapt_rag_answer": "1925\n[End of answer]"
+      },
+      {
+        "example_id": "DAPT01EVAL-037",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "\\b(17|18)\\d{2}\\b"
+        ],
+        "base_answer": "The Terapanth was founded in the year 1916.",
+        "dapt_answer": "The Terapanth was founded in 1669. This is based on the account of the first Terapanthi, Bhagwanlal IndrajI, who was born in 1669. His birth is considered the beginning of the Terapanth. The Terapanthi community, therefore, celebrates the anniversary of Bhagwa",
+        "base_rag_answer": "The Terapanth was founded in 1658 by Birbhan.",
+        "dapt_rag_answer": "The Terapanth was founded in 1658 by Bhagwan Bhagwandas, also known as Bhagwanji. This event marked the beginning of the Terapanthi community, which emphasizes non-idol worship and rejects certain aspects of traditional Jain practices. The Terapanthi community"
+      },
+      {
+        "example_id": "DAPT01EVAL-038",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": true,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "(?:publisher is|published by|issued by)\\s+(?!not\\b|unknown|no\\b|none)"
+        ],
+        "base_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Jain Society of Bombay.",
+        "dapt_answer": "The book 'Notes on Modern Jainism' (1910) was published by the Oxford University Press. It was written by Lewis Rice, a British scholar and a Jain layman. The book provides a detailed account of Jainism, its history, and its practices. It is considered a valua",
+        "base_rag_answer": "[Evidence — governed Jain corpus]\n1. SVK-0038:u00726:cd5c30939ca7b923 | channel=unit_bm25 | rank=1 | score=40.245\n   source: SVK-0038 — Notes on Modern Jainism (1910)\n   provenance: scope=HIGH_STHANAKAVASI_RELEVANCE (HIGH); layer=UNKNOWN; teacher/author=UNKNOW",
+        "dapt_rag_answer": "Mrs. Sinclair Stevenson. The book was published in 1910. It is a work of Western scholarship, focusing on the Jain community in India. The author, Mrs. Sinclair Stevenson, provides insights into the Jain way of life, beliefs, and practices, offering a valuable"
+      },
+      {
+        "example_id": "DAPT01EVAL-039",
+        "base_correct": false,
+        "dapt_correct": false,
+        "base_rag_correct": false,
+        "dapt_rag_correct": false,
+        "evidence_forbidden_hits": [
+          "\\b(24|36|45|64|72)\\s*(agam|aagam)"
+        ],
+        "base_answer": "The Digambara tradition accepts 12 Agams. These texts are considered to be the oral teachings of Mahavira, the 24th Tirthankara of Jainism, and are believed to have been passed down through generations of Jain monks.",
+        "dapt_answer": "The Digambara tradition accepts 24 Agams. These Agams are considered to be the sacred scriptures of the Jain community, containing the teachings of the Tirthankars. The content of these Agams is believed to have been lost over time, leaving only the names and ",
+        "base_rag_answer": "The Digambara tradition accepts 45 Agams. This is in contrast to the Sthanakvasi and Terapanthi sects, which believe that only 32 of the Agams are original and authentic. The Digambara tradition considers the additional 13 Agams as elaborative or auxiliary wor",
+        "dapt_rag_answer": "The Digambara tradition accepts 24 Agams. This is in contrast to the Sthanakvasi and Terapanthi sects, who believe that only 32 Agams are original and authentic. The Shvetambara tradition, on the other hand, accepts 45 Agams. The difference in the number of Ag"
+      }
+    ]
+  },
+  "behaviour": {
+    "base": {
+      "n": 47,
+      "looped_cases": 0,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 199,
+      "answer_len_mean": 207.4,
+      "answer_len_max": 553,
+      "mode_opener": "ahimsa, as defined by j",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "dapt": {
+      "n": 47,
+      "looped_cases": 1,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 330,
+      "answer_len_mean": 367.9,
+      "answer_len_max": 1012,
+      "mode_opener": "ahimsa is defined as the avoidance of all forms of violence, encompassing not only physical harm but also mental and verbal harm",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "base_rag": {
+      "n": 47,
+      "looped_cases": 1,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 162,
+      "answer_len_mean": 187.7,
+      "answer_len_max": 724,
+      "mode_opener": "ahimsa, or non-injury, is especially defined as non-injury to animal life in the context of jainism",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0213,
+      "distinct_openers": 47
+    },
+    "dapt_rag": {
+      "n": 47,
+      "looped_cases": 5,
+      "infringement_token_outputs": 0,
+      "answer_len_median": 795,
+      "answer_len_mean": 595.9,
+      "answer_len_max": 1116,
+      "mode_opener": "according to mrs",
+      "mode_opener_count": 3,
+      "mode_opener_share": 0.0638,
+      "distinct_openers": 45
+    }
+  },
+  "attribution": {
+    "base": {
+      "cited_evidence_author": 13,
+      "cited_attribution_word": 16,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "dapt": {
+      "cited_evidence_author": 13,
+      "cited_attribution_word": 11,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "base_rag": {
+      "cited_evidence_author": 7,
+      "cited_attribution_word": 10,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    },
+    "dapt_rag": {
+      "cited_evidence_author": 16,
+      "cited_attribution_word": 13,
+      "mechanical": "surname tokens from evidence provenance present in answer; marker = according to|manifest|corpus|the source|source says"
+    }
+  },
+  "identical_contexts_verified": true,
+  "design": {
+    "model": "Qwen/Qwen3-8B-Base",
+    "arms": {
+      "base": "ARM C (frozen Task-60): no RAG",
+      "dapt": "ARM D (frozen Task-60): DAPT-01, no RAG",
+      "base_rag": "ARM A (new): BASE + identical governed evidence",
+      "dapt_rag": "ARM B (new): DAPT-01 + identical governed evidence"
+    },
+    "identical_evidence_contexts_both_rag_arms": true,
+    "system_prompt_identical_all_arms": true,
+    "decoding": "greedy, max_new_tokens=192, seed=42 (all arms)",
+    "retrieval_mode": "unit_bm25 + source_metadata combined (evaluate.py mode C)",
+    "metric_source": "score_task60 norm/group_pass/score_case imported verbatim",
+    "frozen_cases_sha256_verified": true,
+    "run_metadata": {
+      "task": "TASK 69 — DAPT-01 + GOVERNED RAG EVALUATION (generation)",
+      "model": "Qwen/Qwen3-8B-Base",
+      "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+      "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+      "adapter_merged": false,
+      "quantization": "4bit-nf4-double, compute dtype fp16 (identical for both arms)",
+      "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+      "system_prompt_identical_to_task60": true,
+      "user_content": "governed evidence context + frozen question (identical bytes both arms)",
+      "prompts_sha256": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+      "evidence_source": "data/evaluation/task69_rag_prompts.jsonl (built by build_rag_evidence.py)",
+      "prompt_style": "chat_template if available else plain_fallback",
+      "decoding": "greedy (do_sample=False)",
+      "max_new_tokens": 192,
+      "seed": 42,
+      "n_cases": 47,
+      "gpu": "Tesla T4",
+      "torch": "2.11.0+cu130",
+      "python": "3.13.15",
+      "transformers": "5.0.0",
+      "peft": "0.19.1",
+      "bitsandbytes": "0.50.2",
+      "model_load_seconds": 69.1,
+      "base_rag_infer_seconds": 556.6,
+      "adapter_attach_seconds": 2.2,
+      "dapt_rag_infer_seconds": 1436.6,
+      "identical_contexts_both_arms": true,
+      "run_host": "Google Colab T4 (google-colab-cli; NOT Kaggle)",
+      "finished_at": "2026-10-02 12:16:00"
+    }
+  },
+  "artifacts": {
+    "cases": "data/evaluation/dapt01_eval_cases.jsonl",
+    "results_base": "data/evaluation/dapt01_base_results.jsonl",
+    "results_dapt": "data/evaluation/dapt01_dapt_results.jsonl",
+    "results_base_rag": "data/evaluation/task69_base_rag_results.jsonl",
+    "results_dapt_rag": "data/evaluation/task69_dapt_rag_results.jsonl",
+    "retrieval_metrics": "data/evaluation/task69_retrieval_metrics.json",
+    "evidence": "data/evaluation/task69_rag_evidence.jsonl",
+    "prompts": "data/evaluation/task69_rag_prompts.jsonl",
+    "run_metadata": "data/evaluation/task69_rag_run_metadata.json",
+    "consolidated_results": "data/evaluation/task69_rag_results.jsonl",
+    "report_md": "data/reports/task69_rag_evaluation.md",
+    "report_json": "data/reports/task69_rag_evaluation.json"
+  },
+  "integrity": {
+    "frozen_cases_sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "prompts_sha256": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+    "independent_recompute_matched_scorer": true,
+    "identical_input_prompts_both_rag_arms": true,
+    "context_shas_match_prompts_file": true,
+    "artifact_sha256": {
+      "task69_base_rag_results.jsonl": "9bfd6fce30fa338904e3fe4c06689aa5f136630988f13c512d5bc9d480728e72",
+      "task69_dapt_rag_results.jsonl": "876e0f93332bb893f9928f7d4a04151a267046a1fcbd8789ddbc1ab22b8ffeb0",
+      "task69_rag_evidence.jsonl": "a51f59d88dad86ebea79cd158b69f845c0f02f3090a92e935f2c5956492d0f33",
+      "task69_rag_prompts.jsonl": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+      "task69_retrieval_metrics.json": "c642e463c35ed15ab92d2fe9335b91f77af1f99912c1ec17bef670c261aaae73",
+      "task69_rag_comparison.json": "a9732eb9fd4acf3ca0210a177b9a751f5e494ead7b43f9d901dfe8e7d013d1f9",
+      "task69_rag_run_metadata.json": "84cd116db55619e7245af462a6213c7a007833d6a7a8dc3500ed6ef1e86ffd2d",
+      "task69_rag_results.jsonl": "84a96f243c2b9b093edaff4acee8ea7a5111ecbee44356b72b7cab4386424709"
+    }
+  },
+  "environment_deviations": {
+    "compute": "Google Colab T4 via google-colab-cli --auth=adc (Kaggle prohibited by task)",
+    "torch": "2.11.0+cu130 (Colab preinstalled) vs Task-60 2.10.0+cu128",
+    "python": "3.13.15 (Colab) vs Task-60 3.12.13",
+    "transformers": "5.0.0 (pinned, byte-protocol match to Task-60)",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.50.2",
+    "adapter_config_note": "adapter_config.json taken from .bench_ckpt/checkpoint-3893 (sha f2fdaae7…) differs byte-wise from Task-59-recorded final cbc419e4…; semantic fields identical (r16/alpha32/0.05/7 targets/base)",
+    "colab_incidents": [
+      "session 1: runtime reclaimed during HF model download (preemption); no outputs produced",
+      "kernel pre-imports transformers 5.17 in sys.modules; pip 5.0.0 file swap alone yields mixed-version create_causal_mask TypeError; fix = explicit pin + kernel restart + import verification (reproduced twice, fix verified)",
+      "session 2: generation completed but runtime reclaimed before output download; outputs recovered from stdout RESULT_JSON stream + regenerated in session 3",
+      "session 3: full run completed 2026-10-02 11:41-12:16 UTC; outputs downloaded and byte-verified (sha match local vs VM)"
+    ]
+  },
+  "not_measured": [
+    "evaluator-based fields (factual_error etc.): cover base/dapt only via the frozen Task-60 review file; RAG arms NOT_MEASURED (never synthesised)",
+    "dense-channel contribution: NOT_MEASURED (UnavailableDense; no new embedding model)",
+    "query-side sect metadata filters: NOT_APPLICABLE (questions carry no query metadata)",
+    "fluency/grammar, human preference: NOT_MEASURED",
+    "graded passage-level relevance: NOT_MEASURED (no graded qrels)"
+  ],
+  "run_metadata": {
+    "task": "TASK 69 — DAPT-01 + GOVERNED RAG EVALUATION (generation)",
+    "model": "Qwen/Qwen3-8B-Base",
+    "adapter": "DAPT-01 checkpoint-15248 (priyanshu471/dapt01-checkpoint-15248)",
+    "adapter_sha256": "9b4d2bdcfe089118d0634815596b628506a83c434d3863cff7a731cba75a58e9",
+    "adapter_merged": false,
+    "quantization": "4bit-nf4-double, compute dtype fp16 (identical for both arms)",
+    "system_prompt": "You are a careful assistant for Jain studies. Answer the user's question concisely (in 1-3 sentences). If you are unsure or the information is not available, say so.",
+    "system_prompt_identical_to_task60": true,
+    "user_content": "governed evidence context + frozen question (identical bytes both arms)",
+    "prompts_sha256": "00096f61a4a2aea525b2f1bfe71449b626bc17a60073e4b4e9dac05f6edd5b8e",
+    "evidence_source": "data/evaluation/task69_rag_prompts.jsonl (built by build_rag_evidence.py)",
+    "prompt_style": "chat_template if available else plain_fallback",
+    "decoding": "greedy (do_sample=False)",
+    "max_new_tokens": 192,
+    "seed": 42,
+    "n_cases": 47,
+    "gpu": "Tesla T4",
+    "torch": "2.11.0+cu130",
+    "python": "3.13.15",
+    "transformers": "5.0.0",
+    "peft": "0.19.1",
+    "bitsandbytes": "0.50.2",
+    "model_load_seconds": 69.1,
+    "base_rag_infer_seconds": 556.6,
+    "adapter_attach_seconds": 2.2,
+    "dapt_rag_infer_seconds": 1436.6,
+    "identical_contexts_both_arms": true,
+    "run_host": "Google Colab T4 (google-colab-cli; NOT Kaggle)",
+    "finished_at": "2026-10-02 12:16:00"
+  }
+}

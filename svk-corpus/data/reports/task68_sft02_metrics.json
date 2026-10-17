@@ -1,0 +1,690 @@
+{
+  "task": "TASK 68 — SFT-02 EXECUTION + FROZEN EVALUATION + 4-WAY COMPARISON",
+  "generated_at": "2026-10-02T08:52:47+00:00",
+  "headline": {
+    "base": 0.2021,
+    "dapt": 0.266,
+    "sft01": 0.2305,
+    "sft02": 0.2518,
+    "sft02_minus_dapt": -0.0142,
+    "sft02_minus_sft01": 0.0213,
+    "sft02_minus_base": 0.0497,
+    "pass_all": {
+      "base": 6,
+      "dapt": 8,
+      "sft01": 7,
+      "sft02": 8
+    },
+    "dapt01_current_best": true,
+    "sft02_promoted": false,
+    "looped_cases": {
+      "base": 0,
+      "dapt": 1,
+      "sft01": 31,
+      "sft02": 5
+    },
+    "infringement_outputs": {
+      "base": 0,
+      "dapt": 0,
+      "sft01": 24,
+      "sft02": 0
+    },
+    "answer_len_median": {
+      "base": 199,
+      "dapt": 330,
+      "sft01": 851,
+      "sft02": 255
+    }
+  },
+  "promotion": {
+    "sft02_promoted": false,
+    "current_best_arm": "DAPT-01 (priyanshu471/dapt01-checkpoint-15248)",
+    "rule": "DAPT-01 stays default unless SFT-02 shows meaningful improvement without unacceptable regressions; not promotable from loss alone; mixed benchmark -> keep DAPT-01",
+    "decision_basis": "frozen 47-case objective scores (pre-declared); loss explicitly not a criterion",
+    "evidence": [
+      "factual grounding 0.2518 < DAPT-01 0.2660 (sft02_minus_dapt = -0.0142) — no improvement",
+      "case flips vs DAPT-01: 1 improved (DAPT01EVAL-023) / 2 regressed (DAPT01EVAL-034 hedged author -> 0.5->0; DAPT01EVAL-040 wrong '15 minutes' -> 1.0->0.5)",
+      "abstention 0/4 = BASE/DAPT level with fresh fabrications ('1918', '1699', '24 Agams'=forbidden claim); held-out abstention row degenerated into question-echo with no refusal marker",
+      "generation stability much improved vs SFT-01 (loops 31->5, INFRINGEMENT 24->0, median len 851->255) but not clean (5/47 frozen, 6/13 held-out looped)",
+      "pass-all ties DAPT-01 at 8/47 — insufficient alone to displace the incumbent"
+    ],
+    "sft02_vs_sft01": "+0.0213 macro; 4 improved / 2 regressed; instability signatures largely removed — Task-66 corrections worked directionally"
+  },
+  "four_way": {
+    "artifact": "data/evaluation/sft02_4way_comparison.json",
+    "artifact_sha256": "0f7a20da3b78c04f6bb86cd68b8c4dd103ef8c41f8ef125a9d8281800b253ac8",
+    "n_cases": 47,
+    "overall_objective": {
+      "base_mean_score": 0.2021,
+      "dapt_mean_score": 0.266,
+      "sft01_mean_score": 0.2305,
+      "sft02_mean_score": 0.2518,
+      "sft02_minus_dapt": -0.0142,
+      "sft02_minus_base": 0.0497,
+      "sft02_minus_sft01": 0.0213,
+      "base_pass_all": 6,
+      "dapt_pass_all": 8,
+      "sft01_pass_all": 7,
+      "sft02_pass_all": 8,
+      "note": "macro-average of per-case objective scores; category-level results are authoritative"
+    },
+    "category_table": [
+      {
+        "category": "ABSTENTION",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft01_mean_score": 0.25,
+        "sft02_mean_score": 0.0,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.0,
+        "sft02_minus_sft01": -0.25,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 1,
+        "sft02_pass_all": 0,
+        "abstention_cases": 4
+      },
+      {
+        "category": "AGAM_GROUNDED",
+        "n": 4,
+        "base_mean_score": 0.25,
+        "dapt_mean_score": 0.0833,
+        "sft01_mean_score": 0.0833,
+        "sft02_mean_score": 0.0833,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": -0.1667,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "GUJARATI",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft01_mean_score": 0.0,
+        "sft02_mean_score": 0.0,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.0,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "HINDI",
+        "n": 4,
+        "base_mean_score": 0.1667,
+        "dapt_mean_score": 0.25,
+        "sft01_mean_score": 0.1667,
+        "sft02_mean_score": 0.25,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.0833,
+        "sft02_minus_sft01": 0.0833,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "JAIN_TERMINOLOGY",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft01_mean_score": 0.0,
+        "sft02_mean_score": 0.0,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.0,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "MULTILINGUAL_MAPPING",
+        "n": 4,
+        "base_mean_score": 0.5,
+        "dapt_mean_score": 0.5,
+        "sft01_mean_score": 0.5,
+        "sft02_mean_score": 0.5,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.0,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 2,
+        "dapt_pass_all": 2,
+        "sft01_pass_all": 2,
+        "sft02_pass_all": 2,
+        "abstention_cases": 0
+      },
+      {
+        "category": "PRACTICE",
+        "n": 4,
+        "base_mean_score": 0.375,
+        "dapt_mean_score": 0.625,
+        "sft01_mean_score": 0.375,
+        "sft02_mean_score": 0.5,
+        "sft02_minus_dapt": -0.125,
+        "sft02_minus_base": 0.125,
+        "sft02_minus_sft01": 0.125,
+        "base_pass_all": 0,
+        "dapt_pass_all": 1,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "PRAKRIT",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.375,
+        "sft01_mean_score": 0.375,
+        "sft02_mean_score": 0.375,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.375,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 1,
+        "sft01_pass_all": 1,
+        "sft02_pass_all": 1,
+        "abstention_cases": 0
+      },
+      {
+        "category": "SANSKRIT",
+        "n": 3,
+        "base_mean_score": 0.1111,
+        "dapt_mean_score": 0.2222,
+        "sft01_mean_score": 0.1111,
+        "sft02_mean_score": 0.3333,
+        "sft02_minus_dapt": 0.1111,
+        "sft02_minus_base": 0.2222,
+        "sft02_minus_sft01": 0.2222,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 1,
+        "abstention_cases": 0
+      },
+      {
+        "category": "SOURCE_ATTRIBUTION",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.125,
+        "sft01_mean_score": 0.125,
+        "sft02_mean_score": 0.0,
+        "sft02_minus_dapt": -0.125,
+        "sft02_minus_base": 0.0,
+        "sft02_minus_sft01": -0.125,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "category": "STHANAKAVASI_DISTINCTION",
+        "n": 4,
+        "base_mean_score": 1.0,
+        "dapt_mean_score": 0.75,
+        "sft01_mean_score": 0.75,
+        "sft02_mean_score": 0.75,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": -0.25,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 4,
+        "dapt_pass_all": 3,
+        "sft01_pass_all": 3,
+        "sft02_pass_all": 3,
+        "abstention_cases": 0
+      },
+      {
+        "category": "STHANAKAVASI_TERMINOLOGY",
+        "n": 4,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.25,
+        "sft01_mean_score": 0.0,
+        "sft02_mean_score": 0.25,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.25,
+        "sft02_minus_sft01": 0.25,
+        "base_pass_all": 0,
+        "dapt_pass_all": 1,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 1,
+        "abstention_cases": 0
+      }
+    ],
+    "language_table": [
+      {
+        "language": "en",
+        "n": 34,
+        "base_mean_score": 0.2304,
+        "dapt_mean_score": 0.2647,
+        "sft01_mean_score": 0.2255,
+        "sft02_mean_score": 0.2451,
+        "sft02_minus_dapt": -0.0196,
+        "sft02_minus_base": 0.0147,
+        "sft02_minus_sft01": 0.0196,
+        "base_pass_all": 5,
+        "dapt_pass_all": 6,
+        "sft01_pass_all": 5,
+        "sft02_pass_all": 6,
+        "abstention_cases": 4
+      },
+      {
+        "language": "gu",
+        "n": 5,
+        "base_mean_score": 0.0,
+        "dapt_mean_score": 0.0,
+        "sft01_mean_score": 0.0,
+        "sft02_mean_score": 0.0,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.0,
+        "sft02_minus_sft01": 0.0,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "language": "hi",
+        "n": 8,
+        "base_mean_score": 0.2083,
+        "dapt_mean_score": 0.4375,
+        "sft01_mean_score": 0.3958,
+        "sft02_mean_score": 0.4375,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.2292,
+        "sft02_minus_sft01": 0.0417,
+        "base_pass_all": 1,
+        "dapt_pass_all": 2,
+        "sft01_pass_all": 2,
+        "sft02_pass_all": 2,
+        "abstention_cases": 0
+      }
+    ],
+    "dapt_split_table": [
+      {
+        "dapt_split": "train",
+        "n": 37,
+        "base_mean_score": 0.2162,
+        "dapt_mean_score": 0.3018,
+        "sft01_mean_score": 0.2432,
+        "sft02_mean_score": 0.2838,
+        "sft02_minus_dapt": -0.018,
+        "sft02_minus_base": 0.0676,
+        "sft02_minus_sft01": 0.0406,
+        "base_pass_all": 6,
+        "dapt_pass_all": 8,
+        "sft01_pass_all": 6,
+        "sft02_pass_all": 8,
+        "abstention_cases": 3
+      },
+      {
+        "dapt_split": "val",
+        "n": 3,
+        "base_mean_score": 0.1667,
+        "dapt_mean_score": 0.3333,
+        "sft01_mean_score": 0.1667,
+        "sft02_mean_score": 0.3333,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": 0.1666,
+        "sft02_minus_sft01": 0.1666,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 0,
+        "sft02_pass_all": 0,
+        "abstention_cases": 0
+      },
+      {
+        "dapt_split": "test",
+        "n": 7,
+        "base_mean_score": 0.1429,
+        "dapt_mean_score": 0.0476,
+        "sft01_mean_score": 0.1905,
+        "sft02_mean_score": 0.0476,
+        "sft02_minus_dapt": 0.0,
+        "sft02_minus_base": -0.0953,
+        "sft02_minus_sft01": -0.1429,
+        "base_pass_all": 0,
+        "dapt_pass_all": 0,
+        "sft01_pass_all": 1,
+        "sft02_pass_all": 0,
+        "abstention_cases": 1
+      }
+    ],
+    "abstention": {
+      "n_cases": 4,
+      "base_correct": 0,
+      "dapt_correct": 0,
+      "sft01_correct": 1,
+      "sft02_correct": 0
+    },
+    "behaviour": {
+      "base": {
+        "n": 47,
+        "looped_cases": 0,
+        "infringement_token_outputs": 0,
+        "answer_len_median": 199,
+        "answer_len_mean": 207.4,
+        "answer_len_max": 553,
+        "mode_opener": "ahimsa, as defined by j",
+        "mode_opener_count": 1,
+        "mode_opener_share": 0.0213,
+        "distinct_openers": 47
+      },
+      "dapt": {
+        "n": 47,
+        "looped_cases": 1,
+        "infringement_token_outputs": 0,
+        "answer_len_median": 330,
+        "answer_len_mean": 367.9,
+        "answer_len_max": 1012,
+        "mode_opener": "ahimsa is defined as the avoidance of all forms of violence, encompassing not only physical harm but also mental and verbal harm",
+        "mode_opener_count": 1,
+        "mode_opener_share": 0.0213,
+        "distinct_openers": 47
+      },
+      "sft01": {
+        "n": 47,
+        "looped_cases": 31,
+        "infringement_token_outputs": 24,
+        "answer_len_median": 851,
+        "answer_len_mean": 754,
+        "answer_len_max": 1882,
+        "mode_opener": "ahimsa is defined as the avoidance of all forms of violence, including physical, verbal, mental, and emotional",
+        "mode_opener_count": 1,
+        "mode_opener_share": 0.0213,
+        "distinct_openers": 47
+      },
+      "sft02": {
+        "n": 47,
+        "looped_cases": 5,
+        "infringement_token_outputs": 0,
+        "answer_len_median": 255,
+        "answer_len_mean": 335.0,
+        "answer_len_max": 1085,
+        "mode_opener": "in j",
+        "mode_opener_count": 1,
+        "mode_opener_share": 0.0213,
+        "distinct_openers": 47
+      }
+    },
+    "improvements_vs_dapt": [
+      "DAPT01EVAL-023"
+    ],
+    "regressions_vs_dapt": [
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-040"
+    ],
+    "improvements_vs_sft01": [
+      "DAPT01EVAL-008",
+      "DAPT01EVAL-016",
+      "DAPT01EVAL-023",
+      "DAPT01EVAL-043"
+    ],
+    "regressions_vs_sft01": [
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-036"
+    ],
+    "env_parity_tasks60_65_68": true,
+    "env_by_task": {
+      "task60": {
+        "model": "Qwen/Qwen3-8B-Base",
+        "transformers": "5.0.0",
+        "torch": "2.10.0+cu128",
+        "gpu": "Tesla T4",
+        "decoding": "greedy (do_sample=False)",
+        "max_new_tokens": 192,
+        "seed": 42
+      },
+      "task65": {
+        "model": "Qwen/Qwen3-8B-Base",
+        "transformers": "5.0.0",
+        "torch": "2.10.0+cu128",
+        "gpu": "Tesla T4",
+        "decoding": "greedy (do_sample=False)",
+        "max_new_tokens": 192,
+        "seed": 42
+      },
+      "task68": {
+        "model": "Qwen/Qwen3-8B-Base",
+        "transformers": "5.0.0",
+        "torch": "2.10.0+cu128",
+        "gpu": "Tesla T4",
+        "decoding": "greedy (do_sample=False)",
+        "max_new_tokens": 192,
+        "seed": 42
+      }
+    },
+    "metric_definitions": "score_task60 norm/group_pass/score_case applied verbatim to all arms",
+    "evaluator_based_counts": {
+      "review_coverage": "47/47",
+      "base_factual_errors": 41,
+      "dapt_factual_errors": 47,
+      "sft01_factual_errors": "NOT_MEASURED",
+      "sft02_factual_errors": "NOT_MEASURED",
+      "base_unsupported_claims": 6,
+      "dapt_unsupported_claims": 20,
+      "sft01_unsupported_claims": "NOT_MEASURED",
+      "sft02_unsupported_claims": "NOT_MEASURED",
+      "base_sect_confusion_cases": 1,
+      "dapt_sect_confusion_cases": 4,
+      "sft01_sect_confusion_cases": "NOT_MEASURED",
+      "sft02_sect_confusion_cases": "NOT_MEASURED",
+      "base_degenerate_loop_cases_evaluator": 1,
+      "dapt_degenerate_loop_cases_evaluator": 8,
+      "sft01_degenerate_loop_cases_evaluator": "NOT_MEASURED",
+      "sft02_degenerate_loop_cases_evaluator": "NOT_MEASURED",
+      "label": "evaluator_based for base/dapt only; SFT arms NOT_MEASURED (no evaluator pass was run for them; none is synthesised). Use behaviour.looped_cases for a uniform mechanical loop count across arms."
+    }
+  },
+  "heldout": {
+    "artifact": "data/evaluation/sft02_heldout_analysis.json",
+    "artifact_sha256": "dba256675ac69c00366df0c3c88a3602d986098bd8fa753c236aefd15796f50f",
+    "n_rows": 13,
+    "aggregate": {
+      "answer_len_median": 523,
+      "answer_len_mean": 517.2,
+      "answer_len_max": 932,
+      "reference_len_median": 197,
+      "len_ratio_median": 2.326,
+      "len_ratio_max": 4.328,
+      "reference_coverage_mean": 0.304,
+      "reference_coverage_min": 0.0,
+      "looped_rows": 6,
+      "infringement_rows": 0,
+      "verbatim_train_opener_rows": 0,
+      "tok_run_max": 78,
+      "mode_opener": "is ardha magadhi dictionary vols 2 and 5 (1927; 1938) a canonical scripture itself, or a work about one",
+      "mode_opener_count": 1,
+      "mode_opener_share": 0.0769,
+      "distinct_openers": 13,
+      "prompt_styles": [
+        "chat_template"
+      ],
+      "total_new_tokens": 2172
+    },
+    "abstention_row_failed": true,
+    "abstention_row_detail": [
+      {
+        "example_id": "svk-1008:abstention_insufficient_evidence:3c803836",
+        "question": "Who wrote 'Notes on the Jainas' (1911)?",
+        "answer": "Who wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?- 1911\nWho wrote 'Notes on the Jainas' (1911)?-",
+        "abstention_marker_hit": false,
+        "abstention_year_assertions": [
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911",
+          "1911"
+        ],
+        "abstention_row_passed_mechanical": false
+      }
+    ],
+    "sft01_v1_heldout_context_only": {
+      "note": "sft_eval_v1 rows differ from v2 — pattern-level context only, NOT row-comparable",
+      "n_rows": 9,
+      "answer_len_median": 1017,
+      "looped": 7,
+      "infringement": 4
+    },
+    "diagnostic_caveats": [
+      "reference_coverage is lexical overlap, not accuracy (no rubric exists)",
+      "Hindi coverage values are an ASCII-tokeniser artefact",
+      "BASE/DAPT never ran these rows (not in protocol): NOT_COMPARABLE per-row"
+    ]
+  },
+  "training_dynamics": {
+    "global_step": 16.0,
+    "epochs": 2,
+    "train_rows": 61,
+    "eval_rows": 13,
+    "train_loss_mean": 3.0048,
+    "train_loss_start": 2.9114036560058594,
+    "train_loss_end": 2.9505019187927246,
+    "eval_losses": [
+      3.0142037868499756,
+      2.8713927268981934
+    ],
+    "train_seconds": 309.4,
+    "lr": 3e-05,
+    "save_total_limit": 2,
+    "versions": {
+      "python": "3.12.13",
+      "torch": "2.10.0+cu128",
+      "transformers": "5.0.0",
+      "peft": "0.19.1",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.13.0",
+      "datasets": "5.0.0"
+    },
+    "gpu": "Tesla T4",
+    "loss_caveat": "loss is NOT a success criterion (pre-declared); SFT-01's loss fell faster while behaviour degraded",
+    "classification_vs_task66": {
+      "A_useful_learning": "PARTIAL (eval loss 3.014->2.871; +0.0213 vs SFT-01 on frozen)",
+      "B_behavioral_overfitting": "PARTIAL — fixed on frozen set (median 255, no verbatim train openers), still open on held-out (median 523 vs ref 197)",
+      "C_memorization": "NOT_DETERMINED (no unit-overlap probe; loss cannot prove it)",
+      "D_generation_instability": "MOSTLY FIXED on frozen (loops 31->5, INFRINGEMENT 24->0, at-cap 45->17) / NOT FIXED on held-out (6/13 looped, 10/13 at cap)",
+      "E_insufficient_evidence": "per-epoch checkpoint behaviour NOT_MEASURED (no intermediate sampling)"
+    }
+  },
+  "failure_patterns_vs_sft01": {
+    "frozen_loops": {
+      "sft01": 31,
+      "sft02": 5,
+      "dapt": 1,
+      "base": 0,
+      "detector": "sentence (>=4w) repeats >=3 OR token-seq len 1..8 repeats 3x back-to-back"
+    },
+    "infringement": {
+      "sft01": 24,
+      "sft02": 0
+    },
+    "at_token_cap": {
+      "base": 12,
+      "dapt": 17,
+      "sft01": 45,
+      "sft02": 17
+    },
+    "abstention_correct": {
+      "base": 0,
+      "dapt": 0,
+      "sft01": 1,
+      "sft02": 0
+    },
+    "answer_median_len": {
+      "base": 199,
+      "dapt": 330,
+      "sft01": 851,
+      "sft02": 255
+    },
+    "source_overlap_dataset": {
+      "sft01": 1,
+      "sft02": 0,
+      "note": "Task-67 validator verified 0"
+    },
+    "regression_detail": {
+      "DAPT01EVAL-034": "sft02 hedges ('not explicitly mentioned') where dapt at least named Stevenson -> 0.5->0",
+      "DAPT01EVAL-040": "sft02 answers 'at least 15 minutes' vs correct 48 -> 1.0->0.5 (factual error)",
+      "DAPT01EVAL-036": "vs SFT-01 only: fabricates '1918' where sft01 abstained -> 1->0"
+    }
+  },
+  "artifacts": {
+    "config": {
+      "path": "configs/sft_qwen3_8b_sft02_v1.yaml",
+      "sha256": "98ffe53e5dba1d89ac2b5981445dcfefe8cb062bb4b0d0edfb94903944066598"
+    },
+    "train_data": {
+      "path": "data/training/sft_train_v2.jsonl",
+      "sha256": "3a45925f7f3e3c8d7beaecff4b1a6ac14592dc12b9849c8b70c32bb328b5b7e5"
+    },
+    "eval_data": {
+      "path": "data/evaluation/sft_eval_v2.jsonl",
+      "sha256": "ba59533699b28328e4dc9e5fa3df1c24a0b026824bafc852cfc703f38e6fcc35"
+    },
+    "frozen_cases": {
+      "path": "data/evaluation/dapt01_eval_cases.jsonl",
+      "sha256": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+      "unchanged": true
+    },
+    "sft02_results": {
+      "path": "data/evaluation/dapt01_sft02_results.jsonl",
+      "sha256": "e51638c000654fd9084a0cf5ab1d0a0bad9933067e09b7cabcf1363b6a4aa4e2"
+    },
+    "sft02_eval_generations": {
+      "path": "data/evaluation/sft02_eval_results.jsonl",
+      "sha256": "8f16468fb36c8ea5852e60d3850f18a72ded362393d0b9520e5c7b5c9c962343"
+    },
+    "adapter": {
+      "kaggle": "priyanshu471/sft02-output",
+      "local": "experiments/sft_02/checkpoints/sft-02-final/adapter_model.safetensors",
+      "sha256": "2b22228940f81dc507d9815d919a31fe30bd4a9da1804a33f28b41b70766298d"
+    },
+    "kernels": {
+      "train": "priyanshu471/sft-02-qlora-on-dapt-01-lineage-task-68 (COMPLETE)",
+      "infer": "priyanshu47/sft-02-infer-task68 (COMPLETE; second account after priyanshu471 weekly GPU quota exhausted)"
+    },
+    "train_report": {
+      "path": "data/reports/task68_sft02_train_status.json",
+      "sha256": "9559c7cb6e772ca652767e9c22771650dc79531ec904fe3f1abc5b465ff57821"
+    },
+    "infer_metadata": {
+      "path": "data/reports/task68_sft02_infer_metadata.json",
+      "sha256": "56c2293124f409459b92b92c138322e8371533e96336540a6d30e5db2d83b27b"
+    }
+  },
+  "not_measured": [
+    "SFT-01/SFT-02 factual_error / unsupported_claims / sect_confusion / evaluator degenerate_loop: NOT_MEASURED (dapt01_evaluator_review.jsonl covers base and dapt arms only).",
+    "No automated fluency/grammar score (NOT_MEASURED).",
+    "No pairwise human preference study (NOT_MEASURED).",
+    "Held-out eval rows carry no keyterm rubric; sft02_eval_results.jsonl generations are analysed mechanically in sft02_heldout_analysis.json, not accuracy-scoreed (NOT_MEASURED as a score).",
+    "accuracy/correctness of held-out answers (no rubric): NOT_MEASURED",
+    "grammar/fluency: NOT_MEASURED",
+    "row-by-row comparison with SFT-01 (sft_eval_v1 rows differ): NOT_COMPARABLE",
+    "SFT-02 checkpoint-selection comparison across epoch-8/epoch-16 (final adapter only was evaluated)",
+    "BASE/DAPT behaviour on sft_eval_v2 rows (out of protocol)"
+  ],
+  "hard_stop": true
+}
