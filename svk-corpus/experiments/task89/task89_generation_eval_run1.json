@@ -1,0 +1,612 @@
+{
+  "task": "task89",
+  "generated_at_utc": "2026-10-17T08:29:22Z",
+  "label": "SMOKE SUBSET — not a validated benchmark; 8/47 frozen cases chosen for category coverage",
+  "model": {
+    "id": "qwen2.5:7b-instruct",
+    "endpoint": "http://127.0.0.1:11434",
+    "num_predict": 256,
+    "num_ctx": 4096,
+    "temperature": 0.0,
+    "timeout_s": 300.0,
+    "runtime": "local Ollama on CPU (4 vCPU), no external API"
+  },
+  "retrieval": {
+    "mode": "bm25",
+    "evidence_k": 5,
+    "text_trunc": 500,
+    "service_init_s": 62.71
+  },
+  "benchmark": {
+    "path": "data/evaluation/dapt01_eval_cases.jsonl",
+    "subset_ids": [
+      "DAPT01EVAL-001",
+      "DAPT01EVAL-002",
+      "DAPT01EVAL-024",
+      "DAPT01EVAL-028",
+      "DAPT01EVAL-034",
+      "DAPT01EVAL-036",
+      "DAPT01EVAL-037",
+      "DAPT01EVAL-040"
+    ],
+    "read_only": true
+  },
+  "aggregate": {
+    "n_cases": 8,
+    "n_errors": 0,
+    "objective_mean": 0.5,
+    "objective_full_pass": 4,
+    "citation_valid_rate": 1.0,
+    "citation_present_rate": 0.25,
+    "abstention_correct_rate": 0.5,
+    "abstentions": 6,
+    "abstention_expected_count": 2,
+    "support_ratio_mean": 0.2713,
+    "sect_flags_count": 1,
+    "answers_with_uncited_sentences": 8,
+    "latency": {
+      "retrieval_mean_s": 0.2527,
+      "generation_mean_s": 113.118,
+      "total_mean_s": 113.371,
+      "total_max_s": 175.232
+    }
+  },
+  "per_case": [
+    {
+      "example_id": "DAPT01EVAL-001",
+      "category": "JAIN_TERMINOLOGY",
+      "question": "In J. N. Farquhar's Notes on the Religious Literature of India, how is ahimsa defined?",
+      "expected_answer_or_reference": "Ahimsa = non-injury, especially non-injury to animal life.",
+      "abstention_expected": false,
+      "answer": "According to J. N. Farquhar's Notes on the Religious Literature of India, ahimsa is defined as \"non-injury, especially non-injury to animal life\" [E1]. This definition highlights the importance of avoiding harm to living beings, particularly animals, in the context of Jainism as discussed in Farquhar's work.",
+      "abstained": false,
+      "abstention_reason": "",
+      "error": "",
+      "citations": [
+        "E1"
+      ],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": true,
+      "citation_map": {
+        "E1": {
+          "text_id": "SVK-1005:u04715:97133ca3a76abfe6",
+          "source_id": "SVK-1005",
+          "title": "Notes on the Religious Literature of India (1920)",
+          "citation": "Notes on the Religious Literature of India (1920) (1920) [SVK-1005], section: INDEX"
+        }
+      },
+      "evidence_ids": [
+        "SVK-1005:u04715:97133ca3a76abfe6",
+        "SVK-1005:u02438:d6fc3568271a5d78",
+        "SVK-1005:u06140:c7df125b9b678511",
+        "SVK-1005:u05440:425e48ab95f9214e",
+        "SVK-1005:u03408:b0c2413dc3f88c36"
+      ],
+      "evidence_source_ids": [
+        "SVK-1005",
+        "SVK-1005",
+        "SVK-1005",
+        "SVK-1005",
+        "SVK-1005"
+      ],
+      "evidence_sect": [
+        "MULTI_TRADITION",
+        "MULTI_TRADITION",
+        "MULTI_TRADITION",
+        "MULTI_TRADITION",
+        "MULTI_TRADITION"
+      ],
+      "objective_score": 1.0,
+      "groups_satisfied": "1/1",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": true,
+      "evidence_support_ratio": 0.3462,
+      "uncited_sentences": [
+        "This definition highlights the importance of avoiding harm to living beings, particularly animals, in the context of Jainism as discussed in Farquhar's work."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [
+          "jain"
+        ],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.2086,
+        "generation_s": 175.023,
+        "total_s": 175.232,
+        "wall_s": 175.232
+      },
+      "eval_count": 72,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-002",
+      "category": "JAIN_TERMINOLOGY",
+      "question": "According to Stevenson's Notes on Modern Jainism, what is Karma, and how does it affect a person's lives?",
+      "expected_answer_or_reference": "Karma is the accumulated force of a person's good and bad actions in previous existences; it determines present and future life and forces a succession of rebirths until exhausted.",
+      "abstention_expected": false,
+      "answer": "ABSTAIN: The provided evidence does not directly address the definition of Karma or its effects on a person's life as asked in the question. The passages in E1, E2, and E3 focus on the difficulty of being free from Karma and the state of being freed from Karma, but do not provide a clear definition or explanation of Karma itself. Evidence E4 and E5 are unrelated to the topic and do not contribute to answering the question.",
+      "abstained": true,
+      "abstention_reason": "model_abstain",
+      "error": "",
+      "citations": [],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": false,
+      "citation_map": {},
+      "evidence_ids": [
+        "SVK-0038:u00879:a0cce44924ad4290",
+        "SVK-0038:u00775:bef3237d0ab4cbdb",
+        "SVK-0038:u00722:f7311da1a0c76be1",
+        "SVK-2008:u02263:2066d8096155b3f7",
+        "SVK-0026:u00951:0d926b10a777ddee"
+      ],
+      "evidence_source_ids": [
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-2008",
+        "SVK-0026"
+      ],
+      "evidence_sect": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "GENERIC_JAIN"
+      ],
+      "objective_score": 0.0,
+      "groups_satisfied": "0/1",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": false,
+      "evidence_support_ratio": 0.2414,
+      "uncited_sentences": [
+        "The passages in E1, E2, and E3 focus on the difficulty of being free from Karma and the state of being freed from Karma, but do not provide a clear definition o",
+        "Evidence E4 and E5 are unrelated to the topic and do not contribute to answering the question."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.3789,
+        "generation_s": 122.7894,
+        "total_s": 123.1687,
+        "wall_s": 123.169
+      },
+      "eval_count": 93,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-024",
+      "category": "AGAM_GROUNDED",
+      "question": "In this corpus's illustrated Agam series, which Agam and mool number is the Aavashyak Sutra?",
+      "expected_answer_or_reference": "Agam 28, Mool 01 (Aavashyak Sutra, Sthanakvasi).",
+      "abstention_expected": false,
+      "answer": "The Aavashyak Sutra is found in Agam 28, Mool 01, as evidenced by [E1]. This Agam text provides instructions on observing the ekaasan fast, limiting food intake to once from sunrise and avoiding passionate foods. [E2] and [E3] also pertain to this Agam but do not change the canonical identification of the Aavashyak Sutra. [E4] and [E5] refer to different Agams and are not relevant to the question at hand. Therefore, the answer is based on the canonical identification provided in [E1].",
+      "abstained": false,
+      "abstention_reason": "",
+      "error": "",
+      "citations": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5"
+      ],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": true,
+      "citation_map": {
+        "E1": {
+          "text_id": "SVK-2022:u156573:9c12e66c",
+          "source_id": "SVK-2022",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "citation": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi (2012) [SVK-2022]"
+        },
+        "E2": {
+          "text_id": "SVK-2022:u156588:6f0961af",
+          "source_id": "SVK-2022",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "citation": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi (2012) [SVK-2022]"
+        },
+        "E3": {
+          "text_id": "SVK-2022:u156535:060b585f",
+          "source_id": "SVK-2022",
+          "title": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi",
+          "citation": "Agam 28 Mool 01 Aavashyak Sutra Sthanakvasi (2012) [SVK-2022]"
+        },
+        "E4": {
+          "text_id": "SVK-2026:u162500:bb22bc26",
+          "source_id": "SVK-2026",
+          "title": "Agam 29 Mool 02 Dasvaikalik Sutra Sthanakvasi",
+          "citation": "Agam 29 Mool 02 Dasvaikalik Sutra Sthanakvasi [SVK-2026]"
+        },
+        "E5": {
+          "text_id": "SVK-2023:u158035:13342984",
+          "source_id": "SVK-2023",
+          "title": "Agam 30 mool 03 Uttaradhyayana Sutra Sthanakvasi",
+          "citation": "Agam 30 mool 03 Uttaradhyayana Sutra Sthanakvasi (2011) [SVK-2023]"
+        }
+      },
+      "evidence_ids": [
+        "SVK-2022:u156573:9c12e66c",
+        "SVK-2022:u156588:6f0961af",
+        "SVK-2022:u156535:060b585f",
+        "SVK-2026:u162500:bb22bc26",
+        "SVK-2023:u158035:13342984"
+      ],
+      "evidence_source_ids": [
+        "SVK-2022",
+        "SVK-2022",
+        "SVK-2022",
+        "SVK-2026",
+        "SVK-2023"
+      ],
+      "evidence_sect": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "objective_score": 1.0,
+      "groups_satisfied": "1/1",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": true,
+      "evidence_support_ratio": 0.3784,
+      "uncited_sentences": [
+        "This Agam text provides instructions on observing the ekaasan fast, limiting food intake to once from sunrise and avoiding passionate foods."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [
+          "agam"
+        ],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.2624,
+        "generation_s": 119.3368,
+        "total_s": 119.5995,
+        "wall_s": 119.6
+      },
+      "eval_count": 130,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-028",
+      "category": "STHANAKAVASI_DISTINCTION",
+      "question": "Are the Sthanakavasi counted among the Svetambara or the Digambara, according to Stevenson and this corpus's source manifest?",
+      "expected_answer_or_reference": "They are Svetambara (manifest: tradition SHWETAMBAR, sect STHANAKAVASI); Stevenson groups Svetambara and Sthanakavasi together and contrasts them with Digambara.",
+      "abstention_expected": false,
+      "answer": "ABSTAIN: The provided evidence does not directly state whether the Sthanakavasi are counted among the Svetambara or the Digambara. Evidence E1 mentions intermarriage between Svetambara, Digambara, and Sthanakavasi, but does not specify their sectarian affiliation. Evidence E2 and E3 provide details about dietary practices but do not clarify the sectarian categorization of the Sthanakavasi. Evidence E4 and E5 are focused on canonical and linguistic aspects of the Svetambara tradition and do not address the Sthanakavasi's sectarian affiliation. Therefore, based on the given evidence, it is not possible to determine if the Sthanakavasi are counted among the Svetambara or the Digambara. [E1, E2, E3, E4, E5]",
+      "abstained": true,
+      "abstention_reason": "model_abstain",
+      "error": "",
+      "citations": [],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": false,
+      "citation_map": {},
+      "evidence_ids": [
+        "SVK-0038:u00507:72ec8d5cb41737ae",
+        "SVK-0038:u00516:4a75a07e8205c131",
+        "SVK-0038:u00421:3e46b7bef9bdc821",
+        "SVK-1002:u00229:aa8debbb6ae60a20",
+        "SVK-2008:u01768:b8ea367175543fc4"
+      ],
+      "evidence_source_ids": [
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-1002",
+        "SVK-2008"
+      ],
+      "evidence_sect": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "SVETAMBARA",
+        "unknown"
+      ],
+      "objective_score": 1.0,
+      "groups_satisfied": "1/1",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": false,
+      "evidence_support_ratio": 0.1842,
+      "uncited_sentences": [
+        "Evidence E1 mentions intermarriage between Svetambara, Digambara, and Sthanakavasi, but does not specify their sectarian affiliation.",
+        "Evidence E2 and E3 provide details about dietary practices but do not clarify the sectarian categorization of the Sthanakavasi.",
+        "Evidence E4 and E5 are focused on canonical and linguistic aspects of the Svetambara tradition and do not address the Sthanakavasi's sectarian affiliation.",
+        "Therefore, based on the given evidence, it is not possible to determine if the Sthanakavasi are counted among the Svetambara or the Digambara."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [
+          "digambar",
+          "digambara",
+          "svetambara"
+        ],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.1712,
+        "generation_s": 127.4304,
+        "total_s": 127.6019,
+        "wall_s": 127.602
+      },
+      "eval_count": 177,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-034",
+      "category": "SOURCE_ATTRIBUTION",
+      "question": "Who is the author of 'Notes on Modern Jainism' (1910), according to this corpus's source manifest?",
+      "expected_answer_or_reference": "Mrs. Sinclair Stevenson.",
+      "abstention_expected": false,
+      "answer": "ABSTAIN: The provided evidence does not contain any information about the author of 'Notes on Modern Jainism' (1910). The passages discuss other authors and works but do not mention the author of this specific text. [E1, E2, E3, E4, E5]",
+      "abstained": true,
+      "abstention_reason": "model_abstain",
+      "error": "",
+      "citations": [],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": false,
+      "citation_map": {},
+      "evidence_ids": [
+        "SVK-0038:u00232:c2fb62bf7c70b112",
+        "SVK-0038:u00830:e7a7d39083420a22",
+        "SVK-0038:u00235:bf0568bcb7e48c89",
+        "SVK-1005:u01950:881509a412339cca",
+        "SVK-1005:u02406:3fcadca959e65028"
+      ],
+      "evidence_source_ids": [
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-1005",
+        "SVK-1005"
+      ],
+      "evidence_sect": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "MULTI_TRADITION",
+        "MULTI_TRADITION"
+      ],
+      "objective_score": 0.0,
+      "groups_satisfied": "0/2",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": false,
+      "evidence_support_ratio": 0.25,
+      "uncited_sentences": [
+        "The passages discuss other authors and works but do not mention the author of this specific text."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [
+          "jain"
+        ],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.1808,
+        "generation_s": 94.744,
+        "total_s": 94.9251,
+        "wall_s": 94.925
+      },
+      "eval_count": 64,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-036",
+      "category": "ABSTENTION",
+      "question": "In what year was 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari published?",
+      "expected_answer_or_reference": "NOT MEASURED / abstention: neither the manifest publication_year nor any text in the source states a publication year.",
+      "abstention_expected": true,
+      "answer": "ABSTAIN: The provided evidence does not contain any information about the publication year of 'Sthanakvasi Jain Itihas' by Kesrichand Bhandari. Evidence E1 mentions the book title, author, and publisher but does not provide the publication year. The other evidence pieces are unrelated to the specific book in question.",
+      "abstained": true,
+      "abstention_reason": "model_abstain",
+      "error": "",
+      "citations": [],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": false,
+      "citation_map": {},
+      "evidence_ids": [
+        "SVK-2027:u162581:61e47b84",
+        "SVK-2027:u162580:22bdd84c",
+        "SVK-2027:u162584:1d5a2f78",
+        "SVK-2025:u158736:9b7170ec",
+        "SVK-2008:u03595:7d47ad5590e66fea"
+      ],
+      "evidence_source_ids": [
+        "SVK-2027",
+        "SVK-2027",
+        "SVK-2027",
+        "SVK-2025",
+        "SVK-2008"
+      ],
+      "evidence_sect": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "objective_score": 0.0,
+      "groups_satisfied": "1/1",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": true,
+      "evidence_support_ratio": 0.32,
+      "uncited_sentences": [
+        "Evidence E1 mentions the book title, author, and publisher but does not provide the publication year.",
+        "The other evidence pieces are unrelated to the specific book in question."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [
+          "jain"
+        ],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.5942,
+        "generation_s": 110.717,
+        "total_s": 111.3114,
+        "wall_s": 111.311
+      },
+      "eval_count": 70,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-037",
+      "category": "ABSTENTION",
+      "question": "In which year exactly was the Terapanth founded?",
+      "expected_answer_or_reference": "NOT MEASURED / abstention: Stevenson gives only 'about 150 years ago' (relative to 1910); no exact founding year is stated in the corpus.",
+      "abstention_expected": true,
+      "answer": "ABSTAIN: The provided evidence does not contain a specific year for the founding of the Terapanth. Evidence E2 mentions the founding year as 1658, but it refers to the Sadhs, not the Terapanth. The other passages are either unrelated or do not provide the required information.",
+      "abstained": true,
+      "abstention_reason": "model_abstain",
+      "error": "",
+      "citations": [],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": false,
+      "citation_map": {},
+      "evidence_ids": [
+        "SVK-1002:u00698:da4c1f23840cf2c6",
+        "SVK-1005:u03516:7f6ea7d5e3e38b91",
+        "SVK-0038:u00170:6f241b7d634d1e02",
+        "SVK-1001:u02967:60cc14d47bd42705",
+        "SVK-1001:u02997:186246bd87ae4272"
+      ],
+      "evidence_source_ids": [
+        "SVK-1002",
+        "SVK-1005",
+        "SVK-0038",
+        "SVK-1001",
+        "SVK-1001"
+      ],
+      "evidence_sect": [
+        "SVETAMBARA",
+        "MULTI_TRADITION",
+        "unknown",
+        "SVETAMBARA",
+        "SVETAMBARA"
+      ],
+      "objective_score": 0.0,
+      "groups_satisfied": "1/1",
+      "abstention_detected_by_markers": false,
+      "abstention_correct": true,
+      "evidence_support_ratio": 0.1053,
+      "uncited_sentences": [
+        "Evidence E2 mentions the founding year as 1658, but it refers to the Sadhs, not the Terapanth.",
+        "The other passages are either unrelated or do not provide the required information."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [
+          "terapanth"
+        ],
+        "terms_absent_from_evidence": [
+          "terapanth"
+        ],
+        "flag": true
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.0638,
+        "generation_s": 80.5301,
+        "total_s": 80.5942,
+        "wall_s": 80.594
+      },
+      "eval_count": 65,
+      "warnings": []
+    },
+    {
+      "example_id": "DAPT01EVAL-040",
+      "category": "PRACTICE",
+      "question": "According to Stevenson, how long must a layman spend over Samayika?",
+      "expected_answer_or_reference": "Forty-eight minutes.",
+      "abstention_expected": false,
+      "answer": "ABSTAIN: The provided evidence does not contain any information about Stevenson or the duration a layman must spend over Samayika according to Stevenson. Evidence E1 mentions that a layman needs only spend forty-eight minutes over Samayika, but this is not attributed to Stevenson. Therefore, the question cannot be answered based on the given evidence.",
+      "abstained": true,
+      "abstention_reason": "model_abstain",
+      "error": "",
+      "citations": [],
+      "invalid_citations": [],
+      "citation_valid": true,
+      "citation_present": false,
+      "citation_map": {},
+      "evidence_ids": [
+        "SVK-0038:u01132:98922e26d6c63caf",
+        "SVK-0038:u00925:039a54fcac2b74da",
+        "SVK-0038:u01133:ab1e63ea89937443",
+        "SVK-0027:u00146:2551f38ee01321cb",
+        "SVK-0027:u00116:3315bb0c6beb901b"
+      ],
+      "evidence_source_ids": [
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0038",
+        "SVK-0027",
+        "SVK-0027"
+      ],
+      "evidence_sect": [
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "objective_score": 1.0,
+      "groups_satisfied": "2/2",
+      "abstention_detected_by_markers": true,
+      "abstention_correct": false,
+      "evidence_support_ratio": 0.3448,
+      "uncited_sentences": [
+        "Evidence E1 mentions that a layman needs only spend forty-eight minutes over Samayika, but this is not attributed to Stevenson.",
+        "Therefore, the question cannot be answered based on the given evidence."
+      ],
+      "sect_flags": {
+        "tradition_terms_in_answer": [],
+        "terms_absent_from_evidence": [],
+        "flag": false
+      },
+      "retrieval_mode": "bm25",
+      "model": "qwen2.5:7b-instruct",
+      "latency": {
+        "retrieval_s": 0.1615,
+        "generation_s": 74.3702,
+        "total_s": 74.532,
+        "wall_s": 74.532
+      },
+      "eval_count": 71,
+      "warnings": []
+    }
+  ],
+  "limitations": [
+    "8 of 47 frozen cases; single run; no human adjudication.",
+    "evidence_support_ratio is a lexical overlap proxy, not a factual-correctness judgement; uncited_sentences is sentence-level.",
+    "sect_flags are heuristic prompts for review, not verified errors.",
+    "Latency measured on a shared CPU VM; warm/cold model state varies.",
+    "Keyword objective_score inherits the frozen scorer's term-matching semantics (it is not a model-based judgement)."
+  ]
+}
