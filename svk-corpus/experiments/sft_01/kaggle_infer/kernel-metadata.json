@@ -1,0 +1,19 @@
+{
+  "id": "priyanshu471/sft-01-infer-task65",
+  "title": "sft-01-infer-task65",
+  "code_file": "infer.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "priyanshu471/sft01-output",
+    "priyanshu471/jainllm-sft01-train"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

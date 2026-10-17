@@ -1,0 +1,149 @@
+# SFT-01: Supervised Fine-Tuning on the Task-64 SFT-01 dataset
+# Lineage: Qwen/Qwen3-8B-Base + DAPT-01 adapter (priyanshu471/dapt01-checkpoint-15248)
+# Method: QLoRA (4-bit NF4), continued from the completed DAPT-01 adapter
+# NOT Instruct: the DAPT-01 lineage (Base) is preserved end to end.
+
+# Model Configuration
+model:
+  name: "Qwen/Qwen3-8B-Base"
+  revision: "main"
+  torch_dtype: "float16"
+  attn_implementation: "sdpa"   # parity with the DAPT-01 Kaggle T4 session
+  trust_remote_code: true
+
+# Quantization (LOCKED with DAPT-01)
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "float16"
+
+# Adapter lineage: continue training the completed DAPT-01 adapter
+adapter:
+  base_model: "Qwen/Qwen3-8B-Base"
+  continue_from: "priyanshu471/dapt01-checkpoint-15248"   # Kaggle dataset (attached)
+  continue_from_mirror: "priyanshu47/dapt01-checkpoint-15248"
+  local_path: null                 # set to a local dir to resume outside Kaggle
+  is_trainable: true
+  reason: >-
+    SFT-01 continues the DAPT-01 adapter rather than starting a fresh LoRA, so
+    the trained domain representation from 15248 steps is the starting point
+    and the locked LoRA geometry (r=16, alpha=32, dropout=0.05, 7 projection
+    targets) is inherited exactly instead of re-initialized.
+
+# LoRA Configuration (locked by DAPT-01; inherited from the adapter config)
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Training Configuration
+training:
+  output_dir: "./outputs/sft-01"
+  num_train_epochs: 3
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 1e-4
+  learning_rate_reason: >-
+    1e-4 = half of the DAPT-01 rate (2e-4). DAPT-01 ran 15248 steps over ~16k
+    chunks; SFT-01 sees ~50 rows x 3 epochs (~150 optimizer steps at effective
+    batch 8). A lower rate plus cosine decay prevents catastrophic forgetting
+    of the DAPT representation on a very small, high-signal dataset.
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  max_grad_norm: 1.0
+  max_seq_length: 2048
+  logging_steps: 1
+  save_strategy: "epoch"
+  eval_strategy: "epoch"
+  save_total_limit: 3
+  load_best_model_at_end: false
+  fp16: true
+  bf16: false
+  dataloader_num_workers: 2
+  seed: 42
+  report_to: "tensorboard"
+  run_name: "sft-01-qwen3-8b-dapt01-lineage"
+
+# Dataset Configuration
+dataset:
+  train_file: "./data/training/sft_train_v1.jsonl"
+  eval_file: "./data/evaluation/sft_eval_v1.jsonl"
+  train_rows: 50
+  eval_rows: 9
+  message_column: "messages"
+  max_seq_length: 2048
+  chat_template: "tokenizer.apply_chat_template"   # explicit fallback if missing
+  loss_masking: "user_and_system_turns"            # labels = -100 on non-assistant
+  preprocessing_num_workers: 2
+  rights_allowlist:
+    - "TRAINING_ALLOWED"
+    - "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE"
+
+# Evaluation Configuration (held-out split; the frozen 47-case Task-60 set
+# stays the behavioural benchmark and is not touched by training)
+evaluation:
+  eval_strategy: "epoch"
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  frozen_benchmark: "./data/evaluation/dapt01_eval_cases.jsonl"
+
+# Checkpoint Configuration
+checkpointing:
+  checkpoint_strategy: "epoch"
+  total_checkpoints: 3
+  resume_from_checkpoint: null
+  save_tokenizer: true
+  save_metadata: "sft01_train_report.json"
+
+# Reproducibility
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false
+
+# Kaggle execution (T4; nothing is launched by this config)
+kaggle:
+  kernel_id: "priyanshu471/sft-01-qlora-on-dapt-01-lineage-task-64"
+  dataset_sources:
+    - "priyanshu471/jainllm-sft01-train"
+    - "priyanshu471/dapt01-checkpoint-15248"
+  output_dataset: "priyanshu471/sft01-output"
+  machine_shape: "NvidiaTeslaT4"
+  enable_gpu: true
+  enable_internet: true
+
+# Hardware Requirements (estimated)
+hardware:
+  gpu_type: "NVIDIA Tesla T4 (Kaggle)"
+  min_vram: "12GB"
+  recommended_vram: "16GB"
+  estimated_training_time: "10-25 minutes (50 rows x 3 epochs)"
+  estimated_cost: "Kaggle session, well within quota"
+
+# Experiment Metadata
+metadata:
+  experiment_id: "SFT-01"
+  base_model: "Qwen/Qwen3-8B-Base"
+  continues_adapter: "DAPT-01 @ step 15248"
+  method: "QLoRA supervised fine-tuning (chat format, assistant-only loss)"
+  domain: "Jain"
+  tradition: "Sthanakavasi"
+  dataset_version: "sft_train_v1 / sft_eval_v1 (Task 64)"
+  date: "2026-10-01"
+  description: >-
+    First supervised fine-tuning run: 59 schema-valid, rights-cleared,
+    evidence-grounded QA rows (54 Task-63 APPROVE + 5 HUMAN_VERIFIED) on top of
+    the DAPT-01 adapter. Training has NOT been started by this config.

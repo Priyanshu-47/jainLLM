@@ -1,0 +1,19 @@
+{
+  "id": "priyanshu471/sft-01-qlora-on-dapt-01-lineage-task-64",
+  "title": "SFT-01 QLoRA on DAPT-01 lineage (Task 64)",
+  "code_file": "train.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "priyanshu471/jainllm-sft01-train",
+    "priyanshu471/dapt01-checkpoint-15248"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

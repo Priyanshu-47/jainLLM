@@ -1,0 +1,18 @@
+{
+  "id": "priyanshu471/task83-mini-gate-p500-p1000-targeted",
+  "title": "TASK83 Mini Gate P500 P1000 Targeted Generation",
+  "code_file": "task83_infer_kaggle.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [
+    "priyanshu471/dapt01-checkpoint-15248"
+  ],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

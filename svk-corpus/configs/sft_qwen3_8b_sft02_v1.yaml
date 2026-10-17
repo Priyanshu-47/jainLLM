@@ -1,0 +1,188 @@
+# SFT-02: Supervised Fine-Tuning on the Task-67 SFT-02 dataset
+# Lineage: Qwen/Qwen3-8B-Base + DAPT-01 adapter (priyanshu471/dapt01-checkpoint-15248)
+# Method: QLoRA (4-bit NF4), continued from the completed DAPT-01 adapter
+# NOT Instruct: the DAPT-01 lineage (Base) is preserved end to end.
+#
+# Task-66 failure analysis (Phase 8/13) applied. Only two hyperparameters
+# change relative to SFT-01 (configs/sft_qwen3_8b_v1.yaml):
+#   learning_rate: 1e-4  -> 3e-5
+#   num_train_epochs: 3  -> 2
+# Everything else (QLoRA geometry, batch/seq, scheduler, seed) is locked so the
+# frozen 47-case benchmark comparison stays attributable to the dataset fix.
+# This config does NOT launch anything.
+
+# Model Configuration
+model:
+  name: "Qwen/Qwen3-8B-Base"
+  revision: "main"
+  torch_dtype: "float16"
+  attn_implementation: "sdpa"   # parity with the DAPT-01 Kaggle T4 session
+  trust_remote_code: true
+
+# Quantization (LOCKED with DAPT-01)
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "float16"
+
+# Adapter lineage: continue training the completed DAPT-01 adapter
+adapter:
+  base_model: "Qwen/Qwen3-8B-Base"
+  continue_from: "priyanshu471/dapt01-checkpoint-15248"   # Kaggle dataset (attached)
+  continue_from_mirror: "priyanshu47/dapt01-checkpoint-15248"
+  local_path: null
+  is_trainable: true
+  reason: >-
+    SFT-02 continues the DAPT-01 adapter (NOT the SFT-01 adapter), because
+    Task-66 showed SFT-01 degraded abstention/anti-fabrication behaviour
+    (+1 SOURCE_OVERLAP vs DAPT-01). Restarting from DAPT-01 keeps the good
+    baseline while the corrected SFT-02 dataset supplies the missing
+    behaviour shaping.
+
+# LoRA Configuration (locked by DAPT-01; inherited from the adapter config)
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+  bias: "none"
+  task_type: "CAUSAL_LM"
+
+# Training Configuration
+training:
+  output_dir: "./outputs/sft-02"
+  num_train_epochs: 2
+  epochs_reason: >-
+    Task-66: SFT-01 ran 3 epochs on ~50 rows and regressed on factual
+    grounding; 2 epochs with behaviour-based checkpoint selection is the
+    conservative correction. Each epoch saves a checkpoint for behavioural
+    selection against the frozen 47-case benchmark.
+  per_device_train_batch_size: 1
+  per_device_eval_batch_size: 1
+  gradient_accumulation_steps: 8
+  learning_rate: 3e-5
+  learning_rate_reason: >-
+    3e-5 = 0.3x the SFT-01 rate (1e-4) per Task-66 Phase 8 (LR 1e-4 -> 3e-5
+    range 1e-4 -> 3e-5). ~61 train rows x 2 epochs = ~16 optimizer steps at
+    effective batch 8; a lower rate with cosine decay protects the DAPT-01
+    representation while the new behaviour rows (abstention pairs,
+    anti-fabrication pairs, source attribution diversity) take effect.
+  weight_decay: 0.01
+  warmup_ratio: 0.03
+  lr_scheduler_type: "cosine"
+  max_grad_norm: 1.0
+  max_seq_length: 2048
+  logging_steps: 1
+  save_strategy: "epoch"
+  eval_strategy: "epoch"
+  save_total_limit: 2
+  load_best_model_at_end: false
+  checkpoint_selection: "behavioural"
+  checkpoint_selection_reason: >-
+    Task-66: select the epoch checkpoint by frozen-benchmark behaviour
+    (factual grounding / SOURCE_OVERLAP / abstention), NOT by eval_loss.
+    Selection is a post-training analysis step; this config does not run it.
+  fp16: true
+  bf16: false
+  dataloader_num_workers: 2
+  seed: 42
+  report_to: "tensorboard"
+  run_name: "sft-02-qwen3-8b-dapt01-lineage"
+
+# Dataset Configuration
+dataset:
+  train_file: "./data/training/sft_train_v2.jsonl"
+  eval_file: "./data/evaluation/sft_eval_v2.jsonl"
+  train_rows: 61
+  eval_rows: 13
+  dataset_builder: "./experiments/sft_02/build_sft02_dataset.py"
+  dataset_gate: "./experiments/sft_02/anti_template_gate.py"
+  message_column: "messages"
+  max_seq_length: 2048
+  chat_template: "tokenizer.apply_chat_template"
+  loss_masking: "user_and_system_turns"            # labels = -100 on non-assistant
+  preprocessing_num_workers: 2
+  rights_allowlist:
+    - "TRAINING_ALLOWED"
+    - "TRAINING_ALLOWED_WITH_PERMISSION_EVIDENCE"
+  anti_template_gate_expectation: >-
+    Re-run the gate on the built files before training: level PASS or WARN
+    only; single accepted residual WARN is the CANONICAL_VS_COMMENTARY opener
+    concentration (55.6% < 60% FAIL threshold), documented in Task-67 report.
+
+# Evaluation Configuration (held-out split; the frozen 47-case Task-60 set
+# stays the behavioural benchmark and is not touched by training)
+evaluation:
+  eval_strategy: "epoch"
+  metric_for_best_model: "eval_loss"
+  greater_is_better: false
+  frozen_benchmark: "./data/evaluation/dapt01_eval_cases.jsonl"
+  frozen_benchmark_sha256: "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81"
+  frozen_benchmark_rows: 47
+  selection_metric: "frozen_benchmark_behaviour"
+  selection_metric_note: >-
+    Behavioural selection (grounding / SOURCE_OVERLAP / abstention) over the
+    frozen 47-case benchmark after training; never eval_loss alone.
+
+# Checkpoint Configuration
+checkpointing:
+  checkpoint_strategy: "epoch"
+  total_checkpoints: 2
+  resume_from_checkpoint: null
+  save_tokenizer: true
+  save_metadata: "sft02_train_report.json"
+
+# Reproducibility
+reproducibility:
+  seed: 42
+  deterministic: true
+  benchmark: false
+
+# Kaggle execution: PLANNED ONLY - no kernel is created or launched by Task 67.
+kaggle:
+  status: "not_created"
+  planned_kernel_id: "priyanshu471/sft-02-qlora-on-dapt-01-lineage-task-67"
+  dataset_sources:
+    - "priyanshu471/jainllm-sft02-train"        # to be created from sft_train_v2.jsonl
+    - "priyanshu471/dapt01-checkpoint-15248"
+  planned_output_dataset: "priyanshu471/sft02-output"
+  machine_shape: "NvidiaTeslaT4"
+  enable_gpu: true
+  enable_internet: true
+
+# Hardware Requirements (estimated)
+hardware:
+  gpu_type: "NVIDIA Tesla T4 (Kaggle)"
+  min_vram: "12GB"
+  recommended_vram: "16GB"
+  estimated_training_time: "10-25 minutes (61 rows x 2 epochs)"
+  estimated_cost: "Kaggle session, well within quota"
+
+# Experiment Metadata
+metadata:
+  experiment_id: "SFT-02"
+  base_model: "Qwen/Qwen3-8B-Base"
+  continues_adapter: "DAPT-01 @ step 15248"
+  method: "QLoRA supervised fine-tuning (chat format, assistant-only loss)"
+  domain: "Jain"
+  tradition: "Sthanakavasi"
+  dataset_version: "sft_train_v2 / sft_eval_v2 (Task 67)"
+  date: "2026-10-01"
+  supersedes: "SFT-01 (unpromoted: 0.2305 factual grounding < DAPT-01 0.2660)"
+  not_a_regression: true
+  description: >-
+    Corrected SFT run per Task-66 failure analysis: 74 total rows (61 train /
+    13 eval), anti-template gated (PASS/WARN), source-disjoint eval with all
+    contrast pairs train-locked, abstention and anti-fabrication
+    presupposition pairs, diversified refusal phrasing, capped source
+    attribution with unknown-source rows, practice + Sthanakavasi distinction
+    rows, hi/gu/Prakrit multilingual rows, concision median ~197 chars.
+    Training has NOT been started by this config.
