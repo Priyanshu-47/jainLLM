@@ -1,0 +1,839 @@
+{
+  "task": "task97",
+  "case_id": "DAPT01EVAL-037",
+  "generated_at_utc": "2026-10-18T12:54:30Z",
+  "model_calls": 0,
+  "ablation_type": "tail-presence factorial over authentic corpus text",
+  "factors": {
+    "E2_extended": "E2 SVK-1005:u03516:7f6ea7d5e3e38b91 full 529 chars vs truncated 500 (+29 chars, +7 tok est); contains the 1658 sentence at offset 105; tail is factually trivial ('d a meeting at the full moon.')",
+    "E5_extended": "E5 SVK-1005:u02684:2ab2a5c5c4027c26 full 821 chars vs truncated 500 (+321 chars, +80 tok est); tail is Jnanesvara-era material topically unrelated to Terapanth founding",
+    "E10_extended": "E10 SVK-1005:u02378:d5401d631d1a3cd2 full 559 chars vs truncated 500 (+59 chars, +14 tok est); tail is canon-history material unrelated to founding"
+  },
+  "tails": {
+    "E2": {
+      "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+      "b_chars": 500,
+      "full_chars": 529,
+      "delta_chars": 29,
+      "delta_token_est": 7,
+      "tail_preview": "d a meeting at the full moon.",
+      "tail_mentions_terapanth_or_founding": false
+    },
+    "E5": {
+      "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+      "b_chars": 500,
+      "full_chars": 821,
+      "delta_chars": 321,
+      "delta_token_est": 80,
+      "tail_preview": "ich his name is associated, is clearly connected with the appearance of the order. It seems most probable that he flouri",
+      "tail_mentions_terapanth_or_founding": false
+    },
+    "E10": {
+      "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+      "b_chars": 500,
+      "full_chars": 559,
+      "delta_chars": 59,
+      "delta_token_est": 14,
+      "tail_preview": "nd the bulk of the existing canon thus came into existence.",
+      "tail_mentions_terapanth_or_founding": false
+    }
+  },
+  "cells": {
+    "B_t500_original": {
+      "extend": [],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 5798,
+      "prompt_token_estimate": 1449,
+      "prompt_sha256": "c77f7a34ed2a12ce912855069acf8d5670fee2dc230ce08cdb67c84eebcec419",
+      "evidence_text_total_chars": 3205
+    },
+    "D_t2000_original": {
+      "extend": [
+        "E10",
+        "E2",
+        "E5"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 529,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 821,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 559,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 6207,
+      "prompt_token_estimate": 1551,
+      "prompt_sha256": "4f101ff73034caca265cb455216936d0f402140464fd1e753acb4f8fab082b04",
+      "evidence_text_total_chars": 3614
+    },
+    "X_E2only": {
+      "extend": [
+        "E2"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 529,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 5827,
+      "prompt_token_estimate": 1456,
+      "prompt_sha256": "1106d5fe5cc08a64c9b3b24a46282902a641378163acc68b15ce0a86ef1e0c80",
+      "evidence_text_total_chars": 3234
+    },
+    "X_E5only": {
+      "extend": [
+        "E5"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 821,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 6119,
+      "prompt_token_estimate": 1529,
+      "prompt_sha256": "6f98f8f00a5c9d792e3cdeab4da257621437683109ac57ea1985d6c73cfd7171",
+      "evidence_text_total_chars": 3526
+    },
+    "X_E10only": {
+      "extend": [
+        "E10"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 559,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 5857,
+      "prompt_token_estimate": 1464,
+      "prompt_sha256": "fcc65295eca046265beea563c940a51604f254c1827399de81af16fe24b12f5f",
+      "evidence_text_total_chars": 3264
+    },
+    "X_E5E10": {
+      "extend": [
+        "E10",
+        "E5"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 821,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 559,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 6178,
+      "prompt_token_estimate": 1544,
+      "prompt_sha256": "bf5f2d4b5580c0d6f947dfe7c504be8145d45c42c9ae2927904cac5390decf4e",
+      "evidence_text_total_chars": 3585
+    },
+    "X_E2E5": {
+      "extend": [
+        "E2",
+        "E5"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 529,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 821,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 6148,
+      "prompt_token_estimate": 1537,
+      "prompt_sha256": "81473f31b1e07c6dd5ab7c39bbd1276fdcdc1a0d8108da869ba0a4f503a8d7ab",
+      "evidence_text_total_chars": 3555
+    },
+    "X_E2E10": {
+      "extend": [
+        "E10",
+        "E2"
+      ],
+      "evidence": [
+        {
+          "evidence_id": "E1",
+          "text_id": "SVK-0038:u01198:91a0ca2e898f2c3a",
+          "chars": 466,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 466
+        },
+        {
+          "evidence_id": "E2",
+          "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+          "chars": 529,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 529
+        },
+        {
+          "evidence_id": "E3",
+          "text_id": "SVK-1002:u00698:da4c1f23840cf2c6",
+          "chars": 118,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 118
+        },
+        {
+          "evidence_id": "E4",
+          "text_id": "SVK-1009:u00571:13b50f1dddeaba92",
+          "chars": 155,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 155
+        },
+        {
+          "evidence_id": "E5",
+          "text_id": "SVK-1005:u02684:2ab2a5c5c4027c26",
+          "chars": 500,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 821
+        },
+        {
+          "evidence_id": "E6",
+          "text_id": "SVK-0038:u00170:6f241b7d634d1e02",
+          "chars": 424,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 424
+        },
+        {
+          "evidence_id": "E7",
+          "text_id": "SVK-1009:u00511:b6137196b3bd4905",
+          "chars": 286,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 286
+        },
+        {
+          "evidence_id": "E8",
+          "text_id": "SVK-1005:u05288:dfc88bdd288f6e62",
+          "chars": 195,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 195
+        },
+        {
+          "evidence_id": "E9",
+          "text_id": "SVK-1001:u02967:60cc14d47bd42705",
+          "chars": 61,
+          "trunc": 500,
+          "extended_in_this_cell": false,
+          "full_text_len": 61
+        },
+        {
+          "evidence_id": "E10",
+          "text_id": "SVK-1005:u02378:d5401d631d1a3cd2",
+          "chars": 559,
+          "trunc": 2000,
+          "extended_in_this_cell": true,
+          "full_text_len": 559
+        }
+      ],
+      "prompt_chars": 5886,
+      "prompt_token_estimate": 1471,
+      "prompt_sha256": "e67d7b043868c5a828a7811cd3056f71bbcd0cc7af390f3467ed0b258579da50",
+      "evidence_text_total_chars": 3293
+    }
+  },
+  "recommended_minimal_experiment": {
+    "description": "4 intermediate cells x 3 trials + 1 sanity trial each of B and D = 14 calls",
+    "cells": [
+      "X_E2only",
+      "X_E5only",
+      "X_E5E10",
+      "X_E10only"
+    ],
+    "trials_per_intermediate_cell": 3,
+    "sanity_cells": [
+      "B_t500_original",
+      "D_t2000_original"
+    ],
+    "sanity_trials": 1,
+    "total_model_calls": 14,
+    "estimated_wall_s": "600-720",
+    "estimated_basis": "Task96 measured ~22-28s per warm case037 call; ~4min cold-start + 14x~25s warm"
+  },
+  "omitted_conditions": [
+    {
+      "condition": "neutral length-matched filler inside evidence blocks",
+      "reason": "fabricated filler inside evidence blocks would misrepresent corpus content as authentic source material; violates evidence integrity and the no-fabrication constraint"
+    },
+    {
+      "condition": "B + additional real units",
+      "reason": "inapplicable: B and D share the same ten units; the only difference is real tails, so there are no extra units to add"
+    }
+  ],
+  "predicted_interpretations": [
+    {
+      "observation": "X_E2only asserts; all other intermediate cells abstain",
+      "interpretation": "decisive-unit completion is sufficient; localized length/format effect on the 1658-containing unit"
+    },
+    {
+      "observation": "X_E5only and/or X_E5E10 asserts; X_E2only abstains",
+      "interpretation": "the large unrelated E5 content chunk drives the flip; E10 alone is not sufficient"
+    },
+    {
+      "observation": "only cells containing both E2 and E5 assert",
+      "interpretation": "interaction effect; neither decisive-unit completion nor bulk unrelated content alone suffices"
+    },
+    {
+      "observation": "all intermediate cells abstain; only full D asserts",
+      "interpretation": "threshold/interaction on combined added length+content; no single tail sufficient"
+    },
+    {
+      "observation": "any intermediate cell erratic across trials",
+      "interpretation": "per-cell nondeterminism reappears; expand trials for that cell before concluding"
+    },
+    {
+      "observation": "X_E10only asserts despite smallest delta",
+      "interpretation": "length dominates or model sensitive to prompt slack; revisit pure-length limitation"
+    }
+  ],
+  "verification": {
+    "git_head": "e0bd539c2a9e57d85df051effd50d8698a937e0e",
+    "policy_sha256": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+    "dense_index_verified": true,
+    "B_cell_byte_equal_task94": true,
+    "D_cell_byte_equal_task94": true
+  },
+  "limitations": [
+    "every real tail also carries some content, so length and content cannot be fully dissociated at the extremes",
+    "pure-length control omitted because it would require fabricated filler inside evidence blocks"
+  ]
+}

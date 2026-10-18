@@ -1,0 +1,202 @@
+{
+  "task": "task99",
+  "case_id": "DAPT01EVAL-037",
+  "model_calls": 0,
+  "generated_note": "design-only; probe built and hashed but NOT executed",
+  "evidence_unit": {
+    "text_id": "SVK-1005:u03516:7f6ea7d5e3e38b91",
+    "full_text_len_chars": 529,
+    "sentence_offsets": [
+      {
+        "start": 0,
+        "end": 5,
+        "text": "§412."
+      },
+      {
+        "start": 5,
+        "end": 80,
+        "text": " The Sadhs^ are found chiefly between the two rivers\nfrom Delhi southwards."
+      },
+      {
+        "start": 80,
+        "end": 121,
+        "text": " The sect was founded in 1658 by\nBirbhan.",
+        "note": "decisive 1658 sentence; intact in all observed conditions"
+      },
+      {
+        "start": 121,
+        "end": 257,
+        "text": " He expressed his teaching, like Kabir, in verses\nand couplets which are gathered in a volume called Adi\nUpadesa, the Original Teaching."
+      },
+      {
+        "start": 257,
+        "end": 453,
+        "text": " One element in the book is\na set of twelve commandments, which prove the sect to have\nbeen more distinctly Puritan than any of the others, and show\nChristian influence in one point at least, viz."
+      },
+      {
+        "start": 453,
+        "end": 491,
+        "text": " in the strict\ninjunction of monogamy."
+      },
+      {
+        "start": 491,
+        "end": 529,
+        "text": " They hold a meeting at the full\nmoon."
+      }
+    ],
+    "period_char_offsets": [
+      4,
+      79,
+      120,
+      256,
+      452,
+      490,
+      528
+    ],
+    "production_cut_500": {
+      "ends_char": "l",
+      "boundary_type": "mid-word inside 'hold' (word span 497-501), mid-sentence",
+      "text_tail": "...junction of monogamy. They hol",
+      "tail_29_chars": "d a meeting at the full\nmoon.",
+      "task98_outcome": "ABSTAIN (B sanity 1/1; Task-96 5/5)"
+    },
+    "natural_end_529": {
+      "ends_char": ".",
+      "boundary_type": "sentence-end AND natural unit end",
+      "task98_outcome": "ASSERT 3/3 (X_E2only)"
+    }
+  },
+  "boundary_outcome_table": [
+    {
+      "cut": 491,
+      "ends_with": ".",
+      "boundary_type": "sentence-end, mid-unit (sentence 6 of 7)",
+      "hidden_chars": 38,
+      "hidden_text": " They hold a meeting at the full\nmoon.",
+      "prompt_chars": 5789,
+      "prompt_token_est": 1447,
+      "observed": null,
+      "variant": "P1_cut491_sentence_boundary_midunit"
+    },
+    {
+      "cut": 500,
+      "ends_with": "l",
+      "boundary_type": "mid-word, mid-sentence",
+      "hidden_chars": 29,
+      "hidden_text": "d a meeting at the full\nmoon.",
+      "prompt_chars": 5798,
+      "prompt_token_est": 1449,
+      "observed": "ABSTAIN",
+      "variant": "B_t500_original"
+    },
+    {
+      "cut": 502,
+      "ends_with": " ",
+      "boundary_type": "word-boundary (after 'They hold '), mid-sentence",
+      "hidden_chars": 27,
+      "hidden_text": "a meeting at the full\nmoon.",
+      "prompt_chars": 5800,
+      "prompt_token_est": 1450,
+      "observed": null,
+      "variant": "P2_cut502_word_boundary_near_cut"
+    },
+    {
+      "cut": 519,
+      "ends_with": " ",
+      "boundary_type": "word-boundary (after '...at the '), mid-sentence",
+      "hidden_chars": 10,
+      "hidden_text": "full\nmoon.",
+      "prompt_chars": 5817,
+      "prompt_token_est": 1454,
+      "observed": null,
+      "variant": "P3_cut519_word_boundary_near_end"
+    },
+    {
+      "cut": 529,
+      "ends_with": ".",
+      "boundary_type": "sentence-end AND natural unit end",
+      "hidden_chars": 0,
+      "hidden_text": "",
+      "prompt_chars": 5827,
+      "prompt_token_est": 1456,
+      "observed": "ASSERT 3/3",
+      "variant": "X_E2only / D_t2000_original (E2 portion)"
+    }
+  ],
+  "proposed_probe": {
+    "total_calls": 3,
+    "trials_per_cell": 1,
+    "anchors_not_rerun": "B abstain (5/5 Task-96 + 1/1 Task-98 same-day); X_E2only assert (3/3 Task-98)",
+    "cells": [
+      {
+        "name": "P1_cut491_sentence_boundary_midunit",
+        "e2_cut_offset": 491,
+        "prompt_sha256": "496c99143d1fdf1356315d3ba67bd3b76fd178f0e8c7a153151940b4335ecfd0",
+        "isolates": "any sentence boundary suffices even mid-unit with final sentence absent"
+      },
+      {
+        "name": "P2_cut502_word_boundary_near_cut",
+        "e2_cut_offset": 502,
+        "prompt_sha256": "3ccf66dc42e87b02fc4e2c1e578a2444757304607cca58a5468e48c1c466f602",
+        "isolates": "word-boundary vs mid-word at near-identical length (+2 chars vs B)"
+      },
+      {
+        "name": "P3_cut519_word_boundary_near_end",
+        "e2_cut_offset": 519,
+        "prompt_sha256": "d0188f1d9e668ca897dc2727afabcbffb9db5792c31b7af93df0cc0d18cbe062",
+        "isolates": "word-boundary near unit end without completing the sentence"
+      }
+    ],
+    "fixed_across_cells": "all other 9 units at B cut@500; same headers, ordering, question, SYSTEM_PROMPT; temp 0.0, num_ctx 4096, num_predict 256; existing local Ollama untouched",
+    "builder_sanity": {
+      "B_rebuilt_sha_matches_task94": true,
+      "X_E2only_rebuilt_sha_matches_task97_98": true
+    },
+    "predicted_outcomes": [
+      {
+        "pattern": "P1 asserts",
+        "interpretation": "any sentence boundary restores trust; mechanism is sentence-completion even mid-unit"
+      },
+      {
+        "pattern": "P1 abstains, P3 asserts",
+        "interpretation": "sentence boundary mid-unit insufficient; word-boundary near unit end suffices; end-proximity matters"
+      },
+      {
+        "pattern": "P1+P3 abstain, P2 asserts",
+        "interpretation": "word-boundary vs mid-word at ~equal length is the operative contrast; mechanism is fragment (mid-word) signaling"
+      },
+      {
+        "pattern": "all three abstain",
+        "interpretation": "only natural unit end / exact tail restores assertion; mechanism is unit-completeness or exact-tail content"
+      },
+      {
+        "pattern": "all three assert",
+        "interpretation": "any clean boundary suffices; abstention caused solely by mid-word fragment state at cut@500"
+      },
+      {
+        "pattern": "mixed or erratic single trial",
+        "interpretation": "boundary type alone does not explain; do not over-claim; propose (not run) a 2-call confirmatory pair"
+      }
+    ],
+    "limitations": [
+      "boundary type and hidden content are coupled by construction; no fabricated filler used; design triangulates, does not perfectly isolate pure boundary type",
+      "one trial per cell; a decisive-but-flaky outcome would need replication in a separate task",
+      "token counts are chars/4 heuristic, not true tokenizer counts",
+      "scope limited to case037 / E2 / this prompt family; generality untested",
+      "only mid-word cut@500 has been empirically observed among non-end cuts"
+    ]
+  },
+  "remains_unproven": [
+    "cognitive-level mechanism (attention/trust heuristic vs tokenizer artifact vs position shift)",
+    "generality to other cases, units, models, or truncation lengths",
+    "whether any production retrieval/truncation default should change (out of scope; no remediation proposed)"
+  ],
+  "verification": {
+    "git_head": "e0bd539c2a9e57d85df051effd50d8698a937e0e",
+    "policy_sha256": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+    "model_calls": 0,
+    "provider_constructed": false,
+    "task94_98_artifacts_preserved": true,
+    "probe_executed": false
+  }
+}

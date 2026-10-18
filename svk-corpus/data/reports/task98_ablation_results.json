@@ -1,0 +1,397 @@
+{
+  "task": "task98",
+  "case_id": "DAPT01EVAL-037",
+  "generated_at_utc": "2026-10-18T13:42:32Z",
+  "model_calls_total": 14,
+  "planned_calls": 14,
+  "total_wall_s": 1630.1,
+  "model": "qwen2.5:7b-instruct",
+  "effective_settings": {
+    "temperature": 0.0,
+    "num_ctx": 4096,
+    "num_predict": 256,
+    "timeout_s": 300.0
+  },
+  "preflight": {
+    "hashes": {
+      "policy.toml": {
+        "expected": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+        "got": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+        "ok": true
+      },
+      "task94_ab_results.jsonl": {
+        "expected": "a23e0e0794be30706a7eb394da9f3a09ed1b73e38cc9ced918626df16e8e85c1",
+        "got": "a23e0e0794be30706a7eb394da9f3a09ed1b73e38cc9ced918626df16e8e85c1",
+        "ok": true
+      },
+      "frozen_cases": {
+        "expected": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "got": "06625f72190e3ae130447345afdc04342bd19cb76f842285706480cba7765b81",
+        "ok": true
+      },
+      "queries_emb.f32.npy": {
+        "expected": "62ec0acdc06f18bc5cbe19370b736531c70b3f0ace172fe9d5dd51dcf3e1a36d",
+        "got": "62ec0acdc06f18bc5cbe19370b736531c70b3f0ace172fe9d5dd51dcf3e1a36d",
+        "ok": true
+      },
+      "corpus_emb.f16.npy": {
+        "expected": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+        "got": "f54919e63599c94e9a7eb931bde2d4255ee77c2c64c381a28151d63eb00fb91f",
+        "ok": true
+      },
+      "task97_cell_specs.json": {
+        "expected": "d18c3efcad99bff5db79dea7044b7bb4007a286d143c415dab0e34a96d416932",
+        "got": "d18c3efcad99bff5db79dea7044b7bb4007a286d143c415dab0e34a96d416932",
+        "ok": true
+      }
+    },
+    "ollama": {
+      "reachable": true,
+      "model_present": true,
+      "models": [
+        "qwen2.5:7b-instruct"
+      ]
+    },
+    "git_before": {
+      "head": "e0bd539c2a9e57d85df051effd50d8698a937e0e",
+      "status_short": "M svk-corpus/configs/policy.toml\n?? svk-corpus/data/reports/task88_git_preservation.md\n?? svk-corpus/data/reports/task90_acceptance.json\n?? svk-corpus/data/reports/task90_acceptance.md\n?? svk-corpus/data/reports/task91_retrieval_forensics.md\n?? svk-corpus/data/reports/task92_evidence_replay.md\n?? svk-corpus/data/reports/task93_evidence_packaging.md\n?? svk-corpus/data/reports/task94_ab_metrics.json\n?? svk-corpus/data/reports/task94_evidence_ab.md\n?? svk-corpus/data/reports/task95_failure_forensics.json\n?? svk-corpus/data/reports/task95_failure_forensics.md\n?? svk-corpus/data/reports/task96_case036_gold_proposal.json\n?? svk-corpus/data/reports/task96_validation.json\n?? svk-corpus/data/reports/task96_validation.md\n?? svk-corpus/data/reports/task97_ablation_design.json\n?? svk-corpus/data/reports/task97_ablation_design.md\n?? svk-corpus/experiments/sft_01/checkpoints/\n?? svk-corpus/experiments/sft_02/checkpoints/\n?? svk-corpus/experiments/task74/dense_index/corpus_emb.f16.npy\n?? svk-corpus/experiments/task74/dense_index/queries_emb.f32.npy\n?? svk-corpus/experiments/task90/\n?? svk-corpus/experiments/task91/\n?? svk-corpus/experiments/task92/\n?? svk-corpus/experiments/task93/\n?? svk-corpus/experiments/task94/\n?? svk-corpus/experiments/task96/\n?? svk-corpus/experiments/task97/\n?? svk-corpus/experiments/task98/"
+    },
+    "policy_sha256_before": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851"
+  },
+  "cell_hashes": {
+    "B_t500_original": {
+      "prompt_sha256": "c77f7a34ed2a12ce912855069acf8d5670fee2dc230ce08cdb67c84eebcec419",
+      "chars": 5798,
+      "extend": [],
+      "hash_ok": true,
+      "byte_equal_task94": true
+    },
+    "D_t2000_original": {
+      "prompt_sha256": "4f101ff73034caca265cb455216936d0f402140464fd1e753acb4f8fab082b04",
+      "chars": 6207,
+      "extend": [
+        "E10",
+        "E2",
+        "E5"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": true
+    },
+    "X_E2only": {
+      "prompt_sha256": "1106d5fe5cc08a64c9b3b24a46282902a641378163acc68b15ce0a86ef1e0c80",
+      "chars": 5827,
+      "extend": [
+        "E2"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": null
+    },
+    "X_E5only": {
+      "prompt_sha256": "6f98f8f00a5c9d792e3cdeab4da257621437683109ac57ea1985d6c73cfd7171",
+      "chars": 6119,
+      "extend": [
+        "E5"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": null
+    },
+    "X_E10only": {
+      "prompt_sha256": "fcc65295eca046265beea563c940a51604f254c1827399de81af16fe24b12f5f",
+      "chars": 5857,
+      "extend": [
+        "E10"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": null
+    },
+    "X_E5E10": {
+      "prompt_sha256": "bf5f2d4b5580c0d6f947dfe7c504be8145d45c42c9ae2927904cac5390decf4e",
+      "chars": 6178,
+      "extend": [
+        "E10",
+        "E5"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": null
+    },
+    "X_E2E5": {
+      "prompt_sha256": "81473f31b1e07c6dd5ab7c39bbd1276fdcdc1a0d8108da869ba0a4f503a8d7ab",
+      "chars": 6148,
+      "extend": [
+        "E2",
+        "E5"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": null
+    },
+    "X_E2E10": {
+      "prompt_sha256": "e67d7b043868c5a828a7811cd3056f71bbcd0cc7af390f3467ed0b258579da50",
+      "chars": 5886,
+      "extend": [
+        "E10",
+        "E2"
+      ],
+      "hash_ok": true,
+      "byte_equal_task94": null
+    }
+  },
+  "stats_by_cell": {
+    "B_t500_original": {
+      "trials": 1,
+      "abstained": [
+        true
+      ],
+      "asserts_founded_year": [
+        false
+      ],
+      "mentions_1658": [
+        true
+      ],
+      "eval_counts": [
+        108
+      ],
+      "latency_wall_s": [
+        268.763
+      ],
+      "hit_cap": [
+        false
+      ],
+      "abstain_rate": 1.0,
+      "assert_rate": 0.0
+    },
+    "D_t2000_original": {
+      "trials": 1,
+      "abstained": [
+        false
+      ],
+      "asserts_founded_year": [
+        true
+      ],
+      "mentions_1658": [
+        true
+      ],
+      "eval_counts": [
+        104
+      ],
+      "latency_wall_s": [
+        175.291
+      ],
+      "hit_cap": [
+        false
+      ],
+      "abstain_rate": 0.0,
+      "assert_rate": 1.0
+    },
+    "X_E2only": {
+      "trials": 3,
+      "abstained": [
+        false,
+        false,
+        false
+      ],
+      "asserts_founded_year": [
+        true,
+        true,
+        true
+      ],
+      "mentions_1658": [
+        true,
+        true,
+        true
+      ],
+      "eval_counts": [
+        68,
+        96,
+        96
+      ],
+      "latency_wall_s": [
+        111.688,
+        24.242,
+        22.657
+      ],
+      "hit_cap": [
+        false,
+        false,
+        false
+      ],
+      "abstain_rate": 0.0,
+      "assert_rate": 1.0
+    },
+    "X_E5only": {
+      "trials": 3,
+      "abstained": [
+        true,
+        true,
+        true
+      ],
+      "asserts_founded_year": [
+        false,
+        false,
+        false
+      ],
+      "mentions_1658": [
+        true,
+        true,
+        true
+      ],
+      "eval_counts": [
+        67,
+        122,
+        122
+      ],
+      "latency_wall_s": [
+        120.173,
+        34.208,
+        34.397
+      ],
+      "hit_cap": [
+        false,
+        false,
+        false
+      ],
+      "abstain_rate": 1.0,
+      "assert_rate": 0.0
+    },
+    "X_E10only": {
+      "trials": 3,
+      "abstained": [
+        true,
+        true,
+        true
+      ],
+      "asserts_founded_year": [
+        false,
+        false,
+        false
+      ],
+      "mentions_1658": [
+        true,
+        true,
+        true
+      ],
+      "eval_counts": [
+        96,
+        96,
+        96
+      ],
+      "latency_wall_s": [
+        119.303,
+        120.579,
+        121.841
+      ],
+      "hit_cap": [
+        false,
+        false,
+        false
+      ],
+      "abstain_rate": 1.0,
+      "assert_rate": 0.0
+    },
+    "X_E5E10": {
+      "trials": 3,
+      "abstained": [
+        true,
+        true,
+        true
+      ],
+      "asserts_founded_year": [
+        false,
+        false,
+        false
+      ],
+      "mentions_1658": [
+        true,
+        true,
+        true
+      ],
+      "eval_counts": [
+        130,
+        130,
+        130
+      ],
+      "latency_wall_s": [
+        136.987,
+        140.684,
+        137.574
+      ],
+      "hit_cap": [
+        false,
+        false,
+        false
+      ],
+      "abstain_rate": 1.0,
+      "assert_rate": 0.0
+    }
+  },
+  "sufficiency": {
+    "X_E2only": "sufficient (3/3 assert)",
+    "X_E5only": "not sufficient (3/3 abstain)",
+    "X_E10only": "not sufficient (3/3 abstain)",
+    "X_E5E10": "not sufficient (3/3 abstain)"
+  },
+  "interpretation": [
+    "E2 tail alone is sufficient: completing the 1658-containing unit (its own tail is factually trivial) flips the model to asserting — a localized length/format effect on the decisive unit.",
+    "Association (descriptive, 8 cells): B_t500_original=5798ch/assert0; D_t2000_original=6207ch/assert1; X_E2only=5827ch/assert1; X_E5only=6119ch/assert0; X_E10only=5857ch/assert0; X_E5E10=6178ch/assert0. Character count alone does not monotonically predict assertion if e.g. X_E5only (6119 ch) abstains while X_E2only (5827 ch) asserts — content of the completed unit matters beyond bulk length."
+  ],
+  "length_association": [
+    {
+      "cell_id": "B_t500_original",
+      "chars": 5798,
+      "assert_rate": 0.0,
+      "abstain_rate": 1.0
+    },
+    {
+      "cell_id": "D_t2000_original",
+      "chars": 6207,
+      "assert_rate": 1.0,
+      "abstain_rate": 0.0
+    },
+    {
+      "cell_id": "X_E2only",
+      "chars": 5827,
+      "assert_rate": 1.0,
+      "abstain_rate": 0.0
+    },
+    {
+      "cell_id": "X_E5only",
+      "chars": 6119,
+      "assert_rate": 0.0,
+      "abstain_rate": 1.0
+    },
+    {
+      "cell_id": "X_E10only",
+      "chars": 5857,
+      "assert_rate": 0.0,
+      "abstain_rate": 1.0
+    },
+    {
+      "cell_id": "X_E5E10",
+      "chars": 6178,
+      "assert_rate": 0.0,
+      "abstain_rate": 1.0
+    }
+  ],
+  "verification": {
+    "policy_sha256_before": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+    "policy_sha256_after": "f32308d94dd9d54395daf2d4bb5ef7ede7600f7762e77dd480aea6926bf25851",
+    "policy_unchanged": true,
+    "git_before": {
+      "head": "e0bd539c2a9e57d85df051effd50d8698a937e0e",
+      "status_short": "M svk-corpus/configs/policy.toml\n?? svk-corpus/data/reports/task88_git_preservation.md\n?? svk-corpus/data/reports/task90_acceptance.json\n?? svk-corpus/data/reports/task90_acceptance.md\n?? svk-corpus/data/reports/task91_retrieval_forensics.md\n?? svk-corpus/data/reports/task92_evidence_replay.md\n?? svk-corpus/data/reports/task93_evidence_packaging.md\n?? svk-corpus/data/reports/task94_ab_metrics.json\n?? svk-corpus/data/reports/task94_evidence_ab.md\n?? svk-corpus/data/reports/task95_failure_forensics.json\n?? svk-corpus/data/reports/task95_failure_forensics.md\n?? svk-corpus/data/reports/task96_case036_gold_proposal.json\n?? svk-corpus/data/reports/task96_validation.json\n?? svk-corpus/data/reports/task96_validation.md\n?? svk-corpus/data/reports/task97_ablation_design.json\n?? svk-corpus/data/reports/task97_ablation_design.md\n?? svk-corpus/experiments/sft_01/checkpoints/\n?? svk-corpus/experiments/sft_02/checkpoints/\n?? svk-corpus/experiments/task74/dense_index/corpus_emb.f16.npy\n?? svk-corpus/experiments/task74/dense_index/queries_emb.f32.npy\n?? svk-corpus/experiments/task90/\n?? svk-corpus/experiments/task91/\n?? svk-corpus/experiments/task92/\n?? svk-corpus/experiments/task93/\n?? svk-corpus/experiments/task94/\n?? svk-corpus/experiments/task96/\n?? svk-corpus/experiments/task97/\n?? svk-corpus/experiments/task98/"
+    },
+    "git_after": {
+      "head": "e0bd539c2a9e57d85df051effd50d8698a937e0e",
+      "status_short": "M svk-corpus/configs/policy.toml\n?? svk-corpus/data/reports/task88_git_preservation.md\n?? svk-corpus/data/reports/task90_acceptance.json\n?? svk-corpus/data/reports/task90_acceptance.md\n?? svk-corpus/data/reports/task91_retrieval_forensics.md\n?? svk-corpus/data/reports/task92_evidence_replay.md\n?? svk-corpus/data/reports/task93_evidence_packaging.md\n?? svk-corpus/data/reports/task94_ab_metrics.json\n?? svk-corpus/data/reports/task94_evidence_ab.md\n?? svk-corpus/data/reports/task95_failure_forensics.json\n?? svk-corpus/data/reports/task95_failure_forensics.md\n?? svk-corpus/data/reports/task96_case036_gold_proposal.json\n?? svk-corpus/data/reports/task96_validation.json\n?? svk-corpus/data/reports/task96_validation.md\n?? svk-corpus/data/reports/task97_ablation_design.json\n?? svk-corpus/data/reports/task97_ablation_design.md\n?? svk-corpus/experiments/sft_01/checkpoints/\n?? svk-corpus/experiments/sft_02/checkpoints/\n?? svk-corpus/experiments/task74/dense_index/corpus_emb.f16.npy\n?? svk-corpus/experiments/task74/dense_index/queries_emb.f32.npy\n?? svk-corpus/experiments/task90/\n?? svk-corpus/experiments/task91/\n?? svk-corpus/experiments/task92/\n?? svk-corpus/experiments/task93/\n?? svk-corpus/experiments/task94/\n?? svk-corpus/experiments/task96/\n?? svk-corpus/experiments/task97/\n?? svk-corpus/experiments/task98/"
+    },
+    "git_unchanged_no_staged_or_tracked_edits": true,
+    "B_prompt_byte_equal_task94": true,
+    "D_prompt_byte_equal_task94": true,
+    "all_cell_hashes_match_task97_design": true
+  },
+  "raw_results": "experiments/task98/task98_raw.jsonl",
+  "limitations": [
+    "B/D sanity calls are n=1 checks, not a statistically strong baseline",
+    "intermediate cells are 3-trial exploratory probes; do not overstate causality",
+    "pure length cannot be isolated from content: every real tail carries content"
+  ]
+}
